@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control System Plots &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/control/control_plots.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Continuum Mechanics" href="../continuum_mechanics/index.html" />
+    <link rel="prev" title="Control API" href="lti.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../vector/index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mechanics/index.html">Classical Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quantum/index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="index.html">Control Module</a> &raquo;</li>
+      <li>Control System Plots</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/physics/control/control_plots.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="control-system-plots">
+<h1>Control System Plots<a class="headerlink" href="#control-system-plots" title="Permalink to this headline"></a></h1>
+<p>This module contains plotting functions for some of the common plots
+used in control system. Matplotlib will be required as an external dependency
+if the user wants the plots. To get only the numerical data of the plots,
+NumPy will be required as external dependency.</p>
+<section id="pole-zero-plot">
+<h2>Pole-Zero Plot<a class="headerlink" href="#pole-zero-plot" title="Permalink to this headline"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.pole_zero_plot">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">pole_zero_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pole_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blue'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pole_markersize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orange'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_markersize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L113-L201"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.pole_zero_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Pole-Zero plot (also known as PZ Plot or PZ Map) of a system.</p>
+<p>A Pole-Zero plot is a graphical representation of a system’s poles and
+zeros. It is plotted on a complex plane, with circular markers representing
+the system’s zeros and ‘x’ shaped markers representing the system’s poles.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant type systems</p>
+<blockquote>
+<div><p>The system for which the pole-zero plot is to be computed.</p>
+</div></blockquote>
+<p><strong>pole_color</strong> : str, tuple, optional</p>
+<blockquote>
+<div><p>The color of the pole points on the plot. Default color
+is blue. The color can be provided as a matplotlib color string,
+or a 3-tuple of floats each in the 0-1 range.</p>
+</div></blockquote>
+<p><strong>pole_markersize</strong> : Number, optional</p>
+<blockquote>
+<div><p>The size of the markers used to mark the poles in the plot.
+Default pole markersize is 10.</p>
+</div></blockquote>
+<p><strong>zero_color</strong> : str, tuple, optional</p>
+<blockquote>
+<div><p>The color of the zero points on the plot. Default color
+is orange. The color can be provided as a matplotlib color string,
+or a 3-tuple of floats each in the 0-1 range.</p>
+</div></blockquote>
+<p><strong>zero_markersize</strong> : Number, optional</p>
+<blockquote>
+<div><p>The size of the markers used to mark the zeros in the plot.
+Default zero markersize is 7.</p>
+</div></blockquote>
+<p><strong>grid</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will have a grid. Defaults to True.</p>
+</div></blockquote>
+<p><strong>show_axes</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the coordinate axes will be shown. Defaults to False.</p>
+</div></blockquote>
+<p><strong>show</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will be displayed otherwise
+the equivalent matplotlib <code class="docutils literal notranslate"><span class="pre">plot</span></code> object will be returned.
+Defaults to True.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">pole_zero_plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pole_zero_plot</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../../modules/physics/control/control_plots-1.png">png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-1.hires.png">hires.png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-1.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../../../_images/control_plots-1.png" class="plot-directive" src="../../../_images/control_plots-1.png" />
+</figure>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.pole_zero_numerical_data" title="sympy.physics.control.control_plots.pole_zero_numerical_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pole_zero_numerical_data</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r645"><span class="brackets"><a class="fn-backref" href="#id1">R645</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pole%E2%80%93zero_plot">https://en.wikipedia.org/wiki/Pole%E2%80%93zero_plot</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.pole_zero_numerical_data">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">pole_zero_numerical_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L48-L110"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.pole_zero_numerical_data" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the numerical data of poles and zeros of the system.
+It is internally used by <code class="docutils literal notranslate"><span class="pre">pole_zero_plot</span></code> to get the data
+for plotting poles and zeros. Users can use this data to further
+analyse the dynamics of the system or plot using a different
+backend/plotting-module.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant</p>
+<blockquote>
+<div><p>The system for which the pole-zero data is to be computed.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>tuple</strong> : (zeros, poles)</p>
+<blockquote>
+<div><p>zeros = Zeros of the system. NumPy array of complex numbers.
+poles = Poles of the system. NumPy array of complex numbers.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>When a SISO LTI system is not passed.</p>
+<p>When time delay terms are present in the system.</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>When more than one free symbol is present in the system.
+The only variable in the transfer function should be
+the variable of the Laplace transform.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">pole_zero_numerical_data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pole_zero_numerical_data</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+<span class="go">([-0.+1.j  0.-1.j], [-2. +0.j        -0.5+0.8660254j -0.5-0.8660254j -1. +0.j       ])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.pole_zero_plot" title="sympy.physics.control.control_plots.pole_zero_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pole_zero_plot</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="bode-plot">
+<h2>Bode Plot<a class="headerlink" href="#bode-plot" title="Permalink to this headline"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.bode_plot">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">bode_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L858-L916"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.bode_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Bode phase and magnitude plots of a continuous-time system.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant type</p>
+<blockquote>
+<div><p>The LTI SISO system for which the Bode Plot is to be computed.</p>
+</div></blockquote>
+<p><strong>initial_exp</strong> : Number, optional</p>
+<blockquote>
+<div><p>The initial exponent of 10 of the semilog plot. Defaults to -5.</p>
+</div></blockquote>
+<p><strong>final_exp</strong> : Number, optional</p>
+<blockquote>
+<div><p>The final exponent of 10 of the semilog plot. Defaults to 5.</p>
+</div></blockquote>
+<p><strong>show</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will be displayed otherwise
+the equivalent matplotlib <code class="docutils literal notranslate"><span class="pre">plot</span></code> object will be returned.
+Defaults to True.</p>
+</div></blockquote>
+<p><strong>prec</strong> : int, optional</p>
+<blockquote>
+<div><p>The decimal point precision for the point coordinate values.
+Defaults to 8.</p>
+</div></blockquote>
+<p><strong>grid</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will have a grid. Defaults to True.</p>
+</div></blockquote>
+<p><strong>show_axes</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the coordinate axes will be shown. Defaults to False.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">bode_plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mi">1</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">0.12</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">9</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bode_plot</span><span class="p">(</span><span class="n">tf1</span><span class="p">,</span> <span class="n">initial_exp</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">final_exp</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>   
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../../modules/physics/control/control_plots-2.png">png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-2.hires.png">hires.png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-2.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../../../_images/control_plots-2.png" class="plot-directive" src="../../../_images/control_plots-2.png" />
+</figure>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.bode_magnitude_plot" title="sympy.physics.control.control_plots.bode_magnitude_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bode_magnitude_plot</span></code></a>, <a class="reference internal" href="#sympy.physics.control.control_plots.bode_phase_plot" title="sympy.physics.control.control_plots.bode_phase_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bode_phase_plot</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.bode_magnitude_plot">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">bode_magnitude_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L736-L761"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.bode_magnitude_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Bode magnitude plot of a continuous-time system.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">bode_plot</span></code> for all the parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.bode_phase_plot">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">bode_phase_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L830-L855"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.bode_phase_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Bode phase plot of a continuous-time system.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">bode_plot</span></code> for all the parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.bode_magnitude_numerical_data">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">bode_magnitude_numerical_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L670-L733"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.bode_magnitude_numerical_data" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the numerical data of the Bode magnitude plot of the system.
+It is internally used by <code class="docutils literal notranslate"><span class="pre">bode_magnitude_plot</span></code> to get the data
+for plotting Bode magnitude plot. Users can use this data to further
+analyse the dynamics of the system or plot using a different
+backend/plotting-module.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant</p>
+<blockquote>
+<div><p>The system for which the data is to be computed.</p>
+</div></blockquote>
+<p><strong>initial_exp</strong> : Number, optional</p>
+<blockquote>
+<div><p>The initial exponent of 10 of the semilog plot. Defaults to -5.</p>
+</div></blockquote>
+<p><strong>final_exp</strong> : Number, optional</p>
+<blockquote>
+<div><p>The final exponent of 10 of the semilog plot. Defaults to 5.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>tuple</strong> : (x, y)</p>
+<blockquote>
+<div><p>x = x-axis values of the Bode magnitude plot.
+y = y-axis values of the Bode magnitude plot.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>When a SISO LTI system is not passed.</p>
+<p>When time delay terms are present in the system.</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>When more than one free symbol is present in the system.
+The only variable in the transfer function should be
+the variable of the Laplace transform.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">bode_magnitude_numerical_data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bode_magnitude_numerical_data</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+<span class="go">([1e-05, 1.5148378120533502e-05,..., 68437.36188804005, 100000.0],</span>
+<span class="go">[-6.020599914256786, -6.0205999155219505,..., -193.4117304087953, -200.00000000260573])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.bode_magnitude_plot" title="sympy.physics.control.control_plots.bode_magnitude_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bode_magnitude_plot</span></code></a>, <a class="reference internal" href="#sympy.physics.control.control_plots.bode_phase_numerical_data" title="sympy.physics.control.control_plots.bode_phase_numerical_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bode_phase_numerical_data</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.bode_phase_numerical_data">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">bode_phase_numerical_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_exp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L764-L827"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.bode_phase_numerical_data" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the numerical data of the Bode phase plot of the system.
+It is internally used by <code class="docutils literal notranslate"><span class="pre">bode_phase_plot</span></code> to get the data
+for plotting Bode phase plot. Users can use this data to further
+analyse the dynamics of the system or plot using a different
+backend/plotting-module.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant</p>
+<blockquote>
+<div><p>The system for which the Bode phase plot data is to be computed.</p>
+</div></blockquote>
+<p><strong>initial_exp</strong> : Number, optional</p>
+<blockquote>
+<div><p>The initial exponent of 10 of the semilog plot. Defaults to -5.</p>
+</div></blockquote>
+<p><strong>final_exp</strong> : Number, optional</p>
+<blockquote>
+<div><p>The final exponent of 10 of the semilog plot. Defaults to 5.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>tuple</strong> : (x, y)</p>
+<blockquote>
+<div><p>x = x-axis values of the Bode phase plot.
+y = y-axis values of the Bode phase plot.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>When a SISO LTI system is not passed.</p>
+<p>When time delay terms are present in the system.</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>When more than one free symbol is present in the system.
+The only variable in the transfer function should be
+the variable of the Laplace transform.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">bode_phase_numerical_data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bode_phase_numerical_data</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+<span class="go">([1e-05, 1.4472354033813751e-05, 2.035581932165858e-05,..., 47577.3248186011, 67884.09326036123, 100000.0],</span>
+<span class="go">[-2.5000000000291665e-05, -3.6180885085e-05, -5.08895483066e-05,...,-3.1415085799262523, -3.14155265358979])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.bode_magnitude_plot" title="sympy.physics.control.control_plots.bode_magnitude_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bode_magnitude_plot</span></code></a>, <a class="reference internal" href="#sympy.physics.control.control_plots.bode_phase_numerical_data" title="sympy.physics.control.control_plots.bode_phase_numerical_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bode_phase_numerical_data</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="impulse-response-plot">
+<h2>Impulse-Response Plot<a class="headerlink" href="#impulse-response-plot" title="Permalink to this headline"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.impulse_response_plot">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">impulse_response_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L433-L503"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.impulse_response_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the unit impulse response (Input is the Dirac-Delta Function) of a
+continuous-time system.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant type</p>
+<blockquote>
+<div><p>The LTI SISO system for which the Impulse Response is to be computed.</p>
+</div></blockquote>
+<p><strong>color</strong> : str, tuple, optional</p>
+<blockquote>
+<div><p>The color of the line. Default is Blue.</p>
+</div></blockquote>
+<p><strong>show</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will be displayed otherwise
+the equivalent matplotlib <code class="docutils literal notranslate"><span class="pre">plot</span></code> object will be returned.
+Defaults to True.</p>
+</div></blockquote>
+<p><strong>lower_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The lower limit of the plot range. Defaults to 0.</p>
+</div></blockquote>
+<p><strong>upper_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The upper limit of the plot range. Defaults to 10.</p>
+</div></blockquote>
+<p><strong>prec</strong> : int, optional</p>
+<blockquote>
+<div><p>The decimal point precision for the point coordinate values.
+Defaults to 8.</p>
+</div></blockquote>
+<p><strong>show_axes</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the coordinate axes will be shown. Defaults to False.</p>
+</div></blockquote>
+<p><strong>grid</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will have a grid. Defaults to True.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">impulse_response_plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">18</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">32</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">14</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">24</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">impulse_response_plot</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../../modules/physics/control/control_plots-3.png">png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-3.hires.png">hires.png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-3.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../../../_images/control_plots-3.png" class="plot-directive" src="../../../_images/control_plots-3.png" />
+</figure>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.step_response_plot" title="sympy.physics.control.control_plots.step_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">step_response_plot</span></code></a>, <a class="reference internal" href="#sympy.physics.control.control_plots.ramp_response_plot" title="sympy.physics.control.control_plots.ramp_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp_response_plot</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r646"><span class="brackets"><a class="fn-backref" href="#id2">R646</a></span></dt>
+<dd><p><a class="reference external" href="https://www.mathworks.com/help/control/ref/lti.impulse.html">https://www.mathworks.com/help/control/ref/lti.impulse.html</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.impulse_response_numerical_data">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">impulse_response_numerical_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L355-L430"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.impulse_response_numerical_data" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the numerical values of the points in the impulse response plot
+of a SISO continuous-time system. By default, adaptive sampling
+is used. If the user wants to instead get an uniformly
+sampled response, then <code class="docutils literal notranslate"><span class="pre">adaptive</span></code> kwarg should be passed <code class="docutils literal notranslate"><span class="pre">False</span></code>
+and <code class="docutils literal notranslate"><span class="pre">nb_of_points</span></code> must be passed as additional kwargs.
+Refer to the parameters of class <a class="reference internal" href="../../plotting.html#sympy.plotting.plot.LineOver1DRangeSeries" title="sympy.plotting.plot.LineOver1DRangeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.plotting.plot.LineOver1DRangeSeries</span></code></a>
+for more details.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant</p>
+<blockquote>
+<div><p>The system for which the impulse response data is to be computed.</p>
+</div></blockquote>
+<p><strong>prec</strong> : int, optional</p>
+<blockquote>
+<div><p>The decimal point precision for the point coordinate values.
+Defaults to 8.</p>
+</div></blockquote>
+<p><strong>lower_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The lower limit of the plot range. Defaults to 0.</p>
+</div></blockquote>
+<p><strong>upper_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The upper limit of the plot range. Defaults to 10.</p>
+</div></blockquote>
+<p><strong>kwargs :</strong></p>
+<blockquote>
+<div><p>Additional keyword arguments are passed to the underlying
+<a class="reference internal" href="../../plotting.html#sympy.plotting.plot.LineOver1DRangeSeries" title="sympy.plotting.plot.LineOver1DRangeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.plotting.plot.LineOver1DRangeSeries</span></code></a> class.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>tuple</strong> : (x, y)</p>
+<blockquote>
+<div><p>x = Time-axis values of the points in the impulse response. NumPy array.
+y = Amplitude-axis values of the points in the impulse response. NumPy array.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>When a SISO LTI system is not passed.</p>
+<p>When time delay terms are present in the system.</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>When more than one free symbol is present in the system.
+The only variable in the transfer function should be
+the variable of the Laplace transform.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">lower_limit</span></code> parameter is less than 0.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">impulse_response_numerical_data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">8</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">impulse_response_numerical_data</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+<span class="go">([0.0, 0.06616480200395854,... , 9.854500743565858, 10.0],</span>
+<span class="go">[0.9999999799999999, 0.7042848373025861,...,7.170748906965121e-13, -5.1901263495547205e-12])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.impulse_response_plot" title="sympy.physics.control.control_plots.impulse_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">impulse_response_plot</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="step-response-plot">
+<h2>Step-Response Plot<a class="headerlink" href="#step-response-plot" title="Permalink to this headline"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.step_response_plot">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">step_response_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L282-L352"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.step_response_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the unit step response of a continuous-time system. It is
+the response of the system when the input signal is a step function.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant type</p>
+<blockquote>
+<div><p>The LTI SISO system for which the Step Response is to be computed.</p>
+</div></blockquote>
+<p><strong>color</strong> : str, tuple, optional</p>
+<blockquote>
+<div><p>The color of the line. Default is Blue.</p>
+</div></blockquote>
+<p><strong>show</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will be displayed otherwise
+the equivalent matplotlib <code class="docutils literal notranslate"><span class="pre">plot</span></code> object will be returned.
+Defaults to True.</p>
+</div></blockquote>
+<p><strong>lower_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The lower limit of the plot range. Defaults to 0.</p>
+</div></blockquote>
+<p><strong>upper_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The upper limit of the plot range. Defaults to 10.</p>
+</div></blockquote>
+<p><strong>prec</strong> : int, optional</p>
+<blockquote>
+<div><p>The decimal point precision for the point coordinate values.
+Defaults to 8.</p>
+</div></blockquote>
+<p><strong>show_axes</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the coordinate axes will be shown. Defaults to False.</p>
+</div></blockquote>
+<p><strong>grid</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will have a grid. Defaults to True.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">step_response_plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">18</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">32</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">14</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">24</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">step_response_plot</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../../modules/physics/control/control_plots-4.png">png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-4.hires.png">hires.png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-4.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../../../_images/control_plots-4.png" class="plot-directive" src="../../../_images/control_plots-4.png" />
+</figure>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.impulse_response_plot" title="sympy.physics.control.control_plots.impulse_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">impulse_response_plot</span></code></a>, <a class="reference internal" href="#sympy.physics.control.control_plots.ramp_response_plot" title="sympy.physics.control.control_plots.ramp_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp_response_plot</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r647"><span class="brackets"><a class="fn-backref" href="#id3">R647</a></span></dt>
+<dd><p><a class="reference external" href="https://www.mathworks.com/help/control/ref/lti.step.html">https://www.mathworks.com/help/control/ref/lti.step.html</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.step_response_numerical_data">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">step_response_numerical_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L204-L279"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.step_response_numerical_data" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the numerical values of the points in the step response plot
+of a SISO continuous-time system. By default, adaptive sampling
+is used. If the user wants to instead get an uniformly
+sampled response, then <code class="docutils literal notranslate"><span class="pre">adaptive</span></code> kwarg should be passed <code class="docutils literal notranslate"><span class="pre">False</span></code>
+and <code class="docutils literal notranslate"><span class="pre">nb_of_points</span></code> must be passed as additional kwargs.
+Refer to the parameters of class <a class="reference internal" href="../../plotting.html#sympy.plotting.plot.LineOver1DRangeSeries" title="sympy.plotting.plot.LineOver1DRangeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.plotting.plot.LineOver1DRangeSeries</span></code></a>
+for more details.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant</p>
+<blockquote>
+<div><p>The system for which the unit step response data is to be computed.</p>
+</div></blockquote>
+<p><strong>prec</strong> : int, optional</p>
+<blockquote>
+<div><p>The decimal point precision for the point coordinate values.
+Defaults to 8.</p>
+</div></blockquote>
+<p><strong>lower_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The lower limit of the plot range. Defaults to 0.</p>
+</div></blockquote>
+<p><strong>upper_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The upper limit of the plot range. Defaults to 10.</p>
+</div></blockquote>
+<p><strong>kwargs :</strong></p>
+<blockquote>
+<div><p>Additional keyword arguments are passed to the underlying
+<a class="reference internal" href="../../plotting.html#sympy.plotting.plot.LineOver1DRangeSeries" title="sympy.plotting.plot.LineOver1DRangeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.plotting.plot.LineOver1DRangeSeries</span></code></a> class.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>tuple</strong> : (x, y)</p>
+<blockquote>
+<div><p>x = Time-axis values of the points in the step response. NumPy array.
+y = Amplitude-axis values of the points in the step response. NumPy array.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>When a SISO LTI system is not passed.</p>
+<p>When time delay terms are present in the system.</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>When more than one free symbol is present in the system.
+The only variable in the transfer function should be
+the variable of the Laplace transform.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">lower_limit</span></code> parameter is less than 0.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">step_response_numerical_data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">8</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">step_response_numerical_data</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+<span class="go">([0.0, 0.025413462339411542, 0.0484508722725343, ... , 9.670250533855183, 9.844291913708725, 10.0],</span>
+<span class="go">[0.0, 0.023844582399907256, 0.042894276802320226, ..., 6.828770759094287e-12, 6.456457160755703e-12])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.step_response_plot" title="sympy.physics.control.control_plots.step_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">step_response_plot</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="ramp-response-plot">
+<h2>Ramp-Response Plot<a class="headerlink" href="#ramp-response-plot" title="Permalink to this headline"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.ramp_response_plot">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">ramp_response_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L591-L667"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.ramp_response_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the ramp response of a continuous-time system.</p>
+<p>Ramp function is defined as the straight line
+passing through origin (<span class="math notranslate nohighlight">\(f(x) = mx\)</span>). The slope of
+the ramp function can be varied by the user and
+the default value is 1.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant type</p>
+<blockquote>
+<div><p>The LTI SISO system for which the Ramp Response is to be computed.</p>
+</div></blockquote>
+<p><strong>slope</strong> : Number, optional</p>
+<blockquote>
+<div><p>The slope of the input ramp function. Defaults to 1.</p>
+</div></blockquote>
+<p><strong>color</strong> : str, tuple, optional</p>
+<blockquote>
+<div><p>The color of the line. Default is Blue.</p>
+</div></blockquote>
+<p><strong>show</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will be displayed otherwise
+the equivalent matplotlib <code class="docutils literal notranslate"><span class="pre">plot</span></code> object will be returned.
+Defaults to True.</p>
+</div></blockquote>
+<p><strong>lower_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The lower limit of the plot range. Defaults to 0.</p>
+</div></blockquote>
+<p><strong>upper_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The upper limit of the plot range. Defaults to 10.</p>
+</div></blockquote>
+<p><strong>prec</strong> : int, optional</p>
+<blockquote>
+<div><p>The decimal point precision for the point coordinate values.
+Defaults to 8.</p>
+</div></blockquote>
+<p><strong>show_axes</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the coordinate axes will be shown. Defaults to False.</p>
+</div></blockquote>
+<p><strong>grid</strong> : boolean, optional</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will have a grid. Defaults to True.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">ramp_response_plot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">8</span><span class="p">),</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ramp_response_plot</span><span class="p">(</span><span class="n">tf1</span><span class="p">,</span> <span class="n">upper_limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   
+</pre></div>
+</div>
+<p>(<a class="reference external" href="../../../modules/physics/control/control_plots-5.png">png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-5.hires.png">hires.png</a>, <a class="reference external" href="../../../modules/physics/control/control_plots-5.pdf">pdf</a>)</p>
+<figure class="align-default">
+<img alt="../../../_images/control_plots-5.png" class="plot-directive" src="../../../_images/control_plots-5.png" />
+</figure>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.step_response_plot" title="sympy.physics.control.control_plots.step_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">step_response_plot</span></code></a>, <a class="reference internal" href="#sympy.physics.control.control_plots.ramp_response_plot" title="sympy.physics.control.control_plots.ramp_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp_response_plot</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r648"><span class="brackets"><a class="fn-backref" href="#id4">R648</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Ramp_function">https://en.wikipedia.org/wiki/Ramp_function</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.control.control_plots.ramp_response_numerical_data">
+<span class="sig-prename descclassname"><span class="pre">control_plots.</span></span><span class="sig-name descname"><span class="pre">ramp_response_numerical_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/control/control_plots.py#L506-L588"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.control.control_plots.ramp_response_numerical_data" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the numerical values of the points in the ramp response plot
+of a SISO continuous-time system. By default, adaptive sampling
+is used. If the user wants to instead get an uniformly
+sampled response, then <code class="docutils literal notranslate"><span class="pre">adaptive</span></code> kwarg should be passed <code class="docutils literal notranslate"><span class="pre">False</span></code>
+and <code class="docutils literal notranslate"><span class="pre">nb_of_points</span></code> must be passed as additional kwargs.
+Refer to the parameters of class <a class="reference internal" href="../../plotting.html#sympy.plotting.plot.LineOver1DRangeSeries" title="sympy.plotting.plot.LineOver1DRangeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.plotting.plot.LineOver1DRangeSeries</span></code></a>
+for more details.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : SISOLinearTimeInvariant</p>
+<blockquote>
+<div><p>The system for which the ramp response data is to be computed.</p>
+</div></blockquote>
+<p><strong>slope</strong> : Number, optional</p>
+<blockquote>
+<div><p>The slope of the input ramp function. Defaults to 1.</p>
+</div></blockquote>
+<p><strong>prec</strong> : int, optional</p>
+<blockquote>
+<div><p>The decimal point precision for the point coordinate values.
+Defaults to 8.</p>
+</div></blockquote>
+<p><strong>lower_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The lower limit of the plot range. Defaults to 0.</p>
+</div></blockquote>
+<p><strong>upper_limit</strong> : Number, optional</p>
+<blockquote>
+<div><p>The upper limit of the plot range. Defaults to 10.</p>
+</div></blockquote>
+<p><strong>kwargs :</strong></p>
+<blockquote>
+<div><p>Additional keyword arguments are passed to the underlying
+<a class="reference internal" href="../../plotting.html#sympy.plotting.plot.LineOver1DRangeSeries" title="sympy.plotting.plot.LineOver1DRangeSeries"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.plotting.plot.LineOver1DRangeSeries</span></code></a> class.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>tuple</strong> : (x, y)</p>
+<blockquote>
+<div><p>x = Time-axis values of the points in the ramp response plot. NumPy array.
+y = Amplitude-axis values of the points in the ramp response plot. NumPy array.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>When a SISO LTI system is not passed.</p>
+<p>When time delay terms are present in the system.</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>When more than one free symbol is present in the system.
+The only variable in the transfer function should be
+the variable of the Laplace transform.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">lower_limit</span></code> parameter is less than 0.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">slope</span></code> is negative.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.lti</span> <span class="kn">import</span> <span class="n">TransferFunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.control.control_plots</span> <span class="kn">import</span> <span class="n">ramp_response_numerical_data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tf1</span> <span class="o">=</span> <span class="n">TransferFunction</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="mi">8</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ramp_response_numerical_data</span><span class="p">(</span><span class="n">tf1</span><span class="p">)</span>   
+<span class="go">(([0.0, 0.12166980856813935,..., 9.861246379582118, 10.0],</span>
+<span class="go">[1.4504508011325967e-09, 0.006046440489058766,..., 0.12499999999568202, 0.12499999999661349]))</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.physics.control.control_plots.ramp_response_plot" title="sympy.physics.control.control_plots.ramp_response_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ramp_response_plot</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lti.html" class="btn btn-neutral float-left" title="Control API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../continuum_mechanics/index.html" class="btn btn-neutral float-right" title="Continuum Mechanics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

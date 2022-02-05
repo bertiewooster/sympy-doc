@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QFT &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/quantum/qft.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Qubit" href="qubit.html" />
+    <link rel="prev" title="Grover’s Algorithm" href="grover.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../vector/index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mechanics/index.html">Classical Mechanics</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="index.html">Quantum Mechanics</a> &raquo;</li>
+      <li>QFT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/physics/quantum/qft.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.physics.quantum.qft">
+<span id="qft"></span><h1>QFT<a class="headerlink" href="#module-sympy.physics.quantum.qft" title="Permalink to this headline"></a></h1>
+<p>An implementation of qubits and gates acting on them.</p>
+<p>Todo:</p>
+<ul class="simple">
+<li><p>Update docstrings.</p></li>
+<li><p>Update tests.</p></li>
+<li><p>Implement apply using decompose.</p></li>
+<li><p>Implement represent using decompose or something smarter. For this to
+work we first have to implement represent for SWAP.</p></li>
+<li><p>Decide if we want upper index to be inclusive in the constructor.</p></li>
+<li><p>Fix the printing of Rk gates in plotting.</p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.qft.IQFT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.qft.</span></span><span class="sig-name descname"><span class="pre">IQFT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/qft.py#L189-L213"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.qft.IQFT" title="Permalink to this definition"></a></dt>
+<dd><p>The inverse quantum Fourier transform.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.quantum.qft.IQFT.decompose">
+<span class="sig-name descname"><span class="pre">decompose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/qft.py#L195-L206"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.qft.IQFT.decompose" title="Permalink to this definition"></a></dt>
+<dd><p>Decomposes IQFT into elementary gates.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.qft.QFT">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.qft.</span></span><span class="sig-name descname"><span class="pre">QFT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/qft.py#L159-L186"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.qft.QFT" title="Permalink to this definition"></a></dt>
+<dd><p>The forward quantum Fourier transform.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.physics.quantum.qft.QFT.decompose">
+<span class="sig-name descname"><span class="pre">decompose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/qft.py#L165-L176"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.qft.QFT.decompose" title="Permalink to this definition"></a></dt>
+<dd><p>Decomposes QFT into elementary gates.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sympy.physics.quantum.qft.Rk">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.qft.</span></span><span class="sig-name descname"><span class="pre">Rk</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/qft.py#L42-L90"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.qft.Rk" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#sympy.physics.quantum.qft.RkGate" title="sympy.physics.quantum.qft.RkGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.physics.quantum.qft.RkGate</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.qft.RkGate">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.qft.</span></span><span class="sig-name descname"><span class="pre">RkGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/qft.py#L42-L90"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.qft.RkGate" title="Permalink to this definition"></a></dt>
+<dd><p>This is the R_k gate of the QTF.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="grover.html" class="btn btn-neutral float-left" title="Grover’s Algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qubit.html" class="btn btn-neutral float-right" title="Qubit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

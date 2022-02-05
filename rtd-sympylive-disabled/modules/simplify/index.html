@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simplify &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/simplify/index.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Simplify" href="simplify.html" />
+    <link rel="prev" title="Limits of Sequences" href="../series/limitseq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../assumptions/index.html">Assumptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../calculus/index.html">Calculus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../combinatorics/index.html">Combinatorics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../integrals/index.html">Integrals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../series/index.html">Series</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Simplify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solvers/index.html">Solvers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../abc.html">abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../algebras.html">Algebras</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concrete.html">Concrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discrete.html">Discrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../evalf.html">Numerical Evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../numeric-computation.html">Numeric Computation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rewriting.html">Term Rewriting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/basics/index.html">Basics</a> &raquo;</li>
+      <li>Simplify</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/simplify/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="simplify">
+<h1>Simplify<a class="headerlink" href="#simplify" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="simplify.html">Simplify</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#id1">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#separatevars">separatevars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#nthroot">nthroot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#kroneckersimp">kroneckersimp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#besselsimp">besselsimp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#hypersimp">hypersimp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#hypersimilar">hypersimilar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#nsimplify">nsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#posify">posify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#logcombine">logcombine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.radsimp">Radsimp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.ratsimp">Ratsimp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.trigsimp">Trigonometric simplification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.powsimp">Power simplification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.combsimp">Combinatorial simplification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.sqrtdenest">Square Root Denesting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.cse_main">Common Subexpression Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.hyperexpand">Hypergeometric Function Expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplify.html#module-sympy.simplify.epathtools">EPath Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hyperexpand.html">Hypergeometric Expansion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hyperexpand.html#hypergeometric-function-expansion-algorithm">Hypergeometric Function Expansion Algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyperexpand.html#notation">Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyperexpand.html#incrementing-and-decrementing-indices">Incrementing and decrementing indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyperexpand.html#reduction-of-order">Reduction of Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyperexpand.html#moving-around-in-the-parameter-space">Moving Around in the Parameter Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyperexpand.html#applying-the-operators">Applying the Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyperexpand.html#loose-ends">Loose Ends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyperexpand.html#an-example">An example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fu.html">Hongguang Fu’s Trigonometric Simplification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fu.html#rules">Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fu.html#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fu.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../series/limitseq.html" class="btn btn-neutral float-left" title="Limits of Sequences" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="simplify.html" class="btn btn-neutral float-right" title="Simplify" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

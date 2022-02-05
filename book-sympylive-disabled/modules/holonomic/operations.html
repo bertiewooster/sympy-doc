@@ -1,0 +1,2198 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operations on holonomic functions &#8212; SymPy 1.10.dev documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/modules/holonomic/operations.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Converting other representations to holonomic" href="convert.html" />
+    <link rel="prev" title="Representation of holonomic functions in SymPy" href="represent.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/sympylogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorial/index.html">
+   SymPy Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/preliminaries.html">
+     Preliminaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/gotchas.html">
+     Gotchas
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorial/features.html">
+     SymPy Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/basic_operations.html">
+       Basic Operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/printing.html">
+       Printing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/simplification.html">
+       Simplification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/calculus.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/manipulation.html">
+       Advanced Expression Manipulation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../guides/index.html">
+   SymPy Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../guides/getting_started/index.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/getting_started/install.html">
+       Installation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../guides/contributing/index.html">
+     Contributing to SymPy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/dev-setup.html">
+       Development Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/build-docs.html">
+       Build the Documentation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/debug.html">
+       Debugging
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/docstring.html">
+       SymPy Docstrings Style Guide
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/documentation-style-guide.html">
+       General Guidelines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/make-a-contribution.html">
+       Making a Contribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/assumptions.html">
+     Assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/booleans.html">
+     Symbolic and fuzzy booleans
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../explanation/index.html">
+   Explanation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/gotchas.html">
+     Gotchas and Pitfalls
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../explanation/special_topics/index.html">
+     SymPy Special Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/finite_diff_derivatives.html">
+       Finite Difference Approximations to Derivatives
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/classification.html">
+       Classification of SymPy objects
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../reference/index.html">
+   Reference Documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/basics/index.html">
+     Basics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../assumptions/index.html">
+       Assumptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/ask.html">
+         Ask
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/assume.html">
+         Assume
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/refine.html">
+         Refine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/predicates.html">
+         Predicates
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../calculus/index.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../combinatorics/index.html">
+       Combinatorics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/partitions.html">
+         Partitions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/permutations.html">
+         Permutations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/perm_groups.html">
+         Permutation Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/polyhedron.html">
+         Polyhedron
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/prufer.html">
+         Prufer Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/subsets.html">
+         Subsets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/graycode.html">
+         Gray Code
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/named_groups.html">
+         Named Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/util.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/group_constructs.html">
+         Group constructors
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/testutil.html">
+         Test Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/tensor_can.html">
+         Tensor Canonicalization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/fp_groups.html">
+         Finitely Presented Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/pc_groups.html">
+         Polycyclic Groups
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../functions/index.html">
+       Functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/elementary.html">
+         Elementary
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/combinatorial.html">
+         Combinatorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/special.html">
+         Special
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../integrals/index.html">
+       Integrals
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../integrals/g-functions.html">
+         Computing Integrals using Meijer G-Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../integrals/integrals.html">
+         Integrals
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../series/index.html">
+       Series
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/series.html">
+         Series Expansions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/sequences.html">
+         Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/fourier.html">
+         Fourier Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/formal.html">
+         Formal Power Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/limitseq.html">
+         Limits of Sequences
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../simplify/index.html">
+       Simplify
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/simplify.html">
+         Simplify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/hyperexpand.html">
+         Hypergeometric Expansion
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/fu.html">
+         Hongguang Fu’s Trigonometric Simplification
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../solvers/index.html">
+       Solvers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/diophantine.html">
+         Diophantine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/inequalities.html">
+         Inequality Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/ode.html">
+         ODE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/pde.html">
+         PDE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/solvers.html">
+         Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/solveset.html">
+         Solveset
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../abc.html">
+       abc
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algebras.html">
+       Algebras
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concrete.html">
+       Concrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../core.html">
+       Core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../discrete.html">
+       Discrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../evalf.html">
+       Numerical Evaluation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../numeric-computation.html">
+       Numeric Computation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../rewriting.html">
+       Term Rewriting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/codegeneration/index.html">
+     Code Generation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../codegen.html">
+       Introduction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/logic/index.html">
+     Logic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../logic.html">
+       Logic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sets.html">
+       Sets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../matrices/index.html">
+       Matrices
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/matrices.html">
+         Matrices (linear algebra)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/common.html">
+         Common Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/dense.html">
+         Dense Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/sparse.html">
+         Sparse Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/sparsetools.html">
+         Sparse Tools
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/immutablematrices.html">
+         Immutable Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/expressions.html">
+         Matrix Expressions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/normalforms.html">
+         Matrix Normal Forms
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../tensor/index.html">
+       Tensor
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/array.html">
+         N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/indexed.html">
+         Indexed Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/index_methods.html">
+         Methods
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/tensor.html">
+         Tensor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/toperators.html">
+         Tensor Operators
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../vector/index.html">
+       Vector
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/intro.html">
+         Introduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/basics.html">
+         Basic Implementation details
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/coordsys.html">
+         More about Coordinate Systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/examples.html">
+         General examples of usage
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/vector_integration.html">
+         Applications of Vector Integrals
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/classes.html">
+         Essential Classes in sympy.vector (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/orienterclasses.html">
+         Orienter classes (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/vectorfunctions.html">
+         Essential Functions in sympy.vector (docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/numbertheory/index.html">
+     Number Theory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ntheory.html">
+       Ntheory Class Reference
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/physics/index.html">
+     Physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/hydrogen.html">
+       Hydrogen Wavefunctions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/paulialgebra.html">
+       Pauli Algebra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/qho_1d.html">
+       Quantum Harmonic Oscillator in 1-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/sho.html">
+       Quantum Harmonic Oscillator in 3-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/secondquant.html">
+       Second Quantization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/wigner.html">
+       Wigner Symbols
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/units/index.html">
+       Unit systems
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/philosophy.html">
+         Philosophy behind unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/dimensions.html">
+         Dimensions and dimension systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/prefixes.html">
+         Unit prefixes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/unitsystem.html">
+         Units and unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/quantities.html">
+         Physical quantities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/hep/index.html">
+       High energy physics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="simple">
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/vector/index.html">
+       The Physics Vector Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/vectors.html">
+         Vector &amp; ReferenceFrame
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/kinematics.html">
+         Vector: Kinematics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/classes.html">
+         Essential Classes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/kinematics.html">
+         Kinematics (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/functions.html">
+         Essential Functions (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/fieldfunctions.html">
+         Docstrings for basic field functions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/mechanics/index.html">
+       Classical Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/masses.html">
+         Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/kane.html">
+         Kane’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/lagrange.html">
+         Lagrange’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/symsystem.html">
+         Symbolic Systems in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/linearize.html">
+         Linearization in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples.html">
+         Examples for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/reference.html">
+         References for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/autolev_parser.html">
+         Autolev Parser
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/sympy_mechanics_for_autolev_users.html">
+         SymPy Mechanics for Autolev Users
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/part_bod.html">
+         Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/kane_lagrange.html">
+         Kane’s Method &amp; Lagrange’s Method (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/system.html">
+         SymbolicSystem (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/linearize.html">
+         Linearization (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/expr_manip.html">
+         Expression Manipulation (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/body.html">
+         Body (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/joint.html">
+         Joint (Docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/quantum/index.html">
+       Quantum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/anticommutator.html">
+         Anticommutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/cg.html">
+         Clebsch-Gordan Coefficients
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/commutator.html">
+         Commutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/constants.html">
+         Constants
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/dagger.html">
+         Dagger
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/innerproduct.html">
+         Inner Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/tensorproduct.html">
+         Tensor Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/cartesian.html">
+         Cartesian Operators and States
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/hilbert.html">
+         Hilbert Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/operator.html">
+         Operator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/operatorset.html">
+         Operator/State Helper Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qapply.html">
+         Qapply
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/represent.html">
+         Represent
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/spin.html">
+         Spin
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/state.html">
+         State
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/circuitplot.html">
+         Circuit Plot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/gate.html">
+         Gates
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/grover.html">
+         Grover’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qft.html">
+         QFT
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qubit.html">
+         Qubit
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/shor.html">
+         Shor’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/piab.html">
+         Particle in a Box
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/optics/index.html">
+       Optics Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/gaussopt.html">
+         Gaussian Optics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/medium.html">
+         Medium
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/polarization.html">
+         Polarization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/utils.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/waves.html">
+         Waves
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/control/index.html">
+       Control Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/control.html">
+         Control
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/lti.html">
+         Control API
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/control_plots.html">
+         Control System Plots
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/continuum_mechanics/index.html">
+       Continuum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/continuum_mechanics/beam.html">
+         Beam (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/continuum_mechanics/beam_problems.html">
+         Solving Beam Bending Problems using Singularity Functions
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/utilities/index.html">
+     Utilities
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../testing/index.html">
+       Testing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/pytest.html">
+         pytest
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/randtest.html">
+         Randomised Testing
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/runtests.html">
+         Run Tests
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../utilities/index.html">
+       Utilities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/autowrap.html">
+         Autowrap Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/codegen.html">
+         Codegen
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/decorator.html">
+         Decorator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/enumerative.html">
+         Enumerative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/iterables.html">
+         Iterables
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/lambdify.html">
+         Lambdify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/memoization.html">
+         Memoization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/misc.html">
+         Miscellaneous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/pkgdata.html">
+         PKGDATA
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/source.html">
+         Source Code Inspection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/timeutils.html">
+         Timing Utilities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../interactive.html">
+       Interactive
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../parsing.html">
+       Parsing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../printing.html">
+       Printing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../reference/public/topics/index.html">
+     Topics
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../geometry/index.html">
+       Geometry
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/entities.html">
+         Entities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/utils.html">
+         Utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/points.html">
+         Points
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/lines.html">
+         Lines
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/curves.html">
+         Curves
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/ellipses.html">
+         Ellipses
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/polygons.html">
+         Polygons
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/plane.html">
+         Plane
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="index.html">
+       Holonomic
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="about.html">
+         About Holonomic Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="represent.html">
+         Representation of holonomic functions in SymPy
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Operations on holonomic functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="convert.html">
+         Converting other representations to holonomic
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="uses.html">
+         Uses and Current limitations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="internal.html">
+         Internal API
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../liealgebras/index.html">
+       Lie Algebra
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../polys/index.html">
+       Polynomial Manipulation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/basics.html">
+         Basic functionality of the module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/wester.html">
+         Examples from Wester’s Article
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/reference.html">
+         Polynomials Manipulation Module Reference
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/agca.html">
+         AGCA - Algebraic Geometry and Commutative Algebra Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainsintro.html">
+         Introducing the Domains of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainsref.html">
+         Reference docs for the Poly Domains
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/internals.html">
+         Internals of the Polynomial Manipulation Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/ringseries.html">
+         Series Manipulation using Polynomials
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/literature.html">
+         Literature
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/solvers.html">
+         Poly solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainmatrix.html">
+         Introducing the domainmatrix of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/numberfields.html">
+         Number Fields
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../categories.html">
+       Category Theory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../crypto.html">
+       Cryptography
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../diffgeom.html">
+       Differential Geometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../plotting.html">
+       Plotting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../stats.html">
+       Stats
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../miscellaneous/index.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+  <label for="toctree-checkbox-40">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aboutus.html">
+     About
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../citing.html">
+     Citing SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../wiki.html">
+     Wiki
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../outreach.html">
+     SymPy Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/holonomic/operations.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#addition-and-multiplication">
+   Addition and Multiplication
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration-and-differentiation">
+   Integration and Differentiation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composition-with-polynomials">
+   Composition with polynomials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-to-holonomic-sequence">
+   Convert to holonomic sequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-expansion">
+   Series expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-evaluation">
+   Numerical evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-to-a-linear-combination-of-hypergeometric-functions">
+   Convert to a linear combination of hypergeometric functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-to-a-linear-combination-of-meijer-g-functions">
+   Convert to a linear combination of Meijer G-functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-to-expressions">
+   Convert to expressions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Operations on holonomic functions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#addition-and-multiplication">
+   Addition and Multiplication
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration-and-differentiation">
+   Integration and Differentiation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composition-with-polynomials">
+   Composition with polynomials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-to-holonomic-sequence">
+   Convert to holonomic sequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-expansion">
+   Series expansion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-evaluation">
+   Numerical evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-to-a-linear-combination-of-hypergeometric-functions">
+   Convert to a linear combination of hypergeometric functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-to-a-linear-combination-of-meijer-g-functions">
+   Convert to a linear combination of Meijer G-functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-to-expressions">
+   Convert to expressions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="operations-on-holonomic-functions">
+<h1>Operations on holonomic functions<a class="headerlink" href="#operations-on-holonomic-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="addition-and-multiplication">
+<h2>Addition and Multiplication<a class="headerlink" href="#addition-and-multiplication" title="Permalink to this headline">¶</a></h2>
+<p>Two holonomic functions can be added or multiplied with the result also
+a holonomic functions.</p>
+<blockquote>
+<div><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">p</span></code> and <code class="docutils literal notranslate"><span class="pre">q</span></code> here are holonomic representation of <span class="math notranslate nohighlight">\(e^x\)</span> and
+<span class="math notranslate nohighlight">\(\sin(x)\)</span> respectively.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Holonomic representation of <span class="math notranslate nohighlight">\(e^x+\sin(x)\)</span></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">+</span> <span class="n">q</span>
+<span class="go">HolonomicFunction((-1) + (1)*Dx + (-1)*Dx**2 + (1)*Dx**3, x, 0, [1, 2, 1])</span>
+</pre></div>
+</div>
+<p>Holonomic representation of <span class="math notranslate nohighlight">\(e^x \cdot \sin(x)\)</span></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+<span class="go">HolonomicFunction((2) + (-2)*Dx + (1)*Dx**2, x, 0, [0, 1])</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="integration-and-differentiation">
+<h2>Integration and Differentiation<a class="headerlink" href="#integration-and-differentiation" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.integrate">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">integrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initcond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L726-L851"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.integrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrates the given holonomic function.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>  <span class="c1"># e^x - 1</span>
+<span class="go">HolonomicFunction((-1)*Dx + (1)*Dx**2, x, 0, [0, 1])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="go">HolonomicFunction((1)*Dx + (1)*Dx**3, x, 0, [0, 1, 0])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.diff">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L853-L928"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Differentiation of the given Holonomic function.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">ZZ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+<span class="go">cos(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+<span class="go">2*exp(2*x)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.holonomic.holonomic.HolonomicFunction.integrate" title="sympy.holonomic.holonomic.HolonomicFunction.integrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integrate</span></code></a></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="composition-with-polynomials">
+<h2>Composition with polynomials<a class="headerlink" href="#composition-with-polynomials" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.composition">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">composition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L1182-L1244"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.composition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns function after composition of a holonomic
+function with an algebraic function. The method cannot compute
+initial conditions for the result by itself, so they can be also be
+provided.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">composition</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># e^(x**2)</span>
+<span class="go">HolonomicFunction((-2*x) + (1)*Dx, x, 0, [1])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">composition</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">HolonomicFunction((4*x**3) + (-1)*Dx + (x)*Dx**2, x, 1, [1, 0])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="convert.html#sympy.holonomic.holonomic.from_hyper" title="sympy.holonomic.holonomic.from_hyper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_hyper</span></code></a></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="convert-to-holonomic-sequence">
+<h2>Convert to holonomic sequence<a class="headerlink" href="#convert-to-holonomic-sequence" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.to_sequence">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L1246-L1437"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds recurrence relation for the coefficients in the series expansion
+of the function about <span class="math notranslate nohighlight">\(x_0\)</span>, where <span class="math notranslate nohighlight">\(x_0\)</span> is the point at
+which the initial condition is stored.</p>
+<p class="rubric">Explanation</p>
+<p>If the point <span class="math notranslate nohighlight">\(x_0\)</span> is ordinary, solution of the form <span class="math notranslate nohighlight">\([(R, n_0)]\)</span>
+is returned. Where <span class="math notranslate nohighlight">\(R\)</span> is the recurrence relation and <span class="math notranslate nohighlight">\(n_0\)</span> is the
+smallest <code class="docutils literal notranslate"><span class="pre">n</span></code> for which the recurrence holds true.</p>
+<p>If the point <span class="math notranslate nohighlight">\(x_0\)</span> is regular singular, a list of solutions in
+the format <span class="math notranslate nohighlight">\((R, p, n_0)\)</span> is returned, i.e. <span class="math notranslate nohighlight">\([(R, p, n_0), ... ]\)</span>.
+Each tuple in this vector represents a recurrence relation <span class="math notranslate nohighlight">\(R\)</span>
+associated with a root of the indicial equation <code class="docutils literal notranslate"><span class="pre">p</span></code>. Conditions of
+a different format can also be provided in this case, see the
+docstring of HolonomicFunction class.</p>
+<p>If it’s not possible to numerically compute a initial condition,
+it is returned as a symbol <span class="math notranslate nohighlight">\(C_j\)</span>, denoting the coefficient of
+<span class="math notranslate nohighlight">\((x - x_0)^j\)</span> in the power series about <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">S</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_sequence</span><span class="p">()</span>
+<span class="go">[(HolonomicSequence((-1) + (n + 1)Sn, n), u(0) = 1, 0)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">Dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Dx</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_sequence</span><span class="p">()</span>
+<span class="go">[(HolonomicSequence((n**2) + (n**2 + n)Sn, n), u(0) = 0, u(1) = 1, u(2) = -1/2, 2)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="o">-</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">Dx</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">{</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">]})</span><span class="o">.</span><span class="n">to_sequence</span><span class="p">()</span>
+<span class="go">[(HolonomicSequence((n), n), u(0) = 1, 1/2, 1)]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.holonomic.holonomic.HolonomicFunction.series" title="sympy.holonomic.holonomic.HolonomicFunction.series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HolonomicFunction.series</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r516"><span class="brackets"><a class="fn-backref" href="#id1">R516</a></span></dt>
+<dd><p><a class="reference external" href="https://hal.inria.fr/inria-00070025/document">https://hal.inria.fr/inria-00070025/document</a></p>
+</dd>
+<dt class="label" id="r517"><span class="brackets"><a class="fn-backref" href="#id2">R517</a></span></dt>
+<dd><p><a class="reference external" href="http://www.risc.jku.at/publications/download/risc_2244/DIPLFORM.pdf">http://www.risc.jku.at/publications/download/risc_2244/DIPLFORM.pdf</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="series-expansion">
+<h2>Series expansion<a class="headerlink" href="#series-expansion" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.series">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_recur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L1653-L1743"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the power series expansion of given holonomic function about <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<p class="rubric">Explanation</p>
+<p>A list of series might be returned if <span class="math notranslate nohighlight">\(x_0\)</span> is a regular point with
+multiple roots of the indicial equation.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">series</span><span class="p">()</span>  <span class="c1"># e^x</span>
+<span class="go">1 + x + x**2/2 + x**3/6 + x**4/24 + x**5/120 + O(x**6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># sin(x)</span>
+<span class="go">x - x**3/6 + x**5/120 - x**7/5040 + O(x**8)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.holonomic.holonomic.HolonomicFunction.to_sequence" title="sympy.holonomic.holonomic.HolonomicFunction.to_sequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HolonomicFunction.to_sequence</span></code></a></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="numerical-evaluation">
+<h2>Numerical evaluation<a class="headerlink" href="#numerical-evaluation" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.evalf">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">evalf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RK4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivatives</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L1785-L1858"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.evalf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds numerical value of a holonomic function using numerical methods.
+(RK4 by default). A set of points (real or complex) must be provided
+which will be the path for the numerical integration.</p>
+<p class="rubric">Explanation</p>
+<p>The path should be given as a list <span class="math notranslate nohighlight">\([x_1, x_2, \dots x_n]\)</span>. The numerical
+values will be computed at each point in this order
+<span class="math notranslate nohighlight">\(x_1 \rightarrow x_2 \rightarrow x_3 \dots \rightarrow x_n\)</span>.</p>
+<p>Returns values of the function at <span class="math notranslate nohighlight">\(x_1, x_2, \dots x_n\)</span> in a list.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A straight line on the real axis from (0 to 1)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Runge-Kutta 4th order on e^x from 0.1 to 1.
+Exact solution at 1 is 2.71828182845905</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="go">[1.10517083333333, 1.22140257085069, 1.34985849706254, 1.49182424008069,</span>
+<span class="go">1.64872063859684, 1.82211796209193, 2.01375162659678, 2.22553956329232,</span>
+<span class="go">2.45960141378007, 2.71827974413517]</span>
+</pre></div>
+</div>
+<p>Euler’s method for the same</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Euler&#39;</span><span class="p">)</span>
+<span class="go">[1.1, 1.21, 1.331, 1.4641, 1.61051, 1.771561, 1.9487171, 2.14358881,</span>
+<span class="go">2.357947691, 2.5937424601]</span>
+</pre></div>
+</div>
+<p>One can also observe that the value obtained using Runge-Kutta 4th order
+is much more accurate than Euler’s method.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="convert-to-a-linear-combination-of-hypergeometric-functions">
+<h2>Convert to a linear combination of hypergeometric functions<a class="headerlink" href="#convert-to-a-linear-combination-of-hypergeometric-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.to_hyper">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_recur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L1891-L2072"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_hyper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a hypergeometric function (or linear combination of them)
+representing the given holonomic function.</p>
+<p class="rubric">Explanation</p>
+<p>Returns an answer of the form:
+<span class="math notranslate nohighlight">\(a_1 \cdot x^{b_1} \cdot{hyper()} + a_2 \cdot x^{b_2} \cdot{hyper()} \dots\)</span></p>
+<p>This is very useful as one can now use <code class="docutils literal notranslate"><span class="pre">hyperexpand</span></code> to find the
+symbolic expressions/functions.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">ZZ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># sin(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_hyper</span><span class="p">()</span>
+<span class="go">x*hyper((), (3/2,), -x**2/4)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># exp(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">Dx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_hyper</span><span class="p">()</span>
+<span class="go">hyper((), (), x)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="convert.html#sympy.holonomic.holonomic.from_hyper" title="sympy.holonomic.holonomic.from_hyper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_hyper</span></code></a>, <a class="reference internal" href="convert.html#sympy.holonomic.holonomic.from_meijerg" title="sympy.holonomic.holonomic.from_meijerg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_meijerg</span></code></a></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="convert-to-a-linear-combination-of-meijer-g-functions">
+<h2>Convert to a linear combination of Meijer G-functions<a class="headerlink" href="#convert-to-a-linear-combination-of-meijer-g-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.to_meijerg">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_meijerg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L2130-L2162"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_meijerg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a linear combination of Meijer G-functions.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic</span> <span class="kn">import</span> <span class="n">expr_to_holonomic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">hyperexpand</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hyperexpand</span><span class="p">(</span><span class="n">expr_to_holonomic</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">to_meijerg</span><span class="p">())</span>
+<span class="go">sin(x) + cos(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hyperexpand</span><span class="p">(</span><span class="n">expr_to_holonomic</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">to_meijerg</span><span class="p">())</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
+<span class="go">log(x)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.holonomic.holonomic.HolonomicFunction.to_hyper" title="sympy.holonomic.holonomic.HolonomicFunction.to_hyper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hyper</span></code></a></p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="convert-to-expressions">
+<h2>Convert to expressions<a class="headerlink" href="#convert-to-expressions" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.to_expr">
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_expr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L2074-L2093"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_expr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a Holonomic Function back to elementary functions.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">S</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">ZZ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">Dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">Dx</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+<span class="go">besselj(1, x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HolonomicFunction</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">Dx</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">Dx</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">to_expr</span><span class="p">()</span>
+<span class="go">x*log(x + 1) + log(x + 1) + 1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="represent.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Representation of holonomic functions in SymPy</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="convert.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Converting other representations to holonomic</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+        &copy; Copyright 2022 SymPy Development Team.<br/>
+      Last updated on Jan 17, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

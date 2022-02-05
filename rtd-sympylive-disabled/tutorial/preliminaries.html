@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preliminaries &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/tutorial/preliminaries.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="intro.html" />
+    <link rel="prev" title="SymPy Tutorial" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> SymPy
+            <img src="../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">SymPy Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Preliminaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gotchas.html">Gotchas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html">SymPy Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">SymPy Tutorial</a> &raquo;</li>
+      <li>Preliminaries</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorial/preliminaries.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="preliminaries">
+<h1>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline"></a></h1>
+<p>This tutorial assumes that the reader already knows the basics of the Python programming
+language.  If you do not, the <a class="reference external" href="http://docs.python.org/3/tutorial/index.html">official Python
+tutorial</a> is excellent.</p>
+<p>This tutorial assumes a decent mathematical background.  Most examples require
+knowledge lower than a calculus level, and some require knowledge at a
+calculus level.  Some of the advanced features require more than this. If you
+come across a section that uses some mathematical function you are not
+familiar with, you can probably skip over it, or replace it with a similar one
+that you are more familiar with.  Or look up the function on Wikipedia and
+learn something new.  Some important mathematical concepts that are not common
+knowledge will be introduced as necessary.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<aside class="sidebar">
+<p class="sidebar-title">Quick Tip</p>
+<p>You do not need to install SymPy to try it.  You can use the online shell
+at <a class="reference external" href="http://live.sympy.org">http://live.sympy.org</a>, or the shell at the bottom right of this
+documentation page.</p>
+</aside>
+<p>You will need to install SymPy first.  See the <a class="reference internal" href="../guides/getting_started/install.html#installation"><span class="std std-ref">installation guide</span></a>.</p>
+<p><em>Alternately, you can just use the SymPy Live Sphinx extension to run the code
+blocks in the browser.  For example, click on the green “Run code block in
+SymPy Live” button below</em></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Integral</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Eq</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">doit</span><span class="p">())</span>
+<span class="go">Eq(Integral(exp(x)*cos(x), x), exp(x)*sin(x)/2 + exp(x)*cos(x)/2)</span>
+</pre></div>
+</div>
+<p><em>The SymPy Live shell in the bottom corner will pop up and evaluate the code
+block. You can also click any individual line to evaluate it one at a time.</em></p>
+<p><em>The SymPy Live shell is a fully interactive Python shell. You can type any
+expression in the input box to evaluate it.  Feel free to use it throughout
+the tutorial to experiment.</em></p>
+<p><em>To show or hide the SymPy Live shell at any time, just click the green button
+on the bottom right of the screen.</em></p>
+<p><em>By default, the SymPy Live shell uses `mathrm{LaTeX}` for output.  If you want the
+output to look more like the output in the documentation, change the
+output format to ``Str`` or ``Unicode`` in the settings.</em></p>
+<p><em>If you wish to modify an example before evaluating it, change the evaluation
+mode to “copy” in the SymPy Live settings.  This will cause clicking on an
+example to copy the example to the SymPy Live shell, but not evaluate it,
+allowing you to change it before execution.  You can also use the up/down
+arrow keys on your keyboard in the input box to move through the shell
+history.</em></p>
+<p>The SymPy Live shell is also available at <a class="reference external" href="http://live.sympy.org">http://live.sympy.org</a>, with extra
+features, like a mobile phone enhanced version and saved history.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h2>
+<p>This tutorial was the basis for a tutorial given at the 2013 SciPy conference
+in Austin, TX.  The website for that tutorial is <a class="reference external" href="http://certik.github.io/scipy-2013-tutorial/html/index.html">here</a>. It has links
+to videos, materials, and IPython notebook exercises.  The IPython notebook
+exercises in particular are recommended to anyone going through this tutorial.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="SymPy Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

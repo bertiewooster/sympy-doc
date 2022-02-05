@@ -1,0 +1,1875 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Orienter classes (docstrings) &#8212; SymPy 1.10.dev documentation</title>
+    
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/modules/vector/api/orienterclasses.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Essential Functions in sympy.vector (docstrings)" href="vectorfunctions.html" />
+    <link rel="prev" title="Essential Classes in sympy.vector (docstrings)" href="classes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/sympylogo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../tutorial/index.html">
+  SymPy Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../guides/index.html">
+  SymPy Guides
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../explanation/index.html">
+  Explanation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Documentation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../miscellaneous/index.html">
+  Miscellaneous
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/basics/index.html">
+   Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../assumptions/index.html">
+     Assumptions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../assumptions/ask.html">
+       Ask
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../assumptions/assume.html">
+       Assume
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../assumptions/refine.html">
+       Refine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../assumptions/predicates.html">
+       Predicates
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../calculus/index.html">
+     Calculus
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../combinatorics/index.html">
+     Combinatorics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/partitions.html">
+       Partitions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/permutations.html">
+       Permutations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/perm_groups.html">
+       Permutation Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/polyhedron.html">
+       Polyhedron
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/prufer.html">
+       Prufer Sequences
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/subsets.html">
+       Subsets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/graycode.html">
+       Gray Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/named_groups.html">
+       Named Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/util.html">
+       Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/group_constructs.html">
+       Group constructors
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/testutil.html">
+       Test Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/tensor_can.html">
+       Tensor Canonicalization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/fp_groups.html">
+       Finitely Presented Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/pc_groups.html">
+       Polycyclic Groups
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../functions/index.html">
+     Functions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/elementary.html">
+       Elementary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/combinatorial.html">
+       Combinatorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/special.html">
+       Special
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../integrals/index.html">
+     Integrals
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../integrals/g-functions.html">
+       Computing Integrals using Meijer G-Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../integrals/integrals.html">
+       Integrals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../series/index.html">
+     Series
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/series.html">
+       Series Expansions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/sequences.html">
+       Sequences
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/fourier.html">
+       Fourier Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/formal.html">
+       Formal Power Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/limitseq.html">
+       Limits of Sequences
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../simplify/index.html">
+     Simplify
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../simplify/simplify.html">
+       Simplify
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../simplify/hyperexpand.html">
+       Hypergeometric Expansion
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../simplify/fu.html">
+       Hongguang Fu’s Trigonometric Simplification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../solvers/index.html">
+     Solvers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/diophantine.html">
+       Diophantine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/inequalities.html">
+       Inequality Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/ode.html">
+       ODE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/pde.html">
+       PDE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/solveset.html">
+       Solveset
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../abc.html">
+     abc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../algebras.html">
+     Algebras
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../concrete.html">
+     Concrete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core.html">
+     Core
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../discrete.html">
+     Discrete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../evalf.html">
+     Numerical Evaluation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../numeric-computation.html">
+     Numeric Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../rewriting.html">
+     Term Rewriting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/codegeneration/index.html">
+   Code Generation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../codegen.html">
+     Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/logic/index.html">
+   Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../logic.html">
+     Logic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sets.html">
+     Sets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../../reference/public/matrices/index.html">
+   Matrices
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/matrices.html">
+       Matrices (linear algebra)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/common.html">
+       Common Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/dense.html">
+       Dense Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/sparse.html">
+       Sparse Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/sparsetools.html">
+       Sparse Tools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/immutablematrices.html">
+       Immutable Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/expressions.html">
+       Matrix Expressions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/normalforms.html">
+       Matrix Normal Forms
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tensor/index.html">
+     Tensor
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/array.html">
+       N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/indexed.html">
+       Indexed Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/index_methods.html">
+       Methods
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/tensor.html">
+       Tensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/toperators.html">
+       Tensor Operators
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../index.html">
+     Vector
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../intro.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics.html">
+       Basic Implementation details
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../coordsys.html">
+       More about Coordinate Systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../fields.html">
+       Scalar and Vector Field Functionality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../examples.html">
+       General examples of usage
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector_integration.html">
+       Applications of Vector Integrals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="classes.html">
+       Essential Classes in sympy.vector (docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Orienter classes (docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="vectorfunctions.html">
+       Essential Functions in sympy.vector (docstrings)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/numbertheory/index.html">
+   Number Theory
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ntheory.html">
+     Ntheory Class Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/physics/index.html">
+   Physics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../physics/hydrogen.html">
+     Hydrogen Wavefunctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../physics/matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../physics/paulialgebra.html">
+     Pauli Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../physics/qho_1d.html">
+     Quantum Harmonic Oscillator in 1-D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../physics/sho.html">
+     Quantum Harmonic Oscillator in 3-D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../physics/secondquant.html">
+     Second Quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../physics/wigner.html">
+     Wigner Symbols
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../physics/units/index.html">
+     Unit systems
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/units/philosophy.html">
+       Philosophy behind unit systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/units/examples.html">
+       Examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/units/dimensions.html">
+       Dimensions and dimension systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/units/prefixes.html">
+       Unit prefixes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/units/unitsystem.html">
+       Units and unit systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/units/quantities.html">
+       Physical quantities
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../physics/hep/index.html">
+     High energy physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../physics/vector/index.html">
+     The Physics Vector Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/vectors.html">
+       Vector &amp; ReferenceFrame
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/kinematics.html">
+       Vector: Kinematics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/advanced.html">
+       Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/fields.html">
+       Scalar and Vector Field Functionality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/api/classes.html">
+       Essential Classes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/api/kinematics.html">
+       Kinematics (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/api/printing.html">
+       Printing (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/api/functions.html">
+       Essential Functions (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/vector/api/fieldfunctions.html">
+       Docstrings for basic field functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../physics/mechanics/index.html">
+     Classical Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/masses.html">
+       Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/kane.html">
+       Kane’s Method in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/lagrange.html">
+       Lagrange’s Method in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/symsystem.html">
+       Symbolic Systems in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../physics/mechanics/linearize.html">
+       Linearization in Physics/Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../physics/mechanics/examples/lin_pend_nonmin_example.html">
+         Nonminimal Coordinates Pendulum
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../physics/mechanics/examples.html">
+       Examples for Physics/Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../physics/mechanics/examples/rollingdisc_example.html">
+         A rolling disc
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../physics/mechanics/examples/bicycle_example.html">
+         A bicycle
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../physics/mechanics/examples/lin_pend_nonmin_example.html">
+         Nonminimal Coordinates Pendulum
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../physics/mechanics/examples/multi_degree_freedom_holonomic_system.html">
+         Multi Degree of Freedom Holonomic System
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/advanced.html">
+       Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/reference.html">
+       References for Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/autolev_parser.html">
+       Autolev Parser
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/sympy_mechanics_for_autolev_users.html">
+       SymPy Mechanics for Autolev Users
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/api/part_bod.html">
+       Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/api/kane_lagrange.html">
+       Kane’s Method &amp; Lagrange’s Method (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/api/system.html">
+       SymbolicSystem (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/api/linearize.html">
+       Linearization (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/api/expr_manip.html">
+       Expression Manipulation (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/api/printing.html">
+       Printing (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/api/body.html">
+       Body (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/mechanics/api/joint.html">
+       Joint (Docstrings)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../physics/quantum/index.html">
+     Quantum Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/anticommutator.html">
+       Anticommutator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/cg.html">
+       Clebsch-Gordan Coefficients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/commutator.html">
+       Commutator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/constants.html">
+       Constants
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/dagger.html">
+       Dagger
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/innerproduct.html">
+       Inner Product
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/tensorproduct.html">
+       Tensor Product
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/cartesian.html">
+       Cartesian Operators and States
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/hilbert.html">
+       Hilbert Space
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/operator.html">
+       Operator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/operatorset.html">
+       Operator/State Helper Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/qapply.html">
+       Qapply
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/represent.html">
+       Represent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/spin.html">
+       Spin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/state.html">
+       State
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/circuitplot.html">
+       Circuit Plot
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/gate.html">
+       Gates
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/grover.html">
+       Grover’s Algorithm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/qft.html">
+       QFT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/qubit.html">
+       Qubit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/shor.html">
+       Shor’s Algorithm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/quantum/piab.html">
+       Particle in a Box
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../physics/optics/index.html">
+     Optics Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/optics/gaussopt.html">
+       Gaussian Optics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/optics/medium.html">
+       Medium
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/optics/polarization.html">
+       Polarization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/optics/utils.html">
+       Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/optics/waves.html">
+       Waves
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../physics/control/index.html">
+     Control Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/control/control.html">
+       Control
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/control/lti.html">
+       Control API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/control/control_plots.html">
+       Control System Plots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../physics/continuum_mechanics/index.html">
+     Continuum Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/continuum_mechanics/beam.html">
+       Beam (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../physics/continuum_mechanics/beam_problems.html">
+       Solving Beam Bending Problems using Singularity Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/utilities/index.html">
+   Utilities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+  <label for="toctree-checkbox-27">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../testing/index.html">
+     Testing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../testing/pytest.html">
+       pytest
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../testing/randtest.html">
+       Randomised Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../testing/runtests.html">
+       Run Tests
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../utilities/index.html">
+     Utilities
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/autowrap.html">
+       Autowrap Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/codegen.html">
+       Codegen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/decorator.html">
+       Decorator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/enumerative.html">
+       Enumerative
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/iterables.html">
+       Iterables
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/lambdify.html">
+       Lambdify
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/memoization.html">
+       Memoization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/misc.html">
+       Miscellaneous
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/pkgdata.html">
+       PKGDATA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/source.html">
+       Source Code Inspection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/timeutils.html">
+       Timing Utilities
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interactive.html">
+     Interactive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parsing.html">
+     Parsing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../printing.html">
+     Printing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/topics/index.html">
+   Topics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label for="toctree-checkbox-30">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../geometry/index.html">
+     Geometry
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/entities.html">
+       Entities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/utils.html">
+       Utils
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/points.html">
+       Points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/lines.html">
+       Lines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/curves.html">
+       Curves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/ellipses.html">
+       Ellipses
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/polygons.html">
+       Polygons
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/plane.html">
+       Plane
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../holonomic/index.html">
+     Holonomic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/about.html">
+       About Holonomic Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/represent.html">
+       Representation of holonomic functions in SymPy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/operations.html">
+       Operations on holonomic functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/convert.html">
+       Converting other representations to holonomic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/uses.html">
+       Uses and Current limitations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/internal.html">
+       Internal API
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../liealgebras/index.html">
+     Lie Algebra
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../polys/index.html">
+     Polynomial Manipulation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/basics.html">
+       Basic functionality of the module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/wester.html">
+       Examples from Wester’s Article
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/reference.html">
+       Polynomials Manipulation Module Reference
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/agca.html">
+       AGCA - Algebraic Geometry and Commutative Algebra Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/domainsintro.html">
+       Introducing the Domains of the poly module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/domainsref.html">
+       Reference docs for the Poly Domains
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/internals.html">
+       Internals of the Polynomial Manipulation Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/ringseries.html">
+       Series Manipulation using Polynomials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/literature.html">
+       Literature
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/solvers.html">
+       Poly solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/domainmatrix.html">
+       Introducing the domainmatrix of the poly module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/numberfields.html">
+       Number Fields
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../categories.html">
+     Category Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../crypto.html">
+     Cryptography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../diffgeom.html">
+     Differential Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stats.html">
+     Stats
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#orienter">
+   Orienter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#axisorienter">
+   AxisOrienter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bodyorienter">
+   BodyOrienter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spaceorienter">
+   SpaceOrienter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quaternionorienter">
+   QuaternionOrienter
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="orienter-classes-docstrings">
+<h1>Orienter classes (docstrings)<a class="headerlink" href="#orienter-classes-docstrings" title="Permalink to this headline">¶</a></h1>
+<section id="orienter">
+<h2>Orienter<a class="headerlink" href="#orienter" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.vector.orienters.Orienter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.vector.orienters.</span></span><span class="sig-name descname"><span class="pre">Orienter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L11-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.Orienter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Super-class for all orienter classes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.vector.orienters.Orienter.rotation_matrix">
+<span class="sig-name descname"><span class="pre">rotation_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L16-L21"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.Orienter.rotation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rotation matrix corresponding to this orienter
+instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="axisorienter">
+<h2>AxisOrienter<a class="headerlink" href="#axisorienter" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.vector.orienters.AxisOrienter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.vector.orienters.</span></span><span class="sig-name descname"><span class="pre">AxisOrienter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L24-L101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.AxisOrienter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to denote an axis orienter.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.vector.orienters.AxisOrienter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L40-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.AxisOrienter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Axis rotation is a rotation about an arbitrary axis by
+some angle. The angle is supplied as a SymPy expr scalar, and
+the axis is supplied as a Vector.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle</strong> : Expr</p>
+<blockquote>
+<div><p>The angle by which the new system is to be rotated</p>
+</div></blockquote>
+<p><strong>axis</strong> : Vector</p>
+<blockquote>
+<div><p>The axis around which the rotation has to be performed</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.vector</span> <span class="kn">import</span> <span class="n">CoordSys3D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">CoordSys3D</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.vector</span> <span class="kn">import</span> <span class="n">AxisOrienter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">orienter</span> <span class="o">=</span> <span class="n">AxisOrienter</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">N</span><span class="o">.</span><span class="n">j</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">orienter</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.vector.orienters.AxisOrienter.rotation_matrix">
+<span class="sig-name descname"><span class="pre">rotation_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L70-L93"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.AxisOrienter.rotation_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rotation matrix corresponding to this orienter
+instance.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>system</strong> : CoordSys3D</p>
+<blockquote>
+<div><p>The coordinate system wrt which the rotation matrix
+is to be computed</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="bodyorienter">
+<h2>BodyOrienter<a class="headerlink" href="#bodyorienter" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.vector.orienters.BodyOrienter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.vector.orienters.</span></span><span class="sig-name descname"><span class="pre">BodyOrienter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_order</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L169-L236"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.BodyOrienter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to denote a body-orienter.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.vector.orienters.BodyOrienter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_order</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L181-L236"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.BodyOrienter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Body orientation takes this coordinate system through three
+successive simple rotations.</p>
+<p>Body fixed rotations include both Euler Angles and
+Tait-Bryan Angles, see <a class="reference external" href="https://en.wikipedia.org/wiki/Euler_angles">https://en.wikipedia.org/wiki/Euler_angles</a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle1, angle2, angle3</strong> : Expr</p>
+<blockquote>
+<div><p>Three successive angles to rotate the coordinate system by</p>
+</div></blockquote>
+<p><strong>rotation_order</strong> : string</p>
+<blockquote>
+<div><p>String defining the order of axes for rotation</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.vector</span> <span class="kn">import</span> <span class="n">CoordSys3D</span><span class="p">,</span> <span class="n">BodyOrienter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q1 q2 q3&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">CoordSys3D</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A ‘Body’ fixed rotation is described by three angles and
+three body-fixed rotation axes. To orient a coordinate system D
+with respect to N, each sequential rotation is always about
+the orthogonal unit vectors fixed to D. For example, a ‘123’
+rotation will specify rotations about N.i, then D.j, then
+D.k. (Initially, D.i is same as N.i)
+Therefore,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body_orienter</span> <span class="o">=</span> <span class="n">BodyOrienter</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">body_orienter</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+<p>is same as</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.vector</span> <span class="kn">import</span> <span class="n">AxisOrienter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axis_orienter1</span> <span class="o">=</span> <span class="n">AxisOrienter</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">axis_orienter1</span><span class="p">,</span> <span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axis_orienter2</span> <span class="o">=</span> <span class="n">AxisOrienter</span><span class="p">(</span><span class="n">q2</span><span class="p">,</span> <span class="n">D</span><span class="o">.</span><span class="n">j</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">axis_orienter2</span><span class="p">,</span> <span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axis_orienter3</span> <span class="o">=</span> <span class="n">AxisOrienter</span><span class="p">(</span><span class="n">q3</span><span class="p">,</span> <span class="n">D</span><span class="o">.</span><span class="n">k</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">D</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">axis_orienter3</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+<p>Acceptable rotation orders are of length 3, expressed in XYZ or
+123, and cannot have a rotation about about an axis twice in a row.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body_orienter1</span> <span class="o">=</span> <span class="n">BodyOrienter</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">body_orienter2</span> <span class="o">=</span> <span class="n">BodyOrienter</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;ZXZ&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">body_orienter3</span> <span class="o">=</span> <span class="n">BodyOrienter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;XYX&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="spaceorienter">
+<h2>SpaceOrienter<a class="headerlink" href="#spaceorienter" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.vector.orienters.SpaceOrienter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.vector.orienters.</span></span><span class="sig-name descname"><span class="pre">SpaceOrienter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_order</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L239-L299"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.SpaceOrienter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to denote a space-orienter.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.vector.orienters.SpaceOrienter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_order</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L251-L299"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.SpaceOrienter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Space rotation is similar to Body rotation, but the rotations
+are applied in the opposite order.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle1, angle2, angle3</strong> : Expr</p>
+<blockquote>
+<div><p>Three successive angles to rotate the coordinate system by</p>
+</div></blockquote>
+<p><strong>rotation_order</strong> : string</p>
+<blockquote>
+<div><p>String defining the order of axes for rotation</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.vector</span> <span class="kn">import</span> <span class="n">CoordSys3D</span><span class="p">,</span> <span class="n">SpaceOrienter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q1 q2 q3&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">CoordSys3D</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To orient a coordinate system D with respect to N, each
+sequential rotation is always about N’s orthogonal unit vectors.
+For example, a ‘123’ rotation will specify rotations about
+N.i, then N.j, then N.k.
+Therefore,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">space_orienter</span> <span class="o">=</span> <span class="n">SpaceOrienter</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="s1">&#39;312&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">space_orienter</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+<p>is same as</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.vector</span> <span class="kn">import</span> <span class="n">AxisOrienter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axis_orienter1</span> <span class="o">=</span> <span class="n">AxisOrienter</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">axis_orienter1</span><span class="p">,</span> <span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axis_orienter2</span> <span class="o">=</span> <span class="n">AxisOrienter</span><span class="p">(</span><span class="n">q2</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">j</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">axis_orienter2</span><span class="p">,</span> <span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axis_orienter3</span> <span class="o">=</span> <span class="n">AxisOrienter</span><span class="p">(</span><span class="n">q3</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">k</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">axis_orienter3</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#sympy.vector.orienters.BodyOrienter" title="sympy.vector.orienters.BodyOrienter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BodyOrienter</span></code></a></dt><dd><p>Orienter to orient systems wrt Euler angles.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="quaternionorienter">
+<h2>QuaternionOrienter<a class="headerlink" href="#quaternionorienter" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.vector.orienters.QuaternionOrienter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.vector.orienters.</span></span><span class="sig-name descname"><span class="pre">QuaternionOrienter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q3</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L302-L388"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.QuaternionOrienter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to denote a quaternion-orienter.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.vector.orienters.QuaternionOrienter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot_order</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/vector/orienters.py#L335-L372"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.vector.orienters.QuaternionOrienter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quaternion orientation orients the new CoordSys3D with
+Quaternions, defined as a finite rotation about lambda, a unit
+vector, by some amount theta.</p>
+<p>This orientation is described by four parameters:</p>
+<p>q0 = cos(theta/2)</p>
+<p>q1 = lambda_x sin(theta/2)</p>
+<p>q2 = lambda_y sin(theta/2)</p>
+<p>q3 = lambda_z sin(theta/2)</p>
+<p>Quaternion does not take in a rotation order.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>q0, q1, q2, q3</strong> : Expr</p>
+<blockquote>
+<div><p>The quaternions to rotate the coordinate system by</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.vector</span> <span class="kn">import</span> <span class="n">CoordSys3D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q0 q1 q2 q3&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">CoordSys3D</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.vector</span> <span class="kn">import</span> <span class="n">QuaternionOrienter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q_orienter</span> <span class="o">=</span> <span class="n">QuaternionOrienter</span><span class="p">(</span><span class="n">q0</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orient_new</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">q_orienter</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="classes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Essential Classes in sympy.vector (docstrings)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="vectorfunctions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Essential Functions in sympy.vector (docstrings)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022 SymPy Development Team.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

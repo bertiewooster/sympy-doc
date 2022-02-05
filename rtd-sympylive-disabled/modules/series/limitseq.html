@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Limits of Sequences &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/series/limitseq.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Simplify" href="../simplify/index.html" />
+    <link rel="prev" title="Formal Power Series" href="formal.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../assumptions/index.html">Assumptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../calculus/index.html">Calculus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../combinatorics/index.html">Combinatorics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../integrals/index.html">Integrals</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../simplify/index.html">Simplify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solvers/index.html">Solvers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../abc.html">abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../algebras.html">Algebras</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concrete.html">Concrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discrete.html">Discrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../evalf.html">Numerical Evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../numeric-computation.html">Numeric Computation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rewriting.html">Term Rewriting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/basics/index.html">Basics</a> &raquo;</li>
+          <li><a href="index.html">Series</a> &raquo;</li>
+      <li>Limits of Sequences</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/series/limitseq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="limits-of-sequences">
+<h1>Limits of Sequences<a class="headerlink" href="#limits-of-sequences" title="Permalink to this headline"></a></h1>
+<p>Provides methods to compute limit of terms having sequences at infinity.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.limitseq.difference_delta">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.limitseq.</span></span><span class="sig-name descname"><span class="pre">difference_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/series/limitseq.py#L19-L64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.limitseq.difference_delta" title="Permalink to this definition"></a></dt>
+<dd><p>Difference Operator.</p>
+<p class="rubric">Explanation</p>
+<p>Discrete analog of differential operator. Given a sequence x[n],
+returns the sequence x[n + step] - x[n].</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">difference_delta</span> <span class="k">as</span> <span class="n">dd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">n</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dd</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">2*n + 2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dd</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">4*n + 6</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r733"><span class="brackets"><a class="fn-backref" href="#id1">R733</a></span></dt>
+<dd><p><a class="reference external" href="https://reference.wolfram.com/language/ref/DifferenceDelta.html">https://reference.wolfram.com/language/ref/DifferenceDelta.html</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.limitseq.dominant">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.limitseq.</span></span><span class="sig-name descname"><span class="pre">dominant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/series/limitseq.py#L67-L114"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.limitseq.dominant" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the dominant term in a sum, that is a term that dominates
+every other term.</p>
+<p class="rubric">Explanation</p>
+<p>If limit(a/b, n, oo) is oo then a dominates b.
+If limit(a/b, n, oo) is 0 then b dominates a.
+Otherwise, a and b are comparable.</p>
+<p>If there is no unique dominant term, then returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Sum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.series.limitseq</span> <span class="kn">import</span> <span class="n">dominant</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dominant</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">5*n**3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dominant</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span> <span class="o">+</span> <span class="n">Sum</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)),</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">2**n</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.series.limitseq.dominant" title="sympy.series.limitseq.dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.series.limitseq.dominant</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.limitseq.limit_seq">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.limitseq.</span></span><span class="sig-name descname"><span class="pre">limit_seq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/series/limitseq.py#L161-L257"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.limitseq.limit_seq" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the limit of a sequence as index <code class="docutils literal notranslate"><span class="pre">n</span></code> tends to infinity.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expr</strong> : Expr</p>
+<blockquote>
+<div><p>SymPy expression for the <code class="docutils literal notranslate"><span class="pre">n-th</span></code> term of the sequence</p>
+</div></blockquote>
+<p><strong>n</strong> : Symbol, optional</p>
+<blockquote>
+<div><p>The index of the sequence, an integer that tends to positive
+infinity. If None, inferred from the expression unless it has
+multiple symbols.</p>
+</div></blockquote>
+<p><strong>trials: int, optional</strong></p>
+<blockquote>
+<div><p>The algorithm is highly recursive. <code class="docutils literal notranslate"><span class="pre">trials</span></code> is a safeguard from
+infinite recursion in case the limit is not easily computed by the
+algorithm. Try increasing <code class="docutils literal notranslate"><span class="pre">trials</span></code> if the algorithm returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Admissible Terms</p>
+<p>The algorithm is designed for sequences built from rational functions,
+indefinite sums, and indefinite products over an indeterminate n. Terms of
+alternating sign are also allowed, but more complex oscillatory behavior is
+not supported.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">limit_seq</span><span class="p">,</span> <span class="n">Sum</span><span class="p">,</span> <span class="n">binomial</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limit_seq</span><span class="p">((</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">n</span> <span class="o">-</span> <span class="mi">5</span><span class="p">),</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">5/3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limit_seq</span><span class="p">(</span><span class="n">binomial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">Sum</span><span class="p">(</span><span class="n">binomial</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)),</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">3/4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limit_seq</span><span class="p">(</span><span class="n">Sum</span><span class="p">(</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Sum</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">m</span><span class="o">/</span><span class="n">m</span><span class="p">,</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)),</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.series.limitseq.dominant" title="sympy.series.limitseq.dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.series.limitseq.dominant</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r734"><span class="brackets"><a class="fn-backref" href="#id2">R734</a></span></dt>
+<dd><p>Computing Limits of Sequences - Manuel Kauers</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="formal.html" class="btn btn-neutral float-left" title="Formal Power Series" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../simplify/index.html" class="btn btn-neutral float-right" title="Simplify" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

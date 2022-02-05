@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculus &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/calculus/index.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Combinatorics" href="../combinatorics/index.html" />
+    <link rel="prev" title="Predicates" href="../assumptions/predicates.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../assumptions/index.html">Assumptions</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Calculus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../combinatorics/index.html">Combinatorics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../integrals/index.html">Integrals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../series/index.html">Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../simplify/index.html">Simplify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solvers/index.html">Solvers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../abc.html">abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../algebras.html">Algebras</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concrete.html">Concrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discrete.html">Discrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../evalf.html">Numerical Evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../numeric-computation.html">Numeric Computation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rewriting.html">Term Rewriting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/basics/index.html">Basics</a> &raquo;</li>
+      <li>Calculus</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/calculus/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.calculus">
+<span id="calculus"></span><h1>Calculus<a class="headerlink" href="#module-sympy.calculus" title="Permalink to this headline"></a></h1>
+<p>Calculus-related methods.</p>
+<span class="target" id="module-sympy.calculus.euler"></span><p>This module implements a method to find
+Euler-Lagrange Equations for given Lagrangian.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.euler.euler_equations">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.euler.</span></span><span class="sig-name descname"><span class="pre">euler_equations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funcs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/euler.py#L14-L108"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.euler.euler_equations" title="Permalink to this definition"></a></dt>
+<dd><p>Find the Euler-Lagrange equations <a class="reference internal" href="#r29" id="id1"><span>[R29]</span></a> for a given Lagrangian.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>L</strong> : Expr</p>
+<blockquote>
+<div><p>The Lagrangian that should be a function of the functions listed
+in the second argument and their derivatives.</p>
+<p>For example, in the case of two functions <span class="math notranslate nohighlight">\(f(x,y)\)</span>, <span class="math notranslate nohighlight">\(g(x,y)\)</span> and
+two independent variables <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> the Lagrangian has the form:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[L\left(f(x,y),g(x,y),\frac{\partial f(x,y)}{\partial x},
+\frac{\partial f(x,y)}{\partial y},
+\frac{\partial g(x,y)}{\partial x},
+\frac{\partial g(x,y)}{\partial y},x,y\right)\]</div>
+</div></blockquote>
+<p>In many cases it is not necessary to provide anything, except the
+Lagrangian, it will be auto-detected (and an error raised if this
+cannot be done).</p>
+</div></blockquote>
+<p><strong>funcs</strong> : Function or an iterable of Functions</p>
+<blockquote>
+<div><p>The functions that the Lagrangian depends on. The Euler equations
+are differential equations for each of these functions.</p>
+</div></blockquote>
+<p><strong>vars</strong> : Symbol or an iterable of Symbols</p>
+<blockquote>
+<div><p>The Symbols that are the independent variables of the functions.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>eqns</strong> : list of Eq</p>
+<blockquote>
+<div><p>The list of differential equations, one for each function.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">euler_equations</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">euler_equations</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">)</span>
+<span class="go">[Eq(-x(t) - Derivative(x(t), (t, 2)), 0)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">euler_equations</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">u</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">])</span>
+<span class="go">[Eq(-Derivative(u(t, x), (t, 2)) + Derivative(u(t, x), (x, 2)), 0)]</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r29"><span class="brackets">R29</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation">https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-sympy.calculus.singularities"></span><section id="singularities">
+<h2>Singularities<a class="headerlink" href="#singularities" title="Permalink to this headline"></a></h2>
+<p>This module implements algorithms for finding singularities for a function
+and identifying types of functions.</p>
+<p>The differential calculus methods in this module include methods to identify
+the following function types in the given <code class="docutils literal notranslate"><span class="pre">Interval</span></code>:
+- Increasing
+- Strictly Increasing
+- Decreasing
+- Strictly Decreasing
+- Monotonic</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.singularities.is_decreasing">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.singularities.</span></span><span class="sig-name descname"><span class="pre">is_decreasing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/singularities.py#L247-L291"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.singularities.is_decreasing" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether the function is decreasing in the given interval.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expression</strong> : Expr</p>
+<blockquote>
+<div><p>The target function which is being checked.</p>
+</div></blockquote>
+<p><strong>interval</strong> : Set, optional</p>
+<blockquote>
+<div><p>The range of values in which we are testing (defaults to set of
+all real numbers).</p>
+</div></blockquote>
+<p><strong>symbol</strong> : Symbol, optional</p>
+<blockquote>
+<div><p>The symbol present in expression which gets varied over the given range.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+<blockquote>
+<div><p>True if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is decreasing (either strictly decreasing or
+constant) in the given <code class="docutils literal notranslate"><span class="pre">interval</span></code>, False otherwise.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">is_decreasing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span><span class="p">,</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_decreasing</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_decreasing</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_decreasing</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Lopen</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_decreasing</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Ropen</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_decreasing</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Ropen</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_decreasing</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_decreasing</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.singularities.is_increasing">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.singularities.</span></span><span class="sig-name descname"><span class="pre">is_increasing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/singularities.py#L161-L201"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.singularities.is_increasing" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether the function is increasing in the given interval.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expression</strong> : Expr</p>
+<blockquote>
+<div><p>The target function which is being checked.</p>
+</div></blockquote>
+<p><strong>interval</strong> : Set, optional</p>
+<blockquote>
+<div><p>The range of values in which we are testing (defaults to set of
+all real numbers).</p>
+</div></blockquote>
+<p><strong>symbol</strong> : Symbol, optional</p>
+<blockquote>
+<div><p>The symbol present in expression which gets varied over the given range.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+<blockquote>
+<div><p>True if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is increasing (either strictly increasing or
+constant) in the given <code class="docutils literal notranslate"><span class="pre">interval</span></code>, False otherwise.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">is_increasing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span><span class="p">,</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_increasing</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_increasing</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_increasing</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_increasing</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">72</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_increasing</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.singularities.is_monotonic">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.singularities.</span></span><span class="sig-name descname"><span class="pre">is_monotonic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/singularities.py#L337-L398"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.singularities.is_monotonic" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether the function is monotonic in the given interval.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expression</strong> : Expr</p>
+<blockquote>
+<div><p>The target function which is being checked.</p>
+</div></blockquote>
+<p><strong>interval</strong> : Set, optional</p>
+<blockquote>
+<div><p>The range of values in which we are testing (defaults to set of
+all real numbers).</p>
+</div></blockquote>
+<p><strong>symbol</strong> : Symbol, optional</p>
+<blockquote>
+<div><p>The symbol present in expression which gets varied over the given range.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+<blockquote>
+<div><p>True if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is monotonic in the given <code class="docutils literal notranslate"><span class="pre">interval</span></code>,
+False otherwise.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>Monotonicity check has not been implemented for the queried function.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">is_monotonic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span><span class="p">,</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_monotonic</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_monotonic</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_monotonic</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Lopen</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_monotonic</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_monotonic</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_monotonic</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.singularities.is_strictly_decreasing">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.singularities.</span></span><span class="sig-name descname"><span class="pre">is_strictly_decreasing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/singularities.py#L294-L334"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.singularities.is_strictly_decreasing" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether the function is strictly decreasing in the given interval.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expression</strong> : Expr</p>
+<blockquote>
+<div><p>The target function which is being checked.</p>
+</div></blockquote>
+<p><strong>interval</strong> : Set, optional</p>
+<blockquote>
+<div><p>The range of values in which we are testing (defaults to set of
+all real numbers).</p>
+</div></blockquote>
+<p><strong>symbol</strong> : Symbol, optional</p>
+<blockquote>
+<div><p>The symbol present in expression which gets varied over the given range.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+<blockquote>
+<div><p>True if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is strictly decreasing in the given <code class="docutils literal notranslate"><span class="pre">interval</span></code>,
+False otherwise.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">is_strictly_decreasing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span><span class="p">,</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_decreasing</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Lopen</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_decreasing</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Ropen</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_decreasing</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Ropen</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_decreasing</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_decreasing</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.singularities.is_strictly_increasing">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.singularities.</span></span><span class="sig-name descname"><span class="pre">is_strictly_increasing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/singularities.py#L204-L244"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.singularities.is_strictly_increasing" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether the function is strictly increasing in the given interval.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expression</strong> : Expr</p>
+<blockquote>
+<div><p>The target function which is being checked.</p>
+</div></blockquote>
+<p><strong>interval</strong> : Set, optional</p>
+<blockquote>
+<div><p>The range of values in which we are testing (defaults to set of
+all real numbers).</p>
+</div></blockquote>
+<p><strong>symbol</strong> : Symbol, optional</p>
+<blockquote>
+<div><p>The symbol present in expression which gets varied over the given range.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+<blockquote>
+<div><p>True if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is strictly increasing in the given <code class="docutils literal notranslate"><span class="pre">interval</span></code>,
+False otherwise.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">is_strictly_increasing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_increasing</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">72</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Ropen</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_increasing</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">72</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Interval</span><span class="o">.</span><span class="n">Lopen</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_increasing</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">72</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Interval</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_increasing</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_strictly_increasing</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.singularities.monotonicity_helper">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.singularities.</span></span><span class="sig-name descname"><span class="pre">monotonicity_helper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/singularities.py#L112-L158"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.singularities.monotonicity_helper" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function for functions checking function monotonicity.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expression</strong> : Expr</p>
+<blockquote>
+<div><p>The target function which is being checked</p>
+</div></blockquote>
+<p><strong>predicate</strong> : function</p>
+<blockquote>
+<div><p>The property being tested for. The function takes in an integer
+and returns a boolean. The integer input is the derivative and
+the boolean result should be true if the property is being held,
+and false otherwise.</p>
+</div></blockquote>
+<p><strong>interval</strong> : Set, optional</p>
+<blockquote>
+<div><p>The range of values in which we are testing, defaults to all reals.</p>
+</div></blockquote>
+<p><strong>symbol</strong> : Symbol, optional</p>
+<blockquote>
+<div><p>The symbol present in expression which gets varied over the given range.</p>
+</div></blockquote>
+<p><strong>It returns a boolean indicating whether the interval in which</strong></p>
+<p><strong>the function’s derivative satisfies given predicate is a superset</strong></p>
+<p><strong>of the given interval.</strong></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean</p>
+<blockquote>
+<div><p>True if <code class="docutils literal notranslate"><span class="pre">predicate</span></code> is true for all the derivatives when <code class="docutils literal notranslate"><span class="pre">symbol</span></code>
+is varied in <code class="docutils literal notranslate"><span class="pre">range</span></code>, False otherwise.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.singularities.singularities">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.singularities.</span></span><span class="sig-name descname"><span class="pre">singularities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/singularities.py#L27-L104"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.singularities.singularities" title="Permalink to this definition"></a></dt>
+<dd><p>Find singularities of a given function.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expression</strong> : Expr</p>
+<blockquote>
+<div><p>The target function in which singularities need to be found.</p>
+</div></blockquote>
+<p><strong>symbol</strong> : Symbol</p>
+<blockquote>
+<div><p>The symbol over the values of which the singularity in
+expression in being searched for.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Set</p>
+<blockquote>
+<div><p>A set of values for <code class="docutils literal notranslate"><span class="pre">symbol</span></code> for which <code class="docutils literal notranslate"><span class="pre">expression</span></code> has a
+singularity. An <code class="docutils literal notranslate"><span class="pre">EmptySet</span></code> is returned if <code class="docutils literal notranslate"><span class="pre">expression</span></code> has no
+singularities for any given value of <code class="docutils literal notranslate"><span class="pre">Symbol</span></code>.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>Methods for determining the singularities of this function have
+not been developed.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function does not find non-isolated singularities
+nor does it find branch points of the expression.</p>
+<dl class="simple">
+<dt>Currently supported functions are:</dt><dd><ul class="simple">
+<li><p>univariate continuous (real or complex) functions</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">singularities</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">log</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">singularities</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">EmptySet</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">singularities</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">{-1}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">singularities</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">{-I, I}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">singularities</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">{-1, 1/2 - sqrt(3)*I/2, 1/2 + sqrt(3)*I/2}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">singularities</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">{0}</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r30"><span class="brackets"><a class="fn-backref" href="#id3">R30</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mathematical_singularity">https://en.wikipedia.org/wiki/Mathematical_singularity</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span class="target" id="module-sympy.calculus.finite_diff"><span id="finite-diff"></span></span><section id="finite-difference-weights">
+<h2>Finite difference weights<a class="headerlink" href="#finite-difference-weights" title="Permalink to this headline"></a></h2>
+<p>This module implements an algorithm for efficient generation of finite
+difference weights for ordinary differentials of functions for
+derivatives from 0 (interpolation) up to arbitrary order.</p>
+<p>The core algorithm is provided in the finite difference weight generating
+function (<code class="docutils literal notranslate"><span class="pre">finite_diff_weights</span></code>), and two convenience functions are provided
+for:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>estimating a derivative (or interpolate) directly from a series of points</dt><dd><p>is also provided (<code class="docutils literal notranslate"><span class="pre">apply_finite_diff</span></code>).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>differentiating by using finite difference approximations</dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">differentiate_finite</span></code>).</p>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.finite_diff.apply_finite_diff">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.finite_diff.</span></span><span class="sig-name descname"><span class="pre">apply_finite_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/finite_diff.py#L197-L281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.finite_diff.apply_finite_diff" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the finite difference approximation of
+the derivative of requested order at <code class="docutils literal notranslate"><span class="pre">x0</span></code> from points
+provided in <code class="docutils literal notranslate"><span class="pre">x_list</span></code> and <code class="docutils literal notranslate"><span class="pre">y_list</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>order: int</strong></p>
+<blockquote>
+<div><p>order of derivative to approximate. 0 corresponds to interpolation.</p>
+</div></blockquote>
+<p><strong>x_list: sequence</strong></p>
+<blockquote>
+<div><p>Sequence of (unique) values for the independent variable.</p>
+</div></blockquote>
+<p><strong>y_list: sequence</strong></p>
+<blockquote>
+<div><p>The function value at corresponding values for the independent
+variable in x_list.</p>
+</div></blockquote>
+<p><strong>x0: Number or Symbol</strong></p>
+<blockquote>
+<div><p>At what value of the independent variable the derivative should be
+evaluated. Defaults to 0.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sympy.core.add.Add or sympy.core.numbers.Number</p>
+<blockquote>
+<div><p>The finite difference expression approximating the requested
+derivative order at <code class="docutils literal notranslate"><span class="pre">x0</span></code>.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">apply_finite_diff</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">arg</span><span class="p">:</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">arg</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xlist</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">apply_finite_diff</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">xlist</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">xlist</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">12</span> 
+<span class="go">-3.55271367880050e-15</span>
+</pre></div>
+</div>
+<p>we see that the example above only contain rounding errors.
+apply_finite_diff can also be used on more abstract objects:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">IndexedBase</span><span class="p">,</span> <span class="n">Idx</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">IndexedBase</span><span class="p">,</span> <span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">Idx</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x_list</span><span class="p">,</span> <span class="n">y_list</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">])</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">apply_finite_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x_list</span><span class="p">,</span> <span class="n">y_list</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="go">((x[i + 1] - x[i])/(-x[i - 1] + x[i]) - 1)*y[i]/(x[i + 1] - x[i]) -</span>
+<span class="go">(x[i + 1] - x[i])*y[i - 1]/((x[i + 1] - x[i - 1])*(-x[i - 1] + x[i])) +</span>
+<span class="go">(-x[i - 1] + x[i])*y[i + 1]/((x[i + 1] - x[i - 1])*(x[i + 1] - x[i]))</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Order = 0 corresponds to interpolation.
+Only supply so many points you think makes sense
+to around x0 when extracting the derivative (the function
+need to be well behaved within that region). Also beware
+of Runge’s phenomenon.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.calculus.finite_diff.finite_diff_weights" title="sympy.calculus.finite_diff.finite_diff_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.calculus.finite_diff.finite_diff_weights</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<p>Fortran 90 implementation with Python interface for numerics: <a class="reference external" href="https://github.com/bjodah/finitediff">finitediff</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.finite_diff.as_finite_diff">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.finite_diff.</span></span><span class="sig-name descname"><span class="pre">as_finite_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">derivative</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/finite_diff.py#L284-L407"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.finite_diff.as_finite_diff" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated function. Use Diff.as_finite_difference instead.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.finite_diff.differentiate_finite">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.finite_diff.</span></span><span class="sig-name descname"><span class="pre">differentiate_finite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/finite_diff.py#L419-L481"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.finite_diff.differentiate_finite" title="Permalink to this definition"></a></dt>
+<dd><p>Differentiate expr and replace Derivatives with finite differences.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expr</strong> : expression</p>
+<p><strong>*symbols</strong> : differentiate with respect to symbols</p>
+<p><strong>points: sequence, coefficient or undefined function, optional</strong></p>
+<blockquote>
+<div><p>see <code class="docutils literal notranslate"><span class="pre">Derivative.as_finite_difference</span></code></p>
+</div></blockquote>
+<p><strong>x0: number or Symbol, optional</strong></p>
+<blockquote>
+<div><p>see <code class="docutils literal notranslate"><span class="pre">Derivative.as_finite_difference</span></code></p>
+</div></blockquote>
+<p><strong>wrt: Symbol, optional</strong></p>
+<blockquote>
+<div><p>see <code class="docutils literal notranslate"><span class="pre">Derivative.as_finite_difference</span></code></p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">differentiate_finite</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">),</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">differentiate_finite</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">])</span>
+<span class="go">-f(-h + x)*g(-h + x)/(2*h) + f(h + x)*g(h + x)/(2*h)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">differentiate_finite</span></code> works on any expression, including the expressions
+with embedded derivatives:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">differentiate_finite</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">-2*f(x) + f(x - 1) + f(x + 1) - 2*sin(x) + sin(x - 1) + sin(x + 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">differentiate_finite</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">f(x - 1/2, y - 1/2) - f(x - 1/2, y + 1/2) - f(x + 1/2, y - 1/2) + f(x + 1/2, y + 1/2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">differentiate_finite</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">(-g(x) + g(x + 1))*f(x + 1/2) - (g(x) - g(x - 1))*f(x - 1/2)</span>
+</pre></div>
+</div>
+<p>To make finite difference with non-constant discretization step use
+undefined functions:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dx</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;dx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">differentiate_finite</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">points</span><span class="o">=</span><span class="n">dx</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">-(-g(x - dx(x)/2 - dx(x - dx(x)/2)/2)/dx(x - dx(x)/2) +</span>
+<span class="go">g(x - dx(x)/2 + dx(x - dx(x)/2)/2)/dx(x - dx(x)/2))*f(x - dx(x)/2)/dx(x) +</span>
+<span class="go">(-g(x + dx(x)/2 - dx(x + dx(x)/2)/2)/dx(x + dx(x)/2) +</span>
+<span class="go">g(x + dx(x)/2 + dx(x + dx(x)/2)/2)/dx(x + dx(x)/2))*f(x + dx(x)/2)/dx(x)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.finite_diff.finite_diff_weights">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.finite_diff.</span></span><span class="sig-name descname"><span class="pre">finite_diff_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/finite_diff.py#L30-L194"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.finite_diff.finite_diff_weights" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the finite difference weights for an arbitrarily spaced
+one-dimensional grid (<code class="docutils literal notranslate"><span class="pre">x_list</span></code>) for derivatives at <code class="docutils literal notranslate"><span class="pre">x0</span></code> of order
+0, 1, …, up to <code class="docutils literal notranslate"><span class="pre">order</span></code> using a recursive formula. Order of accuracy
+is at least <code class="docutils literal notranslate"><span class="pre">len(x_list)</span> <span class="pre">-</span> <span class="pre">order</span></code>, if <code class="docutils literal notranslate"><span class="pre">x_list</span></code> is defined correctly.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>order: int</strong></p>
+<blockquote>
+<div><p>Up to what derivative order weights should be calculated.
+0 corresponds to interpolation.</p>
+</div></blockquote>
+<p><strong>x_list: sequence</strong></p>
+<blockquote>
+<div><p>Sequence of (unique) values for the independent variable.
+It is useful (but not necessary) to order <code class="docutils literal notranslate"><span class="pre">x_list</span></code> from
+nearest to furthest from <code class="docutils literal notranslate"><span class="pre">x0</span></code>; see examples below.</p>
+</div></blockquote>
+<p><strong>x0: Number or Symbol</strong></p>
+<blockquote>
+<div><p>Root or value of the independent variable for which the finite
+difference weights should be generated. Default is <code class="docutils literal notranslate"><span class="pre">S.One</span></code>.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list</p>
+<blockquote>
+<div><p>A list of sublists, each corresponding to coefficients for
+increasing derivative order, and each containing lists of
+coefficients for increasing subsets of x_list.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">finite_diff_weights</span><span class="p">,</span> <span class="n">S</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">finite_diff_weights</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span>
+<span class="go">[[[1, 0, 0, 0],</span>
+<span class="go">  [1/2, 1/2, 0, 0],</span>
+<span class="go">  [3/8, 3/4, -1/8, 0],</span>
+<span class="go">  [5/16, 15/16, -5/16, 1/16]],</span>
+<span class="go"> [[0, 0, 0, 0],</span>
+<span class="go">  [-1, 1, 0, 0],</span>
+<span class="go">  [-1, 1, 0, 0],</span>
+<span class="go">  [-23/24, 7/8, 1/8, -1/24]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># FD weights for 0th derivative, using full x_list</span>
+<span class="go">[5/16, 15/16, -5/16, 1/16]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># FD weights for 1st derivative</span>
+<span class="go">[-23/24, 7/8, 1/8, -1/24]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># FD weights for 1st derivative, using x_list[:-1]</span>
+<span class="go">[-1, 1, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># FD weight for 1st deriv. for x_list[0]</span>
+<span class="go">-23/24</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># FD weight for 1st deriv. for x_list[1], etc.</span>
+<span class="go">7/8</span>
+</pre></div>
+</div>
+<p>Each sublist contains the most accurate formula at the end.
+Note, that in the above example <code class="docutils literal notranslate"><span class="pre">res[1][1]</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">res[1][2]</span></code>.
+Since res[1][2] has an order of accuracy of
+<code class="docutils literal notranslate"><span class="pre">len(x_list[:3])</span> <span class="pre">-</span> <span class="pre">order</span> <span class="pre">=</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">2</span></code>, the same is true for <code class="docutils literal notranslate"><span class="pre">res[1][1]</span></code>!</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">finite_diff_weights</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">S</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span>
+<span class="go">[[0, 0, 0, 0, 0],</span>
+<span class="go"> [-1, 1, 0, 0, 0],</span>
+<span class="go"> [0, 1/2, -1/2, 0, 0],</span>
+<span class="go"> [-1/2, 1, -1/3, -1/6, 0],</span>
+<span class="go"> [0, 2/3, -2/3, -1/12, 1/12]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># no approximation possible, using x_list[0] only</span>
+<span class="go">[0, 0, 0, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># classic forward step approximation</span>
+<span class="go">[-1, 1, 0, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># classic centered approximation</span>
+<span class="go">[0, 1/2, -1/2, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>  <span class="c1"># higher order approximations</span>
+<span class="go">[[-1/2, 1, -1/3, -1/6, 0], [0, 2/3, -2/3, -1/12, 1/12]]</span>
+</pre></div>
+</div>
+<p>Let us compare this to a differently defined <code class="docutils literal notranslate"><span class="pre">x_list</span></code>. Pay attention to
+<code class="docutils literal notranslate"><span class="pre">foo[i][k]</span></code> corresponding to the gridpoint defined by <code class="docutils literal notranslate"><span class="pre">x_list[k]</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span> <span class="o">=</span> <span class="n">finite_diff_weights</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">S</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">S</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span>
+<span class="go">[[0, 0, 0, 0, 0],</span>
+<span class="go"> [-1, 1, 0, 0, 0],</span>
+<span class="go"> [1/2, -2, 3/2, 0, 0],</span>
+<span class="go"> [1/6, -1, 1/2, 1/3, 0],</span>
+<span class="go"> [1/12, -2/3, 0, 2/3, -1/12]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># not the same and of lower accuracy as res[1]!</span>
+<span class="go">[-1, 1, 0, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># classic double backward step approximation</span>
+<span class="go">[1/2, -2, 3/2, 0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># the same as res[4]</span>
+<span class="go">[1/12, -2/3, 0, 2/3, -1/12]</span>
+</pre></div>
+</div>
+<p>Note that, unless you plan on using approximations based on subsets of
+<code class="docutils literal notranslate"><span class="pre">x_list</span></code>, the order of gridpoints does not matter.</p>
+<p>The capability to generate weights at arbitrary points can be
+used e.g. to minimize Runge’s phenomenon by using Chebyshev nodes:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">simplify</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;h x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># chebyshev nodes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x_list</span><span class="p">)</span>
+<span class="go">[-h + x, -sqrt(2)*h/2 + x, x, sqrt(2)*h/2 + x, h + x]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mycoeffs</span> <span class="o">=</span> <span class="n">finite_diff_weights</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x_list</span><span class="p">,</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">simplify</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span>  <span class="n">mycoeffs</span><span class="p">]</span> 
+<span class="go">[(h**3/2 + h**2*x - 3*h*x**2 - 4*x**3)/h**4,</span>
+<span class="go">(-sqrt(2)*h**3 - 4*h**2*x + 3*sqrt(2)*h*x**2 + 8*x**3)/h**4,</span>
+<span class="go">(6*h**2*x - 8*x**3)/h**4,</span>
+<span class="go">(sqrt(2)*h**3 - 4*h**2*x - 3*sqrt(2)*h*x**2 + 8*x**3)/h**4,</span>
+<span class="go">(-h**3/2 + h**2*x + 3*h*x**2 - 4*x**3)/h**4]</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>If weights for a finite difference approximation of 3rd order
+derivative is wanted, weights for 0th, 1st and 2nd order are
+calculated “for free”, so are formulae using subsets of <code class="docutils literal notranslate"><span class="pre">x_list</span></code>.
+This is something one can take advantage of to save computational cost.
+Be aware that one should define <code class="docutils literal notranslate"><span class="pre">x_list</span></code> from nearest to furthest from
+<code class="docutils literal notranslate"><span class="pre">x0</span></code>. If not, subsets of <code class="docutils literal notranslate"><span class="pre">x_list</span></code> will yield poorer approximations,
+which might not grand an order of accuracy of <code class="docutils literal notranslate"><span class="pre">len(x_list)</span> <span class="pre">-</span> <span class="pre">order</span></code>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.calculus.finite_diff.apply_finite_diff" title="sympy.calculus.finite_diff.apply_finite_diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.calculus.finite_diff.apply_finite_diff</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r31"><span class="brackets"><a class="fn-backref" href="#id4">R31</a></span></dt>
+<dd><p>Generation of Finite Difference Formulas on Arbitrarily Spaced
+Grids, Bengt Fornberg; Mathematics of computation; 51; 184;
+(1988); 699-706; doi:10.1090/S0025-5718-1988-0935077-0</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<span class="target" id="module-sympy.calculus.util"></span><dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.continuous_domain">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">continuous_domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L24-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.continuous_domain" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the intervals in the given domain for which the function
+is continuous.
+This method is limited by the ability to determine the various
+singularities and discontinuities of the given function.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> : <a class="reference internal" href="../core.html#sympy.core.expr.Expr" title="sympy.core.expr.Expr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></a></p>
+<blockquote>
+<div><p>The concerned function.</p>
+</div></blockquote>
+<p><strong>symbol</strong> : <a class="reference internal" href="../core.html#sympy.core.symbol.Symbol" title="sympy.core.symbol.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a></p>
+<blockquote>
+<div><p>The variable for which the intervals are to be determined.</p>
+</div></blockquote>
+<p><strong>domain</strong> : <a class="reference internal" href="../sets.html#sympy.sets.sets.Interval" title="sympy.sets.sets.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<blockquote>
+<div><p>The domain over which the continuity of the symbol has to be checked.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../sets.html#sympy.sets.sets.Interval" title="sympy.sets.sets.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<blockquote>
+<div><p>Union of all intervals where the function is continuous.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>If the method to determine continuity of such a function
+has not yet been developed.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">tan</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.calculus.util</span> <span class="kn">import</span> <span class="n">continuous_domain</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">continuous_domain</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">Union(Interval.open(-oo, 0), Interval.open(0, oo))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">continuous_domain</span><span class="p">(</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="p">))</span>
+<span class="go">Union(Interval.Ropen(0, pi/2), Interval.Lopen(pi/2, pi))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">continuous_domain</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="go">Interval(2, 5)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">continuous_domain</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">Interval.open(1/2, oo)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.function_range">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">function_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L92-L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.function_range" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the range of a function in a given domain.
+This method is limited by the ability to determine the singularities and
+determine limits.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> : <a class="reference internal" href="../core.html#sympy.core.expr.Expr" title="sympy.core.expr.Expr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></a></p>
+<blockquote>
+<div><p>The concerned function.</p>
+</div></blockquote>
+<p><strong>symbol</strong> : <a class="reference internal" href="../core.html#sympy.core.symbol.Symbol" title="sympy.core.symbol.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a></p>
+<blockquote>
+<div><p>The variable for which the range of function is to be determined.</p>
+</div></blockquote>
+<p><strong>domain</strong> : <a class="reference internal" href="../sets.html#sympy.sets.sets.Interval" title="sympy.sets.sets.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<blockquote>
+<div><p>The domain under which the range of the function has to be found.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../sets.html#sympy.sets.sets.Interval" title="sympy.sets.sets.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<blockquote>
+<div><p>Union of all ranges for all intervals under domain where function is
+continuous.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>If any of the intervals, in the given domain, for which function
+is continuous are not finite or real,
+OR if the critical points of the function on the domain cannot be found.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">tan</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.calculus.util</span> <span class="kn">import</span> <span class="n">function_range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">function_range</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+<span class="go">Interval(-1, 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">function_range</span><span class="p">(</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">Interval(-oo, oo)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">function_range</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">Union(Interval.open(-oo, 0), Interval.open(0, oo))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">function_range</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">Interval.open(0, oo)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">function_range</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">Interval(-oo, oo)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">function_range</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="go">Interval(0, 3)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.is_convex">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">is_convex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">syms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L623-L693"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.is_convex" title="Permalink to this definition"></a></dt>
+<dd><p>Determines the  convexity of the function passed in the argument.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> : <a class="reference internal" href="../core.html#sympy.core.expr.Expr" title="sympy.core.expr.Expr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></a></p>
+<blockquote>
+<div><p>The concerned function.</p>
+</div></blockquote>
+<p><strong>syms</strong> : Tuple of <a class="reference internal" href="../core.html#sympy.core.symbol.Symbol" title="sympy.core.symbol.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a></p>
+<blockquote>
+<div><p>The variables with respect to which the convexity is to be determined.</p>
+</div></blockquote>
+<p><strong>domain</strong> : <a class="reference internal" href="../sets.html#sympy.sets.sets.Interval" title="sympy.sets.sets.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a>, optional</p>
+<blockquote>
+<div><p>The domain over which the convexity of the function has to be checked.
+If unspecified, S.Reals will be the default domain.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+<blockquote>
+<div><p>The method returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the function is convex otherwise it
+returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>The check for the convexity of multivariate functions is not implemented yet.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>To determine concavity of a function pass <span class="math notranslate nohighlight">\(-f\)</span> as the concerned function.
+To determine logarithmic convexity of a function pass <span class="math notranslate nohighlight">\(\log(f)\)</span> as
+concerned function.
+To determine logartihmic concavity of a function pass <span class="math notranslate nohighlight">\(-\log(f)\)</span> as
+concerned function.</p>
+<p>Currently, convexity check of multivariate functions is not handled.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">is_convex</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">oo</span><span class="p">,</span> <span class="n">Interval</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_convex</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_convex</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">domain</span> <span class="o">=</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r32"><span class="brackets"><a class="fn-backref" href="#id5">R32</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Convex_function">https://en.wikipedia.org/wiki/Convex_function</a></p>
+</dd>
+<dt class="label" id="r33"><span class="brackets"><a class="fn-backref" href="#id6">R33</a></span></dt>
+<dd><p><a class="reference external" href="http://www.ifp.illinois.edu/~angelia/L3_convfunc.pdf">http://www.ifp.illinois.edu/~angelia/L3_convfunc.pdf</a></p>
+</dd>
+<dt class="label" id="r34"><span class="brackets"><a class="fn-backref" href="#id7">R34</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Logarithmically_convex_function">https://en.wikipedia.org/wiki/Logarithmically_convex_function</a></p>
+</dd>
+<dt class="label" id="r35"><span class="brackets"><a class="fn-backref" href="#id8">R35</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Logarithmically_concave_function">https://en.wikipedia.org/wiki/Logarithmically_concave_function</a></p>
+</dd>
+<dt class="label" id="r36"><span class="brackets"><a class="fn-backref" href="#id9">R36</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Concave_function">https://en.wikipedia.org/wiki/Concave_function</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.lcim">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">lcim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numbers</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L574-L621"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.lcim" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the least common integral multiple of a list of numbers.</p>
+<p>The numbers can be rational or irrational or a mixture of both.
+<span class="math notranslate nohighlight">\(None\)</span> is returned for incommensurable numbers.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>numbers</strong> : list</p>
+<blockquote>
+<div><p>Numbers (rational and/or irrational) for which lcim is to be found.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>number</p>
+<blockquote>
+<div><p>lcim if it exists, otherwise <code class="docutils literal notranslate"><span class="pre">None</span></code> for incommensurable numbers.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.calculus.util</span> <span class="kn">import</span> <span class="n">lcim</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span><span class="p">,</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lcim</span><span class="p">([</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">S</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span><span class="p">])</span>
+<span class="go">15/2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lcim</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">6*pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lcim</span><span class="p">([</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.maximum">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">maximum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L748-L792"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.maximum" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the maximum value of a function in the given domain.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> : <a class="reference internal" href="../core.html#sympy.core.expr.Expr" title="sympy.core.expr.Expr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></a></p>
+<blockquote>
+<div><p>The concerned function.</p>
+</div></blockquote>
+<p><strong>symbol</strong> : <a class="reference internal" href="../core.html#sympy.core.symbol.Symbol" title="sympy.core.symbol.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a></p>
+<blockquote>
+<div><p>The variable for maximum value needs to be determined.</p>
+</div></blockquote>
+<p><strong>domain</strong> : <a class="reference internal" href="../sets.html#sympy.sets.sets.Interval" title="sympy.sets.sets.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<blockquote>
+<div><p>The domain over which the maximum have to be checked.
+If unspecified, then the global maximum is returned.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>number</p>
+<blockquote>
+<div><p>Maximum value of the function in given domain.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">maximum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">maximum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">maximum</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+<span class="go">sqrt(2)/2</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">maximum</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">1/2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.minimum">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">minimum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L795-L839"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.minimum" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the minimum value of a function in the given domain.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> : <a class="reference internal" href="../core.html#sympy.core.expr.Expr" title="sympy.core.expr.Expr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></a></p>
+<blockquote>
+<div><p>The concerned function.</p>
+</div></blockquote>
+<p><strong>symbol</strong> : <a class="reference internal" href="../core.html#sympy.core.symbol.Symbol" title="sympy.core.symbol.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a></p>
+<blockquote>
+<div><p>The variable for minimum value needs to be determined.</p>
+</div></blockquote>
+<p><strong>domain</strong> : <a class="reference internal" href="../sets.html#sympy.sets.sets.Interval" title="sympy.sets.sets.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<blockquote>
+<div><p>The domain over which the minimum have to be checked.
+If unspecified, then the global minimum is returned.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>number</p>
+<blockquote>
+<div><p>Minimum value of the function in the given domain.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">minimum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minimum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">minimum</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">sin(3)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">minimum</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">-1/2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.not_empty_in">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">not_empty_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">finset_intersection</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">syms</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L229-L338"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.not_empty_in" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the domain of the functions in <code class="docutils literal notranslate"><span class="pre">finset_intersection</span></code> in which the
+<code class="docutils literal notranslate"><span class="pre">finite_set</span></code> is not-empty</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>finset_intersection</strong> : Intersection of FiniteSet</p>
+<blockquote>
+<div><p>The unevaluated intersection of FiniteSet containing
+real-valued functions with Union of Sets</p>
+</div></blockquote>
+<p><strong>syms</strong> : Tuple of symbols</p>
+<blockquote>
+<div><p>Symbol for which domain is to be found</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>The algorithms to find the non-emptiness of the given FiniteSet are
+not yet implemented.</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>The input is not valid.</p>
+</div></blockquote>
+<p><strong>RuntimeError</strong></p>
+<blockquote>
+<div><p>It is a bug, please report it to the github issue tracker
+(<a class="reference external" href="https://github.com/sympy/sympy/issues">https://github.com/sympy/sympy/issues</a>).</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">FiniteSet</span><span class="p">,</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">not_empty_in</span><span class="p">,</span> <span class="n">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">not_empty_in</span><span class="p">(</span><span class="n">FiniteSet</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">Interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">Interval(0, 2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">not_empty_in</span><span class="p">(</span><span class="n">FiniteSet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">Interval</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">Union(Interval(1, 2), Interval(-sqrt(2), -1))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">not_empty_in</span><span class="p">(</span><span class="n">FiniteSet</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">Interval</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">oo</span><span class="p">)),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">Union(Interval.Lopen(-2, -1), Interval(2, oo))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.periodicity">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">periodicity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L341-L530"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.periodicity" title="Permalink to this definition"></a></dt>
+<dd><p>Tests the given function for periodicity in the given symbol.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> : <a class="reference internal" href="../core.html#sympy.core.expr.Expr" title="sympy.core.expr.Expr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></a>.</p>
+<blockquote>
+<div><p>The concerned function.</p>
+</div></blockquote>
+<p><strong>symbol</strong> : <a class="reference internal" href="../core.html#sympy.core.symbol.Symbol" title="sympy.core.symbol.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a></p>
+<blockquote>
+<div><p>The variable for which the period is to be determined.</p>
+</div></blockquote>
+<p><strong>check</strong> : bool, optional</p>
+<blockquote>
+<div><p>The flag to verify whether the value being returned is a period or not.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>period</p>
+<blockquote>
+<div><p>The period of the function is returned.
+<code class="docutils literal notranslate"><span class="pre">None</span></code> is returned when the function is aperiodic or has a complex period.
+The value of <span class="math notranslate nohighlight">\(0\)</span> is returned as the period of a constant function.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong></p>
+<blockquote>
+<div><p>The value of the period computed cannot be verified.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Currently, we do not support functions with a complex period.
+The period of functions having complex periodic values such
+as <code class="docutils literal notranslate"><span class="pre">exp</span></code>, <code class="docutils literal notranslate"><span class="pre">sinh</span></code> is evaluated to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>The value returned might not be the “fundamental” period of the given
+function i.e. it may not be the smallest periodic value of the function.</p>
+<p>The verification of the period through the <code class="docutils literal notranslate"><span class="pre">check</span></code> flag is not reliable
+due to internal simplification of the given expression. Hence, it is set
+to <code class="docutils literal notranslate"><span class="pre">False</span></code> by default.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">periodicity</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">tan</span><span class="p">,</span> <span class="n">exp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">periodicity</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">2*pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">periodicity</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">periodicity</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">tan</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">pi/2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">periodicity</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">periodicity</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.calculus.util.stationary_points">
+<span class="sig-prename descclassname"><span class="pre">sympy.calculus.util.</span></span><span class="sig-name descname"><span class="pre">stationary_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Reals</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/calculus/util.py#L696-L745"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.calculus.util.stationary_points" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the stationary points of a function (where derivative of the
+function is 0) in the given domain.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> : <a class="reference internal" href="../core.html#sympy.core.expr.Expr" title="sympy.core.expr.Expr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expr</span></code></a></p>
+<blockquote>
+<div><p>The concerned function.</p>
+</div></blockquote>
+<p><strong>symbol</strong> : <a class="reference internal" href="../core.html#sympy.core.symbol.Symbol" title="sympy.core.symbol.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a></p>
+<blockquote>
+<div><p>The variable for which the stationary points are to be determined.</p>
+</div></blockquote>
+<p><strong>domain</strong> : <a class="reference internal" href="../sets.html#sympy.sets.sets.Interval" title="sympy.sets.sets.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a></p>
+<blockquote>
+<div><p>The domain over which the stationary points have to be checked.
+If unspecified, <code class="docutils literal notranslate"><span class="pre">S.Reals</span></code> will be the default domain.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Set</p>
+<blockquote>
+<div><p>A set of stationary points for the function. If there are no
+stationary point, an <a class="reference internal" href="../sets.html#sympy.sets.sets.EmptySet" title="sympy.sets.sets.EmptySet"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmptySet</span></code></a> is returned.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">stationary_points</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stationary_points</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="go">EmptySet</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">stationary_points</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">          pi                              3*pi</span>
+<span class="go">{2*n*pi + -- | n in Integers} U {2*n*pi + ---- | n in Integers}</span>
+<span class="go">          2                                2</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stationary_points</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">,</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+<span class="go">{pi/2, 3*pi/2, 5*pi/2, 7*pi/2}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../assumptions/predicates.html" class="btn btn-neutral float-left" title="Predicates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../combinatorics/index.html" class="btn btn-neutral float-right" title="Combinatorics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

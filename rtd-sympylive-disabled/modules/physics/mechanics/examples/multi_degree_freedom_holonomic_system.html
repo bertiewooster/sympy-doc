@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi Degree of Freedom Holonomic System &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/mechanics/examples/multi_degree_freedom_holonomic_system.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Potential Issues/Advanced Topics/Future Features in Physics/Mechanics" href="../advanced.html" />
+    <link rel="prev" title="A bicycle" href="bicycle_example.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../vector/index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">Classical Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quantum/index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="../index.html">Classical Mechanics</a> &raquo;</li>
+          <li><a href="../examples.html">Examples for Physics/Mechanics</a> &raquo;</li>
+      <li>Multi Degree of Freedom Holonomic System</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/modules/physics/mechanics/examples/multi_degree_freedom_holonomic_system.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="multi-degree-of-freedom-holonomic-system">
+<h1>Multi Degree of Freedom Holonomic System<a class="headerlink" href="#multi-degree-of-freedom-holonomic-system" title="Permalink to this headline"></a></h1>
+<p>In this example we demonstrate the use of the functionality provided in
+<a class="reference internal" href="../index.html#module-sympy.physics.mechanics" title="sympy.physics.mechanics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.physics.mechanics</span></code></a> for deriving the equations of motion (EOM) of a holonomic
+system that includes both particles and rigid bodies with contributing forces and torques,
+some of which are specified forces and torques. The system is shown below:</p>
+<img alt="../../../../_images/multidof-holonomic.png" class="align-center" src="../../../../_images/multidof-holonomic.png" />
+<p>The system will be modeled using <code class="docutils literal notranslate"><span class="pre">JointsMethod</span></code>. First we need to create the
+<code class="docutils literal notranslate"><span class="pre">dynamicsymbols</span></code> needed to describe the system as shown in the above diagram.
+In this case, the generalized coordinates <span class="math notranslate nohighlight">\(q_1\)</span> represent lateral distance of block from wall,
+<span class="math notranslate nohighlight">\(q_2\)</span> represents ngle of the compound pendulum from vertical, <span class="math notranslate nohighlight">\(q_3\)</span>  represents angle of the simple
+pendulum from the compound pendulum. The generalized speeds <span class="math notranslate nohighlight">\(u_1\)</span> represents lateral speed of block,
+<span class="math notranslate nohighlight">\(u_2\)</span> represents lateral speed of compound pendulum and <span class="math notranslate nohighlight">\(u_3\)</span> represents angular speed of C relative to B.</p>
+<p>We also create some <code class="docutils literal notranslate"><span class="pre">symbols</span></code> to represent the length and
+mass of the pendulum, as well as gravity and others.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.mechanics</span> <span class="kn">import</span> <span class="n">Body</span><span class="p">,</span> <span class="n">PinJoint</span><span class="p">,</span> <span class="n">PrismaticJoint</span><span class="p">,</span> <span class="n">JointsMethod</span><span class="p">,</span> <span class="n">inertia</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.mechanics</span> <span class="kn">import</span> <span class="n">dynamicsymbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">q3</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q1, q2, q3, u1, u2, u3&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">kT</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;l, k, c, g, kT&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma</span><span class="p">,</span> <span class="n">mb</span><span class="p">,</span> <span class="n">mc</span><span class="p">,</span> <span class="n">IBzz</span><span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;ma, mb, mc, IBzz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we create the bodies and connect them using joints to establish the
+kinematics.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wall</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">mass</span><span class="o">=</span><span class="n">ma</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">IB</span> <span class="o">=</span> <span class="n">inertia</span><span class="p">(</span><span class="n">block</span><span class="o">.</span><span class="n">frame</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">IBzz</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compound_pend</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">mass</span><span class="o">=</span><span class="n">mb</span><span class="p">,</span> <span class="n">central_inertia</span><span class="o">=</span><span class="n">IB</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simple_pend</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">mass</span><span class="o">=</span><span class="n">mc</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bodies</span> <span class="o">=</span> <span class="p">(</span><span class="n">wall</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">compound_pend</span><span class="p">,</span> <span class="n">simple_pend</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">slider</span> <span class="o">=</span> <span class="n">PrismaticJoint</span><span class="p">(</span><span class="s1">&#39;J1&#39;</span><span class="p">,</span> <span class="n">wall</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">coordinates</span><span class="o">=</span><span class="n">q1</span><span class="p">,</span> <span class="n">speeds</span><span class="o">=</span><span class="n">u1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rev1</span> <span class="o">=</span> <span class="n">PinJoint</span><span class="p">(</span><span class="s1">&#39;J2&#39;</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">compound_pend</span><span class="p">,</span> <span class="n">coordinates</span><span class="o">=</span><span class="n">q2</span><span class="p">,</span> <span class="n">speeds</span><span class="o">=</span><span class="n">u2</span><span class="p">,</span>
+<span class="gp">... </span>                <span class="n">child_axis</span><span class="o">=</span><span class="n">compound_pend</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">child_joint_pos</span><span class="o">=</span><span class="n">l</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">compound_pend</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+<span class="gp">... </span>                <span class="n">parent_axis</span><span class="o">=</span><span class="n">block</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rev2</span> <span class="o">=</span> <span class="n">PinJoint</span><span class="p">(</span><span class="s1">&#39;J3&#39;</span><span class="p">,</span> <span class="n">compound_pend</span><span class="p">,</span> <span class="n">simple_pend</span><span class="p">,</span> <span class="n">coordinates</span><span class="o">=</span><span class="n">q3</span><span class="p">,</span> <span class="n">speeds</span><span class="o">=</span><span class="n">u3</span><span class="p">,</span>
+<span class="gp">... </span>                <span class="n">child_axis</span><span class="o">=</span><span class="n">simple_pend</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">parent_joint_pos</span><span class="o">=-</span><span class="n">l</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">compound_pend</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+<span class="gp">... </span>                <span class="n">parent_axis</span><span class="o">=</span><span class="n">compound_pend</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">child_joint_pos</span><span class="o">=</span><span class="n">l</span><span class="o">*</span><span class="n">simple_pend</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">joints</span> <span class="o">=</span> <span class="p">(</span><span class="n">slider</span><span class="p">,</span> <span class="n">rev1</span><span class="p">,</span> <span class="n">rev2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we can apply loads (forces and torques) to the bodies, gravity acts on all bodies,
+a linear spring and damper act on block and wall, a rotational linear spring acts on C relative to B
+specified torque T acts on compound_pend and block, specified force F acts on block.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;F, T&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="o">.</span><span class="n">apply_force</span><span class="p">(</span><span class="n">F</span><span class="o">*</span><span class="n">block</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="o">.</span><span class="n">apply_force</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">q1</span><span class="o">*</span><span class="n">block</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">reaction_body</span><span class="o">=</span><span class="n">wall</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="o">.</span><span class="n">apply_force</span><span class="p">(</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">u1</span><span class="o">*</span><span class="n">block</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">reaction_body</span><span class="o">=</span><span class="n">wall</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compound_pend</span><span class="o">.</span><span class="n">apply_torque</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="n">compound_pend</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">reaction_body</span><span class="o">=</span><span class="n">block</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simple_pend</span><span class="o">.</span><span class="n">apply_torque</span><span class="p">(</span><span class="n">kT</span><span class="o">*</span><span class="n">q3</span><span class="o">*</span><span class="n">simple_pend</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">reaction_body</span><span class="o">=</span><span class="n">compound_pend</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span><span class="o">.</span><span class="n">apply_force</span><span class="p">(</span><span class="o">-</span><span class="n">wall</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">block</span><span class="o">.</span><span class="n">mass</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compound_pend</span><span class="o">.</span><span class="n">apply_force</span><span class="p">(</span><span class="o">-</span><span class="n">wall</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">compound_pend</span><span class="o">.</span><span class="n">mass</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simple_pend</span><span class="o">.</span><span class="n">apply_force</span><span class="p">(</span><span class="o">-</span><span class="n">wall</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">simple_pend</span><span class="o">.</span><span class="n">mass</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With the problem setup, the equations of motion can be generated using the
+<code class="docutils literal notranslate"><span class="pre">JointsMethod</span></code> class with KanesMethod in backend.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">method</span> <span class="o">=</span> <span class="n">JointsMethod</span><span class="p">(</span><span class="n">wall</span><span class="p">,</span> <span class="n">slider</span><span class="p">,</span> <span class="n">rev1</span><span class="p">,</span> <span class="n">rev2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">method</span><span class="o">.</span><span class="n">form_eoms</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[               -c*u1(t) - k*q1(t) + 2*l*mb*u2(t)**2*sin(q2(t))/3 - l*mc*(-sin(q2(t))*cos(q3(t)) - sin(q3(t))*cos(q2(t)))*(u2(t) + u3(t))*u3(t) - mc*(l*(-sin(q2(t))*sin(q3(t)) + cos(q2(t))*cos(q3(t))) + l*cos(q2(t))/3)*Derivative(u3(t), t) + mc*(2*l*u2(t)/3 + l*u3(t)/3)*u2(t)*sin(q2(t)) - (2*l*mb*cos(q2(t))/3 + 2*l*mc*cos(q2(t))/3)*Derivative(u2(t), t) - (ma + mb + mc)*Derivative(u1(t), t) + F(t)],</span>
+<span class="go">[                                                                                                                  -2*g*l*mb*sin(q2(t))/3 - 2*g*l*mc*sin(q2(t))/3 + 2*l**2*mc*(u2(t) + u3(t))*u3(t)*sin(q3(t))/3 - mc*(2*l**2*cos(q3(t))/3 + 2*l**2/9)*Derivative(u3(t), t) - (2*l*mb*cos(q2(t))/3 + 2*l*mc*cos(q2(t))/3)*Derivative(u1(t), t) - (IBzz + 4*l**2*mb/9 + 4*l**2*mc/9)*Derivative(u2(t), t) + T(t)],</span>
+<span class="go">[-g*l*mc*(sin(q2(t))*cos(q3(t)) + sin(q3(t))*cos(q2(t))) - g*l*mc*sin(q2(t))/3 + kT*q3(t) + l**2*mc*(u2(t) + u3(t))*u3(t)*sin(q3(t))/3 - l*mc*(2*l*u2(t)/3 + l*u3(t)/3)*u2(t)*sin(q3(t)) - mc*(l*(-sin(q2(t))*sin(q3(t)) + cos(q2(t))*cos(q3(t))) + l*cos(q2(t))/3)*Derivative(u1(t), t) - mc*(2*l**2*cos(q3(t))/3 + 2*l**2/9)*Derivative(u2(t), t) - mc*(2*l**2*cos(q3(t))/3 + 10*l**2/9)*Derivative(u3(t), t)]])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">method</span><span class="o">.</span><span class="n">mass_matrix_full</span>
+<span class="go">Matrix([</span>
+<span class="go">[1, 0, 0,                                                                        0,                                         0,                                                                        0],</span>
+<span class="go">[0, 1, 0,                                                                        0,                                         0,                                                                        0],</span>
+<span class="go">[0, 0, 1,                                                                        0,                                         0,                                                                        0],</span>
+<span class="go">[0, 0, 0,                                                             ma + mb + mc, 2*l*mb*cos(q2(t))/3 + 2*l*mc*cos(q2(t))/3, mc*(l*(-sin(q2(t))*sin(q3(t)) + cos(q2(t))*cos(q3(t))) + l*cos(q2(t))/3)],</span>
+<span class="go">[0, 0, 0,                                2*l*mb*cos(q2(t))/3 + 2*l*mc*cos(q2(t))/3,          IBzz + 4*l**2*mb/9 + 4*l**2*mc/9,                                      mc*(2*l**2*cos(q3(t))/3 + 2*l**2/9)],</span>
+<span class="go">[0, 0, 0, mc*(l*(-sin(q2(t))*sin(q3(t)) + cos(q2(t))*cos(q3(t))) + l*cos(q2(t))/3),       mc*(2*l**2*cos(q3(t))/3 + 2*l**2/9),                                     mc*(2*l**2*cos(q3(t))/3 + 10*l**2/9)]])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">method</span><span class="o">.</span><span class="n">forcing_full</span>
+<span class="go">Matrix([</span>
+<span class="go">[                                                                                                                                                                                  u1(t)],</span>
+<span class="go">[                                                                                                                                                                                  u2(t)],</span>
+<span class="go">[                                                                                                                                                                                  u3(t)],</span>
+<span class="go">[ -c*u1(t) - k*q1(t) + 2*l*mb*u2(t)**2*sin(q2(t))/3 - l*mc*(-sin(q2(t))*cos(q3(t)) - sin(q3(t))*cos(q2(t)))*(u2(t) + u3(t))*u3(t) + mc*(2*l*u2(t)/3 + l*u3(t)/3)*u2(t)*sin(q2(t)) + F(t)],</span>
+<span class="go">[                                                                                   -2*g*l*mb*sin(q2(t))/3 - 2*g*l*mc*sin(q2(t))/3 + 2*l**2*mc*(u2(t) + u3(t))*u3(t)*sin(q3(t))/3 + T(t)],</span>
+<span class="go">[-g*l*mc*(sin(q2(t))*cos(q3(t)) + sin(q3(t))*cos(q2(t))) - g*l*mc*sin(q2(t))/3 + kT*q3(t) + l**2*mc*(u2(t) + u3(t))*u3(t)*sin(q3(t))/3 - l*mc*(2*l*u2(t)/3 + l*u3(t)/3)*u2(t)*sin(q3(t))]])</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bicycle_example.html" class="btn btn-neutral float-left" title="A bicycle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../advanced.html" class="btn btn-neutral float-right" title="Potential Issues/Advanced Topics/Future Features in Physics/Mechanics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

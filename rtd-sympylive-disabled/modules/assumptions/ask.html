@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/assumptions/ask.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Assume" href="assume.html" />
+    <link rel="prev" title="Assumptions" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Assumptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../calculus/index.html">Calculus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../combinatorics/index.html">Combinatorics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../integrals/index.html">Integrals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../series/index.html">Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../simplify/index.html">Simplify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solvers/index.html">Solvers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../abc.html">abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../algebras.html">Algebras</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concrete.html">Concrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discrete.html">Discrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../evalf.html">Numerical Evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../numeric-computation.html">Numeric Computation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rewriting.html">Term Rewriting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/basics/index.html">Basics</a> &raquo;</li>
+          <li><a href="index.html">Assumptions</a> &raquo;</li>
+      <li>Ask</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/assumptions/ask.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.assumptions.ask">
+<span id="ask"></span><h1>Ask<a class="headerlink" href="#module-sympy.assumptions.ask" title="Permalink to this headline"></a></h1>
+<p>Module for querying SymPy objects about assumptions.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.assumptions.ask.AssumptionKeys">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">AssumptionKeys</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/ask.py#L19-L303"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.AssumptionKeys" title="Permalink to this definition"></a></dt>
+<dd><p>This class contains all the supported keys by <code class="docutils literal notranslate"><span class="pre">ask</span></code>.
+It should be accessed via the instance <code class="docutils literal notranslate"><span class="pre">sympy.Q</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.ask.ask">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proposition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/ask.py#L356-L494"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.ask" title="Permalink to this definition"></a></dt>
+<dd><p>Function to evaluate the proposition with assumptions.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>proposition</strong> : Any boolean expression.</p>
+<blockquote>
+<div><p>Proposition which will be evaluated to boolean value. If this is
+not <code class="docutils literal notranslate"><span class="pre">AppliedPredicate</span></code>, it will be wrapped by <code class="docutils literal notranslate"><span class="pre">Q.is_true</span></code>.</p>
+</div></blockquote>
+<p><strong>assumptions</strong> : Any boolean expression, optional.</p>
+<blockquote>
+<div><p>Local assumptions to evaluate the <em>proposition</em>.</p>
+</div></blockquote>
+<p><strong>context</strong> : AssumptionsContext, optional.</p>
+<blockquote>
+<div><p>Default assumptions to evaluate the <em>proposition</em>. By default,
+this is <code class="docutils literal notranslate"><span class="pre">sympy.assumptions.global_assumptions</span></code> variable.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, or <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>TypeError</strong> : <em>proposition</em> or <em>assumptions</em> is not valid logical expression.</p>
+<p><strong>ValueError</strong> : assumptions are inconsistent.</p>
+</dd>
+</dl>
+<p class="rubric">Explanation</p>
+<p>This function evaluates the proposition to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> if
+the truth value can be determined. If not, it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>It should be discerned from <a class="reference internal" href="refine.html#sympy.assumptions.refine.refine" title="sympy.assumptions.refine.refine"><code class="xref py py-func docutils literal notranslate"><span class="pre">refine()</span></code></a> which, when applied to a
+proposition, simplifies the argument to symbolic <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> instead of
+Python built-in <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p><strong>Syntax</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>ask(proposition)</dt><dd><p>Evaluate the <em>proposition</em> in global assumption context.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ask(proposition, assumptions)</dt><dd><p>Evaluate the <em>proposition</em> with respect to <em>assumptions</em> in
+global assumption context.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ask</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ask</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">rational</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ask</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">even</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">even</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">integer</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ask</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">prime</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">integer</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>If the truth value cannot be determined, <code class="docutils literal notranslate"><span class="pre">None</span></code> will be returned.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ask</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">odd</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)))</span> <span class="c1"># cannot determine unless we know x</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised if assumptions are inconsistent.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ask</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">integer</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">even</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">odd</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">ValueError</span>: <span class="n">inconsistent assumptions Q.even(x) &amp; Q.odd(x)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Relations in assumptions are not implemented (yet), so the following
+will not give a meaningful result.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ask</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is however a work in progress.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="refine.html#sympy.assumptions.refine.refine" title="sympy.assumptions.refine.refine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.assumptions.refine.refine</span></code></a></dt><dd><p>Simplification using assumptions. Proposition is not reduced to <code class="docutils literal notranslate"><span class="pre">None</span></code> if the truth value cannot be determined.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.ask.register_handler">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">register_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/ask.py#L580-L601"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.register_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Register a handler in the ask system. key must be a string and handler a
+class inheriting from AskHandler.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.8.: </span>Use multipledispatch handler instead. See <a class="reference internal" href="assume.html#sympy.assumptions.assume.Predicate" title="sympy.assumptions.assume.Predicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Predicate</span></code></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.ask.remove_handler">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">remove_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/ask.py#L604-L620"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.remove_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Removes a handler from the ask system. Same syntax as register_handler</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.8.: </span>Use multipledispatch handler instead. See <a class="reference internal" href="assume.html#sympy.assumptions.assume.Predicate" title="sympy.assumptions.assume.Predicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Predicate</span></code></a>.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Assumptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="assume.html" class="btn btn-neutral float-right" title="Assume" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refine &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/assumptions/refine.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Predicates" href="predicates.html" />
+    <link rel="prev" title="Assume" href="assume.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Assumptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../calculus/index.html">Calculus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../combinatorics/index.html">Combinatorics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../functions/index.html">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../integrals/index.html">Integrals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../series/index.html">Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../simplify/index.html">Simplify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../solvers/index.html">Solvers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../abc.html">abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../algebras.html">Algebras</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concrete.html">Concrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../core.html">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../discrete.html">Discrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../evalf.html">Numerical Evaluation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../numeric-computation.html">Numeric Computation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rewriting.html">Term Rewriting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/basics/index.html">Basics</a> &raquo;</li>
+          <li><a href="index.html">Assumptions</a> &raquo;</li>
+      <li>Refine</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/assumptions/refine.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.assumptions.refine">
+<span id="refine"></span><h1>Refine<a class="headerlink" href="#module-sympy.assumptions.refine" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L10-L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine" title="Permalink to this definition"></a></dt>
+<dd><p>Simplify an expression using assumptions.</p>
+<p class="rubric">Explanation</p>
+<p>Unlike <a class="reference internal" href="../simplify/simplify.html#sympy.simplify.simplify.simplify" title="sympy.simplify.simplify.simplify"><code class="xref py py-func docutils literal notranslate"><span class="pre">simplify()</span></code></a> which performs structural simplification
+without any assumption, this function transforms the expression into
+the form which is only valid under certain assumptions. Note that
+<code class="docutils literal notranslate"><span class="pre">simplify()</span></code> is generally not done in refining process.</p>
+<p>Refining boolean expression involves reducing it to <code class="docutils literal notranslate"><span class="pre">S.true</span></code> or
+<code class="docutils literal notranslate"><span class="pre">S.false</span></code>. Unlike <a class="reference internal" href="ask.html#sympy.assumptions.ask.ask" title="sympy.assumptions.ask.ask"><code class="xref py py-func docutils literal notranslate"><span class="pre">ask()</span></code></a>, the expression will not be reduced
+if the truth value cannot be determined.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">refine</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">Q</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">Abs(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">x</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">refine</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">Q.positive(x)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../simplify/simplify.html#sympy.simplify.simplify.simplify" title="sympy.simplify.simplify.simplify"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.simplify.simplify.simplify</span></code></a></dt><dd><p>Structural simplification without assumptions.</p>
+</dd>
+<dt><a class="reference internal" href="ask.html#sympy.assumptions.ask.ask" title="sympy.assumptions.ask.ask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.assumptions.ask.ask</span></code></a></dt><dd><p>Query for boolean expressions using assumptions.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine_Pow">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine_Pow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L108-L205"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine_Pow" title="Permalink to this definition"></a></dt>
+<dd><p>Handler for instances of Pow.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Q</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.assumptions.refine</span> <span class="kn">import</span> <span class="n">refine_Pow</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_Pow</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_Pow</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">even</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_Pow</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">x</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">odd</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+<p>For powers of -1, even parts of the exponent can be simplified:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">refine_Pow</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">even</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">(-1)**y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_Pow</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">odd</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">odd</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="go">(-1)**y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_Pow</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">odd</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">(-1)**(y + 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_Pow</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="kc">True</span><span class="p">)</span>
+<span class="go">(-1)**(x + 1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine_abs">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine_abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L70-L105"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine_abs" title="Permalink to this definition"></a></dt>
+<dd><p>Handler for the absolute value.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Q</span><span class="p">,</span> <span class="n">Abs</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.assumptions.refine</span> <span class="kn">import</span> <span class="n">refine_abs</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_abs</span><span class="p">(</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_abs</span><span class="p">(</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_abs</span><span class="p">(</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">-x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine_arg">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L298-L318"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine_arg" title="Permalink to this definition"></a></dt>
+<dd><p>Handler for complex argument</p>
+<p class="rubric">Explanation</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.assumptions.refine</span> <span class="kn">import</span> <span class="n">refine_arg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Q</span><span class="p">,</span> <span class="n">arg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">pi</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine_atan2">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine_atan2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L208-L250"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine_atan2" title="Permalink to this definition"></a></dt>
+<dd><p>Handler for the atan2 function.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Q</span><span class="p">,</span> <span class="n">atan2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.assumptions.refine</span> <span class="kn">import</span> <span class="n">refine_atan2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_atan2</span><span class="p">(</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">atan(y/x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_atan2</span><span class="p">(</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">atan(y/x) - pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_atan2</span><span class="p">(</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">atan(y/x) + pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_atan2</span><span class="p">(</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_atan2</span><span class="p">(</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">pi/2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_atan2</span><span class="p">(</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">-pi/2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_atan2</span><span class="p">(</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">nan</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine_im">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine_im</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L276-L296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine_im" title="Permalink to this definition"></a></dt>
+<dd><p>Handler for imaginary part.</p>
+<p class="rubric">Explanation</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.assumptions.refine</span> <span class="kn">import</span> <span class="n">refine_im</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Q</span><span class="p">,</span> <span class="n">im</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_im</span><span class="p">(</span><span class="n">im</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_im</span><span class="p">(</span><span class="n">im</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">imaginary</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">-I*x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine_matrixelement">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine_matrixelement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L373-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine_matrixelement" title="Permalink to this definition"></a></dt>
+<dd><p>Handler for symmetric part.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.assumptions.refine</span> <span class="kn">import</span> <span class="n">refine_matrixelement</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">MatrixSymbol</span><span class="p">,</span> <span class="n">Q</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">MatrixSymbol</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_matrixelement</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">Q</span><span class="o">.</span><span class="n">symmetric</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="go">X[0, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_matrixelement</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Q</span><span class="o">.</span><span class="n">symmetric</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="go">X[0, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine_re">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine_re</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L253-L273"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine_re" title="Permalink to this definition"></a></dt>
+<dd><p>Handler for real part.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.assumptions.refine</span> <span class="kn">import</span> <span class="n">refine_re</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Q</span><span class="p">,</span> <span class="n">re</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_re</span><span class="p">(</span><span class="n">re</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_re</span><span class="p">(</span><span class="n">re</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">imaginary</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.assumptions.refine.refine_sign">
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.refine.</span></span><span class="sig-name descname"><span class="pre">refine_sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/assumptions/refine.py#L332-L370"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.refine.refine_sign" title="Permalink to this definition"></a></dt>
+<dd><p>Handler for sign.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.assumptions.refine</span> <span class="kn">import</span> <span class="n">refine_sign</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sign</span><span class="p">,</span> <span class="n">im</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_sign</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_sign</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Q</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_sign</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">imaginary</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">sign</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_sign</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">positive</span><span class="p">(</span><span class="n">im</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+<span class="go">I</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refine_sign</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">negative</span><span class="p">(</span><span class="n">im</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+<span class="go">-I</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="assume.html" class="btn btn-neutral float-left" title="Assume" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="predicates.html" class="btn btn-neutral float-right" title="Predicates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essential Functions (Docstrings) &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/vector/api/functions.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Docstrings for basic field functions" href="fieldfunctions.html" />
+    <link rel="prev" title="Printing (Docstrings)" href="printing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../mechanics/index.html">Classical Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quantum/index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="../index.html">The Physics Vector Module</a> &raquo;</li>
+      <li>Essential Functions (Docstrings)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/modules/physics/vector/api/functions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="essential-functions-docstrings">
+<h1>Essential Functions (Docstrings)<a class="headerlink" href="#essential-functions-docstrings" title="Permalink to this headline"></a></h1>
+<section id="dynamicsymbols">
+<h2>dynamicsymbols<a class="headerlink" href="#dynamicsymbols" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.dynamicsymbols">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.</span></span><span class="sig-name descname"><span class="pre">dynamicsymbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/functions.py#L581-L636"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.dynamicsymbols" title="Permalink to this definition"></a></dt>
+<dd><p>Uses symbols and Function for functions of time.</p>
+<p>Creates a SymPy UndefinedFunction, which is then initialized as a function
+of a variable, the default being Symbol(‘t’).</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>names</strong> : str</p>
+<blockquote>
+<div><p>Names of the dynamic symbols you want to create; works the same way as
+inputs to symbols</p>
+</div></blockquote>
+<p><strong>level</strong> : int</p>
+<blockquote>
+<div><p>Level of differentiation of the returned function; d/dt once of t,
+twice of t, etc.</p>
+</div></blockquote>
+<p><strong>assumptions :</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>real(bool)<span class="classifier">This is used to set the dynamicsymbol as real,</span></dt><dd><p>by default is False.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>positive(bool)<span class="classifier">This is used to set the dynamicsymbol as positive,</span></dt><dd><p>by default is False.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>commutative(bool)<span class="classifier">This is used to set the commutative property of</span></dt><dd><p>a dynamicsymbol, by default is True.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>integer(bool)<span class="classifier">This is used to set the dynamicsymbol as integer,</span></dt><dd><p>by default is False.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">dynamicsymbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">diff</span><span class="p">,</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span>
+<span class="go">q1(t)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q2</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q2&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q2</span><span class="o">.</span><span class="n">is_real</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q3</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q3&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q3</span><span class="o">.</span><span class="n">is_positive</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q4</span><span class="p">,</span> <span class="n">q5</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q4,q5&#39;</span><span class="p">,</span> <span class="n">commutative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">q4</span><span class="o">*</span><span class="n">q5</span> <span class="o">!=</span> <span class="n">q5</span><span class="o">*</span><span class="n">q4</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q6</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q6&#39;</span><span class="p">,</span> <span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q6</span><span class="o">.</span><span class="n">is_integer</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">diff</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">))</span>
+<span class="go">Derivative(q1(t), t)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="dot">
+<h2>dot<a class="headerlink" href="#dot" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.functions.dot">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.functions.</span></span><span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/functions.py#L28-L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.functions.dot" title="Permalink to this definition"></a></dt>
+<dd><p>Dot product convenience wrapper for Vector.dot(): 
+Dot product of two vectors.</p>
+<blockquote>
+<div><p>Returns a scalar, the dot product of the two Vectors</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> : Vector</p>
+<blockquote>
+<div><p>The Vector which we are dotting with</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">dot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dot</span><span class="p">(</span><span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dot</span><span class="p">(</span><span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orientnew</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;Axis&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">q1</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dot</span><span class="p">(</span><span class="n">N</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="go">cos(q1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="cross">
+<h2>cross<a class="headerlink" href="#cross" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.functions.cross">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.functions.</span></span><span class="sig-name descname"><span class="pre">cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/functions.py#L20-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.functions.cross" title="Permalink to this definition"></a></dt>
+<dd><p>Cross product convenience wrapper for Vector.cross(): 
+The cross product operator for two Vectors.</p>
+<blockquote>
+<div><p>Returns a Vector, expressed in the same ReferenceFrames as self.</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> : Vector</p>
+<blockquote>
+<div><p>The Vector which we are crossing with</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span><span class="o">.</span><span class="n">x</span> <span class="o">^</span> <span class="n">N</span><span class="o">.</span><span class="n">y</span>
+<span class="go">N.z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orientnew</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;Axis&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">q1</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">x</span> <span class="o">^</span> <span class="n">N</span><span class="o">.</span><span class="n">y</span>
+<span class="go">N.z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span><span class="o">.</span><span class="n">y</span> <span class="o">^</span> <span class="n">A</span><span class="o">.</span><span class="n">x</span>
+<span class="go">- sin(q1)*A.y - cos(q1)*A.z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="outer">
+<h2>outer<a class="headerlink" href="#outer" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.functions.outer">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.functions.</span></span><span class="sig-name descname"><span class="pre">outer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/functions.py#L219-L223"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.functions.outer" title="Permalink to this definition"></a></dt>
+<dd><p>Outer product convenience wrapper for Vector.outer():
+Outer product between two Vectors.</p>
+<blockquote>
+<div><p>A rank increasing operation, which returns a Dyadic from two Vectors</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> : Vector</p>
+<blockquote>
+<div><p>The Vector to take the outer product with</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">outer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">outer</span><span class="p">(</span><span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="go">(N.x|N.x)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="express">
+<h2>express<a class="headerlink" href="#express" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.functions.express">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.functions.</span></span><span class="sig-name descname"><span class="pre">express</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/functions.py#L36-L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.functions.express" title="Permalink to this definition"></a></dt>
+<dd><p>Global function for ‘express’ functionality.</p>
+<p>Re-expresses a Vector, scalar(sympyfiable) or Dyadic in given frame.</p>
+<p>Refer to the local methods of Vector and Dyadic for details.
+If ‘variables’ is True, then the coordinate variables (CoordinateSym
+instances) of other frames present in the vector/scalar field or
+dyadic expression are also substituted in terms of the base scalars of
+this frame.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expr</strong> : Vector/Dyadic/scalar(sympyfiable)</p>
+<blockquote>
+<div><p>The expression to re-express in ReferenceFrame ‘frame’</p>
+</div></blockquote>
+<p><strong>frame: ReferenceFrame</strong></p>
+<blockquote>
+<div><p>The reference frame to express expr in</p>
+</div></blockquote>
+<p><strong>frame2</strong> : ReferenceFrame</p>
+<blockquote>
+<div><p>The other frame required for re-expression(only for Dyadic expr)</p>
+</div></blockquote>
+<p><strong>variables</strong> : boolean</p>
+<blockquote>
+<div><p>Specifies whether to substitute the coordinate variables present
+in expr, in terms of those of frame</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">outer</span><span class="p">,</span> <span class="n">dynamicsymbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">init_vprinting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">init_vprinting</span><span class="p">(</span><span class="n">pretty_print</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orientnew</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;Axis&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">q</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">z</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">outer</span><span class="p">(</span><span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">express</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">express</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="go">cos(q)*(B.x|N.x) - sin(q)*(B.y|N.x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">express</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="go">cos(q)*N.x + sin(q)*N.y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">express</span><span class="p">(</span><span class="n">N</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">B</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">B_x*cos(q) - B_y*sin(q)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="time-derivative">
+<h2>time_derivative<a class="headerlink" href="#time-derivative" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.functions.time_derivative">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.functions.</span></span><span class="sig-name descname"><span class="pre">time_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/functions.py#L139-L216"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.functions.time_derivative" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the time derivative of a vector/scalar field function
+or dyadic expression in given frame.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expr</strong> : Vector/Dyadic/sympifyable</p>
+<blockquote>
+<div><p>The expression whose time derivative is to be calculated</p>
+</div></blockquote>
+<p><strong>frame</strong> : ReferenceFrame</p>
+<blockquote>
+<div><p>The reference frame to calculate the time derivative in</p>
+</div></blockquote>
+<p><strong>order</strong> : integer</p>
+<blockquote>
+<div><p>The order of the derivative to be calculated</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">dynamicsymbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">init_vprinting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">init_vprinting</span><span class="p">(</span><span class="n">pretty_print</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;q1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u1</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;u1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orientnew</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;Axis&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">q1</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">u1</span> <span class="o">*</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">set_ang_vel</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">A</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">time_derivative</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time_derivative</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="go">u1&#39;*N.x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time_derivative</span><span class="p">(</span><span class="n">u1</span><span class="o">*</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">N</span><span class="p">)</span>
+<span class="go">N_x*u1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">orientnew</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;Axis&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">z</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">outer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">outer</span><span class="p">(</span><span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time_derivative</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="go">- u1&#39;*(N.y|N.x) - u1&#39;*(N.x|N.y)</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Rotating_reference_frame#Time_derivatives_in_the_two_frames">https://en.wikipedia.org/wiki/Rotating_reference_frame#Time_derivatives_in_the_two_frames</a></p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="printing.html" class="btn btn-neutral float-left" title="Printing (Docstrings)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fieldfunctions.html" class="btn btn-neutral float-right" title="Docstrings for basic field functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

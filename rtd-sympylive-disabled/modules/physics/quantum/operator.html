@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operator &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/quantum/operator.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Operator/State Helper Functions" href="operatorset.html" />
+    <link rel="prev" title="Hilbert Space" href="hilbert.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../vector/index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mechanics/index.html">Classical Mechanics</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="index.html">Quantum Mechanics</a> &raquo;</li>
+      <li>Operator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/physics/quantum/operator.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.physics.quantum.operator">
+<span id="operator"></span><h1>Operator<a class="headerlink" href="#module-sympy.physics.quantum.operator" title="Permalink to this headline"></a></h1>
+<p>Quantum mechanical operators.</p>
+<p>TODO:</p>
+<ul class="simple">
+<li><p>Fix early 0 in apply_operators.</p></li>
+<li><p>Debug and test apply_operators.</p></li>
+<li><p>Get cse working with classes in this file.</p></li>
+<li><p>Doctests and documentation of special methods for InnerProduct, Commutator,
+AntiCommutator, represent, apply_operators.</p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/operator.py#L491-L647"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator" title="Permalink to this definition"></a></dt>
+<dd><p>An operator for representing the differential operator, i.e. d/dx</p>
+<p>It is initialized by passing two arguments. The first is an arbitrary
+expression that involves a function, such as <code class="docutils literal notranslate"><span class="pre">Derivative(f(x),</span> <span class="pre">x)</span></code>. The
+second is the function (e.g. <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>) which we are to replace with the
+<code class="docutils literal notranslate"><span class="pre">Wavefunction</span></code> that this <code class="docutils literal notranslate"><span class="pre">DifferentialOperator</span></code> is applied to.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expr</strong> : Expr</p>
+<blockquote>
+<div><p>The arbitrary expression which the appropriate Wavefunction is to be
+substituted into</p>
+</div></blockquote>
+<p><strong>func</strong> : Expr</p>
+<blockquote>
+<div><p>A function (e.g. f(x)) which is to be replaced with the appropriate
+Wavefunction when this DifferentialOperator is applied</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>You can define a completely arbitrary expression and specify where the
+Wavefunction is to be substituted</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Derivative</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.operator</span> <span class="kn">import</span> <span class="n">DifferentialOperator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.state</span> <span class="kn">import</span> <span class="n">Wavefunction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.qapply</span> <span class="kn">import</span> <span class="n">qapply</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DifferentialOperator</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">*</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">Wavefunction</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">function</span>
+<span class="go">f(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">variables</span>
+<span class="go">(x,)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qapply</span><span class="p">(</span><span class="n">d</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+<span class="go">Wavefunction(2, x)</span>
+</pre></div>
+</div>
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator.expr">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">expr</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.expr" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the arbitrary expression which is to have the Wavefunction
+substituted into it</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.operator</span> <span class="kn">import</span> <span class="n">DifferentialOperator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Function</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Derivative</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DifferentialOperator</span><span class="p">(</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">expr</span>
+<span class="go">Derivative(f(x), x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DifferentialOperator</span><span class="p">(</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span>
+<span class="gp">... </span>                         <span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">expr</span>
+<span class="go">Derivative(f(x, y), x) + Derivative(f(x, y), y)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator.free_symbols">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">free_symbols</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.free_symbols" title="Permalink to this definition"></a></dt>
+<dd><p>Return the free symbols of the expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator.function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">function</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.function" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the function which is to be replaced with the Wavefunction</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.operator</span> <span class="kn">import</span> <span class="n">DifferentialOperator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Function</span><span class="p">,</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Derivative</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DifferentialOperator</span><span class="p">(</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">function</span>
+<span class="go">f(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DifferentialOperator</span><span class="p">(</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span>
+<span class="gp">... </span>                         <span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">function</span>
+<span class="go">f(x, y)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator.variables">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.variables" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the variables with which the function in the specified
+arbitrary expression is evaluated</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.operator</span> <span class="kn">import</span> <span class="n">DifferentialOperator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">Derivative</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DifferentialOperator</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">*</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">variables</span>
+<span class="go">(x,)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">DifferentialOperator</span><span class="p">(</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span>
+<span class="gp">... </span>                         <span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">variables</span>
+<span class="go">(x, y)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.HermitianOperator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">HermitianOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/operator.py#L190-L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.HermitianOperator" title="Permalink to this definition"></a></dt>
+<dd><p>A Hermitian operator that satisfies H == Dagger(H).</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> : tuple</p>
+<blockquote>
+<div><p>The list of numbers or parameters that uniquely specify the
+operator. For time-dependent operators, this will include the time.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum</span> <span class="kn">import</span> <span class="n">Dagger</span><span class="p">,</span> <span class="n">HermitianOperator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">HermitianOperator</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Dagger</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<span class="go">H</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.IdentityOperator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">IdentityOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/operator.py#L252-L328"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.IdentityOperator" title="Permalink to this definition"></a></dt>
+<dd><p>An identity operator I that satisfies op * I == I * op == op for any
+operator op.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>N</strong> : Integer</p>
+<blockquote>
+<div><p>Optional parameter that specifies the dimension of the Hilbert space
+of operator. This is used when generating a matrix representation.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum</span> <span class="kn">import</span> <span class="n">IdentityOperator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">IdentityOperator</span><span class="p">()</span>
+<span class="go">I</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.Operator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">Operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/operator.py#L37-L187"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.Operator" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for non-commuting quantum operators.</p>
+<p>An operator maps between quantum states <a class="reference internal" href="#r677" id="id1"><span>[R677]</span></a>. In quantum mechanics,
+observables (including, but not limited to, measured physical values) are
+represented as Hermitian operators <a class="reference internal" href="#r678" id="id2"><span>[R678]</span></a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> : tuple</p>
+<blockquote>
+<div><p>The list of numbers or parameters that uniquely specify the
+operator. For time-dependent operators, this will include the time.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create an operator and examine its attributes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum</span> <span class="kn">import</span> <span class="n">Operator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">I</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span>
+<span class="go">A</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">hilbert_space</span>
+<span class="go">H</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">label</span>
+<span class="go">(A,)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">is_commutative</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Create another operator and do some arithmetic operations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">A</span> <span class="o">+</span> <span class="n">I</span><span class="o">*</span><span class="n">B</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span>
+<span class="go">2*A**2 + I*B</span>
+</pre></div>
+</div>
+<p>Operators do not commute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">is_commutative</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">B</span><span class="o">.</span><span class="n">is_commutative</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">*</span><span class="n">B</span> <span class="o">==</span> <span class="n">B</span><span class="o">*</span><span class="n">A</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Polymonials of operators respect the commutation properties:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="go">A*B*A + A*B**2 + A**2*B + A**3 + B*A*B + B*A**2 + B**2*A + B**3</span>
+</pre></div>
+</div>
+<p>Operator inverses are handle symbolically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
+<span class="go">A**(-1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">*</span><span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r677"><span class="brackets">R677</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Operator_%28physics%29">https://en.wikipedia.org/wiki/Operator_%28physics%29</a></p>
+</dd>
+<dt class="label" id="r678"><span class="brackets">R678</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Observable">https://en.wikipedia.org/wiki/Observable</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.OuterProduct">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">OuterProduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">old_assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/operator.py#L331-L488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct" title="Permalink to this definition"></a></dt>
+<dd><p>An unevaluated outer product between a ket and bra.</p>
+<p>This constructs an outer product between any subclass of <code class="docutils literal notranslate"><span class="pre">KetBase</span></code> and
+<code class="docutils literal notranslate"><span class="pre">BraBase</span></code> as <code class="docutils literal notranslate"><span class="pre">|a&gt;&lt;b|</span></code>. An <code class="docutils literal notranslate"><span class="pre">OuterProduct</span></code> inherits from Operator as they act as
+operators in quantum expressions.  For reference see <a class="reference internal" href="#r679" id="id5"><span>[R679]</span></a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ket</strong> : KetBase</p>
+<blockquote>
+<div><p>The ket on the left side of the outer product.</p>
+</div></blockquote>
+<p><strong>bar</strong> : BraBase</p>
+<blockquote>
+<div><p>The bra on the right side of the outer product.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create a simple outer product by hand and take its dagger:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum</span> <span class="kn">import</span> <span class="n">Ket</span><span class="p">,</span> <span class="n">Bra</span><span class="p">,</span> <span class="n">OuterProduct</span><span class="p">,</span> <span class="n">Dagger</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum</span> <span class="kn">import</span> <span class="n">Operator</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="n">Ket</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Bra</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">OuterProduct</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span>
+<span class="go">|k&gt;&lt;b|</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">hilbert_space</span>
+<span class="go">H</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">ket</span>
+<span class="go">|k&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">bra</span>
+<span class="go">&lt;b|</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Dagger</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+<span class="go">|b&gt;&lt;k|</span>
+</pre></div>
+</div>
+<p>In simple products of kets and bras outer products will be automatically
+identified and created:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">*</span><span class="n">b</span>
+<span class="go">|k&gt;&lt;b|</span>
+</pre></div>
+</div>
+<p>But in more complex expressions, outer products are not automatically
+created:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Operator</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">b</span>
+<span class="go">A*|k&gt;*&lt;b|</span>
+</pre></div>
+</div>
+<p>A user can force the creation of an outer product in a complex expression
+by using parentheses to group the ket and bra:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
+<span class="go">A*|k&gt;&lt;b|</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r679"><span class="brackets">R679</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Outer_product">https://en.wikipedia.org/wiki/Outer_product</a></p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.OuterProduct.bra">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bra</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct.bra" title="Permalink to this definition"></a></dt>
+<dd><p>Return the bra on the right side of the outer product.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.OuterProduct.ket">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ket</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct.ket" title="Permalink to this definition"></a></dt>
+<dd><p>Return the ket on the left side of the outer product.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operator.UnitaryOperator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">UnitaryOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/operator.py#L229-L249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.UnitaryOperator" title="Permalink to this definition"></a></dt>
+<dd><p>A unitary operator that satisfies U*Dagger(U) == 1.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> : tuple</p>
+<blockquote>
+<div><p>The list of numbers or parameters that uniquely specify the
+operator. For time-dependent operators, this will include the time.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum</span> <span class="kn">import</span> <span class="n">Dagger</span><span class="p">,</span> <span class="n">UnitaryOperator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">U</span> <span class="o">=</span> <span class="n">UnitaryOperator</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">U</span><span class="o">*</span><span class="n">Dagger</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hilbert.html" class="btn btn-neutral float-left" title="Hilbert Space" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="operatorset.html" class="btn btn-neutral float-right" title="Operator/State Helper Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

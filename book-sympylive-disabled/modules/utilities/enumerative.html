@@ -1,0 +1,2134 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enumerative &#8212; SymPy 1.10.dev documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/modules/utilities/enumerative.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Iterables" href="iterables.html" />
+    <link rel="prev" title="Decorator" href="decorator.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/sympylogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorial/index.html">
+   SymPy Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/preliminaries.html">
+     Preliminaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/gotchas.html">
+     Gotchas
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorial/features.html">
+     SymPy Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/basic_operations.html">
+       Basic Operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/printing.html">
+       Printing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/simplification.html">
+       Simplification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/calculus.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/manipulation.html">
+       Advanced Expression Manipulation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../guides/index.html">
+   SymPy Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../guides/getting_started/index.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/getting_started/install.html">
+       Installation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../guides/contributing/index.html">
+     Contributing to SymPy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/dev-setup.html">
+       Development Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/build-docs.html">
+       Build the Documentation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/debug.html">
+       Debugging
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/docstring.html">
+       SymPy Docstrings Style Guide
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/documentation-style-guide.html">
+       General Guidelines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/make-a-contribution.html">
+       Making a Contribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/assumptions.html">
+     Assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/booleans.html">
+     Symbolic and fuzzy booleans
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../explanation/index.html">
+   Explanation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/gotchas.html">
+     Gotchas and Pitfalls
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../explanation/special_topics/index.html">
+     SymPy Special Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/finite_diff_derivatives.html">
+       Finite Difference Approximations to Derivatives
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/classification.html">
+       Classification of SymPy objects
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../reference/index.html">
+   Reference Documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/basics/index.html">
+     Basics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../assumptions/index.html">
+       Assumptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/ask.html">
+         Ask
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/assume.html">
+         Assume
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/refine.html">
+         Refine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/predicates.html">
+         Predicates
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../calculus/index.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../combinatorics/index.html">
+       Combinatorics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/partitions.html">
+         Partitions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/permutations.html">
+         Permutations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/perm_groups.html">
+         Permutation Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/polyhedron.html">
+         Polyhedron
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/prufer.html">
+         Prufer Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/subsets.html">
+         Subsets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/graycode.html">
+         Gray Code
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/named_groups.html">
+         Named Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/util.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/group_constructs.html">
+         Group constructors
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/testutil.html">
+         Test Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/tensor_can.html">
+         Tensor Canonicalization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/fp_groups.html">
+         Finitely Presented Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/pc_groups.html">
+         Polycyclic Groups
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../functions/index.html">
+       Functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/elementary.html">
+         Elementary
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/combinatorial.html">
+         Combinatorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/special.html">
+         Special
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../integrals/index.html">
+       Integrals
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../integrals/g-functions.html">
+         Computing Integrals using Meijer G-Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../integrals/integrals.html">
+         Integrals
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../series/index.html">
+       Series
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/series.html">
+         Series Expansions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/sequences.html">
+         Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/fourier.html">
+         Fourier Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/formal.html">
+         Formal Power Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/limitseq.html">
+         Limits of Sequences
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../simplify/index.html">
+       Simplify
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/simplify.html">
+         Simplify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/hyperexpand.html">
+         Hypergeometric Expansion
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/fu.html">
+         Hongguang Fu’s Trigonometric Simplification
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../solvers/index.html">
+       Solvers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/diophantine.html">
+         Diophantine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/inequalities.html">
+         Inequality Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/ode.html">
+         ODE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/pde.html">
+         PDE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/solvers.html">
+         Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/solveset.html">
+         Solveset
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../abc.html">
+       abc
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algebras.html">
+       Algebras
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concrete.html">
+       Concrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../core.html">
+       Core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../discrete.html">
+       Discrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../evalf.html">
+       Numerical Evaluation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../numeric-computation.html">
+       Numeric Computation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../rewriting.html">
+       Term Rewriting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/codegeneration/index.html">
+     Code Generation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../codegen.html">
+       Introduction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/logic/index.html">
+     Logic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../logic.html">
+       Logic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sets.html">
+       Sets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../matrices/index.html">
+       Matrices
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/matrices.html">
+         Matrices (linear algebra)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/common.html">
+         Common Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/dense.html">
+         Dense Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/sparse.html">
+         Sparse Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/sparsetools.html">
+         Sparse Tools
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/immutablematrices.html">
+         Immutable Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/expressions.html">
+         Matrix Expressions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/normalforms.html">
+         Matrix Normal Forms
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../tensor/index.html">
+       Tensor
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/array.html">
+         N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/indexed.html">
+         Indexed Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/index_methods.html">
+         Methods
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/tensor.html">
+         Tensor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/toperators.html">
+         Tensor Operators
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../vector/index.html">
+       Vector
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/intro.html">
+         Introduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/basics.html">
+         Basic Implementation details
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/coordsys.html">
+         More about Coordinate Systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/examples.html">
+         General examples of usage
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/vector_integration.html">
+         Applications of Vector Integrals
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/classes.html">
+         Essential Classes in sympy.vector (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/orienterclasses.html">
+         Orienter classes (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/vectorfunctions.html">
+         Essential Functions in sympy.vector (docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/numbertheory/index.html">
+     Number Theory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ntheory.html">
+       Ntheory Class Reference
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/physics/index.html">
+     Physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/hydrogen.html">
+       Hydrogen Wavefunctions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/paulialgebra.html">
+       Pauli Algebra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/qho_1d.html">
+       Quantum Harmonic Oscillator in 1-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/sho.html">
+       Quantum Harmonic Oscillator in 3-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/secondquant.html">
+       Second Quantization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/wigner.html">
+       Wigner Symbols
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/units/index.html">
+       Unit systems
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/philosophy.html">
+         Philosophy behind unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/dimensions.html">
+         Dimensions and dimension systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/prefixes.html">
+         Unit prefixes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/unitsystem.html">
+         Units and unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/quantities.html">
+         Physical quantities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/hep/index.html">
+       High energy physics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="simple">
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/vector/index.html">
+       The Physics Vector Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/vectors.html">
+         Vector &amp; ReferenceFrame
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/kinematics.html">
+         Vector: Kinematics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/classes.html">
+         Essential Classes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/kinematics.html">
+         Kinematics (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/functions.html">
+         Essential Functions (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/fieldfunctions.html">
+         Docstrings for basic field functions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/mechanics/index.html">
+       Classical Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/masses.html">
+         Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/kane.html">
+         Kane’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/lagrange.html">
+         Lagrange’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/symsystem.html">
+         Symbolic Systems in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/linearize.html">
+         Linearization in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples.html">
+         Examples for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/reference.html">
+         References for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/autolev_parser.html">
+         Autolev Parser
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/sympy_mechanics_for_autolev_users.html">
+         SymPy Mechanics for Autolev Users
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/part_bod.html">
+         Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/kane_lagrange.html">
+         Kane’s Method &amp; Lagrange’s Method (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/system.html">
+         SymbolicSystem (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/linearize.html">
+         Linearization (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/expr_manip.html">
+         Expression Manipulation (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/body.html">
+         Body (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/joint.html">
+         Joint (Docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/quantum/index.html">
+       Quantum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/anticommutator.html">
+         Anticommutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/cg.html">
+         Clebsch-Gordan Coefficients
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/commutator.html">
+         Commutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/constants.html">
+         Constants
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/dagger.html">
+         Dagger
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/innerproduct.html">
+         Inner Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/tensorproduct.html">
+         Tensor Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/cartesian.html">
+         Cartesian Operators and States
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/hilbert.html">
+         Hilbert Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/operator.html">
+         Operator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/operatorset.html">
+         Operator/State Helper Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qapply.html">
+         Qapply
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/represent.html">
+         Represent
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/spin.html">
+         Spin
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/state.html">
+         State
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/circuitplot.html">
+         Circuit Plot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/gate.html">
+         Gates
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/grover.html">
+         Grover’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qft.html">
+         QFT
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qubit.html">
+         Qubit
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/shor.html">
+         Shor’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/piab.html">
+         Particle in a Box
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/optics/index.html">
+       Optics Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/gaussopt.html">
+         Gaussian Optics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/medium.html">
+         Medium
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/polarization.html">
+         Polarization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/utils.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/waves.html">
+         Waves
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/control/index.html">
+       Control Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/control.html">
+         Control
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/lti.html">
+         Control API
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/control_plots.html">
+         Control System Plots
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/continuum_mechanics/index.html">
+       Continuum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/continuum_mechanics/beam.html">
+         Beam (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/continuum_mechanics/beam_problems.html">
+         Solving Beam Bending Problems using Singularity Functions
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../reference/public/utilities/index.html">
+     Utilities
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../testing/index.html">
+       Testing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/pytest.html">
+         pytest
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/randtest.html">
+         Randomised Testing
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/runtests.html">
+         Run Tests
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="index.html">
+       Utilities
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="autowrap.html">
+         Autowrap Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="codegen.html">
+         Codegen
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="decorator.html">
+         Decorator
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Enumerative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="iterables.html">
+         Iterables
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="lambdify.html">
+         Lambdify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="memoization.html">
+         Memoization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="misc.html">
+         Miscellaneous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="pkgdata.html">
+         PKGDATA
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="source.html">
+         Source Code Inspection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="timeutils.html">
+         Timing Utilities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../interactive.html">
+       Interactive
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../parsing.html">
+       Parsing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../printing.html">
+       Printing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/topics/index.html">
+     Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../geometry/index.html">
+       Geometry
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/entities.html">
+         Entities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/utils.html">
+         Utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/points.html">
+         Points
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/lines.html">
+         Lines
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/curves.html">
+         Curves
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/ellipses.html">
+         Ellipses
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/polygons.html">
+         Polygons
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/plane.html">
+         Plane
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../holonomic/index.html">
+       Holonomic
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/about.html">
+         About Holonomic Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/represent.html">
+         Representation of holonomic functions in SymPy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/operations.html">
+         Operations on holonomic functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/convert.html">
+         Converting other representations to holonomic
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/uses.html">
+         Uses and Current limitations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/internal.html">
+         Internal API
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../liealgebras/index.html">
+       Lie Algebra
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../polys/index.html">
+       Polynomial Manipulation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/basics.html">
+         Basic functionality of the module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/wester.html">
+         Examples from Wester’s Article
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/reference.html">
+         Polynomials Manipulation Module Reference
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/agca.html">
+         AGCA - Algebraic Geometry and Commutative Algebra Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainsintro.html">
+         Introducing the Domains of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainsref.html">
+         Reference docs for the Poly Domains
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/internals.html">
+         Internals of the Polynomial Manipulation Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/ringseries.html">
+         Series Manipulation using Polynomials
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/literature.html">
+         Literature
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/solvers.html">
+         Poly solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainmatrix.html">
+         Introducing the domainmatrix of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/numberfields.html">
+         Number Fields
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../categories.html">
+       Category Theory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../crypto.html">
+       Cryptography
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../diffgeom.html">
+       Differential Geometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../plotting.html">
+       Plotting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../stats.html">
+       Stats
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../miscellaneous/index.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+  <label for="toctree-checkbox-40">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aboutus.html">
+     About
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../citing.html">
+     Citing SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../wiki.html">
+     Wiki
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../outreach.html">
+     SymPy Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/utilities/enumerative.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Enumerative</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="module-sympy.utilities.enumerative">
+<span id="enumerative"></span><h1>Enumerative<a class="headerlink" href="#module-sympy.utilities.enumerative" title="Permalink to this headline">¶</a></h1>
+<p>This module includes functions and classes for enumerating and
+counting multiset partitions.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.multiset_partitions_taocp">
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">multiset_partitions_taocp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L146-L296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.multiset_partitions_taocp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerates partitions of a multiset.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>multiplicities</strong></p>
+<blockquote>
+<div><p>list of integer multiplicities of the components of the multiset.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p>state</p>
+<blockquote>
+<div><p>Internal data structure which encodes a particular partition.
+This output is then usually processed by a visitor function
+which combines the information from this data structure with
+the components themselves to produce an actual partition.</p>
+<p>Unless they wish to create their own visitor function, users will
+have little need to look inside this data structure.  But, for
+reference, it is a 3-element list with components:</p>
+<dl class="simple">
+<dt>f</dt><dd><p>is a frame array, which is used to divide pstack into parts.</p>
+</dd>
+<dt>lpart</dt><dd><p>points to the base of the topmost part.</p>
+</dd>
+<dt>pstack</dt><dd><p>is an array of PartComponent objects.</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">state</span></code> output offers a peek into the internal data
+structures of the enumeration function.  The client should
+treat this as read-only; any modification of the data
+structure will cause unpredictable (and almost certainly
+incorrect) results.  Also, the components of <code class="docutils literal notranslate"><span class="pre">state</span></code> are
+modified in place at each iteration.  Hence, the visitor must
+be called at each loop iteration.  Accumulating the <code class="docutils literal notranslate"><span class="pre">state</span></code>
+instances and processing them later will not work.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">list_visitor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">multiset_partitions_taocp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># variables components and multiplicities represent the multiset &#39;abb&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">components</span> <span class="o">=</span> <span class="s1">&#39;ab&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multiplicities</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">states</span> <span class="o">=</span> <span class="n">multiset_partitions_taocp</span><span class="p">(</span><span class="n">multiplicities</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">list_visitor</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">components</span><span class="p">)</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
+<span class="go">[[[&#39;a&#39;, &#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;], [&#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;], [&#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;], [&#39;b&#39;], [&#39;b&#39;]]]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="iterables.html#sympy.utilities.iterables.multiset_partitions" title="sympy.utilities.iterables.multiset_partitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.iterables.multiset_partitions</span></code></a></dt><dd><p>Takes a multiset as input and directly yields multiset partitions.  It dispatches to a number of functions, including this one, for implementation.  Most users will find it more convenient to use than multiset_partitions_taocp.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.factoring_visitor">
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">factoring_visitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L304-L338"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.factoring_visitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use with multiset_partitions_taocp to enumerate the ways a
+number can be expressed as a product of factors.  For this usage,
+the exponents of the prime factors of a number are arguments to
+the partition enumerator, while the corresponding prime factors
+are input here.</p>
+<p class="rubric">Examples</p>
+<p>To enumerate the factorings of a number we can think of the elements of the
+partition as being the prime factors and the multiplicities as being their
+exponents.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">factoring_visitor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">multiset_partitions_taocp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">factorint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">primes</span><span class="p">,</span> <span class="n">multiplicities</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">factorint</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">primes</span>
+<span class="go">(2, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multiplicities</span>
+<span class="go">(3, 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">states</span> <span class="o">=</span> <span class="n">multiset_partitions_taocp</span><span class="p">(</span><span class="n">multiplicities</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">factoring_visitor</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">primes</span><span class="p">)</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
+<span class="go">[[24], [8, 3], [12, 2], [4, 6], [4, 2, 3], [6, 2, 2], [2, 2, 2, 3]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.list_visitor">
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">list_visitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L341-L367"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.list_visitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of lists to represent the partition.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">list_visitor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">multiset_partitions_taocp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">states</span> <span class="o">=</span> <span class="n">multiset_partitions_taocp</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_visitor</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">)</span>  <span class="c1"># for multiset &#39;a b b c&#39;</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;, &#39;b&#39;, &#39;c&#39;]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_visitor</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># for multiset &#39;1 2 2 3</span>
+<span class="go">[[1, 2, 2], [3]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>The approach of the function <code class="docutils literal notranslate"><span class="pre">multiset_partitions_taocp</span></code> is extended
+and generalized by the class <code class="docutils literal notranslate"><span class="pre">MultisetPartitionTraverser</span></code>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">MultisetPartitionTraverser</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L370-L1136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has methods to <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> and <code class="docutils literal notranslate"><span class="pre">count</span></code> the partitions of a multiset.</p>
+<p>This implements a refactored and extended version of Knuth’s algorithm
+7.1.2.5M <a class="reference internal" href="#aocp" id="id1"><span>[AOCP]</span></a>.”</p>
+<p>The enumeration methods of this class are generators and return
+data structures which can be interpreted by the same visitor
+functions used for the output of <code class="docutils literal notranslate"><span class="pre">multiset_partitions_taocp</span></code>.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">MultisetPartitionTraverser</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">MultisetPartitionTraverser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">count_partitions</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">127750</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">count_partitions</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="go">686</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.utilities.enumerative.multiset_partitions_taocp" title="sympy.utilities.enumerative.multiset_partitions_taocp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multiset_partitions_taocp</span></code></a>, <a class="reference internal" href="iterables.html#sympy.utilities.iterables.multiset_partitions" title="sympy.utilities.iterables.multiset_partitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.iterables.multiset_partitions</span></code></a></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="aocp"><span class="brackets">AOCP</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id5">3</a>,<a href="#id6">4</a>)</span></dt>
+<dd><p>Algorithm 7.1.2.5M in Volume 4A, Combinatoral Algorithms,
+Part 1, of The Art of Computer Programming, by Donald Knuth.</p>
+</dd>
+<dt class="label" id="factorisatio"><span class="brackets"><a class="fn-backref" href="#id3">Factorisatio</a></span></dt>
+<dd><p>On a Problem of Oppenheim concerning
+“Factorisatio Numerorum” E. R. Canfield, Paul Erdos, Carl
+Pomerance, JOURNAL OF NUMBER THEORY, Vol. 17, No. 1. August
+1983.  See section 7 for a description of an algorithm
+similar to Knuth’s.</p>
+</dd>
+<dt class="label" id="yorgey"><span class="brackets"><a class="fn-backref" href="#id4">Yorgey</a></span></dt>
+<dd><p>Generating Multiset Partitions, Brent Yorgey, The
+Monad.Reader, Issue 8, September 2007.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.count_partitions">
+<span class="sig-name descname"><span class="pre">count_partitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L1024-L1136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.count_partitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of partitions of a multiset whose components
+have the multiplicities given in <code class="docutils literal notranslate"><span class="pre">multiplicities</span></code>.</p>
+<p>For larger counts, this method is much faster than calling one
+of the enumerators and counting the result.  Uses dynamic
+programming to cut down on the number of nodes actually
+explored.  The dictionary used in order to accelerate the
+counting process is stored in the <code class="docutils literal notranslate"><span class="pre">MultisetPartitionTraverser</span></code>
+object and persists across calls.  If the user does not
+expect to call <code class="docutils literal notranslate"><span class="pre">count_partitions</span></code> for any additional
+multisets, the object should be cleared to save memory.  On
+the other hand, the cache built up from one count run can
+significantly speed up subsequent calls to <code class="docutils literal notranslate"><span class="pre">count_partitions</span></code>,
+so it may be advantageous not to clear the object.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">MultisetPartitionTraverser</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">MultisetPartitionTraverser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">count_partitions</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">288716</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">count_partitions</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">m</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>If one looks at the workings of Knuth’s algorithm M <a class="reference internal" href="#aocp" id="id5"><span>[AOCP]</span></a>, it
+can be viewed as a traversal of a binary tree of parts.  A
+part has (up to) two children, the left child resulting from
+the spread operation, and the right child from the decrement
+operation.  The ordinary enumeration of multiset partitions is
+an in-order traversal of this tree, and with the partitions
+corresponding to paths from the root to the leaves. The
+mapping from paths to partitions is a little complicated,
+since the partition would contain only those parts which are
+leaves or the parents of a spread link, not those which are
+parents of a decrement link.</p>
+<p>For counting purposes, it is sufficient to count leaves, and
+this can be done with a recursive in-order traversal.  The
+number of leaves of a subtree rooted at a particular part is a
+function only of that part itself, so memoizing has the
+potential to speed up the counting dramatically.</p>
+<p>This method follows a computational approach which is similar
+to the hypothetical memoized recursive function, but with two
+differences:</p>
+<ol class="arabic simple">
+<li><p>This method is iterative, borrowing its structure from the
+other enumerations and maintaining an explicit stack of
+parts which are in the process of being counted.  (There
+may be multisets which can be counted reasonably quickly by
+this implementation, but which would overflow the default
+Python recursion limit with a recursive implementation.)</p></li>
+<li><p>Instead of using the part data structure directly, a more
+compact key is constructed.  This saves space, but more
+importantly coalesces some parts which would remain
+separate with physical keys.</p></li>
+</ol>
+<p>Unlike the enumeration functions, there is currently no _range
+version of count_partitions.  If someone wants to stretch
+their brain, it should be possible to construct one by
+memoizing with a histogram of counts rather than a single
+count, and combining the histograms.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all">
+<span class="sig-name descname"><span class="pre">enum_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L753-L798"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerate the partitions of a multiset.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">list_visitor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">MultisetPartitionTraverser</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">MultisetPartitionTraverser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">states</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">enum_all</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">list_visitor</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
+<span class="go">[[[&#39;a&#39;, &#39;a&#39;, &#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;a&#39;, &#39;b&#39;], [&#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;a&#39;], [&#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;a&#39;], [&#39;b&#39;], [&#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;, &#39;b&#39;], [&#39;a&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;], [&#39;a&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;], [&#39;a&#39;], [&#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;], [&#39;a&#39;], [&#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;], [&#39;a&#39;], [&#39;b&#39;], [&#39;b&#39;]]]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#sympy.utilities.enumerative.multiset_partitions_taocp" title="sympy.utilities.enumerative.multiset_partitions_taocp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multiset_partitions_taocp</span></code></a></dt><dd><p>which provides the same result as this method, but is about twice as fast.  Hence, enum_all is primarily useful for testing.  Also see the function for a discussion of states and visitors.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_large">
+<span class="sig-name descname"><span class="pre">enum_large</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L870-L929"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_large" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerate the partitions of a multiset with lb &lt; num(parts)</p>
+<p>Equivalent to enum_range(multiplicities, lb, sum(multiplicities))</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>multiplicities</strong></p>
+<blockquote>
+<div><p>list of multiplicities of the components of the multiset.</p>
+</div></blockquote>
+<p><strong>lb</strong></p>
+<blockquote>
+<div><p>Number of parts in the partition must be greater than
+this lower bound.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">list_visitor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">MultisetPartitionTraverser</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">MultisetPartitionTraverser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">states</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">enum_large</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">list_visitor</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
+<span class="go">[[[&#39;a&#39;, &#39;a&#39;], [&#39;b&#39;], [&#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;], [&#39;a&#39;], [&#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;], [&#39;a&#39;], [&#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;], [&#39;a&#39;], [&#39;b&#39;], [&#39;b&#39;]]]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all" title="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enum_all</span></code></a>, <a class="reference internal" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_small" title="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_small"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enum_small</span></code></a>, <a class="reference internal" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range" title="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enum_range</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range">
+<span class="sig-name descname"><span class="pre">enum_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L931-L991"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerate the partitions of a multiset with
+<code class="docutils literal notranslate"><span class="pre">lb</span> <span class="pre">&lt;</span> <span class="pre">num(parts)</span> <span class="pre">&lt;=</span> <span class="pre">ub</span></code>.</p>
+<p>In particular, if partitions with exactly <code class="docutils literal notranslate"><span class="pre">k</span></code> parts are
+desired, call with <code class="docutils literal notranslate"><span class="pre">(multiplicities,</span> <span class="pre">k</span> <span class="pre">-</span> <span class="pre">1,</span> <span class="pre">k)</span></code>.  This
+method generalizes enum_all, enum_small, and enum_large.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">list_visitor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">MultisetPartitionTraverser</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">MultisetPartitionTraverser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">states</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">enum_range</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">list_visitor</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
+<span class="go">[[[&#39;a&#39;, &#39;a&#39;, &#39;b&#39;], [&#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;a&#39;], [&#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;, &#39;b&#39;], [&#39;a&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;], [&#39;a&#39;, &#39;b&#39;]]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_small">
+<span class="sig-name descname"><span class="pre">enum_small</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L800-L868"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_small" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enumerate multiset partitions with no more than <code class="docutils literal notranslate"><span class="pre">ub</span></code> parts.</p>
+<p>Equivalent to enum_range(multiplicities, 0, ub)</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>multiplicities</strong></p>
+<blockquote>
+<div><p>list of multiplicities of the components of the multiset.</p>
+</div></blockquote>
+<p><strong>ub</strong></p>
+<blockquote>
+<div><p>Maximum number of parts</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">list_visitor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">MultisetPartitionTraverser</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">MultisetPartitionTraverser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">states</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">enum_small</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">list_visitor</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
+<span class="go">[[[&#39;a&#39;, &#39;a&#39;, &#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;a&#39;, &#39;b&#39;], [&#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;a&#39;], [&#39;b&#39;, &#39;b&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;, &#39;b&#39;], [&#39;a&#39;]],</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;], [&#39;a&#39;, &#39;b&#39;]]]</span>
+</pre></div>
+</div>
+<p>The implementation is based, in part, on the answer given to
+exercise 69, in Knuth <a class="reference internal" href="#aocp" id="id6"><span>[AOCP]</span></a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all" title="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enum_all</span></code></a>, <a class="reference internal" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_large" title="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_large"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enum_large</span></code></a>, <a class="reference internal" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range" title="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enum_range</span></code></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="decorator.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Decorator</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="iterables.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Iterables</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+        &copy; Copyright 2022 SymPy Development Team.<br/>
+      Last updated on Jan 17, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Numeric Computation &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/numeric-computation.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Term Rewriting" href="rewriting.html" />
+    <link rel="prev" title="Numerical Evaluation" href="evalf.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> SymPy
+            <img src="../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../reference/public/basics/index.html">Basics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="assumptions/index.html">Assumptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="calculus/index.html">Calculus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="combinatorics/index.html">Combinatorics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions/index.html">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integrals/index.html">Integrals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="series/index.html">Series</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simplify/index.html">Simplify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solvers/index.html">Solvers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="abc.html">abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="algebras.html">Algebras</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concrete.html">Concrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="core.html">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="discrete.html">Discrete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="evalf.html">Numerical Evaluation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Numeric Computation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rewriting.html">Term Rewriting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../reference/public/basics/index.html">Basics</a> &raquo;</li>
+      <li>Numeric Computation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/numeric-computation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="numeric-computation">
+<span id="id1"></span><h1>Numeric Computation<a class="headerlink" href="#numeric-computation" title="Permalink to this headline"></a></h1>
+<p>Symbolic computer algebra systems like SymPy facilitate the construction and
+manipulation of mathematical expressions.  Unfortunately when it comes time
+to evaluate these expressions on numerical data, symbolic systems often have
+poor performance.</p>
+<p>Fortunately SymPy offers a number of easy-to-use hooks into other numeric
+systems, allowing you to create mathematical expressions in SymPy and then
+ship them off to the numeric system of your choice.  This page documents many
+of the options available including the <code class="docutils literal notranslate"><span class="pre">math</span></code> library, the popular array
+computing package <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, code generation in <code class="docutils literal notranslate"><span class="pre">Fortran</span></code> or <code class="docutils literal notranslate"><span class="pre">C</span></code>, and the
+use of the array compiler <code class="docutils literal notranslate"><span class="pre">Aesara</span></code>.</p>
+<section id="subs-evalf">
+<h2>Subs/evalf<a class="headerlink" href="#subs-evalf" title="Permalink to this headline"></a></h2>
+<p>Subs is the slowest but simplest option.  It runs at SymPy speeds.
+The <code class="docutils literal notranslate"><span class="pre">.subs(...).evalf()</span></code> method can substitute a numeric value
+for a symbolic one and then evaluate the result within SymPy.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mf">3.14</span><span class="p">})</span>
+<span class="go">0.000507214304613640</span>
+</pre></div>
+</div>
+<p>This method is slow.  You should use this method production only if performance
+is not an issue.  You can expect <code class="docutils literal notranslate"><span class="pre">.subs</span></code> to take tens of microseconds. It
+can be useful while prototyping or if you just want to see a value once.</p>
+</section>
+<section id="lambdify">
+<h2>Lambdify<a class="headerlink" href="#lambdify" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> function translates SymPy expressions into Python functions,
+leveraging a variety of numerical libraries.  It is used as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="go">0.000507214304614</span>
+</pre></div>
+</div>
+<p>Here lambdify makes a function that computes <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">sin(x)/x</span></code>.  By default
+lambdify relies on implementations in the <code class="docutils literal notranslate"><span class="pre">math</span></code> standard library. This
+numerical evaluation takes on the order of hundreds of nanoseconds, roughly two
+orders of magnitude faster than the <code class="docutils literal notranslate"><span class="pre">.subs</span></code> method.  This is the speed
+difference between SymPy and raw Python.</p>
+<p>Lambdify can leverage a variety of numerical backends.  By default it uses the
+<code class="docutils literal notranslate"><span class="pre">math</span></code> library.  However it also supports <code class="docutils literal notranslate"><span class="pre">mpmath</span></code> and most notably,
+<code class="docutils literal notranslate"><span class="pre">numpy</span></code>.  Using the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library gives the generated function access to
+powerful vectorized ufuncs that are backed by compiled C code.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">[ 0.84147098  0.84119981  0.84092844 ... -0.05426074 -0.05433146</span>
+<span class="go"> -0.05440211]</span>
+</pre></div>
+</div>
+<p>If you have array-based data this can confer a considerable speedup, on the
+order of 10 nano-seconds per element. Unfortunately numpy incurs some start-up
+time and introduces an overhead of a few microseconds.</p>
+<p>CuPy is a NumPy-compatible array library that mainly runs on CUDA, but has
+increasing support for other GPU manufacturers. It can in many cases be used as
+a drop-in replacement for numpy.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="s2">&quot;cupy&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># perform the computation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># explicitly copy from GPU to CPU / numpy array</span>
+<span class="go">[ 0.84147098  0.84119981  0.84092844 ... -0.05426074 -0.05433146</span>
+<span class="go"> -0.05440211]</span>
+</pre></div>
+</div>
+</section>
+<section id="ufuncify">
+<h2>uFuncify<a class="headerlink" href="#ufuncify" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">autowrap</span></code> module contains methods that help in efficient computation.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="codegen.html#id1"><span class="std std-ref">autowrap</span></a> method for compiling code generated by the
+<a class="reference internal" href="codegen.html#codegen-prose"><span class="std std-ref">codegen</span></a> module, and wrap the binary for use in python.</p></li>
+<li><p><a class="reference internal" href="codegen.html#binary-function"><span class="std std-ref">binary_function</span></a> method automates the steps needed to autowrap
+the SymPy expression and attaching it to a <code class="docutils literal notranslate"><span class="pre">Function</span></code> object with <code class="docutils literal notranslate"><span class="pre">implemented_function()</span></code>.</p></li>
+<li><p><a class="reference internal" href="codegen.html#ufuncify-method"><span class="std std-ref">ufuncify</span></a> generates a binary function that supports broadcasting
+on numpy arrays using different backends that are faster as compared to <code class="docutils literal notranslate"><span class="pre">subs/evalf</span></code>
+and <code class="docutils literal notranslate"><span class="pre">lambdify</span></code>.</p></li>
+</ul>
+<p>The API reference of all the above is listed here: <a class="reference internal" href="utilities/autowrap.html#module-sympy.utilities.autowrap" title="sympy.utilities.autowrap"><code class="xref py py-func docutils literal notranslate"><span class="pre">sympy.utilities.autowrap()</span></code></a>.</p>
+</section>
+<section id="aesara">
+<h2>Aesara<a class="headerlink" href="#aesara" title="Permalink to this headline"></a></h2>
+<p>SymPy has a strong connection with
+<a class="reference external" href="https://aesara.readthedocs.io/en/latest/">Aesara</a>, a mathematical array
+compiler.  SymPy expressions can be easily translated to Aesara graphs and then
+compiled using the Aesara compiler chain.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.printing.aesaracode</span> <span class="kn">import</span> <span class="n">aesara_function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">aesara_function</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="p">[</span><span class="n">expr</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>If array broadcasting or types are desired then Aesara requires this extra
+information</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">aesara_function</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="p">[</span><span class="n">expr</span><span class="p">],</span> <span class="n">dims</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">dtypes</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="s1">&#39;float64&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Aesara has a more sophisticated code generation system than SymPy’s C/Fortran
+code printers.  Among other things it handles common sub-expressions and
+compilation onto the GPU.  Aesara also supports SymPy Matrix and Matrix
+Expression objects.</p>
+</section>
+<section id="so-which-should-i-use">
+<h2>So Which Should I Use?<a class="headerlink" href="#so-which-should-i-use" title="Permalink to this headline"></a></h2>
+<p>The options here were listed in order from slowest and least dependencies to
+fastest and most dependencies.  For example, if you have Aesara installed then
+that will often be the best choice.  If you don’t have Aesara but do have
+<code class="docutils literal notranslate"><span class="pre">f2py</span></code> then you should use <code class="docutils literal notranslate"><span class="pre">ufuncify</span></code>. If you have been comfortable using
+lambdify with the numpy module, but have a GPU, CuPy can provide substantial
+speedups with little effort.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 10%" />
+<col style="width: 43%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Speed</p></th>
+<th class="head"><p>Qualities</p></th>
+<th class="head"><p>Dependencies</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>subs/evalf</p></td>
+<td><p>50us</p></td>
+<td><p>Simple</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>lambdify</p></td>
+<td><p>1us</p></td>
+<td><p>Scalar functions</p></td>
+<td><p>math</p></td>
+</tr>
+<tr class="row-even"><td><p>lambdify-numpy</p></td>
+<td><p>10ns</p></td>
+<td><p>Vector functions</p></td>
+<td><p>numpy</p></td>
+</tr>
+<tr class="row-odd"><td><p>ufuncify</p></td>
+<td><p>10ns</p></td>
+<td><p>Complex vector expressions</p></td>
+<td><p>f2py, Cython</p></td>
+</tr>
+<tr class="row-even"><td><p>lambdify-cupy</p></td>
+<td><p>10ns</p></td>
+<td><p>Vector functions on GPUs</p></td>
+<td><p>cupy</p></td>
+</tr>
+<tr class="row-odd"><td><p>Aesara</p></td>
+<td><p>10ns</p></td>
+<td><p>Many outputs, CSE, GPUs</p></td>
+<td><p>Aesara</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="evalf.html" class="btn btn-neutral float-left" title="Numerical Evaluation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rewriting.html" class="btn btn-neutral float-right" title="Term Rewriting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

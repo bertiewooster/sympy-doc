@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curves &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/geometry/curves.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Ellipses" href="ellipses.html" />
+    <link rel="prev" title="Lines" href="lines.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../holonomic/index.html">Holonomic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../liealgebras/index.html">Lie Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../polys/index.html">Polynomial Manipulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../categories.html">Category Theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../crypto.html">Cryptography</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../diffgeom.html">Differential Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plotting.html">Plotting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../stats.html">Stats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/topics/index.html">Topics</a> &raquo;</li>
+          <li><a href="index.html">Geometry</a> &raquo;</li>
+      <li>Curves</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/geometry/curves.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.geometry.curve">
+<span id="curves"></span><h1>Curves<a class="headerlink" href="#module-sympy.geometry.curve" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.geometry.curve.</span></span><span class="sig-name descname"><span class="pre">Curve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limits</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/geometry/curve.py#L21-L428"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.curve.Curve" title="Permalink to this definition"></a></dt>
+<dd><p>A curve in space.</p>
+<p>A curve is defined by parametric functions for the coordinates, a
+parameter and the lower and upper bounds for the parameter value.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>function</strong> : list of functions</p>
+<p><strong>limits</strong> : 3-tuple</p>
+<blockquote>
+<div><p>Function parameter and lower and upper bounds.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>When <span class="math notranslate nohighlight">\(functions\)</span> are specified incorrectly.
+When <span class="math notranslate nohighlight">\(limits\)</span> are specified incorrectly.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">interpolate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span> <span class="n">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">((</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">functions</span>
+<span class="go">(sin(t), cos(t))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">limits</span>
+<span class="go">(t, 0, 2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">parameter</span>
+<span class="go">t</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">interpolate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span> <span class="n">t</span><span class="p">)),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span> <span class="n">C</span>
+<span class="go">Curve((t, t**2), (t, 0, 1))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">Point2D(4, 16)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">arbitrary_point</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">Point2D(a, a**2)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../core.html#sympy.core.function.Function" title="sympy.core.function.Function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.core.function.Function</span></code></a>, <a class="reference internal" href="../polys/reference.html#sympy.polys.polyfuncs.interpolate" title="sympy.polys.polyfuncs.interpolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.polys.polyfuncs.interpolate</span></code></a></p>
+</div>
+<p class="rubric">Attributes</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 53%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>functions</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>parameter</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>limits</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.ambient_dimension">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ambient_dimension</span></span><a class="headerlink" href="#sympy.geometry.curve.Curve.ambient_dimension" title="Permalink to this definition"></a></dt>
+<dd><p>The dimension of the curve.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>int :</p>
+<blockquote>
+<div><p>the dimension of curve.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">ambient_dimension</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.arbitrary_point">
+<span class="sig-name descname"><span class="pre">arbitrary_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/geometry/curve.py#L101-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.curve.Curve.arbitrary_point" title="Permalink to this definition"></a></dt>
+<dd><p>A parameterized point on the curve.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameter</strong> : str or Symbol, optional</p>
+<blockquote>
+<div><p>Default value is ‘t’.
+The Curve’s parameter is selected with None or self.parameter
+otherwise the provided symbol is used.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Point :</p>
+<blockquote>
+<div><p>Returns a point in parametric form.</p>
+</div></blockquote>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong></p>
+<blockquote>
+<div><p>When <span class="math notranslate nohighlight">\(parameter\)</span> already appears in the functions.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">arbitrary_point</span><span class="p">()</span>
+<span class="go">Point2D(2*t, t**2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">arbitrary_point</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">parameter</span><span class="p">)</span>
+<span class="go">Point2D(2*s, s**2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">arbitrary_point</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="go">Point2D(2*s, s**2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">arbitrary_point</span><span class="p">(</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+<span class="go">Point2D(2*a, a**2)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="points.html#sympy.geometry.point.Point" title="sympy.geometry.point.Point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.geometry.point.Point</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.free_symbols">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">free_symbols</span></span><a class="headerlink" href="#sympy.geometry.curve.Curve.free_symbols" title="Permalink to this definition"></a></dt>
+<dd><p>Return a set of symbols other than the bound symbols used to
+parametrically define the Curve.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>set :</p>
+<blockquote>
+<div><p>Set of all non-parameterized symbols.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span> <span class="n">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">free_symbols</span>
+<span class="go">set()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">free_symbols</span>
+<span class="go">{a}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.functions">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">functions</span></span><a class="headerlink" href="#sympy.geometry.curve.Curve.functions" title="Permalink to this definition"></a></dt>
+<dd><p>The functions specifying the curve.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>functions :</p>
+<blockquote>
+<div><p>list of parameterized coordinate functions.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">functions</span>
+<span class="go">(t, t**2)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.geometry.curve.Curve.parameter" title="sympy.geometry.curve.Curve.parameter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameter</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.length">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">length</span></span><a class="headerlink" href="#sympy.geometry.curve.Curve.length" title="Permalink to this definition"></a></dt>
+<dd><p>The curve length.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry.curve</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">length</span>
+<span class="go">sqrt(2)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.limits">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">limits</span></span><a class="headerlink" href="#sympy.geometry.curve.Curve.limits" title="Permalink to this definition"></a></dt>
+<dd><p>The limits for the curve.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>limits</strong> : tuple</p>
+<blockquote>
+<div><p>Contains parameter and lower and upper limits.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">3</span><span class="p">],</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">limits</span>
+<span class="go">(t, -2, 2)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.geometry.curve.Curve.plot_interval" title="sympy.geometry.curve.Curve.plot_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_interval</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.parameter">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">parameter</span></span><a class="headerlink" href="#sympy.geometry.curve.Curve.parameter" title="Permalink to this definition"></a></dt>
+<dd><p>The curve function variable.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Symbol :</p>
+<blockquote>
+<div><p>returns a bound symbol.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">t</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">parameter</span>
+<span class="go">t</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.geometry.curve.Curve.functions" title="sympy.geometry.curve.Curve.functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">functions</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.plot_interval">
+<span class="sig-name descname"><span class="pre">plot_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/geometry/curve.py#L305-L339"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.curve.Curve.plot_interval" title="Permalink to this definition"></a></dt>
+<dd><p>The plot interval for the default geometric plot of the curve.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameter</strong> : str or Symbol, optional</p>
+<blockquote>
+<div><p>Default value is ‘t’;
+otherwise the provided symbol is used.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List :</p>
+<blockquote>
+<div><dl class="simple">
+<dt>the plot interval as below:</dt><dd><p>[parameter, lower_bound, upper_bound]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Curve</span><span class="p">,</span> <span class="n">sin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">plot_interval</span><span class="p">()</span>
+<span class="go">[t, 1, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">plot_interval</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">[s, 1, 2]</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#sympy.geometry.curve.Curve.limits" title="sympy.geometry.curve.Curve.limits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">limits</span></code></a></dt><dd><p>Returns limits of the parameter interval</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.rotate">
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/geometry/curve.py#L341-L383"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.curve.Curve.rotate" title="Permalink to this definition"></a></dt>
+<dd><p>This function is used to rotate a curve along given point <code class="docutils literal notranslate"><span class="pre">pt</span></code> at given angle(in radian).</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle :</strong></p>
+<blockquote>
+<div><p>the angle at which the curve will be rotated(in radian) in counterclockwise direction.
+default value of angle is 0.</p>
+</div></blockquote>
+<p><strong>pt</strong> : Point</p>
+<blockquote>
+<div><p>the point along which the curve will be rotated.
+If no point given, the curve will be rotated around origin.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Curve :</p>
+<blockquote>
+<div><p>returns a curve rotated at given angle along given point.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry.curve</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Curve((-x, x), (x, 0, 1))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/geometry/curve.py#L385-L407"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.curve.Curve.scale" title="Permalink to this definition"></a></dt>
+<dd><p>Override GeometryEntity.scale since Curve is not made up of Points.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Curve :</p>
+<blockquote>
+<div><p>returns scaled curve.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry.curve</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Curve((2*x, x), (x, 0, 1))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.geometry.curve.Curve.translate">
+<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/geometry/curve.py#L409-L428"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.curve.Curve.translate" title="Permalink to this definition"></a></dt>
+<dd><p>Translate the Curve by (x, y).</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Curve :</p>
+<blockquote>
+<div><p>returns a translated curve.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry.curve</span> <span class="kn">import</span> <span class="n">Curve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Curve</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">Curve((x + 1, x + 2), (x, 0, 1))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lines.html" class="btn btn-neutral float-left" title="Lines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ellipses.html" class="btn btn-neutral float-right" title="Ellipses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,2290 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Polarization &#8212; SymPy 1.10.dev documentation</title>
+    
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/modules/physics/optics/polarization.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Utilities" href="utils.html" />
+    <link rel="prev" title="Medium" href="medium.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/sympylogo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../tutorial/index.html">
+  SymPy Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../guides/index.html">
+  SymPy Guides
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../explanation/index.html">
+  Explanation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../reference/index.html">
+  Reference Documentation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../miscellaneous/index.html">
+  Miscellaneous
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/basics/index.html">
+   Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../assumptions/index.html">
+     Assumptions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../assumptions/ask.html">
+       Ask
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../assumptions/assume.html">
+       Assume
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../assumptions/refine.html">
+       Refine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../assumptions/predicates.html">
+       Predicates
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../calculus/index.html">
+     Calculus
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../combinatorics/index.html">
+     Combinatorics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/partitions.html">
+       Partitions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/permutations.html">
+       Permutations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/perm_groups.html">
+       Permutation Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/polyhedron.html">
+       Polyhedron
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/prufer.html">
+       Prufer Sequences
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/subsets.html">
+       Subsets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/graycode.html">
+       Gray Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/named_groups.html">
+       Named Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/util.html">
+       Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/group_constructs.html">
+       Group constructors
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/testutil.html">
+       Test Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/tensor_can.html">
+       Tensor Canonicalization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/fp_groups.html">
+       Finitely Presented Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../combinatorics/pc_groups.html">
+       Polycyclic Groups
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../functions/index.html">
+     Functions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/elementary.html">
+       Elementary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/combinatorial.html">
+       Combinatorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../functions/special.html">
+       Special
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../integrals/index.html">
+     Integrals
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../integrals/g-functions.html">
+       Computing Integrals using Meijer G-Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../integrals/integrals.html">
+       Integrals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../series/index.html">
+     Series
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/series.html">
+       Series Expansions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/sequences.html">
+       Sequences
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/fourier.html">
+       Fourier Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/formal.html">
+       Formal Power Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../series/limitseq.html">
+       Limits of Sequences
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../simplify/index.html">
+     Simplify
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../simplify/simplify.html">
+       Simplify
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../simplify/hyperexpand.html">
+       Hypergeometric Expansion
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../simplify/fu.html">
+       Hongguang Fu’s Trigonometric Simplification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../solvers/index.html">
+     Solvers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/diophantine.html">
+       Diophantine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/inequalities.html">
+       Inequality Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/ode.html">
+       ODE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/pde.html">
+       PDE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../solvers/solveset.html">
+       Solveset
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../abc.html">
+     abc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../algebras.html">
+     Algebras
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../concrete.html">
+     Concrete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core.html">
+     Core
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../discrete.html">
+     Discrete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../evalf.html">
+     Numerical Evaluation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../numeric-computation.html">
+     Numeric Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../rewriting.html">
+     Term Rewriting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/codegeneration/index.html">
+   Code Generation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../codegen.html">
+     Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/logic/index.html">
+   Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../logic.html">
+     Logic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../sets.html">
+     Sets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/matrices/index.html">
+   Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/matrices.html">
+       Matrices (linear algebra)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/common.html">
+       Common Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/dense.html">
+       Dense Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/sparse.html">
+       Sparse Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/sparsetools.html">
+       Sparse Tools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/immutablematrices.html">
+       Immutable Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/expressions.html">
+       Matrix Expressions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../matrices/normalforms.html">
+       Matrix Normal Forms
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tensor/index.html">
+     Tensor
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/array.html">
+       N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/indexed.html">
+       Indexed Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/index_methods.html">
+       Methods
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/tensor.html">
+       Tensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/toperators.html">
+       Tensor Operators
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../vector/index.html">
+     Vector
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/intro.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/basics.html">
+       Basic Implementation details
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/coordsys.html">
+       More about Coordinate Systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/fields.html">
+       Scalar and Vector Field Functionality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/examples.html">
+       General examples of usage
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/vector_integration.html">
+       Applications of Vector Integrals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/api/classes.html">
+       Essential Classes in sympy.vector (docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/api/orienterclasses.html">
+       Orienter classes (docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../vector/api/vectorfunctions.html">
+       Essential Functions in sympy.vector (docstrings)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/numbertheory/index.html">
+   Number Theory
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ntheory.html">
+     Ntheory Class Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../../reference/public/physics/index.html">
+   Physics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hydrogen.html">
+     Hydrogen Wavefunctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../paulialgebra.html">
+     Pauli Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../qho_1d.html">
+     Quantum Harmonic Oscillator in 1-D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sho.html">
+     Quantum Harmonic Oscillator in 3-D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../secondquant.html">
+     Second Quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wigner.html">
+     Wigner Symbols
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../units/index.html">
+     Unit systems
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../units/philosophy.html">
+       Philosophy behind unit systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../units/examples.html">
+       Examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../units/dimensions.html">
+       Dimensions and dimension systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../units/prefixes.html">
+       Unit prefixes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../units/unitsystem.html">
+       Units and unit systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../units/quantities.html">
+       Physical quantities
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../hep/index.html">
+     High energy physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../vector/index.html">
+     The Physics Vector Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/vectors.html">
+       Vector &amp; ReferenceFrame
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/kinematics.html">
+       Vector: Kinematics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/advanced.html">
+       Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/fields.html">
+       Scalar and Vector Field Functionality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/classes.html">
+       Essential Classes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/kinematics.html">
+       Kinematics (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/printing.html">
+       Printing (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/functions.html">
+       Essential Functions (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/fieldfunctions.html">
+       Docstrings for basic field functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../mechanics/index.html">
+     Classical Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/masses.html">
+       Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/kane.html">
+       Kane’s Method in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/lagrange.html">
+       Lagrange’s Method in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/symsystem.html">
+       Symbolic Systems in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../mechanics/linearize.html">
+       Linearization in Physics/Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../mechanics/examples/lin_pend_nonmin_example.html">
+         Nonminimal Coordinates Pendulum
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../mechanics/examples.html">
+       Examples for Physics/Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../mechanics/examples/rollingdisc_example.html">
+         A rolling disc
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../mechanics/examples/bicycle_example.html">
+         A bicycle
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../mechanics/examples/lin_pend_nonmin_example.html">
+         Nonminimal Coordinates Pendulum
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../mechanics/examples/multi_degree_freedom_holonomic_system.html">
+         Multi Degree of Freedom Holonomic System
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/advanced.html">
+       Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/reference.html">
+       References for Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/autolev_parser.html">
+       Autolev Parser
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/sympy_mechanics_for_autolev_users.html">
+       SymPy Mechanics for Autolev Users
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/api/part_bod.html">
+       Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/api/kane_lagrange.html">
+       Kane’s Method &amp; Lagrange’s Method (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/api/system.html">
+       SymbolicSystem (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/api/linearize.html">
+       Linearization (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/api/expr_manip.html">
+       Expression Manipulation (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/api/printing.html">
+       Printing (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/api/body.html">
+       Body (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mechanics/api/joint.html">
+       Joint (Docstrings)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../quantum/index.html">
+     Quantum Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/anticommutator.html">
+       Anticommutator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/cg.html">
+       Clebsch-Gordan Coefficients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/commutator.html">
+       Commutator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/constants.html">
+       Constants
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/dagger.html">
+       Dagger
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/innerproduct.html">
+       Inner Product
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/tensorproduct.html">
+       Tensor Product
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/cartesian.html">
+       Cartesian Operators and States
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/hilbert.html">
+       Hilbert Space
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/operator.html">
+       Operator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/operatorset.html">
+       Operator/State Helper Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/qapply.html">
+       Qapply
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/represent.html">
+       Represent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/spin.html">
+       Spin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/state.html">
+       State
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/circuitplot.html">
+       Circuit Plot
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/gate.html">
+       Gates
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/grover.html">
+       Grover’s Algorithm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/qft.html">
+       QFT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/qubit.html">
+       Qubit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/shor.html">
+       Shor’s Algorithm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../quantum/piab.html">
+       Particle in a Box
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Optics Module
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="gaussopt.html">
+       Gaussian Optics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="medium.html">
+       Medium
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Polarization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="utils.html">
+       Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="waves.html">
+       Waves
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../control/index.html">
+     Control Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../control/control.html">
+       Control
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../control/lti.html">
+       Control API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../control/control_plots.html">
+       Control System Plots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../continuum_mechanics/index.html">
+     Continuum Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../continuum_mechanics/beam.html">
+       Beam (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../continuum_mechanics/beam_problems.html">
+       Solving Beam Bending Problems using Singularity Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/utilities/index.html">
+   Utilities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+  <label for="toctree-checkbox-27">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../testing/index.html">
+     Testing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../testing/pytest.html">
+       pytest
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../testing/randtest.html">
+       Randomised Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../testing/runtests.html">
+       Run Tests
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../utilities/index.html">
+     Utilities
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/autowrap.html">
+       Autowrap Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/codegen.html">
+       Codegen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/decorator.html">
+       Decorator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/enumerative.html">
+       Enumerative
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/iterables.html">
+       Iterables
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/lambdify.html">
+       Lambdify
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/memoization.html">
+       Memoization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/misc.html">
+       Miscellaneous
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/pkgdata.html">
+       PKGDATA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/source.html">
+       Source Code Inspection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/timeutils.html">
+       Timing Utilities
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interactive.html">
+     Interactive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../parsing.html">
+     Parsing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../printing.html">
+     Printing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../reference/public/topics/index.html">
+   Topics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label for="toctree-checkbox-30">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../geometry/index.html">
+     Geometry
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/entities.html">
+       Entities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/utils.html">
+       Utils
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/points.html">
+       Points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/lines.html">
+       Lines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/curves.html">
+       Curves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/ellipses.html">
+       Ellipses
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/polygons.html">
+       Polygons
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../geometry/plane.html">
+       Plane
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../holonomic/index.html">
+     Holonomic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/about.html">
+       About Holonomic Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/represent.html">
+       Representation of holonomic functions in SymPy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/operations.html">
+       Operations on holonomic functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/convert.html">
+       Converting other representations to holonomic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/uses.html">
+       Uses and Current limitations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../holonomic/internal.html">
+       Internal API
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../liealgebras/index.html">
+     Lie Algebra
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../polys/index.html">
+     Polynomial Manipulation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/basics.html">
+       Basic functionality of the module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/wester.html">
+       Examples from Wester’s Article
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/reference.html">
+       Polynomials Manipulation Module Reference
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/agca.html">
+       AGCA - Algebraic Geometry and Commutative Algebra Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/domainsintro.html">
+       Introducing the Domains of the poly module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/domainsref.html">
+       Reference docs for the Poly Domains
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/internals.html">
+       Internals of the Polynomial Manipulation Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/ringseries.html">
+       Series Manipulation using Polynomials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/literature.html">
+       Literature
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/solvers.html">
+       Poly solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/domainmatrix.html">
+       Introducing the domainmatrix of the poly module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../polys/numberfields.html">
+       Number Fields
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../categories.html">
+     Category Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../crypto.html">
+     Cryptography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../diffgeom.html">
+     Differential Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../stats.html">
+     Stats
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-sympy.physics.optics.polarization">
+<span id="polarization"></span><h1>Polarization<a class="headerlink" href="#module-sympy.physics.optics.polarization" title="Permalink to this headline">¶</a></h1>
+<p>The module implements routines to model the polarization of optical fields
+and can be used to calculate the effects of polarization optical elements on
+the fields.</p>
+<ul class="simple">
+<li><p>Jones vectors.</p></li>
+<li><p>Stokes vectors.</p></li>
+<li><p>Jones matrices.</p></li>
+<li><p>Mueller matrices.</p></li>
+</ul>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>We calculate a generic Jones vector:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">simplify</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="p">(</span><span class="n">jones_vector</span><span class="p">,</span> <span class="n">stokes_vector</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">half_wave_retarder</span><span class="p">,</span> <span class="n">polarizing_beam_splitter</span><span class="p">,</span> <span class="n">jones_2_stokes</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">psi</span><span class="p">,</span> <span class="n">chi</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">I0</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;psi, chi, p, I0&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x0</span> <span class="o">=</span> <span class="n">jones_vector</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">chi</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡-ⅈ⋅sin(χ)⋅sin(ψ) + cos(χ)⋅cos(ψ)⎤</span>
+<span class="go">⎢                                ⎥</span>
+<span class="go">⎣ⅈ⋅sin(χ)⋅cos(ψ) + sin(ψ)⋅cos(χ) ⎦</span>
+</pre></div>
+</div>
+<p>And the more general Stokes vector:
+&gt;&gt;&gt; s0 = stokes_vector(psi, chi, p, I0)
+&gt;&gt;&gt; pprint(s0, use_unicode=True)
+⎡          I₀          ⎤
+⎢                      ⎥
+⎢I₀⋅p⋅cos(2⋅χ)⋅cos(2⋅ψ)⎥
+⎢                      ⎥
+⎢I₀⋅p⋅sin(2⋅ψ)⋅cos(2⋅χ)⎥
+⎢                      ⎥
+⎣    I₀⋅p⋅sin(2⋅χ)     ⎦</p>
+<p>We calculate how the Jones vector is modified by a half-wave plate:
+&gt;&gt;&gt; alpha = symbols(“alpha”, real=True)
+&gt;&gt;&gt; HWP = half_wave_retarder(alpha)
+&gt;&gt;&gt; x1 = simplify(HWP*x0)</p>
+<p>We calculate the very common operation of passing a beam through a half-wave
+plate and then through a polarizing beam-splitter. We do this by putting this
+Jones vector as the first entry of a two-Jones-vector state that is transformed
+by a 4x4 Jones matrix modelling the polarizing beam-splitter to get the
+transmitted and reflected Jones vectors:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PBS</span> <span class="o">=</span> <span class="n">polarizing_beam_splitter</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X1</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X1</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">x1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X2</span> <span class="o">=</span> <span class="n">PBS</span><span class="o">*</span><span class="n">X1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transmitted_port</span> <span class="o">=</span> <span class="n">X2</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reflected_port</span> <span class="o">=</span> <span class="n">X2</span><span class="p">[</span><span class="mi">2</span><span class="p">:,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+<p>This allows us to calculate how the power in both ports depends on the initial
+polarization:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">transmitted_power</span> <span class="o">=</span> <span class="n">jones_2_stokes</span><span class="p">(</span><span class="n">transmitted_port</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reflected_power</span> <span class="o">=</span> <span class="n">jones_2_stokes</span><span class="p">(</span><span class="n">reflected_port</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">transmitted_power</span><span class="p">)</span>
+<span class="go">cos(-2*alpha + chi + psi)**2/2 + cos(2*alpha + chi - psi)**2/2</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">reflected_power</span><span class="p">)</span>
+<span class="go">sin(-2*alpha + chi + psi)**2/2 + sin(2*alpha + chi - psi)**2/2</span>
+</pre></div>
+</div>
+<p>Please see the description of the individual functions for further
+details and examples.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="r657"><span class="brackets">R657</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Jones_calculus">https://en.wikipedia.org/wiki/Jones_calculus</a></p>
+</dd>
+<dt class="label" id="r658"><span class="brackets">R658</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mueller_calculus">https://en.wikipedia.org/wiki/Mueller_calculus</a></p>
+</dd>
+<dt class="label" id="r659"><span class="brackets">R659</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Stokes_parameters">https://en.wikipedia.org/wiki/Stokes_parameters</a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.half_wave_retarder">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">half_wave_retarder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L438-L470"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.half_wave_retarder" title="Permalink to this definition">¶</a></dt>
+<dd><p>A half-wave retarder Jones matrix at angle <span class="math notranslate nohighlight">\(theta\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``theta``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The angle of the fast axis relative to the horizontal plane.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones matrix representing the retarder.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>A generic half-wave plate.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">half_wave_retarder</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theta</span><span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;theta&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">HWP</span> <span class="o">=</span> <span class="n">half_wave_retarder</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">HWP</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡   ⎛     2         2   ⎞                        ⎤</span>
+<span class="go">⎢-ⅈ⋅⎝- sin (θ) + cos (θ)⎠    -2⋅ⅈ⋅sin(θ)⋅cos(θ)  ⎥</span>
+<span class="go">⎢                                                ⎥</span>
+<span class="go">⎢                             ⎛   2         2   ⎞⎥</span>
+<span class="go">⎣   -2⋅ⅈ⋅sin(θ)⋅cos(θ)     -ⅈ⋅⎝sin (θ) - cos (θ)⎠⎦</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.jones_2_stokes">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">jones_2_stokes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L306-L350"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.jones_2_stokes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Stokes vector for a Jones vector <span class="math notranslate nohighlight">\(e\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``e``</strong> : SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones vector.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones vector.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>The axes on the Poincaré sphere.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">jones_vector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">jones_2_stokes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">jones_vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">V</span> <span class="o">=</span> <span class="n">jones_vector</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span> <span class="o">=</span> <span class="n">jones_vector</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">jones_vector</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">jones_vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">jones_vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">([</span><span class="n">jones_2_stokes</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="p">[</span><span class="n">H</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">L</span><span class="p">]],</span>
+<span class="gp">... </span>        <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡⎡1⎤  ⎡1 ⎤  ⎡1⎤  ⎡1 ⎤  ⎡1⎤  ⎡1 ⎤⎤</span>
+<span class="go">⎢⎢ ⎥  ⎢  ⎥  ⎢ ⎥  ⎢  ⎥  ⎢ ⎥  ⎢  ⎥⎥</span>
+<span class="go">⎢⎢1⎥  ⎢-1⎥  ⎢0⎥  ⎢0 ⎥  ⎢0⎥  ⎢0 ⎥⎥</span>
+<span class="go">⎢⎢ ⎥, ⎢  ⎥, ⎢ ⎥, ⎢  ⎥, ⎢ ⎥, ⎢  ⎥⎥</span>
+<span class="go">⎢⎢0⎥  ⎢0 ⎥  ⎢1⎥  ⎢-1⎥  ⎢0⎥  ⎢0 ⎥⎥</span>
+<span class="go">⎢⎢ ⎥  ⎢  ⎥  ⎢ ⎥  ⎢  ⎥  ⎢ ⎥  ⎢  ⎥⎥</span>
+<span class="go">⎣⎣0⎦  ⎣0 ⎦  ⎣0⎦  ⎣0 ⎦  ⎣1⎦  ⎣-1⎦⎦</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.jones_vector">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">jones_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L95-L184"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.jones_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Jones vector corresponding to a polarization ellipse with <span class="math notranslate nohighlight">\(psi\)</span> tilt,
+and <span class="math notranslate nohighlight">\(chi\)</span> circularity.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``psi``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The tilt of the polarization relative to the <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+</div></blockquote>
+<p><strong>``chi``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The angle adjacent to the mayor axis of the polarization ellipse.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Matrix :</p>
+<blockquote>
+<div><p>A Jones vector.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>The axes on the Poincaré sphere.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">jones_vector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">psi</span><span class="p">,</span> <span class="n">chi</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;psi, chi&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A general Jones vector.
+&gt;&gt;&gt; pprint(jones_vector(psi, chi), use_unicode=True)
+⎡-ⅈ⋅sin(χ)⋅sin(ψ) + cos(χ)⋅cos(ψ)⎤
+⎢                                ⎥
+⎣ⅈ⋅sin(χ)⋅cos(ψ) + sin(ψ)⋅cos(χ) ⎦</p>
+<p>Horizontal polarization.
+&gt;&gt;&gt; pprint(jones_vector(0, 0), use_unicode=True)
+⎡1⎤
+⎢ ⎥
+⎣0⎦</p>
+<p>Vertical polarization.
+&gt;&gt;&gt; pprint(jones_vector(pi/2, 0), use_unicode=True)
+⎡0⎤
+⎢ ⎥
+⎣1⎦</p>
+<p>Diagonal polarization.
+&gt;&gt;&gt; pprint(jones_vector(pi/4, 0), use_unicode=True)
+⎡√2⎤
+⎢──⎥
+⎢2 ⎥
+⎢  ⎥
+⎢√2⎥
+⎢──⎥
+⎣2 ⎦</p>
+<p>Anti-diagonal polarization.
+&gt;&gt;&gt; pprint(jones_vector(-pi/4, 0), use_unicode=True)
+⎡ √2 ⎤
+⎢ ── ⎥
+⎢ 2  ⎥
+⎢    ⎥
+⎢-√2 ⎥
+⎢────⎥
+⎣ 2  ⎦</p>
+<p>Right-hand circular polarization.
+&gt;&gt;&gt; pprint(jones_vector(0, pi/4), use_unicode=True)
+⎡ √2 ⎤
+⎢ ── ⎥
+⎢ 2  ⎥
+⎢    ⎥
+⎢√2⋅ⅈ⎥
+⎢────⎥
+⎣ 2  ⎦</p>
+<p>Left-hand circular polarization.
+&gt;&gt;&gt; pprint(jones_vector(0, -pi/4), use_unicode=True)
+⎡  √2  ⎤
+⎢  ──  ⎥
+⎢  2   ⎥
+⎢      ⎥
+⎢-√2⋅ⅈ ⎥
+⎢──────⎥
+⎣  2   ⎦</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.linear_polarizer">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">linear_polarizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L353-L389"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.linear_polarizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A linear polarizer Jones matrix with transmission axis at
+an angle <code class="docutils literal notranslate"><span class="pre">theta</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``theta``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The angle of the transmission axis relative to the horizontal plane.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones matrix representing the polarizer.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>A generic polarizer.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">linear_polarizer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theta</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;theta&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">J</span> <span class="o">=</span> <span class="n">linear_polarizer</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡      2                     ⎤</span>
+<span class="go">⎢   cos (θ)     sin(θ)⋅cos(θ)⎥</span>
+<span class="go">⎢                            ⎥</span>
+<span class="go">⎢                     2      ⎥</span>
+<span class="go">⎣sin(θ)⋅cos(θ)     sin (θ)   ⎦</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.mueller_matrix">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">mueller_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">J</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L577-L650"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.mueller_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Mueller matrix corresponding to Jones matrix <span class="math notranslate nohighlight">\(J\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``J``</strong> : SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones matrix.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix</p>
+<blockquote>
+<div><p>The corresponding Mueller matrix.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Generic optical components.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="p">(</span><span class="n">mueller_matrix</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">linear_polarizer</span><span class="p">,</span> <span class="n">half_wave_retarder</span><span class="p">,</span> <span class="n">quarter_wave_retarder</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theta</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;theta&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A linear_polarizer
+&gt;&gt;&gt; pprint(mueller_matrix(linear_polarizer(theta)), use_unicode=True)
+⎡            cos(2⋅θ)      sin(2⋅θ)     ⎤
+⎢  1/2       ────────      ────────    0⎥
+⎢               2             2         ⎥
+⎢                                       ⎥
+⎢cos(2⋅θ)  cos(4⋅θ)   1    sin(4⋅θ)     ⎥
+⎢────────  ──────── + ─    ────────    0⎥
+⎢   2         4       4       4         ⎥
+⎢                                       ⎥
+⎢sin(2⋅θ)    sin(4⋅θ)    1   cos(4⋅θ)   ⎥
+⎢────────    ────────    ─ - ────────  0⎥
+⎢   2           4        4      4       ⎥
+⎢                                       ⎥
+⎣   0           0             0        0⎦</p>
+<p>A half-wave plate
+&gt;&gt;&gt; pprint(mueller_matrix(half_wave_retarder(theta)), use_unicode=True)
+⎡1              0                           0               0 ⎤
+⎢                                                             ⎥
+⎢        4           2                                        ⎥
+⎢0  8⋅sin (θ) - 8⋅sin (θ) + 1           sin(4⋅θ)            0 ⎥
+⎢                                                             ⎥
+⎢                                     4           2           ⎥
+⎢0          sin(4⋅θ)           - 8⋅sin (θ) + 8⋅sin (θ) - 1  0 ⎥
+⎢                                                             ⎥
+⎣0              0                           0               -1⎦</p>
+<p>A quarter-wave plate
+&gt;&gt;&gt; pprint(mueller_matrix(quarter_wave_retarder(theta)), use_unicode=True)
+⎡1       0             0            0    ⎤
+⎢                                        ⎥
+⎢   cos(4⋅θ)   1    sin(4⋅θ)             ⎥
+⎢0  ──────── + ─    ────────    -sin(2⋅θ)⎥
+⎢      2       2       2                 ⎥
+⎢                                        ⎥
+⎢     sin(4⋅θ)    1   cos(4⋅θ)           ⎥
+⎢0    ────────    ─ - ────────  cos(2⋅θ) ⎥
+⎢        2        2      2               ⎥
+⎢                                        ⎥
+⎣0    sin(2⋅θ)     -cos(2⋅θ)        0    ⎦</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.phase_retarder">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">phase_retarder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L392-L435"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.phase_retarder" title="Permalink to this definition">¶</a></dt>
+<dd><p>A phase retarder Jones matrix with retardance <span class="math notranslate nohighlight">\(delta\)</span> at angle <span class="math notranslate nohighlight">\(theta\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``theta``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The angle of the fast axis relative to the horizontal plane.</p>
+</div></blockquote>
+<p><strong>``delta``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The phase difference between the fast and slow axes of the
+transmitted light.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix :</p>
+<blockquote>
+<div><p>A Jones matrix representing the retarder.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>A generic retarder.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">phase_retarder</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theta</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;theta, delta&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">phase_retarder</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡                          -ⅈ⋅δ               -ⅈ⋅δ               ⎤</span>
+<span class="go">⎢                          ─────              ─────              ⎥</span>
+<span class="go">⎢⎛ ⅈ⋅δ    2         2   ⎞    2    ⎛     ⅈ⋅δ⎞    2                ⎥</span>
+<span class="go">⎢⎝ℯ   ⋅sin (θ) + cos (θ)⎠⋅ℯ       ⎝1 - ℯ   ⎠⋅ℯ     ⋅sin(θ)⋅cos(θ)⎥</span>
+<span class="go">⎢                                                                ⎥</span>
+<span class="go">⎢            -ⅈ⋅δ                                           -ⅈ⋅δ ⎥</span>
+<span class="go">⎢            ─────                                          ─────⎥</span>
+<span class="go">⎢⎛     ⅈ⋅δ⎞    2                  ⎛ ⅈ⋅δ    2         2   ⎞    2  ⎥</span>
+<span class="go">⎣⎝1 - ℯ   ⎠⋅ℯ     ⋅sin(θ)⋅cos(θ)  ⎝ℯ   ⋅cos (θ) + sin (θ)⎠⋅ℯ     ⎦</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.polarizing_beam_splitter">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">polarizing_beam_splitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Tp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phia</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L653-L713"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.polarizing_beam_splitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A polarizing beam splitter Jones matrix at angle <span class="math notranslate nohighlight">\(theta\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``J``</strong> : SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones matrix.</p>
+</div></blockquote>
+<p><strong>``Tp``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The transmissivity of the P-polarized component.</p>
+</div></blockquote>
+<p><strong>``Rs``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The reflectivity of the S-polarized component.</p>
+</div></blockquote>
+<p><strong>``Ts``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The transmissivity of the S-polarized component.</p>
+</div></blockquote>
+<p><strong>``Rp``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The reflectivity of the P-polarized component.</p>
+</div></blockquote>
+<p><strong>``phia``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The phase difference between transmitted and reflected component for
+output mode a.</p>
+</div></blockquote>
+<p><strong>``phib``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The phase difference between transmitted and reflected component for
+output mode b.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix</p>
+<blockquote>
+<div><p>A 4x4 matrix representing the PBS. This matrix acts on a 4x1 vector
+whose first two entries are the Jones vector on one of the PBS ports,
+and the last two entries the Jones vector on the other port.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Generic polarizing beam-splitter.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">polarizing_beam_splitter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Ts</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">Rp</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Ts, Rs, Tp, Rp&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phia</span><span class="p">,</span> <span class="n">phib</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;phi_a, phi_b&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PBS</span> <span class="o">=</span> <span class="n">polarizing_beam_splitter</span><span class="p">(</span><span class="n">Tp</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">Ts</span><span class="p">,</span> <span class="n">Rp</span><span class="p">,</span> <span class="n">phia</span><span class="p">,</span> <span class="n">phib</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">PBS</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">[   ____                           ____                    ]</span>
+<span class="go">[ \/ Tp            0           I*\/ Rp           0         ]</span>
+<span class="go">[                                                          ]</span>
+<span class="go">[                  ____                       ____  I*phi_a]</span>
+<span class="go">[   0            \/ Ts            0      -I*\/ Rs *e       ]</span>
+<span class="go">[                                                          ]</span>
+<span class="go">[    ____                         ____                     ]</span>
+<span class="go">[I*\/ Rp           0            \/ Tp            0         ]</span>
+<span class="go">[                                                          ]</span>
+<span class="go">[               ____  I*phi_b                    ____      ]</span>
+<span class="go">[   0      -I*\/ Rs *e            0            \/ Ts       ]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.quarter_wave_retarder">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">quarter_wave_retarder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L473-L509"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.quarter_wave_retarder" title="Permalink to this definition">¶</a></dt>
+<dd><p>A quarter-wave retarder Jones matrix at angle <span class="math notranslate nohighlight">\(theta\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``theta``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The angle of the fast axis relative to the horizontal plane.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones matrix representing the retarder.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>A generic quarter-wave plate.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">quarter_wave_retarder</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theta</span><span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;theta&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">QWP</span> <span class="o">=</span> <span class="n">quarter_wave_retarder</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">QWP</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡                       -ⅈ⋅π            -ⅈ⋅π               ⎤</span>
+<span class="go">⎢                       ─────           ─────              ⎥</span>
+<span class="go">⎢⎛     2         2   ⎞    4               4                ⎥</span>
+<span class="go">⎢⎝ⅈ⋅sin (θ) + cos (θ)⎠⋅ℯ       (1 - ⅈ)⋅ℯ     ⋅sin(θ)⋅cos(θ)⎥</span>
+<span class="go">⎢                                                          ⎥</span>
+<span class="go">⎢         -ⅈ⋅π                                        -ⅈ⋅π ⎥</span>
+<span class="go">⎢         ─────                                       ─────⎥</span>
+<span class="go">⎢           4                  ⎛   2           2   ⎞    4  ⎥</span>
+<span class="go">⎣(1 - ⅈ)⋅ℯ     ⋅sin(θ)⋅cos(θ)  ⎝sin (θ) + ⅈ⋅cos (θ)⎠⋅ℯ     ⎦</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.reflective_filter">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">reflective_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L545-L574"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.reflective_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A reflective filter Jones matrix with reflectance <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``R``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The reflectance of the filter.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones matrix representing the filter.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>A generic filter.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">reflective_filter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">reflective_filter</span><span class="p">(</span><span class="n">R</span><span class="p">),</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡√R   0 ⎤</span>
+<span class="go">⎢       ⎥</span>
+<span class="go">⎣0   -√R⎦</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.stokes_vector">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">stokes_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">I</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L187-L303"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.stokes_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Stokes vector corresponding to a polarization ellipse with <code class="docutils literal notranslate"><span class="pre">psi</span></code>
+tilt, and <code class="docutils literal notranslate"><span class="pre">chi</span></code> circularity.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``psi``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The tilt of the polarization relative to the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis.</p>
+</div></blockquote>
+<p><strong>``chi``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The angle adjacent to the mayor axis of the polarization ellipse.</p>
+</div></blockquote>
+<p><strong>``p``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The degree of polarization.</p>
+</div></blockquote>
+<p><strong>``I``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The intensity of the field.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Matrix :</p>
+<blockquote>
+<div><p>A Stokes vector.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>The axes on the Poincaré sphere.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">stokes_vector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">psi</span><span class="p">,</span> <span class="n">chi</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">I</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;psi, chi, p, I&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">stokes_vector</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span> <span class="n">chi</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">I</span><span class="p">),</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡          I          ⎤</span>
+<span class="go">⎢                     ⎥</span>
+<span class="go">⎢I⋅p⋅cos(2⋅χ)⋅cos(2⋅ψ)⎥</span>
+<span class="go">⎢                     ⎥</span>
+<span class="go">⎢I⋅p⋅sin(2⋅ψ)⋅cos(2⋅χ)⎥</span>
+<span class="go">⎢                     ⎥</span>
+<span class="go">⎣    I⋅p⋅sin(2⋅χ)     ⎦</span>
+</pre></div>
+</div>
+<p>Horizontal polarization
+&gt;&gt;&gt; pprint(stokes_vector(0, 0), use_unicode=True)
+⎡1⎤
+⎢ ⎥
+⎢1⎥
+⎢ ⎥
+⎢0⎥
+⎢ ⎥
+⎣0⎦</p>
+<p>Vertical polarization
+&gt;&gt;&gt; pprint(stokes_vector(pi/2, 0), use_unicode=True)
+⎡1 ⎤
+⎢  ⎥
+⎢-1⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎣0 ⎦</p>
+<p>Diagonal polarization
+&gt;&gt;&gt; pprint(stokes_vector(pi/4, 0), use_unicode=True)
+⎡1⎤
+⎢ ⎥
+⎢0⎥
+⎢ ⎥
+⎢1⎥
+⎢ ⎥
+⎣0⎦</p>
+<p>Anti-diagonal polarization
+&gt;&gt;&gt; pprint(stokes_vector(-pi/4, 0), use_unicode=True)
+⎡1 ⎤
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢-1⎥
+⎢  ⎥
+⎣0 ⎦</p>
+<p>Right-hand circular polarization
+&gt;&gt;&gt; pprint(stokes_vector(0, pi/4), use_unicode=True)
+⎡1⎤
+⎢ ⎥
+⎢0⎥
+⎢ ⎥
+⎢0⎥
+⎢ ⎥
+⎣1⎦</p>
+<p>Left-hand circular polarization
+&gt;&gt;&gt; pprint(stokes_vector(0, -pi/4), use_unicode=True)
+⎡1 ⎤
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎢0 ⎥
+⎢  ⎥
+⎣-1⎦</p>
+<p>Unpolarized light
+&gt;&gt;&gt; pprint(stokes_vector(0, 0, 0), use_unicode=True)
+⎡1⎤
+⎢ ⎥
+⎢0⎥
+⎢ ⎥
+⎢0⎥
+⎢ ⎥
+⎣0⎦</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.polarization.transmissive_filter">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.polarization.</span></span><span class="sig-name descname"><span class="pre">transmissive_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/optics/polarization.py#L512-L542"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.polarization.transmissive_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>An attenuator Jones matrix with transmittance <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>``T``</strong> : numeric type or SymPy Symbol</p>
+<blockquote>
+<div><p>The transmittance of the attenuator.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SymPy Matrix</p>
+<blockquote>
+<div><p>A Jones matrix representing the filter.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>A generic filter.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pprint</span><span class="p">,</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics.polarization</span> <span class="kn">import</span> <span class="n">transmissive_filter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">NDF</span> <span class="o">=</span> <span class="n">transmissive_filter</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">NDF</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">⎡√T  0 ⎤</span>
+<span class="go">⎢      ⎥</span>
+<span class="go">⎣0   √T⎦</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="medium.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Medium</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="utils.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Utilities</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022 SymPy Development Team.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

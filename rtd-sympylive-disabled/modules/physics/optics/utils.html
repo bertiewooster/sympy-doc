@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilities &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/optics/utils.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Waves" href="waves.html" />
+    <link rel="prev" title="Polarization" href="polarization.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../vector/index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mechanics/index.html">Classical Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quantum/index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="index.html">Optics Module</a> &raquo;</li>
+      <li>Utilities</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/physics/optics/utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.physics.optics.utils">
+<span id="utilities"></span><h1>Utilities<a class="headerlink" href="#module-sympy.physics.optics.utils" title="Permalink to this headline"></a></h1>
+<p><strong>Contains</strong></p>
+<ul class="simple">
+<li><p>refraction_angle</p></li>
+<li><p>fresnel_coefficients</p></li>
+<li><p>deviation</p></li>
+<li><p>brewster_angle</p></li>
+<li><p>critical_angle</p></li>
+<li><p>lens_makers_formula</p></li>
+<li><p>mirror_formula</p></li>
+<li><p>lens_formula</p></li>
+<li><p>hyperfocal_distance</p></li>
+<li><p>transverse_magnification</p></li>
+</ul>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.brewster_angle">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">brewster_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">medium1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medium2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L396-L421"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.brewster_angle" title="Permalink to this definition"></a></dt>
+<dd><p>This function calculates the Brewster’s angle of incidence to Medium 2 from
+Medium 1 in radians.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>medium 1</strong> : Medium or sympifiable</p>
+<blockquote>
+<div><p>Refractive index of Medium 1</p>
+</div></blockquote>
+<p><strong>medium 2</strong> : Medium or sympifiable</p>
+<blockquote>
+<div><p>Refractive index of Medium 1</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">brewster_angle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">brewster_angle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.33</span><span class="p">)</span>
+<span class="go">0.926093295503462</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.critical_angle">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">critical_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">medium1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medium2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L423-L451"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.critical_angle" title="Permalink to this definition"></a></dt>
+<dd><p>This function calculates the critical angle of incidence (marking the onset
+of total internal) to Medium 2 from Medium 1 in radians.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>medium 1</strong> : Medium or sympifiable</p>
+<blockquote>
+<div><p>Refractive index of Medium 1.</p>
+</div></blockquote>
+<p><strong>medium 2</strong> : Medium or sympifiable</p>
+<blockquote>
+<div><p>Refractive index of Medium 1.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">critical_angle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">critical_angle</span><span class="p">(</span><span class="mf">1.33</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">0.850908514477849</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.deviation">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">deviation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incident</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medium1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medium2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L304-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.deviation" title="Permalink to this definition"></a></dt>
+<dd><p>This function calculates the angle of deviation of a ray
+due to refraction at planar surface.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>incident</strong> : Matrix, Ray3D, sequence or float</p>
+<blockquote>
+<div><p>Incident vector or angle of incidence</p>
+</div></blockquote>
+<p><strong>medium1</strong> : sympy.physics.optics.medium.Medium or sympifiable</p>
+<blockquote>
+<div><p>Medium 1 or its refractive index</p>
+</div></blockquote>
+<p><strong>medium2</strong> : sympy.physics.optics.medium.Medium or sympifiable</p>
+<blockquote>
+<div><p>Medium 2 or its refractive index</p>
+</div></blockquote>
+<p><strong>normal</strong> : Matrix, Ray3D, or sequence</p>
+<blockquote>
+<div><p>Normal vector</p>
+</div></blockquote>
+<p><strong>plane</strong> : Plane</p>
+<blockquote>
+<div><p>Plane of separation of the two media.</p>
+</div></blockquote>
+<p><strong>Returns angular deviation between incident and refracted rays</strong></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">deviation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Ray3D</span><span class="p">,</span> <span class="n">Plane</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">Matrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n1, n2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">normal_vector</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">Ray3D</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Point3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deviation</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">deviation</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">plane</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="go">-acos(-sqrt(-2*n1**2/(3*n2**2) + 1)) + acos(-sqrt(3)/3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">deviation</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">-0.02005</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.fresnel_coefficients">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">fresnel_coefficients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle_of_incidence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medium1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medium2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L218-L301"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.fresnel_coefficients" title="Permalink to this definition"></a></dt>
+<dd><p>This function uses Fresnel equations to calculate reflection and
+transmission coefficients. Those are obtained for both polarisations
+when the electric field vector is in the plane of incidence (labelled ‘p’)
+and when the electric field vector is perpendicular to the plane of
+incidence (labelled ‘s’). There are four real coefficients unless the
+incident ray reflects in total internal in which case there are two complex
+ones. Angle of incidence is the angle between the incident ray and the
+surface normal. <code class="docutils literal notranslate"><span class="pre">medium1</span></code> and <code class="docutils literal notranslate"><span class="pre">medium2</span></code> can be <code class="docutils literal notranslate"><span class="pre">Medium</span></code> or any
+sympifiable object.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>angle_of_incidence</strong> : sympifiable</p>
+<p><strong>medium1</strong> : Medium or sympifiable</p>
+<blockquote>
+<div><p>Medium 1 or its refractive index</p>
+</div></blockquote>
+<p><strong>medium2</strong> : Medium or sympifiable</p>
+<blockquote>
+<div><p>Medium 2 or its refractive index</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a list with four real Fresnel coefficients:</p>
+<p>[reflection p (TM), reflection s (TE),</p>
+<p>transmission p (TM), transmission s (TE)]</p>
+<p>If the ray is undergoes total internal reflection then returns a</p>
+<p>list of two complex Fresnel coefficients:</p>
+<p>[reflection p (TM), reflection s (TE)]</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">fresnel_coefficients</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fresnel_coefficients</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">[0.317843553417859, -0.348645229818821,</span>
+<span class="go">        0.658921776708929, 0.651354770181179]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fresnel_coefficients</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">[-0.235625382192159 - 0.971843958291041*I,</span>
+<span class="go">         0.816477005968898 - 0.577377951366403*I]</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r660"><span class="brackets"><a class="fn-backref" href="#id1">R660</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Fresnel_equations">https://en.wikipedia.org/wiki/Fresnel_equations</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.hyperfocal_distance">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">hyperfocal_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L642-L669"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.hyperfocal_distance" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f: sympifiable</strong></p>
+<blockquote>
+<div><p>Focal length of a given lens.</p>
+</div></blockquote>
+<p><strong>N: sympifiable</strong></p>
+<blockquote>
+<div><p>F-number of a given lens.</p>
+</div></blockquote>
+<p><strong>c: sympifiable</strong></p>
+<blockquote>
+<div><p>Circle of Confusion (CoC) of a given image format.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">hyperfocal_distance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">hyperfocal_distance</span><span class="p">(</span><span class="n">f</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">0.0033</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">9.47</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.lens_formula">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">lens_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">focal_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L574-L640"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.lens_formula" title="Permalink to this definition"></a></dt>
+<dd><p>This function provides one of the three parameters
+when two of them are supplied.
+This is valid only for paraxial rays.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>focal_length</strong> : sympifiable</p>
+<blockquote>
+<div><p>Focal length of the mirror.</p>
+</div></blockquote>
+<p><strong>u</strong> : sympifiable</p>
+<blockquote>
+<div><p>Distance of object from the optical center on
+the principal axis.</p>
+</div></blockquote>
+<p><strong>v</strong> : sympifiable</p>
+<blockquote>
+<div><p>Distance of the image from the optical center
+on the principal axis.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">lens_formula</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lens_formula</span><span class="p">(</span><span class="n">focal_length</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="n">u</span><span class="p">)</span>
+<span class="go">f*u/(f + u)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lens_formula</span><span class="p">(</span><span class="n">focal_length</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="go">f*v/(f - v)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lens_formula</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="go">u*v/(u - v)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.lens_makers_formula">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">lens_makers_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_lens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_surr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L455-L502"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.lens_makers_formula" title="Permalink to this definition"></a></dt>
+<dd><p>This function calculates focal length of a lens.
+It follows cartesian sign convention.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n_lens</strong> : Medium or sympifiable</p>
+<blockquote>
+<div><p>Index of refraction of lens.</p>
+</div></blockquote>
+<p><strong>n_surr</strong> : Medium or sympifiable</p>
+<blockquote>
+<div><p>Index of reflection of surrounding.</p>
+</div></blockquote>
+<p><strong>r1</strong> : sympifiable</p>
+<blockquote>
+<div><p>Radius of curvature of first surface.</p>
+</div></blockquote>
+<p><strong>r2</strong> : sympifiable</p>
+<blockquote>
+<div><p>Radius of curvature of second surface.</p>
+</div></blockquote>
+<p><strong>d</strong> : sympifiable, optional</p>
+<blockquote>
+<div><p>Thickness of lens, default value is 0.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">lens_makers_formula</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lens_makers_formula</span><span class="p">(</span><span class="mf">1.33</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">15.1515151515151</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lens_makers_formula</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">S</span><span class="o">.</span><span class="n">Infinity</span><span class="p">)</span>
+<span class="go">50.0000000000000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lens_makers_formula</span><span class="p">(</span><span class="mf">1.33</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">15.3418463277618</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.mirror_formula">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">mirror_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">focal_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L505-L571"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.mirror_formula" title="Permalink to this definition"></a></dt>
+<dd><p>This function provides one of the three parameters
+when two of them are supplied.
+This is valid only for paraxial rays.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>focal_length</strong> : sympifiable</p>
+<blockquote>
+<div><p>Focal length of the mirror.</p>
+</div></blockquote>
+<p><strong>u</strong> : sympifiable</p>
+<blockquote>
+<div><p>Distance of object from the pole on
+the principal axis.</p>
+</div></blockquote>
+<p><strong>v</strong> : sympifiable</p>
+<blockquote>
+<div><p>Distance of the image from the pole
+on the principal axis.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">mirror_formula</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mirror_formula</span><span class="p">(</span><span class="n">focal_length</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">u</span><span class="o">=</span><span class="n">u</span><span class="p">)</span>
+<span class="go">f*u/(-f + u)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mirror_formula</span><span class="p">(</span><span class="n">focal_length</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="go">f*v/(-f + v)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mirror_formula</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="go">u*v/(u + v)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.refraction_angle">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">refraction_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incident</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medium1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medium2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L55-L215"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.refraction_angle" title="Permalink to this definition"></a></dt>
+<dd><p>This function calculates transmitted vector after refraction at planar
+surface. <code class="docutils literal notranslate"><span class="pre">medium1</span></code> and <code class="docutils literal notranslate"><span class="pre">medium2</span></code> can be <code class="docutils literal notranslate"><span class="pre">Medium</span></code> or any sympifiable object.
+If <code class="docutils literal notranslate"><span class="pre">incident</span></code> is a number then treated as angle of incidence (in radians)
+in which case refraction angle is returned.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">incident</span></code> is an object of <span class="math notranslate nohighlight">\(Ray3D\)</span>, <span class="math notranslate nohighlight">\(normal\)</span> also has to be an instance
+of <span class="math notranslate nohighlight">\(Ray3D\)</span> in order to get the output as a <span class="math notranslate nohighlight">\(Ray3D\)</span>. Please note that if
+plane of separation is not provided and normal is an instance of <span class="math notranslate nohighlight">\(Ray3D\)</span>,
+<code class="docutils literal notranslate"><span class="pre">normal</span></code> will be assumed to be intersecting incident ray at the plane of
+separation. This will not be the case when <span class="math notranslate nohighlight">\(normal\)</span> is a <span class="math notranslate nohighlight">\(Matrix\)</span> or
+any other sequence.
+If <code class="docutils literal notranslate"><span class="pre">incident</span></code> is an instance of <span class="math notranslate nohighlight">\(Ray3D\)</span> and <span class="math notranslate nohighlight">\(plane\)</span> has not been provided
+and <code class="docutils literal notranslate"><span class="pre">normal</span></code> is not <span class="math notranslate nohighlight">\(Ray3D\)</span>, output will be a <span class="math notranslate nohighlight">\(Matrix\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>incident</strong> : Matrix, Ray3D, sequence or a number</p>
+<blockquote>
+<div><p>Incident vector or angle of incidence</p>
+</div></blockquote>
+<p><strong>medium1</strong> : sympy.physics.optics.medium.Medium or sympifiable</p>
+<blockquote>
+<div><p>Medium 1 or its refractive index</p>
+</div></blockquote>
+<p><strong>medium2</strong> : sympy.physics.optics.medium.Medium or sympifiable</p>
+<blockquote>
+<div><p>Medium 2 or its refractive index</p>
+</div></blockquote>
+<p><strong>normal</strong> : Matrix, Ray3D, or sequence</p>
+<blockquote>
+<div><p>Normal vector</p>
+</div></blockquote>
+<p><strong>plane</strong> : Plane</p>
+<blockquote>
+<div><p>Plane of separation of the two media.</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns an angle of refraction or a refracted ray depending on inputs.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">refraction_angle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Ray3D</span><span class="p">,</span> <span class="n">Plane</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">Matrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">normal_vector</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">Ray3D</span><span class="p">(</span><span class="n">Point3D</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Point3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refraction_angle</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 1],</span>
+<span class="go">[ 1],</span>
+<span class="go">[-1]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refraction_angle</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">plane</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="go">Ray3D(Point3D(0, 0, 0), Point3D(1, 1, -1))</span>
+</pre></div>
+</div>
+<p>With different index of refraction of the two media</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n1, n2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refraction_angle</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="go">Matrix([</span>
+<span class="go">[                                n1/n2],</span>
+<span class="go">[                                n1/n2],</span>
+<span class="go">[-sqrt(3)*sqrt(-2*n1**2/(3*n2**2) + 1)]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">refraction_angle</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">plane</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="go">Ray3D(Point3D(0, 0, 0), Point3D(n1/n2, n1/n2, -sqrt(3)*sqrt(-2*n1**2/(3*n2**2) + 1)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">refraction_angle</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">0.41152</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.optics.utils.transverse_magnification">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.utils.</span></span><span class="sig-name descname"><span class="pre">transverse_magnification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">si</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">so</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/utils.py#L671-L698"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.utils.transverse_magnification" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the transverse magnification, which is the ratio of the
+image size to the object size.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>so: sympifiable</strong></p>
+<blockquote>
+<div><p>Lens-object distance.</p>
+</div></blockquote>
+<p><strong>si: sympifiable</strong></p>
+<blockquote>
+<div><p>Lens-image distance.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">transverse_magnification</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transverse_magnification</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="go">-2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="polarization.html" class="btn btn-neutral float-left" title="Polarization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="waves.html" class="btn btn-neutral float-right" title="Waves" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
