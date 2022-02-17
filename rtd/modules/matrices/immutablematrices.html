@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Immutable Matrices &mdash; SymPy 1.10.dev documentation</title>
+  <title>Immutable Matrices &mdash; SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.10.dev
+                1.11.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -140,17 +140,16 @@ the constructor</p>
 <span id="immutablematrix-class-reference"></span><h2>ImmutableMatrix Class Reference<a class="headerlink" href="#module-sympy.matrices.immutable" title="Permalink to this headline"></a></h2>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sympy.matrices.immutable.ImmutableMatrix">
-<span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableMatrix</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/immutable.py#L80-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableMatrix" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableMatrix</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/matrices/immutable.py#L80-L131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableMatrix" title="Permalink to this definition"></a></dt>
 <dd><p>alias of <a class="reference internal" href="#sympy.matrices.immutable.ImmutableDenseMatrix" title="sympy.matrices.immutable.ImmutableDenseMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.matrices.immutable.ImmutableDenseMatrix</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.matrices.immutable.ImmutableDenseMatrix">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableDenseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/immutable.py#L80-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableDenseMatrix" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableDenseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/matrices/immutable.py#L80-L131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableDenseMatrix" title="Permalink to this definition"></a></dt>
 <dd><p>Create an immutable version of a matrix.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">eye</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">ImmutableMatrix</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">eye</span><span class="p">,</span> <span class="n">ImmutableMatrix</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ImmutableMatrix</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">Matrix([</span>
 <span class="go">[1, 0, 0],</span>
@@ -179,7 +178,7 @@ the constructor</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022 SymPy Development Team.
-      <span class="lastupdated">Last updated on Jan 14, 2022.
+      <span class="lastupdated">Last updated on Feb 17, 2022.
       </span></p>
   </div>
 

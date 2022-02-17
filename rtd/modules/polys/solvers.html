@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Poly solvers &mdash; SymPy 1.10.dev documentation</title>
+  <title>Poly solvers &mdash; SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
@@ -18,8 +18,8 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link href="https://docs.sympy.org/latest/modules/polys/solvers.html" rel="canonical" />
     
@@ -38,7 +38,7 @@
             <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.10.dev
+                1.11.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -123,7 +123,7 @@ are used internally in sympy.</p>
 <h2>solve_lin_sys<a class="headerlink" href="#solve-lin-sys" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.polys.solvers.solve_lin_sys">
-<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_lin_sys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ring</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_raw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/polys/solvers.py#L182-L296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers.solve_lin_sys" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_lin_sys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ring</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_raw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/polys/solvers.py#L187-L301"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers.solve_lin_sys" title="Permalink to this definition"></a></dt>
 <dd><p>Solve a system of linear equations from a PolynomialRing</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -195,7 +195,7 @@ function internally) instead.</p>
 <h2>eqs_to_matrix<a class="headerlink" href="#eqs-to-matrix" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.polys.solvers.eqs_to_matrix">
-<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">eqs_to_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eqs_rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/polys/solvers.py#L69-L124"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers.eqs_to_matrix" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">eqs_to_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eqs_rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/polys/solvers.py#L74-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers.eqs_to_matrix" title="Permalink to this definition"></a></dt>
 <dd><p>Get matrix from linear equations in dict format.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -251,7 +251,7 @@ as dicts with low-level DomainElement coefficients. This is an
 <h2>sympy_eqs_to_ring<a class="headerlink" href="#sympy-eqs-to-ring" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.polys.solvers.sympy_eqs_to_ring">
-<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">sympy_eqs_to_ring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/polys/solvers.py#L127-L179"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers.sympy_eqs_to_ring" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">sympy_eqs_to_ring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/polys/solvers.py#L132-L184"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers.sympy_eqs_to_ring" title="Permalink to this definition"></a></dt>
 <dd><p>Convert a system of equations from Expr to a PolyRing</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -302,7 +302,7 @@ function.</p>
 <h2>_solve_lin_sys<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.polys.solvers._solve_lin_sys">
-<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">_solve_lin_sys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eqs_rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ring</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/polys/solvers.py#L299-L357"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers._solve_lin_sys" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">_solve_lin_sys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eqs_rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ring</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/polys/solvers.py#L304-L362"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers._solve_lin_sys" title="Permalink to this definition"></a></dt>
 <dd><p>Solve a linear system from dict of PolynomialRing coefficients</p>
 <p class="rubric">Explanation</p>
 <p>This is an <strong>internal</strong> function used by <a class="reference internal" href="#sympy.polys.solvers.solve_lin_sys" title="sympy.polys.solvers.solve_lin_sys"><code class="xref py py-func docutils literal notranslate"><span class="pre">solve_lin_sys()</span></code></a> after the
@@ -335,7 +335,7 @@ the system into connected components and pass those to
 <h2>_solve_lin_sys_component<a class="headerlink" href="#solve-lin-sys-component" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.polys.solvers._solve_lin_sys_component">
-<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">_solve_lin_sys_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eqs_rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ring</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/polys/solvers.py#L360-L430"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers._solve_lin_sys_component" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.polys.solvers.</span></span><span class="sig-name descname"><span class="pre">_solve_lin_sys_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eqs_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eqs_rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ring</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/polys/solvers.py#L365-L435"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.polys.solvers._solve_lin_sys_component" title="Permalink to this definition"></a></dt>
 <dd><p>Solve a linear system from dict of PolynomialRing coefficients</p>
 <p class="rubric">Explanation</p>
 <p>This is an <strong>internal</strong> function used by <a class="reference internal" href="#sympy.polys.solvers.solve_lin_sys" title="sympy.polys.solvers.solve_lin_sys"><code class="xref py py-func docutils literal notranslate"><span class="pre">solve_lin_sys()</span></code></a> after the
@@ -379,7 +379,7 @@ elimination with division followed by back-substitution.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022 SymPy Development Team.
-      <span class="lastupdated">Last updated on Jan 14, 2022.
+      <span class="lastupdated">Last updated on Feb 17, 2022.
       </span></p>
   </div>
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medium &mdash; SymPy 1.10.dev documentation</title>
+  <title>Medium &mdash; SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.10.dev
+                1.11.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -126,7 +126,7 @@
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.optics.medium.Medium">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.medium.</span></span><span class="sig-name descname"><span class="pre">Medium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permittivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permeability</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/optics/medium.py#L21-L205"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.medium.Medium" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.optics.medium.</span></span><span class="sig-name descname"><span class="pre">Medium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permittivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permeability</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/physics/optics/medium.py#L22-L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.optics.medium.Medium" title="Permalink to this definition"></a></dt>
 <dd><p>This class represents an optical medium. The prime reason to implement this is
 to facilitate refraction, Fermat’s principle, etc.</p>
 <dl class="field-list">
@@ -166,59 +166,13 @@ waves propagate in it.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r656"><span class="brackets"><a class="fn-backref" href="#id1">R656</a></span></dt>
+<dt class="label" id="r658"><span class="brackets"><a class="fn-backref" href="#id1">R658</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Optical_medium">https://en.wikipedia.org/wiki/Optical_medium</a></p>
 </dd>
 </dl>
 <dl class="py property">
-<dt class="sig sig-object py" id="sympy.physics.optics.medium.Medium.intrinsic_impedance">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">intrinsic_impedance</span></span><a class="headerlink" href="#sympy.physics.optics.medium.Medium.intrinsic_impedance" title="Permalink to this definition"></a></dt>
-<dd><p>Returns intrinsic impedance of the medium.</p>
-<p class="rubric">Explanation</p>
-<p>The intrinsic impedance of a medium is the ratio of the
-transverse components of the electric and magnetic fields
-of the electromagnetic wave travelling in the medium.
-In a region with no electrical conductivity it simplifies
-to the square root of ratio of magnetic permeability to
-electric permittivity.</p>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">Medium</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Medium</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">intrinsic_impedance</span>
-<span class="go">149896229*pi*kilogram*meter**2/(1250000*ampere**2*second**3)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="sympy.physics.optics.medium.Medium.permeability">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">permeability</span></span><a class="headerlink" href="#sympy.physics.optics.medium.Medium.permeability" title="Permalink to this definition"></a></dt>
-<dd><p>Returns magnetic permeability of the medium.</p>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">Medium</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Medium</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">permeability</span>
-<span class="go">pi*kilogram*meter/(2500000*ampere**2*second**2)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="sympy.physics.optics.medium.Medium.permittivity">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">permittivity</span></span><a class="headerlink" href="#sympy.physics.optics.medium.Medium.permittivity" title="Permalink to this definition"></a></dt>
-<dd><p>Returns electric permittivity of the medium.</p>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">Medium</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Medium</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">permittivity</span>
-<span class="go">625000*ampere**2*second**4/(22468879468420441*pi*kilogram*meter**3)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.optics.medium.Medium.refractive_index">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">refractive_index</span></span><a class="headerlink" href="#sympy.physics.optics.medium.Medium.refractive_index" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">refractive_index</span></span><a class="headerlink" href="#sympy.physics.optics.medium.Medium.refractive_index" title="Permalink to this definition"></a></dt>
 <dd><p>Returns refractive index of the medium.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">Medium</span>
@@ -231,7 +185,7 @@ electric permittivity.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.optics.medium.Medium.speed">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">speed</span></span><a class="headerlink" href="#sympy.physics.optics.medium.Medium.speed" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">speed</span></span><a class="headerlink" href="#sympy.physics.optics.medium.Medium.speed" title="Permalink to this definition"></a></dt>
 <dd><p>Returns speed of the electromagnetic wave travelling in the medium.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.optics</span> <span class="kn">import</span> <span class="n">Medium</span>
@@ -261,7 +215,7 @@ electric permittivity.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022 SymPy Development Team.
-      <span class="lastupdated">Last updated on Jan 14, 2022.
+      <span class="lastupdated">Last updated on Feb 17, 2022.
       </span></p>
   </div>
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contributing to SymPy &mdash; SymPy 1.10.dev documentation</title>
+  <title>Contributing to SymPy &mdash; SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.10.dev
+                1.11.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -52,6 +52,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Contributing to SymPy</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -61,6 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../assumptions.html">Assumptions</a></li>
@@ -110,9 +112,17 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-setup.html#run-the-tests">Run the Tests</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#hard-dependencies">Hard Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#optional-dependencies">Optional Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#development-dependencies">Development Dependencies</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="build-docs.html">Build the Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="build-docs.html#required-dependencies">Required dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build-docs.html#build-the-docs">Build the Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-docs.html#view-the-docs">View the Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-docs.html#auto-rebuild-with-the-live-server">Auto-Rebuild with the Live Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build-docs.html#pdf-documentation">PDF Documentation</a></li>
 </ul>
 </li>
@@ -139,6 +149,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecations.html">Deprecation Policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#what-is-a-deprecation">What is a deprecation?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#try-to-avoid-backwards-incompatible-changes-in-the-first-place">Try to avoid backwards incompatible changes in the first place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#when-does-a-change-require-deprecation">When does a change require deprecation?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#the-purpose-of-deprecation">The purpose of deprecation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#how-long-should-deprecations-last">How long should deprecations last?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecations.html#how-to-deprecate-code">How to deprecate code</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -155,7 +174,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022 SymPy Development Team.
-      <span class="lastupdated">Last updated on Jan 14, 2022.
+      <span class="lastupdated">Last updated on Feb 17, 2022.
       </span></p>
   </div>
 

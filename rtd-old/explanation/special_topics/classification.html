@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classification of SymPy objects &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/explanation/special_topics/classification.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Reference Documentation" href="../../reference/index.html" />
+    <link rel="prev" title="Finite Difference Approximations to Derivatives" href="finite_diff_derivatives.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Explanation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gotchas.html">Gotchas and Pitfalls</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">SymPy Special Topics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="finite_diff_derivatives.html">Finite Difference Approximations to Derivatives</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Classification of SymPy objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#class">class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kind">kind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sets-and-assumptions">sets and assumptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#func">func</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Explanation</a> &raquo;</li>
+          <li><a href="index.html">SymPy Special Topics</a> &raquo;</li>
+      <li>Classification of SymPy objects</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/explanation/special_topics/classification.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="classification-of-sympy-objects">
+<h1>Classification of SymPy objects<a class="headerlink" href="#classification-of-sympy-objects" title="Permalink to this headline"></a></h1>
+<p>There are several ways of how SymPy object is classified.</p>
+<section id="class">
+<h2>class<a class="headerlink" href="#class" title="Permalink to this headline"></a></h2>
+<p>Like any other object in Python, SymPy expression is an instance of class. You can
+get the class of the object with built-in <span class="math notranslate nohighlight">\(type()\)</span> function, and check it with
+<span class="math notranslate nohighlight">\(isinstance()\)</span> function.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Add</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">&lt;class &#39;sympy.core.add.Add&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">Add</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Classes represent only the programmatic structures of the objects, and does not
+distinguish the mathematical difference between them. For example, the integral
+of number and the integral of matrix both have the class <span class="math notranslate nohighlight">\(Integral\)</span>, although the
+former is number and the latter is matrix.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">MatrixSymbol</span><span class="p">,</span> <span class="n">Integral</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">MatrixSymbol</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">Integral</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="go">&lt;class &#39;sympy.integrals.integrals.Integral&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">Integral</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+<span class="go">&lt;class &#39;sympy.integrals.integrals.Integral&#39;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="kind">
+<h2>kind<a class="headerlink" href="#kind" title="Permalink to this headline"></a></h2>
+<p>Kind indicates what mathematical object does the expression represent.
+You can retrieve the kind of expression with <span class="math notranslate nohighlight">\(.kind\)</span> property.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Integral</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">kind</span>
+<span class="go">NumberKind</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Integral</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">kind</span>
+<span class="go">MatrixKind(NumberKind)</span>
+</pre></div>
+</div>
+<p>This result shows that <span class="math notranslate nohighlight">\(Integral(1, x)\)</span> is number, and <span class="math notranslate nohighlight">\(Integral(A, x)\)</span> is matrix with number element.</p>
+<p>Since the class cannot guarantee to catch this difference, kind of the object is very important.
+For example, if you are building a function or class that is designed to work only for
+numbers, you should consider filtering the arguments with <span class="math notranslate nohighlight">\(NumberKind\)</span> so that the user
+does not naively pass unsupported objects such as <span class="math notranslate nohighlight">\(Integral(A, x)\)</span>.</p>
+<p>For the performance, set theory is not implemented in kind system. For example,</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(NumberKind\)</span> does not distinguish the real number and complex number.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">I</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pi</span><span class="o">.</span><span class="n">kind</span>
+<span class="go">NumberKind</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">kind</span>
+<span class="go">NumberKind</span>
+</pre></div>
+</div>
+<p>SymPy’s <span class="math notranslate nohighlight">\(Set\)</span> and kind are not compatible.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">S</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.core.kind</span> <span class="kn">import</span> <span class="n">NumberKind</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="o">.</span><span class="n">is_subset</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">Complexes</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="o">.</span><span class="n">is_subset</span><span class="p">(</span><span class="n">NumberKind</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">ValueError</span>: <span class="n">Unknown argument &#39;NumberKind&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="sets-and-assumptions">
+<h2>sets and assumptions<a class="headerlink" href="#sets-and-assumptions" title="Permalink to this headline"></a></h2>
+<p>If you want to classify the object in strictly mathematical way, you may need
+SymPy’s sets and assumptions.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ask</span><span class="p">,</span> <span class="n">Q</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">S</span><span class="o">.</span><span class="n">One</span> <span class="ow">in</span> <span class="n">S</span><span class="o">.</span><span class="n">Reals</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ask</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">even</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="n">Q</span><span class="o">.</span><span class="n">odd</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>See <span class="math notranslate nohighlight">\(assumptions\)</span> module and <span class="math notranslate nohighlight">\(sets\)</span> module for more information.</p>
+</section>
+<section id="func">
+<h2>func<a class="headerlink" href="#func" title="Permalink to this headline"></a></h2>
+<p><span class="math notranslate nohighlight">\(func\)</span> is the head of the object, and it is used to recurse over the expression tree.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Add</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">func</span>
+<span class="go">&lt;class &#39;sympy.core.add.Add&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Add</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">func</span>
+<span class="go">&lt;class &#39;sympy.core.mul.Mul&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span><span class="o">.</span><span class="n">even</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">func</span>
+<span class="go">&lt;class &#39;sympy.assumptions.assume.AppliedPredicate&#39;&gt;</span>
+</pre></div>
+</div>
+<p>As you can see, resulting head may be a class or another SymPy object.
+Keep this in mind when you classify the object with this attribute.
+See <a class="reference internal" href="../../tutorial/manipulation.html#tutorial-manipulation"><span class="std std-ref">Advanced Expression Manipulation</span></a> for detailed information.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="finite_diff_derivatives.html" class="btn btn-neutral float-left" title="Finite Difference Approximations to Derivatives" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../reference/index.html" class="btn btn-neutral float-right" title="Reference Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

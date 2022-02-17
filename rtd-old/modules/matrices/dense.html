@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dense Matrices &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/matrices/dense.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sparse Matrices" href="sparse.html" />
+    <link rel="prev" title="Common Matrices" href="common.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tensor/index.html">Tensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../vector/index.html">Vector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/matrices/index.html">Matrices</a> &raquo;</li>
+          <li><a href="index.html">Matrices</a> &raquo;</li>
+      <li>Dense Matrices</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/matrices/dense.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dense-matrices">
+<h1>Dense Matrices<a class="headerlink" href="#dense-matrices" title="Permalink to this headline"></a></h1>
+<section id="matrix-class-reference">
+<h2>Matrix Class Reference<a class="headerlink" href="#matrix-class-reference" title="Permalink to this headline"></a></h2>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sympy.matrices.dense.Matrix">
+<span class="sig-prename descclassname"><span class="pre">sympy.matrices.dense.</span></span><span class="sig-name descname"><span class="pre">Matrix</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L110-L123"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.Matrix" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#sympy.matrices.dense.MutableDenseMatrix" title="sympy.matrices.dense.MutableDenseMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.matrices.dense.MutableDenseMatrix</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.matrices.dense.DenseMatrix">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.dense.</span></span><span class="sig-name descname"><span class="pre">DenseMatrix</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L25-L93"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.DenseMatrix" title="Permalink to this definition"></a></dt>
+<dd><p>Matrix implementation based on DomainMatrix as the internal representation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.matrices.dense.DenseMatrix.LDLdecomposition">
+<span class="sig-name descname"><span class="pre">LDLdecomposition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hermitian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L81-L82"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.DenseMatrix.LDLdecomposition" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the LDL Decomposition (L, D) of matrix A,
+such that L * D * L.H == A if hermitian flag is True, or
+L * D * L.T == A if hermitian is False.
+This method eliminates the use of square root.
+Further this ensures that all the diagonal entries of L are 1.
+A must be a Hermitian positive-definite matrix if hermitian is True,
+or a symmetric matrix otherwise.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">eye</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(((</span><span class="mi">25</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">LDLdecomposition</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span>
+<span class="go">Matrix([</span>
+<span class="go">[   1,   0, 0],</span>
+<span class="go">[ 3/5,   1, 0],</span>
+<span class="go">[-1/5, 1/3, 1]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span>
+<span class="go">Matrix([</span>
+<span class="go">[25, 0, 0],</span>
+<span class="go">[ 0, 9, 0],</span>
+<span class="go">[ 0, 0, 9]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">*</span> <span class="n">D</span> <span class="o">*</span> <span class="n">L</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span> <span class="o">==</span> <span class="n">eye</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">rows</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The matrix can have complex entries:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">I</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(((</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">,</span> <span class="mi">5</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">LDLdecomposition</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span>
+<span class="go">Matrix([</span>
+<span class="go">[   1, 0],</span>
+<span class="go">[-I/3, 1]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span>
+<span class="go">Matrix([</span>
+<span class="go">[9, 0],</span>
+<span class="go">[0, 4]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">*</span><span class="n">D</span><span class="o">*</span><span class="n">L</span><span class="o">.</span><span class="n">H</span> <span class="o">==</span> <span class="n">A</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.matrices.dense.DenseMatrix.cholesky" title="sympy.matrices.dense.DenseMatrix.cholesky"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.matrices.dense.DenseMatrix.cholesky</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.LUdecomposition" title="sympy.matrices.matrices.MatrixBase.LUdecomposition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.matrices.matrices.MatrixBase.LUdecomposition</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.QRdecomposition" title="sympy.matrices.matrices.MatrixBase.QRdecomposition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QRdecomposition</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.matrices.dense.DenseMatrix.as_immutable">
+<span class="sig-name descname"><span class="pre">as_immutable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L55-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.DenseMatrix.as_immutable" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an Immutable version of this Matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.matrices.dense.DenseMatrix.as_mutable">
+<span class="sig-name descname"><span class="pre">as_mutable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L61-L76"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.DenseMatrix.as_mutable" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a mutable version of this matrix</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ImmutableMatrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">ImmutableMatrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">as_mutable</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Can set values in Y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Y</span>
+<span class="go">Matrix([</span>
+<span class="go">[1, 2],</span>
+<span class="go">[3, 5]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.matrices.dense.DenseMatrix.cholesky">
+<span class="sig-name descname"><span class="pre">cholesky</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hermitian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L78-L79"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.DenseMatrix.cholesky" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Cholesky-type decomposition L of a matrix A
+such that L * L.H == A if hermitian flag is True,
+or L * L.T == A if hermitian is False.</p>
+<p>A must be a Hermitian positive-definite matrix if hermitian is True,
+or a symmetric matrix if it is False.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">Matrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(((</span><span class="mi">25</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">cholesky</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 5, 0, 0],</span>
+<span class="go">[ 3, 3, 0],</span>
+<span class="go">[-1, 1, 3]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">cholesky</span><span class="p">()</span> <span class="o">*</span> <span class="n">A</span><span class="o">.</span><span class="n">cholesky</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<span class="go">Matrix([</span>
+<span class="go">[25, 15, -5],</span>
+<span class="go">[15, 18,  0],</span>
+<span class="go">[-5,  0, 11]])</span>
+</pre></div>
+</div>
+<p>The matrix can have complex entries:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">I</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(((</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">,</span> <span class="mi">5</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">cholesky</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 3, 0],</span>
+<span class="go">[-I, 2]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">cholesky</span><span class="p">()</span> <span class="o">*</span> <span class="n">A</span><span class="o">.</span><span class="n">cholesky</span><span class="p">()</span><span class="o">.</span><span class="n">H</span>
+<span class="go">Matrix([</span>
+<span class="go">[   9, 3*I],</span>
+<span class="go">[-3*I,   5]])</span>
+</pre></div>
+</div>
+<p>Non-hermitian Cholesky-type decomposition may be useful when the
+matrix is not positive-definite.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">hermitian</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span>
+<span class="go">Matrix([</span>
+<span class="go">[1,         0],</span>
+<span class="go">[2, sqrt(3)*I]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span><span class="o">*</span><span class="n">L</span><span class="o">.</span><span class="n">T</span> <span class="o">==</span> <span class="n">A</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.matrices.dense.DenseMatrix.LDLdecomposition" title="sympy.matrices.dense.DenseMatrix.LDLdecomposition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.matrices.dense.DenseMatrix.LDLdecomposition</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.LUdecomposition" title="sympy.matrices.matrices.MatrixBase.LUdecomposition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.matrices.matrices.MatrixBase.LUdecomposition</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.QRdecomposition" title="sympy.matrices.matrices.MatrixBase.QRdecomposition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QRdecomposition</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.matrices.dense.DenseMatrix.lower_triangular_solve">
+<span class="sig-name descname"><span class="pre">lower_triangular_solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rhs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L84-L85"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.DenseMatrix.lower_triangular_solve" title="Permalink to this definition"></a></dt>
+<dd><p>Solves <code class="docutils literal notranslate"><span class="pre">Ax</span> <span class="pre">=</span> <span class="pre">B</span></code>, where A is a lower triangular matrix.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.matrices.dense.DenseMatrix.upper_triangular_solve" title="sympy.matrices.dense.DenseMatrix.upper_triangular_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upper_triangular_solve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.gauss_jordan_solve" title="sympy.matrices.matrices.MatrixBase.gauss_jordan_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss_jordan_solve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.cholesky_solve" title="sympy.matrices.matrices.MatrixBase.cholesky_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cholesky_solve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.diagonal_solve" title="sympy.matrices.matrices.MatrixBase.diagonal_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diagonal_solve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.LDLsolve" title="sympy.matrices.matrices.MatrixBase.LDLsolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LDLsolve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.LUsolve" title="sympy.matrices.matrices.MatrixBase.LUsolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LUsolve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.QRsolve" title="sympy.matrices.matrices.MatrixBase.QRsolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QRsolve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.pinv_solve" title="sympy.matrices.matrices.MatrixBase.pinv_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pinv_solve</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.matrices.dense.DenseMatrix.upper_triangular_solve">
+<span class="sig-name descname"><span class="pre">upper_triangular_solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rhs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L87-L88"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.DenseMatrix.upper_triangular_solve" title="Permalink to this definition"></a></dt>
+<dd><p>Solves <code class="docutils literal notranslate"><span class="pre">Ax</span> <span class="pre">=</span> <span class="pre">B</span></code>, where A is an upper triangular matrix.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.matrices.dense.DenseMatrix.lower_triangular_solve" title="sympy.matrices.dense.DenseMatrix.lower_triangular_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lower_triangular_solve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.gauss_jordan_solve" title="sympy.matrices.matrices.MatrixBase.gauss_jordan_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gauss_jordan_solve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.cholesky_solve" title="sympy.matrices.matrices.MatrixBase.cholesky_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cholesky_solve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.diagonal_solve" title="sympy.matrices.matrices.MatrixBase.diagonal_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diagonal_solve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.LDLsolve" title="sympy.matrices.matrices.MatrixBase.LDLsolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LDLsolve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.LUsolve" title="sympy.matrices.matrices.MatrixBase.LUsolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LUsolve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.QRsolve" title="sympy.matrices.matrices.MatrixBase.QRsolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QRsolve</span></code></a>, <a class="reference internal" href="matrices.html#sympy.matrices.matrices.MatrixBase.pinv_solve" title="sympy.matrices.matrices.MatrixBase.pinv_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pinv_solve</span></code></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.matrices.dense.MutableDenseMatrix">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.dense.</span></span><span class="sig-name descname"><span class="pre">MutableDenseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L110-L123"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.MutableDenseMatrix" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sympy.matrices.dense.MutableDenseMatrix.simplify">
+<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/dense.py#L112-L123"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.dense.MutableDenseMatrix.simplify" title="Permalink to this definition"></a></dt>
+<dd><p>Applies simplify to the elements of a matrix in place.</p>
+<p>This is a shortcut for M.applyfunc(lambda x: simplify(x, ratio, measure))</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../simplify/simplify.html#sympy.simplify.simplify.simplify" title="sympy.simplify.simplify.simplify"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.simplify.simplify.simplify</span></code></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="immutablematrix-class-reference">
+<h2>ImmutableMatrix Class Reference<a class="headerlink" href="#immutablematrix-class-reference" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableDenseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/matrices/immutable.py#L80-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Create an immutable version of a matrix.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">eye</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">ImmutableMatrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ImmutableMatrix</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">Matrix([</span>
+<span class="go">[1, 0, 0],</span>
+<span class="go">[0, 1, 0],</span>
+<span class="go">[0, 0, 1]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">Cannot set values of ImmutableDenseMatrix</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="common.html" class="btn btn-neutral float-left" title="Common Matrices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sparse.html" class="btn btn-neutral float-right" title="Sparse Matrices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference Documentation &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/reference/index.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Basics" href="public/basics/index.html" />
+    <link rel="prev" title="Classification of SymPy objects" href="../explanation/special_topics/classification.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> SymPy
+            <img src="../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#topics"><span class="xref std std-ref">Topics</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Reference Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/reference/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reference-documentation">
+<span id="reference"></span><h1>Reference Documentation<a class="headerlink" href="#reference-documentation" title="Permalink to this headline"></a></h1>
+<p>This section contains a summary of SymPy modules, that is to say
+functions and methods. All functions and objects implemented in the <code class="docutils literal notranslate"><span class="pre">sympy</span></code>
+core subpackage are documented below.</p>
+<section class="column" id="basics">
+<h2><a class="reference internal" href="public/basics/index.html#basic-modules"><span class="std std-ref">Basics</span></a><a class="headerlink" href="#basics" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Contains a description of operations for the basic modules. Subcategories include: <em>absolute basics</em>,
+<em>manipulation</em>, <em>assumptions</em>, <em>functions</em>, <em>simplification</em>, <em>calculus</em>, <em>solvers</em>, and some
+other subcategories.</p>
+</div></blockquote>
+</section>
+<section class="column" id="code-generation">
+<h2><a class="reference internal" href="public/codegeneration/index.html#codegen-module"><span class="std std-ref">Code Generation</span></a><a class="headerlink" href="#code-generation" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Contains a description of methods for the generation of compilable and executable code.</p>
+</div></blockquote>
+</section>
+<section class="column" id="logic">
+<h2><a class="reference internal" href="public/logic/index.html#logic"><span class="std std-ref">Logic</span></a><a class="headerlink" href="#logic" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Contains method details for the <em>logic</em> and <em>sets</em> modules.</p>
+</div></blockquote>
+</section>
+<section class="column" id="matrices">
+<h2><a class="reference internal" href="public/matrices/index.html#matrices-modules"><span class="std std-ref">Matrices</span></a><a class="headerlink" href="#matrices" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Discusses methods for the matrices, tensor and vector modules.</p>
+</div></blockquote>
+</section>
+<section class="column" id="number-theory">
+<h2><a class="reference internal" href="public/numbertheory/index.html#numtheory-module"><span class="std std-ref">Number Theory</span></a><a class="headerlink" href="#number-theory" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Documents methods for the Number theory module.</p>
+</div></blockquote>
+</section>
+<section class="column" id="physics">
+<h2><a class="reference internal" href="public/physics/index.html#physics-docs"><span class="std std-ref">Physics</span></a><a class="headerlink" href="#physics" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Contains documentation for Physics methods.</p>
+</div></blockquote>
+</section>
+<section class="column" id="utilities">
+<h2><a class="reference internal" href="public/utilities/index.html#utilities"><span class="std std-ref">Utilities</span></a><a class="headerlink" href="#utilities" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Contains docstrings for methods of several utility modules. Subcategories
+include: <em>Interactive</em>, <em>Parsing</em>, <em>Printing</em>, <em>Testing</em>, <em>Utilities</em>.</p>
+</div></blockquote>
+</section>
+<section class="column" id="topics">
+<h2><a class="reference internal" href="public/topics/index.html#topics"><span class="std std-ref">Topics</span></a><a class="headerlink" href="#topics" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>Contains method docstrings for several modules. Subcategories include : <em>Plotting</em>,
+<em>Polynomials</em>, <em>Geometry</em>, <em>Category Theory</em>, <em>Cryptography</em>, <em>Differential</em>, <em>Holonomic</em>,
+<em>Lie Algebra</em>, and <em>Stats</em>.</p>
+</div></blockquote>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../explanation/special_topics/classification.html" class="btn btn-neutral float-left" title="Classification of SymPy objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="public/basics/index.html" class="btn btn-neutral float-right" title="Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

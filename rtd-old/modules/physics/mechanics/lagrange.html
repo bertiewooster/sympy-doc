@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lagrange’s Method in Physics/Mechanics &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/mechanics/lagrange.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Symbolic Systems in Physics/Mechanics" href="symsystem.html" />
+    <link rel="prev" title="Kane’s Method in Physics/Mechanics" href="kane.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../vector/index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Classical Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quantum/index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="index.html">Classical Mechanics</a> &raquo;</li>
+      <li>Lagrange’s Method in Physics/Mechanics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/physics/mechanics/lagrange.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lagrange-s-method-in-physics-mechanics">
+<h1>Lagrange’s Method in Physics/Mechanics<a class="headerlink" href="#lagrange-s-method-in-physics-mechanics" title="Permalink to this headline"></a></h1>
+<p><a class="reference internal" href="index.html#module-sympy.physics.mechanics" title="sympy.physics.mechanics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.physics.mechanics</span></code></a> provides functionality for deriving equations of motion
+using <a class="reference external" href="https://en.wikipedia.org/wiki/Lagrangian_mechanics">Lagrange’s method</a>.
+This document will describe Lagrange’s method as used in this module, but not
+how the equations are actually derived.</p>
+<section id="structure-of-equations">
+<h2>Structure of Equations<a class="headerlink" href="#structure-of-equations" title="Permalink to this headline"></a></h2>
+<p>In <a class="reference internal" href="index.html#module-sympy.physics.mechanics" title="sympy.physics.mechanics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.physics.mechanics</span></code></a> we are assuming there are 3 basic sets of equations needed
+to describe a system; the constraint equations, the time differentiated
+constraint equations and the dynamic equations.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{m_{c}}(q, t) \dot{q} + \mathbf{f_{c}}(q, t) &amp;= 0\\
+\mathbf{m_{dc}}(\dot{q}, q, t) \ddot{q} + \mathbf{f_{dc}}(\dot{q}, q, t) &amp;= 0\\
+\mathbf{m_d}(\dot{q}, q, t) \ddot{q} + \mathbf{\Lambda_c}(q, t)
+\lambda + \mathbf{f_d}(\dot{q}, q, t) &amp;= 0\\\end{split}\]</div>
+<p>In this module, the expressions formed by using Lagrange’s equations of the
+second kind are rearranged into the following form:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\mathbf{M}(q, t) x = \mathbf{f}(q, \dot{q}, t)\)</span></p>
+</div></blockquote>
+<p>where in the case of a system without constraints:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(x = \ddot{q}\)</span></p>
+</div></blockquote>
+<p>For a constrained system with <span class="math notranslate nohighlight">\(n\)</span> generalized speeds and <span class="math notranslate nohighlight">\(m\)</span> constraints, we
+will get n - m equations. The mass-matrix/forcing equations are then augmented
+in the following fashion:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x = \begin{bmatrix} \ddot{q} \\ \lambda \end{bmatrix} \\
+\mathbf{M}(q, t) &amp;= \begin{bmatrix} \mathbf{m_d}(q, t) &amp;
+\mathbf{\Lambda_c}(q, t) \end{bmatrix}\\
+\mathbf{F}(\dot{q}, q, t) &amp;= \begin{bmatrix} \mathbf{f_d}(q, \dot{q}, t)
+\end{bmatrix}\\\end{split}\]</div>
+</section>
+<section id="id1">
+<h2>Lagrange’s Method in Physics/Mechanics<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<p>The formulation of the equations of motion in <a class="reference internal" href="index.html#module-sympy.physics.mechanics" title="sympy.physics.mechanics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.physics.mechanics</span></code></a> using
+Lagrange’s Method starts with the creation of generalized coordinates and a
+Lagrangian. The Lagrangian can either be created with the <code class="docutils literal notranslate"><span class="pre">Lagrangian</span></code>
+function or can be a user supplied function. In this case we will supply the
+Lagrangian.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.mechanics</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q1 q2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1d</span><span class="p">,</span> <span class="n">q2d</span> <span class="o">=</span> <span class="n">dynamicsymbols</span><span class="p">(</span><span class="s1">&#39;q1 q2&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="n">q1d</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">q2d</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>To formulate the equations of motion we create a <code class="docutils literal notranslate"><span class="pre">LagrangesMethod</span></code>
+object. The Lagrangian and generalized coordinates need to be supplied upon
+initialization.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span> <span class="o">=</span> <span class="n">LagrangesMethod</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="p">[</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>With that the equations of motion can be formed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mechanics_printing</span><span class="p">(</span><span class="n">pretty_print</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span><span class="o">.</span><span class="n">form_lagranges_equations</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[2*q1&#39;&#39;],</span>
+<span class="go">[2*q2&#39;&#39;]])</span>
+</pre></div>
+</div>
+<p>It is possible to obtain the mass matrix and the forcing vector.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span><span class="o">.</span><span class="n">mass_matrix</span>
+<span class="go">Matrix([</span>
+<span class="go">[2, 0],</span>
+<span class="go">[0, 2]])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span><span class="o">.</span><span class="n">forcing</span>
+<span class="go">Matrix([</span>
+<span class="go">[0],</span>
+<span class="go">[0]])</span>
+</pre></div>
+</div>
+<p>If there are any holonomic or non-holonomic constraints, they must be supplied
+as keyword arguments (<code class="docutils literal notranslate"><span class="pre">hol_coneqs</span></code> and <code class="docutils literal notranslate"><span class="pre">nonhol_coneqs</span></code> respectively) in a
+list of expressions which are equal to zero. Modifying the example above, the
+equations of motion can then be generated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span> <span class="o">=</span> <span class="n">LagrangesMethod</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="p">[</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">],</span> <span class="n">hol_coneqs</span><span class="o">=</span><span class="p">[</span><span class="n">q1</span> <span class="o">-</span> <span class="n">q2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>When the equations of motion are generated in this case, the Lagrange
+multipliers are introduced; they are represented by <code class="docutils literal notranslate"><span class="pre">lam1</span></code> in this case. In
+general, there will be as many multipliers as there are constraint equations.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span><span class="o">.</span><span class="n">form_lagranges_equations</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[ lam1 + 2*q1&#39;&#39;],</span>
+<span class="go">[-lam1 + 2*q2&#39;&#39;]])</span>
+</pre></div>
+</div>
+<p>Also in the case of systems with constraints, the ‘full’ mass matrix is
+augmented by the <span class="math notranslate nohighlight">\(k_{dc}(q, t)\)</span> matrix, and the forcing vector by the
+<span class="math notranslate nohighlight">\(f_{dc}(q, \dot{q}, t)\)</span> vector. The ‘full’ mass matrix is of size
+(2n + o) x (2n + o), i.e. it’s a square matrix.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span><span class="o">.</span><span class="n">mass_matrix_full</span>
+<span class="go">Matrix([</span>
+<span class="go">[1, 0, 0,  0,  0],</span>
+<span class="go">[0, 1, 0,  0,  0],</span>
+<span class="go">[0, 0, 2,  0, -1],</span>
+<span class="go">[0, 0, 0,  2,  1],</span>
+<span class="go">[0, 0, 1, -1,  0]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span><span class="o">.</span><span class="n">forcing_full</span>
+<span class="go">Matrix([</span>
+<span class="go">[q1&#39;],</span>
+<span class="go">[q2&#39;],</span>
+<span class="go">[  0],</span>
+<span class="go">[  0],</span>
+<span class="go">[  0]])</span>
+</pre></div>
+</div>
+<p>If there are any non-conservative forces or moments acting on the system,
+they must also be supplied as keyword arguments in a list of 2-tuples of the
+form <code class="docutils literal notranslate"><span class="pre">(Point,</span> <span class="pre">Vector)</span></code> or <code class="docutils literal notranslate"><span class="pre">(ReferenceFrame,</span> <span class="pre">Vector)</span></code> where the <code class="docutils literal notranslate"><span class="pre">Vector</span></code>
+represents the non-conservative forces and torques. Along with this 2-tuple,
+the inertial frame must also be specified as a keyword argument. This is shown
+below by modifying the example above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">N</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P</span><span class="o">.</span><span class="n">set_vel</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">q1d</span> <span class="o">*</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FL</span> <span class="o">=</span> <span class="p">[(</span><span class="n">P</span><span class="p">,</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">N</span><span class="o">.</span><span class="n">x</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span> <span class="o">=</span> <span class="n">LagrangesMethod</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="p">[</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">],</span> <span class="n">forcelist</span><span class="o">=</span><span class="n">FL</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LM</span><span class="o">.</span><span class="n">form_lagranges_equations</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[2*q1&#39;&#39; - 7],</span>
+<span class="go">[    2*q2&#39;&#39;]])</span>
+</pre></div>
+</div>
+<p>Exploration of the provided examples is encouraged in order to gain more
+understanding of the <code class="docutils literal notranslate"><span class="pre">LagrangesMethod</span></code> object.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="kane.html" class="btn btn-neutral float-left" title="Kane’s Method in Physics/Mechanics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="symsystem.html" class="btn btn-neutral float-right" title="Symbolic Systems in Physics/Mechanics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

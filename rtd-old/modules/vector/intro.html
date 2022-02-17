@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/vector/intro.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Basic Implementation details" href="basics.html" />
+    <link rel="prev" title="Vector" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../matrices/index.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tensor/index.html">Tensor</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Vector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/matrices/index.html">Matrices</a> &raquo;</li>
+          <li><a href="index.html">Vector</a> &raquo;</li>
+      <li>Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/vector/intro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
+<p>This page gives a brief conceptual overview of the functionality present in
+<a class="reference internal" href="index.html#module-sympy.vector" title="sympy.vector"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.vector</span></code></a>.</p>
+<section id="vectors-and-scalars">
+<h2>Vectors and Scalars<a class="headerlink" href="#vectors-and-scalars" title="Permalink to this headline"></a></h2>
+<p>In vector math, we deal with two kinds of quantities – scalars and vectors.</p>
+<p>A <strong>scalar</strong> is an entity which only has a magnitude – no direction. Examples of
+scalar quantities include mass, electric charge, temperature, distance, etc.</p>
+<p>A <strong>vector</strong>, on the other hand, is an entity that is characterized by a
+magnitude and a direction. Examples of vector quantities are displacement,
+velocity, magnetic field, etc.</p>
+<p>A scalar can be depicted just by a number, for e.g. a temperature of 300 K.
+On the other hand, vectorial quantities like acceleration are usually denoted
+by a vector. Given a vector <span class="math notranslate nohighlight">\(\mathbf{V}\)</span>, the magnitude of the
+corresponding quantity can be calculated as the magnitude of the vector
+itself <span class="math notranslate nohighlight">\(\Vert \mathbf{V} \Vert\)</span>, while the direction would be specified
+by a unit vector in the direction of the original vector,
+<span class="math notranslate nohighlight">\(\mathbf{\hat{V}} = \frac{\mathbf{V}}{\Vert \mathbf{V} \Vert}\)</span>.</p>
+<p>For example, consider a displacement of
+<span class="math notranslate nohighlight">\((3\mathbf{\hat{i}} + 4\mathbf{\hat{j}} + 5\mathbf{\hat{k}})\)</span> m,
+where , as per standard convention, <span class="math notranslate nohighlight">\(\mathbf{\hat{i}}\)</span>,
+<span class="math notranslate nohighlight">\(\mathbf{\hat{j}}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{\hat{k}}\)</span> represent unit vectors
+along the <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>
+axes respectively. Therefore, it can be concluded that the distance
+traveled is
+<span class="math notranslate nohighlight">\(\Vert 3\mathbf{\hat{i}} + 4\mathbf{\hat{j}} + 5\mathbf{\hat{k}} \Vert\)</span>
+m = <span class="math notranslate nohighlight">\(5\sqrt{2}\)</span> m. The direction of travel is given by the unit vector
+<span class="math notranslate nohighlight">\(\frac{3}{5\sqrt{2}}\mathbf{\hat{i}} +
+\frac{4}{5\sqrt{2}}\mathbf{\hat{j}} + \frac{5}{5\sqrt{2}}\mathbf{\hat{k}}\)</span>.</p>
+</section>
+<section id="coordinate-systems">
+<h2>Coordinate Systems<a class="headerlink" href="#coordinate-systems" title="Permalink to this headline"></a></h2>
+<p>A <strong>coordinate system</strong> is an abstract mathematical entity used to define
+the notion of directions and locations in n-dimensional spaces. This
+module deals with 3-dimensional spaces, with the conventional <span class="math notranslate nohighlight">\(X\)</span>,
+<span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(Z\)</span> axes defined with respect
+to each coordinate system.</p>
+<p>Each coordinate system also has a special reference point called the
+‘origin’ defined for it. This point is used either while referring to
+locations in 3D space, or while calculating the coordinates of
+pre-defined points with respect to the system.</p>
+<p>It is a pretty well-known concept that there is no absolute notion
+of location or orientation in space. Any given coordinate system
+defines a unique ‘perspective’ of quantifying positions and directions.
+Therefore, even if we assume that all systems deal with the same
+units of measurement, the expression of vectorial and scalar quantities
+differs according to the coordinate system a certain observer deals with.</p>
+<p>Consider two points <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> in space. Assuming units to
+be common throughtout, the distance between these points remains
+the same regardless of the coordinate system in which the measurements are
+being made. However, the 3-D coordinates of each of the two points, as well
+as the position vector of any of the points with respect to the other,
+do not.
+In fact, these two quantities don’t make sense at all, unless they are being
+measured keeping in mind a certain location and orientation of the measurer
+(essentially the coordinate system).</p>
+<p>Therefore, it is quite clear that the orientation and location (of the origin)
+of a coordinate system define the way different quantities will be expressed
+with respect to it.  Neither of the two properties can be measured on an
+absolute scale, but rather with respect to another coordinate system. The
+orientation of one system with respect to another is measured using the
+rotation matrix, while the relative position can be quantified via
+the position vector of one system’s origin with respect to the other.</p>
+</section>
+<section id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline"></a></h2>
+<p>A <strong>field</strong> is a vector or scalar quantity that can be
+specified everywhere in space as a function of position (Note that in general
+a field may also be dependent on time and other custom variables). Since we
+only deal with 3D spaces in this module, a field is defined as a function of
+the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> coordinates corresponding
+to a location in the coordinate system. Here, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and
+<span class="math notranslate nohighlight">\(z\)</span> act as scalar variables defining the position of a general point.</p>
+<p>For example, temperature in 3 dimensional space (a temperature field) can be
+written as <span class="math notranslate nohighlight">\(T(x, y, z)\)</span> – a scalar function of the position.
+An example of a scalar field in electromagnetism is the electric potential.</p>
+<p>In a similar manner, a vector field can be defined as a vectorial function
+of the location <span class="math notranslate nohighlight">\((x, y, z)\)</span> of any point in space.</p>
+<p>For instance, every point on the earth may be considered to be in the
+gravitational force field of the earth. We may specify the field by the
+magnitude and the direction of acceleration due to gravity
+(i.e. force per unit mass ) <span class="math notranslate nohighlight">\(\vec g(x, y, z)\)</span> at every point in
+space.</p>
+<p>To give an example from electromagnetism, consider an electric potential
+of form <span class="math notranslate nohighlight">\(2{x}^{2}y\)</span>, a scalar field in 3D space. The corresponding
+conservative electric field can be computed as the gradient of the electric
+potential function, and expressed as <span class="math notranslate nohighlight">\(4xy\mathbf{\hat{i}} +
+2{x}^{2}\mathbf{\hat{j}}\)</span>.
+The magnitude of this electric field can in turn be expressed
+as a scalar field of the form
+<span class="math notranslate nohighlight">\(\sqrt{4{x}^{4} + 16{x}^{2}{y}^{2}}\)</span>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Vector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="basics.html" class="btn btn-neutral float-right" title="Basic Implementation details" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

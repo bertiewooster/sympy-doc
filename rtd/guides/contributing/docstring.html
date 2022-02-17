@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SymPy Docstrings Style Guide &mdash; SymPy 1.10.dev documentation</title>
+  <title>SymPy Docstrings Style Guide &mdash; SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.10.dev
+                1.11.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -52,6 +52,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Contributing to SymPy</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="debug.html">Debugging</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">SymPy Docstrings Style Guide</a><ul>
@@ -71,6 +72,7 @@
 <li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../assumptions.html">Assumptions</a></li>
@@ -245,11 +247,15 @@ review if it is not included. No heading is necessary for this section.</p>
 <p>This section consists of a one-line sentence ending in a period that describes
 the function, class, or method’s effect.</p>
 <p>Deprecation warnings should go directly after the Single-Sentence Summary, so
-as to notify users right away. Deprecation warnings should be written as a note
+as to notify users right away. Deprecation warnings should be written as a <code class="docutils literal notranslate"><span class="pre">deprecated</span></code>
 in the Sphinx directive:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">note</span><span class="p">::</span> <span class="n">Deprecated</span> <span class="ow">in</span> <span class="n">SymPy</span> <span class="mf">0.7.1</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. deprecated:: 1.1
+
+   The ``simplify_this`` function is deprecated. Use :func:`simplify`
+   instead. See its documentation for more information.
 </pre></div>
 </div>
+<p>See <a class="reference internal" href="deprecations.html#deprecation-documentation"><span class="std std-ref">Documenting a deprecation</span></a> for more details.</p>
 </section>
 <section id="explanation-section">
 <h3>2. Explanation Section<a class="headerlink" href="#explanation-section" title="Permalink to this headline"></a></h3>
@@ -788,7 +794,7 @@ the warning is referring to. This is due to a bug in Sphinx.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022 SymPy Development Team.
-      <span class="lastupdated">Last updated on Jan 14, 2022.
+      <span class="lastupdated">Last updated on Feb 17, 2022.
       </span></p>
   </div>
 

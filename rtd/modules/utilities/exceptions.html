@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exceptions and Warnings &mdash; SymPy 1.11.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/utilities/exceptions.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Iterables" href="iterables.html" />
+    <link rel="prev" title="Enumerative" href="enumerative.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.11.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Utilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../interactive.html">Interactive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parsing.html">Parsing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../printing.html">Printing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/utilities/index.html">Utilities</a> &raquo;</li>
+          <li><a href="index.html">Utilities</a> &raquo;</li>
+      <li>Exceptions and Warnings</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/utilities/exceptions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.utilities.exceptions">
+<span id="exceptions-and-warnings"></span><h1>Exceptions and Warnings<a class="headerlink" href="#module-sympy.utilities.exceptions" title="Permalink to this headline"></a></h1>
+<p>General SymPy exceptions and warnings.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sympy.utilities.exceptions.SymPyDeprecationWarning">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.exceptions.</span></span><span class="sig-name descname"><span class="pre">SymPyDeprecationWarning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deprecated_since_version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active_deprecations_target</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/utilities/exceptions.py#L11-L94"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.exceptions.SymPyDeprecationWarning" title="Permalink to this definition"></a></dt>
+<dd><p>A warning for deprecated features of SymPy.</p>
+<p>See the <a class="reference internal" href="../../guides/contributing/deprecations.html#deprecation-policy"><span class="std std-ref">Deprecation Policy</span></a> document for details on when and how
+things should be deprecated in SymPy.</p>
+<p>Note that simply constructing this class will not cause a warning to be
+issued. To do that, you must call the :func`sympy_deprecation_warning`
+function. For this reason, it is not recommended to ever construct this
+class directly.</p>
+<p class="rubric">Explanation</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">SymPyDeprecationWarning</span></code> class is a subclass of
+<code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> that is used for all deprecations in SymPy. A
+special subclass is used so that we can automatically augment the warning
+message with additional metadata about the version the deprecation was
+introduced in and a link to the documentation. This also allows users to
+explicitly filter deprecation warnings from SymPy using <code class="docutils literal notranslate"><span class="pre">warnings</span></code>
+filters (see <a class="reference internal" href="../../explanation/active-deprecations.html#silencing-sympy-deprecation-warnings"><span class="std std-ref">Silencing SymPy Deprecation Warnings</span></a>).</p>
+<p>Additionally, <code class="docutils literal notranslate"><span class="pre">SymPyDeprecationWarning</span></code> is enabled to be shown by
+default, unlike normal <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>s, which are only shown by
+default in interactive sessions. This ensures that deprecation warnings in
+SymPy will actually be seen by users.</p>
+<p>See the documentation of <a class="reference internal" href="#sympy.utilities.exceptions.sympy_deprecation_warning" title="sympy.utilities.exceptions.sympy_deprecation_warning"><code class="xref py py-func docutils literal notranslate"><span class="pre">sympy_deprecation_warning()</span></code></a> for a
+description of the parameters to this function.</p>
+<p>To mark a function as deprecated, you can use the <a class="reference internal" href="decorator.html#sympy.utilities.decorator.deprecated" title="sympy.utilities.decorator.deprecated"><code class="xref py py-func docutils literal notranslate"><span class="pre">&#64;deprecated</span></code></a> decorator.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.utilities.exceptions.sympy_deprecation_warning" title="sympy.utilities.exceptions.sympy_deprecation_warning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.exceptions.sympy_deprecation_warning</span></code></a>, <a class="reference internal" href="#sympy.utilities.exceptions.ignore_warnings" title="sympy.utilities.exceptions.ignore_warnings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.exceptions.ignore_warnings</span></code></a>, <a class="reference internal" href="decorator.html#sympy.utilities.decorator.deprecated" title="sympy.utilities.decorator.deprecated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.decorator.deprecated</span></code></a>, <a class="reference internal" href="../testing/pytest.html#sympy.testing.pytest.warns_deprecated_sympy" title="sympy.testing.pytest.warns_deprecated_sympy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.testing.pytest.warns_deprecated_sympy</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.utilities.exceptions.ignore_warnings">
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.exceptions.</span></span><span class="sig-name descname"><span class="pre">ignore_warnings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">warningcls</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/utilities/exceptions.py#L214-L275"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.exceptions.ignore_warnings" title="Permalink to this definition"></a></dt>
+<dd><p>Context manager to suppress warnings during tests.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not use this with SymPyDeprecationWarning in the tests.
+warns_deprecated_sympy() should be used instead.</p>
+</div>
+<p>This function is useful for suppressing warnings during tests. The warns
+function should be used to assert that a warning is raised. The
+ignore_warnings function is useful in situation when the warning is not
+guaranteed to be raised (e.g. on importing a module) or if the warning
+comes from third-party code.</p>
+<p>This function is also useful to prevent the same or similar warnings from
+being issue twice due to recursive calls.</p>
+<p>When the warning is coming (reliably) from SymPy the warns function should
+be preferred to ignore_warnings.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.exceptions</span> <span class="kn">import</span> <span class="n">ignore_warnings</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">warnings</span>
+</pre></div>
+</div>
+<p>Here’s a warning:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>  <span class="c1"># reset warnings in doctest</span>
+<span class="gp">... </span>    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;deprecated&#39;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">UserWarning</span>: <span class="n">deprecated</span>
+</pre></div>
+</div>
+<p>Let’s suppress it with ignore_warnings:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>  <span class="c1"># reset warnings in doctest</span>
+<span class="gp">... </span>    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">with</span> <span class="n">ignore_warnings</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;deprecated&#39;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(No warning emitted)</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.utilities.exceptions.SymPyDeprecationWarning" title="sympy.utilities.exceptions.SymPyDeprecationWarning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.exceptions.SymPyDeprecationWarning</span></code></a>, <a class="reference internal" href="#sympy.utilities.exceptions.sympy_deprecation_warning" title="sympy.utilities.exceptions.sympy_deprecation_warning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.exceptions.sympy_deprecation_warning</span></code></a>, <a class="reference internal" href="decorator.html#sympy.utilities.decorator.deprecated" title="sympy.utilities.decorator.deprecated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.decorator.deprecated</span></code></a>, <a class="reference internal" href="../testing/pytest.html#sympy.testing.pytest.warns_deprecated_sympy" title="sympy.testing.pytest.warns_deprecated_sympy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.testing.pytest.warns_deprecated_sympy</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.utilities.exceptions.sympy_deprecation_warning">
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.exceptions.</span></span><span class="sig-name descname"><span class="pre">sympy_deprecation_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deprecated_since_version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active_deprecations_target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stacklevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/utilities/exceptions.py#L99-L211"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.exceptions.sympy_deprecation_warning" title="Permalink to this definition"></a></dt>
+<dd><p>Warn that a feature is deprecated in SymPy.</p>
+<p>See the <a class="reference internal" href="../../guides/contributing/deprecations.html#deprecation-policy"><span class="std std-ref">Deprecation Policy</span></a> document for details on when and how
+things should be deprecated in SymPy.</p>
+<p>To mark an entire function or class as deprecated, you can use the
+<a class="reference internal" href="decorator.html#sympy.utilities.decorator.deprecated" title="sympy.utilities.decorator.deprecated"><code class="xref py py-func docutils literal notranslate"><span class="pre">&#64;deprecated</span></code></a> decorator.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message: str</strong></p>
+<blockquote>
+<div><p>The deprecation message. This may span multiple lines and contain
+code examples. Messages should be wrapped to 80 characters. The
+message is automatically dedented and leading and trailing whitespace
+stripped. Messages may include dynamic content based on the user
+input, but avoid using <code class="docutils literal notranslate"><span class="pre">str(expression)</span></code> if an expression can be
+arbitrary, as it might be huge and make the warning message
+unreadable.</p>
+</div></blockquote>
+<p><strong>deprecated_since_version: str</strong></p>
+<blockquote>
+<div><p>The version of SymPy the feature has been deprecated since. For new
+deprecations, this should be the version in <a class="reference external" href="https://github.com/sympy/sympy/blob/master/sympy/release.py">sympy/release.py</a>
+without the <code class="docutils literal notranslate"><span class="pre">.dev</span></code>. If the next SymPy version ends up being
+different from this, the release manager will need to update any
+<code class="docutils literal notranslate"><span class="pre">SymPyDeprecationWarning</span></code>s using the incorrect version. This
+argument is required and must be passed as a keyword argument.
+(example:  <code class="docutils literal notranslate"><span class="pre">deprecated_since_version=&quot;1.10&quot;</span></code>).</p>
+</div></blockquote>
+<p><strong>active_deprecations_target: str</strong></p>
+<blockquote>
+<div><p>The Sphinx target corresponding to the section for the deprecation in
+the <a class="reference internal" href="../../explanation/active-deprecations.html#active-deprecations"><span class="std std-ref">List of active deprecations</span></a> document (see
+<code class="docutils literal notranslate"><span class="pre">doc/src/explanation/active-deprecations.md</span></code>). This is used to
+automatically generate a URL to the page in the warning message. This
+argument is required and must be passed as a keyword argument.
+(example: <code class="docutils literal notranslate"><span class="pre">active_deprecations_target=&quot;deprecated-feature-abc&quot;</span></code>)</p>
+</div></blockquote>
+<p><strong>stacklevel: int (default: 3)</strong></p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code> parameter that is passed to <code class="docutils literal notranslate"><span class="pre">warnings.warn</span></code>. If
+you create a wrapper that calls this function, this should be
+increased so that the warning message shows the user line of code that
+produced the warning. Note that in some cases there will be multiple
+possible different user code paths that could result in the warning.
+In that case, just choose the smallest common stacklevel.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.exceptions</span> <span class="kn">import</span> <span class="n">sympy_deprecation_warning</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">is_this_zero</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="gp">... </span><span class="sd">    Determine if x = 0.</span>
+<span class="gp">...</span><span class="sd"></span>
+<span class="gp">... </span><span class="sd">    Parameters</span>
+<span class="gp">... </span><span class="sd">    ==========</span>
+<span class="gp">...</span><span class="sd"></span>
+<span class="gp">... </span><span class="sd">    x : Expr</span>
+<span class="gp">... </span><span class="sd">      The expression to check.</span>
+<span class="gp">...</span><span class="sd"></span>
+<span class="gp">... </span><span class="sd">    y : Expr, optional</span>
+<span class="gp">... </span><span class="sd">      If provided, check if x = y.</span>
+<span class="gp">...</span><span class="sd"></span>
+<span class="gp">... </span><span class="sd">      .. deprecated:: 1.1</span>
+<span class="gp">...</span><span class="sd"></span>
+<span class="gp">... </span><span class="sd">         The ``y`` argument to ``is_this_zero`` is deprecated. Use</span>
+<span class="gp">... </span><span class="sd">         ``is_this_zero(x - y)`` instead.</span>
+<span class="gp">...</span><span class="sd"></span>
+<span class="gp">... </span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="gp">... </span>    <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">simplify</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">sympy_deprecation_warning</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">... </span><span class="s2">    The y argument to is_zero() is deprecated. Use is_zero(x - y) instead.&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="n">deprecated_since_version</span><span class="o">=</span><span class="s2">&quot;1.1&quot;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="n">active_deprecations_target</span><span class="o">=</span><span class="s1">&#39;is-this-zero-y-deprecation&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">simplify</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_this_zero</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_this_zero</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="go">&lt;stdin&gt;:1: SymPyDeprecationWarning:</span>
+
+<span class="go">The y argument to is_zero() is deprecated. Use is_zero(x - y) instead.</span>
+
+<span class="go">See https://docs.sympy.org/latest/explanation/active-deprecations.html#is-this-zero-y-deprecation</span>
+<span class="go">for details.</span>
+
+<span class="go">This has been deprecated since SymPy version 1.1. It</span>
+<span class="go">will be removed in a future version of SymPy.</span>
+
+<span class="go">  is_this_zero(1, 1)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#sympy.utilities.exceptions.SymPyDeprecationWarning" title="sympy.utilities.exceptions.SymPyDeprecationWarning"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.exceptions.SymPyDeprecationWarning</span></code></a>, <a class="reference internal" href="#sympy.utilities.exceptions.ignore_warnings" title="sympy.utilities.exceptions.ignore_warnings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.exceptions.ignore_warnings</span></code></a>, <a class="reference internal" href="decorator.html#sympy.utilities.decorator.deprecated" title="sympy.utilities.decorator.deprecated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.utilities.decorator.deprecated</span></code></a>, <a class="reference internal" href="../testing/pytest.html#sympy.testing.pytest.warns_deprecated_sympy" title="sympy.testing.pytest.warns_deprecated_sympy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.testing.pytest.warns_deprecated_sympy</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="enumerative.html" class="btn btn-neutral float-left" title="Enumerative" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="iterables.html" class="btn btn-neutral float-right" title="Iterables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Feb 17, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High energy physics &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/hep/index.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="The Physics Vector Module" href="../vector/index.html" />
+    <link rel="prev" title="Physical quantities" href="../units/quantities.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../units/index.html">Unit systems</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">High energy physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../vector/index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mechanics/index.html">Classical Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quantum/index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+      <li>High energy physics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/physics/hep/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="high-energy-physics">
+<h1>High energy physics<a class="headerlink" href="#high-energy-physics" title="Permalink to this headline"></a></h1>
+<div class="topic">
+<p class="topic-title">Abstract</p>
+<p>Contains docstrings for methods in high energy physics.</p>
+</div>
+<section id="gamma-matrices">
+<h2>Gamma matrices<a class="headerlink" href="#gamma-matrices" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-sympy.physics.hep.gamma_matrices"></span><p>Module to handle gamma matrices expressed as tensor objects.</p>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.hep.gamma_matrices</span> <span class="kn">import</span> <span class="n">GammaMatrix</span> <span class="k">as</span> <span class="n">G</span><span class="p">,</span> <span class="n">LorentzIndex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.tensor.tensor</span> <span class="kn">import</span> <span class="n">tensor_indices</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">tensor_indices</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">LorentzIndex</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="go">GammaMatrix(i)</span>
+</pre></div>
+</div>
+<p>Note that there is already an instance of GammaMatrixHead in four dimensions:
+GammaMatrix, which is simply declare as</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.hep.gamma_matrices</span> <span class="kn">import</span> <span class="n">GammaMatrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.tensor.tensor</span> <span class="kn">import</span> <span class="n">tensor_indices</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">tensor_indices</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">LorentzIndex</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GammaMatrix</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="go">GammaMatrix(i)</span>
+</pre></div>
+</div>
+<p>To access the metric tensor</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">LorentzIndex</span><span class="o">.</span><span class="n">metric</span>
+<span class="go">metric(LorentzIndex,LorentzIndex)</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.hep.gamma_matrices.extract_type_tens">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">extract_type_tens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/hep/gamma_matrices.py#L46-L72"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.extract_type_tens" title="Permalink to this definition"></a></dt>
+<dd><p>Extract from a <code class="docutils literal notranslate"><span class="pre">TensExpr</span></code> all tensors with <span class="math notranslate nohighlight">\(component\)</span>.</p>
+<p>Returns two tensor expressions:</p>
+<ul class="simple">
+<li><p>the first contains all <code class="docutils literal notranslate"><span class="pre">Tensor</span></code> of having <span class="math notranslate nohighlight">\(component\)</span>.</p></li>
+<li><p>the second contains all remaining.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.hep.gamma_matrices.gamma_trace">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">gamma_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/hep/gamma_matrices.py#L170-L197"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.gamma_trace" title="Permalink to this definition"></a></dt>
+<dd><p>trace of a single line of gamma matrices</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.hep.gamma_matrices</span> <span class="kn">import</span> <span class="n">GammaMatrix</span> <span class="k">as</span> <span class="n">G</span><span class="p">,</span>         <span class="n">gamma_trace</span><span class="p">,</span> <span class="n">LorentzIndex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.tensor.tensor</span> <span class="kn">import</span> <span class="n">tensor_indices</span><span class="p">,</span> <span class="n">tensor_heads</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">tensor_heads</span><span class="p">(</span><span class="s1">&#39;p, q&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">LorentzIndex</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span><span class="p">,</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">i3</span><span class="p">,</span><span class="n">i4</span><span class="p">,</span><span class="n">i5</span> <span class="o">=</span> <span class="n">tensor_indices</span><span class="p">(</span><span class="s1">&#39;i0:6&#39;</span><span class="p">,</span> <span class="n">LorentzIndex</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">p</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qs</span> <span class="o">=</span> <span class="n">q</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma_trace</span><span class="p">(</span><span class="n">G</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="n">i1</span><span class="p">))</span>
+<span class="go">4*metric(i0, i1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma_trace</span><span class="p">(</span><span class="n">ps</span><span class="o">*</span><span class="n">ps</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">p</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma_trace</span><span class="p">(</span><span class="n">ps</span><span class="o">*</span><span class="n">qs</span> <span class="o">+</span> <span class="n">ps</span><span class="o">*</span><span class="n">ps</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">p</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">p</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">q</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.hep.gamma_matrices.kahane_simplify">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">kahane_simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/hep/gamma_matrices.py#L337-L719"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.kahane_simplify" title="Permalink to this definition"></a></dt>
+<dd><p>This function cancels contracted elements in a product of four
+dimensional gamma matrices, resulting in an expression equal to the given
+one, without the contracted gamma matrices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>`expression`    the tensor expression containing the gamma matrices to simplify.</strong></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If spinor indices are given, the matrices must be given in
+the order given in the product.</p>
+<p class="rubric">Algorithm</p>
+<p>The idea behind the algorithm is to use some well-known identities,
+i.e., for contractions enclosing an even number of <span class="math notranslate nohighlight">\(\gamma\)</span> matrices</p>
+<p><span class="math notranslate nohighlight">\(\gamma^\mu \gamma_{a_1} \cdots \gamma_{a_{2N}} \gamma_\mu = 2 (\gamma_{a_{2N}} \gamma_{a_1} \cdots \gamma_{a_{2N-1}} + \gamma_{a_{2N-1}} \cdots \gamma_{a_1} \gamma_{a_{2N}} )\)</span></p>
+<p>for an odd number of <span class="math notranslate nohighlight">\(\gamma\)</span> matrices</p>
+<p><span class="math notranslate nohighlight">\(\gamma^\mu \gamma_{a_1} \cdots \gamma_{a_{2N+1}} \gamma_\mu = -2 \gamma_{a_{2N+1}} \gamma_{a_{2N}} \cdots \gamma_{a_{1}}\)</span></p>
+<p>Instead of repeatedly applying these identities to cancel out all contracted indices,
+it is possible to recognize the links that would result from such an operation,
+the problem is thus reduced to a simple rearrangement of free gamma matrices.</p>
+<p class="rubric">Examples</p>
+<p>When using, always remember that the original expression coefficient
+has to be handled separately</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.hep.gamma_matrices</span> <span class="kn">import</span> <span class="n">GammaMatrix</span> <span class="k">as</span> <span class="n">G</span><span class="p">,</span> <span class="n">LorentzIndex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.hep.gamma_matrices</span> <span class="kn">import</span> <span class="n">kahane_simplify</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.tensor.tensor</span> <span class="kn">import</span> <span class="n">tensor_indices</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span><span class="p">,</span> <span class="n">i1</span><span class="p">,</span> <span class="n">i2</span> <span class="o">=</span> <span class="n">tensor_indices</span><span class="p">(</span><span class="s1">&#39;i0:3&#39;</span><span class="p">,</span> <span class="n">LorentzIndex</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ta</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kahane_simplify</span><span class="p">(</span><span class="n">ta</span><span class="p">)</span>
+<span class="go">Matrix([</span>
+<span class="go">[4, 0, 0, 0],</span>
+<span class="go">[0, 4, 0, 0],</span>
+<span class="go">[0, 0, 4, 0],</span>
+<span class="go">[0, 0, 0, 4]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tb</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="n">i1</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kahane_simplify</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+<span class="go">-2*GammaMatrix(i1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kahane_simplify</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">Matrix([</span>
+<span class="go">[4, 0, 0, 0],</span>
+<span class="go">[0, 4, 0, 0],</span>
+<span class="go">[0, 0, 4, 0],</span>
+<span class="go">[0, 0, 0, 4]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kahane_simplify</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">Matrix([</span>
+<span class="go">[4, 0, 0, 0],</span>
+<span class="go">[0, 4, 0, 0],</span>
+<span class="go">[0, 0, 4, 0],</span>
+<span class="go">[0, 0, 0, 4]])</span>
+</pre></div>
+</div>
+<p>If there are no contractions, the same expression is returned</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tc</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="n">i1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kahane_simplify</span><span class="p">(</span><span class="n">tc</span><span class="p">)</span>
+<span class="go">GammaMatrix(i0)*GammaMatrix(i1)</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<p>[1] Algorithm for Reducing Contracted Products of gamma Matrices,
+Joseph Kahane, Journal of Mathematical Physics, Vol. 9, No. 10, October 1968.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.hep.gamma_matrices.simplify_gpgp">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">simplify_gpgp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/hep/gamma_matrices.py#L81-L167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.simplify_gpgp" title="Permalink to this definition"></a></dt>
+<dd><p>simplify products <code class="docutils literal notranslate"><span class="pre">G(i)*p(-i)*G(j)*p(-j)</span> <span class="pre">-&gt;</span> <span class="pre">p(i)*p(-i)</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.hep.gamma_matrices</span> <span class="kn">import</span> <span class="n">GammaMatrix</span> <span class="k">as</span> <span class="n">G</span><span class="p">,</span>         <span class="n">LorentzIndex</span><span class="p">,</span> <span class="n">simplify_gpgp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.tensor.tensor</span> <span class="kn">import</span> <span class="n">tensor_indices</span><span class="p">,</span> <span class="n">tensor_heads</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">tensor_heads</span><span class="p">(</span><span class="s1">&#39;p, q&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">LorentzIndex</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i0</span><span class="p">,</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">i3</span><span class="p">,</span><span class="n">i4</span><span class="p">,</span><span class="n">i5</span> <span class="o">=</span> <span class="n">tensor_indices</span><span class="p">(</span><span class="s1">&#39;i0:6&#39;</span><span class="p">,</span> <span class="n">LorentzIndex</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">p</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qs</span> <span class="o">=</span> <span class="n">q</span><span class="p">(</span><span class="n">i0</span><span class="p">)</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="o">-</span><span class="n">i0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify_gpgp</span><span class="p">(</span><span class="n">ps</span><span class="o">*</span><span class="n">qs</span><span class="o">*</span><span class="n">qs</span><span class="p">)</span>
+<span class="go">GammaMatrix(-L_0)*p(L_0)*q(L_1)*q(-L_1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../units/quantities.html" class="btn btn-neutral float-left" title="Physical quantities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../vector/index.html" class="btn btn-neutral float-right" title="The Physics Vector Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

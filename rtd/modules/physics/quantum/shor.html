@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shor’s Algorithm &mdash; SymPy 1.10.dev documentation</title>
+  <title>Shor’s Algorithm &mdash; SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.10.dev
+                1.11.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -129,26 +129,26 @@
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.shor.CMod">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.shor.</span></span><span class="sig-name descname"><span class="pre">CMod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/shor.py#L32-L85"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.shor.CMod" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.shor.</span></span><span class="sig-name descname"><span class="pre">CMod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/physics/quantum/shor.py#L32-L85"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.shor.CMod" title="Permalink to this definition"></a></dt>
 <dd><p>A controlled mod gate.</p>
 <p>This is black box controlled Mod function for use by shor’s algorithm.
 TODO: implement a decompose property that returns how to do this in terms
 of elementary gates</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.shor.CMod.N">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#sympy.physics.quantum.shor.CMod.N" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#sympy.physics.quantum.shor.CMod.N" title="Permalink to this definition"></a></dt>
 <dd><p>N is the type of modular arithmetic we are doing.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.shor.CMod.a">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">a</span></span><a class="headerlink" href="#sympy.physics.quantum.shor.CMod.a" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">a</span></span><a class="headerlink" href="#sympy.physics.quantum.shor.CMod.a" title="Permalink to this definition"></a></dt>
 <dd><p>Base of the controlled mod function.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.shor.CMod.t">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">t</span></span><a class="headerlink" href="#sympy.physics.quantum.shor.CMod.t" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">t</span></span><a class="headerlink" href="#sympy.physics.quantum.shor.CMod.t" title="Permalink to this definition"></a></dt>
 <dd><p>Size of 1/2 input register.  First 1/2 holds output.</p>
 </dd></dl>
 
@@ -156,7 +156,7 @@ of elementary gates</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.shor.period_find">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.shor.</span></span><span class="sig-name descname"><span class="pre">period_find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/shor.py#L123-L173"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.shor.period_find" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.shor.</span></span><span class="sig-name descname"><span class="pre">period_find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/physics/quantum/shor.py#L123-L173"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.shor.period_find" title="Permalink to this definition"></a></dt>
 <dd><p>Finds the period of a in modulo N arithmetic</p>
 <p>This is quantum part of Shor’s algorithm. It takes two registers,
 puts first in superposition of states with Hadamards so: <code class="docutils literal notranslate"><span class="pre">|k&gt;|0&gt;</span></code>
@@ -166,7 +166,7 @@ a QFT to determine the order of a.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.shor.shor">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.shor.</span></span><span class="sig-name descname"><span class="pre">shor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/shor.py#L88-L105"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.shor.shor" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.shor.</span></span><span class="sig-name descname"><span class="pre">shor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/physics/quantum/shor.py#L88-L105"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.shor.shor" title="Permalink to this definition"></a></dt>
 <dd><p>This function implements Shor’s factoring algorithm on the Integer N</p>
 <p>The algorithm starts by picking a random number (a) and seeing if it is
 coprime with N. If it isn’t, then the gcd of the two numbers is a factor
@@ -190,7 +190,7 @@ These values are returned.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022 SymPy Development Team.
-      <span class="lastupdated">Last updated on Jan 14, 2022.
+      <span class="lastupdated">Last updated on Feb 17, 2022.
       </span></p>
   </div>
 

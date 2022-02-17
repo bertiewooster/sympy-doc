@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tensor Product &mdash; SymPy 1.10.dev documentation</title>
+  <title>Tensor Product &mdash; SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.10.dev
+                1.11.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -123,7 +123,7 @@
 <p>Abstract tensor product.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.tensorproduct.TensorProduct">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.tensorproduct.</span></span><span class="sig-name descname"><span class="pre">TensorProduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/tensorproduct.py#L52-L267"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.tensorproduct.TensorProduct" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.tensorproduct.</span></span><span class="sig-name descname"><span class="pre">TensorProduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/physics/quantum/tensorproduct.py#L52-L267"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.tensorproduct.TensorProduct" title="Permalink to this definition"></a></dt>
 <dd><p>The tensor product of two or more arguments.</p>
 <p>For matrices, this uses <code class="docutils literal notranslate"><span class="pre">matrix_tensor_product</span></code> to compute the Kronecker
 or tensor product matrix. For other objects a symbolic <code class="docutils literal notranslate"><span class="pre">TensorProduct</span></code>
@@ -192,7 +192,7 @@ like the dagger of a normal product):</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.tensorproduct.tensor_product_simp">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.tensorproduct.</span></span><span class="sig-name descname"><span class="pre">tensor_product_simp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/tensorproduct.py#L372-L420"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.tensorproduct.tensor_product_simp" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.tensorproduct.</span></span><span class="sig-name descname"><span class="pre">tensor_product_simp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/a00e79aa726531942eb8a93ea7adc23335842348/sympy/physics/quantum/tensorproduct.py#L372-L420"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.tensorproduct.tensor_product_simp" title="Permalink to this definition"></a></dt>
 <dd><p>Try to simplify and combine TensorProducts.</p>
 <p>In general this will try to pull expressions inside of <code class="docutils literal notranslate"><span class="pre">TensorProducts</span></code>.
 It currently only works for relatively simple cases where the products have
@@ -238,7 +238,7 @@ commutators and anticommutators as well:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022 SymPy Development Team.
-      <span class="lastupdated">Last updated on Jan 14, 2022.
+      <span class="lastupdated">Last updated on Feb 17, 2022.
       </span></p>
   </div>
 

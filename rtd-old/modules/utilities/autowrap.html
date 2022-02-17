@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autowrap Module &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/utilities/autowrap.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Codegen" href="codegen.html" />
+    <link rel="prev" title="Utilities" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/physics/index.html">Physics</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../reference/public/utilities/index.html">Utilities</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Utilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../interactive.html">Interactive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../parsing.html">Parsing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../printing.html">Printing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../reference/public/utilities/index.html">Utilities</a> &raquo;</li>
+          <li><a href="index.html">Utilities</a> &raquo;</li>
+      <li>Autowrap Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/utilities/autowrap.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="autowrap-module">
+<h1>Autowrap Module<a class="headerlink" href="#autowrap-module" title="Permalink to this headline"></a></h1>
+<p>The autowrap module works very well in tandem with the Indexed classes of the
+<a class="reference internal" href="../tensor/index.html#tensor-module"><span class="std std-ref">Tensor</span></a>.  Here is a simple example that shows how to setup a binary
+routine that calculates a matrix-vector product.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.autowrap</span> <span class="kn">import</span> <span class="n">autowrap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">IndexedBase</span><span class="p">,</span> <span class="n">Idx</span><span class="p">,</span> <span class="n">Eq</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">IndexedBase</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;m n&#39;</span><span class="p">,</span> <span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">Idx</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">j</span> <span class="o">=</span> <span class="n">Idx</span><span class="p">(</span><span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">instruction</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span> <span class="n">instruction</span>
+<span class="go">Eq(y[i], A[i, j]*x[j])</span>
+</pre></div>
+</div>
+<p>Because the code printers treat Indexed objects with repeated indices as a
+summation, the above equality instance will be translated to low-level code for
+a matrix vector product.  This is how you tell SymPy to generate the code,
+compile it and wrap it as a python function:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matvec</span> <span class="o">=</span> <span class="n">autowrap</span><span class="p">(</span><span class="n">instruction</span><span class="p">)</span>                 
+</pre></div>
+</div>
+<p>That’s it.  Now let’s test it with some numpy arrays.  The default wrapper
+backend is f2py.  The wrapper function it provides is set up to accept python
+lists, which it will silently convert to numpy arrays.  So we can test the
+matrix vector product like this:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matvec</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>                              
+<span class="go">[ 3.  2.]</span>
+</pre></div>
+</div>
+<section id="implementation-details">
+<h2>Implementation details<a class="headerlink" href="#implementation-details" title="Permalink to this headline"></a></h2>
+<p>The autowrap module is implemented with a backend consisting of CodeWrapper
+objects.  The base class <code class="docutils literal notranslate"><span class="pre">CodeWrapper</span></code> takes care of details about module
+name, filenames and options.  It also contains the driver routine, which runs
+through all steps in the correct order, and also takes care of setting up and
+removing the temporary working directory.</p>
+<p>The actual compilation and wrapping is done by external resources, such as the
+system installed f2py command. The Cython backend runs a distutils setup script
+in a subprocess. Subclasses of CodeWrapper takes care of these
+backend-dependent details.</p>
+</section>
+<section id="module-sympy.utilities.autowrap">
+<span id="api-reference"></span><h2>API Reference<a class="headerlink" href="#module-sympy.utilities.autowrap" title="Permalink to this headline"></a></h2>
+<p>Module for compiling codegen output, and wrap the binary for use in
+python.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To use the autowrap module it must first be imported</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.autowrap</span> <span class="kn">import</span> <span class="n">autowrap</span>
+</pre></div>
+</div>
+</div>
+<p>This module provides a common interface for different external backends, such
+as f2py, fwrap, Cython, SWIG(?) etc. (Currently only f2py and Cython are
+implemented) The goal is to provide access to compiled binaries of acceptable
+performance with a one-button user interface, e.g.,</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flat</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_callable</span> <span class="o">=</span> <span class="n">autowrap</span><span class="p">(</span><span class="n">flat</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_callable</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">-1.0</span>
+</pre></div>
+</div>
+<p>Although a SymPy user might primarily be interested in working with
+mathematical expressions and not in the details of wrapping tools
+needed to evaluate such expressions efficiently in numerical form,
+the user cannot do so without some understanding of the
+limits in the target language. For example, the expanded expression
+contains large coefficients which result in loss of precision when
+computing the expression:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">binary_callable</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_callable</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">binary_callable</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">(-22925376.0, 25165824.0)</span>
+</pre></div>
+</div>
+<p>Wrapping the unexpanded expression gives the expected behavior:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">autowrap</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">e</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">(-1.0, 1.0)</span>
+</pre></div>
+</div>
+<p>The callable returned from autowrap() is a binary Python function, not a
+SymPy object.  If it is desired to use the compiled function in symbolic
+expressions, it is better to use binary_function() which returns a SymPy
+Function object.  The binary callable is attached as the _imp_ attribute and
+invoked when a numerical evaluation is requested with evalf(), or with
+lambdify().</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.autowrap</span> <span class="kn">import</span> <span class="n">binary_function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">binary_function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span>
+<span class="go">y + 2*f(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">subs</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">2</span><span class="p">})</span>
+<span class="go">0.e-110</span>
+</pre></div>
+</div>
+<p>When is this useful?</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>For computations on large arrays, Python iterations may be too slow,
+and depending on the mathematical expression, it may be difficult to
+exploit the advanced index operations provided by NumPy.</p></li>
+<li><p>For <em>really</em> long expressions that will be called repeatedly, the
+compiled binary should be significantly faster than SymPy’s .evalf()</p></li>
+<li><p>If you are generating code with the codegen utility in order to use
+it in another project, the automatic Python wrappers let you test the
+binaries immediately from within SymPy.</p></li>
+<li><p>To create customized ufuncs for use with numpy arrays.
+See <em>ufuncify</em>.</p></li>
+</ol>
+</div></blockquote>
+<p>When is this module NOT the best approach?</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>If you are really concerned about speed or memory optimizations,
+you will probably get better results by working directly with the
+wrapper tools and the low level code.  However, the files generated
+by this utility may provide a useful starting point and reference
+code. Temporary files will be left intact if you supply the keyword
+tempdir=”path/to/files/”.</p></li>
+<li><p>If the array computation can be handled easily by numpy, and you
+do not need the binaries for another project.</p></li>
+</ol>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.CodeWrapper">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.autowrap.</span></span><span class="sig-name descname"><span class="pre">CodeWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L112-L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.CodeWrapper" title="Permalink to this definition"></a></dt>
+<dd><p>Base Class for code wrappers</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.CythonCodeWrapper">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.autowrap.</span></span><span class="sig-name descname"><span class="pre">CythonCodeWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L233-L484"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.CythonCodeWrapper" title="Permalink to this definition"></a></dt>
+<dd><p>Wrapper that uses Cython</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.CythonCodeWrapper.dump_pyx">
+<span class="sig-name descname"><span class="pre">dump_pyx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L358-L420"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.CythonCodeWrapper.dump_pyx" title="Permalink to this definition"></a></dt>
+<dd><p>Write a Cython file with Python wrappers</p>
+<p>This file contains all the definitions of the routines in c code and
+refers to the header file.</p>
+<p class="rubric">Arguments</p>
+<dl class="simple">
+<dt>routines</dt><dd><p>List of Routine instances</p>
+</dd>
+<dt>f</dt><dd><p>File-like object to write the file to</p>
+</dd>
+<dt>prefix</dt><dd><p>The filename prefix, used to refer to the proper header file.
+Only the basename of the prefix is used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.DummyWrapper">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.autowrap.</span></span><span class="sig-name descname"><span class="pre">DummyWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L191-L230"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.DummyWrapper" title="Permalink to this definition"></a></dt>
+<dd><p>Class used for testing independent of backends</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.F2PyCodeWrapper">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.autowrap.</span></span><span class="sig-name descname"><span class="pre">F2PyCodeWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L487-L516"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.F2PyCodeWrapper" title="Permalink to this definition"></a></dt>
+<dd><p>Wrapper that uses f2py</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.UfuncifyCodeWrapper">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.autowrap.</span></span><span class="sig-name descname"><span class="pre">UfuncifyCodeWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L802-L994"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.UfuncifyCodeWrapper" title="Permalink to this definition"></a></dt>
+<dd><p>Wrapper for Ufuncify</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.UfuncifyCodeWrapper.dump_c">
+<span class="sig-name descname"><span class="pre">dump_c</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">routines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funcname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L883-L981"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.UfuncifyCodeWrapper.dump_c" title="Permalink to this definition"></a></dt>
+<dd><p>Write a C file with Python wrappers</p>
+<p>This file contains all the definitions of the routines in c code.</p>
+<p class="rubric">Arguments</p>
+<dl class="simple">
+<dt>routines</dt><dd><p>List of Routine instances</p>
+</dd>
+<dt>f</dt><dd><p>File-like object to write the file to</p>
+</dd>
+<dt>prefix</dt><dd><p>The filename prefix, used to name the imported module.</p>
+</dd>
+<dt>funcname</dt><dd><p>Name of the main function to be returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.autowrap">
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.autowrap.</span></span><span class="sig-name descname"><span class="pre">autowrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'f2py'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tempdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">helpers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code_gen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L546-L661"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.autowrap" title="Permalink to this definition"></a></dt>
+<dd><p>Generates Python callable binaries based on the math expression.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expr</strong></p>
+<blockquote>
+<div><p>The SymPy expression that should be wrapped as a binary routine.</p>
+</div></blockquote>
+<p><strong>language</strong> : string, optional</p>
+<blockquote>
+<div><p>If supplied, (options: ‘C’ or ‘F95’), specifies the language of the
+generated code. If <code class="docutils literal notranslate"><span class="pre">None</span></code> [default], the language is inferred based
+upon the specified backend.</p>
+</div></blockquote>
+<p><strong>backend</strong> : string, optional</p>
+<blockquote>
+<div><p>Backend used to wrap the generated code. Either ‘f2py’ [default],
+or ‘cython’.</p>
+</div></blockquote>
+<p><strong>tempdir</strong> : string, optional</p>
+<blockquote>
+<div><p>Path to directory for temporary files. If this argument is supplied,
+the generated code and the wrapper input files are left intact in the
+specified path.</p>
+</div></blockquote>
+<p><strong>args</strong> : iterable, optional</p>
+<blockquote>
+<div><p>An ordered iterable of symbols. Specifies the argument sequence for the
+function.</p>
+</div></blockquote>
+<p><strong>flags</strong> : iterable, optional</p>
+<blockquote>
+<div><p>Additional option flags that will be passed to the backend.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, autowrap will not mute the command line backends. This can be
+helpful for debugging.</p>
+</div></blockquote>
+<p><strong>helpers</strong> : 3-tuple or iterable of 3-tuples, optional</p>
+<blockquote>
+<div><p>Used to define auxiliary expressions needed for the main expr. If the
+main expression needs to call a specialized function it should be
+passed in via <code class="docutils literal notranslate"><span class="pre">helpers</span></code>. Autowrap will then make sure that the
+compiled main expression can link to the helper routine. Items should
+be 3-tuples with (&lt;function_name&gt;, &lt;sympy_expression&gt;,
+&lt;argument_tuple&gt;). It is mandatory to supply an argument sequence to
+helper routines.</p>
+</div></blockquote>
+<p><strong>code_gen</strong> : CodeGen instance</p>
+<blockquote>
+<div><p>An instance of a CodeGen subclass. Overrides <code class="docutils literal notranslate"><span class="pre">language</span></code>.</p>
+</div></blockquote>
+<p><strong>include_dirs</strong> : [string]</p>
+<blockquote>
+<div><p>A list of directories to search for C/C++ header files (in Unix form
+for portability).</p>
+</div></blockquote>
+<p><strong>library_dirs</strong> : [string]</p>
+<blockquote>
+<div><p>A list of directories to search for C/C++ libraries at link time.</p>
+</div></blockquote>
+<p><strong>libraries</strong> : [string]</p>
+<blockquote>
+<div><p>A list of library names (not filenames or paths) to link against.</p>
+</div></blockquote>
+<p><strong>extra_compile_args</strong> : [string]</p>
+<blockquote>
+<div><p>Any extra platform- and compiler-specific information to use when
+compiling the source files in ‘sources’.  For platforms and compilers
+where “command line” makes sense, this is typically a list of
+command-line arguments, but for other platforms it could be anything.</p>
+</div></blockquote>
+<p><strong>extra_link_args</strong> : [string]</p>
+<blockquote>
+<div><p>Any extra platform- and compiler-specific information to use when
+linking object files together to create the extension (or to create a
+new static Python interpreter).  Similar interpretation as for
+‘extra_compile_args’.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.autowrap</span> <span class="kn">import</span> <span class="n">autowrap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_func</span> <span class="o">=</span> <span class="n">autowrap</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">-1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.binary_function">
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.autowrap.</span></span><span class="sig-name descname"><span class="pre">binary_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symfunc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L664-L698"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.binary_function" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a SymPy function with expr as binary implementation</p>
+<p>This is a convenience function that automates the steps needed to
+autowrap the SymPy expression and attaching it to a Function object
+with implemented_function().</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>symfunc</strong> : SymPy Function</p>
+<blockquote>
+<div><p>The function to bind the callable to.</p>
+</div></blockquote>
+<p><strong>expr</strong> : SymPy Expression</p>
+<blockquote>
+<div><p>The expression used to generate the function.</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Any kwargs accepted by autowrap.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.autowrap</span> <span class="kn">import</span> <span class="n">binary_function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">binary_function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">&lt;class &#39;sympy.core.function.UndefinedFunction&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">2*f(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">subs</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="go">-1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.utilities.autowrap.ufuncify">
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.autowrap.</span></span><span class="sig-name descname"><span class="pre">ufuncify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'numpy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tempdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">helpers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/utilities/autowrap.py#L997-L1134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.autowrap.ufuncify" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a binary function that supports broadcasting on numpy arrays.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> : iterable</p>
+<blockquote>
+<div><p>Either a Symbol or an iterable of symbols. Specifies the argument
+sequence for the function.</p>
+</div></blockquote>
+<p><strong>expr</strong></p>
+<blockquote>
+<div><p>A SymPy expression that defines the element wise operation.</p>
+</div></blockquote>
+<p><strong>language</strong> : string, optional</p>
+<blockquote>
+<div><p>If supplied, (options: ‘C’ or ‘F95’), specifies the language of the
+generated code. If <code class="docutils literal notranslate"><span class="pre">None</span></code> [default], the language is inferred based
+upon the specified backend.</p>
+</div></blockquote>
+<p><strong>backend</strong> : string, optional</p>
+<blockquote>
+<div><p>Backend used to wrap the generated code. Either ‘numpy’ [default],
+‘cython’, or ‘f2py’.</p>
+</div></blockquote>
+<p><strong>tempdir</strong> : string, optional</p>
+<blockquote>
+<div><p>Path to directory for temporary files. If this argument is supplied,
+the generated code and the wrapper input files are left intact in
+the specified path.</p>
+</div></blockquote>
+<p><strong>flags</strong> : iterable, optional</p>
+<blockquote>
+<div><p>Additional option flags that will be passed to the backend.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, autowrap will not mute the command line backends. This can
+be helpful for debugging.</p>
+</div></blockquote>
+<p><strong>helpers</strong> : iterable, optional</p>
+<blockquote>
+<div><p>Used to define auxiliary expressions needed for the main expr. If
+the main expression needs to call a specialized function it should
+be put in the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> iterable. Autowrap will then make sure
+that the compiled main expression can link to the helper routine.
+Items should be tuples with (&lt;funtion_name&gt;, &lt;sympy_expression&gt;,
+&lt;arguments&gt;). It is mandatory to supply an argument sequence to
+helper routines.</p>
+</div></blockquote>
+<p><strong>kwargs</strong> : dict</p>
+<blockquote>
+<div><p>These kwargs will be passed to autowrap if the <span class="math notranslate nohighlight">\(f2py\)</span> or <span class="math notranslate nohighlight">\(cython\)</span>
+backend is used and ignored if the <span class="math notranslate nohighlight">\(numpy\)</span> backend is used.</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The default backend (‘numpy’) will create actual instances of
+<code class="docutils literal notranslate"><span class="pre">numpy.ufunc</span></code>. These support ndimensional broadcasting, and implicit type
+conversion. Use of the other backends will result in a “ufunc-like”
+function, which requires equal length 1-dimensional arrays for all
+arguments, and will not perform any type conversions.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.autowrap</span> <span class="kn">import</span> <span class="n">ufuncify</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ufuncify</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">&lt;class &#39;numpy.ufunc&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">array([  3.,   6.,  11.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">array([  3.,   4.,   7.,  12.,  19.])</span>
+</pre></div>
+</div>
+<p>For the ‘f2py’ and ‘cython’ backends, inputs are required to be equal length
+1-dimensional arrays. The ‘f2py’ backend will perform type conversion, but
+the Cython backend will error if the inputs are not of the expected type.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f_fortran</span> <span class="o">=</span> <span class="n">ufuncify</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">&#39;f2py&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_fortran</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">array([ 3.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_fortran</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]))</span>
+<span class="go">array([  2.,   6.,  12.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_cython</span> <span class="o">=</span> <span class="n">ufuncify</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">&#39;Cython&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_cython</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">Argument &#39;_x&#39; has incorrect type (expected numpy.ndarray, got int)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_cython</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.0</span><span class="p">]))</span>
+<span class="go">array([ 3.])</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r950"><span class="brackets"><a class="fn-backref" href="#id1">R950</a></span></dt>
+<dd><p><a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/ufuncs.html">http://docs.scipy.org/doc/numpy/reference/ufuncs.html</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Utilities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="codegen.html" class="btn btn-neutral float-right" title="Codegen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

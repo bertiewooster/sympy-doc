@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operator/State Helper Functions &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/quantum/operatorset.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Qapply" href="qapply.html" />
+    <link rel="prev" title="Operator" href="operator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../vector/index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mechanics/index.html">Classical Mechanics</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="index.html">Quantum Mechanics</a> &raquo;</li>
+      <li>Operator/State Helper Functions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/physics/quantum/operatorset.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sympy.physics.quantum.operatorset">
+<span id="operator-state-helper-functions"></span><h1>Operator/State Helper Functions<a class="headerlink" href="#module-sympy.physics.quantum.operatorset" title="Permalink to this headline"></a></h1>
+<p>A module for mapping operators to their corresponding eigenstates
+and vice versa</p>
+<p>It contains a global dictionary with eigenstate-operator pairings.
+If a new state-operator pair is created, this dictionary should be
+updated as well.</p>
+<p>It also contains functions operators_to_state and state_to_operators
+for mapping between the two. These can handle both classes and
+instances of operators and states. See the individual function
+descriptions for details.</p>
+<p>TODO List:
+- Update the dictionary with a complete list of state-operator pairs</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operatorset.operators_to_state">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operatorset.</span></span><span class="sig-name descname"><span class="pre">operators_to_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operators</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/operatorset.py#L47-L145"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operatorset.operators_to_state" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the eigenstate of the given operator or set of operators</p>
+<p>A global function for mapping operator classes to their associated
+states. It takes either an Operator or a set of operators and
+returns the state associated with these.</p>
+<p>This function can handle both instances of a given operator or
+just the class itself (i.e. both XOp() and XOp)</p>
+<p>There are multiple use cases to consider:</p>
+<p>1) A class or set of classes is passed: First, we try to
+instantiate default instances for these operators. If this fails,
+then the class is simply returned. If we succeed in instantiating
+default instances, then we try to call state._operators_to_state
+on the operator instances. If this fails, the class is returned.
+Otherwise, the instance returned by _operators_to_state is returned.</p>
+<p>2) An instance or set of instances is passed: In this case,
+state._operators_to_state is called on the instances passed. If
+this fails, a state class is returned. If the method returns an
+instance, that instance is returned.</p>
+<p>In both cases, if the operator class or set does not exist in the
+state_mapping dictionary, None is returned.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arg: Operator or set</strong></p>
+<blockquote>
+<div><p>The class or instance of the operator or set of operators
+to be mapped to a state</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.cartesian</span> <span class="kn">import</span> <span class="n">XOp</span><span class="p">,</span> <span class="n">PxOp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.operatorset</span> <span class="kn">import</span> <span class="n">operators_to_state</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.operator</span> <span class="kn">import</span> <span class="n">Operator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">operators_to_state</span><span class="p">(</span><span class="n">XOp</span><span class="p">)</span>
+<span class="go">|x&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">operators_to_state</span><span class="p">(</span><span class="n">XOp</span><span class="p">())</span>
+<span class="go">|x&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">operators_to_state</span><span class="p">(</span><span class="n">PxOp</span><span class="p">)</span>
+<span class="go">|px&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">operators_to_state</span><span class="p">(</span><span class="n">PxOp</span><span class="p">())</span>
+<span class="go">|px&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">operators_to_state</span><span class="p">(</span><span class="n">Operator</span><span class="p">)</span>
+<span class="go">|psi&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">operators_to_state</span><span class="p">(</span><span class="n">Operator</span><span class="p">())</span>
+<span class="go">|psi&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.quantum.operatorset.state_to_operators">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operatorset.</span></span><span class="sig-name descname"><span class="pre">state_to_operators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/quantum/operatorset.py#L148-L233"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operatorset.state_to_operators" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the operator or set of operators corresponding to the
+given eigenstate</p>
+<p>A global function for mapping state classes to their associated
+operators or sets of operators. It takes either a state class
+or instance.</p>
+<p>This function can handle both instances of a given state or just
+the class itself (i.e. both XKet() and XKet)</p>
+<p>There are multiple use cases to consider:</p>
+<p>1) A state class is passed: In this case, we first try
+instantiating a default instance of the class. If this succeeds,
+then we try to call state._state_to_operators on that instance.
+If the creation of the default instance or if the calling of
+_state_to_operators fails, then either an operator class or set of
+operator classes is returned. Otherwise, the appropriate
+operator instances are returned.</p>
+<p>2) A state instance is returned: Here, state._state_to_operators
+is called for the instance. If this fails, then a class or set of
+operator classes is returned. Otherwise, the instances are returned.</p>
+<p>In either case, if the state’s class does not exist in
+state_mapping, None is returned.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arg: StateBase class or instance (or subclasses)</strong></p>
+<blockquote>
+<div><p>The class or instance of the state to be mapped to an
+operator or set of operators</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.cartesian</span> <span class="kn">import</span> <span class="n">XKet</span><span class="p">,</span> <span class="n">PxKet</span><span class="p">,</span> <span class="n">XBra</span><span class="p">,</span> <span class="n">PxBra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.operatorset</span> <span class="kn">import</span> <span class="n">state_to_operators</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.state</span> <span class="kn">import</span> <span class="n">Ket</span><span class="p">,</span> <span class="n">Bra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state_to_operators</span><span class="p">(</span><span class="n">XKet</span><span class="p">)</span>
+<span class="go">X</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state_to_operators</span><span class="p">(</span><span class="n">XKet</span><span class="p">())</span>
+<span class="go">X</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state_to_operators</span><span class="p">(</span><span class="n">PxKet</span><span class="p">)</span>
+<span class="go">Px</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state_to_operators</span><span class="p">(</span><span class="n">PxKet</span><span class="p">())</span>
+<span class="go">Px</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state_to_operators</span><span class="p">(</span><span class="n">PxBra</span><span class="p">)</span>
+<span class="go">Px</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state_to_operators</span><span class="p">(</span><span class="n">XBra</span><span class="p">)</span>
+<span class="go">X</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state_to_operators</span><span class="p">(</span><span class="n">Ket</span><span class="p">)</span>
+<span class="go">O</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state_to_operators</span><span class="p">(</span><span class="n">Bra</span><span class="p">)</span>
+<span class="go">O</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="operator.html" class="btn btn-neutral float-left" title="Operator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qapply.html" class="btn btn-neutral float-right" title="Qapply" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

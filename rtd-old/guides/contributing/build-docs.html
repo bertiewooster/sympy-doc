@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build the Documentation &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/guides/contributing/build-docs.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Debugging" href="debug.html" />
+    <link rel="prev" title="Development Environment Setup" href="dev-setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">SymPy Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Contributing to SymPy</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Build the Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-dependencies">Required dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-docs">Build the Docs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pdf-documentation">PDF Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="debug.html">Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docstring.html">SymPy Docstrings Style Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html">General Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#types-of-documentation">Types of Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#narrative-documentation-guidelines">Narrative Documentation Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make-a-contribution.html">Making a Contribution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../assumptions.html">Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../booleans.html">Symbolic and fuzzy booleans</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">SymPy Guides</a> &raquo;</li>
+          <li><a href="index.html">Contributing to SymPy</a> &raquo;</li>
+      <li>Build the Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/contributing/build-docs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="build-the-documentation">
+<h1>Build the Documentation<a class="headerlink" href="#build-the-documentation" title="Permalink to this headline"></a></h1>
+<p>Start by installing the required dependencies for the documentation.</p>
+<section id="required-dependencies">
+<h2>Required dependencies<a class="headerlink" href="#required-dependencies" title="Permalink to this headline"></a></h2>
+<section id="debian-ubuntu">
+<h3>Debian/Ubuntu<a class="headerlink" href="#debian-ubuntu" title="Permalink to this headline"></a></h3>
+<p>For Debian/Ubuntu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">sphinx</span> <span class="n">texlive</span><span class="o">-</span><span class="n">latex</span><span class="o">-</span><span class="n">recommended</span> <span class="n">dvipng</span> <span class="n">librsvg2</span><span class="o">-</span><span class="nb">bin</span> <span class="n">imagemagick</span> <span class="n">docbook2x</span> <span class="n">graphviz</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">math</span><span class="o">-</span><span class="n">dollar</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">reredirects</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span> <span class="n">linkify</span><span class="o">-</span><span class="n">it</span><span class="o">-</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>If you get mpmath error, install python-mpmath package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">mpmath</span>
+</pre></div>
+</div>
+<p>If you get matplotlib error, install python-matplotlib package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">matplotlib</span>
+</pre></div>
+</div>
+</section>
+<section id="fedora">
+<h3>Fedora<a class="headerlink" href="#fedora" title="Permalink to this headline"></a></h3>
+<p>For Fedora (and maybe other RPM-based distributions), install the
+prerequisites:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dnf</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">sphinx</span> <span class="n">librsvg2</span> <span class="n">ImageMagick</span> <span class="n">docbook2X</span> <span class="n">texlive</span><span class="o">-</span><span class="n">dvipng</span><span class="o">-</span><span class="nb">bin</span>
+<span class="n">texlive</span><span class="o">-</span><span class="n">scheme</span><span class="o">-</span><span class="n">medium</span> <span class="n">librsvg2</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">math</span><span class="o">-</span><span class="n">dollar</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">reredirects</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span> <span class="n">linkify</span><span class="o">-</span><span class="n">it</span><span class="o">-</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>If you get mpmath error, install python3-mpmath package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dnf</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">mpmath</span>
+</pre></div>
+</div>
+<p>If you get matplotlib error, install python3-matplotlib package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dnf</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">matplotlib</span>
+</pre></div>
+</div>
+</section>
+<section id="mac">
+<h3>Mac<a class="headerlink" href="#mac" title="Permalink to this headline"></a></h3>
+<p>For Mac, first install homebrew: <a class="reference external" href="https://brew.sh/">https://brew.sh/</a></p>
+<p>Then install these packages with homebrew:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">imagemagick</span> <span class="n">graphviz</span> <span class="n">docbook</span> <span class="n">librsvg</span>
+</pre></div>
+</div>
+<p>Install these packages with either pip or conda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">mpmath</span> <span class="n">matplotlib</span> <span class="n">sphinx</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">math</span><span class="o">-</span><span class="n">dollar</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">reredirects</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span> <span class="n">linkify</span><span class="o">-</span><span class="n">it</span><span class="o">-</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">mpmath</span> <span class="n">matplotlib</span> <span class="n">sphinx</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">math</span><span class="o">-</span><span class="n">dollar</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">reredirects</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span> <span class="n">linkify</span><span class="o">-</span><span class="n">it</span><span class="o">-</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Making your Sphinx build successful on the Windows system is tricky because
+some dependencies like <code class="docutils literal notranslate"><span class="pre">dvipng</span></code> or <code class="docutils literal notranslate"><span class="pre">docbook2x</span></code> are not available.</p>
+</section>
+<section id="windows-10">
+<h3>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this headline"></a></h3>
+<p>For Windows 10, however, the Windows Subsystem for Linux can be a possible
+workaround solution, and you can install Ubuntu shell on your Windows system
+after following the tutorial below:</p>
+<p><a class="reference external" href="https://github.com/MicrosoftDocs/WSL/blob/live/WSL/install-win10.md">https://github.com/MicrosoftDocs/WSL/blob/live/WSL/install-win10.md</a></p>
+<p>In your command prompt, run <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> to transfer to Linux terminal, and
+follow the Debian/Ubuntu tutorial above to install the dependencies, and then
+you can run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> to build. (Note that you also have to install
+<code class="docutils literal notranslate"><span class="pre">make</span></code> via <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">make</span></code>.)</p>
+<p>If you want to change the directory in your prompt to your working folder of
+SymPy in the Windows file system, you can prepend <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/mnt/</span></code> to your file
+path in Windows, and run in your shell to navigate to the folder. (Also note
+that Linux uses <code class="docutils literal notranslate"><span class="pre">/</span></code> instead of <code class="docutils literal notranslate"><span class="pre">\</span></code> for file paths.)</p>
+<p>This method provides better compatibility than Cygwin or MSYS2 and more
+convenience than a virtual machine if you partially need a Linux environment
+for your workflow, however this method is only viable for Windows 10 64-bit
+users.</p>
+</section>
+</section>
+<section id="build-the-docs">
+<h2>Build the Docs<a class="headerlink" href="#build-the-docs" title="Permalink to this headline"></a></h2>
+<p>The documentation can be built by running the <code class="docutils literal notranslate"><span class="pre">makefile</span></code> in the <code class="docutils literal notranslate"><span class="pre">doc</span></code>
+subdirectory.</p>
+<p>To start, in your preferred web browser, use the drop down menu and select
+“open file” to navigate into the sympy/doc folder saved on your computer. In
+the doc folder, select the _build folder, then the html folder, and in the html
+folder, open the index.html file.</p>
+<p>To build the HTML documentation, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">doc</span>
+
+<span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>This builds a local version of the documentation in <code class="docutils literal notranslate"><span class="pre">doc/_build/html</span></code> in your
+web browser.</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code>.</p>
+</section>
+<section id="pdf-documentation">
+<h2>PDF Documentation<a class="headerlink" href="#pdf-documentation" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is not necessary for the majority of contributors to build the PDF
+documentation. The PDF documentation will be built automatically on GitHub
+Actions on pull requests. PDF documentation for each release is included on
+the <a class="reference external" href="https://github.com/sympy/sympy/releases">GitHub releases page</a>.</p>
+<p>If the PDF documentation build fails on GitHub Actions, 99% of the time
+this is due to bad LaTeX math formatting. Double check that any math you
+have added is formatted correctly, and make sure you use ``double
+backticks`` for code (`single backticks` will render as math, not
+code). See the resources in the <a class="reference internal" href="documentation-style-guide.html#style-guide-latex-recommendations"><span class="std std-ref">style guide</span></a> for tips on formatting LaTeX math.</p>
+</div>
+<p>Building the PDF documentation requires a few extra dependencies. First you
+will need to have a TeXLive installation that includes XeLaTeX and latexmk.
+You will also need to have Chrome or Chromium installed, as it is used to
+convert some SVG files for the PDF.</p>
+<p>On Ubuntu, you can install these with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">chromium</span><span class="o">-</span><span class="n">browser</span> <span class="n">texlive</span> <span class="n">texlive</span><span class="o">-</span><span class="n">xetex</span> <span class="n">texlive</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="n">recommended</span> <span class="n">texlive</span><span class="o">-</span><span class="n">latex</span><span class="o">-</span><span class="n">extra</span> <span class="n">latexmk</span> <span class="n">lmodern</span>
+</pre></div>
+</div>
+<p>On Mac, you can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">texlive</span>
+</pre></div>
+</div>
+<p>and also make sure the <a class="reference external" href="https://www.google.com/chrome/">Google Chrome browser</a> is installed in <code class="docutils literal notranslate"><span class="pre">/Applications</span></code>.</p>
+<p>To build the pdf docs run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">doc</span>
+
+<span class="n">make</span> <span class="n">latexpdf</span>
+</pre></div>
+</div>
+<p>The resulting PDF will be in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_build</span><span class="o">/</span><span class="n">latex</span><span class="o">/</span><span class="n">sympy</span><span class="o">-&lt;</span><span class="n">version</span><span class="o">&gt;.</span><span class="n">pdf</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;</span></code> is the SymPy version (e.g., <code class="docutils literal notranslate"><span class="pre">sympy-1.10.dev.pdf</span></code>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dev-setup.html" class="btn btn-neutral float-left" title="Development Environment Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="debug.html" class="btn btn-neutral float-right" title="Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

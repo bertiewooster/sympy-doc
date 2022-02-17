@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development Environment Setup &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/guides/contributing/dev-setup.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Build the Documentation" href="build-docs.html" />
+    <link rel="prev" title="Contributing to SymPy" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> SymPy
+            <img src="../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">SymPy Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Contributing to SymPy</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Development Environment Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#git-setup">Git Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-the-sympy-code">Get the SymPy Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#virtual-environment-setup">Virtual Environment Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-the-tests">Run the Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="build-docs.html">Build the Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="debug.html">Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docstring.html">SymPy Docstrings Style Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html">General Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#types-of-documentation">Types of Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#narrative-documentation-guidelines">Narrative Documentation Guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make-a-contribution.html">Making a Contribution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../assumptions.html">Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../booleans.html">Symbolic and fuzzy booleans</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">SymPy Guides</a> &raquo;</li>
+          <li><a href="index.html">Contributing to SymPy</a> &raquo;</li>
+      <li>Development Environment Setup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/contributing/dev-setup.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="development-environment-setup">
+<span id="devsetup"></span><h1>Development Environment Setup<a class="headerlink" href="#development-environment-setup" title="Permalink to this headline"></a></h1>
+<p>The first step to contributing to the code base is creating your development environment.</p>
+<section id="git-setup">
+<h2>Git Setup<a class="headerlink" href="#git-setup" title="Permalink to this headline"></a></h2>
+<p>SymPy is available on <a class="reference external" href="https://github.com/sympy/sympy">GitHub</a> and uses
+<a class="reference external" href="https://git-scm.com">Git</a> for source control. The workflow is such that
+code is pulled and pushed to and from the main repository. Install the respective version
+of Git for your operating system to start development.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Refer to the installation instructions in
+the <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git installation instructions</a>.
+Learn about the basic git commands in this <a class="reference external" href="https://guides.github.com/introduction/git-handbook/">Git Handbook</a>
+or any other sources on the internet.</p>
+</div>
+</section>
+<section id="get-the-sympy-code">
+<h2>Get the SymPy Code<a class="headerlink" href="#get-the-sympy-code" title="Permalink to this headline"></a></h2>
+<p>It is recommended practice to create a fork of the SymPy project for your development purposes. Create your own fork of the SymPy project (if you have not yet). Go to the SymPy GitHub repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://github.com/sympy/sympy
+</pre></div>
+</div>
+<p>You will now have a fork at &lt;<a class="reference external" href="https://github.com">https://github.com</a>/&lt;your-user-name&gt;/sympy&gt;.</p>
+<p>Then, nn your machine browse to where you would like to store SymPy, and clone (download) the latest code from SymPy’s original repository (about 77 MiB):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/&lt;your-user-name&gt;/sympy
+</pre></div>
+</div>
+<p>You must <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">configure the remote repositories</a> for collaboration with the upstream project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> sympy
+$ git remote add upstream https://github.com/sympy/sympy
+</pre></div>
+</div>
+<p>After the configuration, your setup should be similar to this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git remote -v
+origin       https://github.com/&lt;your-user-name&gt;/sympy <span class="o">(</span>fetch<span class="o">)</span>
+origin       https://github.com/&lt;your-user-name&gt;/sympy <span class="o">(</span>push<span class="o">)</span>
+upstream     https://github.com/sympy/sympy <span class="o">(</span>fetch<span class="o">)</span>
+upstream     https://github.com/sympy/sympy <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+<p>For further development, it is recommended
+to create a development branch.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout -b dev-branch
+</pre></div>
+</div>
+<p>The new branch can be of any name.</p>
+</section>
+<section id="virtual-environment-setup">
+<h2>Virtual Environment Setup<a class="headerlink" href="#virtual-environment-setup" title="Permalink to this headline"></a></h2>
+<p>You may want to take advantage of using virtual environments to isolate your development version of SymPy from any system wide installed versions, e.g. from <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python-sympy</span></code>.</p>
+<p>We recommend using <code class="docutils literal notranslate"><span class="pre">conda</span></code> to create a virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n sympy-dev <span class="nv">python</span><span class="o">=</span><span class="m">3</span> mpmath flake8
+</pre></div>
+</div>
+<p>You now have a environment that you can use for testing your development copy of SymPy. For example, clone your SymPy fork from Github:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:&lt;your-github-username&gt;/sympy.git
+$ <span class="nb">cd</span> sympy
+</pre></div>
+</div>
+<p>Now activate the environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate sympy-dev
+</pre></div>
+</div>
+</section>
+<section id="run-the-tests">
+<h2>Run the Tests<a class="headerlink" href="#run-the-tests" title="Permalink to this headline"></a></h2>
+<p>There are several ways of running SymPy tests but the easiest is to use the <code class="docutils literal notranslate"><span class="pre">bin/test</span></code> script, consult ‘the wiki details on running tests &lt;<a class="reference external" href="https://github.com/sympy/sympy/wiki/Running-tests">https://github.com/sympy/sympy/wiki/Running-tests</a>&gt;`_.</p>
+<p>The script takes a number of options and arguments and then passes them to <code class="docutils literal notranslate"><span class="pre">sympy.test(*paths,</span> <span class="pre">**kwargs)</span></code>. Run <code class="docutils literal notranslate"><span class="pre">bin/test</span> <span class="pre">--help</span></code> for all supported arguments.</p>
+<p>Run all tests by using the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bin/test
+</pre></div>
+</div>
+<p>To run tests for a specific file, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bin/test test_basic
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">test_basic</span></code> is from file <code class="docutils literal notranslate"><span class="pre">sympy/core/basic.py</span></code>.</p>
+<p>To run tests for modules, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$  bin/test /core /utilities
+</pre></div>
+</div>
+<p>This will run tests for the <code class="docutils literal notranslate"><span class="pre">core</span></code> and <code class="docutils literal notranslate"><span class="pre">utilities</span></code> modules.</p>
+<p>Similary, run quality tests with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bin/test code_quality
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Contributing to SymPy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="build-docs.html" class="btn btn-neutral float-right" title="Build the Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

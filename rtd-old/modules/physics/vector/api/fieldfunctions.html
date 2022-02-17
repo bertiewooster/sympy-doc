@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docstrings for basic field functions &mdash; SymPy 1.10.dev documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/plot_directive.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/sympy-notailtext-favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link href="https://docs.sympy.org/latest/modules/physics/vector/api/fieldfunctions.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Classical Mechanics" href="../../mechanics/index.html" />
+    <link rel="prev" title="Essential Functions (Docstrings)" href="functions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> SymPy
+            <img src="../../../../_static/sympylogo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.10.dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/index.html">SymPy Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../guides/index.html">SymPy Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../explanation/index.html">Explanation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference/index.html">Reference Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#basics"><span class="xref std std-ref">Basics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#code-generation"><span class="xref std std-ref">Code Generation</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#logic"><span class="xref std std-ref">Logic</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#matrices"><span class="xref std std-ref">Matrices</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#number-theory"><span class="xref std std-ref">Number Theory</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#physics"><span class="xref std std-ref">Physics</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference/index.html#utilities"><span class="xref std std-ref">Utilities</span></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../reference/index.html#topics"><span class="xref std std-ref">Topics</span></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/basics/index.html">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/codegeneration/index.html">Code Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/logic/index.html">Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/matrices/index.html">Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/numbertheory/index.html">Number Theory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../reference/public/physics/index.html">Physics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../hydrogen.html">Hydrogen Wavefunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../matrices.html">Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../paulialgebra.html">Pauli Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../qho_1d.html">Quantum Harmonic Oscillator in 1-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sho.html">Quantum Harmonic Oscillator in 3-D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../secondquant.html">Second Quantization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../wigner.html">Wigner Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../units/index.html">Unit systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../hep/index.html">High energy physics</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">The Physics Vector Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../mechanics/index.html">Classical Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quantum/index.html">Quantum Mechanics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../optics/index.html">Optics Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../control/index.html">Control Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../continuum_mechanics/index.html">Continuum Mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/utilities/index.html">Utilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../reference/public/topics/index.html">Topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../miscellaneous/index.html">Miscellaneous</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">SymPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../reference/index.html">Reference Documentation</a> &raquo;</li>
+          <li><a href="../../../../reference/public/physics/index.html">Physics</a> &raquo;</li>
+          <li><a href="../index.html">The Physics Vector Module</a> &raquo;</li>
+      <li>Docstrings for basic field functions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/modules/physics/vector/api/fieldfunctions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="docstrings-for-basic-field-functions">
+<h1>Docstrings for basic field functions<a class="headerlink" href="#docstrings-for-basic-field-functions" title="Permalink to this headline"></a></h1>
+<section id="field-operation-functions">
+<h2>Field operation functions<a class="headerlink" href="#field-operation-functions" title="Permalink to this headline"></a></h2>
+<p>These functions implement some basic operations pertaining to fields
+in general.</p>
+<section id="curl">
+<h3>curl<a class="headerlink" href="#curl" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.curl">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">curl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/fieldfunctions.py#L14-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.curl" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the curl of a vector field computed wrt the coordinate
+symbols of the given frame.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vect</strong> : Vector</p>
+<blockquote>
+<div><p>The vector operand</p>
+</div></blockquote>
+<p><strong>frame</strong> : ReferenceFrame</p>
+<blockquote>
+<div><p>The reference frame to calculate the curl in</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">curl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">curl</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">curl</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="go">R_x*R_y*R.y - R_x*R_z*R.z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="divergence">
+<h3>divergence<a class="headerlink" href="#divergence" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.divergence">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">divergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/fieldfunctions.py#L58-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.divergence" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the divergence of a vector field computed wrt the coordinate
+symbols of the given frame.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vect</strong> : Vector</p>
+<blockquote>
+<div><p>The vector operand</p>
+</div></blockquote>
+<p><strong>frame</strong> : ReferenceFrame</p>
+<blockquote>
+<div><p>The reference frame to calculate the divergence in</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">divergence</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="n">R</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="n">R</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">divergence</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="go">R_x*R_y + R_x*R_z + R_y*R_z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">divergence</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="go">2*R_z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="gradient">
+<h3>gradient<a class="headerlink" href="#gradient" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.gradient">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scalar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/fieldfunctions.py#L101-L135"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.gradient" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the vector gradient of a scalar field computed wrt the
+coordinate symbols of the given frame.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>scalar</strong> : sympifiable</p>
+<blockquote>
+<div><p>The scalar field to take the gradient of</p>
+</div></blockquote>
+<p><strong>frame</strong> : ReferenceFrame</p>
+<blockquote>
+<div><p>The frame to calculate the gradient in</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">gradient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gradient</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="go">R_y*R_z*R.x + R_x*R_z*R.y + R_x*R_y*R.z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gradient</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="go">10*R_x*R_z*R.x + 5*R_x**2*R.z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="scalar-potential">
+<h3>scalar_potential<a class="headerlink" href="#scalar-potential" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.scalar_potential">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">scalar_potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/fieldfunctions.py#L202-L249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.scalar_potential" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the scalar potential function of a field in a given frame
+(without the added integration constant).</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>field</strong> : Vector</p>
+<blockquote>
+<div><p>The vector field whose scalar potential function is to be
+calculated</p>
+</div></blockquote>
+<p><strong>frame</strong> : ReferenceFrame</p>
+<blockquote>
+<div><p>The frame to do the calculation in</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">scalar_potential</span><span class="p">,</span> <span class="n">gradient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scalar_potential</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="o">==</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scalar_field</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grad_field</span> <span class="o">=</span> <span class="n">gradient</span><span class="p">(</span><span class="n">scalar_field</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scalar_potential</span><span class="p">(</span><span class="n">grad_field</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="go">2*R_x**2*R_y*R_z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="scalar-potential-difference">
+<h3>scalar_potential_difference<a class="headerlink" href="#scalar-potential-difference" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.scalar_potential_difference">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">scalar_potential_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/fieldfunctions.py#L252-L315"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.scalar_potential_difference" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the scalar potential difference between two points in a
+certain frame, wrt a given field.</p>
+<p>If a scalar field is provided, its values at the two points are
+considered. If a conservative vector field is provided, the values
+of its scalar potential function at the two points are used.</p>
+<p>Returns (potential at position 2) - (potential at position 1)</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>field</strong> : Vector/sympyfiable</p>
+<blockquote>
+<div><p>The field to calculate wrt</p>
+</div></blockquote>
+<p><strong>frame</strong> : ReferenceFrame</p>
+<blockquote>
+<div><p>The frame to do the calculations in</p>
+</div></blockquote>
+<p><strong>point1</strong> : Point</p>
+<blockquote>
+<div><p>The initial Point in given frame</p>
+</div></blockquote>
+<p><strong>position2</strong> : Point</p>
+<blockquote>
+<div><p>The second Point in the given frame</p>
+</div></blockquote>
+<p><strong>origin</strong> : Point</p>
+<blockquote>
+<div><p>The Point to use as reference point for position vector
+calculation</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span><span class="p">,</span> <span class="n">Point</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">scalar_potential_difference</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="s1">&#39;O&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">O</span><span class="o">.</span><span class="n">locatenew</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vectfield</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scalar_potential_difference</span><span class="p">(</span><span class="n">vectfield</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">O</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">O</span><span class="p">)</span>
+<span class="go">2*R_x**2*R_y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Q</span> <span class="o">=</span> <span class="n">O</span><span class="o">.</span><span class="n">locatenew</span><span class="p">(</span><span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">R</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scalar_potential_difference</span><span class="p">(</span><span class="n">vectfield</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">O</span><span class="p">)</span>
+<span class="go">-2*R_x**2*R_y + 18</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="checking-the-type-of-vector-field">
+<h2>Checking the type of vector field<a class="headerlink" href="#checking-the-type-of-vector-field" title="Permalink to this headline"></a></h2>
+<section id="is-conservative">
+<h3>is_conservative<a class="headerlink" href="#is-conservative" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.is_conservative">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">is_conservative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/fieldfunctions.py#L138-L167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.is_conservative" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if a field is conservative.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>field</strong> : Vector</p>
+<blockquote>
+<div><p>The field to check for conservative property</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">is_conservative</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_conservative</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_conservative</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">R</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="is-solenoidal">
+<h3>is_solenoidal<a class="headerlink" href="#is-solenoidal" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.is_solenoidal">
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">is_solenoidal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0b23b452402f1f796b08ecae4261e3850c55991e/sympy/physics/vector/fieldfunctions.py#L170-L199"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.is_solenoidal" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if a field is solenoidal.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>field</strong> : Vector</p>
+<blockquote>
+<div><p>The field to check for solenoidal property</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">ReferenceFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.vector</span> <span class="kn">import</span> <span class="n">is_solenoidal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">R</span> <span class="o">=</span> <span class="n">ReferenceFrame</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_solenoidal</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_solenoidal</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">R</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="functions.html" class="btn btn-neutral float-left" title="Essential Functions (Docstrings)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../mechanics/index.html" class="btn btn-neutral float-right" title="Classical Mechanics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 SymPy Development Team.
+      <span class="lastupdated">Last updated on Jan 14, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
