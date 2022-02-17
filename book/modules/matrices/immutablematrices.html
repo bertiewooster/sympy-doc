@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Immutable Matrices &#8212; SymPy 1.10.dev documentation</title>
+    <title>Immutable Matrices &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Matrix Expressions" href="expressions.html" />
     <link rel="prev" title="Sparse Tools" href="sparsetools.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -74,7 +74,7 @@
       <img src="../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -155,6 +155,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -200,6 +205,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -222,6 +232,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -274,6 +289,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -727,6 +747,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../tensor/array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1363,6 +1388,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="../utilities/iterables.html">
          Iterables
         </a>
@@ -1802,17 +1832,16 @@ the constructor</p>
 <span id="immutablematrix-class-reference"></span><h2>ImmutableMatrix Class Reference<a class="headerlink" href="#module-sympy.matrices.immutable" title="Permalink to this headline">¶</a></h2>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sympy.matrices.immutable.ImmutableMatrix">
-<span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableMatrix</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/matrices/immutable.py#L80-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableMatrix" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableMatrix</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/matrices/immutable.py#L80-L131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableMatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#sympy.matrices.immutable.ImmutableDenseMatrix" title="sympy.matrices.immutable.ImmutableDenseMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.matrices.immutable.ImmutableDenseMatrix</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.matrices.immutable.ImmutableDenseMatrix">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableDenseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/matrices/immutable.py#L80-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableDenseMatrix" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableDenseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/matrices/immutable.py#L80-L131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableDenseMatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an immutable version of a matrix.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">eye</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.matrices</span> <span class="kn">import</span> <span class="n">ImmutableMatrix</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">eye</span><span class="p">,</span> <span class="n">ImmutableMatrix</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ImmutableMatrix</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">Matrix([</span>
 <span class="go">[1, 0, 0],</span>
@@ -1857,7 +1886,7 @@ the constructor</p>
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>

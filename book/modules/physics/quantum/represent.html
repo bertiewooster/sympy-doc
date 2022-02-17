@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Represent &#8212; SymPy 1.10.dev documentation</title>
+    <title>Represent &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Spin" href="spin.html" />
     <link rel="prev" title="Qapply" href="qapply.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -74,7 +74,7 @@
       <img src="../../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -155,6 +155,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -200,6 +205,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -222,6 +232,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -274,6 +289,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -727,6 +747,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../../tensor/array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../tensor/array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1363,6 +1388,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../../utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="../../utilities/iterables.html">
          Iterables
         </a>
@@ -1752,7 +1782,7 @@
 </ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.represent.enumerate_states">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">enumerate_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/represent.py#L510-L565"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.enumerate_states" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">enumerate_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/represent.py#L519-L574"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.enumerate_states" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns instances of the given state with dummy indices appended</p>
 <p>Operates in two different modes:</p>
 <ol class="arabic simple">
@@ -1786,7 +1816,7 @@ is the number of kets you wish to receive.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.represent.get_basis">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">get_basis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_none</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/represent.py#L417-L495"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.get_basis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">get_basis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_none</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/represent.py#L426-L504"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.get_basis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a basis state instance corresponding to the basis specified in
 options=s. If no basis is specified, the function tries to form a default
 basis state of the given expression.</p>
@@ -1833,7 +1863,7 @@ only pass QExpr’s.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.represent.integrate_result">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">integrate_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orig_expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/represent.py#L342-L414"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.integrate_result" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">integrate_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orig_expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/represent.py#L351-L423"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.integrate_result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the result of integrating over any unities <code class="docutils literal notranslate"><span class="pre">(|x&gt;&lt;x|)</span></code> in
 the given expression. Intended for integrating over the result of
 representations in continuous bases.</p>
@@ -1875,7 +1905,7 @@ given merely to show the use cases.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.represent.rep_expectation">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">rep_expectation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/represent.py#L299-L339"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.rep_expectation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">rep_expectation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/represent.py#L308-L348"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.rep_expectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an <code class="docutils literal notranslate"><span class="pre">&lt;x'|A|x&gt;</span></code> type representation for the given operator.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1900,7 +1930,7 @@ given merely to show the use cases.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.represent.rep_innerproduct">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">rep_innerproduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/represent.py#L243-L296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.rep_innerproduct" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">rep_innerproduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/represent.py#L252-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.rep_innerproduct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an innerproduct like representation (e.g. <code class="docutils literal notranslate"><span class="pre">&lt;x'|x&gt;</span></code>) for the
 given state.</p>
 <p>Attempts to calculate inner product with a bra from the specified
@@ -1928,7 +1958,7 @@ basis. Should only be passed an instance of KetBase or BraBase</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.represent.represent">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">represent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/represent.py#L55-L240"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.represent" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.represent.</span></span><span class="sig-name descname"><span class="pre">represent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/represent.py#L55-L249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.represent.represent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent the quantum expression in the given basis.</p>
 <p>In quantum mechanics abstract states and operators can be represented in
 various basis sets. Under this operation the follow transforms happen:</p>
@@ -2046,7 +2076,7 @@ expressions involving DiracDelta functions.</p>
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>

@@ -1,0 +1,2646 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Series Expansions &#8212; SymPy 1.10.dev documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/modules/series/series.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sequences" href="sequences.html" />
+    <link rel="prev" title="Series" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/sympylogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorial/index.html">
+   SymPy Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/preliminaries.html">
+     Preliminaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/gotchas.html">
+     Gotchas
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorial/features.html">
+     SymPy Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/basic_operations.html">
+       Basic Operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/printing.html">
+       Printing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/simplification.html">
+       Simplification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/calculus.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/manipulation.html">
+       Advanced Expression Manipulation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../guides/index.html">
+   SymPy Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../guides/getting_started/index.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/getting_started/install.html">
+       Installation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../guides/contributing/index.html">
+     Contributing to SymPy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/dev-setup.html">
+       Development Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/build-docs.html">
+       Build the Documentation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/debug.html">
+       Debugging
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/docstring.html">
+       SymPy Docstrings Style Guide
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/documentation-style-guide.html">
+       General Guidelines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/make-a-contribution.html">
+       Making a Contribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/assumptions.html">
+     Assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/booleans.html">
+     Symbolic and fuzzy booleans
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../explanation/index.html">
+   Explanation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/gotchas.html">
+     Gotchas and Pitfalls
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../explanation/special_topics/index.html">
+     SymPy Special Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/finite_diff_derivatives.html">
+       Finite Difference Approximations to Derivatives
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/classification.html">
+       Classification of SymPy objects
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../reference/index.html">
+   Reference Documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../reference/public/basics/index.html">
+     Basics
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../assumptions/index.html">
+       Assumptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/ask.html">
+         Ask
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/assume.html">
+         Assume
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/refine.html">
+         Refine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/predicates.html">
+         Predicates
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../calculus/index.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../combinatorics/index.html">
+       Combinatorics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/partitions.html">
+         Partitions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/permutations.html">
+         Permutations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/perm_groups.html">
+         Permutation Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/polyhedron.html">
+         Polyhedron
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/prufer.html">
+         Prufer Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/subsets.html">
+         Subsets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/graycode.html">
+         Gray Code
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/named_groups.html">
+         Named Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/util.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/group_constructs.html">
+         Group constructors
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/testutil.html">
+         Test Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/tensor_can.html">
+         Tensor Canonicalization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/fp_groups.html">
+         Finitely Presented Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../combinatorics/pc_groups.html">
+         Polycyclic Groups
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../functions/index.html">
+       Functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/elementary.html">
+         Elementary
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/combinatorial.html">
+         Combinatorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/special.html">
+         Special
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../integrals/index.html">
+       Integrals
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../integrals/g-functions.html">
+         Computing Integrals using Meijer G-Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../integrals/integrals.html">
+         Integrals
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="index.html">
+       Series
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Series Expansions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="sequences.html">
+         Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="fourier.html">
+         Fourier Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="formal.html">
+         Formal Power Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="limitseq.html">
+         Limits of Sequences
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../simplify/index.html">
+       Simplify
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/simplify.html">
+         Simplify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/hyperexpand.html">
+         Hypergeometric Expansion
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/fu.html">
+         Hongguang Fu’s Trigonometric Simplification
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../solvers/index.html">
+       Solvers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/diophantine.html">
+         Diophantine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/inequalities.html">
+         Inequality Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/ode.html">
+         ODE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/pde.html">
+         PDE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/solvers.html">
+         Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/solveset.html">
+         Solveset
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../abc.html">
+       abc
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algebras.html">
+       Algebras
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concrete.html">
+       Concrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../core.html">
+       Core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../discrete.html">
+       Discrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../evalf.html">
+       Numerical Evaluation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../numeric-computation.html">
+       Numeric Computation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../rewriting.html">
+       Term Rewriting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/codegeneration/index.html">
+     Code Generation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../codegen.html">
+       Introduction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/logic/index.html">
+     Logic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../logic.html">
+       Logic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sets.html">
+       Sets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../matrices/index.html">
+       Matrices
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/matrices.html">
+         Matrices (linear algebra)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/common.html">
+         Common Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/dense.html">
+         Dense Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/sparse.html">
+         Sparse Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/sparsetools.html">
+         Sparse Tools
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/immutablematrices.html">
+         Immutable Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/expressions.html">
+         Matrix Expressions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/normalforms.html">
+         Matrix Normal Forms
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../tensor/index.html">
+       Tensor
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/array.html">
+         N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/indexed.html">
+         Indexed Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/index_methods.html">
+         Methods
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/tensor.html">
+         Tensor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/toperators.html">
+         Tensor Operators
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../vector/index.html">
+       Vector
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/intro.html">
+         Introduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/basics.html">
+         Basic Implementation details
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/coordsys.html">
+         More about Coordinate Systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/examples.html">
+         General examples of usage
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/vector_integration.html">
+         Applications of Vector Integrals
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/classes.html">
+         Essential Classes in sympy.vector (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/orienterclasses.html">
+         Orienter classes (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/vectorfunctions.html">
+         Essential Functions in sympy.vector (docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/numbertheory/index.html">
+     Number Theory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ntheory.html">
+       Ntheory Class Reference
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/physics/index.html">
+     Physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/hydrogen.html">
+       Hydrogen Wavefunctions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/paulialgebra.html">
+       Pauli Algebra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/qho_1d.html">
+       Quantum Harmonic Oscillator in 1-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/sho.html">
+       Quantum Harmonic Oscillator in 3-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/secondquant.html">
+       Second Quantization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/wigner.html">
+       Wigner Symbols
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/units/index.html">
+       Unit systems
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/philosophy.html">
+         Philosophy behind unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/dimensions.html">
+         Dimensions and dimension systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/prefixes.html">
+         Unit prefixes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/unitsystem.html">
+         Units and unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/quantities.html">
+         Physical quantities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/hep/index.html">
+       High energy physics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="simple">
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/vector/index.html">
+       The Physics Vector Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/vectors.html">
+         Vector &amp; ReferenceFrame
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/kinematics.html">
+         Vector: Kinematics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/classes.html">
+         Essential Classes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/kinematics.html">
+         Kinematics (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/functions.html">
+         Essential Functions (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/fieldfunctions.html">
+         Docstrings for basic field functions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/mechanics/index.html">
+       Classical Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/masses.html">
+         Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/kane.html">
+         Kane’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/lagrange.html">
+         Lagrange’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/symsystem.html">
+         Symbolic Systems in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/linearize.html">
+         Linearization in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples.html">
+         Examples for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/reference.html">
+         References for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/autolev_parser.html">
+         Autolev Parser
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/sympy_mechanics_for_autolev_users.html">
+         SymPy Mechanics for Autolev Users
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/part_bod.html">
+         Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/kane_lagrange.html">
+         Kane’s Method &amp; Lagrange’s Method (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/system.html">
+         SymbolicSystem (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/linearize.html">
+         Linearization (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/expr_manip.html">
+         Expression Manipulation (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/body.html">
+         Body (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/joint.html">
+         Joint (Docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/quantum/index.html">
+       Quantum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/anticommutator.html">
+         Anticommutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/cg.html">
+         Clebsch-Gordan Coefficients
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/commutator.html">
+         Commutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/constants.html">
+         Constants
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/dagger.html">
+         Dagger
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/innerproduct.html">
+         Inner Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/tensorproduct.html">
+         Tensor Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/cartesian.html">
+         Cartesian Operators and States
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/hilbert.html">
+         Hilbert Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/operator.html">
+         Operator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/operatorset.html">
+         Operator/State Helper Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qapply.html">
+         Qapply
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/represent.html">
+         Represent
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/spin.html">
+         Spin
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/state.html">
+         State
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/circuitplot.html">
+         Circuit Plot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/gate.html">
+         Gates
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/grover.html">
+         Grover’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qft.html">
+         QFT
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qubit.html">
+         Qubit
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/shor.html">
+         Shor’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/piab.html">
+         Particle in a Box
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/optics/index.html">
+       Optics Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/gaussopt.html">
+         Gaussian Optics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/medium.html">
+         Medium
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/polarization.html">
+         Polarization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/utils.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/waves.html">
+         Waves
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/control/index.html">
+       Control Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/control.html">
+         Control
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/lti.html">
+         Control API
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/control_plots.html">
+         Control System Plots
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/continuum_mechanics/index.html">
+       Continuum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/continuum_mechanics/beam.html">
+         Beam (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/continuum_mechanics/beam_problems.html">
+         Solving Beam Bending Problems using Singularity Functions
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/utilities/index.html">
+     Utilities
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../testing/index.html">
+       Testing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/pytest.html">
+         pytest
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/randtest.html">
+         Randomised Testing
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/runtests.html">
+         Run Tests
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../utilities/index.html">
+       Utilities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/autowrap.html">
+         Autowrap Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/codegen.html">
+         Codegen
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/decorator.html">
+         Decorator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/enumerative.html">
+         Enumerative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/iterables.html">
+         Iterables
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/lambdify.html">
+         Lambdify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/memoization.html">
+         Memoization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/misc.html">
+         Miscellaneous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/pkgdata.html">
+         PKGDATA
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/source.html">
+         Source Code Inspection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/timeutils.html">
+         Timing Utilities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../interactive.html">
+       Interactive
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../parsing.html">
+       Parsing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../printing.html">
+       Printing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/topics/index.html">
+     Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../geometry/index.html">
+       Geometry
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/entities.html">
+         Entities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/utils.html">
+         Utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/points.html">
+         Points
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/lines.html">
+         Lines
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/curves.html">
+         Curves
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/ellipses.html">
+         Ellipses
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/polygons.html">
+         Polygons
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/plane.html">
+         Plane
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../holonomic/index.html">
+       Holonomic
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/about.html">
+         About Holonomic Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/represent.html">
+         Representation of holonomic functions in SymPy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/operations.html">
+         Operations on holonomic functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/convert.html">
+         Converting other representations to holonomic
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/uses.html">
+         Uses and Current limitations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/internal.html">
+         Internal API
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../liealgebras/index.html">
+       Lie Algebra
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../polys/index.html">
+       Polynomial Manipulation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/basics.html">
+         Basic functionality of the module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/wester.html">
+         Examples from Wester’s Article
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/reference.html">
+         Polynomials Manipulation Module Reference
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/agca.html">
+         AGCA - Algebraic Geometry and Commutative Algebra Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainsintro.html">
+         Introducing the Domains of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainsref.html">
+         Reference docs for the Poly Domains
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/internals.html">
+         Internals of the Polynomial Manipulation Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/ringseries.html">
+         Series Manipulation using Polynomials
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/literature.html">
+         Literature
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/solvers.html">
+         Poly solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainmatrix.html">
+         Introducing the domainmatrix of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/numberfields.html">
+         Number Fields
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../categories.html">
+       Category Theory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../crypto.html">
+       Cryptography
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../diffgeom.html">
+       Differential Geometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../plotting.html">
+       Plotting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../stats.html">
+       Stats
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../miscellaneous/index.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+  <label for="toctree-checkbox-40">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aboutus.html">
+     About
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../citing.html">
+     Citing SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../wiki.html">
+     Wiki
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../outreach.html">
+     SymPy Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/series/series.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limits">
+   Limits
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-gruntz-algorithm">
+     The Gruntz Algorithm
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notes">
+       Notes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reference">
+       Reference
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-intuitive-series-expansion">
+   More Intuitive Series Expansion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order-terms">
+   Order Terms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-acceleration">
+   Series Acceleration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#residues">
+   Residues
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Series Expansions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limits">
+   Limits
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-gruntz-algorithm">
+     The Gruntz Algorithm
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notes">
+       Notes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reference">
+       Reference
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-intuitive-series-expansion">
+   More Intuitive Series Expansion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#order-terms">
+   Order Terms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series-acceleration">
+   Series Acceleration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#residues">
+   Residues
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="series-expansions">
+<span id="id1"></span><h1>Series Expansions<a class="headerlink" href="#series-expansions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Permalink to this headline">¶</a></h2>
+<p>The main purpose of this module is the computation of limits.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.limits.limit">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.limits.</span></span><span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'+'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/limits.py#L16-L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.limits.limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the limit of <code class="docutils literal notranslate"><span class="pre">e(z)</span></code> at the point <code class="docutils literal notranslate"><span class="pre">z0</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>e</strong> : expression, the limit of which is to be taken</p>
+<p><strong>z</strong> : symbol representing the variable in the limit.</p>
+<blockquote>
+<div><p>Other symbols are treated as constants. Multivariate limits
+are not supported.</p>
+</div></blockquote>
+<p><strong>z0</strong> : the value toward which <code class="docutils literal notranslate"><span class="pre">z</span></code> tends. Can be any expression,</p>
+<blockquote>
+<div><p>including <code class="docutils literal notranslate"><span class="pre">oo</span></code> and <code class="docutils literal notranslate"><span class="pre">-oo</span></code>.</p>
+</div></blockquote>
+<p><strong>dir</strong> : string, optional (default: “+”)</p>
+<blockquote>
+<div><p>The limit is bi-directional if <code class="docutils literal notranslate"><span class="pre">dir=&quot;+-&quot;</span></code>, from the right
+(z-&gt;z0+) if <code class="docutils literal notranslate"><span class="pre">dir=&quot;+&quot;</span></code>, and from the left (z-&gt;z0-) if
+<code class="docutils literal notranslate"><span class="pre">dir=&quot;-&quot;</span></code>. For infinite <code class="docutils literal notranslate"><span class="pre">z0</span></code> (<code class="docutils literal notranslate"><span class="pre">oo</span></code> or <code class="docutils literal notranslate"><span class="pre">-oo</span></code>), the <code class="docutils literal notranslate"><span class="pre">dir</span></code>
+argument is determined from the direction of the infinity
+(i.e., <code class="docutils literal notranslate"><span class="pre">dir=&quot;-&quot;</span></code> for <code class="docutils literal notranslate"><span class="pre">oo</span></code>).</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">limit</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># default dir=&#39;+&#39;</span>
+<span class="go">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="go">-oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;+-&#39;</span><span class="p">)</span>
+<span class="go">zoo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">oo</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>First we try some heuristics for easy and frequent cases like “x”, “1/x”,
+“x**2” and similar, so that it’s fast. For all other cases, we use the
+Gruntz algorithm (see the gruntz() function).</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="limitseq.html#sympy.series.limitseq.limit_seq" title="sympy.series.limitseq.limit_seq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">limit_seq</span></code></a></dt><dd><p>returns the limit of a sequence.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.series.limits.Limit">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.series.limits.</span></span><span class="sig-name descname"><span class="pre">Limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'+'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/limits.py#L131-L366"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.limits.Limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an unevaluated limit.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Limit</span><span class="p">,</span> <span class="n">sin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">Limit(sin(x)/x, x, 0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Limit</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="go">Limit(1/x, x, 0, dir=&#39;-&#39;)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.series.limits.Limit.doit">
+<span class="sig-name descname"><span class="pre">doit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/limits.py#L200-L366"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.limits.Limit.doit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the limit.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>deep</strong> : bool, optional (default: True)</p>
+<blockquote>
+<div><p>Invoke the <code class="docutils literal notranslate"><span class="pre">doit</span></code> method of the expressions involved before
+taking the limit.</p>
+</div></blockquote>
+<p><strong>hints</strong> : optional keyword arguments</p>
+<blockquote>
+<div><p>To be passed to <code class="docutils literal notranslate"><span class="pre">doit</span></code> methods; only used if deep is True.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p>As is explained above, the workhorse for limit computations is the
+function gruntz() which implements Gruntz’ algorithm for computing limits.</p>
+<div class="section" id="the-gruntz-algorithm">
+<h3>The Gruntz Algorithm<a class="headerlink" href="#the-gruntz-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>This section explains the basics of the algorithm used for computing limits.
+Most of the time the limit() function should just work. However it is still
+useful to keep in mind how it is implemented in case something does not work
+as expected.</p>
+<p>First we define an ordering on functions. Suppose <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> are two
+real-valued functions such that <span class="math notranslate nohighlight">\(\lim_{x \to \infty} f(x) = \infty\)</span> and
+similarly <span class="math notranslate nohighlight">\(\lim_{x \to \infty} g(x) = \infty\)</span>. We shall say that <span class="math notranslate nohighlight">\(f(x)\)</span>
+<em>dominates</em>
+<span class="math notranslate nohighlight">\(g(x)\)</span>, written <span class="math notranslate nohighlight">\(f(x) \succ g(x)\)</span>, if for all <span class="math notranslate nohighlight">\(a, b \in \mathbb{R}_{&gt;0}\)</span> we have
+<span class="math notranslate nohighlight">\(\lim_{x \to \infty} \frac{f(x)^a}{g(x)^b} = \infty\)</span>.
+We also say that <span class="math notranslate nohighlight">\(f(x)\)</span> and
+<span class="math notranslate nohighlight">\(g(x)\)</span> are <em>of the same comparability class</em> if neither <span class="math notranslate nohighlight">\(f(x) \succ g(x)\)</span> nor
+<span class="math notranslate nohighlight">\(g(x) \succ f(x)\)</span> and shall denote it as <span class="math notranslate nohighlight">\(f(x) \asymp g(x)\)</span>.</p>
+<p>Note that whenever <span class="math notranslate nohighlight">\(a, b \in \mathbb{R}_{&gt;0}\)</span> then
+<span class="math notranslate nohighlight">\(a f(x)^b \asymp f(x)\)</span>, and we shall use this to extend the definition of
+<span class="math notranslate nohighlight">\(\succ\)</span> to all functions which tend to <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(\pm \infty\)</span> as <span class="math notranslate nohighlight">\(x \to \infty\)</span>.
+Thus we declare that <span class="math notranslate nohighlight">\(f(x) \asymp 1/f(x)\)</span> and <span class="math notranslate nohighlight">\(f(x) \asymp -f(x)\)</span>.</p>
+<p>It is easy to show the following examples:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(e^x \succ x^m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{x^2} \succ e^{mx}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{e^x} \succ e^{x^m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^m \asymp x^n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{x + \frac{1}{x}} \asymp e^{x + \log{x}} \asymp e^x\)</span>.</p></li>
+</ul>
+<p>From the above definition, it is possible to prove the following property:</p>
+<blockquote>
+<div><p>Suppose <span class="math notranslate nohighlight">\(\omega\)</span>, <span class="math notranslate nohighlight">\(g_1, g_2, \ldots\)</span> are functions of <span class="math notranslate nohighlight">\(x\)</span>,
+<span class="math notranslate nohighlight">\(\lim_{x \to \infty} \omega = 0\)</span> and <span class="math notranslate nohighlight">\(\omega \succ g_i\)</span> for
+all <span class="math notranslate nohighlight">\(i\)</span>. Let <span class="math notranslate nohighlight">\(c_1, c_2, \ldots \in \mathbb{R}\)</span> with <span class="math notranslate nohighlight">\(c_1 &lt; c_2 &lt; \cdots\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(\lim_{x \to \infty} \sum_i g_i \omega^{c_i} = \lim_{x \to \infty} g_1 \omega^{c_1}\)</span>.</p>
+</div></blockquote>
+<p>For <span class="math notranslate nohighlight">\(g_1 = g\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> as above we also have the following easy result:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lim_{x \to \infty} g \omega^c = 0\)</span> for <span class="math notranslate nohighlight">\(c &gt; 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lim_{x \to \infty} g \omega^c = \pm \infty\)</span> for <span class="math notranslate nohighlight">\(c &lt; 0\)</span>,
+where the sign is determined by the (eventual) sign of <span class="math notranslate nohighlight">\(g\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lim_{x \to \infty} g \omega^0 = \lim_{x \to \infty} g\)</span>.</p></li>
+</ul>
+</div></blockquote>
+<p>Using these results yields the following strategy for computing
+<span class="math notranslate nohighlight">\(\lim_{x \to \infty} f(x)\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Find the set of <em>most rapidly varying subexpressions</em> (MRV set) of <span class="math notranslate nohighlight">\(f(x)\)</span>.
+That is, from the set of all subexpressions of <span class="math notranslate nohighlight">\(f(x)\)</span>, find the elements that
+are maximal under the relation <span class="math notranslate nohighlight">\(\succ\)</span>.</p></li>
+<li><p>Choose a function <span class="math notranslate nohighlight">\(\omega\)</span> that is in the same comparability class as
+the elements in the MRV set, such that <span class="math notranslate nohighlight">\(\lim_{x \to \infty} \omega = 0\)</span>.</p></li>
+<li><p>Expand <span class="math notranslate nohighlight">\(f(x)\)</span> as a series in <span class="math notranslate nohighlight">\(\omega\)</span> in such a way that the antecedents of
+the above theorem are satisfied.</p></li>
+<li><p>Apply the theorem and conclude the computation of
+<span class="math notranslate nohighlight">\(\lim_{x \to \infty} f(x)\)</span>, possibly by recursively working on <span class="math notranslate nohighlight">\(g_1(x)\)</span>.</p></li>
+</ol>
+<div class="section" id="notes">
+<h4>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
+<p>This exposition glossed over several details. Many are described in the file
+gruntz.py, and all can be found in Gruntz’ very readable thesis. The most
+important points that have not been explained are:</p>
+<ol class="arabic simple">
+<li><p>Given f(x) and g(x), how do we determine if <span class="math notranslate nohighlight">\(f(x) \succ g(x)\)</span>,
+<span class="math notranslate nohighlight">\(g(x) \succ f(x)\)</span> or <span class="math notranslate nohighlight">\(g(x) \asymp f(x)\)</span>?</p></li>
+<li><p>How do we find the MRV set of an expression?</p></li>
+<li><p>How do we compute series expansions?</p></li>
+<li><p>Why does the algorithm terminate?</p></li>
+</ol>
+<p>If you are interested, be sure to take a look at
+<a class="reference external" href="http://www.cybertester.com/data/gruntz.pdf">Gruntz Thesis</a>.</p>
+</div>
+<div class="section" id="reference">
+<h4>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.gruntz">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">gruntz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'+'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L674-L717"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.gruntz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the limit of e(z) at the point z0 using the Gruntz algorithm.</p>
+<p class="rubric">Explanation</p>
+<p><code class="docutils literal notranslate"><span class="pre">z0</span></code> can be any expression, including oo and -oo.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">dir=&quot;+&quot;</span></code> (default) it calculates the limit from the right
+(z-&gt;z0+) and for <code class="docutils literal notranslate"><span class="pre">dir=&quot;-&quot;</span></code> the limit from the left (z-&gt;z0-). For infinite z0
+(oo or -oo), the dir argument doesn’t matter.</p>
+<p>This algorithm is fully described in the module docstring in the gruntz.py
+file. It relies heavily on the series expansion. Most frequently, gruntz()
+is only used if the faster limit() function (which uses heuristics) fails.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.compare">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L138-L153"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns “&lt;” if a&lt;b, “=” for a == b, “&gt;” for a&gt;b</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.rewrite">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">rewrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Omega</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wsym</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L601-L671"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.rewrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>e(x) … the function
+Omega … the mrv set
+wsym … the symbol which is going to be used for w</p>
+<p>Returns the rewritten e in terms of w and log(w). See test_rewrite1()
+for examples and correct results.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.build_expression_tree">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">build_expression_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Omega</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rewrites</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L561-L598"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.build_expression_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for rewrite.</p>
+<p>We need to sort Omega (mrv set) so that we replace an expression before
+we replace any expression in terms of which it has to be rewritten:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span> <span class="o">---&gt;</span> <span class="n">e2</span> <span class="o">---&gt;</span> <span class="n">e3</span>
+         \
+          <span class="o">-&gt;</span> <span class="n">e4</span>
+</pre></div>
+</div>
+<p>Here we can do e1, e2, e3, e4 or e1, e2, e4, e3.
+To do this we assemble the nodes into a tree, and sort them by height.</p>
+<p>This function builds the tree, rewrites then sorts the nodes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.mrv_leadterm">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">mrv_leadterm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L517-L558"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.mrv_leadterm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns (c0, e0) for e.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.calculate_series">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">calculate_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L485-L514"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.calculate_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates at least one term of the series of <code class="docutils literal notranslate"><span class="pre">e</span></code> in <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>This is a place that fails most often, so it is in its own function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.limitinf">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">limitinf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leadsimp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L424-L469"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.limitinf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit e(x) for x-&gt; oo.</p>
+<p class="rubric">Explanation</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">leadsimp</span></code> is True, an attempt is made to simplify the leading
+term of the series expansion of <code class="docutils literal notranslate"><span class="pre">e</span></code>. That may succeed even if
+<code class="docutils literal notranslate"><span class="pre">e</span></code> cannot be simplified.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.sign">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L365-L421"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a sign of an expression e(x) for x-&gt;oo.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">&gt;</span>  <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="n">sufficiently</span> <span class="n">large</span> <span class="o">...</span>  <span class="mi">1</span>
+<span class="n">e</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="n">sufficiently</span> <span class="n">large</span> <span class="o">...</span>  <span class="mi">0</span>
+<span class="n">e</span> <span class="o">&lt;</span>  <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="n">sufficiently</span> <span class="n">large</span> <span class="o">...</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>The result of this function is currently undefined if e changes sign
+arbitrarily often for arbitrarily large x (e.g. sin(x)).</p>
+<p>Note that this returns zero only if e is <em>constantly</em> zero
+for x sufficiently large. [If e is constant, of course, this is just
+the same thing as the sign of e.]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.mrv">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">mrv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L248-L321"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.mrv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a SubsSet of most rapidly varying (mrv) subexpressions of ‘e’,
+and e rewritten in terms of these</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.mrv_max1">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">mrv_max1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L353-L362"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.mrv_max1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the maximum of two sets of expressions f and g, which
+are in the same comparability class, i.e. mrv_max1() compares (two elements of)
+f and g and returns the set, which is in the higher comparability class
+of the union of both, if they have the same order of variation.
+Also returns exps, with the appropriate substitutions made.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.gruntz.mrv_max3">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">mrv_max3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expsf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expsg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expsboth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L324-L350"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.mrv_max3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the maximum of two sets of expressions f and g, which
+are in the same comparability class, i.e. max() compares (two elements of)
+f and g and returns either (f, expsf) [if f is larger], (g, expsg)
+[if g is larger] or (union, expsboth) [if f, g are of the same class].</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.series.gruntz.SubsSet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.series.gruntz.</span></span><span class="sig-name descname"><span class="pre">SubsSet</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L156-L245"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.SubsSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores (expr, dummy) pairs, and how to rewrite expr-s.</p>
+<p class="rubric">Explanation</p>
+<p>The gruntz algorithm needs to rewrite certain expressions in term of a new
+variable w. We cannot use subs, because it is just too smart for us. For
+example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Omega</span><span class="o">=</span><span class="p">[</span><span class="n">exp</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">_p</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">_p</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">_p</span><span class="p">)),</span> <span class="n">exp</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">_p</span><span class="p">))]</span>
+<span class="o">&gt;</span> <span class="n">O2</span><span class="o">=</span><span class="p">[</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="n">_p</span><span class="p">)</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">_p</span><span class="p">))</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">_p</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">_p</span><span class="p">))</span><span class="o">/</span><span class="n">_w</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">_w</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">_p</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">_p</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">_p</span><span class="p">))</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">_p</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">e</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Omega</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">O2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Omega</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">O2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">w</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>is really not what we want!</p>
+<p>So we do it the hard way and keep track of all the things we potentially
+want to substitute by dummy variables. Consider the expression:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The mrv set is {exp(x), exp(-x), exp(x - exp(-x))}.
+We introduce corresponding dummy variables d1, d2, d3 and rewrite:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span> <span class="o">+</span> <span class="n">d1</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This class first of all keeps track of the mapping expr-&gt;variable, i.e.
+will at this stage be a dictionary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="n">d1</span><span class="p">,</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">):</span> <span class="n">d2</span><span class="p">,</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)):</span> <span class="n">d3</span><span class="p">}</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>[It turns out to be more convenient this way round.]
+But sometimes expressions in the mrv set have other expressions from the
+mrv set as subexpressions, and we need to keep track of that as well. In
+this case, d3 is really exp(x - d2), so rewrites at this stage is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">d3</span><span class="p">:</span> <span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">d2</span><span class="p">)}</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The function rewrite uses all this information to correctly rewrite our
+expression in terms of w. In this case w can be chosen to be exp(-x),
+i.e. d2. The correct rewriting then is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">w</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.series.gruntz.SubsSet.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L239-L245"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.SubsSet.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a shallow copy of SubsSet</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.series.gruntz.SubsSet.do_subs">
+<span class="sig-name descname"><span class="pre">do_subs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L214-L218"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.SubsSet.do_subs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Substitute the variables with expressions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.series.gruntz.SubsSet.meets">
+<span class="sig-name descname"><span class="pre">meets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L220-L222"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.SubsSet.meets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell whether or not self and s2 have non-empty intersection</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.series.gruntz.SubsSet.union">
+<span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/gruntz.py#L224-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.gruntz.SubsSet.union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the union of self and s2, adjusting exps</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="more-intuitive-series-expansion">
+<h2>More Intuitive Series Expansion<a class="headerlink" href="#more-intuitive-series-expansion" title="Permalink to this headline">¶</a></h2>
+<p>This is achieved
+by creating a wrapper around Basic.series(). This allows for the use of
+series(x*cos(x),x), which is possibly more intuitive than (x*cos(x)).series(x).</p>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">series</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">x</span><span class="p">)</span>
+<span class="go">1 - x**2/2 + x**4/24 + O(x**6)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Reference<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.series.series">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.series.</span></span><span class="sig-name descname"><span class="pre">series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'+'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/series.py#L4-L63"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.series.series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Series expansion of expr around point <span class="math notranslate nohighlight">\(x = x0\)</span>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expr</strong> : Expression</p>
+<blockquote>
+<div><p>The expression whose series is to be expanded.</p>
+</div></blockquote>
+<p><strong>x</strong> : Symbol</p>
+<blockquote>
+<div><p>It is the variable of the expression to be calculated.</p>
+</div></blockquote>
+<p><strong>x0</strong> : Value</p>
+<blockquote>
+<div><p>The value around which <code class="docutils literal notranslate"><span class="pre">x</span></code> is calculated. Can be any value
+from <code class="docutils literal notranslate"><span class="pre">-oo</span></code> to <code class="docutils literal notranslate"><span class="pre">oo</span></code>.</p>
+</div></blockquote>
+<p><strong>n</strong> : Value</p>
+<blockquote>
+<div><p>The number of terms upto which the series is to be expanded.</p>
+</div></blockquote>
+<p><strong>dir</strong> : String, optional</p>
+<blockquote>
+<div><p>The series-expansion can be bi-directional. If <code class="docutils literal notranslate"><span class="pre">dir=&quot;+&quot;</span></code>,
+then (x-&gt;x0+). If <code class="docutils literal notranslate"><span class="pre">dir=&quot;-&quot;,</span> <span class="pre">then</span> <span class="pre">(x-&gt;x0-).</span> <span class="pre">For</span> <span class="pre">infinite</span>
+<span class="pre">``x0</span></code> (<code class="docutils literal notranslate"><span class="pre">oo</span></code> or <code class="docutils literal notranslate"><span class="pre">-oo</span></code>), the <code class="docutils literal notranslate"><span class="pre">dir</span></code> argument is determined
+from the direction of the infinity (i.e., <code class="docutils literal notranslate"><span class="pre">dir=&quot;-&quot;</span></code> for
+<code class="docutils literal notranslate"><span class="pre">oo</span></code>).</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Expr</p>
+<blockquote>
+<div><p>Series expansion of the expression about x0</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">series</span><span class="p">,</span> <span class="n">tan</span><span class="p">,</span> <span class="n">oo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">)</span>
+<span class="go">tan(2) + (1 + tan(2)**2)*(x - 2) + (x - 2)**2*(tan(2)**3 + tan(2)) +</span>
+<span class="go">(x - 2)**3*(1/3 + 4*tan(2)**2/3 + tan(2)**4) + (x - 2)**4*(tan(2)**5 +</span>
+<span class="go">5*tan(2)**3/3 + 2*tan(2)/3) + (x - 2)**5*(2/15 + 17*tan(2)**2/15 +</span>
+<span class="go">2*tan(2)**4 + tan(2)**6) + O((x - 2)**6, (x, 2))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<span class="go">tan(2) + (2 - x)*(-tan(2)**2 - 1) + (2 - x)**2*(tan(2)**3 + tan(2))</span>
+<span class="go">+ O((x - 2)**3, (x, 2))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">oo</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;Infinity&#39; object cannot be interpreted as an integer</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../core.html#sympy.core.expr.Expr.series" title="sympy.core.expr.Expr.series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.core.expr.Expr.series</span></code></a></dt><dd><p>See the docstring of Expr.series() for complete details of this wrapper.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="order-terms">
+<h2>Order Terms<a class="headerlink" href="#order-terms" title="Permalink to this headline">¶</a></h2>
+<p>This module also implements automatic keeping track of the order of your
+expansion.</p>
+<div class="section" id="id3">
+<h3>Examples<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Order</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="go">O(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="go">1 + O(x)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Reference<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.series.order.Order">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.series.order.</span></span><span class="sig-name descname"><span class="pre">Order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/order.py#L10-L505"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.order.Order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents the limiting behavior of some function.</p>
+<p class="rubric">Explanation</p>
+<p>The order of a function characterizes the function based on the limiting
+behavior of the function as it goes to some limit. Only taking the limit
+point to be a number is currently supported. This is expressed in
+big O notation <a class="reference internal" href="#r735" id="id5"><span>[R735]</span></a>.</p>
+<p>The formal definition for the order of a function <span class="math notranslate nohighlight">\(g(x)\)</span> about a point <span class="math notranslate nohighlight">\(a\)</span>
+is such that <span class="math notranslate nohighlight">\(g(x) = O(f(x))\)</span> as <span class="math notranslate nohighlight">\(x \rightarrow a\)</span> if and only if for any
+<span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> there exists a <span class="math notranslate nohighlight">\(M &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(|g(x)| \leq M|f(x)|\)</span> for
+<span class="math notranslate nohighlight">\(|x-a| &lt; \delta\)</span>.  This is equivalent to <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a}
+\sup |g(x)/f(x)| &lt; \infty\)</span>.</p>
+<p>Let’s illustrate it on the following example by taking the expansion of
+<span class="math notranslate nohighlight">\(\sin(x)\)</span> about 0:</p>
+<div class="math notranslate nohighlight">
+\[\sin(x) = x - x^3/3! + O(x^5)\]</div>
+<p>where in this case <span class="math notranslate nohighlight">\(O(x^5) = x^5/5! - x^7/7! + \cdots\)</span>. By the definition
+of <span class="math notranslate nohighlight">\(O\)</span>, for any <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> there is an <span class="math notranslate nohighlight">\(M\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[|x^5/5! - x^7/7! + ....| &lt;= M|x^5| \text{ for } |x| &lt; \delta\]</div>
+<p>or by the alternate definition:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \rightarrow 0} | (x^5/5! - x^7/7! + ....) / x^5| &lt; \infty\]</div>
+<p>which surely is true, because</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \rightarrow 0} | (x^5/5! - x^7/7! + ....) / x^5| = 1/5!\]</div>
+<p>As it is usually used, the order of a function can be intuitively thought
+of representing all terms of powers greater than the one specified. For
+example, <span class="math notranslate nohighlight">\(O(x^3)\)</span> corresponds to any terms proportional to <span class="math notranslate nohighlight">\(x^3,
+x^4,\ldots\)</span> and any higher power. For a polynomial, this leaves terms
+proportional to <span class="math notranslate nohighlight">\(x^2\)</span>, <span class="math notranslate nohighlight">\(x\)</span> and constants.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">O</span><span class="p">,</span> <span class="n">oo</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">O(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">O(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">O(x**2, (x, oo))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
+<span class="go">O(1, x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">O(1, x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">oo</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+<span class="go">O(x*y, (x, oo), (y, oo))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">in</span> <span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="ow">in</span> <span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">in</span> <span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="ow">in</span> <span class="n">O</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span>
+<span class="go">O(x**2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">O</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">O(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">O(1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">O</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">O(x - pi/2, (x, pi/2))</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">O(f(x),</span> <span class="pre">x)</span></code> the expression <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> is assumed to have a leading
+term.  <code class="docutils literal notranslate"><span class="pre">O(f(x),</span> <span class="pre">x)</span></code> is automatically transformed to
+<code class="docutils literal notranslate"><span class="pre">O(f(x).as_leading_term(x),x)</span></code>.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">O(expr*f(x),</span> <span class="pre">x)</span></code> is <code class="docutils literal notranslate"><span class="pre">O(f(x),</span> <span class="pre">x)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">O(expr,</span> <span class="pre">x)</span></code> is <code class="docutils literal notranslate"><span class="pre">O(1)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">O(0,</span> <span class="pre">x)</span></code> is 0.</p>
+</div></blockquote>
+<p>Multivariate O is also supported:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">O(f(x,</span> <span class="pre">y),</span> <span class="pre">x,</span> <span class="pre">y)</span></code> is transformed to
+<code class="docutils literal notranslate"><span class="pre">O(f(x,</span> <span class="pre">y).as_leading_term(x,y).as_leading_term(y),</span> <span class="pre">x,</span> <span class="pre">y)</span></code></p>
+</div></blockquote>
+<p>In the multivariate case, it is assumed the limits w.r.t. the various
+symbols commute.</p>
+<p>If no symbols are passed then all symbols in the expression are used
+and the limit point is assumed to be zero.</p>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r735"><span class="brackets">R735</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Big_O_notation">Big O notation</a></p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.series.order.Order.contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/order.py#L364-L443"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.order.Order.contains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if expr belongs to Order(self.expr, *self.variables).
+Return False if self belongs to expr.
+Return None if the inclusion relation cannot be determined
+(e.g. when self and expr have different symbols).</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="series-acceleration">
+<h2>Series Acceleration<a class="headerlink" href="#series-acceleration" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+<div class="section" id="id7">
+<h3>Reference<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.acceleration.richardson">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.acceleration.</span></span><span class="sig-name descname"><span class="pre">richardson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/acceleration.py#L17-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.acceleration.richardson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate an approximation for lim k-&gt;oo A(k) using Richardson
+extrapolation with the terms A(n), A(n+1), …, A(n+N+1).
+Choosing N ~= 2*n often gives good results.</p>
+<p class="rubric">Examples</p>
+<p>A simple example is to calculate exp(1) using the limit definition.
+This limit converges slowly; n = 100 only produces two accurate
+digits:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">n</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="n">n</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">2.7048138294</span>
+</pre></div>
+</div>
+<p>Richardson extrapolation with 11 appropriately chosen terms gives
+a value that is accurate to the indicated precision:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">E</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.series.acceleration</span> <span class="kn">import</span> <span class="n">richardson</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">richardson</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">2.7182818285</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">2.7182818285</span>
+</pre></div>
+</div>
+<p>Another useful application is to speed up convergence of series.
+Computing 100 terms of the zeta(2) series 1/k**2 yields only
+two accurate digits:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Sum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Sum</span><span class="p">(</span><span class="n">k</span><span class="o">**-</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">1.6349839002</span>
+</pre></div>
+</div>
+<p>Richardson extrapolation performs much better:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">richardson</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">1.6449340668</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(((</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>     <span class="c1"># Exact value</span>
+<span class="go">1.6449340668</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.acceleration.shanks">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.acceleration.</span></span><span class="sig-name descname"><span class="pre">shanks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/acceleration.py#L71-L101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.acceleration.shanks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate an approximation for lim k-&gt;oo A(k) using the n-term Shanks
+transformation S(A)(n). With m &gt; 1, calculate the m-fold recursive
+Shanks transformation S(S(…S(A)…))(n).</p>
+<p>The Shanks transformation is useful for summing Taylor series that
+converge slowly near a pole or singularity, e.g. for log(2):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Sum</span><span class="p">,</span> <span class="n">Integer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.series.acceleration</span> <span class="kn">import</span> <span class="n">shanks</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Sum</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">0.6881721793</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">shanks</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">0.6931396564</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">shanks</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">0.6931471806</span>
+</pre></div>
+</div>
+<p>The correct value is 0.6931471805599453094172321215.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="residues">
+<h2>Residues<a class="headerlink" href="#residues" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+<div class="section" id="id8">
+<h3>Reference<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.series.residues.residue">
+<span class="sig-prename descclassname"><span class="pre">sympy.series.residues.</span></span><span class="sig-name descname"><span class="pre">residue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/series/residues.py#L12-L73"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.series.residues.residue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the residue of <code class="docutils literal notranslate"><span class="pre">expr</span></code> at the point x=x0.</p>
+<p>The residue is defined as the coefficient of <code class="docutils literal notranslate"><span class="pre">1/(x-x0)</span></code> in the power series
+expansion about <code class="docutils literal notranslate"><span class="pre">x=x0</span></code>.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">sin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">residue</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">residue</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">residue</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>This function is essential for the Residue Theorem [1].</p>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r736"><span class="brackets"><a class="fn-backref" href="#id9">R736</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Residue_theorem">https://en.wikipedia.org/wiki/Residue_theorem</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Series</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="sequences.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sequences</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+        &copy; Copyright 2022 SymPy Development Team.<br/>
+      Last updated on Jan 17, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,2230 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finitely Presented Groups &#8212; SymPy 1.10.dev documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/modules/combinatorics/fp_groups.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Polycyclic Groups" href="pc_groups.html" />
+    <link rel="prev" title="Tensor Canonicalization" href="tensor_can.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/sympylogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorial/index.html">
+   SymPy Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/preliminaries.html">
+     Preliminaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/gotchas.html">
+     Gotchas
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorial/features.html">
+     SymPy Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/basic_operations.html">
+       Basic Operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/printing.html">
+       Printing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/simplification.html">
+       Simplification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/calculus.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/manipulation.html">
+       Advanced Expression Manipulation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../guides/index.html">
+   SymPy Guides
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../guides/getting_started/index.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/getting_started/install.html">
+       Installation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../guides/contributing/index.html">
+     Contributing to SymPy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/dev-setup.html">
+       Development Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/build-docs.html">
+       Build the Documentation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/debug.html">
+       Debugging
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/docstring.html">
+       SymPy Docstrings Style Guide
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/documentation-style-guide.html">
+       General Guidelines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/make-a-contribution.html">
+       Making a Contribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/assumptions.html">
+     Assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../guides/booleans.html">
+     Symbolic and fuzzy booleans
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../explanation/index.html">
+   Explanation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/gotchas.html">
+     Gotchas and Pitfalls
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../explanation/special_topics/index.html">
+     SymPy Special Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/finite_diff_derivatives.html">
+       Finite Difference Approximations to Derivatives
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/classification.html">
+       Classification of SymPy objects
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../reference/index.html">
+   Reference Documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../../reference/public/basics/index.html">
+     Basics
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../assumptions/index.html">
+       Assumptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/ask.html">
+         Ask
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/assume.html">
+         Assume
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/refine.html">
+         Refine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../assumptions/predicates.html">
+         Predicates
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../calculus/index.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="index.html">
+       Combinatorics
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="partitions.html">
+         Partitions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="permutations.html">
+         Permutations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="perm_groups.html">
+         Permutation Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="polyhedron.html">
+         Polyhedron
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="prufer.html">
+         Prufer Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="subsets.html">
+         Subsets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="graycode.html">
+         Gray Code
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="named_groups.html">
+         Named Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="util.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="group_constructs.html">
+         Group constructors
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="testutil.html">
+         Test Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="tensor_can.html">
+         Tensor Canonicalization
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Finitely Presented Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="pc_groups.html">
+         Polycyclic Groups
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../functions/index.html">
+       Functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/elementary.html">
+         Elementary
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/combinatorial.html">
+         Combinatorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../functions/special.html">
+         Special
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../integrals/index.html">
+       Integrals
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../integrals/g-functions.html">
+         Computing Integrals using Meijer G-Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../integrals/integrals.html">
+         Integrals
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../series/index.html">
+       Series
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/series.html">
+         Series Expansions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/sequences.html">
+         Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/fourier.html">
+         Fourier Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/formal.html">
+         Formal Power Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../series/limitseq.html">
+         Limits of Sequences
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../simplify/index.html">
+       Simplify
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/simplify.html">
+         Simplify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/hyperexpand.html">
+         Hypergeometric Expansion
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../simplify/fu.html">
+         Hongguang Fu’s Trigonometric Simplification
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../solvers/index.html">
+       Solvers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/diophantine.html">
+         Diophantine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/inequalities.html">
+         Inequality Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/ode.html">
+         ODE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/pde.html">
+         PDE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/solvers.html">
+         Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../solvers/solveset.html">
+         Solveset
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../abc.html">
+       abc
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algebras.html">
+       Algebras
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concrete.html">
+       Concrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../core.html">
+       Core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../discrete.html">
+       Discrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../evalf.html">
+       Numerical Evaluation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../numeric-computation.html">
+       Numeric Computation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../rewriting.html">
+       Term Rewriting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/codegeneration/index.html">
+     Code Generation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../codegen.html">
+       Introduction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/logic/index.html">
+     Logic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../logic.html">
+       Logic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sets.html">
+       Sets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../matrices/index.html">
+       Matrices
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/matrices.html">
+         Matrices (linear algebra)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/common.html">
+         Common Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/dense.html">
+         Dense Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/sparse.html">
+         Sparse Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/sparsetools.html">
+         Sparse Tools
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/immutablematrices.html">
+         Immutable Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/expressions.html">
+         Matrix Expressions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../matrices/normalforms.html">
+         Matrix Normal Forms
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../tensor/index.html">
+       Tensor
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/array.html">
+         N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/indexed.html">
+         Indexed Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/index_methods.html">
+         Methods
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/tensor.html">
+         Tensor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/toperators.html">
+         Tensor Operators
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../vector/index.html">
+       Vector
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/intro.html">
+         Introduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/basics.html">
+         Basic Implementation details
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/coordsys.html">
+         More about Coordinate Systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/examples.html">
+         General examples of usage
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/vector_integration.html">
+         Applications of Vector Integrals
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/classes.html">
+         Essential Classes in sympy.vector (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/orienterclasses.html">
+         Orienter classes (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../vector/api/vectorfunctions.html">
+         Essential Functions in sympy.vector (docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/numbertheory/index.html">
+     Number Theory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ntheory.html">
+       Ntheory Class Reference
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/physics/index.html">
+     Physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/hydrogen.html">
+       Hydrogen Wavefunctions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/paulialgebra.html">
+       Pauli Algebra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/qho_1d.html">
+       Quantum Harmonic Oscillator in 1-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/sho.html">
+       Quantum Harmonic Oscillator in 3-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/secondquant.html">
+       Second Quantization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/wigner.html">
+       Wigner Symbols
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/units/index.html">
+       Unit systems
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/philosophy.html">
+         Philosophy behind unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/dimensions.html">
+         Dimensions and dimension systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/prefixes.html">
+         Unit prefixes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/unitsystem.html">
+         Units and unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/units/quantities.html">
+         Physical quantities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/hep/index.html">
+       High energy physics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="simple">
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/vector/index.html">
+       The Physics Vector Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/vectors.html">
+         Vector &amp; ReferenceFrame
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/kinematics.html">
+         Vector: Kinematics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/classes.html">
+         Essential Classes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/kinematics.html">
+         Kinematics (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/functions.html">
+         Essential Functions (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/vector/api/fieldfunctions.html">
+         Docstrings for basic field functions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/mechanics/index.html">
+       Classical Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/masses.html">
+         Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/kane.html">
+         Kane’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/lagrange.html">
+         Lagrange’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/symsystem.html">
+         Symbolic Systems in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/linearize.html">
+         Linearization in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples.html">
+         Examples for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/reference.html">
+         References for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/autolev_parser.html">
+         Autolev Parser
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/sympy_mechanics_for_autolev_users.html">
+         SymPy Mechanics for Autolev Users
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/part_bod.html">
+         Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/kane_lagrange.html">
+         Kane’s Method &amp; Lagrange’s Method (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/system.html">
+         SymbolicSystem (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/linearize.html">
+         Linearization (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/expr_manip.html">
+         Expression Manipulation (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/body.html">
+         Body (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/api/joint.html">
+         Joint (Docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/quantum/index.html">
+       Quantum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/anticommutator.html">
+         Anticommutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/cg.html">
+         Clebsch-Gordan Coefficients
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/commutator.html">
+         Commutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/constants.html">
+         Constants
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/dagger.html">
+         Dagger
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/innerproduct.html">
+         Inner Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/tensorproduct.html">
+         Tensor Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/cartesian.html">
+         Cartesian Operators and States
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/hilbert.html">
+         Hilbert Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/operator.html">
+         Operator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/operatorset.html">
+         Operator/State Helper Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qapply.html">
+         Qapply
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/represent.html">
+         Represent
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/spin.html">
+         Spin
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/state.html">
+         State
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/circuitplot.html">
+         Circuit Plot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/gate.html">
+         Gates
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/grover.html">
+         Grover’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qft.html">
+         QFT
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/qubit.html">
+         Qubit
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/shor.html">
+         Shor’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/quantum/piab.html">
+         Particle in a Box
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/optics/index.html">
+       Optics Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/gaussopt.html">
+         Gaussian Optics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/medium.html">
+         Medium
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/polarization.html">
+         Polarization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/utils.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/optics/waves.html">
+         Waves
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/control/index.html">
+       Control Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/control.html">
+         Control
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/lti.html">
+         Control API
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/control/control_plots.html">
+         Control System Plots
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/continuum_mechanics/index.html">
+       Continuum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/continuum_mechanics/beam.html">
+         Beam (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/continuum_mechanics/beam_problems.html">
+         Solving Beam Bending Problems using Singularity Functions
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/utilities/index.html">
+     Utilities
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../testing/index.html">
+       Testing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/pytest.html">
+         pytest
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/randtest.html">
+         Randomised Testing
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../testing/runtests.html">
+         Run Tests
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../utilities/index.html">
+       Utilities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/autowrap.html">
+         Autowrap Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/codegen.html">
+         Codegen
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/decorator.html">
+         Decorator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/enumerative.html">
+         Enumerative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/iterables.html">
+         Iterables
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/lambdify.html">
+         Lambdify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/memoization.html">
+         Memoization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/misc.html">
+         Miscellaneous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/pkgdata.html">
+         PKGDATA
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/source.html">
+         Source Code Inspection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/timeutils.html">
+         Timing Utilities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../interactive.html">
+       Interactive
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../parsing.html">
+       Parsing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../printing.html">
+       Printing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/topics/index.html">
+     Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../geometry/index.html">
+       Geometry
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/entities.html">
+         Entities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/utils.html">
+         Utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/points.html">
+         Points
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/lines.html">
+         Lines
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/curves.html">
+         Curves
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/ellipses.html">
+         Ellipses
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/polygons.html">
+         Polygons
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geometry/plane.html">
+         Plane
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../holonomic/index.html">
+       Holonomic
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/about.html">
+         About Holonomic Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/represent.html">
+         Representation of holonomic functions in SymPy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/operations.html">
+         Operations on holonomic functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/convert.html">
+         Converting other representations to holonomic
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/uses.html">
+         Uses and Current limitations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../holonomic/internal.html">
+         Internal API
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../liealgebras/index.html">
+       Lie Algebra
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../polys/index.html">
+       Polynomial Manipulation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/basics.html">
+         Basic functionality of the module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/wester.html">
+         Examples from Wester’s Article
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/reference.html">
+         Polynomials Manipulation Module Reference
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/agca.html">
+         AGCA - Algebraic Geometry and Commutative Algebra Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainsintro.html">
+         Introducing the Domains of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainsref.html">
+         Reference docs for the Poly Domains
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/internals.html">
+         Internals of the Polynomial Manipulation Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/ringseries.html">
+         Series Manipulation using Polynomials
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/literature.html">
+         Literature
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/solvers.html">
+         Poly solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/domainmatrix.html">
+         Introducing the domainmatrix of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../polys/numberfields.html">
+         Number Fields
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../categories.html">
+       Category Theory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../crypto.html">
+       Cryptography
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../diffgeom.html">
+       Differential Geometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../plotting.html">
+       Plotting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../stats.html">
+       Stats
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../miscellaneous/index.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+  <label for="toctree-checkbox-40">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aboutus.html">
+     About
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../citing.html">
+     Citing SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../wiki.html">
+     Wiki
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../outreach.html">
+     SymPy Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/combinatorics/fp_groups.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview-of-facilities">
+     Overview of Facilities
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-construction-of-finitely-presented-groups">
+   The Construction of Finitely Presented Groups
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#free-groups-and-words">
+   Free Groups and Words
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construction-of-a-free-group">
+     Construction of a Free Group
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construction-of-words">
+     Construction of words
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coset-enumeration-the-todd-coxeter-algorithm">
+   Coset Enumeration: The Todd-Coxeter Algorithm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cosettable">
+     CosetTable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes-of-cosettable">
+     Attributes of CosetTable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compression-and-standardization">
+     Compression and Standardization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subgroups-of-finite-index">
+   Subgroups of Finite Index
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#low-index-subgroups">
+     Low Index Subgroups
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-a-presentation-for-a-subgroup">
+   Constructing a presentation for a subgroup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reidemeister-schreier-algorithm">
+     Reidemeister Schreier algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Finitely Presented Groups</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview-of-facilities">
+     Overview of Facilities
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-construction-of-finitely-presented-groups">
+   The Construction of Finitely Presented Groups
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#free-groups-and-words">
+   Free Groups and Words
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construction-of-a-free-group">
+     Construction of a Free Group
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construction-of-words">
+     Construction of words
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coset-enumeration-the-todd-coxeter-algorithm">
+   Coset Enumeration: The Todd-Coxeter Algorithm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cosettable">
+     CosetTable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes-of-cosettable">
+     Attributes of CosetTable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compression-and-standardization">
+     Compression and Standardization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subgroups-of-finite-index">
+   Subgroups of Finite Index
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#low-index-subgroups">
+     Low Index Subgroups
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-a-presentation-for-a-subgroup">
+   Constructing a presentation for a subgroup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reidemeister-schreier-algorithm">
+     Reidemeister Schreier algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="finitely-presented-groups">
+<h1>Finitely Presented Groups<a class="headerlink" href="#finitely-presented-groups" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This module presents the functionality designed for computing with finitely-
+presented groups (fp-groups for short). The name of the corresponding SymPy
+object is <code class="docutils literal notranslate"><span class="pre">FpGroup</span></code>. The functions or classes described here are studied
+under <strong>computational group theory</strong>. All code examples assume:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.free_groups</span> <span class="kn">import</span> <span class="n">free_group</span><span class="p">,</span> <span class="n">vfree_group</span><span class="p">,</span> <span class="n">xfree_group</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.fp_groups</span> <span class="kn">import</span> <span class="n">FpGroup</span><span class="p">,</span> <span class="n">CosetTable</span><span class="p">,</span> <span class="n">coset_enumeration_r</span>
+</pre></div>
+</div>
+<div class="section" id="overview-of-facilities">
+<h3>Overview of Facilities<a class="headerlink" href="#overview-of-facilities" title="Permalink to this headline">¶</a></h3>
+<p>The facilities provided for fp-groups fall into a number of natural groupings</p>
+<ul class="simple">
+<li><p>The construction of fp-groups using a free group and a list of words in
+generators of that free group.</p></li>
+<li><p>Index determination using the famous Todd-Coxeter procedure.</p></li>
+<li><p>The construction of all subgroups having index less than some (small)
+specified positive integer, using the <em>Low-Index Subgroups</em> algorithm.</p></li>
+<li><p>Algorithms for computing presentations of a subgroup of finite index
+in a group defined by finite presentation.</p></li>
+</ul>
+<p>For a description of fundamental algorithms of finitely presented groups
+we often make use of <em>Handbook of Computational Group Theory</em>.</p>
+</div>
+</div>
+<div class="section" id="the-construction-of-finitely-presented-groups">
+<h2>The Construction of Finitely Presented Groups<a class="headerlink" href="#the-construction-of-finitely-presented-groups" title="Permalink to this headline">¶</a></h2>
+<p>Finitely presented groups are constructed by factoring a free group by a
+set of relators. The set of relators is taken in as a list of words in
+generators of free group in SymPy, using a list provides ordering to the
+relators. If the list of relators is empty, the associated free group is
+returned.</p>
+<p>Example of construction of a finitely-presented group.
+The symmetric group of degree 4 may be represented as a two generator group
+with presentation <span class="math notranslate nohighlight">\(\left\langle a, b \mid a^2, b^3, (ab)^4 \right\rangle\)</span>. Giving the relations as a
+list of relators, group in SymPy would be specified as:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">free_group</span><span class="p">(</span><span class="s2">&quot;a, b&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">FpGroup</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span>
+<span class="go">&lt;fp group on the generators (a, b)&gt;</span>
+</pre></div>
+</div>
+<p>Currently groups with relators having presentation like
+<span class="math notranslate nohighlight">\(\left\langle r, s, t \mid r^2, s^2, t^2, rst = str = trs \right\rangle\)</span> will have to be specified as:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">free_group</span><span class="p">(</span><span class="s2">&quot;r, s, t&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">FpGroup</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="p">[</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">r</span><span class="o">*</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">r</span><span class="o">**-</span><span class="mi">1</span><span class="o">*</span><span class="n">t</span><span class="o">**-</span><span class="mi">1</span><span class="o">*</span><span class="n">s</span><span class="o">**-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">s</span><span class="o">**-</span><span class="mi">1</span><span class="o">*</span><span class="n">r</span><span class="o">**-</span><span class="mi">1</span><span class="o">*</span><span class="n">t</span><span class="o">**-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Obviously this is not a unique way to make that particular group, but the point
+is that in case of equality with non-identity the user has to manually do that.</p>
+</div>
+<div class="section" id="free-groups-and-words">
+<h2>Free Groups and Words<a class="headerlink" href="#free-groups-and-words" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="construction-of-a-free-group">
+<h3>Construction of a Free Group<a class="headerlink" href="#construction-of-a-free-group" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">free_group(&quot;gen0,</span> <span class="pre">gen1,</span> <span class="pre">...,</span> <span class="pre">gen_(n-1)&quot;)</span></code> constructs a free group <code class="docutils literal notranslate"><span class="pre">F</span></code> on
+<code class="docutils literal notranslate"><span class="pre">n</span></code> generators, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is a positive integer. The <span class="math notranslate nohighlight">\(i\)</span>-th generator of
+<span class="math notranslate nohighlight">\(F\)</span> may be obtained using the method <code class="docutils literal notranslate"><span class="pre">.generators[i]</span></code>, <span class="math notranslate nohighlight">\(i = 0, \ldots n-1\)</span>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">free_group</span><span class="p">(</span><span class="s2">&quot;x, y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates a free group <code class="docutils literal notranslate"><span class="pre">F</span></code> of rank 2 and assigns the variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>
+to the two generators.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="n">vfree_group</span><span class="p">(</span><span class="s2">&quot;x, y&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span>
+<span class="go">&lt;free group on the generators (x, y)&gt;</span>
+</pre></div>
+</div>
+<p>creates a free group <code class="docutils literal notranslate"><span class="pre">F</span></code> of rank 2, with tuple of generators <code class="docutils literal notranslate"><span class="pre">F.generators</span></code>,
+and inserts <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> as generators into the global namespace.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="n">xfree_group</span><span class="p">(</span><span class="s2">&quot;x, y&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span>
+<span class="go">(&lt;free group on the generators (x, y)&gt;, (x, y))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="go">x**2</span>
+</pre></div>
+</div>
+<p>creates a free groups <code class="docutils literal notranslate"><span class="pre">F[0]</span></code> of rank 2, with tuple of generators <code class="docutils literal notranslate"><span class="pre">F[1]</span></code>.</p>
+</div>
+<div class="section" id="construction-of-words">
+<h3>Construction of words<a class="headerlink" href="#construction-of-words" title="Permalink to this headline">¶</a></h3>
+<p>This section is applicable to words of <code class="docutils literal notranslate"><span class="pre">FreeGroup</span></code> as well as <code class="docutils literal notranslate"><span class="pre">FpGroup</span></code>.
+When we say <em>word</em> in SymPy, it actually means a <a class="reference external" href="https://en.wikipedia.org/wiki/Word_(group_theory)#Reduced_words">reduced word</a> , since the
+words are automatically reduced. Given a group <code class="docutils literal notranslate"><span class="pre">G</span></code> defined on <span class="math notranslate nohighlight">\(n\)</span> generators
+<span class="math notranslate nohighlight">\(x_1, x_2, x_3, \ldots, x_n\)</span>, a word is constructed as
+<span class="math notranslate nohighlight">\(s_1^{r_1}s_2^{r_2} \cdots s_k^{r_k}\)</span> where <span class="math notranslate nohighlight">\(s_i \in \{x_1, x_2, \ldots, x_n\}\)</span>
+, <span class="math notranslate nohighlight">\(r_i \in \mathbb{Z}\)</span> for all <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>Each word can be constructed in a variety of ways, since after reduction they
+may be equivalent.</p>
+</div>
+</div>
+<div class="section" id="coset-enumeration-the-todd-coxeter-algorithm">
+<h2>Coset Enumeration: The Todd-Coxeter Algorithm<a class="headerlink" href="#coset-enumeration-the-todd-coxeter-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the use of coset enumeration techniques in SymPy. The
+algorithm used for coset enumeration procedure is Todd-Coxeter algorithm and
+is developed in SymPy using [Ho05] and [CDHW73]. The reader should consult
+[CDHW73] and [Hav91] for a general description of the algorithm.</p>
+<p>We have two strategies of coset enumeration <em>relator-based</em> and
+<em>coset-table based</em> and the two have been implemented as
+<code class="docutils literal notranslate"><span class="pre">coset_enumeration_r</span></code>, <code class="docutils literal notranslate"><span class="pre">coset_enumeration_c</span></code> respectively. The two
+strategies differ in the way they make new definitions for the cosets.</p>
+<p>Though from the user point of view it is suggested to rather use the
+<code class="docutils literal notranslate"><span class="pre">.coset_enumeration</span></code> method of <code class="docutils literal notranslate"><span class="pre">FpGroup</span></code> and specify the <code class="docutils literal notranslate"><span class="pre">strategy</span></code>
+argument.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">strategy</span></code>:</dt><dd><p>(default=”relator_based”) specifies the strategy of coset
+enumeration to be used, possible values are <em>“relator_based”</em> or
+<em>“coset_table_based”</em>.</p>
+</dd>
+</dl>
+<div class="section" id="cosettable">
+<h3>CosetTable<a class="headerlink" href="#cosettable" title="Permalink to this headline">¶</a></h3>
+<p>Class used to manipulate the information regarding the coset enumeration of
+the finitely presented group <code class="docutils literal notranslate"><span class="pre">G</span></code> on the cosets of the subgroup <code class="docutils literal notranslate"><span class="pre">H</span></code>.</p>
+<p>Basically a <em>coset table</em> <code class="docutils literal notranslate"><span class="pre">CosetTable(G,H)</span></code>, is the permutation representation
+of the finitely presented group on the cosets of a subgroup. Most of the set
+theoretic and group functions use the regular representation of <code class="docutils literal notranslate"><span class="pre">G</span></code>, i.e.,
+the coset table of <code class="docutils literal notranslate"><span class="pre">G</span></code> over the trivial subgroup.</p>
+<p>The actual mathematical coset table is obtained using <code class="docutils literal notranslate"><span class="pre">.table</span></code> attribute and
+is a list of lists. For each generator <code class="docutils literal notranslate"><span class="pre">g</span></code> of <code class="docutils literal notranslate"><span class="pre">G</span></code> it contains a column and
+the next column corresponds to <code class="docutils literal notranslate"><span class="pre">g**-1</span></code> and so on for other generators, so in
+total it has <code class="docutils literal notranslate"><span class="pre">2*G.rank()</span></code> columns. Each column is simply a list of integers.
+If <code class="docutils literal notranslate"><span class="pre">l</span></code> is the generator list for the generator <span class="math notranslate nohighlight">\(g\)</span> and if <code class="docutils literal notranslate"><span class="pre">l[i]</span> <span class="pre">=</span> <span class="pre">j</span></code> then
+generator <code class="docutils literal notranslate"><span class="pre">g</span></code> takes the coset <span class="math notranslate nohighlight">\(i\)</span> to the coset <span class="math notranslate nohighlight">\(j\)</span> by multiplication from the
+right.</p>
+<p>For finitely presented groups, a coset table is computed by a Todd-Coxeter
+coset enumeration. Note that you may influence the performance of that
+enumeration by changing the values of the variable
+<code class="docutils literal notranslate"><span class="pre">CosetTable.coset_table_max_limit</span></code>.</p>
+</div>
+<div class="section" id="attributes-of-cosettable">
+<h3>Attributes of CosetTable<a class="headerlink" href="#attributes-of-cosettable" title="Permalink to this headline">¶</a></h3>
+<p>For <code class="docutils literal notranslate"><span class="pre">CosetTable(G,</span> <span class="pre">H)</span></code> where <code class="docutils literal notranslate"><span class="pre">G</span></code> is the group and <code class="docutils literal notranslate"><span class="pre">H</span></code> is the subgroup.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: A non-negative integer, non-mutable attribute, dependently
+calculated as the maximum among the live-cosets (i.e. <span class="math notranslate nohighlight">\(\Omega\)</span>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">table</span></code>: A list of lists, mutable attribute, mathematically represents the
+coset table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">omega</span></code>: A list, dependent on the internal attribute <code class="docutils literal notranslate"><span class="pre">p</span></code>. <span class="math notranslate nohighlight">\(\Omega\)</span>
+represents the list of live-cosets. A <em>standard</em> coset-table has its
+<span class="math notranslate nohighlight">\(\Omega = \{0, 1, \ldots, index-1 \}\)</span> where <span class="math notranslate nohighlight">\(index\)</span> is the index of subgroup
+<span class="math notranslate nohighlight">\(H\)</span> in <span class="math notranslate nohighlight">\(G\)</span>.</p></li>
+</ul>
+<p>For experienced users we have a number of parameters that can be used to
+manipulate the algorithm, like</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">coset_table_max_limit</span></code> (default value = <span class="math notranslate nohighlight">\(4096000\)</span>): manipulate the maximum
+number of cosets allowed in coset enumeration, i.e. the number of rows allowed
+in coset table. A coset enumeration will not finish if the subgroup does not
+have finite index, and even if it has it may take many more intermediate
+cosets than the actual index of the subgroup is. To avoid a coset enumeration
+“running away” therefore SymPy has a “safety stop” built-in. This is
+controlled by this variable. To change it, use <span class="math notranslate nohighlight">\(max_cosets\)</span> keyword.
+For example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">free_group</span><span class="p">(</span><span class="s2">&quot;a, b&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Cox</span> <span class="o">=</span> <span class="n">FpGroup</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="n">b</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">b</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">C_r</span> <span class="o">=</span> <span class="n">coset_enumeration_r</span><span class="p">(</span><span class="n">Cox</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">max_cosets</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">ValueError</span>: <span class="n">the coset enumeration has defined more than 50 cosets</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_stack_size</span></code> (default value = <span class="math notranslate nohighlight">\(500\)</span>): manipulate the maximum size of
+<code class="docutils literal notranslate"><span class="pre">deduction_stack</span></code> above or equal to which the stack is emptied.</p></li>
+</ul>
+</div>
+<div class="section" id="compression-and-standardization">
+<h3>Compression and Standardization<a class="headerlink" href="#compression-and-standardization" title="Permalink to this headline">¶</a></h3>
+<p>For any two entries <span class="math notranslate nohighlight">\(i, j\)</span> with <span class="math notranslate nohighlight">\(i &lt; j\)</span> in coset table, the first
+occurrence of <span class="math notranslate nohighlight">\(i\)</span> in a coset table precedes the first occurrence of <span class="math notranslate nohighlight">\(j\)</span> with
+respect to the usual row-wise ordering of the table entries. We call such a
+table a standard coset table. To standardize a <code class="docutils literal notranslate"><span class="pre">CosetTable</span></code> we use the
+<code class="docutils literal notranslate"><span class="pre">.standardize</span></code> method.</p>
+<p><strong>Note</strong> the method alters the given table, it does not create a copy.</p>
+</div>
+</div>
+<div class="section" id="subgroups-of-finite-index">
+<h2>Subgroups of Finite Index<a class="headerlink" href="#subgroups-of-finite-index" title="Permalink to this headline">¶</a></h2>
+<p>The functionality in this section are concerned with the construction of
+subgroups of finite index. We describe a method for computing all subgroups
+whose index does not exceed some (modest) integer bound.</p>
+<div class="section" id="low-index-subgroups">
+<h3>Low Index Subgroups<a class="headerlink" href="#low-index-subgroups" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">low_index_subgroups(G,</span> <span class="pre">N)</span></code>: Given a finitely presented group <span class="math notranslate nohighlight">\(G = \left\langle X \mid R \right\rangle\)</span>
+(can be a free group), and <code class="docutils literal notranslate"><span class="pre">N</span></code> a positive integer, determine the conjugacy classes of
+subgroups of <code class="docutils literal notranslate"><span class="pre">G</span></code> whose indices is less than or equal to <code class="docutils literal notranslate"><span class="pre">N</span></code>.</p>
+<p>For example to find all subgroups of <span class="math notranslate nohighlight">\(G = \left\langle a, b \mid a^2 = b^3 = (ab)^4 = 1 \right\rangle\)</span>
+having index <span class="math notranslate nohighlight">\(\le\)</span> 4, can be found as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.fp_groups</span> <span class="kn">import</span> <span class="n">low_index_subgroups</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">free_group</span><span class="p">(</span><span class="s2">&quot;a, b&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">FpGroup</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">low_index_subgroups</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">coset_table</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">coset_table</span><span class="o">.</span><span class="n">table</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">[[0, 0, 0, 0]]</span>
+<span class="go">[[0, 0, 1, 2], [1, 1, 2, 0], [3, 3, 0, 1], [2, 2, 3, 3]]</span>
+<span class="go">[[0, 0, 1, 2], [2, 2, 2, 0], [1, 1, 0, 1]]</span>
+<span class="go">[[1, 1, 0, 0], [0, 0, 1, 1]]</span>
+</pre></div>
+</div>
+<p>This returns the coset tables of subgroups of satisfying the property
+that index, <span class="math notranslate nohighlight">\(index\)</span>, of subgroup in group is <span class="math notranslate nohighlight">\(\le n\)</span>.</p>
+</div>
+</div>
+<div class="section" id="constructing-a-presentation-for-a-subgroup">
+<h2>Constructing a presentation for a subgroup<a class="headerlink" href="#constructing-a-presentation-for-a-subgroup" title="Permalink to this headline">¶</a></h2>
+<p>In this section we discuss finding the presentation of a subgroup in a finitely
+presentation group. While the <em>subgroup</em> is currently allowed as input only in
+the form of a list of generators for the subgroup, you can expect the
+functionality of a <em>coset table</em> as input for subgroup in the group in near
+future.</p>
+<p>There are two ways to construct a set of defining relations for subgroup from
+those of <code class="docutils literal notranslate"><span class="pre">G</span></code>. First is on a set of Schreier generators, known generally as
+Reidemeister-Schreier algorithm or on the given list of generators of <code class="docutils literal notranslate"><span class="pre">H</span></code>.</p>
+<div class="section" id="reidemeister-schreier-algorithm">
+<h3>Reidemeister Schreier algorithm<a class="headerlink" href="#reidemeister-schreier-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>called using <code class="docutils literal notranslate"><span class="pre">reidemeister_presentation(G,</span> <span class="pre">Y)</span></code> where <code class="docutils literal notranslate"><span class="pre">G</span></code> is the group and
+<code class="docutils literal notranslate"><span class="pre">Y</span></code> is a list of generators for subgroup <code class="docutils literal notranslate"><span class="pre">H</span></code> whose presentation we want to
+find.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.fp_groups</span> <span class="kn">import</span> <span class="n">reidemeister_presentation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">free_group</span><span class="p">(</span><span class="s2">&quot;x, y&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">FpGroup</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">**-</span><span class="mi">1</span><span class="o">*</span><span class="n">y</span><span class="o">**-</span><span class="mi">1</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">x</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">reidemeister_presentation</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span>
+<span class="go">((y_1, y_2), (y_1**2, y_2**3, y_2*y_1*y_2*y_1*y_2*y_1))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bibliography">
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="cdhw73"><span class="brackets">CDHW73</span></dt>
+<dd><p>John J. Cannon, Lucien A. Dimino, George Havas, and Jane M. Watson.
+Implementation and analysis of the Todd-Coxeter algorithm. Math. Comp., 27:463–
+490, 1973.</p>
+</dd>
+<dt class="label" id="ho05"><span class="brackets">Ho05</span></dt>
+<dd><p>Derek F. Holt,
+Handbook of Computational Group Theory.
+In the series ‘Discrete Mathematics and its Applications’,
+<a class="reference external" href="https://www.crcpress.com/Handbook-of-Computational-Group-Theory/Holt-Eick-OBrien/p/book/9781584883722">Chapman &amp; Hall/CRC 2005, xvi + 514 p</a>.</p>
+</dd>
+<dt class="label" id="hav91"><span class="brackets">Hav91</span></dt>
+<dd><p>George Havas, Coset enumeration strategies.
+In Proceedings of the International Symposium on Symbolic and Algebraic Computation (ISSAC’91), Bonn 1991, pages 191–199. ACM Press, 1991.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="tensor_can.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tensor Canonicalization</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pc_groups.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Polycyclic Groups</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+        &copy; Copyright 2022 SymPy Development Team.<br/>
+      Last updated on Jan 17, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

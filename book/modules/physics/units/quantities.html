@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Physical quantities &#8212; SymPy 1.10.dev documentation</title>
+    <title>Physical quantities &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="High energy physics" href="../hep/index.html" />
     <link rel="prev" title="Units and unit systems" href="unitsystem.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -74,7 +74,7 @@
       <img src="../../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -155,6 +155,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -200,6 +205,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -222,6 +232,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -274,6 +289,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -727,6 +747,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../../tensor/array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../tensor/array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1363,6 +1388,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../../utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="../../utilities/iterables.html">
          Iterables
         </a>
@@ -1773,18 +1803,18 @@
 <p>Physical quantities.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.units.quantities.Quantity">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.units.quantities.</span></span><span class="sig-name descname"><span class="pre">Quantity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abbrev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latex_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretty_unicode_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretty_ascii_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mathml_presentation_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/units/quantities.py#L13-L213"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.quantities.Quantity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.units.quantities.</span></span><span class="sig-name descname"><span class="pre">Quantity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abbrev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latex_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretty_unicode_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretty_ascii_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mathml_presentation_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/units/quantities.py#L15-L234"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.quantities.Quantity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Physical quantity: can be a unit of measure, a constant or a generic quantity.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.units.quantities.Quantity.abbrev">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">abbrev</span></span><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.abbrev" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">abbrev</span></span><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.abbrev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Symbol representing the unit name.</p>
 <p>Prepend the abbreviation with the prefix symbol if it is defines.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.units.quantities.Quantity.convert_to">
-<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SI'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/units/quantities.py#L190-L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.convert_to" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SI'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/units/quantities.py#L211-L229"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.convert_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the quantity to another quantity of same dimensions.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.units</span> <span class="kn">import</span> <span class="n">speed_of_light</span><span class="p">,</span> <span class="n">meter</span><span class="p">,</span> <span class="n">second</span>
@@ -1803,19 +1833,19 @@
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.units.quantities.Quantity.free_symbols">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">free_symbols</span></span><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.free_symbols" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">free_symbols</span></span><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.free_symbols" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return free symbols from quantity.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.units.quantities.Quantity.scale_factor">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">scale_factor</span></span><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.scale_factor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scale_factor</span></span><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.scale_factor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overall magnitude of the quantity as compared to the canonical units.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.units.quantities.Quantity.set_global_relative_scale_factor">
-<span class="sig-name descname"><span class="pre">set_global_relative_scale_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_quantity</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/units/quantities.py#L101-L114"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.set_global_relative_scale_factor" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_global_relative_scale_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_quantity</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/units/quantities.py#L116-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.quantities.Quantity.set_global_relative_scale_factor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setting a scale factor that is valid across all unit system.</p>
 </dd></dl>
 
@@ -1826,7 +1856,7 @@
 <p>Several methods to simplify expressions involving unit objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.units.util.convert_to">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.units.util.</span></span><span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SI'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/units/util.py#L48-L120"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.util.convert_to" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.units.util.</span></span><span class="sig-name descname"><span class="pre">convert_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SI'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/units/util.py#L48-L120"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.util.convert_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert <code class="docutils literal notranslate"><span class="pre">expr</span></code> to the same expression with all of its units and quantities
 represented as factors of <code class="docutils literal notranslate"><span class="pre">target_units</span></code>, whenever the dimension is compatible.</p>
 <p><code class="docutils literal notranslate"><span class="pre">target_units</span></code> may be a single unit/quantity, or a collection of
@@ -1898,7 +1928,7 @@ units/quantities.</p>
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>

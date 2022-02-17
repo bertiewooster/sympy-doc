@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Representation of holonomic functions in SymPy &#8212; SymPy 1.10.dev documentation</title>
+    <title>Representation of holonomic functions in SymPy &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -34,8 +34,8 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
     <link href="https://docs.sympy.org/latest/modules/holonomic/represent.html" rel="canonical" />
     
@@ -44,7 +44,7 @@
     <link rel="next" title="Operations on holonomic functions" href="operations.html" />
     <link rel="prev" title="About Holonomic Functions" href="about.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -76,7 +76,7 @@
       <img src="../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -157,6 +157,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -202,6 +207,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -224,6 +234,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -276,6 +291,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -729,6 +749,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../tensor/array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1365,6 +1390,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="../utilities/iterables.html">
          Iterables
         </a>
@@ -1837,7 +1867,7 @@ mechanism.</p>
 <h2>HolonomicFunction<a class="headerlink" href="#holonomicfunction" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.holonomic.holonomic.</span></span><span class="sig-name descname"><span class="pre">HolonomicFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annihilator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L396-L2162"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.holonomic.holonomic.</span></span><span class="sig-name descname"><span class="pre">HolonomicFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annihilator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/holonomic/holonomic.py#L396-L2162"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Holonomic Function is a solution to a linear homogeneous ordinary
 differential equation with polynomial coefficients. This differential
 equation can also be represented by an annihilator i.e. a Differential
@@ -1857,7 +1887,7 @@ where s0, s1, … are the roots of indicial equation and vectors
 terms of the associated power series. See Examples below.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">QQ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">S</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
@@ -1905,7 +1935,7 @@ computation. Here’s an example on <span class="math notranslate nohighlight">\
 <h2>DifferentialOperator<a class="headerlink" href="#differentialoperator" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.DifferentialOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.holonomic.holonomic.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_poly</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L159-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.DifferentialOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.holonomic.holonomic.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_poly</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/holonomic/holonomic.py#L159-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.DifferentialOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Differential Operators are elements of Weyl Algebra. The Operators
 are defined by a list of polynomials in the base ring and the
 parent ring of the Operator i.e. the algebra it belongs to.</p>
@@ -1916,7 +1946,7 @@ parent ring which must be an instance of DifferentialOperatorAlgebra.</p>
 the operator <code class="docutils literal notranslate"><span class="pre">Dx</span></code>. See examples below.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">DifferentialOperator</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ZZ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">ZZ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
@@ -1936,7 +1966,7 @@ the operator <code class="docutils literal notranslate"><span class="pre">Dx</sp
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.DifferentialOperator.is_singular">
-<span class="sig-name descname"><span class="pre">is_singular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L387-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.DifferentialOperator.is_singular" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_singular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/holonomic/holonomic.py#L387-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.DifferentialOperator.is_singular" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if the differential equation is singular at x0.</p>
 </dd></dl>
 
@@ -1947,7 +1977,7 @@ the operator <code class="docutils literal notranslate"><span class="pre">Dx</sp
 <h2>DifferentialOperators<a class="headerlink" href="#differentialoperators" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.DifferentialOperators">
-<span class="sig-prename descclassname"><span class="pre">sympy.holonomic.holonomic.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L51-L86"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.DifferentialOperators" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.holonomic.holonomic.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/holonomic/holonomic.py#L51-L86"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.DifferentialOperators" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to create annihilators using <code class="docutils literal notranslate"><span class="pre">Dx</span></code>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1968,7 +1998,7 @@ be either a noncommutative <code class="docutils literal notranslate"><span clas
 <p>Returns an Algebra of Differential Operators also called Weyl Algebra
 and the operator for differentiation i.e. the <code class="docutils literal notranslate"><span class="pre">Dx</span></code> operator.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ZZ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">DifferentialOperators</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">ZZ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;Dx&#39;</span><span class="p">)</span>
@@ -1985,7 +2015,7 @@ and the operator for differentiation i.e. the <code class="docutils literal notr
 <h2>DifferentialOperatorAlgebra<a class="headerlink" href="#differentialoperatoralgebra" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.DifferentialOperatorAlgebra">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.holonomic.holonomic.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperatorAlgebra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/holonomic/holonomic.py#L89-L156"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.DifferentialOperatorAlgebra" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.holonomic.holonomic.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperatorAlgebra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/holonomic/holonomic.py#L89-L156"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.DifferentialOperatorAlgebra" title="Permalink to this definition">¶</a></dt>
 <dd><p>An Ore Algebra is a set of noncommutative polynomials in the
 intermediate <code class="docutils literal notranslate"><span class="pre">Dx</span></code> and coefficients in a base polynomial ring <span class="math notranslate nohighlight">\(A\)</span>.
 It follows the commutation rule:</p>
@@ -2000,7 +2030,7 @@ a Weyl Algebra i.e. an algebra whose elements are Differential Operators.</p>
 <p>This class represents a Weyl Algebra and serves as the parent ring for
 Differential Operators.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ZZ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">DifferentialOperators</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -2047,7 +2077,7 @@ Differential Operators.</p>
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>

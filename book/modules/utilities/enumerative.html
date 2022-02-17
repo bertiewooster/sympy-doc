@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Enumerative &#8212; SymPy 1.10.dev documentation</title>
+    <title>Enumerative &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -39,10 +39,10 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Iterables" href="iterables.html" />
+    <link rel="next" title="Exceptions and Warnings" href="exceptions.html" />
     <link rel="prev" title="Decorator" href="decorator.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -74,7 +74,7 @@
       <img src="../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -155,6 +155,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -200,6 +205,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -222,6 +232,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -274,6 +289,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -727,6 +747,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../tensor/array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../tensor/array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1363,6 +1388,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="iterables.html">
          Iterables
         </a>
@@ -1748,7 +1778,7 @@
 counting multiset partitions.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.multiset_partitions_taocp">
-<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">multiset_partitions_taocp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L146-L296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.multiset_partitions_taocp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">multiset_partitions_taocp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L146-L296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.multiset_partitions_taocp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enumerates partitions of a multiset.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1811,7 +1841,7 @@ instances and processing them later will not work.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.factoring_visitor">
-<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">factoring_visitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L304-L338"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.factoring_visitor" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">factoring_visitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L304-L338"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.factoring_visitor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use with multiset_partitions_taocp to enumerate the ways a
 number can be expressed as a product of factors.  For this usage,
 the exponents of the prime factors of a number are arguments to
@@ -1838,7 +1868,7 @@ exponents.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.list_visitor">
-<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">list_visitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L341-L367"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.list_visitor" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">list_visitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L341-L367"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.list_visitor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of lists to represent the partition.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">list_visitor</span>
@@ -1858,7 +1888,7 @@ exponents.</p>
 and generalized by the class <code class="docutils literal notranslate"><span class="pre">MultisetPartitionTraverser</span></code>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">MultisetPartitionTraverser</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L370-L1136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.utilities.enumerative.</span></span><span class="sig-name descname"><span class="pre">MultisetPartitionTraverser</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L370-L1133"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Has methods to <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> and <code class="docutils literal notranslate"><span class="pre">count</span></code> the partitions of a multiset.</p>
 <p>This implements a refactored and extended version of Knuth’s algorithm
 7.1.2.5M <a class="reference internal" href="#aocp" id="id1"><span>[AOCP]</span></a>.”</p>
@@ -1898,7 +1928,7 @@ Monad.Reader, Issue 8, September 2007.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.count_partitions">
-<span class="sig-name descname"><span class="pre">count_partitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L1024-L1136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.count_partitions" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">count_partitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L1021-L1133"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.count_partitions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of partitions of a multiset whose components
 have the multiplicities given in <code class="docutils literal notranslate"><span class="pre">multiplicities</span></code>.</p>
 <p>For larger counts, this method is much faster than calling one
@@ -1963,7 +1993,7 @@ count, and combining the histograms.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all">
-<span class="sig-name descname"><span class="pre">enum_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L753-L798"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">enum_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L753-L798"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enumerate the partitions of a multiset.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.utilities.enumerative</span> <span class="kn">import</span> <span class="n">list_visitor</span>
@@ -1993,7 +2023,7 @@ count, and combining the histograms.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_large">
-<span class="sig-name descname"><span class="pre">enum_large</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L870-L929"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_large" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">enum_large</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L867-L926"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_large" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enumerate the partitions of a multiset with lb &lt; num(parts)</p>
 <p>Equivalent to enum_range(multiplicities, lb, sum(multiplicities))</p>
 <dl class="field-list">
@@ -2029,7 +2059,7 @@ this lower bound.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range">
-<span class="sig-name descname"><span class="pre">enum_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L931-L991"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">enum_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L928-L988"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enumerate the partitions of a multiset with
 <code class="docutils literal notranslate"><span class="pre">lb</span> <span class="pre">&lt;</span> <span class="pre">num(parts)</span> <span class="pre">&lt;=</span> <span class="pre">ub</span></code>.</p>
 <p>In particular, if partitions with exactly <code class="docutils literal notranslate"><span class="pre">k</span></code> parts are
@@ -2051,7 +2081,7 @@ method generalizes enum_all, enum_small, and enum_large.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.utilities.enumerative.MultisetPartitionTraverser.enum_small">
-<span class="sig-name descname"><span class="pre">enum_small</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/enumerative.py#L800-L868"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_small" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">enum_small</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiplicities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/enumerative.py#L800-L865"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.enumerative.MultisetPartitionTraverser.enum_small" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enumerate multiset partitions with no more than <code class="docutils literal notranslate"><span class="pre">ub</span></code> parts.</p>
 <p>Equivalent to enum_range(multiplicities, 0, ub)</p>
 <dl class="field-list">
@@ -2104,10 +2134,10 @@ exercise 69, in Knuth <a class="reference internal" href="#aocp" id="id6"><span>
             <p class="prev-next-title">Decorator</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="iterables.html" title="next page">
+    <a class='right-next' id="next-link" href="exceptions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Iterables</p>
+        <p class="prev-next-title">Exceptions and Warnings</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -2119,7 +2149,7 @@ exercise 69, in Knuth <a class="reference internal" href="#aocp" id="id6"><span>
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>

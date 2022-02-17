@@ -1,71 +1,2035 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dependencies &#8212; SymPy 1.11.dev documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-    <title>Dependencies &#8212; SymPy 1.10.dev documentation</title>
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="https://live.sympy.org/static/live-core.css" />
-    <link rel="stylesheet" type="text/css" href="https://live.sympy.org/static/live-autocomplete.css" />
-    <link rel="stylesheet" type="text/css" href="https://live.sympy.org/static/live-sphinx.css" />
     
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="https://live.sympy.org/static/utilities.js"></script>
-    <script src="https://live.sympy.org/static/external/classy.js"></script>
-    <script src="https://live.sympy.org/static/live-core.js"></script>
-    <script src="https://live.sympy.org/static/live-autocomplete.js"></script>
-    <script src="https://live.sympy.org/static/live-sphinx.js"></script>
-    
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
     <link href="https://docs.sympy.org/latest/guides/contributing/dependencies.html" rel="canonical" />
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Build the Documentation" href="build-docs.html" />
-    <link rel="prev" title="Development Environment Setup" href="dev-setup.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="build-docs.html" title="Build the Documentation"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="dev-setup.html" title="Development Environment Setup"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">SymPy 1.10.dev documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >SymPy Guides</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Contributing to SymPy</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Dependencies</a></li> 
-      </ul>
-    </div>  
+    <link rel="prev" title="Development Environment Setup" href="dev-setup.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/sympylogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorial/index.html">
+   SymPy Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/preliminaries.html">
+     Preliminaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/gotchas.html">
+     Gotchas
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorial/features.html">
+     SymPy Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/basic_operations.html">
+       Basic Operations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/printing.html">
+       Printing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/simplification.html">
+       Simplification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/calculus.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorial/manipulation.html">
+       Advanced Expression Manipulation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   SymPy Guides
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../getting_started/index.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../getting_started/install.html">
+       Installation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Contributing to SymPy
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="dev-setup.html">
+       Development Environment Setup
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="build-docs.html">
+       Build the Documentation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="debug.html">
+       Debugging
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="docstring.html">
+       SymPy Docstrings Style Guide
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="documentation-style-guide.html">
+       General Guidelines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="make-a-contribution.html">
+       Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="deprecations.html">
+       Deprecation Policy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assumptions.html">
+     Assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../booleans.html">
+     Symbolic and fuzzy booleans
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../explanation/index.html">
+   Explanation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/gotchas.html">
+     Gotchas and Pitfalls
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../explanation/special_topics/index.html">
+     SymPy Special Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/finite_diff_derivatives.html">
+       Finite Difference Approximations to Derivatives
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../explanation/special_topics/classification.html">
+       Classification of SymPy objects
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/index.html">
+   Reference Documentation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/basics/index.html">
+     Basics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/assumptions/index.html">
+       Assumptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/assumptions/ask.html">
+         Ask
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/assumptions/assume.html">
+         Assume
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/assumptions/refine.html">
+         Refine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/assumptions/predicates.html">
+         Predicates
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/calculus/index.html">
+       Calculus
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/combinatorics/index.html">
+       Combinatorics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/partitions.html">
+         Partitions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/permutations.html">
+         Permutations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/perm_groups.html">
+         Permutation Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/polyhedron.html">
+         Polyhedron
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/prufer.html">
+         Prufer Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/subsets.html">
+         Subsets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/graycode.html">
+         Gray Code
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/named_groups.html">
+         Named Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/util.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/group_constructs.html">
+         Group constructors
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/testutil.html">
+         Test Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/tensor_can.html">
+         Tensor Canonicalization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/fp_groups.html">
+         Finitely Presented Groups
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/combinatorics/pc_groups.html">
+         Polycyclic Groups
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/functions/index.html">
+       Functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/functions/elementary.html">
+         Elementary
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/functions/combinatorial.html">
+         Combinatorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/functions/special.html">
+         Special
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/integrals/index.html">
+       Integrals
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/integrals/g-functions.html">
+         Computing Integrals using Meijer G-Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/integrals/integrals.html">
+         Integrals
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/series/index.html">
+       Series
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/series/series.html">
+         Series Expansions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/series/sequences.html">
+         Sequences
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/series/fourier.html">
+         Fourier Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/series/formal.html">
+         Formal Power Series
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/series/limitseq.html">
+         Limits of Sequences
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/simplify/index.html">
+       Simplify
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/simplify/simplify.html">
+         Simplify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/simplify/hyperexpand.html">
+         Hypergeometric Expansion
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/simplify/fu.html">
+         Hongguang Fu’s Trigonometric Simplification
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/solvers/index.html">
+       Solvers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/solvers/diophantine.html">
+         Diophantine
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/solvers/inequalities.html">
+         Inequality Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/solvers/ode.html">
+         ODE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/solvers/pde.html">
+         PDE
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/solvers/solvers.html">
+         Solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/solvers/solveset.html">
+         Solveset
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/abc.html">
+       abc
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/algebras.html">
+       Algebras
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/concrete.html">
+       Concrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/core.html">
+       Core
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/discrete.html">
+       Discrete
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/evalf.html">
+       Numerical Evaluation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/numeric-computation.html">
+       Numeric Computation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/rewriting.html">
+       Term Rewriting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/codegeneration/index.html">
+     Code Generation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/codegen.html">
+       Introduction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/logic/index.html">
+     Logic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/logic.html">
+       Logic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/sets.html">
+       Sets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/matrices/index.html">
+       Matrices
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/matrices/matrices.html">
+         Matrices (linear algebra)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/matrices/common.html">
+         Common Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/matrices/dense.html">
+         Dense Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/matrices/sparse.html">
+         Sparse Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/matrices/sparsetools.html">
+         Sparse Tools
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/matrices/immutablematrices.html">
+         Immutable Matrices
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/matrices/expressions.html">
+         Matrix Expressions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/matrices/normalforms.html">
+         Matrix Normal Forms
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/tensor/index.html">
+       Tensor
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/tensor/array.html">
+         N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/tensor/array_expressions.html">
+         N-dim array expressions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/tensor/indexed.html">
+         Indexed Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/tensor/index_methods.html">
+         Methods
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/tensor/tensor.html">
+         Tensor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/tensor/toperators.html">
+         Tensor Operators
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/vector/index.html">
+       Vector
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/intro.html">
+         Introduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/basics.html">
+         Basic Implementation details
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/coordsys.html">
+         More about Coordinate Systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/examples.html">
+         General examples of usage
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/vector_integration.html">
+         Applications of Vector Integrals
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/api/classes.html">
+         Essential Classes in sympy.vector (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/api/orienterclasses.html">
+         Orienter classes (docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/vector/api/vectorfunctions.html">
+         Essential Functions in sympy.vector (docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/numbertheory/index.html">
+     Number Theory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/ntheory.html">
+       Ntheory Class Reference
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/physics/index.html">
+     Physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/physics/hydrogen.html">
+       Hydrogen Wavefunctions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/physics/matrices.html">
+       Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/physics/paulialgebra.html">
+       Pauli Algebra
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/physics/qho_1d.html">
+       Quantum Harmonic Oscillator in 1-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/physics/sho.html">
+       Quantum Harmonic Oscillator in 3-D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/physics/secondquant.html">
+       Second Quantization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/physics/wigner.html">
+       Wigner Symbols
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/physics/units/index.html">
+       Unit systems
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/units/philosophy.html">
+         Philosophy behind unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/units/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/units/dimensions.html">
+         Dimensions and dimension systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/units/prefixes.html">
+         Unit prefixes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/units/unitsystem.html">
+         Units and unit systems
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/units/quantities.html">
+         Physical quantities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/physics/hep/index.html">
+       High energy physics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="simple">
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/physics/vector/index.html">
+       The Physics Vector Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/vectors.html">
+         Vector &amp; ReferenceFrame
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/kinematics.html">
+         Vector: Kinematics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/fields.html">
+         Scalar and Vector Field Functionality
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/api/classes.html">
+         Essential Classes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/api/kinematics.html">
+         Kinematics (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/api/functions.html">
+         Essential Functions (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/vector/api/fieldfunctions.html">
+         Docstrings for basic field functions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/physics/mechanics/index.html">
+       Classical Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/masses.html">
+         Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/kane.html">
+         Kane’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/lagrange.html">
+         Lagrange’s Method in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/symsystem.html">
+         Symbolic Systems in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/linearize.html">
+         Linearization in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/examples.html">
+         Examples for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/advanced.html">
+         Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/reference.html">
+         References for Physics/Mechanics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/autolev_parser.html">
+         Autolev Parser
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/sympy_mechanics_for_autolev_users.html">
+         SymPy Mechanics for Autolev Users
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/api/part_bod.html">
+         Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/api/kane_lagrange.html">
+         Kane’s Method &amp; Lagrange’s Method (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/api/system.html">
+         SymbolicSystem (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/api/linearize.html">
+         Linearization (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/api/expr_manip.html">
+         Expression Manipulation (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/api/printing.html">
+         Printing (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/api/body.html">
+         Body (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/mechanics/api/joint.html">
+         Joint (Docstrings)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/physics/quantum/index.html">
+       Quantum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/anticommutator.html">
+         Anticommutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/cg.html">
+         Clebsch-Gordan Coefficients
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/commutator.html">
+         Commutator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/constants.html">
+         Constants
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/dagger.html">
+         Dagger
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/innerproduct.html">
+         Inner Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/tensorproduct.html">
+         Tensor Product
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/cartesian.html">
+         Cartesian Operators and States
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/hilbert.html">
+         Hilbert Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/operator.html">
+         Operator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/operatorset.html">
+         Operator/State Helper Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/qapply.html">
+         Qapply
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/represent.html">
+         Represent
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/spin.html">
+         Spin
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/state.html">
+         State
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/circuitplot.html">
+         Circuit Plot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/gate.html">
+         Gates
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/grover.html">
+         Grover’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/qft.html">
+         QFT
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/qubit.html">
+         Qubit
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/shor.html">
+         Shor’s Algorithm
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/quantum/piab.html">
+         Particle in a Box
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/physics/optics/index.html">
+       Optics Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/optics/gaussopt.html">
+         Gaussian Optics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/optics/medium.html">
+         Medium
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/optics/polarization.html">
+         Polarization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/optics/utils.html">
+         Utilities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/optics/waves.html">
+         Waves
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/physics/control/index.html">
+       Control Module
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/control/control.html">
+         Control
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/control/lti.html">
+         Control API
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/control/control_plots.html">
+         Control System Plots
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/physics/continuum_mechanics/index.html">
+       Continuum Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/continuum_mechanics/beam.html">
+         Beam (Docstrings)
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/physics/continuum_mechanics/beam_problems.html">
+         Solving Beam Bending Problems using Singularity Functions
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/utilities/index.html">
+     Utilities
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/testing/index.html">
+       Testing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/testing/pytest.html">
+         pytest
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/testing/randtest.html">
+         Randomised Testing
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/testing/runtests.html">
+         Run Tests
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/utilities/index.html">
+       Utilities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/autowrap.html">
+         Autowrap Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/codegen.html">
+         Codegen
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/decorator.html">
+         Decorator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/enumerative.html">
+         Enumerative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/iterables.html">
+         Iterables
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/lambdify.html">
+         Lambdify
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/memoization.html">
+         Memoization
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/misc.html">
+         Miscellaneous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/pkgdata.html">
+         PKGDATA
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/source.html">
+         Source Code Inspection
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/utilities/timeutils.html">
+         Timing Utilities
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/interactive.html">
+       Interactive
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/parsing.html">
+       Parsing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/printing.html">
+       Printing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/public/topics/index.html">
+     Topics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/geometry/index.html">
+       Geometry
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/geometry/entities.html">
+         Entities
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/geometry/utils.html">
+         Utils
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/geometry/points.html">
+         Points
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/geometry/lines.html">
+         Lines
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/geometry/curves.html">
+         Curves
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/geometry/ellipses.html">
+         Ellipses
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/geometry/polygons.html">
+         Polygons
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/geometry/plane.html">
+         Plane
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/holonomic/index.html">
+       Holonomic
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/holonomic/about.html">
+         About Holonomic Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/holonomic/represent.html">
+         Representation of holonomic functions in SymPy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/holonomic/operations.html">
+         Operations on holonomic functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/holonomic/convert.html">
+         Converting other representations to holonomic
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/holonomic/uses.html">
+         Uses and Current limitations
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/holonomic/internal.html">
+         Internal API
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/liealgebras/index.html">
+       Lie Algebra
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../modules/polys/index.html">
+       Polynomial Manipulation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/basics.html">
+         Basic functionality of the module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/wester.html">
+         Examples from Wester’s Article
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/reference.html">
+         Polynomials Manipulation Module Reference
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/agca.html">
+         AGCA - Algebraic Geometry and Commutative Algebra Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/domainsintro.html">
+         Introducing the Domains of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/domainsref.html">
+         Reference docs for the Poly Domains
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/internals.html">
+         Internals of the Polynomial Manipulation Module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/ringseries.html">
+         Series Manipulation using Polynomials
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/literature.html">
+         Literature
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/solvers.html">
+         Poly solvers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/domainmatrix.html">
+         Introducing the domainmatrix of the poly module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../modules/polys/numberfields.html">
+         Number Fields
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/categories.html">
+       Category Theory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/crypto.html">
+       Cryptography
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/diffgeom.html">
+       Differential Geometry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/plotting.html">
+       Plotting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../modules/stats.html">
+       Stats
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../miscellaneous/index.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+  <label for="toctree-checkbox-40">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aboutus.html">
+     About
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../citing.html">
+     Citing SymPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../wiki.html">
+     Wiki
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../outreach.html">
+     SymPy Papers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
-  <section class="tex2jax_ignore mathjax_ignore" id="dependencies">
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/guides/contributing/dependencies.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hard-dependencies">
+   Hard Dependencies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-dependencies">
+   Optional Dependencies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-optional-dependencies">
+     Recommended Optional Dependencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-use">
+     Interactive Use
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing">
+     Printing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing">
+     Parsing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logic">
+     Logic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting">
+     Plotting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lambdify">
+     lambdify
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-generation">
+     Code Generation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#autowrap">
+       Autowrap
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-printers">
+       Code Printers
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#testing-only-dependencies">
+       Testing-Only Dependencies
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics">
+     Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-symengine-backend">
+     Optional SymEngine Backend
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experimental-rubi-integrator">
+     Experimental Rubi Integrator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sage">
+     Sage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#development-dependencies">
+   Development Dependencies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-source-code">
+     Getting the Source Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-tests">
+     Running the Tests
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-documentation">
+     Building the Documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-benchmarks">
+     Running the Benchmarks
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dependencies</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hard-dependencies">
+   Hard Dependencies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-dependencies">
+   Optional Dependencies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-optional-dependencies">
+     Recommended Optional Dependencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-use">
+     Interactive Use
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing">
+     Printing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing">
+     Parsing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logic">
+     Logic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting">
+     Plotting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lambdify">
+     lambdify
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-generation">
+     Code Generation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#autowrap">
+       Autowrap
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-printers">
+       Code Printers
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#testing-only-dependencies">
+       Testing-Only Dependencies
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics">
+     Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-symengine-backend">
+     Optional SymEngine Backend
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experimental-rubi-integrator">
+     Experimental Rubi Integrator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sage">
+     Sage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#development-dependencies">
+   Development Dependencies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-source-code">
+     Getting the Source Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-tests">
+     Running the Tests
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-documentation">
+     Building the Documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-benchmarks">
+     Running the Benchmarks
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dependencies">
 <h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
+<p>This page lists the hard and optional dependencies of SymPy.</p>
 <p>There are several packages that, when installed, can enable certain additional
 SymPy functionality. Most users and contributors will not need to install any
 of the packages mentioned below (except for the hard dependencies), unless
-they intend to use the part(s) of SymPy that can use those packages.</p>
+they intend to use or contribute to the parts of SymPy that can use those
+packages.</p>
 <p>Every dependency listed below can be installed with conda via
 <a class="reference external" href="https://conda-forge.org/">conda-forge</a>, and most can also be installed with
 <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
@@ -76,30 +2040,31 @@ webpage</a>, and a more complete list can be
 found on
 <a class="reference external" href="https://github.com/sympy/sympy/network/dependents?dependent_type=PACKAGE">GitHub</a>
 or <a class="reference external" href="https://libraries.io/pypi/sympy/dependents">libraries.io</a>.</p>
-<section id="hard-dependencies">
+<div class="section" id="hard-dependencies">
 <h2>Hard Dependencies<a class="headerlink" href="#hard-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>SymPy only has one hard dependency, which is required for it to work: mpmath.</p>
-<section id="mpmath">
-<h3>mpmath<a class="headerlink" href="#mpmath" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://mpmath.org/">mpmath</a> is a pure Python package for arbitrary precision
-arithmetic. It is used under the hood whenever SymPy calculates the
-floating-point value of a function, e.g., when using
+<ul id="dependencies-mpmath">
+<li><p><strong>mpmath</strong>: <a class="reference external" href="https://mpmath.org/">mpmath</a> is a pure Python package for
+arbitrary precision arithmetic. It is used under the hood whenever SymPy
+calculates the floating-point value of a function, e.g., when using
 <a class="reference internal" href="../../modules/core.html#sympy.core.evalf.EvalfMixin.evalf" title="sympy.core.evalf.EvalfMixin.evalf"><span class="xref myst py py-meth">evalf</span></a>.</p>
-<p>SymPy cannot function with mpmath and will fail to import if it is not
+<p>SymPy cannot function without mpmath and will fail to import if it is not
 installed. If you get an error like</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">ImportError</span><span class="p">:</span> <span class="n">SymPy</span> <span class="n">now</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">mpmath</span> <span class="k">as</span> <span class="n">an</span> <span class="n">external</span> <span class="n">library</span><span class="o">.</span> <span class="n">See</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">sympy</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">html</span><span class="c1">#mpmath for more information.</span>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="x">ImportError: SymPy now depends on mpmath as an external library. See</span>
+<span class="x">https://docs.sympy.org/latest/install.html#mpmath for more information.</span>
 </pre></div>
 </div>
 <p>this means that you did not install mpmath correctly. <a class="reference internal" href="../getting_started/install.html#mpmath-install"><span class="std std-ref">This
 page</span></a> explains how to install it.</p>
 <p>Most methods of installing SymPy, such as the ones outlined in the
 <a class="reference internal" href="../getting_started/install.html#installation"><span class="std std-ref">installation</span></a> guide, will install mpmath automatically. You
-typically only need to install mpmath manually if you did not actually install
-SymPy, e.g., if you are developing directly on SymPy in the git repository.</p>
-</section>
-</section>
-<section id="optional-dependencies">
+typically only need to install mpmath manually if you did not actually
+install SymPy, e.g., if you are developing directly on SymPy in the git
+repository.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="optional-dependencies">
 <h2>Optional Dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>These dependencies are not required to use SymPy. The vast majority of SymPy
 functions do not require them, however, a few functions such as plotting and
@@ -111,108 +2076,244 @@ CI</a> which is run on every SymPy pull
 request will automatically install these dependencies in the
 “optional-dependencies” build, but you may wish to install them locally if you
 are working on a part of SymPy that uses them.</p>
-<section id="recommended-optional-dependencies">
+<div class="section" id="recommended-optional-dependencies">
 <h3>Recommended Optional Dependencies<a class="headerlink" href="#recommended-optional-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>These dependencies are not required for SymPy to function, but it is
 recommended that all users install them if they can, as they will improve the
 general performance of SymPy.</p>
-<section id="gmpy2">
-<h4>gmpy2<a class="headerlink" href="#gmpy2" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://gmpy2.readthedocs.io/en/latest/intro.html">gmpy2</a> is a Python wrapper
-for the GMP multiple-precision library. It provides large integers that are
-faster than the built-in Python <code class="docutils literal notranslate"><span class="pre">int</span></code>. When gmpy2 is installed, it is used
-automatically by certain core functions that operate on integers, such as the
-<a class="reference internal" href="../../modules/polys/index.html#polys-docs"><span class="std std-ref">polys</span></a>. See <a class="reference internal" href="../../modules/polys/domainsref.html#polys-domainsref"><span class="std std-ref">Reference docs for the Poly Domains</span></a> for more details.</p>
-</section>
-</section>
-<section id="interactive-use">
+<ul>
+<li><p><strong>gmpy2</strong>: <a class="reference external" href="https://gmpy2.readthedocs.io/en/latest/intro.html">gmpy2</a> is a
+Python wrapper for the <a class="reference external" href="https://gmplib.org/">GMP multiple-precision
+library</a>. It provides large integers that are faster
+than the built-in Python <code class="docutils literal notranslate"><span class="pre">int</span></code>. When gmpy2 is installed, it is used
+automatically by certain core functions that operate on integers, such as
+the <a class="reference internal" href="../../modules/polys/index.html#polys-docs"><span class="std std-ref">polys</span></a>. See <a class="reference internal" href="../../modules/polys/domainsref.html#polys-domainsref"><span class="std std-ref">Reference docs for the Poly Domains</span></a> for more details. SymPy
+uses <code class="docutils literal notranslate"><span class="pre">gmpy2</span></code> automatically when it is installed. No further action is
+required to enable it.</p>
+<p>The polys themselves are used by many parts of SymPy, such as the
+integration algorithms, simplification algorithms like <code class="docutils literal notranslate"><span class="pre">collect()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">factor()</span></code>, the matrices, and some parts of the core. Thus, installing
+<code class="docutils literal notranslate"><span class="pre">gmpy2</span></code> can speed up many parts of SymPy. It is not a required dependency of
+SymPy because it makes use of a non-Python library (GMP), which is also
+non-BSD licensed. However, we recommended all users who are able to to
+install <code class="docutils literal notranslate"><span class="pre">gmpy2</span></code> to get a better SymPy experience.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="interactive-use">
 <h3>Interactive Use<a class="headerlink" href="#interactive-use" title="Permalink to this headline">¶</a></h3>
-<section id="ipython">
-<h4>IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="jupyter-notebook">
-<h4>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h4>
-</section>
-</section>
-<section id="latex-parsing">
-<h3>LaTeX Parsing<a class="headerlink" href="#latex-parsing" title="Permalink to this headline">¶</a></h3>
-<section id="antlr-python-runtime">
-<h4>antlr-python-runtime<a class="headerlink" href="#antlr-python-runtime" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="python-clang">
-<h4>python-clang<a class="headerlink" href="#python-clang" title="Permalink to this headline">¶</a></h4>
-</section>
-</section>
-<section id="logic">
+<p>SymPy is designed to be used both interactively and as a library. When used
+interactively, SymPy is able to interface with IPython and Jupyter notebooks.</p>
+<ul>
+<li><p><strong>IPython</strong>: The <a class="reference internal" href="../../modules/interactive.html#sympy.interactive.session.init_session" title="sympy.interactive.session.init_session"><code class="xref py py-func docutils literal notranslate"><span class="pre">init_session()</span></code></a> function and <code class="docutils literal notranslate"><span class="pre">isympy</span></code> command will
+automatically start IPython if it is installed. In addition to the usual
+benefits of using <a class="reference external" href="https://ipython.org/">IPython</a>, this enables interactive
+plotting with matplotlib. Also some flags such as <code class="docutils literal notranslate"><span class="pre">auto_symbols</span></code> and
+<code class="docutils literal notranslate"><span class="pre">auto_int_to_Integer</span></code> will only work in IPython.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">IPython</span></code> package is required to run some of the tests in sympy/interactive.</p>
+</li>
+<li><p><strong>Jupyter Notebook and Qt Console</strong>: SymPy expressions automatically print
+using MathJax in the <a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a> and with LaTeX
+<a class="reference external" href="https://qtconsole.readthedocs.io/en/stable/">Qt Console</a> (if
+<a class="reference internal" href="#dependencies-latex"><span class="std std-ref">LaTeX</span></a> is installed).</p></li>
+</ul>
+</div>
+<div class="section" id="printing">
+<h3>Printing<a class="headerlink" href="#printing" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="../../modules/printing.html#sympy.printing.preview.preview" title="sympy.printing.preview.preview"><code class="xref py py-func docutils literal notranslate"><span class="pre">preview()</span></code></a> function automatically converts SymPy expressions into
+images rendered with LaTeX. <code class="docutils literal notranslate"><span class="pre">preview()</span></code> can either save the image to a file or
+show it with a viewer.</p>
+<ul class="simple" id="dependencies-latex">
+<li><p><strong>LaTeX</strong>: A <span class="math notranslate nohighlight">\(\LaTeX\)</span> distributions such as <a class="reference external" href="https://tug.org/texlive/">TeXLive</a> or
+<a class="reference external" href="https://miktex.org/">MiKTeX</a> is required for <a class="reference internal" href="../../modules/printing.html#sympy.printing.preview.preview" title="sympy.printing.preview.preview"><code class="xref py py-func docutils literal notranslate"><span class="pre">preview()</span></code></a> to function.</p></li>
+</ul>
+</div>
+<div class="section" id="parsing">
+<h3>Parsing<a class="headerlink" href="#parsing" title="Permalink to this headline">¶</a></h3>
+<p>Several functions in the <a class="reference internal" href="../../modules/parsing.html#module-sympy.parsing" title="sympy.parsing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.parsing</span></code></a> submodule require external
+dependencies to function. Note that not all parsers require external modules
+at this time. The Python (<a class="reference internal" href="../../modules/parsing.html#sympy.parsing.sympy_parser.parse_expr" title="sympy.parsing.sympy_parser.parse_expr"><code class="xref py py-func docutils literal notranslate"><span class="pre">parse_expr()</span></code></a>), Mathematca
+(<a class="reference internal" href="../../modules/parsing.html#sympy.parsing.mathematica.mathematica" title="sympy.parsing.mathematica.mathematica"><code class="xref py py-func docutils literal notranslate"><span class="pre">mathematica()</span></code></a>), and Maxima (<a class="reference internal" href="../../modules/parsing.html#sympy.parsing.maxima.parse_maxima" title="sympy.parsing.maxima.parse_maxima"><code class="xref py py-func docutils literal notranslate"><span class="pre">parse_maxima()</span></code></a>) parsers do not
+require any external dependencies.</p>
+<ul class="simple">
+<li><p><strong>antlr-python-runtime</strong>: <a class="reference external" href="https://www.antlr.org/">Antlr</a> is used for the
+<a class="reference internal" href="../../modules/parsing.html#sympy.parsing.latex.parse_latex" title="sympy.parsing.latex.parse_latex"><code class="xref py py-func docutils literal notranslate"><span class="pre">LaTeX</span> <span class="pre">parser</span></code></a> and
+<a class="reference internal" href="../../modules/physics/mechanics/autolev_parser.html#autolev-parser"><span class="std std-ref">Autolev</span></a> parsers. They both require the Antlr Python
+runtime to be installed. The package for this is called
+<code class="docutils literal notranslate"><span class="pre">antlr4-python-runtime</span></code> with conda and <code class="docutils literal notranslate"><span class="pre">antlr4-python3-runtime</span></code> with pip).
+Also be aware that the version of the Antlr Python runtime must match the
+version that was used to compile the LaTeX and Autolev parsers (4.7).</p></li>
+<li><p><strong>Clang Python Bindings</strong>: The C parser (<code class="docutils literal notranslate"><span class="pre">sympy.parsing.c.parse_c</span></code>) requires
+the Clang Python bindings. The package for this is called <code class="docutils literal notranslate"><span class="pre">python-clang</span></code>
+with conda and <code class="docutils literal notranslate"><span class="pre">clang</span></code> with pip.</p></li>
+<li><p><strong>lfortran</strong>: The Fortran parser (in <code class="docutils literal notranslate"><span class="pre">sympy.parsing.fortran</span></code>) requires
+<a class="reference external" href="https://lfortran.org/">LFortran</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="logic">
 <h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">¶</a></h3>
-<section id="pycosat">
-<h4>pycosat<a class="headerlink" href="#pycosat" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="pysat">
-<h4>pysat<a class="headerlink" href="#pysat" title="Permalink to this headline">¶</a></h4>
-</section>
-</section>
-<section id="plotting">
+<p>The <a class="reference internal" href="../../modules/logic.html#sympy.logic.inference.satisfiable" title="sympy.logic.inference.satisfiable"><code class="xref py py-func docutils literal notranslate"><span class="pre">satisfiable()</span></code></a> function includes a pure Python implementation of
+the DPLL satisfiability algorithm. But it can optionally use faster C SAT
+solvers if they are installed. Note that <code class="docutils literal notranslate"><span class="pre">satisfiable()</span></code> is also used by
+<a class="reference internal" href="../../modules/assumptions/ask.html#sympy.assumptions.ask.ask" title="sympy.assumptions.ask.ask"><code class="xref py py-func docutils literal notranslate"><span class="pre">ask()</span></code></a>.</p>
+<ul class="simple">
+<li><p><strong>pycosat</strong>: <a class="reference external" href="https://pypi.org/project/pycosat/">Pycosat</a> is used
+automatically if it is installed. The use of pycosat can be forced by using
+<code class="docutils literal notranslate"><span class="pre">satisfiable(algorithm='pycosat')</span></code>.</p></li>
+<li><p><strong>pysat</strong>: <a class="reference external" href="https://pysathq.github.io/">Pysat</a> is a library which wraps many
+SAT solvers. It can also be used as a backend to <code class="docutils literal notranslate"><span class="pre">satisfiable()</span></code>. Presently,
+only <a class="reference external" href="http://minisat.se/MiniSat.html">Minisat</a> is implemented, using
+<code class="docutils literal notranslate"><span class="pre">satisfiable(algorithm=minisat22')</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="plotting">
 <h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h3>
-<section id="matplotlib">
-<h4>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="pyglet">
-<h4>pyglet<a class="headerlink" href="#pyglet" title="Permalink to this headline">¶</a></h4>
-</section>
-</section>
-<section id="lambdify">
-<h3>lambdify<a class="headerlink" href="#lambdify" title="Permalink to this headline">¶</a></h3>
-<section id="numpy">
-<h4>numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="scipy">
-<h4>scipy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="cupy">
-<h4>cupy<a class="headerlink" href="#cupy" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="tensorflow">
-<h4>tensorflow<a class="headerlink" href="#tensorflow" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="numexpr">
-<h4>numexpr<a class="headerlink" href="#numexpr" title="Permalink to this headline">¶</a></h4>
-</section>
-</section>
-<section id="code-generation">
+<p>The <a class="reference internal" href="../../modules/plotting.html#module-sympy.plotting.plot" title="sympy.plotting.plot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.plotting.plot</span></code></a> module makes heavy use of external plotting
+libraries to render plots. The primarily plotting module that is supported is
+Matplotlib.</p>
+<ul class="simple">
+<li><p><strong>matplotlib</strong>: Most plotting functionality requires the
+<a class="reference external" href="https://matplotlib.org/">Matplotlib</a> plotting library. Without Matplotlib
+installed, most plotting functions will either fail or give rudimentary
+<a class="reference internal" href="../../modules/plotting.html#sympy.plotting.textplot.textplot" title="sympy.plotting.textplot.textplot"><span class="xref myst py py-func">text plots</span></a>.</p></li>
+<li><p><strong>pyglet</strong>: SymPy has a submodule <a class="reference internal" href="../../modules/plotting.html#module-sympy.plotting.pygletplot" title="sympy.plotting.pygletplot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.plotting.pygletplot</span></code></a> that can
+be used to interface with the <a class="reference external" href="http://pyglet.org/">pyglet</a> module to do 2D
+and 3D plotting.</p></li>
+</ul>
+</div>
+<div class="section" id="lambdify">
+<span id="dependencies-lambdify"></span><h3>lambdify<a class="headerlink" href="#lambdify" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../../modules/utilities/lambdify.html#sympy.utilities.lambdify.lambdify" title="sympy.utilities.lambdify.lambdify"><code class="xref py py-func docutils literal notranslate"><span class="pre">lambdify()</span></code></a> is a function that converts SymPy expressions into functions
+that can be evaluated numerically using various libraries as backends.
+<code class="docutils literal notranslate"><span class="pre">lambdify</span></code> is the primary vehicle by which users interface between SymPy and
+these libraries. It is the standard way to convert a symbolic SymPy expression
+into an evaluable numeric function.</p>
+<p>In principle, <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> can interface with any external library if the user
+passes in an appropriate namespace dictionary as the third argument, but by
+default, <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> is aware of several popular numeric Python libraries.
+These libraries are enabled as backends in <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> with build-in
+translations to convert SymPy expressions into the appropriate functions for
+those libraries.</p>
+<ul class="simple">
+<li><p><strong>NumPy</strong>: By default, if it is installed, <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> creates functions
+using <a class="reference external" href="https://numpy.org/">NumPy</a> (if NumPy is not installed, <code class="docutils literal notranslate"><span class="pre">lambdify</span></code>
+produces functions using the standard library
+<a class="reference external" href="https://docs.python.org/3/library/math.html">math</a> module, although this
+behavior is primarily provided for backwards compatibility).</p></li>
+<li><p><strong>SciPy</strong>: If <a class="reference external" href="https://scipy.org/">SciPy</a> is installed, <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> will use
+it automatically. SciPy is needed to lambdify certain <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/special.html">special
+functions</a> that are
+not included in NumPy.</p></li>
+<li><p><strong>CuPy</strong>: <a class="reference external" href="https://cupy.dev/">CuPy</a> is a library that provides a NumPy
+compatible interface for CUDA GPUs. <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> can produce CuPy compatible
+functions using <code class="docutils literal notranslate"><span class="pre">lambdify(modules='cupy')</span></code>.</p></li>
+<li><p><strong>TensorFlow</strong>: <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a> is a popular
+machine learning library. <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> can produce TensorFlow compatible
+functions using <code class="docutils literal notranslate"><span class="pre">lambdify(modules='tensorflow')</span></code>.</p></li>
+<li><p><strong>NumExpr</strong>: <a class="reference external" href="https://github.com/pydata/numexpr">NumExpr</a> is a fast
+numerical expression evaluator for NumPy. <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> can produce NumExpr
+compatible functions using <code class="docutils literal notranslate"><span class="pre">lambdify(modules='numexpr')</span></code>.</p></li>
+<li><p><strong>mpmath</strong>: <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> can also produce mpmath compatible functions. Note
+that mpmath is already a <a class="reference internal" href="#dependencies-mpmath"><span class="std std-ref">required dependency</span></a> of
+SymPy. This functionality is useful for converting a SymPy expression to a
+function for use with pure mpmath.</p></li>
+</ul>
+</div>
+<div class="section" id="code-generation">
 <h3>Code Generation<a class="headerlink" href="#code-generation" title="Permalink to this headline">¶</a></h3>
-<section id="id1">
-<h4>NumPy<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="cython">
-<h4>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="aesara">
-<h4>Aesara<a class="headerlink" href="#aesara" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="pymc3">
-<h4>pymc3<a class="headerlink" href="#pymc3" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="llvmlite">
-<h4>llvmlite<a class="headerlink" href="#llvmlite" title="Permalink to this headline">¶</a></h4>
-</section>
-<section id="wurlitzer">
-<h4>Wurlitzer<a class="headerlink" href="#wurlitzer" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://github.com/minrk/wurlitzer">Wurlitzer</a> is a Python package that
-allows capturing output from C extensions. It is used by some of the tests in
-the <code class="docutils literal notranslate"><span class="pre">sympy.codegen</span></code> submodule. It is only used by the test suite. It is not
-used by any end-user functionality. If it is not installed, some tests will be
-skipped.</p>
-</section>
-</section>
-<section id="optional-symengine-backend">
+<p>SymPy can <a class="reference internal" href="../../modules/codegen.html#codegen-prose"><span class="std std-ref">generate code</span></a> for a large number of languages by
+converting SymPy expressions into valid code for those languages. It also has
+functionality for some languages to automatically compile and run the code.</p>
+<p>Note that the dependencies below are <strong>not</strong> a list of supported languages
+that SymPy can generate code for. Rather it is a list of packages that SymPy
+can interface with in some way. For most languages that SymPy supports code
+generation, it simply generates a string representing the code for that
+language, so no dependency on that language is required to use the code
+generation functionality. A dependency is typically only required for features
+that automatically take the generated code and compile it to a function that
+can be used within Python. Note that <a class="reference internal" href="../../modules/utilities/lambdify.html#sympy.utilities.lambdify.lambdify" title="sympy.utilities.lambdify.lambdify"><code class="xref py py-func docutils literal notranslate"><span class="pre">lambdify()</span></code></a> is a special case of
+this, but its dependencies are listed <a class="reference internal" href="#dependencies-lambdify"><span class="std std-ref">above</span></a>.</p>
+<div class="section" id="autowrap">
+<h4>Autowrap<a class="headerlink" href="#autowrap" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong>NumPy</strong>: <a class="reference external" href="https://numpy.org/">NumPy</a> and, optionally, its subpackage
+<a class="reference external" href="https://numpy.org/doc/stable/f2py/">f2py</a>, can be used to generate Python
+functions using the <a class="reference internal" href="../../modules/utilities/autowrap.html#sympy.utilities.autowrap.autowrap" title="sympy.utilities.autowrap.autowrap"><code class="xref py py-func docutils literal notranslate"><span class="pre">autowrap()</span></code></a> or <a class="reference internal" href="../../modules/utilities/autowrap.html#sympy.utilities.autowrap.ufuncify" title="sympy.utilities.autowrap.ufuncify"><code class="xref py py-func docutils literal notranslate"><span class="pre">ufuncify()</span></code></a>
+functions.</p></li>
+<li><p><strong>Cython</strong>: <a class="reference external" href="https://cython.org/">Cython</a> can be used as a backend for
+<a class="reference internal" href="../../modules/utilities/autowrap.html#sympy.utilities.autowrap.autowrap" title="sympy.utilities.autowrap.autowrap"><code class="xref py py-func docutils literal notranslate"><span class="pre">autowrap()</span></code></a> or <a class="reference internal" href="../../modules/utilities/autowrap.html#sympy.utilities.autowrap.ufuncify" title="sympy.utilities.autowrap.ufuncify"><code class="xref py py-func docutils literal notranslate"><span class="pre">ufuncify()</span></code></a>. Cython is also used in some of the
+<code class="docutils literal notranslate"><span class="pre">sympy.codegen</span></code> tests to compile some examples.</p></li>
+</ul>
+<ul class="simple" id="dependencies-compilers">
+<li><p><strong>Compilers</strong>: <a class="reference internal" href="../../modules/utilities/autowrap.html#sympy.utilities.autowrap.autowrap" title="sympy.utilities.autowrap.autowrap"><code class="xref py py-func docutils literal notranslate"><span class="pre">autowrap()</span></code></a>, <a class="reference internal" href="../../modules/utilities/autowrap.html#sympy.utilities.autowrap.ufuncify" title="sympy.utilities.autowrap.ufuncify"><code class="xref py py-func docutils literal notranslate"><span class="pre">ufuncify()</span></code></a>, and
+related functions rely on a compiler to compile the generated code to a
+function. Most standard C, C++, and Fortran compilers are supported,
+including <a class="reference external" href="https://clang.llvm.org/">Clang/LLVM</a>,
+<a class="reference external" href="https://gcc.gnu.org/">GCC</a>, and
+<a class="reference external" href="https://en.wikipedia.org/wiki/Intel_Fortran_Compiler">ifort</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="code-printers">
+<h4>Code Printers<a class="headerlink" href="#code-printers" title="Permalink to this headline">¶</a></h4>
+<p>Most code printers generate Python strings, and therefore do not require the
+given library or language compiler as a dependency. However, a few code
+printers generate Python functions instead of strings:</p>
+<ul class="simple">
+<li><p><strong>Aesara</strong>: The <a class="reference internal" href="../../modules/printing.html#module-sympy.printing.aesaracode" title="sympy.printing.aesaracode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.printing.aesaracode</span></code></a> module contains functions
+to convert SymPy expressions into a functions using the
+<a class="reference external" href="https://aesara.readthedocs.io/en/latest">Aeseara</a> (previously Theano)
+library. The Aesara code generation functions return Aesara graph objects.</p></li>
+<li><p><strong>llvmlite</strong>: The <code class="docutils literal notranslate"><span class="pre">sympy.printing.llvmjitcode</span></code> module supports generating LLVM Jit
+from a SymPy expression. The functions make use of
+<a class="reference external" href="https://llvmlite.readthedocs.io/en/latest/">llvmlite</a>, a Python wrapper
+around <a class="reference external" href="https://llvm.org/">LLVM</a>. The <code class="docutils literal notranslate"><span class="pre">llvm_callable()</span></code> function
+generates callable functions.</p></li>
+<li><p><strong>TensorFlow</strong>: The <code class="docutils literal notranslate"><span class="pre">sympy.printing.tensorflow</span></code> module supports generating
+functions using the <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>, a popular
+machine learning library. Unlike the above two examples, <code class="docutils literal notranslate"><span class="pre">tensorflow_code()</span></code>
+function <strong>does</strong> generate Python strings. However, <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> is imported
+if available in order to automatically detect the TensorFlow version. If it
+is not installed, the <code class="docutils literal notranslate"><span class="pre">tensorflow_code()</span></code> function assumes the latest
+supported version of TensorFlow.</p></li>
+</ul>
+</div>
+<div class="section" id="testing-only-dependencies">
+<h4>Testing-Only Dependencies<a class="headerlink" href="#testing-only-dependencies" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Wurlitzer</strong>: <a class="reference external" href="https://github.com/minrk/wurlitzer">Wurlitzer</a> is a Python
+package that allows capturing output from C extensions. It is used by some
+of the tests in the <code class="docutils literal notranslate"><span class="pre">sympy.codegen</span></code> submodule. It is only used by the test
+suite. It is not used by any end-user functionality. If it is not installed,
+some tests will be skipped.</p></li>
+<li><p><strong>Cython</strong>: <a class="reference external" href="https://cython.org/">Cython</a> is also used in
+some of the <code class="docutils literal notranslate"><span class="pre">sympy.codegen</span></code> tests to compile some examples.</p></li>
+<li><p><strong>Compilers</strong>: The various <a class="reference internal" href="#dependencies-compilers"><span class="std std-ref">compilers</span></a> mentioned
+above are used in some of the codegen and autowrap tests if they are
+installed.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="statistics">
+<h3>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="../../modules/stats.html#sympy.stats.sample" title="sympy.stats.sample"><code class="xref py py-func docutils literal notranslate"><span class="pre">sympy.stats.sample()</span></code></a> function uses an external library to produce
+samples from the given distribution. At least one of the following libraries
+is required to use the sampling functionality of <code class="docutils literal notranslate"><span class="pre">sympy.stats</span></code>.</p>
+<ul class="simple">
+<li><p><strong>SciPy</strong>: <code class="docutils literal notranslate"><span class="pre">sample(library='scipy')</span></code> is the default. This uses <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">scipy.stats</a>.</p></li>
+<li><p><strong>NumPy</strong>: <code class="docutils literal notranslate"><span class="pre">sample(library='numpy')</span></code> uses the <a class="reference external" href="https://numpy.org/doc/stable/reference/random/index.html">NumPy
+random module</a>.</p></li>
+<li><p><strong>pymc3</strong>: <code class="docutils literal notranslate"><span class="pre">sample(library='pymc3')</span></code> uses
+<a class="reference external" href="https://docs.pymc.io/en/v3/">PyMC3</a> to do sampling.</p></li>
+</ul>
+</div>
+<div class="section" id="optional-symengine-backend">
 <h3>Optional SymEngine Backend<a class="headerlink" href="#optional-symengine-backend" title="Permalink to this headline">¶</a></h3>
-<section id="python-symengine">
-<h4>python-symengine<a class="headerlink" href="#python-symengine" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://symengine.org/">SymEngine</a> is a fast symbolic manipulation library,
-written in C++. The SymEngine Python bindings may be used as an optional
-backend for SymPy core. To do this, first install the SymEngine Python
-bindings (with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">symengine</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">python-symengine</span></code>) and run SymPy with the <code class="docutils literal notranslate"><span class="pre">USE_SYMENGINE=1</span></code> environment variable.</p>
+<ul>
+<li><p><strong>python-symengine</strong>: <a class="reference external" href="https://symengine.org/">SymEngine</a> is a fast symbolic
+manipulation library, written in C++. The SymEngine Python bindings may be
+used as an optional backend for SymPy core. To do this, first install the
+SymEngine Python bindings (with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">symengine</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">python-symengine</span></code>) and run SymPy with the <code class="docutils literal notranslate"><span class="pre">USE_SYMENGINE=1</span></code>
+environment variable.</p>
 <p>Presently, the SymEngine backend is only used by the
 <a class="reference internal" href="../../modules/physics/mechanics/index.html#classical-mechanics"><span class="std std-ref">sympy.physics.mechanics</span></a> and
 <a class="reference internal" href="../../modules/liealgebras/index.html#lie-algebras"><span class="std std-ref">sympy.liealgebras</span></a> modules, although you can also interface
@@ -227,221 +2328,133 @@ with SymPy’s SymEngine backend directly by importing things from
 </div>
 <p>SymEngine backend support is still experimental, so certain SymPy functions
 may not work correctly when it is enabled.</p>
-</section>
-</section>
-<section id="experimental-rubi-integrator">
+</li>
+</ul>
+</div>
+<div class="section" id="experimental-rubi-integrator">
 <h3>Experimental Rubi Integrator<a class="headerlink" href="#experimental-rubi-integrator" title="Permalink to this headline">¶</a></h3>
-<section id="matchpy">
-<h4>MatchPy<a class="headerlink" href="#matchpy" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://matchpy.readthedocs.io/en/latest/">MatchPy</a> is a library for doing
-pattern matching. It is used in the experimental sympy.integrals.rubi module,
-but presently, it is not used anywhere else in SymPy. SymPy and MatchPy are
-able to interface with each other.</p>
-</section>
-</section>
-<section id="other">
-<h3>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h3>
-<section id="cloudpickle">
-<h4>cloudpickle<a class="headerlink" href="#cloudpickle" title="Permalink to this headline">¶</a></h4>
-<p>The <a class="reference external" href="https://github.com/cloudpipe/cloudpickle">cloudpickle</a> package can be
-used to more effectively pickle SymPy objects than the built-in Python <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle</a>.
-Some tests in <code class="docutils literal notranslate"><span class="pre">sympy.utilities.tests.test_pickling.py</span></code> depend on cloudpickle
-to run. It is not otherwise required for any SymPy function.</p>
-</section>
-<section id="sage">
-<h4>Sage<a class="headerlink" href="#sage" title="Permalink to this headline">¶</a></h4>
-</section>
-</section>
-</section>
-<section id="development-dependencies">
+<ul class="simple">
+<li><p><strong>MatchPy</strong>: <a class="reference external" href="https://matchpy.readthedocs.io/en/latest/">MatchPy</a> is a
+library for doing pattern matching. It is used in the experimental
+sympy.integrals.rubi module, but presently, it is not used anywhere else in
+SymPy. SymPy and MatchPy are able to interface with each other.</p></li>
+</ul>
+</div>
+<div class="section" id="sage">
+<h3>Sage<a class="headerlink" href="#sage" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.sagemath.org/">Sage</a> is an open source mathematics software that
+incorporates a large number of open source mathematics libraries. SymPy is one
+of the libraries used by Sage.</p>
+<p>Most of the code that interfaces between SymPy and Sage is in Sage itself, but
+a few <code class="docutils literal notranslate"><span class="pre">_sage_</span></code> methods in SymPy that do some very basic setting up of the
+Sage/SymPy wrappers. These methods should typically only be called by Sage
+itself.</p>
+</div>
+</div>
+<div class="section" id="development-dependencies">
 <h2>Development Dependencies<a class="headerlink" href="#development-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Typical development on SymPy does not require any additional dependencies
 beyond Python and mpmath.</p>
-<section id="git">
-<h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference external" href="https://github.com/sympy/sympy">SymPy source code</a> uses the
-<a class="reference external" href="https://git-scm.com/">git</a> version control system. See
-the <a class="reference internal" href="../getting_started/install.html#installation-git"><span class="std std-ref">installation guide</span></a> and <a class="reference external" href="https://github.com/sympy/sympy/wiki/Development-workflow#set-up-git">development
+<div class="section" id="getting-the-source-code">
+<h3>Getting the Source Code<a class="headerlink" href="#getting-the-source-code" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>git</strong>: The <a class="reference external" href="https://github.com/sympy/sympy">SymPy source code</a> uses the
+<a class="reference external" href="https://git-scm.com/">git</a> version control system. See the <a class="reference internal" href="../getting_started/install.html#installation-git"><span class="std std-ref">installation
+guide</span></a> and <a class="reference external" href="https://github.com/sympy/sympy/wiki/Development-workflow#set-up-git">development
 workflow</a>
-for instructions on how to get the development version of SymPy from git.</p>
-</section>
-<section id="building-the-documentation">
+for instructions on how to get the development version of SymPy from git.</p></li>
+</ul>
+</div>
+<div class="section" id="running-the-tests">
+<h3>Running the Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h3>
+<p>The base SymPy tests do not require any additional dependencies, however most
+of the above dependencies may be required for some tests to run. Tests that
+depend on optional dependencies should be skipped when they are not installed,
+either by using the <code class="docutils literal notranslate"><span class="pre">sympy.testing.pytest.skip()</span></code> function or by setting <code class="docutils literal notranslate"><span class="pre">skip</span> <span class="pre">=</span> <span class="pre">True</span></code> to skip the entire test file. Optional modules in tests and SymPy
+library code should be imported with <code class="docutils literal notranslate"><span class="pre">import_module()</span></code>.</p>
+<ul>
+<li><p><strong>pytest</strong>: <a class="reference external" href="https://docs.pytest.org/">Pytest</a> is not a required dependency
+for the SymPy test suite. SymPy has its own test runner, which can be
+accessed via the <code class="docutils literal notranslate"><span class="pre">bin/test</span></code> script in the SymPy source directory or the
+<a class="reference internal" href="../../modules/testing/runtests.html#sympy.testing.runtests.test" title="sympy.testing.runtests.test"><code class="xref py py-func docutils literal notranslate"><span class="pre">test()</span></code></a> function.</p>
+<p>However, if you prefer to use pytest, you can use it to run the tests
+instead of the SymPy test runner. Tests in SymPy should use the wrappers in
+<a class="reference internal" href="../../modules/testing/pytest.html#module-sympy.testing.pytest" title="sympy.testing.pytest"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.testing.pytest</span></code></a> instead of using pytest functions directly.</p>
+</li>
+<li><p><strong>Cloudpickle</strong>: The <a class="reference external" href="https://github.com/cloudpipe/cloudpickle">cloudpickle</a>
+package can be used to more effectively pickle SymPy objects than the
+built-in Python <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle</a>.
+Some tests in <code class="docutils literal notranslate"><span class="pre">sympy.utilities.tests.test_pickling.py</span></code> depend on cloudpickle
+to run. It is not otherwise required for any SymPy function.</p></li>
+</ul>
+</div>
+<div class="section" id="building-the-documentation">
 <h3>Building the Documentation<a class="headerlink" href="#building-the-documentation" title="Permalink to this headline">¶</a></h3>
-<p>Building the documentation requires several additional dependencies.
-<a class="reference internal" href="build-docs.html"><span class="doc std std-doc">This page</span></a> outlines these dependencies and how to install
-them. It is only necessary to install these dependencies if you are
-contributing documentation to SymPy and want to check that the HTML or PDF
-documentation renders correctly. Documentation for the development version of
-SymPy is hosted online at <a class="reference external" href="https://docs.sympy.org/dev/index.html">https://docs.sympy.org/dev/index.html</a>.</p>
-</section>
-<section id="running-the-benchmarks">
+<p>Building the documentation requires several additional dependencies. <a class="reference internal" href="build-docs.html"><span class="doc std std-doc">This
+page</span></a> outlines these dependencies and how to install them. It is
+only necessary to install these dependencies if you are contributing
+documentation to SymPy and want to check that the HTML or PDF documentation
+renders correctly. If you only want to view the documentation for the
+development version of SymPy, development builds of the docs are hosted online
+at <a class="reference external" href="https://docs.sympy.org/dev/index.html">https://docs.sympy.org/dev/index.html</a>.</p>
+</div>
+<div class="section" id="running-the-benchmarks">
 <h3>Running the Benchmarks<a class="headerlink" href="#running-the-benchmarks" title="Permalink to this headline">¶</a></h3>
 <p>The benchmarks for SymPy are hosted at
-<a class="reference external" href="https://github.com/sympy/sympy_benchmarks">https://github.com/sympy/sympy_benchmarks</a>. The README in that repository
+<a class="reference external" href="https://github.com/sympy/sympy_benchmarks">https://github.com/sympy/sympy_benchmarks</a>. The
+<a class="reference external" href="https://github.com/sympy/sympy_benchmarks#readme">README</a> in that repository
 explains how to run the benchmarks.</p>
 <p>Note that the benchmarks are also run automatically on the <a class="reference external" href="https://github.com/sympy/sympy/actions">GitHub Actions
-CI</a>, so it is not generally necessary
+CI</a>, so it is generally not necessary
 to run them yourself as a contributor unless you want to reproduce the
 benchmarks results on your computer or add a new benchmark to the suite.</p>
-<section id="asv">
-<h4>asv<a class="headerlink" href="#asv" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://asv.readthedocs.io/en/stable/">Airspeed Velocity</a> is the package used
-for running the benchmarks. Note that the package name that you install is
-<code class="docutils literal notranslate"><span class="pre">asv</span></code>.</p>
-</section>
-</section>
-<section id="tests-only-dependencies">
-<h3>Tests only dependencies<a class="headerlink" href="#tests-only-dependencies" title="Permalink to this headline">¶</a></h3>
-<section id="id2">
-<h4>Cloudpickle<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-</section>
-</section>
-</section>
-</section>
-
-
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../../index.html">
-              <img class="logo" src="../../_static/sympylogo.png" alt="Logo"/>
-            </a></p>
-  <h3><a href="../../index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Dependencies</a><ul>
-<li><a class="reference internal" href="#hard-dependencies">Hard Dependencies</a><ul>
-<li><a class="reference internal" href="#mpmath">mpmath</a></li>
+<ul class="simple">
+<li><p><strong>asv</strong>: <a class="reference external" href="https://asv.readthedocs.io/en/stable/">Airspeed Velocity</a> is the
+package used for running the benchmarks. Note that the package name that you
+install is called <code class="docutils literal notranslate"><span class="pre">asv</span></code>.</p></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#optional-dependencies">Optional Dependencies</a><ul>
-<li><a class="reference internal" href="#recommended-optional-dependencies">Recommended Optional Dependencies</a><ul>
-<li><a class="reference internal" href="#gmpy2">gmpy2</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#interactive-use">Interactive Use</a><ul>
-<li><a class="reference internal" href="#ipython">IPython</a></li>
-<li><a class="reference internal" href="#jupyter-notebook">Jupyter Notebook</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#latex-parsing">LaTeX Parsing</a><ul>
-<li><a class="reference internal" href="#antlr-python-runtime">antlr-python-runtime</a></li>
-<li><a class="reference internal" href="#python-clang">python-clang</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#logic">Logic</a><ul>
-<li><a class="reference internal" href="#pycosat">pycosat</a></li>
-<li><a class="reference internal" href="#pysat">pysat</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#plotting">Plotting</a><ul>
-<li><a class="reference internal" href="#matplotlib">matplotlib</a></li>
-<li><a class="reference internal" href="#pyglet">pyglet</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#lambdify">lambdify</a><ul>
-<li><a class="reference internal" href="#numpy">numpy</a></li>
-<li><a class="reference internal" href="#scipy">scipy</a></li>
-<li><a class="reference internal" href="#cupy">cupy</a></li>
-<li><a class="reference internal" href="#tensorflow">tensorflow</a></li>
-<li><a class="reference internal" href="#numexpr">numexpr</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#code-generation">Code Generation</a><ul>
-<li><a class="reference internal" href="#id1">NumPy</a></li>
-<li><a class="reference internal" href="#cython">Cython</a></li>
-<li><a class="reference internal" href="#aesara">Aesara</a></li>
-<li><a class="reference internal" href="#pymc3">pymc3</a></li>
-<li><a class="reference internal" href="#llvmlite">llvmlite</a></li>
-<li><a class="reference internal" href="#wurlitzer">Wurlitzer</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#optional-symengine-backend">Optional SymEngine Backend</a><ul>
-<li><a class="reference internal" href="#python-symengine">python-symengine</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#experimental-rubi-integrator">Experimental Rubi Integrator</a><ul>
-<li><a class="reference internal" href="#matchpy">MatchPy</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#other">Other</a><ul>
-<li><a class="reference internal" href="#cloudpickle">cloudpickle</a></li>
-<li><a class="reference internal" href="#sage">Sage</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#development-dependencies">Development Dependencies</a><ul>
-<li><a class="reference internal" href="#git">git</a></li>
-<li><a class="reference internal" href="#building-the-documentation">Building the Documentation</a></li>
-<li><a class="reference internal" href="#running-the-benchmarks">Running the Benchmarks</a><ul>
-<li><a class="reference internal" href="#asv">asv</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#tests-only-dependencies">Tests only dependencies</a><ul>
-<li><a class="reference internal" href="#id2">Cloudpickle</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="dev-setup.html"
-                        title="previous chapter">Development Environment Setup</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="build-docs.html"
-                        title="next chapter">Build the Documentation</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../_sources/guides/contributing/dependencies.md.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="dev-setup.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Development Environment Setup</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="build-docs.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Build the Documentation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+        &copy; Copyright 2022 SymPy Development Team.<br/>
+      Last updated on Feb 17, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
-          <a href="build-docs.html" title="Build the Documentation"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="dev-setup.html" title="Development Environment Setup"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">SymPy 1.10.dev documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >SymPy Guides</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" >Contributing to SymPy</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Dependencies</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2021 SymPy Development Team.
-      Last updated on Dec 18, 2021.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
-    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
   </body>
 </html>

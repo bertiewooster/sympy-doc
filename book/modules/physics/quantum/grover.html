@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grover’s Algorithm &#8212; SymPy 1.10.dev documentation</title>
+    <title>Grover’s Algorithm &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="QFT" href="qft.html" />
     <link rel="prev" title="Gates" href="gate.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -74,7 +74,7 @@
       <img src="../../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -155,6 +155,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -200,6 +205,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -222,6 +232,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -274,6 +289,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -727,6 +747,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../../tensor/array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../tensor/array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1363,6 +1388,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../../utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="../../utilities/iterables.html">
          Iterables
         </a>
@@ -1754,7 +1784,7 @@ qubit states, not just one.</p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.grover.OracleGate">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">OracleGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/grover.py#L62-L182"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.OracleGate" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">OracleGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/grover.py#L62-L182"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.OracleGate" title="Permalink to this definition">¶</a></dt>
 <dd><p>A black box gate.</p>
 <p>The gate marks the desired qubits of an unknown function by flipping
 the sign of the qubits.  The unknown function returns true when it
@@ -1786,13 +1816,13 @@ finds its desired qubits and false otherwise.</p>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.grover.OracleGate.search_function">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">search_function</span></span><a class="headerlink" href="#sympy.physics.quantum.grover.OracleGate.search_function" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">search_function</span></span><a class="headerlink" href="#sympy.physics.quantum.grover.OracleGate.search_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>The unknown function that helps find the sought after qubits.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.grover.OracleGate.targets">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">targets</span></span><a class="headerlink" href="#sympy.physics.quantum.grover.OracleGate.targets" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">targets</span></span><a class="headerlink" href="#sympy.physics.quantum.grover.OracleGate.targets" title="Permalink to this definition">¶</a></dt>
 <dd><p>A tuple of target qubits.</p>
 </dd></dl>
 
@@ -1800,7 +1830,7 @@ finds its desired qubits and false otherwise.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.grover.WGate">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">WGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/grover.py#L185-L243"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.WGate" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">WGate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/grover.py#L185-L243"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.WGate" title="Permalink to this definition">¶</a></dt>
 <dd><p>General n qubit W Gate in Grover’s algorithm.</p>
 <p>The gate performs the operation <code class="docutils literal notranslate"><span class="pre">2|phi&gt;&lt;phi|</span> <span class="pre">-</span> <span class="pre">1</span></code> on some qubits.
 <code class="docutils literal notranslate"><span class="pre">|phi&gt;</span> <span class="pre">=</span> <span class="pre">(tensor</span> <span class="pre">product</span> <span class="pre">of</span> <span class="pre">n</span> <span class="pre">Hadamards)*(|0&gt;</span> <span class="pre">with</span> <span class="pre">n</span> <span class="pre">qubits)</span></code></p>
@@ -1816,7 +1846,7 @@ finds its desired qubits and false otherwise.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.grover.apply_grover">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">apply_grover</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oracle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nqubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/grover.py#L284-L327"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.apply_grover" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">apply_grover</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oracle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nqubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/grover.py#L284-L327"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.apply_grover" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies grover’s algorithm.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1847,7 +1877,7 @@ desired qubits and false otherwise.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.grover.grover_iteration">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">grover_iteration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qstate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oracle</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/grover.py#L246-L281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.grover_iteration" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">grover_iteration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qstate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oracle</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/grover.py#L246-L281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.grover_iteration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies one application of the Oracle and W Gate, WV.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1883,7 +1913,7 @@ desired qubits and false otherwise.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.quantum.grover.superposition_basis">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">superposition_basis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nqubits</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/grover.py#L33-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.superposition_basis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.grover.</span></span><span class="sig-name descname"><span class="pre">superposition_basis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nqubits</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/grover.py#L33-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.grover.superposition_basis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates an equal superposition of the computational basis.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1938,7 +1968,7 @@ desired qubits and false otherwise.</p>
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>

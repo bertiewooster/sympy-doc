@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Dependencies &#8212; SymPy 1.10.dev documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="https://live.sympy.org/static/live-core.css" />
+    <link rel="stylesheet" type="text/css" href="https://live.sympy.org/static/live-autocomplete.css" />
+    <link rel="stylesheet" type="text/css" href="https://live.sympy.org/static/live-sphinx.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="https://live.sympy.org/static/utilities.js"></script>
+    <script src="https://live.sympy.org/static/external/classy.js"></script>
+    <script src="https://live.sympy.org/static/live-core.js"></script>
+    <script src="https://live.sympy.org/static/live-autocomplete.js"></script>
+    <script src="https://live.sympy.org/static/live-sphinx.js"></script>
+    
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/guides/contributing/dependencies.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Build the Documentation" href="build-docs.html" />
+    <link rel="prev" title="Development Environment Setup" href="dev-setup.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="build-docs.html" title="Build the Documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dev-setup.html" title="Development Environment Setup"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">SymPy 1.10.dev documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >SymPy Guides</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Contributing to SymPy</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Dependencies</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="dependencies">
+<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
+<p>There are several packages that, when installed, can enable certain additional
+SymPy functionality. Most users and contributors will not need to install any
+of the packages mentioned below (except for the hard dependencies), unless
+they intend to use the part(s) of SymPy that can use those packages.</p>
+<p>Every dependency listed below can be installed with conda via
+<a class="reference external" href="https://conda-forge.org/">conda-forge</a>, and most can also be installed with
+<code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>This page does not list packages which themselves depend on SymPy, only those
+packages that SymPy depends on. An incomplete list of packages that depend on
+SymPy can be found on the <a class="reference external" href="https://www.sympy.org/en/index.html">main SymPy
+webpage</a>, and a more complete list can be
+found on
+<a class="reference external" href="https://github.com/sympy/sympy/network/dependents?dependent_type=PACKAGE">GitHub</a>
+or <a class="reference external" href="https://libraries.io/pypi/sympy/dependents">libraries.io</a>.</p>
+<section id="hard-dependencies">
+<h2>Hard Dependencies<a class="headerlink" href="#hard-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>SymPy only has one hard dependency, which is required for it to work: mpmath.</p>
+<section id="mpmath">
+<h3>mpmath<a class="headerlink" href="#mpmath" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://mpmath.org/">mpmath</a> is a pure Python package for arbitrary precision
+arithmetic. It is used under the hood whenever SymPy calculates the
+floating-point value of a function, e.g., when using
+<a class="reference internal" href="../../modules/core.html#sympy.core.evalf.EvalfMixin.evalf" title="sympy.core.evalf.EvalfMixin.evalf"><span class="xref myst py py-meth">evalf</span></a>.</p>
+<p>SymPy cannot function with mpmath and will fail to import if it is not
+installed. If you get an error like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">ImportError</span><span class="p">:</span> <span class="n">SymPy</span> <span class="n">now</span> <span class="n">depends</span> <span class="n">on</span> <span class="n">mpmath</span> <span class="k">as</span> <span class="n">an</span> <span class="n">external</span> <span class="n">library</span><span class="o">.</span> <span class="n">See</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">sympy</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">html</span><span class="c1">#mpmath for more information.</span>
+</pre></div>
+</div>
+<p>this means that you did not install mpmath correctly. <a class="reference internal" href="../getting_started/install.html#mpmath-install"><span class="std std-ref">This
+page</span></a> explains how to install it.</p>
+<p>Most methods of installing SymPy, such as the ones outlined in the
+<a class="reference internal" href="../getting_started/install.html#installation"><span class="std std-ref">installation</span></a> guide, will install mpmath automatically. You
+typically only need to install mpmath manually if you did not actually install
+SymPy, e.g., if you are developing directly on SymPy in the git repository.</p>
+</section>
+</section>
+<section id="optional-dependencies">
+<h2>Optional Dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>These dependencies are not required to use SymPy. The vast majority of SymPy
+functions do not require them, however, a few functions such as plotting and
+automatic wrapping of code generated functions require additional dependencies
+to function.</p>
+<p>Additionally, as a contributor, when running the SymPy tests, some tests will
+be skipped if a dependency they require is not installed. The <a class="reference external" href="https://github.com/sympy/sympy/actions">GitHub Actions
+CI</a> which is run on every SymPy pull
+request will automatically install these dependencies in the
+“optional-dependencies” build, but you may wish to install them locally if you
+are working on a part of SymPy that uses them.</p>
+<section id="recommended-optional-dependencies">
+<h3>Recommended Optional Dependencies<a class="headerlink" href="#recommended-optional-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>These dependencies are not required for SymPy to function, but it is
+recommended that all users install them if they can, as they will improve the
+general performance of SymPy.</p>
+<section id="gmpy2">
+<h4>gmpy2<a class="headerlink" href="#gmpy2" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://gmpy2.readthedocs.io/en/latest/intro.html">gmpy2</a> is a Python wrapper
+for the GMP multiple-precision library. It provides large integers that are
+faster than the built-in Python <code class="docutils literal notranslate"><span class="pre">int</span></code>. When gmpy2 is installed, it is used
+automatically by certain core functions that operate on integers, such as the
+<a class="reference internal" href="../../modules/polys/index.html#polys-docs"><span class="std std-ref">polys</span></a>. See <a class="reference internal" href="../../modules/polys/domainsref.html#polys-domainsref"><span class="std std-ref">Reference docs for the Poly Domains</span></a> for more details.</p>
+</section>
+</section>
+<section id="interactive-use">
+<h3>Interactive Use<a class="headerlink" href="#interactive-use" title="Permalink to this headline">¶</a></h3>
+<section id="ipython">
+<h4>IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="jupyter-notebook">
+<h4>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="latex-parsing">
+<h3>LaTeX Parsing<a class="headerlink" href="#latex-parsing" title="Permalink to this headline">¶</a></h3>
+<section id="antlr-python-runtime">
+<h4>antlr-python-runtime<a class="headerlink" href="#antlr-python-runtime" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="python-clang">
+<h4>python-clang<a class="headerlink" href="#python-clang" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="logic">
+<h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">¶</a></h3>
+<section id="pycosat">
+<h4>pycosat<a class="headerlink" href="#pycosat" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="pysat">
+<h4>pysat<a class="headerlink" href="#pysat" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="plotting">
+<h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h3>
+<section id="matplotlib">
+<h4>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="pyglet">
+<h4>pyglet<a class="headerlink" href="#pyglet" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="lambdify">
+<h3>lambdify<a class="headerlink" href="#lambdify" title="Permalink to this headline">¶</a></h3>
+<section id="numpy">
+<h4>numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="scipy">
+<h4>scipy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="cupy">
+<h4>cupy<a class="headerlink" href="#cupy" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="tensorflow">
+<h4>tensorflow<a class="headerlink" href="#tensorflow" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="numexpr">
+<h4>numexpr<a class="headerlink" href="#numexpr" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="code-generation">
+<h3>Code Generation<a class="headerlink" href="#code-generation" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h4>NumPy<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="cython">
+<h4>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="aesara">
+<h4>Aesara<a class="headerlink" href="#aesara" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="pymc3">
+<h4>pymc3<a class="headerlink" href="#pymc3" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="llvmlite">
+<h4>llvmlite<a class="headerlink" href="#llvmlite" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="wurlitzer">
+<h4>Wurlitzer<a class="headerlink" href="#wurlitzer" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://github.com/minrk/wurlitzer">Wurlitzer</a> is a Python package that
+allows capturing output from C extensions. It is used by some of the tests in
+the <code class="docutils literal notranslate"><span class="pre">sympy.codegen</span></code> submodule. It is only used by the test suite. It is not
+used by any end-user functionality. If it is not installed, some tests will be
+skipped.</p>
+</section>
+</section>
+<section id="optional-symengine-backend">
+<h3>Optional SymEngine Backend<a class="headerlink" href="#optional-symengine-backend" title="Permalink to this headline">¶</a></h3>
+<section id="python-symengine">
+<h4>python-symengine<a class="headerlink" href="#python-symengine" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://symengine.org/">SymEngine</a> is a fast symbolic manipulation library,
+written in C++. The SymEngine Python bindings may be used as an optional
+backend for SymPy core. To do this, first install the SymEngine Python
+bindings (with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">symengine</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">python-symengine</span></code>) and run SymPy with the <code class="docutils literal notranslate"><span class="pre">USE_SYMENGINE=1</span></code> environment variable.</p>
+<p>Presently, the SymEngine backend is only used by the
+<a class="reference internal" href="../../modules/physics/mechanics/index.html#classical-mechanics"><span class="std std-ref">sympy.physics.mechanics</span></a> and
+<a class="reference internal" href="../../modules/liealgebras/index.html#lie-algebras"><span class="std std-ref">sympy.liealgebras</span></a> modules, although you can also interface
+with SymPy’s SymEngine backend directly by importing things from
+<code class="docutils literal notranslate"><span class="pre">sympy.core.backend</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.core.backend</span> <span class="kn">import</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># This will create a SymEngine Symbol object if the USE_SYMENGINE</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># environment variable is configured. Otherwise it will be an ordinary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># SymPy Symbol object.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>SymEngine backend support is still experimental, so certain SymPy functions
+may not work correctly when it is enabled.</p>
+</section>
+</section>
+<section id="experimental-rubi-integrator">
+<h3>Experimental Rubi Integrator<a class="headerlink" href="#experimental-rubi-integrator" title="Permalink to this headline">¶</a></h3>
+<section id="matchpy">
+<h4>MatchPy<a class="headerlink" href="#matchpy" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://matchpy.readthedocs.io/en/latest/">MatchPy</a> is a library for doing
+pattern matching. It is used in the experimental sympy.integrals.rubi module,
+but presently, it is not used anywhere else in SymPy. SymPy and MatchPy are
+able to interface with each other.</p>
+</section>
+</section>
+<section id="other">
+<h3>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h3>
+<section id="cloudpickle">
+<h4>cloudpickle<a class="headerlink" href="#cloudpickle" title="Permalink to this headline">¶</a></h4>
+<p>The <a class="reference external" href="https://github.com/cloudpipe/cloudpickle">cloudpickle</a> package can be
+used to more effectively pickle SymPy objects than the built-in Python <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle</a>.
+Some tests in <code class="docutils literal notranslate"><span class="pre">sympy.utilities.tests.test_pickling.py</span></code> depend on cloudpickle
+to run. It is not otherwise required for any SymPy function.</p>
+</section>
+<section id="sage">
+<h4>Sage<a class="headerlink" href="#sage" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+</section>
+<section id="development-dependencies">
+<h2>Development Dependencies<a class="headerlink" href="#development-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Typical development on SymPy does not require any additional dependencies
+beyond Python and mpmath.</p>
+<section id="git">
+<h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://github.com/sympy/sympy">SymPy source code</a> uses the
+<a class="reference external" href="https://git-scm.com/">git</a> version control system. See
+the <a class="reference internal" href="../getting_started/install.html#installation-git"><span class="std std-ref">installation guide</span></a> and <a class="reference external" href="https://github.com/sympy/sympy/wiki/Development-workflow#set-up-git">development
+workflow</a>
+for instructions on how to get the development version of SymPy from git.</p>
+</section>
+<section id="building-the-documentation">
+<h3>Building the Documentation<a class="headerlink" href="#building-the-documentation" title="Permalink to this headline">¶</a></h3>
+<p>Building the documentation requires several additional dependencies.
+<a class="reference internal" href="build-docs.html"><span class="doc std std-doc">This page</span></a> outlines these dependencies and how to install
+them. It is only necessary to install these dependencies if you are
+contributing documentation to SymPy and want to check that the HTML or PDF
+documentation renders correctly. Documentation for the development version of
+SymPy is hosted online at <a class="reference external" href="https://docs.sympy.org/dev/index.html">https://docs.sympy.org/dev/index.html</a>.</p>
+</section>
+<section id="running-the-benchmarks">
+<h3>Running the Benchmarks<a class="headerlink" href="#running-the-benchmarks" title="Permalink to this headline">¶</a></h3>
+<p>The benchmarks for SymPy are hosted at
+<a class="reference external" href="https://github.com/sympy/sympy_benchmarks">https://github.com/sympy/sympy_benchmarks</a>. The README in that repository
+explains how to run the benchmarks.</p>
+<p>Note that the benchmarks are also run automatically on the <a class="reference external" href="https://github.com/sympy/sympy/actions">GitHub Actions
+CI</a>, so it is not generally necessary
+to run them yourself as a contributor unless you want to reproduce the
+benchmarks results on your computer or add a new benchmark to the suite.</p>
+<section id="asv">
+<h4>asv<a class="headerlink" href="#asv" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://asv.readthedocs.io/en/stable/">Airspeed Velocity</a> is the package used
+for running the benchmarks. Note that the package name that you install is
+<code class="docutils literal notranslate"><span class="pre">asv</span></code>.</p>
+</section>
+</section>
+<section id="tests-only-dependencies">
+<h3>Tests only dependencies<a class="headerlink" href="#tests-only-dependencies" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h4>Cloudpickle<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/sympylogo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Dependencies</a><ul>
+<li><a class="reference internal" href="#hard-dependencies">Hard Dependencies</a><ul>
+<li><a class="reference internal" href="#mpmath">mpmath</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optional-dependencies">Optional Dependencies</a><ul>
+<li><a class="reference internal" href="#recommended-optional-dependencies">Recommended Optional Dependencies</a><ul>
+<li><a class="reference internal" href="#gmpy2">gmpy2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#interactive-use">Interactive Use</a><ul>
+<li><a class="reference internal" href="#ipython">IPython</a></li>
+<li><a class="reference internal" href="#jupyter-notebook">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#latex-parsing">LaTeX Parsing</a><ul>
+<li><a class="reference internal" href="#antlr-python-runtime">antlr-python-runtime</a></li>
+<li><a class="reference internal" href="#python-clang">python-clang</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logic">Logic</a><ul>
+<li><a class="reference internal" href="#pycosat">pycosat</a></li>
+<li><a class="reference internal" href="#pysat">pysat</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plotting">Plotting</a><ul>
+<li><a class="reference internal" href="#matplotlib">matplotlib</a></li>
+<li><a class="reference internal" href="#pyglet">pyglet</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lambdify">lambdify</a><ul>
+<li><a class="reference internal" href="#numpy">numpy</a></li>
+<li><a class="reference internal" href="#scipy">scipy</a></li>
+<li><a class="reference internal" href="#cupy">cupy</a></li>
+<li><a class="reference internal" href="#tensorflow">tensorflow</a></li>
+<li><a class="reference internal" href="#numexpr">numexpr</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code-generation">Code Generation</a><ul>
+<li><a class="reference internal" href="#id1">NumPy</a></li>
+<li><a class="reference internal" href="#cython">Cython</a></li>
+<li><a class="reference internal" href="#aesara">Aesara</a></li>
+<li><a class="reference internal" href="#pymc3">pymc3</a></li>
+<li><a class="reference internal" href="#llvmlite">llvmlite</a></li>
+<li><a class="reference internal" href="#wurlitzer">Wurlitzer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optional-symengine-backend">Optional SymEngine Backend</a><ul>
+<li><a class="reference internal" href="#python-symengine">python-symengine</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#experimental-rubi-integrator">Experimental Rubi Integrator</a><ul>
+<li><a class="reference internal" href="#matchpy">MatchPy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other">Other</a><ul>
+<li><a class="reference internal" href="#cloudpickle">cloudpickle</a></li>
+<li><a class="reference internal" href="#sage">Sage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#development-dependencies">Development Dependencies</a><ul>
+<li><a class="reference internal" href="#git">git</a></li>
+<li><a class="reference internal" href="#building-the-documentation">Building the Documentation</a></li>
+<li><a class="reference internal" href="#running-the-benchmarks">Running the Benchmarks</a><ul>
+<li><a class="reference internal" href="#asv">asv</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tests-only-dependencies">Tests only dependencies</a><ul>
+<li><a class="reference internal" href="#id2">Cloudpickle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dev-setup.html"
+                        title="previous chapter">Development Environment Setup</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="build-docs.html"
+                        title="next chapter">Build the Documentation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/guides/contributing/dependencies.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="build-docs.html" title="Build the Documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dev-setup.html" title="Development Environment Setup"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">SymPy 1.10.dev documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >SymPy Guides</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Contributing to SymPy</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Dependencies</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021 SymPy Development Team.
+      Last updated on Dec 18, 2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+    </div>
+  </body>
+</html>

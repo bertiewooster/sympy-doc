@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Methods &#8212; SymPy 1.10.dev documentation</title>
+    <title>Methods &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Tensor" href="tensor.html" />
     <link rel="prev" title="Indexed Objects" href="indexed.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -74,7 +74,7 @@
       <img src="../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -155,6 +155,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -200,6 +205,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -222,6 +232,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -274,6 +289,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -727,6 +747,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1363,6 +1388,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="../utilities/iterables.html">
          Iterables
         </a>
@@ -1755,7 +1785,7 @@ objects instead.  When things stabilize this could be a useful
 refactoring.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.tensor.index_methods.get_contraction_structure">
-<span class="sig-prename descclassname"><span class="pre">sympy.tensor.index_methods.</span></span><span class="sig-name descname"><span class="pre">get_contraction_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/tensor/index_methods.py#L298-L469"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.index_methods.get_contraction_structure" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.tensor.index_methods.</span></span><span class="sig-name descname"><span class="pre">get_contraction_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/tensor/index_methods.py#L298-L469"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.index_methods.get_contraction_structure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine dummy indices of <code class="docutils literal notranslate"><span class="pre">expr</span></code> and describe its structure</p>
 <p>By <em>dummy</em> we mean indices that are summation indices.</p>
 <p>The structure of the expression is determined and described as follows:</p>
@@ -1855,7 +1885,7 @@ over:</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.tensor.index_methods.get_indices">
-<span class="sig-prename descclassname"><span class="pre">sympy.tensor.index_methods.</span></span><span class="sig-name descname"><span class="pre">get_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/tensor/index_methods.py#L202-L295"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.index_methods.get_indices" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.tensor.index_methods.</span></span><span class="sig-name descname"><span class="pre">get_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/tensor/index_methods.py#L202-L295"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.index_methods.get_indices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the outer indices of expression <code class="docutils literal notranslate"><span class="pre">expr</span></code></p>
 <p>By <em>outer</em> we mean indices that are not summation indices.  Returns a set
 and a dict.  The set contains outer indices and the dict contains
@@ -1938,7 +1968,7 @@ for all contractions that should be held separate.</p>
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>

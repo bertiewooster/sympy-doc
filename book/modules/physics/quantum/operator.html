@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Operator &#8212; SymPy 1.10.dev documentation</title>
+    <title>Operator &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Operator/State Helper Functions" href="operatorset.html" />
     <link rel="prev" title="Hilbert Space" href="hilbert.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -74,7 +74,7 @@
       <img src="../../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -155,6 +155,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -200,6 +205,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -222,6 +232,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -274,6 +289,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -727,6 +747,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../../tensor/array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../tensor/array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1363,6 +1388,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../../utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="../../utilities/iterables.html">
          Iterables
         </a>
@@ -1755,7 +1785,7 @@ AntiCommutator, represent, apply_operators.</p></li>
 </ul>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/operator.py#L491-L647"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">DifferentialOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/operator.py#L491-L647"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>An operator for representing the differential operator, i.e. d/dx</p>
 <p>It is initialized by passing two arguments. The first is an arbitrary
 expression that involves a function, such as <code class="docutils literal notranslate"><span class="pre">Derivative(f(x),</span> <span class="pre">x)</span></code>. The
@@ -1796,7 +1826,7 @@ Wavefunction is to be substituted</p>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator.expr">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">expr</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.expr" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">expr</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.expr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the arbitrary expression which is to have the Wavefunction
 substituted into it</p>
 <p class="rubric">Examples</p>
@@ -1818,13 +1848,13 @@ substituted into it</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator.free_symbols">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">free_symbols</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.free_symbols" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">free_symbols</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.free_symbols" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the free symbols of the expression.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator.function">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">function</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.function" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">function</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the function which is to be replaced with the Wavefunction</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.operator</span> <span class="kn">import</span> <span class="n">DifferentialOperator</span>
@@ -1845,7 +1875,7 @@ substituted into it</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.DifferentialOperator.variables">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.variables" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.DifferentialOperator.variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the variables with which the function in the specified
 arbitrary expression is evaluated</p>
 <p class="rubric">Examples</p>
@@ -1869,7 +1899,7 @@ arbitrary expression is evaluated</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.HermitianOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">HermitianOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/operator.py#L190-L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.HermitianOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">HermitianOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/operator.py#L190-L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.HermitianOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Hermitian operator that satisfies H == Dagger(H).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1891,7 +1921,7 @@ operator. For time-dependent operators, this will include the time.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.IdentityOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">IdentityOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/operator.py#L252-L328"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.IdentityOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">IdentityOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/operator.py#L252-L328"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.IdentityOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>An identity operator I that satisfies op * I == I * op == op for any
 operator op.</p>
 <dl class="field-list">
@@ -1913,11 +1943,11 @@ of operator. This is used when generating a matrix representation.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.Operator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">Operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/operator.py#L37-L187"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.Operator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">Operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/operator.py#L37-L187"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.Operator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for non-commuting quantum operators.</p>
-<p>An operator maps between quantum states <a class="reference internal" href="#r677" id="id1"><span>[R677]</span></a>. In quantum mechanics,
+<p>An operator maps between quantum states <a class="reference internal" href="#r679" id="id1"><span>[R679]</span></a>. In quantum mechanics,
 observables (including, but not limited to, measured physical values) are
-represented as Hermitian operators <a class="reference internal" href="#r678" id="id2"><span>[R678]</span></a>.</p>
+represented as Hermitian operators <a class="reference internal" href="#r680" id="id2"><span>[R680]</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>args</strong> : tuple</p>
@@ -1973,10 +2003,10 @@ operator. For time-dependent operators, this will include the time.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r677"><span class="brackets">R677</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dt class="label" id="r679"><span class="brackets">R679</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Operator_%28physics%29">https://en.wikipedia.org/wiki/Operator_%28physics%29</a></p>
 </dd>
-<dt class="label" id="r678"><span class="brackets">R678</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
+<dt class="label" id="r680"><span class="brackets">R680</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Observable">https://en.wikipedia.org/wiki/Observable</a></p>
 </dd>
 </dl>
@@ -1984,11 +2014,11 @@ operator. For time-dependent operators, this will include the time.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.OuterProduct">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">OuterProduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">old_assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/operator.py#L331-L488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">OuterProduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">old_assumptions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/operator.py#L331-L488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct" title="Permalink to this definition">¶</a></dt>
 <dd><p>An unevaluated outer product between a ket and bra.</p>
 <p>This constructs an outer product between any subclass of <code class="docutils literal notranslate"><span class="pre">KetBase</span></code> and
 <code class="docutils literal notranslate"><span class="pre">BraBase</span></code> as <code class="docutils literal notranslate"><span class="pre">|a&gt;&lt;b|</span></code>. An <code class="docutils literal notranslate"><span class="pre">OuterProduct</span></code> inherits from Operator as they act as
-operators in quantum expressions.  For reference see <a class="reference internal" href="#r679" id="id5"><span>[R679]</span></a>.</p>
+operators in quantum expressions.  For reference see <a class="reference internal" href="#r681" id="id5"><span>[R681]</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>ket</strong> : KetBase</p>
@@ -2042,19 +2072,19 @@ by using parentheses to group the ket and bra:</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r679"><span class="brackets">R679</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
+<dt class="label" id="r681"><span class="brackets">R681</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Outer_product">https://en.wikipedia.org/wiki/Outer_product</a></p>
 </dd>
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.OuterProduct.bra">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bra</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct.bra" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bra</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct.bra" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the bra on the right side of the outer product.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.OuterProduct.ket">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ket</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct.ket" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ket</span></span><a class="headerlink" href="#sympy.physics.quantum.operator.OuterProduct.ket" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the ket on the left side of the outer product.</p>
 </dd></dl>
 
@@ -2062,7 +2092,7 @@ by using parentheses to group the ket and bra:</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.operator.UnitaryOperator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">UnitaryOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/quantum/operator.py#L229-L249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.UnitaryOperator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.operator.</span></span><span class="sig-name descname"><span class="pre">UnitaryOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/operator.py#L229-L249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.operator.UnitaryOperator" title="Permalink to this definition">¶</a></dt>
 <dd><p>A unitary operator that satisfies U*Dagger(U) == 1.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2112,7 +2142,7 @@ operator. For time-dependent operators, this will include the time.</p>
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>

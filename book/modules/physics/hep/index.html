@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>High energy physics &#8212; SymPy 1.10.dev documentation</title>
+    <title>High energy physics &#8212; SymPy 1.11.dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -34,8 +34,8 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
     <link href="https://docs.sympy.org/latest/modules/physics/hep/index.html" rel="canonical" />
     
@@ -44,7 +44,7 @@
     <link rel="next" title="The Physics Vector Module" href="../vector/index.html" />
     <link rel="prev" title="Physical quantities" href="../units/quantities.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -76,7 +76,7 @@
       <img src="../../../_static/sympylogo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">SymPy 1.10.dev documentation</h1>
+      <h1 class="site-logo" id="site-title">SymPy 1.11.dev documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -157,6 +157,11 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../tutorial/next.html">
+     What’s Next
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -202,6 +207,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/dependencies.html">
+       Dependencies
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/build-docs.html">
        Build the Documentation
       </a>
@@ -224,6 +234,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../../guides/contributing/make-a-contribution.html">
        Making a Contribution
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../guides/contributing/deprecations.html">
+       Deprecation Policy
       </a>
      </li>
     </ul>
@@ -276,6 +291,11 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../explanation/active-deprecations.html">
+     List of active deprecations
+    </a>
    </li>
   </ul>
  </li>
@@ -729,6 +749,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../../tensor/array.html">
          N-dim array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../tensor/array_expressions.html">
+         N-dim array expressions
         </a>
        </li>
        <li class="toctree-l4">
@@ -1365,6 +1390,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../../utilities/exceptions.html">
+         Exceptions and Warnings
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="../../utilities/iterables.html">
          Iterables
         </a>
@@ -1820,7 +1850,7 @@ GammaMatrix, which is simply declare as</p>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.hep.gamma_matrices.extract_type_tens">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">extract_type_tens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/hep/gamma_matrices.py#L46-L72"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.extract_type_tens" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">extract_type_tens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/hep/gamma_matrices.py#L46-L72"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.extract_type_tens" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract from a <code class="docutils literal notranslate"><span class="pre">TensExpr</span></code> all tensors with <span class="math notranslate nohighlight">\(component\)</span>.</p>
 <p>Returns two tensor expressions:</p>
 <ul class="simple">
@@ -1831,7 +1861,7 @@ GammaMatrix, which is simply declare as</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.hep.gamma_matrices.gamma_trace">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">gamma_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/hep/gamma_matrices.py#L170-L197"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.gamma_trace" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">gamma_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/hep/gamma_matrices.py#L170-L197"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.gamma_trace" title="Permalink to this definition">¶</a></dt>
 <dd><p>trace of a single line of gamma matrices</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.hep.gamma_matrices</span> <span class="kn">import</span> <span class="n">GammaMatrix</span> <span class="k">as</span> <span class="n">G</span><span class="p">,</span>         <span class="n">gamma_trace</span><span class="p">,</span> <span class="n">LorentzIndex</span>
@@ -1852,7 +1882,7 @@ GammaMatrix, which is simply declare as</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.hep.gamma_matrices.kahane_simplify">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">kahane_simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/hep/gamma_matrices.py#L337-L719"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.kahane_simplify" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">kahane_simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/hep/gamma_matrices.py#L337-L719"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.kahane_simplify" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function cancels contracted elements in a product of four
 dimensional gamma matrices, resulting in an expression equal to the given
 one, without the contracted gamma matrices.</p>
@@ -1919,7 +1949,7 @@ Joseph Kahane, Journal of Mathematical Physics, Vol. 9, No. 10, October 1968.</p
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.hep.gamma_matrices.simplify_gpgp">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">simplify_gpgp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/hep/gamma_matrices.py#L81-L167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.simplify_gpgp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hep.gamma_matrices.</span></span><span class="sig-name descname"><span class="pre">simplify_gpgp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/hep/gamma_matrices.py#L81-L167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hep.gamma_matrices.simplify_gpgp" title="Permalink to this definition">¶</a></dt>
 <dd><p>simplify products <code class="docutils literal notranslate"><span class="pre">G(i)*p(-i)*G(j)*p(-j)</span> <span class="pre">-&gt;</span> <span class="pre">p(i)*p(-i)</span></code></p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.hep.gamma_matrices</span> <span class="kn">import</span> <span class="n">GammaMatrix</span> <span class="k">as</span> <span class="n">G</span><span class="p">,</span>         <span class="n">LorentzIndex</span><span class="p">,</span> <span class="n">simplify_gpgp</span>
@@ -1966,7 +1996,7 @@ Joseph Kahane, Journal of Mathematical Physics, Vol. 9, No. 10, October 1968.</p
   <p>
     
         &copy; Copyright 2022 SymPy Development Team.<br/>
-      Last updated on Jan 17, 2022.<br/>
+      Last updated on Feb 17, 2022.<br/>
   </p>
 </footer>
 </main>
