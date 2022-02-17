@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Holonomic" href="../holonomic/index.html" /><link rel="prev" title="Polygons" href="polygons.html" />
 
-    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Plane - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Plane - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,10 +580,10 @@
         </div>
         <article role="main">
           <section id="module-sympy.geometry.plane">
-<span id="plane"></span><h1>Plane<a class="headerlink" href="#module-sympy.geometry.plane" title="Permalink to this headline">¶</a></h1>
+<span id="plane"></span><h1>Plane<a class="headerlink" href="#module-sympy.geometry.plane" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.geometry.plane.</span></span><span class="sig-name descname"><span class="pre">Plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L28-L889"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.geometry.plane.</span></span><span class="sig-name descname"><span class="pre">Plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L27-L886"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane" title="Permalink to this definition">#</a></dt>
 <dd><p>A plane is a flat, two-dimensional surface. A plane is the two-dimensional
 analogue of a point (zero-dimensions), a line (one-dimension) and a solid
 (three-dimensions). A plane can generally be constructed by two types of
@@ -614,7 +616,7 @@ normal vector.</p>
 </table></div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.angle_between">
-<span class="sig-name descname"><span class="pre">angle_between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L99-L143"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.angle_between" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">angle_between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L98-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.angle_between" title="Permalink to this definition">#</a></dt>
 <dd><p>Angle between the plane and other geometric entity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -640,7 +642,7 @@ then proceed to calculate the angle.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.arbitrary_point">
-<span class="sig-name descname"><span class="pre">arbitrary_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L146-L201"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.arbitrary_point" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">arbitrary_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L145-L200"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.arbitrary_point" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns an arbitrary point on the Plane. If given two
 parameters, the point ranges over the entire plane. If given 1
 or no parameters, returns a point with one parameter which,
@@ -652,7 +654,7 @@ radius 1 about p1 of the Plane.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Plane</span><span class="p">,</span> <span class="n">Ray</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Plane</span><span class="p">,</span> <span class="n">Ray</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">normal_vector</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">arbitrary_point</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
@@ -672,7 +674,7 @@ r from p.p1:</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.are_concurrent">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">are_concurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">planes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L204-L251"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.are_concurrent" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">are_concurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">planes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L203-L250"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.are_concurrent" title="Permalink to this definition">#</a></dt>
 <dd><p>Is a sequence of Planes concurrent?</p>
 <p>Two or more Planes are concurrent if their intersections
 are a common line.</p>
@@ -698,7 +700,7 @@ are a common line.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.distance">
-<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L254-L306"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.distance" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L253-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.distance" title="Permalink to this definition">#</a></dt>
 <dd><p>Distance between the plane and another geometric entity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -727,7 +729,7 @@ then proceed to calculate the distance.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.equals">
-<span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L309-L332"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.equals" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L308-L331"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.equals" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns True if self and o are the same mathematical entities.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Plane</span><span class="p">,</span> <span class="n">Point3D</span>
@@ -745,7 +747,7 @@ then proceed to calculate the distance.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.equation">
-<span class="sig-name descname"><span class="pre">equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L335-L354"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.equation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L334-L353"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.equation" title="Permalink to this definition">#</a></dt>
 <dd><p>The equation of the Plane.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Plane</span>
@@ -760,7 +762,7 @@ then proceed to calculate the distance.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.intersection">
-<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L357-L439"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.intersection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L356-L438"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.intersection" title="Permalink to this definition">#</a></dt>
 <dd><p>The intersection with other geometrical entity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -788,7 +790,7 @@ then proceed to calculate the distance.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.is_coplanar">
-<span class="sig-name descname"><span class="pre">is_coplanar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L442-L465"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.is_coplanar" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_coplanar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L441-L464"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.is_coplanar" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns True if <span class="math notranslate nohighlight">\(o\)</span> is coplanar with self, else False.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Plane</span>
@@ -804,7 +806,7 @@ then proceed to calculate the distance.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.is_parallel">
-<span class="sig-name descname"><span class="pre">is_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L468-L505"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.is_parallel" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L467-L504"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.is_parallel" title="Permalink to this definition">#</a></dt>
 <dd><p>Is the given geometric entity parallel to the plane?</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -825,7 +827,7 @@ then proceed to calculate the distance.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.is_perpendicular">
-<span class="sig-name descname"><span class="pre">is_perpendicular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L508-L546"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.is_perpendicular" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_perpendicular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L507-L545"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.is_perpendicular" title="Permalink to this definition">#</a></dt>
 <dd><p>is the given geometric entity perpendicualar to the given plane?</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -846,7 +848,7 @@ then proceed to calculate the distance.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.normal_vector">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">normal_vector</span></span><a class="headerlink" href="#sympy.geometry.plane.Plane.normal_vector" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">normal_vector</span></span><a class="headerlink" href="#sympy.geometry.plane.Plane.normal_vector" title="Permalink to this definition">#</a></dt>
 <dd><p>Normal vector of the given plane.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Plane</span>
@@ -861,7 +863,7 @@ then proceed to calculate the distance.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.p1">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">p1</span></span><a class="headerlink" href="#sympy.geometry.plane.Plane.p1" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">p1</span></span><a class="headerlink" href="#sympy.geometry.plane.Plane.p1" title="Permalink to this definition">#</a></dt>
 <dd><p>The only defining point of the plane. Others can be obtained from the
 arbitrary_point method.</p>
 <p class="rubric">Examples</p>
@@ -878,7 +880,7 @@ arbitrary_point method.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.parallel_plane">
-<span class="sig-name descname"><span class="pre">parallel_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L587-L611"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.parallel_plane" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parallel_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L586-L610"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.parallel_plane" title="Permalink to this definition">#</a></dt>
 <dd><p>Plane parallel to the given plane and passing through the point pt.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -898,11 +900,10 @@ arbitrary_point method.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.parameter_value">
-<span class="sig-name descname"><span class="pre">parameter_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L828-L885"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.parameter_value" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parameter_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L827-L882"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.parameter_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the parameter(s) corresponding to the given point.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Plane</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">Plane</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
@@ -938,7 +939,7 @@ be returned:</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.perpendicular_line">
-<span class="sig-name descname"><span class="pre">perpendicular_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L613-L636"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.perpendicular_line" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">perpendicular_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L612-L635"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.perpendicular_line" title="Permalink to this definition">#</a></dt>
 <dd><p>A line perpendicular to the given plane.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -958,7 +959,7 @@ be returned:</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.perpendicular_plane">
-<span class="sig-name descname"><span class="pre">perpendicular_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pts</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L638-L702"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.perpendicular_plane" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">perpendicular_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pts</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L637-L701"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.perpendicular_plane" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a perpendicular passing through the given points. If the
 direction ratio between the points is the same as the Plane’s normal
 vector then, to select from the infinite number of possible planes,
@@ -989,7 +990,7 @@ y-axis).</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.projection">
-<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L755-L792"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L754-L791"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.projection" title="Permalink to this definition">#</a></dt>
 <dd><p>Project the given point onto the plane along the plane normal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1022,7 +1023,7 @@ axis, so (1, 1) does not project to (1, 1, 2) on the plane A:</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.projection_line">
-<span class="sig-name descname"><span class="pre">projection_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L704-L753"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.projection_line" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">projection_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L703-L752"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.projection_line" title="Permalink to this definition">#</a></dt>
 <dd><p>Project the given line onto the plane through the normal plane
 containing the line.</p>
 <dl class="field-list simple">
@@ -1053,7 +1054,7 @@ intersection between those lines.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.plane.Plane.random_point">
-<span class="sig-name descname"><span class="pre">random_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/geometry/plane.py#L794-L826"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.random_point" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">random_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/geometry/plane.py#L793-L825"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.plane.Plane.random_point" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a random point on the Plane.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1105,16 +1106,22 @@ intersection between those lines.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/modules/geometry/plane.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -1130,7 +1137,7 @@ intersection between those lines.</p>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

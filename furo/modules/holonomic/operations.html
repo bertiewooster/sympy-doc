@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Converting other representations to holonomic" href="convert.html" /><link rel="prev" title="Representation of holonomic functions in SymPy" href="represent.html" />
 
-    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Operations on holonomic functions - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Operations on holonomic functions - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,9 +580,9 @@
         </div>
         <article role="main">
           <section id="operations-on-holonomic-functions">
-<h1>Operations on holonomic functions<a class="headerlink" href="#operations-on-holonomic-functions" title="Permalink to this headline">¶</a></h1>
+<h1>Operations on holonomic functions<a class="headerlink" href="#operations-on-holonomic-functions" title="Permalink to this headline">#</a></h1>
 <section id="addition-and-multiplication">
-<h2>Addition and Multiplication<a class="headerlink" href="#addition-and-multiplication" title="Permalink to this headline">¶</a></h2>
+<h2>Addition and Multiplication<a class="headerlink" href="#addition-and-multiplication" title="Permalink to this headline">#</a></h2>
 <p>Two holonomic functions can be added or multiplied with the result also
 a holonomic functions.</p>
 <blockquote>
@@ -610,14 +612,14 @@ a holonomic functions.</p>
 </div></blockquote>
 </section>
 <section id="integration-and-differentiation">
-<h2>Integration and Differentiation<a class="headerlink" href="#integration-and-differentiation" title="Permalink to this headline">¶</a></h2>
+<h2>Integration and Differentiation<a class="headerlink" href="#integration-and-differentiation" title="Permalink to this headline">#</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.integrate">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">integrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initcond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L726-L851"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.integrate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">integrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initcond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L726-L851"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.integrate" title="Permalink to this definition">#</a></dt>
 <dd><p>Integrates the given holonomic function.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">QQ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">'Dx'</span><span class="p">)</span>
@@ -630,11 +632,11 @@ a holonomic functions.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.diff">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L853-L928"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.diff" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L853-L928"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.diff" title="Permalink to this definition">#</a></dt>
 <dd><p>Differentiation of the given Holonomic function.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ZZ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">ZZ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">'Dx'</span><span class="p">)</span>
@@ -651,17 +653,17 @@ a holonomic functions.</p>
 </dd></dl>
 </section>
 <section id="composition-with-polynomials">
-<h2>Composition with polynomials<a class="headerlink" href="#composition-with-polynomials" title="Permalink to this headline">¶</a></h2>
+<h2>Composition with polynomials<a class="headerlink" href="#composition-with-polynomials" title="Permalink to this headline">#</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.composition">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">composition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L1182-L1244"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.composition" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">composition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L1182-L1244"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.composition" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns function after composition of a holonomic
 function with an algebraic function. The method cannot compute
 initial conditions for the result by itself, so they can be also be
 provided.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">QQ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">'Dx'</span><span class="p">)</span>
@@ -678,10 +680,10 @@ provided.</p>
 </dd></dl>
 </section>
 <section id="convert-to-holonomic-sequence">
-<h2>Convert to holonomic sequence<a class="headerlink" href="#convert-to-holonomic-sequence" title="Permalink to this headline">¶</a></h2>
+<h2>Convert to holonomic sequence<a class="headerlink" href="#convert-to-holonomic-sequence" title="Permalink to this headline">#</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.to_sequence">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L1246-L1437"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_sequence" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L1246-L1437"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_sequence" title="Permalink to this definition">#</a></dt>
 <dd><p>Finds recurrence relation for the coefficients in the series expansion
 of the function about <span class="math notranslate nohighlight">\(x_0\)</span>, where <span class="math notranslate nohighlight">\(x_0\)</span> is the point at
 which the initial condition is stored.</p>
@@ -700,7 +702,7 @@ it is returned as a symbol <span class="math notranslate nohighlight">\(C_j\)</s
 <span class="math notranslate nohighlight">\((x - x_0)^j\)</span> in the power series about <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">QQ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">S</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">'Dx'</span><span class="p">)</span>
@@ -718,27 +720,27 @@ it is returned as a symbol <span class="math notranslate nohighlight">\(C_j\)</s
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r516"><span class="brackets"><a class="fn-backref" href="#id1">R516</a></span></dt>
+<dt class="label" id="r460"><span class="brackets"><a class="fn-backref" href="#id1">R460</a></span></dt>
 <dd><p><a class="reference external" href="https://hal.inria.fr/inria-00070025/document">https://hal.inria.fr/inria-00070025/document</a></p>
 </dd>
-<dt class="label" id="r517"><span class="brackets"><a class="fn-backref" href="#id2">R517</a></span></dt>
+<dt class="label" id="r461"><span class="brackets"><a class="fn-backref" href="#id2">R461</a></span></dt>
 <dd><p><a class="reference external" href="http://www.risc.jku.at/publications/download/risc_2244/DIPLFORM.pdf">http://www.risc.jku.at/publications/download/risc_2244/DIPLFORM.pdf</a></p>
 </dd>
 </dl>
 </dd></dl>
 </section>
 <section id="series-expansion">
-<h2>Series expansion<a class="headerlink" href="#series-expansion" title="Permalink to this headline">¶</a></h2>
+<h2>Series expansion<a class="headerlink" href="#series-expansion" title="Permalink to this headline">#</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.series">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_recur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L1653-L1743"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.series" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_recur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L1653-L1743"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.series" title="Permalink to this definition">#</a></dt>
 <dd><p>Finds the power series expansion of given holonomic function about <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
 <p class="rubric">Explanation</p>
 <p>A list of series might be returned if <span class="math notranslate nohighlight">\(x_0\)</span> is a regular point with
 multiple roots of the indicial equation.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">QQ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">'Dx'</span><span class="p">)</span>
@@ -755,10 +757,10 @@ multiple roots of the indicial equation.</p>
 </dd></dl>
 </section>
 <section id="numerical-evaluation">
-<h2>Numerical evaluation<a class="headerlink" href="#numerical-evaluation" title="Permalink to this headline">¶</a></h2>
+<h2>Numerical evaluation<a class="headerlink" href="#numerical-evaluation" title="Permalink to this headline">#</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.evalf">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">evalf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RK4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivatives</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L1785-L1858"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.evalf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">evalf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RK4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivatives</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L1785-L1858"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.evalf" title="Permalink to this definition">#</a></dt>
 <dd><p>Finds numerical value of a holonomic function using numerical methods.
 (RK4 by default). A set of points (real or complex) must be provided
 which will be the path for the numerical integration.</p>
@@ -769,7 +771,7 @@ values will be computed at each point in this order
 <p>Returns values of the function at <span class="math notranslate nohighlight">\(x_1, x_2, \dots x_n\)</span> in a list.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">QQ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">QQ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">QQ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">'Dx'</span><span class="p">)</span>
@@ -798,10 +800,10 @@ is much more accurate than Euler’s method.</p>
 </dd></dl>
 </section>
 <section id="convert-to-a-linear-combination-of-hypergeometric-functions">
-<h2>Convert to a linear combination of hypergeometric functions<a class="headerlink" href="#convert-to-a-linear-combination-of-hypergeometric-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Convert to a linear combination of hypergeometric functions<a class="headerlink" href="#convert-to-a-linear-combination-of-hypergeometric-functions" title="Permalink to this headline">#</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.to_hyper">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_recur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L1891-L2072"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_hyper" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">as_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_recur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L1891-L2072"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_hyper" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a hypergeometric function (or linear combination of them)
 representing the given holonomic function.</p>
 <p class="rubric">Explanation</p>
@@ -811,7 +813,7 @@ representing the given holonomic function.</p>
 symbolic expressions/functions.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ZZ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">ZZ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">'Dx'</span><span class="p">)</span>
@@ -830,10 +832,10 @@ symbolic expressions/functions.</p>
 </dd></dl>
 </section>
 <section id="convert-to-a-linear-combination-of-meijer-g-functions">
-<h2>Convert to a linear combination of Meijer G-functions<a class="headerlink" href="#convert-to-a-linear-combination-of-meijer-g-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Convert to a linear combination of Meijer G-functions<a class="headerlink" href="#convert-to-a-linear-combination-of-meijer-g-functions" title="Permalink to this headline">#</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.to_meijerg">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_meijerg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L2130-L2162"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_meijerg" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_meijerg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L2130-L2162"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_meijerg" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a linear combination of Meijer G-functions.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic</span> <span class="kn">import</span> <span class="n">expr_to_holonomic</span>
@@ -852,14 +854,14 @@ symbolic expressions/functions.</p>
 </dd></dl>
 </section>
 <section id="convert-to-expressions">
-<h2>Convert to expressions<a class="headerlink" href="#convert-to-expressions" title="Permalink to this headline">¶</a></h2>
+<h2>Convert to expressions<a class="headerlink" href="#convert-to-expressions" title="Permalink to this headline">#</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.holonomic.holonomic.HolonomicFunction.to_expr">
-<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_expr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/holonomic/holonomic.py#L2074-L2093"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_expr" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">HolonomicFunction.</span></span><span class="sig-name descname"><span class="pre">to_expr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/holonomic/holonomic.py#L2074-L2093"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.holonomic.holonomic.HolonomicFunction.to_expr" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts a Holonomic Function back to elementary functions.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.holonomic.holonomic</span> <span class="kn">import</span> <span class="n">HolonomicFunction</span><span class="p">,</span> <span class="n">DifferentialOperators</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.polys.domains</span> <span class="kn">import</span> <span class="n">ZZ</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">ZZ</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">S</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">R</span><span class="p">,</span> <span class="n">Dx</span> <span class="o">=</span> <span class="n">DifferentialOperators</span><span class="p">(</span><span class="n">ZZ</span><span class="o">.</span><span class="n">old_poly_ring</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s1">'Dx'</span><span class="p">)</span>
@@ -899,16 +901,22 @@ symbolic expressions/functions.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/modules/holonomic/operations.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -951,7 +959,7 @@ symbolic expressions/functions.</p>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Unit prefixes" href="prefixes.html" /><link rel="prev" title="Examples" href="examples.html" />
 
-    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Dimensions and dimension systems - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Dimensions and dimension systems - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,7 +580,7 @@
         </div>
         <article role="main">
           <section id="module-sympy.physics.units.dimensions">
-<span id="dimensions-and-dimension-systems"></span><h1>Dimensions and dimension systems<a class="headerlink" href="#module-sympy.physics.units.dimensions" title="Permalink to this headline">¶</a></h1>
+<span id="dimensions-and-dimension-systems"></span><h1>Dimensions and dimension systems<a class="headerlink" href="#module-sympy.physics.units.dimensions" title="Permalink to this headline">#</a></h1>
 <p>Definition of physical dimensions.</p>
 <p>Unit systems will be constructed on top of these dimensions.</p>
 <p>Most of the examples in the doc use MKS system and are presented from the
@@ -588,7 +590,7 @@ no time dimension (but a velocity dimension instead) - in the basis - so the
 question of adding time to length has no meaning.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.Dimension">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.units.dimensions.</span></span><span class="sig-name descname"><span class="pre">Dimension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/units/dimensions.py#L96-L304"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.Dimension" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.units.dimensions.</span></span><span class="sig-name descname"><span class="pre">Dimension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/units/dimensions.py#L95-L272"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.Dimension" title="Permalink to this definition">#</a></dt>
 <dd><p>This class represent the dimension of a physical quantities.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Dimension</span></code> constructor takes as parameters a name and an optional
 symbol.</p>
@@ -629,22 +631,16 @@ SI units convention can be used:</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.Dimension.has_integer_powers">
-<span class="sig-name descname"><span class="pre">has_integer_powers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_sys</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/units/dimensions.py#L295-L304"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.Dimension.has_integer_powers" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_integer_powers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_sys</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/units/dimensions.py#L263-L272"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.Dimension.has_integer_powers" title="Permalink to this definition">#</a></dt>
 <dd><p>Check if the dimension object has only integer powers.</p>
 <p>All the dimension powers should be integers, but rational powers may
 appear in intermediate steps. This method may be used to check that the
 final result is well-defined.</p>
 </dd></dl>
-<dl class="py property">
-<dt class="sig sig-object py" id="sympy.physics.units.dimensions.Dimension.is_dimensionless">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_dimensionless</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.Dimension.is_dimensionless" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the dimension object really has a dimension.</p>
-<p>A dimension should have at least one component with non-zero power.</p>
-</dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.units.dimensions.</span></span><span class="sig-name descname"><span class="pre">DimensionSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensional_dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/units/dimensions.py#L312-L690"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.units.dimensions.</span></span><span class="sig-name descname"><span class="pre">DimensionSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimensional_dependencies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/units/dimensions.py#L280-L587"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem" title="Permalink to this definition">#</a></dt>
 <dd><p>DimensionSystem represents a coherent set of dimensions.</p>
 <p>The constructor takes three parameters:</p>
 <ul class="simple">
@@ -658,7 +654,7 @@ on the base dimensions.</p></li>
 may be omitted.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.can_transf_matrix">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">can_transf_matrix</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.can_transf_matrix" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">can_transf_matrix</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.can_transf_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Useless method, kept for compatibility with previous versions.</p>
 <p>DO NOT USE.</p>
 <p>Return the canonical transformation matrix from the canonical to the
@@ -667,7 +663,7 @@ base dimension basis.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.dim">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dim</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.dim" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dim</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.dim" title="Permalink to this definition">#</a></dt>
 <dd><p>Useless method, kept for compatibility with previous versions.</p>
 <p>DO NOT USE.</p>
 <p>Give the dimension of the system.</p>
@@ -675,21 +671,21 @@ base dimension basis.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.dim_can_vector">
-<span class="sig-name descname"><span class="pre">dim_can_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/units/dimensions.py#L628-L640"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.dim_can_vector" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dim_can_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/units/dimensions.py#L525-L537"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.dim_can_vector" title="Permalink to this definition">#</a></dt>
 <dd><p>Useless method, kept for compatibility with previous versions.</p>
 <p>DO NOT USE.</p>
 <p>Dimensional representation in terms of the canonical base dimensions.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.dim_vector">
-<span class="sig-name descname"><span class="pre">dim_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/units/dimensions.py#L642-L651"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.dim_vector" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dim_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/units/dimensions.py#L539-L548"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.dim_vector" title="Permalink to this definition">#</a></dt>
 <dd><p>Useless method, kept for compatibility with previous versions.</p>
 <p>DO NOT USE.</p>
 <p>Vector representation in terms of the base dimensions.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.inv_can_transf_matrix">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">inv_can_transf_matrix</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.inv_can_transf_matrix" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inv_can_transf_matrix</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.inv_can_transf_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Useless method, kept for compatibility with previous versions.</p>
 <p>DO NOT USE.</p>
 <p>Compute the inverse transformation matrix from the base to the
@@ -703,37 +699,28 @@ to get them in this basis. Nonetheless if this matrix is not square
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.is_consistent">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_consistent</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.is_consistent" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_consistent</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.is_consistent" title="Permalink to this definition">#</a></dt>
 <dd><p>Useless method, kept for compatibility with previous versions.</p>
 <p>DO NOT USE.</p>
 <p>Check if the system is well defined.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.is_dimensionless">
-<span class="sig-name descname"><span class="pre">is_dimensionless</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/units/dimensions.py#L563-L571"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.is_dimensionless" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_dimensionless</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/units/dimensions.py#L460-L468"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.is_dimensionless" title="Permalink to this definition">#</a></dt>
 <dd><p>Check if the dimension object really has a dimension.</p>
 <p>A dimension should have at least one component with non-zero power.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.list_can_dims">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">list_can_dims</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.list_can_dims" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">list_can_dims</span></span><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.list_can_dims" title="Permalink to this definition">#</a></dt>
 <dd><p>Useless method, kept for compatibility with previous versions.</p>
 <p>DO NOT USE.</p>
 <p>List all canonical dimension names.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.print_dim_base">
-<span class="sig-name descname"><span class="pre">print_dim_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/units/dimensions.py#L653-L662"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.print_dim_base" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">print_dim_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/units/dimensions.py#L550-L559"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.print_dim_base" title="Permalink to this definition">#</a></dt>
 <dd><p>Give the string expression of a dimension in term of the basis symbols.</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="sympy.physics.units.dimensions.DimensionSystem.sort_dims">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">sort_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/units/dimensions.py#L507-L525"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.units.dimensions.DimensionSystem.sort_dims" title="Permalink to this definition">¶</a></dt>
-<dd><p>Useless method, kept for compatibility with previous versions.</p>
-<p>DO NOT USE.</p>
-<p>Sort dimensions given in argument using their str function.</p>
-<p>This function will ensure that we get always the same tuple for a given
-set of dimensions.</p>
 </dd></dl>
 </dd></dl>
 </section>
@@ -764,16 +751,22 @@ set of dimensions.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../../_sources/modules/physics/units/dimensions.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

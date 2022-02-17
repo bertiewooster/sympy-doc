@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Operator" href="operator.html" /><link rel="prev" title="Cartesian Operators and States" href="cartesian.html" />
 
-    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Hilbert Space - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Hilbert Space - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,14 +580,14 @@
         </div>
         <article role="main">
           <section id="module-sympy.physics.quantum.hilbert">
-<span id="hilbert-space"></span><h1>Hilbert Space<a class="headerlink" href="#module-sympy.physics.quantum.hilbert" title="Permalink to this headline">¶</a></h1>
+<span id="hilbert-space"></span><h1>Hilbert Space<a class="headerlink" href="#module-sympy.physics.quantum.hilbert" title="Permalink to this headline">#</a></h1>
 <p>Hilbert spaces for quantum mechanics.</p>
 <p>Authors:
 * Brian Granger
 * Matt Curry</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.ComplexSpace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">ComplexSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L112-L185"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.ComplexSpace" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">ComplexSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L112-L185"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.ComplexSpace" title="Permalink to this definition">#</a></dt>
 <dd><p>Finite dimensional Hilbert space of complex vectors.</p>
 <p>The elements of this Hilbert space are n-dimensional complex valued
 vectors with the usual inner product that takes the complex conjugate
@@ -615,8 +617,8 @@ direct product space <code class="docutils literal notranslate"><span class="pre
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.DirectSumHilbertSpace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">DirectSumHilbertSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L442-L549"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.DirectSumHilbertSpace" title="Permalink to this definition">¶</a></dt>
-<dd><p>A direct sum of Hilbert spaces <a class="reference internal" href="#r671" id="id1"><span>[R671]</span></a>.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">DirectSumHilbertSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L442-L549"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.DirectSumHilbertSpace" title="Permalink to this definition">#</a></dt>
+<dd><p>A direct sum of Hilbert spaces <a class="reference internal" href="../../solvers/diophantine.html#r673" id="id1"><span>[R673]</span></a>.</p>
 <p>This class uses the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator to represent direct sums between
 different Hilbert spaces.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">DirectSumHilbertSpace</span></code> object takes in an arbitrary number of
@@ -639,27 +641,27 @@ different Hilbert spaces.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r671"><span class="brackets">R671</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dt class="label" id="r673"><span class="brackets">R673</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hilbert_space#Direct_sums">https://en.wikipedia.org/wiki/Hilbert_space#Direct_sums</a></p>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.DirectSumHilbertSpace.eval">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L479-L497"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.DirectSumHilbertSpace.eval" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L479-L497"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.DirectSumHilbertSpace.eval" title="Permalink to this definition">#</a></dt>
 <dd><p>Evaluates the direct product.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.DirectSumHilbertSpace.spaces">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spaces</span></span><a class="headerlink" href="#sympy.physics.quantum.hilbert.DirectSumHilbertSpace.spaces" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">spaces</span></span><a class="headerlink" href="#sympy.physics.quantum.hilbert.DirectSumHilbertSpace.spaces" title="Permalink to this definition">#</a></dt>
 <dd><p>A tuple of the Hilbert spaces in this direct sum.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.FockSpace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">FockSpace</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L240-L282"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.FockSpace" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">FockSpace</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L240-L282"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.FockSpace" title="Permalink to this definition">#</a></dt>
 <dd><p>The Hilbert space for second quantization.</p>
 <p>Technically, this Hilbert space is a infinite direct sum of direct
-products of single particle Hilbert spaces <a class="reference internal" href="#r672" id="id3"><span>[R672]</span></a>. This is a mess, so we have
+products of single particle Hilbert spaces <a class="reference internal" href="../../solvers/diophantine.html#r674" id="id3"><span>[R674]</span></a>. This is a mess, so we have
 a class to represent it directly.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.hilbert</span> <span class="kn">import</span> <span class="n">FockSpace</span>
@@ -672,17 +674,17 @@ a class to represent it directly.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r672"><span class="brackets">R672</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>)</span></dt>
+<dt class="label" id="r674"><span class="brackets">R674</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Fock_space">https://en.wikipedia.org/wiki/Fock_space</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.HilbertSpace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">HilbertSpace</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L42-L109"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.HilbertSpace" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">HilbertSpace</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L42-L109"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.HilbertSpace" title="Permalink to this definition">#</a></dt>
 <dd><p>An abstract Hilbert space for quantum mechanics.</p>
 <p>In short, a Hilbert space is an abstract vector space that is complete
-with inner products defined <a class="reference internal" href="#r673" id="id5"><span>[R673]</span></a>.</p>
+with inner products defined <a class="reference internal" href="../../solvers/diophantine.html#r675" id="id5"><span>[R675]</span></a>.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.quantum.hilbert</span> <span class="kn">import</span> <span class="n">HilbertSpace</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hs</span> <span class="o">=</span> <span class="n">HilbertSpace</span><span class="p">()</span>
@@ -692,19 +694,19 @@ with inner products defined <a class="reference internal" href="#r673" id="id5">
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r673"><span class="brackets">R673</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
+<dt class="label" id="r675"><span class="brackets">R675</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hilbert_space">https://en.wikipedia.org/wiki/Hilbert_space</a></p>
 </dd>
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.HilbertSpace.dimension">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#sympy.physics.quantum.hilbert.HilbertSpace.dimension" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dimension</span></span><a class="headerlink" href="#sympy.physics.quantum.hilbert.HilbertSpace.dimension" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the Hilbert dimension of the space.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.L2">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">L2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L188-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.L2" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">L2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L188-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.L2" title="Permalink to this definition">#</a></dt>
 <dd><p>The Hilbert space of square integrable functions on an interval.</p>
 <p>An L2 object takes in a single SymPy Interval argument which represents
 the interval its functions (vectors) are defined on.</p>
@@ -723,8 +725,8 @@ the interval its functions (vectors) are defined on.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.TensorPowerHilbertSpace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">TensorPowerHilbertSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L552-L653"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.TensorPowerHilbertSpace" title="Permalink to this definition">¶</a></dt>
-<dd><p>An exponentiated Hilbert space <a class="reference internal" href="#r674" id="id7"><span>[R674]</span></a>.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">TensorPowerHilbertSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L552-L653"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.TensorPowerHilbertSpace" title="Permalink to this definition">#</a></dt>
+<dd><p>An exponentiated Hilbert space <a class="reference internal" href="../../solvers/diophantine.html#r676" id="id7"><span>[R676]</span></a>.</p>
 <p>Tensor powers (repeated tensor products) are represented by the
 operator <code class="docutils literal notranslate"><span class="pre">**</span></code> Identical Hilbert spaces that are multiplied together
 will be automatically combined into a single tensor power object.</p>
@@ -755,15 +757,15 @@ tensor power (number).</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r674"><span class="brackets">R674</span><span class="fn-backref">(<a href="#id7">1</a>,<a href="#id8">2</a>)</span></dt>
+<dt class="label" id="r676"><span class="brackets">R676</span><span class="fn-backref">(<a href="#id7">1</a>,<a href="#id8">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hilbert_space#Tensor_products">https://en.wikipedia.org/wiki/Hilbert_space#Tensor_products</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.TensorProductHilbertSpace">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">TensorProductHilbertSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L285-L439"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.TensorProductHilbertSpace" title="Permalink to this definition">¶</a></dt>
-<dd><p>A tensor product of Hilbert spaces <a class="reference internal" href="#r675" id="id9"><span>[R675]</span></a>.</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.quantum.hilbert.</span></span><span class="sig-name descname"><span class="pre">TensorProductHilbertSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L285-L439"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.TensorProductHilbertSpace" title="Permalink to this definition">#</a></dt>
+<dd><p>A tensor product of Hilbert spaces <a class="reference internal" href="../../solvers/diophantine.html#r677" id="id9"><span>[R677]</span></a>.</p>
 <p>The tensor product between Hilbert spaces is represented by the
 operator <code class="docutils literal notranslate"><span class="pre">*</span></code> Products of the same Hilbert space will be combined into
 tensor powers.</p>
@@ -799,18 +801,18 @@ object.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r675"><span class="brackets">R675</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id10">2</a>)</span></dt>
+<dt class="label" id="r677"><span class="brackets">R677</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id10">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Hilbert_space#Tensor_products">https://en.wikipedia.org/wiki/Hilbert_space#Tensor_products</a></p>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.TensorProductHilbertSpace.eval">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/quantum/hilbert.py#L335-L378"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.TensorProductHilbertSpace.eval" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/quantum/hilbert.py#L335-L378"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.quantum.hilbert.TensorProductHilbertSpace.eval" title="Permalink to this definition">#</a></dt>
 <dd><p>Evaluates the direct product.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.quantum.hilbert.TensorProductHilbertSpace.spaces">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spaces</span></span><a class="headerlink" href="#sympy.physics.quantum.hilbert.TensorProductHilbertSpace.spaces" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">spaces</span></span><a class="headerlink" href="#sympy.physics.quantum.hilbert.TensorProductHilbertSpace.spaces" title="Permalink to this definition">#</a></dt>
 <dd><p>A tuple of the Hilbert spaces in this tensor product.</p>
 </dd></dl>
 </dd></dl>
@@ -842,16 +844,22 @@ object.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../../_sources/modules/physics/quantum/hilbert.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

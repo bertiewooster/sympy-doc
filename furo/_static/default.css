@@ -50,12 +50,12 @@ div.documentwrapper {
 }
 
 div.bodywrapper {
-    margin: 0 200px 0 230px;
+    margin: 0 200px 0 270px;
 }
 
 div.body {
     background-color: #FFFFFF;
-    color: #000000;
+    color: ;
     padding: 0 20px 30px 20px;
 }
 
@@ -86,7 +86,7 @@ div.sphinxsidebar {
 }
 
 div.sphinxsidebar h3 {
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: ;
     color: #DDDDDD;
     font-size: 1.4em;
     font-weight: normal;
@@ -99,7 +99,7 @@ div.sphinxsidebar h3 a {
 }
 
 div.sphinxsidebar h4 {
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: ;
     color: #DDDDDD;
     font-size: 1.3em;
     font-weight: normal;
@@ -164,8 +164,8 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: 'Trebuchet MS', sans-serif;
-    background-color: #f2f2f2;
+    font-family: ;
+    background-color: ;
     font-weight: normal;
     color: #2f441e;
     border-bottom: 1px solid #ccc;
@@ -244,8 +244,8 @@ pre {
     font-family: DejaVu Sans Mono, monospace;
     font-size: 100%;
     padding: 5px;
-    background-color: unset;
-    color: unset;
+    background-color: ;
+    color: ;
     line-height: 120%;
     border: 1px solid #ac9;
     border-left: none;
@@ -271,7 +271,7 @@ th {
 }
 
 .viewcode-back {
-    font-family: sans-serif;
+    font-family: ;
 }
 
 div.viewcode-block:target {

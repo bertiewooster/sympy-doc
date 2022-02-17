@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Solveset" href="solveset.html" /><link rel="prev" title="PDE" href="pde.html" />
 
-    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Solvers - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Solvers - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,18 +580,21 @@
         </div>
         <article role="main">
           <section id="solvers">
-<span id="id1"></span><h1>Solvers<a class="headerlink" href="#solvers" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Solvers<a class="headerlink" href="#solvers" title="Permalink to this headline">#</a></h1>
 <span class="target" id="module-sympy.solvers"></span><p>The <em>solvers</em> module in SymPy implements methods for solving equations.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is recommended to use <a class="reference internal" href="solveset.html#module-sympy.solvers.solveset" title="sympy.solvers.solveset"><code class="xref py py-func docutils literal notranslate"><span class="pre">solveset()</span></code></a> to solve univariate equations,
-<a class="reference internal" href="solveset.html#sympy.solvers.solveset.linsolve" title="sympy.solvers.solveset.linsolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">linsolve()</span></code></a> to solve system of linear equations
-instead of <a class="reference internal" href="#sympy.solvers.solvers.solve" title="sympy.solvers.solvers.solve"><code class="xref py py-func docutils literal notranslate"><span class="pre">solve()</span></code></a> and <a class="reference internal" href="solveset.html#sympy.solvers.solveset.nonlinsolve" title="sympy.solvers.solveset.nonlinsolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">nonlinsolve()</span></code></a> to
-solve system of non linear equations since sooner or later the <a class="reference internal" href="solveset.html#sympy.solvers.solveset.solveset" title="sympy.solvers.solveset.solveset"><code class="xref py py-func docutils literal notranslate"><span class="pre">solveset()</span></code></a>
-will take over <a class="reference internal" href="#sympy.solvers.solvers.solve" title="sympy.solvers.solvers.solve"><code class="xref py py-func docutils literal notranslate"><span class="pre">solve()</span></code></a> either internally or externally.</p>
+<p><a class="reference internal" href="#sympy.solvers.solvers.solve" title="sympy.solvers.solvers.solve"><code class="xref py py-func docutils literal notranslate"><span class="pre">solve()</span></code></a> is an older more mature general
+function for solving many types of equations.
+<a class="reference internal" href="#sympy.solvers.solvers.solve" title="sympy.solvers.solvers.solve"><code class="xref py py-func docutils literal notranslate"><span class="pre">solve()</span></code></a> has many options and uses different
+methods internally to determine what type of equations you pass it, so if
+you know what type of equation you are dealing with you may want to use the
+newer <a class="reference internal" href="solveset.html#module-sympy.solvers.solveset" title="sympy.solvers.solveset"><code class="xref py py-func docutils literal notranslate"><span class="pre">solveset()</span></code></a> which solves univariate equations, <a class="reference internal" href="solveset.html#sympy.solvers.solveset.linsolve" title="sympy.solvers.solveset.linsolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">linsolve()</span></code></a>
+which solves system of linear equations, and <a class="reference internal" href="solveset.html#sympy.solvers.solveset.nonlinsolve" title="sympy.solvers.solveset.nonlinsolve"><code class="xref py py-func docutils literal notranslate"><span class="pre">nonlinsolve()</span></code></a> which
+solves systems of non linear equations.</p>
 </div>
 <section id="algebraic-equations">
-<h2>Algebraic equations<a class="headerlink" href="#algebraic-equations" title="Permalink to this headline">¶</a></h2>
+<h2>Algebraic equations<a class="headerlink" href="#algebraic-equations" title="Permalink to this headline">#</a></h2>
 <p>Use <a class="reference internal" href="#sympy.solvers.solvers.solve" title="sympy.solvers.solvers.solve"><code class="xref py py-func docutils literal notranslate"><span class="pre">solve()</span></code></a> to solve algebraic equations. We suppose all equations are equaled to 0,
 so solving x**2 == 1 translates into the following code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.solvers</span> <span class="kn">import</span> <span class="n">solve</span>
@@ -603,7 +608,7 @@ so solving x**2 == 1 translates into the following code:</p>
 is the symbol that we want to solve the equation for.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solvers.solve">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solvers.py#L377-L1290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solvers.py#L375-L1288"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve" title="Permalink to this definition">#</a></dt>
 <dd><p>Algebraically solves equations and systems of equations.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1097,7 +1102,7 @@ solution can only be verified with <code class="docutils literal notranslate"><s
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solvers.solve_linear">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solvers.py#L2001-L2182"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve_linear" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solvers.py#L1999-L2178"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve_linear" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a tuple derived from <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">lhs</span> <span class="pre">-</span> <span class="pre">rhs</span></code> that is one of
 the following: <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1)</span></code>, <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>, <code class="docutils literal notranslate"><span class="pre">(symbol,</span> <span class="pre">solution)</span></code>, <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">d)</span></code>.</p>
 <p class="rubric">Explanation</p>
@@ -1196,7 +1201,7 @@ solution.)</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solvers.solve_linear_system">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_linear_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solvers.py#L2268-L2323"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve_linear_system" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_linear_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solvers.py#L2263-L2318"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve_linear_system" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve system of <span class="math notranslate nohighlight">\(N\)</span> linear equations with <span class="math notranslate nohighlight">\(M\)</span> variables, which means
 both under- and overdetermined systems are supported.</p>
 <p class="rubric">Explanation</p>
@@ -1238,15 +1243,14 @@ is more efficient and compact than the Gauss-Jordan method.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solvers.solve_linear_system_LU">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_linear_system_LU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syms</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solvers.py#L2373-L2410"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve_linear_system_LU" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_linear_system_LU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syms</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solvers.py#L2367-L2403"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve_linear_system_LU" title="Permalink to this definition">#</a></dt>
 <dd><p>Solves the augmented matrix system using <code class="docutils literal notranslate"><span class="pre">LUsolve</span></code> and returns a
 dictionary in which solutions are keyed to the symbols of <em>syms</em> as ordered.</p>
 <p class="rubric">Explanation</p>
 <p>The matrix must be invertible.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">solve_linear_system_LU</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.solvers.solvers</span> <span class="kn">import</span> <span class="n">solve_linear_system_LU</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solve_linear_system_LU</span><span class="p">(</span><span class="n">Matrix</span><span class="p">([</span>
@@ -1263,7 +1267,7 @@ dictionary in which solutions are keyed to the symbols of <em>syms</em> as order
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solvers.solve_undetermined_coeffs">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_undetermined_coeffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solvers.py#L2326-L2370"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve_undetermined_coeffs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">solve_undetermined_coeffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sym</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solvers.py#L2321-L2364"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.solve_undetermined_coeffs" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve equation of a type <span class="math notranslate nohighlight">\(p(x; a_1, \ldots, a_k) = q(x)\)</span> where both
 <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> are univariate polynomials that depend on <span class="math notranslate nohighlight">\(k\)</span> parameters.</p>
 <p class="rubric">Explanation</p>
@@ -1273,9 +1277,8 @@ parameters with respect to coefficients in <span class="math notranslate nohighl
 SymPy expressions. Specification of parameters and variables is
 obligatory for efficiency and simplicity reasons.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Eq</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">solve_undetermined_coeffs</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">x</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.solvers</span> <span class="kn">import</span> <span class="n">solve_undetermined_coeffs</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solve_undetermined_coeffs</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span>
@@ -1289,7 +1292,7 @@ obligatory for efficiency and simplicity reasons.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solvers.nsolve">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">nsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solvers.py#L2770-L2967"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.nsolve" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">nsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solvers.py#L2763-L2960"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.nsolve" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve a nonlinear equation system numerically: <code class="docutils literal notranslate"><span class="pre">nsolve(f,</span> <span class="pre">[args,]</span> <span class="pre">x0,</span>
 <span class="pre">modules=['mpmath'],</span> <span class="pre">**kwargs)</span></code>.</p>
 <p class="rubric">Explanation</p>
@@ -1390,7 +1393,7 @@ the user.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solvers.checksol">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">checksol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solvers.py#L185-L374"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.checksol" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">checksol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solvers.py#L186-L372"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.checksol" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks whether sol is a solution of equation f == 0.</p>
 <p class="rubric">Explanation</p>
 <p>Input can be either a single symbol and corresponding value
@@ -1401,8 +1404,7 @@ A solution must satisfy all equations in <em>f</em> to be considered valid;
 if a solution does not satisfy any equation, False is returned; if one or
 more checks are inconclusive (and none are False) then None is returned.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.solvers</span> <span class="kn">import</span> <span class="n">checksol</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">checksol</span><span class="p">,</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x,y'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">checksol</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="go">True</span>
@@ -1438,7 +1440,7 @@ simplify the function before trying specific simplifications</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solvers.unrad">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">unrad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eq</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">syms</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solvers.py#L3160-L3526"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.unrad" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solvers.</span></span><span class="sig-name descname"><span class="pre">unrad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eq</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">syms</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solvers.py#L3153-L3519"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solvers.unrad" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove radicals with symbolic arguments and return (eq, cov),
 None, or raise an error.</p>
 <p class="rubric">Explanation</p>
@@ -1501,18 +1503,18 @@ four terms having sqrt() factors.</p></li>
 </dd></dl>
 </section>
 <section id="ordinary-differential-equations-odes">
-<h2>Ordinary Differential equations (ODEs)<a class="headerlink" href="#ordinary-differential-equations-odes" title="Permalink to this headline">¶</a></h2>
+<h2>Ordinary Differential equations (ODEs)<a class="headerlink" href="#ordinary-differential-equations-odes" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="ode.html#ode-docs"><span class="std std-ref">ODE</span></a>.</p>
 </section>
 <section id="partial-differential-equations-pdes">
-<h2>Partial Differential Equations (PDEs)<a class="headerlink" href="#partial-differential-equations-pdes" title="Permalink to this headline">¶</a></h2>
+<h2>Partial Differential Equations (PDEs)<a class="headerlink" href="#partial-differential-equations-pdes" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="pde.html#pde-docs"><span class="std std-ref">PDE</span></a>.</p>
 </section>
 <section id="deutils-utilities-for-solving-ode-s-and-pde-s">
-<h2>Deutils (Utilities for solving ODE’s and PDE’s)<a class="headerlink" href="#deutils-utilities-for-solving-ode-s-and-pde-s" title="Permalink to this headline">¶</a></h2>
+<h2>Deutils (Utilities for solving ODE’s and PDE’s)<a class="headerlink" href="#deutils-utilities-for-solving-ode-s-and-pde-s" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.deutils.ode_order">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.deutils.</span></span><span class="sig-name descname"><span class="pre">ode_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/deutils.py#L93-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.deutils.ode_order" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.deutils.</span></span><span class="sig-name descname"><span class="pre">ode_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/deutils.py#L93-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.deutils.ode_order" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the order of a given differential
 equation with respect to func.</p>
 <p>This function is implemented recursively.</p>
@@ -1533,10 +1535,10 @@ equation with respect to func.</p>
 </dd></dl>
 </section>
 <section id="module-sympy.solvers.recurr">
-<span id="recurrence-equations"></span><h2>Recurrence Equations<a class="headerlink" href="#module-sympy.solvers.recurr" title="Permalink to this headline">¶</a></h2>
+<span id="recurrence-equations"></span><h2>Recurrence Equations<a class="headerlink" href="#module-sympy.solvers.recurr" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.recurr.rsolve">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.recurr.</span></span><span class="sig-name descname"><span class="pre">rsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/recurr.py#L669-L834"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.recurr.rsolve" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.recurr.</span></span><span class="sig-name descname"><span class="pre">rsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/recurr.py#L668-L833"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.recurr.rsolve" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve univariate recurrence with rational coefficients.</p>
 <p>Given <span class="math notranslate nohighlight">\(k\)</span>-th order linear recurrence <span class="math notranslate nohighlight">\(\operatorname{L} y = f\)</span>,
 or equivalently:</p>
@@ -1587,7 +1589,7 @@ of a fixed number of pairwise dissimilar hypergeometric terms in
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.recurr.rsolve_poly">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.recurr.</span></span><span class="sig-name descname"><span class="pre">rsolve_poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/recurr.py#L68-L343"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.recurr.rsolve_poly" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.recurr.</span></span><span class="sig-name descname"><span class="pre">rsolve_poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/recurr.py#L69-L344"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.recurr.rsolve_poly" title="Permalink to this definition">#</a></dt>
 <dd><p>Given linear recurrence operator <span class="math notranslate nohighlight">\(\operatorname{L}\)</span> of order
 <span class="math notranslate nohighlight">\(k\)</span> with polynomial coefficients and inhomogeneous equation
 <span class="math notranslate nohighlight">\(\operatorname{L} y = f\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> is a polynomial, we seek for
@@ -1625,17 +1627,17 @@ recurrence, which has solution <span class="math notranslate nohighlight">\(b(n)
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r790"><span class="brackets"><a class="fn-backref" href="#id2">R790</a></span></dt>
+<dt class="label" id="r698"><span class="brackets"><a class="fn-backref" href="#id2">R698</a></span></dt>
 <dd><p>S. A. Abramov, M. Bronstein and M. Petkovsek, On polynomial
 solutions of linear operator equations, in: T. Levelt, ed.,
 Proc. ISSAC ‘95, ACM Press, New York, 1995, 290-296.</p>
 </dd>
-<dt class="label" id="r791"><span class="brackets"><a class="fn-backref" href="#id3">R791</a></span></dt>
+<dt class="label" id="r699"><span class="brackets"><a class="fn-backref" href="#id3">R699</a></span></dt>
 <dd><p>M. Petkovsek, Hypergeometric solutions of linear recurrences
 with polynomial coefficients, J. Symbolic Computation,
 14 (1992), 243-264.</p>
 </dd>
-<dt class="label" id="r792"><span class="brackets"><a class="fn-backref" href="#id4">R792</a></span></dt>
+<dt class="label" id="r700"><span class="brackets"><a class="fn-backref" href="#id4">R700</a></span></dt>
 <dd><ol class="upperalpha simple" start="13">
 <li><p>Petkovsek, H. S. Wilf, D. Zeilberger, A = B, 1996.</p></li>
 </ol>
@@ -1644,7 +1646,7 @@ with polynomial coefficients, J. Symbolic Computation,
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.recurr.rsolve_ratio">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.recurr.</span></span><span class="sig-name descname"><span class="pre">rsolve_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/recurr.py#L346-L454"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.recurr.rsolve_ratio" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.recurr.</span></span><span class="sig-name descname"><span class="pre">rsolve_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/recurr.py#L347-L455"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.recurr.rsolve_ratio" title="Permalink to this definition">#</a></dt>
 <dd><p>Given linear recurrence operator <span class="math notranslate nohighlight">\(\operatorname{L}\)</span> of order <span class="math notranslate nohighlight">\(k\)</span>
 with polynomial coefficients and inhomogeneous equation
 <span class="math notranslate nohighlight">\(\operatorname{L} y = f\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> is a polynomial, we seek
@@ -1685,7 +1687,7 @@ particular solution of inhomogeneous part of a recurrence.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r793"><span class="brackets"><a class="fn-backref" href="#id5">R793</a></span></dt>
+<dt class="label" id="r701"><span class="brackets"><a class="fn-backref" href="#id5">R701</a></span></dt>
 <dd><p>S. A. Abramov, Rational solutions of linear difference
 and q-difference equations with polynomial coefficients,
 in: T. Levelt, ed., Proc. ISSAC ‘95, ACM Press, New York,
@@ -1695,7 +1697,7 @@ in: T. Levelt, ed., Proc. ISSAC ‘95, ACM Press, New York,
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.recurr.rsolve_hyper">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.recurr.</span></span><span class="sig-name descname"><span class="pre">rsolve_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/recurr.py#L457-L666"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.recurr.rsolve_hyper" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.recurr.</span></span><span class="sig-name descname"><span class="pre">rsolve_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">hints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/recurr.py#L458-L665"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.recurr.rsolve_hyper" title="Permalink to this definition">#</a></dt>
 <dd><p>Given linear recurrence operator <span class="math notranslate nohighlight">\(\operatorname{L}\)</span> of order <span class="math notranslate nohighlight">\(k\)</span>
 with polynomial coefficients and inhomogeneous equation
 <span class="math notranslate nohighlight">\(\operatorname{L} y = f\)</span> we seek for all hypergeometric solutions
@@ -1738,12 +1740,12 @@ solutions generated by this procedure are linearly independent</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r794"><span class="brackets"><a class="fn-backref" href="#id6">R794</a></span></dt>
+<dt class="label" id="r702"><span class="brackets"><a class="fn-backref" href="#id6">R702</a></span></dt>
 <dd><p>M. Petkovsek, Hypergeometric solutions of linear recurrences
 with polynomial coefficients, J. Symbolic Computation,
 14 (1992), 243-264.</p>
 </dd>
-<dt class="label" id="r795"><span class="brackets"><a class="fn-backref" href="#id7">R795</a></span></dt>
+<dt class="label" id="r703"><span class="brackets"><a class="fn-backref" href="#id7">R703</a></span></dt>
 <dd><ol class="upperalpha simple" start="13">
 <li><p>Petkovsek, H. S. Wilf, D. Zeilberger, A = B, 1996.</p></li>
 </ol>
@@ -1752,10 +1754,10 @@ with polynomial coefficients, J. Symbolic Computation,
 </dd></dl>
 </section>
 <section id="systems-of-polynomial-equations">
-<h2>Systems of Polynomial Equations<a class="headerlink" href="#systems-of-polynomial-equations" title="Permalink to this headline">¶</a></h2>
+<h2>Systems of Polynomial Equations<a class="headerlink" href="#systems-of-polynomial-equations" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.polysys.solve_poly_system">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.polysys.</span></span><span class="sig-name descname"><span class="pre">solve_poly_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">gens</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/polysys.py#L18-L64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.polysys.solve_poly_system" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.polysys.</span></span><span class="sig-name descname"><span class="pre">solve_poly_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">gens</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/polysys.py#L18-L64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.polysys.solve_poly_system" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve a system of polynomial equations.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1793,7 +1795,7 @@ equations listed in seq</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.polysys.solve_triangulated">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.polysys.</span></span><span class="sig-name descname"><span class="pre">solve_triangulated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polys</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">gens</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/polysys.py#L302-L401"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.polysys.solve_triangulated" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.polysys.</span></span><span class="sig-name descname"><span class="pre">solve_triangulated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polys</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">gens</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/polysys.py#L302-L401"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.polysys.solve_triangulated" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve a polynomial system using Gianni-Kalkbrenner algorithm.</p>
 <p>The algorithm proceeds by computing one Groebner basis in the ground
 domain and then by iteratively computing polynomial factorizations in
@@ -1841,11 +1843,11 @@ Algebraic Algorithms and Error-Correcting Codes, LNCS 356 247–257, 1989</p>
 </dd></dl>
 </section>
 <section id="diophantine-equations-des">
-<h2>Diophantine Equations (DEs)<a class="headerlink" href="#diophantine-equations-des" title="Permalink to this headline">¶</a></h2>
+<h2>Diophantine Equations (DEs)<a class="headerlink" href="#diophantine-equations-des" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="diophantine.html#diophantine-docs"><span class="std std-ref">Diophantine</span></a></p>
 </section>
 <section id="inequalities">
-<h2>Inequalities<a class="headerlink" href="#inequalities" title="Permalink to this headline">¶</a></h2>
+<h2>Inequalities<a class="headerlink" href="#inequalities" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="inequalities.html#inequality-docs"><span class="std std-ref">Inequality Solvers</span></a></p>
 </section>
 </section>
@@ -1876,16 +1878,22 @@ Algebraic Algorithms and Error-Correcting Codes, LNCS 356 247–257, 1989</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/modules/solvers/solvers.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -1927,7 +1935,7 @@ Algebraic Algorithms and Error-Correcting Codes, LNCS 356 247–257, 1989</p>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

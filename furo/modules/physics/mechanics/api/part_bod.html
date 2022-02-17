@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="Kane’s Method &amp; Lagrange’s Method (Docstrings)" href="kane_lagrange.html" /><link rel="prev" title="SymPy Mechanics for Autolev Users" href="../sympy_mechanics_for_autolev_users.html" />
 
-    <link rel="shortcut icon" href="../../../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Masses, Inertias &amp; Particles, RigidBodys (Docstrings) - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Masses, Inertias &amp; Particles, RigidBodys (Docstrings) - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,12 +580,12 @@
         </div>
         <article role="main">
           <section id="masses-inertias-particles-rigidbodys-docstrings">
-<span id="part-bod"></span><h1>Masses, Inertias &amp; Particles, RigidBodys (Docstrings)<a class="headerlink" href="#masses-inertias-particles-rigidbodys-docstrings" title="Permalink to this headline">¶</a></h1>
+<span id="part-bod"></span><h1>Masses, Inertias &amp; Particles, RigidBodys (Docstrings)<a class="headerlink" href="#masses-inertias-particles-rigidbodys-docstrings" title="Permalink to this headline">#</a></h1>
 <section id="module-sympy.physics.mechanics.particle">
-<span id="particle"></span><h2>Particle<a class="headerlink" href="#module-sympy.physics.mechanics.particle" title="Permalink to this headline">¶</a></h2>
+<span id="particle"></span><h2>Particle<a class="headerlink" href="#module-sympy.physics.mechanics.particle" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.particle.Particle">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.particle.</span></span><span class="sig-name descname"><span class="pre">Particle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/particle.py#L9-L277"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.particle.</span></span><span class="sig-name descname"><span class="pre">Particle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/particle.py#L9-L281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle" title="Permalink to this definition">#</a></dt>
 <dd><p>A particle.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -619,7 +621,7 @@ space.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.particle.Particle.angular_momentum">
-<span class="sig-name descname"><span class="pre">angular_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/particle.py#L118-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.angular_momentum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">angular_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/particle.py#L118-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.angular_momentum" title="Permalink to this definition">#</a></dt>
 <dd><p>Angular momentum of the particle about the point.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -658,7 +660,7 @@ the inertial frame, N.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.particle.Particle.kinetic_energy">
-<span class="sig-name descname"><span class="pre">kinetic_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/particle.py#L162-L199"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.kinetic_energy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">kinetic_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/particle.py#L162-L199"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.kinetic_energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Kinetic energy of the particle.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -690,7 +692,7 @@ particle in the supplied ReferenceFrame.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.particle.Particle.linear_momentum">
-<span class="sig-name descname"><span class="pre">linear_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/particle.py#L79-L116"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.linear_momentum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">linear_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/particle.py#L79-L116"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.linear_momentum" title="Permalink to this definition">#</a></dt>
 <dd><p>Linear momentum of the particle.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -723,12 +725,12 @@ particle in the frame N.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.particle.Particle.mass">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">mass</span></span><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.mass" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mass</span></span><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.mass" title="Permalink to this definition">#</a></dt>
 <dd><p>Mass of the particle.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.particle.Particle.parallel_axis">
-<span class="sig-name descname"><span class="pre">parallel_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/particle.py#L254-L277"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.parallel_axis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parallel_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/particle.py#L258-L281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.parallel_axis" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns an inertia dyadic of the particle with respect to another
 point and frame.</p>
 <dl class="field-list">
@@ -753,12 +755,12 @@ point and frame.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.particle.Particle.point">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">point</span></span><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.point" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">point</span></span><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.point" title="Permalink to this definition">#</a></dt>
 <dd><p>Point of the particle.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.particle.Particle.potential_energy">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">potential_energy</span></span><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.potential_energy" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">potential_energy</span></span><a class="headerlink" href="#sympy.physics.mechanics.particle.Particle.potential_energy" title="Permalink to this definition">#</a></dt>
 <dd><p>The potential energy of the Particle.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.mechanics</span> <span class="kn">import</span> <span class="n">Particle</span><span class="p">,</span> <span class="n">Point</span>
@@ -775,10 +777,10 @@ point and frame.</p>
 </dd></dl>
 </section>
 <section id="module-sympy.physics.mechanics.rigidbody">
-<span id="rigidbody"></span><h2>RigidBody<a class="headerlink" href="#module-sympy.physics.mechanics.rigidbody" title="Permalink to this headline">¶</a></h2>
+<span id="rigidbody"></span><h2>RigidBody<a class="headerlink" href="#module-sympy.physics.mechanics.rigidbody" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.rigidbody.RigidBody">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.rigidbody.</span></span><span class="sig-name descname"><span class="pre">RigidBody</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masscenter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inertia</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/rigidbody.py#L10-L353"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.rigidbody.</span></span><span class="sig-name descname"><span class="pre">RigidBody</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masscenter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inertia</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/rigidbody.py#L10-L357"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody" title="Permalink to this definition">#</a></dt>
 <dd><p>An idealized rigid body.</p>
 <p class="rubric">Explanation</p>
 <p>This is essentially a container which holds the various components which
@@ -827,7 +829,7 @@ afterwards.</p>
 </table></div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.rigidbody.RigidBody.angular_momentum">
-<span class="sig-name descname"><span class="pre">angular_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/rigidbody.py#L166-L216"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.angular_momentum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">angular_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/rigidbody.py#L166-L216"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.angular_momentum" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the angular momentum of the rigid body about a point in the
 given frame.</p>
 <dl class="field-list">
@@ -872,12 +874,12 @@ frame, N.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.rigidbody.RigidBody.central_inertia">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">central_inertia</span></span><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.central_inertia" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">central_inertia</span></span><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.central_inertia" title="Permalink to this definition">#</a></dt>
 <dd><p>The body’s central inertia dyadic.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.rigidbody.RigidBody.kinetic_energy">
-<span class="sig-name descname"><span class="pre">kinetic_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/rigidbody.py#L218-L266"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.kinetic_energy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">kinetic_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/rigidbody.py#L218-L266"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.kinetic_energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Kinetic energy of the rigid body.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -915,7 +917,7 @@ velocity of the body’s mass center in the supplied ReferenceFrame.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.rigidbody.RigidBody.linear_momentum">
-<span class="sig-name descname"><span class="pre">linear_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/rigidbody.py#L125-L164"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.linear_momentum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">linear_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/rigidbody.py#L125-L164"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.linear_momentum" title="Permalink to this definition">#</a></dt>
 <dd><p>Linear momentum of the rigid body.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -950,7 +952,7 @@ the mass center of B in the frame, N.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.rigidbody.RigidBody.parallel_axis">
-<span class="sig-name descname"><span class="pre">parallel_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/rigidbody.py#L330-L353"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.parallel_axis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parallel_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/rigidbody.py#L334-L357"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.parallel_axis" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the inertia dyadic of the body with respect to another
 point.</p>
 <dl class="field-list">
@@ -971,7 +973,7 @@ point.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.rigidbody.RigidBody.potential_energy">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">potential_energy</span></span><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.potential_energy" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">potential_energy</span></span><a class="headerlink" href="#sympy.physics.mechanics.rigidbody.RigidBody.potential_energy" title="Permalink to this definition">#</a></dt>
 <dd><p>The potential energy of the RigidBody.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.physics.mechanics</span> <span class="kn">import</span> <span class="n">RigidBody</span><span class="p">,</span> <span class="n">Point</span><span class="p">,</span> <span class="n">outer</span><span class="p">,</span> <span class="n">ReferenceFrame</span>
@@ -991,10 +993,10 @@ point.</p>
 </dd></dl>
 </section>
 <section id="inertia">
-<h2>inertia<a class="headerlink" href="#inertia" title="Permalink to this headline">¶</a></h2>
+<h2>inertia<a class="headerlink" href="#inertia" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.functions.inertia">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">inertia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ixx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iyy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">izz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ixy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iyz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">izx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/functions.py#L48-L96"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.inertia" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">inertia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ixx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iyy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">izz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ixy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iyz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">izx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/functions.py#L48-L96"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.inertia" title="Permalink to this definition">#</a></dt>
 <dd><p>Simple way to create inertia Dyadic object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1041,10 +1043,10 @@ tensor. Then, do the easy thing and define it in a body-fixed frame.</p>
 </dd></dl>
 </section>
 <section id="inertia-of-point-mass">
-<h2>inertia_of_point_mass<a class="headerlink" href="#inertia-of-point-mass" title="Permalink to this headline">¶</a></h2>
+<h2>inertia_of_point_mass<a class="headerlink" href="#inertia-of-point-mass" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.functions.inertia_of_point_mass">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">inertia_of_point_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/functions.py#L99-L127"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.inertia_of_point_mass" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">inertia_of_point_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/functions.py#L99-L127"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.inertia_of_point_mass" title="Permalink to this definition">#</a></dt>
 <dd><p>Inertia dyadic of a point mass relative to point O.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1075,10 +1077,10 @@ tensor. Then, do the easy thing and define it in a body-fixed frame.</p>
 </dd></dl>
 </section>
 <section id="linear-momentum">
-<h2>linear_momentum<a class="headerlink" href="#linear-momentum" title="Permalink to this headline">¶</a></h2>
+<h2>linear_momentum<a class="headerlink" href="#linear-momentum" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.functions.linear_momentum">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">linear_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/functions.py#L130-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.linear_momentum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">linear_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/functions.py#L130-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.linear_momentum" title="Permalink to this definition">#</a></dt>
 <dd><p>Linear momentum of the system.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1118,10 +1120,10 @@ the linear momentum of the rigid body, L2, i.e.</p>
 </dd></dl>
 </section>
 <section id="angular-momentum">
-<h2>angular_momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline">¶</a></h2>
+<h2>angular_momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.functions.angular_momentum">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">angular_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/functions.py#L183-L241"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.angular_momentum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">angular_momentum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/functions.py#L183-L241"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.angular_momentum" title="Permalink to this definition">#</a></dt>
 <dd><p>Angular momentum of a system.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1169,10 +1171,10 @@ particle, H1, and the angular momentum of the rigid body, H2, i.e.</p>
 </dd></dl>
 </section>
 <section id="kinetic-energy">
-<h2>kinetic_energy<a class="headerlink" href="#kinetic-energy" title="Permalink to this headline">¶</a></h2>
+<h2>kinetic_energy<a class="headerlink" href="#kinetic-energy" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.functions.kinetic_energy">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">kinetic_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/functions.py#L244-L300"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.kinetic_energy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">kinetic_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/functions.py#L244-L300"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.kinetic_energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Kinetic energy of a multibody system.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1218,10 +1220,10 @@ the kinetic energy of the rigid body, T2, i.e.</p>
 </dd></dl>
 </section>
 <section id="potential-energy">
-<h2>potential_energy<a class="headerlink" href="#potential-energy" title="Permalink to this headline">¶</a></h2>
+<h2>potential_energy<a class="headerlink" href="#potential-energy" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.functions.potential_energy">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">potential_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/functions.py#L303-L355"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.potential_energy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">potential_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/functions.py#L303-L355"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.potential_energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Potential energy of a multibody system.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1263,10 +1265,10 @@ the potential energy of the rigid body, V2, i.e.</p>
 </dd></dl>
 </section>
 <section id="lagrangian">
-<h2>Lagrangian<a class="headerlink" href="#lagrangian" title="Permalink to this headline">¶</a></h2>
+<h2>Lagrangian<a class="headerlink" href="#lagrangian" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.mechanics.functions.Lagrangian">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">Lagrangian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/physics/mechanics/functions.py#L446-L503"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.Lagrangian" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.mechanics.functions.</span></span><span class="sig-name descname"><span class="pre">Lagrangian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/physics/mechanics/functions.py#L446-L503"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.mechanics.functions.Lagrangian" title="Permalink to this definition">#</a></dt>
 <dd><p>Lagrangian of a multibody system.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1342,16 +1344,22 @@ Lagrangian, L, is defined as</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../../../_sources/modules/physics/mechanics/api/part_bod.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Sets" href="sets.html" /><link rel="prev" title="Logic" href="../reference/public/logic/index.html" />
 
-    <link rel="shortcut icon" href="../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Logic - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Logic - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,14 +580,14 @@
         </div>
         <article role="main">
           <section id="module-sympy.logic">
-<span id="logic"></span><h1>Logic<a class="headerlink" href="#module-sympy.logic" title="Permalink to this headline">¶</a></h1>
+<span id="logic"></span><h1>Logic<a class="headerlink" href="#module-sympy.logic" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>The logic module for SymPy allows to form and manipulate logic expressions
 using symbolic and Boolean values.</p>
 </section>
 <section id="forming-logical-expressions">
-<h2>Forming logical expressions<a class="headerlink" href="#forming-logical-expressions" title="Permalink to this headline">¶</a></h2>
+<h2>Forming logical expressions<a class="headerlink" href="#forming-logical-expressions" title="Permalink to this headline">#</a></h2>
 <p>You can build Boolean expressions with the standard python operators <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>
 (<a class="reference internal" href="#sympy.logic.boolalg.And" title="sympy.logic.boolalg.And"><code class="xref py py-class docutils literal notranslate"><span class="pre">And</span></code></a>), <code class="docutils literal notranslate"><span class="pre">|</span></code> (<a class="reference internal" href="#sympy.logic.boolalg.Or" title="sympy.logic.boolalg.Or"><code class="xref py py-class docutils literal notranslate"><span class="pre">Or</span></code></a>), <code class="docutils literal notranslate"><span class="pre">~</span></code> (<a class="reference internal" href="#sympy.logic.boolalg.Not" title="sympy.logic.boolalg.Not"><code class="xref py py-class docutils literal notranslate"><span class="pre">Not</span></code></a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
@@ -616,7 +618,7 @@ using symbolic and Boolean values.</p>
 from their truth tables:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.SOPform">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">SOPform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minterms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dontcares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2330-L2396"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.SOPform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">SOPform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minterms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dontcares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2348-L2414"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.SOPform" title="Permalink to this definition">#</a></dt>
 <dd><p>The SOPform function uses simplified_pairs and a redundant group-
 eliminating algorithm to convert the list of all input combos that
 generate ‘1’ (the minterms) into the smallest Sum of Products form.</p>
@@ -660,14 +662,14 @@ specified:</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r550"><span class="brackets"><a class="fn-backref" href="#id1">R550</a></span></dt>
+<dt class="label" id="r494"><span class="brackets"><a class="fn-backref" href="#id1">R494</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Quine-McCluskey_algorithm">https://en.wikipedia.org/wiki/Quine-McCluskey_algorithm</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.POSform">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">POSform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minterms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dontcares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2405-L2478"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.POSform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">POSform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minterms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dontcares</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2423-L2496"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.POSform" title="Permalink to this definition">#</a></dt>
 <dd><p>The POSform function uses simplified_pairs and a redundant-group
 eliminating algorithm to convert the list of all input combinations
 that generate ‘1’ (the minterms) into the smallest Product of Sums form.</p>
@@ -711,14 +713,14 @@ specified:</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r551"><span class="brackets"><a class="fn-backref" href="#id2">R551</a></span></dt>
+<dt class="label" id="r495"><span class="brackets"><a class="fn-backref" href="#id2">R495</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Quine-McCluskey_algorithm">https://en.wikipedia.org/wiki/Quine-McCluskey_algorithm</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.ANFform">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">ANFform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truthvalues</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2481-L2540"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.ANFform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">ANFform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truthvalues</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2499-L2558"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.ANFform" title="Permalink to this definition">#</a></dt>
 <dd><p>The ANFform function converts the list of truth values to
 Algebraic Normal Form (ANF).</p>
 <p>The variables must be given as the first argument.</p>
@@ -750,21 +752,21 @@ by 0 (False).</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r552"><span class="brackets"><a class="fn-backref" href="#id3">R552</a></span></dt>
+<dt class="label" id="r496"><span class="brackets"><a class="fn-backref" href="#id3">R496</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Zhegalkin_polynomial">https://en.wikipedia.org/wiki/Zhegalkin_polynomial</a></p>
 </dd>
 </dl>
 </dd></dl>
 </section>
 <section id="boolean-functions">
-<h2>Boolean functions<a class="headerlink" href="#boolean-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Boolean functions<a class="headerlink" href="#boolean-functions" title="Permalink to this headline">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Boolean">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Boolean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L65-L198"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Boolean" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Boolean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L65-L198"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Boolean" title="Permalink to this definition">#</a></dt>
 <dd><p>A Boolean object is an object for which logic operations make sense.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Boolean.as_set">
-<span class="sig-name descname"><span class="pre">as_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L135-L182"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Boolean.as_set" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L135-L182"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Boolean.as_set" title="Permalink to this definition">#</a></dt>
 <dd><p>Rewrites Boolean expression in terms of real sets.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">Or</span><span class="p">,</span> <span class="n">And</span>
@@ -782,12 +784,12 @@ by 0 (False).</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Boolean.equals">
-<span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L105-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Boolean.equals" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L105-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Boolean.equals" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the given formulas have the same truth table.
 For two formulas to be equal they must have the same literals.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic.boolalg</span> <span class="kn">import</span> <span class="n">And</span><span class="p">,</span> <span class="n">Or</span><span class="p">,</span> <span class="n">Not</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">And</span><span class="p">,</span> <span class="n">Or</span><span class="p">,</span> <span class="n">Not</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">A</span> <span class="o">&gt;&gt;</span> <span class="n">B</span><span class="p">)</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="o">~</span><span class="n">B</span> <span class="o">&gt;&gt;</span> <span class="o">~</span><span class="n">A</span><span class="p">)</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Not</span><span class="p">(</span><span class="n">And</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">))</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">And</span><span class="p">(</span><span class="n">Not</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">Not</span><span class="p">(</span><span class="n">B</span><span class="p">),</span> <span class="n">Not</span><span class="p">(</span><span class="n">C</span><span class="p">)))</span>
@@ -800,7 +802,7 @@ For two formulas to be equal they must have the same literals.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.BooleanTrue">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">BooleanTrue</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L253-L367"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.BooleanTrue" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">BooleanTrue</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L253-L374"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.BooleanTrue" title="Permalink to this definition">#</a></dt>
 <dd><p>SymPy version of <code class="docutils literal notranslate"><span class="pre">True</span></code>, a singleton that can be accessed via <code class="docutils literal notranslate"><span class="pre">S.true</span></code>.</p>
 <p>This is the SymPy version of <code class="docutils literal notranslate"><span class="pre">True</span></code>, for use in the logic module. The
 primary advantage of using <code class="docutils literal notranslate"><span class="pre">true</span></code> instead of <code class="docutils literal notranslate"><span class="pre">True</span></code> is that shorthand Boolean
@@ -881,7 +883,7 @@ bitwise result for True</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.BooleanTrue.as_set">
-<span class="sig-name descname"><span class="pre">as_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L355-L367"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.BooleanTrue.as_set" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L362-L374"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.BooleanTrue.as_set" title="Permalink to this definition">#</a></dt>
 <dd><p>Rewrite logic operators and relationals in terms of real sets.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">true</span>
@@ -893,7 +895,7 @@ bitwise result for True</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.BooleanFalse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">BooleanFalse</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L370-L434"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.BooleanFalse" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">BooleanFalse</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L377-L448"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.BooleanFalse" title="Permalink to this definition">#</a></dt>
 <dd><p>SymPy version of <code class="docutils literal notranslate"><span class="pre">False</span></code>, a singleton that can be accessed via <code class="docutils literal notranslate"><span class="pre">S.false</span></code>.</p>
 <p>This is the SymPy version of <code class="docutils literal notranslate"><span class="pre">False</span></code>, for use in the logic module. The
 primary advantage of using <code class="docutils literal notranslate"><span class="pre">false</span></code> instead of <code class="docutils literal notranslate"><span class="pre">False</span></code> is that shorthand
@@ -930,7 +932,7 @@ bitwise result for False</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.BooleanFalse.as_set">
-<span class="sig-name descname"><span class="pre">as_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L423-L434"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.BooleanFalse.as_set" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L437-L448"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.BooleanFalse.as_set" title="Permalink to this definition">#</a></dt>
 <dd><p>Rewrite logic operators and relationals in terms of real sets.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">false</span>
@@ -942,13 +944,13 @@ bitwise result for False</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.And">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">And</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L558-L715"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.And" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">And</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L572-L729"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.And" title="Permalink to this definition">#</a></dt>
 <dd><p>Logical AND function.</p>
 <p>It evaluates its arguments in order, returning false immediately
 when an argument is false and true if they are all true.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic.boolalg</span> <span class="kn">import</span> <span class="n">And</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">And</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span>
 <span class="go">x &amp; y</span>
 </pre></div>
@@ -965,13 +967,13 @@ and. Hence, <code class="docutils literal notranslate"><span class="pre">And(a,<
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Or">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L718-L821"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Or" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L732-L835"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Or" title="Permalink to this definition">#</a></dt>
 <dd><p>Logical OR function</p>
 <p>It evaluates its arguments in order, returning true immediately
 when an  argument is true, and false if they are all false.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic.boolalg</span> <span class="kn">import</span> <span class="n">Or</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Or</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">|</span> <span class="n">y</span>
 <span class="go">x | y</span>
 </pre></div>
@@ -988,12 +990,12 @@ or. Hence, <code class="docutils literal notranslate"><span class="pre">Or(a,</s
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Not">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L824-L934"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Not" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L838-L948"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Not" title="Permalink to this definition">#</a></dt>
 <dd><p>Logical Not function (negation)</p>
 <p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the statement is <code class="docutils literal notranslate"><span class="pre">false</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.
 Returns <code class="docutils literal notranslate"><span class="pre">false</span></code> if the statement is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic.boolalg</span> <span class="kn">import</span> <span class="n">Not</span><span class="p">,</span> <span class="n">And</span><span class="p">,</span> <span class="n">Or</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Not</span><span class="p">,</span> <span class="n">And</span><span class="p">,</span> <span class="n">Or</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Not</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">False</span>
@@ -1031,7 +1033,7 @@ value of True.  To avoid this issue, use the SymPy boolean types
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Xor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Xor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L937-L1069"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Xor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Xor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L951-L1083"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Xor" title="Permalink to this definition">#</a></dt>
 <dd><p>Logical XOR (exclusive OR) function.</p>
 <p>Returns True if an odd number of the arguments are True and the rest are
 False.</p>
@@ -1065,7 +1067,7 @@ particular, <code class="docutils literal notranslate"><span class="pre">a</span
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Nand">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Nand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1072-L1098"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Nand" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Nand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1086-L1112"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Nand" title="Permalink to this definition">#</a></dt>
 <dd><p>Logical NAND function.</p>
 <p>It evaluates its arguments in order, giving True immediately if any
 of them are False, and False if they are all True.</p>
@@ -1086,7 +1088,7 @@ Returns False if all arguments are True</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Nor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Nor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1101-L1132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Nor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Nor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1115-L1146"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Nor" title="Permalink to this definition">#</a></dt>
 <dd><p>Logical NOR function.</p>
 <p>It evaluates its arguments in order, giving False immediately if any
 of them are True, and True if they are all False.</p>
@@ -1113,7 +1115,7 @@ Returns True if all arguments are False</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Xnor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Xnor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1135-L1163"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Xnor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Xnor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1149-L1177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Xnor" title="Permalink to this definition">#</a></dt>
 <dd><p>Logical XNOR function.</p>
 <p>Returns False if an odd number of the arguments are True and the rest are
 False.</p>
@@ -1136,7 +1138,7 @@ False.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Implies">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Implies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1166-L1247"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Implies" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Implies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1180-L1261"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Implies" title="Permalink to this definition">#</a></dt>
 <dd><p>Logical implication.</p>
 <p>A implies B is equivalent to if A then B. Mathematically, it is written
 as <span class="math notranslate nohighlight">\(A \Rightarrow B\)</span> and is equivalent to <span class="math notranslate nohighlight">\(\neg A \vee B\)</span> or <code class="docutils literal notranslate"><span class="pre">~A</span> <span class="pre">|</span> <span class="pre">B</span></code>.</p>
@@ -1181,7 +1183,7 @@ avoid this issue, use the SymPy objects <code class="docutils literal notranslat
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Equivalent">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Equivalent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1250-L1331"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Equivalent" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Equivalent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1264-L1345"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Equivalent" title="Permalink to this definition">#</a></dt>
 <dd><p>Equivalence relation.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Equivalent(A,</span> <span class="pre">B)</span></code> is True iff A and B are both True or both False.</p>
 <p>Returns True if all of the arguments are logically equivalent.
@@ -1201,10 +1203,12 @@ Returns False otherwise.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.ITE">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">ITE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1334-L1445"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.ITE" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">ITE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1348-L1462"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.ITE" title="Permalink to this definition">#</a></dt>
 <dd><p>If-then-else clause.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ITE(A,</span> <span class="pre">B,</span> <span class="pre">C)</span></code> evaluates and returns the result of B if A is true
 else it returns the result of C. All args must be Booleans.</p>
+<p>From a logic gate perspective, ITE corresponds to a 2-to-1 multiplexer,
+where A is the select signal.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic.boolalg</span> <span class="kn">import</span> <span class="n">ITE</span><span class="p">,</span> <span class="n">And</span><span class="p">,</span> <span class="n">Xor</span><span class="p">,</span> <span class="n">Or</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
@@ -1232,7 +1236,7 @@ else it returns the result of C. All args must be Booleans.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.Exclusive">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Exclusive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1448-L1473"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Exclusive" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">Exclusive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1465-L1490"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.Exclusive" title="Permalink to this definition">#</a></dt>
 <dd><p>True if only one or no argument is true.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Exclusive(A,</span> <span class="pre">B,</span> <span class="pre">C)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">~(A</span> <span class="pre">&amp;</span> <span class="pre">B)</span> <span class="pre">&amp;</span> <span class="pre">~(A</span> <span class="pre">&amp;</span> <span class="pre">C)</span> <span class="pre">&amp;</span> <span class="pre">~(B</span> <span class="pre">&amp;</span> <span class="pre">C)</span></code>.</p>
 <p>For two arguments, this is equivalent to <a class="reference internal" href="#sympy.logic.boolalg.Xor" title="sympy.logic.boolalg.Xor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Xor</span></code></a>.</p>
@@ -1251,7 +1255,7 @@ else it returns the result of C. All args must be Booleans.</p>
 Disjunctive, and Negated Normal forms:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.to_anf">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_anf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1592-L1633"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_anf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_anf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1609-L1650"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_anf" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts expr to Algebraic Normal Form (ANF).</p>
 <p>ANF is a canonical normal form, which means that two
 equivalent formulas will convert to the same ANF.</p>
@@ -1287,7 +1291,7 @@ top-level expression is converted to ANF.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.to_cnf">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_cnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1660-L1699"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_cnf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_cnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1677-L1716"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_cnf" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert a propositional logical sentence <code class="docutils literal notranslate"><span class="pre">expr</span></code> to conjunctive normal
 form: <code class="docutils literal notranslate"><span class="pre">((A</span> <span class="pre">|</span> <span class="pre">~B</span> <span class="pre">|</span> <span class="pre">...)</span> <span class="pre">&amp;</span> <span class="pre">(B</span> <span class="pre">|</span> <span class="pre">C</span> <span class="pre">|</span> <span class="pre">...)</span> <span class="pre">&amp;</span> <span class="pre">...)</span></code>.
 If <code class="docutils literal notranslate"><span class="pre">simplify</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">expr</span></code> is evaluated to its simplest CNF
@@ -1306,7 +1310,7 @@ time if there are more than 8 variables and requires that the
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.to_dnf">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_dnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1702-L1739"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_dnf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_dnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1719-L1756"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_dnf" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert a propositional logical sentence <code class="docutils literal notranslate"><span class="pre">expr</span></code> to disjunctive normal
 form: <code class="docutils literal notranslate"><span class="pre">((A</span> <span class="pre">&amp;</span> <span class="pre">~B</span> <span class="pre">&amp;</span> <span class="pre">...)</span> <span class="pre">|</span> <span class="pre">(B</span> <span class="pre">&amp;</span> <span class="pre">C</span> <span class="pre">&amp;</span> <span class="pre">...)</span> <span class="pre">|</span> <span class="pre">...)</span></code>.
 If <code class="docutils literal notranslate"><span class="pre">simplify</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">expr</span></code> is evaluated to its simplest DNF form using
@@ -1325,7 +1329,7 @@ time if there are more than 8 variables and requires that the
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.to_nnf">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_nnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1636-L1657"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_nnf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_nnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1653-L1674"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_nnf" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts <code class="docutils literal notranslate"><span class="pre">expr</span></code> to Negation Normal Form (NNF).</p>
 <p>A logical expression is in NNF if it
 contains only And, Or and Not, and Not is applied only to literals.
@@ -1342,7 +1346,7 @@ If <code class="docutils literal notranslate"><span class="pre">simplify</span><
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.is_anf">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">is_anf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1742-L1794"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.is_anf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">is_anf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1759-L1812"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.is_anf" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks if <code class="docutils literal notranslate"><span class="pre">expr</span></code>  is in Algebraic Normal Form (ANF).</p>
 <p>A logical expression is in ANF if it has the form</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -1367,7 +1371,7 @@ conjunction of variables. No negations are permitted.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.is_cnf">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">is_cnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1845-L1862"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.is_cnf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">is_cnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1863-L1880"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.is_cnf" title="Permalink to this definition">#</a></dt>
 <dd><p>Test whether or not an expression is in conjunctive normal form.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic.boolalg</span> <span class="kn">import</span> <span class="n">is_cnf</span>
@@ -1383,7 +1387,7 @@ conjunction of variables. No negations are permitted.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.is_dnf">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">is_dnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1865-L1884"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.is_dnf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">is_dnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1883-L1902"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.is_dnf" title="Permalink to this definition">#</a></dt>
 <dd><p>Test whether or not an expression is in disjunctive normal form.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic.boolalg</span> <span class="kn">import</span> <span class="n">is_dnf</span>
@@ -1401,7 +1405,7 @@ conjunction of variables. No negations are permitted.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.is_nnf">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">is_nnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1797-L1842"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.is_nnf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">is_nnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simplified</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1815-L1860"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.is_nnf" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks if <code class="docutils literal notranslate"><span class="pre">expr</span></code> is in Negation Normal Form (NNF).</p>
 <p>A logical expression is in NNF if it
 contains only And, Or and Not, and Not is applied only to literals.
@@ -1422,12 +1426,55 @@ If <code class="docutils literal notranslate"><span class="pre">simplified</span
 </pre></div>
 </div>
 </dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.logic.boolalg.gateinputcount">
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">gateinputcount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L3449-L3502"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.gateinputcount" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the total number of inputs for the logic gates realizing the
+Boolean expression.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>int</p>
+<blockquote>
+<div><p>Number of gate inputs</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Note</p>
+<p>Not all Boolean functions count as gate here, only those that are
+considered to be standard gates. These are: <code class="docutils literal notranslate"><span class="pre">And</span></code>, <code class="docutils literal notranslate"><span class="pre">Or</span></code>, <code class="docutils literal notranslate"><span class="pre">Xor</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Not</span></code>, and <code class="docutils literal notranslate"><span class="pre">ITE</span></code> (multiplexer). <code class="docutils literal notranslate"><span class="pre">Nand</span></code>, <code class="docutils literal notranslate"><span class="pre">Nor</span></code>, and <code class="docutils literal notranslate"><span class="pre">Xnor</span></code> will
+be evaluated to <code class="docutils literal notranslate"><span class="pre">Not(And())</span></code> etc.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic</span> <span class="kn">import</span> <span class="n">And</span><span class="p">,</span> <span class="n">Or</span><span class="p">,</span> <span class="n">Nand</span><span class="p">,</span> <span class="n">Not</span><span class="p">,</span> <span class="n">gateinputcount</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">And</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gateinputcount</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gateinputcount</span><span class="p">(</span><span class="n">Or</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">Nand</span></code> is automatically evaluated to <code class="docutils literal notranslate"><span class="pre">Not(And())</span></code> so
+&gt;&gt;&gt; gateinputcount(Nand(x, y, z))
+4
+&gt;&gt;&gt; gateinputcount(Not(And(x, y, z)))
+4</p>
+<p>Although this can be avoided by using <code class="docutils literal notranslate"><span class="pre">evaluate=False</span></code>
+&gt;&gt;&gt; gateinputcount(Nand(x, y, z, evaluate=False))
+3</p>
+<p>Also note that a comparison will count as a Boolean variable:
+&gt;&gt;&gt; gateinputcount(And(x &gt; z, y &gt;= 2))
+2</p>
+<p>As will a symbol:
+&gt;&gt;&gt; gateinputcount(x)
+0</p>
+</dd></dl>
 </section>
 <section id="simplification-and-equivalence-testing">
-<h2>Simplification and equivalence-testing<a class="headerlink" href="#simplification-and-equivalence-testing" title="Permalink to this headline">¶</a></h2>
+<h2>Simplification and equivalence-testing<a class="headerlink" href="#simplification-and-equivalence-testing" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.simplify_logic">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">simplify_logic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2723-L2823"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.simplify_logic" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">simplify_logic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2741-L2841"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.simplify_logic" title="Permalink to this definition">#</a></dt>
 <dd><p>This function simplifies a boolean function to its simplified version
 in SOP or POS form. The return type is an Or or And object in SymPy.</p>
 <dl class="field-list">
@@ -1475,7 +1522,7 @@ aware that this can lead to very long simplification times.</p>
 simplest forms.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.bool_map">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">bool_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bool1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2910-L2992"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.bool_map" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">bool_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bool1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2928-L3010"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.bool_map" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the simplified version of <em>bool1</em>, and the mapping of variables
 that makes the two expressions <em>bool1</em> and <em>bool2</em> represent the same
 logical behaviour for some correspondence between the variables
@@ -1508,11 +1555,11 @@ If no such mapping exists, return <code class="docutils literal notranslate"><sp
 </dd></dl>
 </section>
 <section id="manipulating-expressions">
-<h2>Manipulating expressions<a class="headerlink" href="#manipulating-expressions" title="Permalink to this headline">¶</a></h2>
+<h2>Manipulating expressions<a class="headerlink" href="#manipulating-expressions" title="Permalink to this headline">#</a></h2>
 <p>The following functions can be used to manipulate Boolean expressions:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.distribute_and_over_or">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">distribute_and_over_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1513-L1527"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.distribute_and_over_or" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">distribute_and_over_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1530-L1544"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.distribute_and_over_or" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a sentence <code class="docutils literal notranslate"><span class="pre">expr</span></code> consisting of conjunctions and disjunctions
 of literals, return an equivalent sentence in CNF.</p>
 <p class="rubric">Examples</p>
@@ -1525,7 +1572,7 @@ of literals, return an equivalent sentence in CNF.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.distribute_or_over_and">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">distribute_or_over_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1530-L1546"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.distribute_or_over_and" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">distribute_or_over_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1547-L1563"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.distribute_or_over_and" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a sentence <code class="docutils literal notranslate"><span class="pre">expr</span></code> consisting of conjunctions and disjunctions
 of literals, return an equivalent sentence in DNF.</p>
 <p>Note that the output is NOT simplified.</p>
@@ -1539,7 +1586,7 @@ of literals, return an equivalent sentence in DNF.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.distribute_xor_over_and">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">distribute_xor_over_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1549-L1565"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.distribute_xor_over_and" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">distribute_xor_over_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1566-L1582"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.distribute_xor_over_and" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a sentence <code class="docutils literal notranslate"><span class="pre">expr</span></code> consisting of conjunction and
 exclusive disjunctions of literals, return an
 equivalent exclusive disjunction.</p>
@@ -1554,7 +1601,7 @@ equivalent exclusive disjunction.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.eliminate_implications">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">eliminate_implications</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1907-L1928"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.eliminate_implications" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">eliminate_implications</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1925-L1946"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.eliminate_implications" title="Permalink to this definition">#</a></dt>
 <dd><p>Change <code class="docutils literal notranslate"><span class="pre">Implies</span></code> and <code class="docutils literal notranslate"><span class="pre">Equivalent</span></code> into <code class="docutils literal notranslate"><span class="pre">And</span></code>, <code class="docutils literal notranslate"><span class="pre">Or</span></code>, and <code class="docutils literal notranslate"><span class="pre">Not</span></code>.
 That is, return an expression that is equivalent to <code class="docutils literal notranslate"><span class="pre">expr</span></code>, but has only
 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, and <code class="docutils literal notranslate"><span class="pre">~</span></code> as logical
@@ -1573,11 +1620,11 @@ operators.</p>
 </dd></dl>
 </section>
 <section id="truth-tables-and-related-functions">
-<h2>Truth tables and related functions<a class="headerlink" href="#truth-tables-and-related-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Truth tables and related functions<a class="headerlink" href="#truth-tables-and-related-functions" title="Permalink to this headline">#</a></h2>
 <p>It is possible to create a truth table for a Boolean function with</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.truth_table">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">truth_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2018-L2083"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.truth_table" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">truth_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2036-L2101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.truth_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a generator of all possible configurations of the input variables,
 and the result of the boolean expression for those values.</p>
 <dl class="field-list">
@@ -1632,7 +1679,7 @@ deduced from the index of a given output.</p>
 zeros and ones and symbols, the following functions can be used:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.integer_to_term">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">integer_to_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/utilities/iterables.py#L330-L399"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.integer_to_term" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">integer_to_term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/utilities/iterables.py#L328-L397"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.integer_to_term" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a list of length <code class="docutils literal notranslate"><span class="pre">bits</span></code> corresponding to the binary value
 of <code class="docutils literal notranslate"><span class="pre">n</span></code> with small bits to the right (last). If bits is omitted, the
 length will be the number required to represent <code class="docutils literal notranslate"><span class="pre">n</span></code>. If the bits are
@@ -1674,7 +1721,7 @@ for bits:</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.term_to_integer">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">term_to_integer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">term</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1992-L2012"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.term_to_integer" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">term_to_integer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">term</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2010-L2030"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.term_to_integer" title="Permalink to this definition">#</a></dt>
 <dd><p>Return an integer corresponding to the base-2 digits given by <code class="docutils literal notranslate"><span class="pre">term</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1692,7 +1739,7 @@ for bits:</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.bool_maxterm">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">bool_maxterm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2634-L2667"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.bool_maxterm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">bool_maxterm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2652-L2685"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.bool_maxterm" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the k-th maxterm.</p>
 <p>Each maxterm is assigned an index based on the opposite
 conventional binary encoding used for minterms. The maxterm
@@ -1715,14 +1762,14 @@ the complemented form.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r553"><span class="brackets"><a class="fn-backref" href="#id4">R553</a></span></dt>
+<dt class="label" id="r497"><span class="brackets"><a class="fn-backref" href="#id4">R497</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Canonical_normal_form#Indexing_maxterms">https://en.wikipedia.org/wiki/Canonical_normal_form#Indexing_maxterms</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.bool_minterm">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">bool_minterm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2598-L2631"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.bool_minterm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">bool_minterm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2616-L2649"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.bool_minterm" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the k-th minterm.</p>
 <p>Minterms are numbered by a binary encoding of the complementation
 pattern of the variables. This convention assigns the value 1 to
@@ -1744,14 +1791,14 @@ the direct form and 0 to the complemented form.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r554"><span class="brackets"><a class="fn-backref" href="#id5">R554</a></span></dt>
+<dt class="label" id="r498"><span class="brackets"><a class="fn-backref" href="#id5">R498</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Canonical_normal_form#Indexing_minterms">https://en.wikipedia.org/wiki/Canonical_normal_form#Indexing_minterms</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.bool_monomial">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">bool_monomial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2670-L2708"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.bool_monomial" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">bool_monomial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2688-L2726"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.bool_monomial" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the k-th monomial.</p>
 <p>Monomials are numbered by a binary encoding of the presence and
 absences of the variables. This convention assigns the value
@@ -1783,7 +1830,7 @@ product <code class="docutils literal notranslate"><span class="pre">a</span> <s
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.anf_coeffs">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">anf_coeffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truthvalues</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L2543-L2595"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.anf_coeffs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">anf_coeffs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truthvalues</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L2561-L2613"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.anf_coeffs" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert a list of truth values of some boolean expression
 to the list of coefficients of the polynomial mod 2 (exclusive
 disjunction) representing the boolean expression in ANF
@@ -1815,7 +1862,7 @@ to that monomial’s coefficient being 1 or 0 respectively.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.boolalg.to_int_repr">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_int_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clauses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/boolalg.py#L1965-L1989"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_int_repr" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.boolalg.</span></span><span class="sig-name descname"><span class="pre">to_int_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clauses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/boolalg.py#L1983-L2007"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.boolalg.to_int_repr" title="Permalink to this definition">#</a></dt>
 <dd><p>Takes clauses in CNF format and puts them into an integer representation.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.logic.boolalg</span> <span class="kn">import</span> <span class="n">to_int_repr</span>
@@ -1827,7 +1874,7 @@ to that monomial’s coefficient being 1 or 0 respectively.</p>
 </dd></dl>
 </section>
 <section id="module-sympy.logic.inference">
-<span id="inference"></span><h2>Inference<a class="headerlink" href="#module-sympy.logic.inference" title="Permalink to this headline">¶</a></h2>
+<span id="inference"></span><h2>Inference<a class="headerlink" href="#module-sympy.logic.inference" title="Permalink to this headline">#</a></h2>
 <p>This module implements some inference routines in propositional logic.</p>
 <p>The function satisfiable will test that a given Boolean expression is satisfiable,
 that is, you can assign values to the variables to make the sentence <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
@@ -1849,7 +1896,7 @@ values for <code class="docutils literal notranslate"><span class="pre">x</span>
 sentence <code class="docutils literal notranslate"><span class="pre">True</span></code>. If it is not satisfiable it will return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.logic.inference.satisfiable">
-<span class="sig-prename descclassname"><span class="pre">sympy.logic.inference.</span></span><span class="sig-name descname"><span class="pre">satisfiable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/logic/inference.py#L38-L108"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.inference.satisfiable" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.logic.inference.</span></span><span class="sig-name descname"><span class="pre">satisfiable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/logic/inference.py#L38-L108"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.logic.inference.satisfiable" title="Permalink to this definition">#</a></dt>
 <dd><p>Check satisfiability of a propositional sentence.
 Returns a model when it succeeds.
 Returns {true: true} for trivially true expressions.</p>
@@ -1916,16 +1963,22 @@ then returns a generator containing the single element False.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/modules/logic.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -1966,7 +2019,7 @@ then returns a generator containing the single element False.</p>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

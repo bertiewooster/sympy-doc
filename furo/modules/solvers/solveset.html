@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="abc" href="../abc.html" /><link rel="prev" title="Solvers" href="solvers.html" />
 
-    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Solveset - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Solveset - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,14 +580,14 @@
         </div>
         <article role="main">
           <section id="solveset">
-<span id="id1"></span><h1>Solveset<a class="headerlink" href="#solveset" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Solveset<a class="headerlink" href="#solveset" title="Permalink to this headline">#</a></h1>
 <span class="target" id="module-sympy.solvers.solveset"></span><p>This is the official documentation of the <code class="docutils literal notranslate"><span class="pre">solveset</span></code> module in solvers.
 It contains the frequently asked questions about our new module to solve
 equations.</p>
 <section id="what-s-wrong-with-solve">
-<h2>What’s wrong with solve():<a class="headerlink" href="#what-s-wrong-with-solve" title="Permalink to this headline">¶</a></h2>
-<p>SymPy already has a pretty powerful <code class="docutils literal notranslate"><span class="pre">solve</span></code> function. But it has a lot of major
-issues</p>
+<h2>What’s wrong with solve():<a class="headerlink" href="#what-s-wrong-with-solve" title="Permalink to this headline">#</a></h2>
+<p>SymPy already has a pretty powerful <code class="docutils literal notranslate"><span class="pre">solve</span></code> function. But it has some
+deficiencies. For example:</p>
 <ol class="arabic simple">
 <li><p>It doesn’t have a consistent output for various types of solutions
 It needs to return a lot of types of solutions consistently:</p>
@@ -602,23 +604,21 @@ It needs to return a lot of types of solutions consistently:</p>
 <li><p>And the most important case: “We don’t Know”</p></li>
 </ul>
 </li>
-<li><p>The input API is also a mess, there are a lot of parameters. Many of them
-are not needed and they make it hard for the user and the developers to
-work on solvers.</p></li>
+<li><p>The input API has a lot of parameters and it can be difficult to use.</p></li>
 <li><p>There are cases like finding the maxima and minima of function using
 critical points where it is important to know if it has returned all the
 solutions. <code class="docutils literal notranslate"><span class="pre">solve</span></code> does not guarantee this.</p></li>
 </ol>
 </section>
 <section id="why-solveset">
-<h2>Why Solveset?<a class="headerlink" href="#why-solveset" title="Permalink to this headline">¶</a></h2>
+<h2>Why Solveset?<a class="headerlink" href="#why-solveset" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">solveset</span></code> has a cleaner input and output interface: <code class="docutils literal notranslate"><span class="pre">solveset</span></code> returns
-a set object and a set object takes care of all types of output. For
-cases where it does not “know” all the solutions a <code class="docutils literal notranslate"><span class="pre">ConditionSet</span></code> with a partial
-solution is returned. For input it only takes the equation, the variables
-to solve for and the optional argument <code class="docutils literal notranslate"><span class="pre">domain</span></code> over which the equation is to
-be solved.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">solveset</span></code> has an alternative consistent input and output interface:
+<code class="docutils literal notranslate"><span class="pre">solveset</span></code> returns a set object and a set object takes care of all types of
+output. For cases where it does not “know” all the solutions a
+<code class="docutils literal notranslate"><span class="pre">ConditionSet</span></code> with a partial solution is returned. For input it only takes
+the equation, the variables to solve for and the optional argument <code class="docutils literal notranslate"><span class="pre">domain</span></code>
+over which the equation is to be solved.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">solveset</span></code> can return infinitely many solutions. For example solving for
 <span class="math notranslate nohighlight">\(\sin{(x)} = 0\)</span> returns <span class="math notranslate nohighlight">\(\{2 n \pi | n \in \mathbb{Z}\} \cup \{2 n \pi + \pi | n \in \mathbb{Z}\}\)</span>,
 whereas <code class="docutils literal notranslate"><span class="pre">solve</span></code> only returns <span class="math notranslate nohighlight">\([0, \pi]\)</span>.</p></li>
@@ -630,9 +630,9 @@ if <span class="math notranslate nohighlight">\(x\)</span> is to be solved in th
 </ul>
 </section>
 <section id="why-do-we-use-sets-as-an-output-type">
-<h2>Why do we use Sets as an output type?<a class="headerlink" href="#why-do-we-use-sets-as-an-output-type" title="Permalink to this headline">¶</a></h2>
+<h2>Why do we use Sets as an output type?<a class="headerlink" href="#why-do-we-use-sets-as-an-output-type" title="Permalink to this headline">#</a></h2>
 <p>SymPy has a well developed sets module, which can represent most of the set
-containers in Mathematics such as:</p>
+containers in mathematics such as:</p>
 <blockquote>
 <div><ul>
 <li><p><a class="reference internal" href="../sets.html#sympy.sets.sets.FiniteSet" title="sympy.sets.sets.FiniteSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteSet</span></code></a></p>
@@ -765,34 +765,27 @@ complex sets implemented as <code class="docutils literal notranslate"><span cla
 </div></blockquote>
 </section>
 <section id="input-api-of-solveset">
-<h2>Input API of <code class="docutils literal notranslate"><span class="pre">solveset</span></code><a class="headerlink" href="#input-api-of-solveset" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">solveset</span></code> has a cleaner input API, unlike <code class="docutils literal notranslate"><span class="pre">solve</span></code>. It takes a maximum
-of three arguments:</p>
+<h2>Input API of <code class="docutils literal notranslate"><span class="pre">solveset</span></code><a class="headerlink" href="#input-api-of-solveset" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">solveset</span></code> has simpler input API, unlike <code class="docutils literal notranslate"><span class="pre">solve</span></code>. It takes a maximum of
+three arguments:</p>
 <p><code class="docutils literal notranslate"><span class="pre">solveset(equation,</span> <span class="pre">variable=None,</span> <span class="pre">domain=S.Complexes)</span></code></p>
-<ul>
-<li><p>Equation(s)</p>
-<p>The equation(s) to solve.</p>
-</li>
-<li><p>Variable(s)</p>
-<p>The variable(s) for which the equation is to be solved.</p>
-</li>
-<li><p>Domain</p>
-<p>The domain in which the equation is to be solved.</p>
-</li>
-</ul>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">solveset</span></code> removes the <code class="docutils literal notranslate"><span class="pre">flags</span></code> argument of <code class="docutils literal notranslate"><span class="pre">solve</span></code>, which had made
-the input API messy and output API inconsistent.</p>
-</div></blockquote>
+<dl class="simple">
+<dt>Equation(s)</dt><dd><p>The equation(s) to solve.</p>
+</dd>
+<dt>Variable(s)</dt><dd><p>The variable(s) for which the equation is to be solved.</p>
+</dd>
+<dt>Domain</dt><dd><p>The domain in which the equation is to be solved.</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">solveset</span></code> removes the <code class="docutils literal notranslate"><span class="pre">flags</span></code> argument of <code class="docutils literal notranslate"><span class="pre">solve</span></code>, which had made the
+input API more complicated and output API inconsistent.</p>
 </section>
 <section id="what-is-this-domain-argument-about">
-<h2>What is this domain argument about?<a class="headerlink" href="#what-is-this-domain-argument-about" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>Solveset is designed to be independent of the assumptions on the
-variable being solved for and instead, uses the <code class="docutils literal notranslate"><span class="pre">domain</span></code> argument to
-decide the solver to dispatch the equation to, namely <code class="docutils literal notranslate"><span class="pre">solveset_real</span></code>
-or <code class="docutils literal notranslate"><span class="pre">solveset_complex</span></code>. It’s unlike the old <code class="docutils literal notranslate"><span class="pre">solve</span></code> which considers the
-assumption on the variable.</p>
+<h2>What is this domain argument about?<a class="headerlink" href="#what-is-this-domain-argument-about" title="Permalink to this headline">#</a></h2>
+<p>Solveset is designed to be independent of the assumptions on the variable being
+solved for and instead, uses the <code class="docutils literal notranslate"><span class="pre">domain</span></code> argument to decide the solver to
+dispatch the equation to, namely <code class="docutils literal notranslate"><span class="pre">solveset_real</span></code> or <code class="docutils literal notranslate"><span class="pre">solveset_complex</span></code>.
+It’s unlike the old <code class="docutils literal notranslate"><span class="pre">solve</span></code> which considers the assumption on the variable.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">solveset</span><span class="p">,</span> <span class="n">S</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solveset</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># domain=S.Complexes is default</span>
@@ -801,10 +794,9 @@ assumption on the variable.</p>
 <span class="go">EmptySet</span>
 </pre></div>
 </div>
-</div></blockquote>
 </section>
 <section id="what-are-the-general-methods-employed-by-solveset-to-solve-an-equation">
-<h2>What are the general methods employed by solveset to solve an equation?<a class="headerlink" href="#what-are-the-general-methods-employed-by-solveset-to-solve-an-equation" title="Permalink to this headline">¶</a></h2>
+<h2>What are the general methods employed by solveset to solve an equation?<a class="headerlink" href="#what-are-the-general-methods-employed-by-solveset-to-solve-an-equation" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Solveset uses various methods to solve an equation, here is a brief overview
 of the methodology:</p>
@@ -859,7 +851,7 @@ set of solutions found above and the input domain.</p></li>
 </div></blockquote>
 </section>
 <section id="how-do-we-manipulate-and-return-an-infinite-solution">
-<h2>How do we manipulate and return an infinite solution?<a class="headerlink" href="#how-do-we-manipulate-and-return-an-infinite-solution" title="Permalink to this headline">¶</a></h2>
+<h2>How do we manipulate and return an infinite solution?<a class="headerlink" href="#how-do-we-manipulate-and-return-an-infinite-solution" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><ul>
 <li><p>In the real domain, we use our <code class="docutils literal notranslate"><span class="pre">ImageSet</span></code> class in the sets module to
@@ -904,7 +896,7 @@ numbers <span class="math notranslate nohighlight">\(x + iy\)</span>.</p>
 </div></blockquote>
 </section>
 <section id="how-does-solveset-ensure-that-it-is-not-returning-any-wrong-solution">
-<h2>How does <code class="docutils literal notranslate"><span class="pre">solveset</span></code> ensure that it is not returning any wrong solution?<a class="headerlink" href="#how-does-solveset-ensure-that-it-is-not-returning-any-wrong-solution" title="Permalink to this headline">¶</a></h2>
+<h2>How does <code class="docutils literal notranslate"><span class="pre">solveset</span></code> ensure that it is not returning any wrong solution?<a class="headerlink" href="#how-does-solveset-ensure-that-it-is-not-returning-any-wrong-solution" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Solvers in a Computer Algebra System are based on heuristic algorithms,
 so it’s usually very hard to ensure 100% percent correctness, in every
@@ -925,7 +917,7 @@ Solveset returns this information as well to ensure correctness.</p>
 </div></blockquote>
 </section>
 <section id="search-based-solver-and-step-by-step-solution">
-<h2>Search based solver and step-by-step solution<a class="headerlink" href="#search-based-solver-and-step-by-step-solution" title="Permalink to this headline">¶</a></h2>
+<h2>Search based solver and step-by-step solution<a class="headerlink" href="#search-based-solver-and-step-by-step-solution" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Note: This is under Development.</p>
 <p>After the introduction of <a class="reference internal" href="../sets.html#sympy.sets.conditionset.ConditionSet" title="sympy.sets.conditionset.ConditionSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConditionSet</span></code></a>, the
@@ -978,7 +970,7 @@ the atomic transformations forms the edges.</p>
 </div></blockquote>
 </section>
 <section id="how-do-we-deal-with-cases-where-only-some-of-the-solutions-are-known">
-<h2>How do we deal with cases where only some of the solutions are known?<a class="headerlink" href="#how-do-we-deal-with-cases-where-only-some-of-the-solutions-are-known" title="Permalink to this headline">¶</a></h2>
+<h2>How do we deal with cases where only some of the solutions are known?<a class="headerlink" href="#how-do-we-deal-with-cases-where-only-some-of-the-solutions-are-known" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Creating a universal equation solver, which can solve each and every equation
 we encounter in mathematics is an ideal case for solvers in a Computer
@@ -996,23 +988,16 @@ the real domain:</p>
 <p><span class="math notranslate nohighlight">\(\{-2, 2\} ∪ \{x | x \in \mathbb{R} ∧ x + \sin(x) = 0\}\)</span></p>
 </div></blockquote>
 </section>
-<section id="what-will-you-do-with-the-old-solve">
-<h2>What will you do with the old solve?<a class="headerlink" href="#what-will-you-do-with-the-old-solve" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>There are still a few things <code class="docutils literal notranslate"><span class="pre">solveset</span></code> can’t do, which the old <code class="docutils literal notranslate"><span class="pre">solve</span></code>
-can, such as solving nonlinear multivariate &amp; LambertW type equations.
-Hence, it’s not yet a perfect replacement for old <code class="docutils literal notranslate"><span class="pre">solve</span></code>. The ultimate
-goal is to:</p>
-<ul class="simple">
-<li><p>Replace <code class="docutils literal notranslate"><span class="pre">solve</span></code> with <code class="docutils literal notranslate"><span class="pre">solveset</span></code> once solveset is at least as powerful as
-<code class="docutils literal notranslate"><span class="pre">solve</span></code>, i.e., <code class="docutils literal notranslate"><span class="pre">solveset</span></code> does everything that <code class="docutils literal notranslate"><span class="pre">solve</span></code> can do
-currently, and</p></li>
-<li><p>eventually rename <code class="docutils literal notranslate"><span class="pre">solveset</span></code> to <code class="docutils literal notranslate"><span class="pre">solve</span></code>.</p></li>
-</ul>
-</div></blockquote>
+<section id="what-is-the-plan-for-solve-and-solveset">
+<h2>What is the plan for solve and solveset?<a class="headerlink" href="#what-is-the-plan-for-solve-and-solveset" title="Permalink to this headline">#</a></h2>
+<p>There are still a few things <code class="docutils literal notranslate"><span class="pre">solveset</span></code> can’t do, which <code class="docutils literal notranslate"><span class="pre">solve</span></code> can, such
+as solving nonlinear multivariate &amp; LambertW type equations.  Hence, it’s not
+yet a perfect replacement for <code class="docutils literal notranslate"><span class="pre">solve</span></code>. As the algorithms in <code class="docutils literal notranslate"><span class="pre">solveset</span></code>
+mature, <code class="docutils literal notranslate"><span class="pre">solveset</span></code> may be able to be used within <code class="docutils literal notranslate"><span class="pre">solve</span></code> to replace some of
+its algorithms.</p>
 </section>
 <section id="how-are-symbolic-parameters-handled-in-solveset">
-<h2>How are symbolic parameters handled in solveset?<a class="headerlink" href="#how-are-symbolic-parameters-handled-in-solveset" title="Permalink to this headline">¶</a></h2>
+<h2>How are symbolic parameters handled in solveset?<a class="headerlink" href="#how-are-symbolic-parameters-handled-in-solveset" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Solveset is in its initial phase of development, so the symbolic parameters
 aren’t handled well for all the cases, but some work has been done in this
@@ -1044,7 +1029,7 @@ For example:</p>
 </div></blockquote>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets">1</span></dt>
@@ -1081,7 +1066,7 @@ For example:</p>
 </div></blockquote>
 </section>
 <section id="solveset-module-reference">
-<h2>Solveset Module Reference<a class="headerlink" href="#solveset-module-reference" title="Permalink to this headline">¶</a></h2>
+<h2>Solveset Module Reference<a class="headerlink" href="#solveset-module-reference" title="Permalink to this headline">#</a></h2>
 <p>Use <a class="reference internal" href="#sympy.solvers.solveset.solveset" title="sympy.solvers.solveset.solveset"><code class="xref py py-func docutils literal notranslate"><span class="pre">solveset()</span></code></a> to solve equations or expressions (assumed to be equal to 0) for a single variable.
 Solving an equation like <span class="math notranslate nohighlight">\(x^2 == 1\)</span> can be done as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">solveset</span>
@@ -1100,7 +1085,7 @@ Solving an equation like <span class="math notranslate nohighlight">\(x^2 == 1\)
 is the symbol that we want to solve the equation for.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.solveset">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">solveset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Complexes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L2067-L2240"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.solveset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">solveset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Complexes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L2068-L2241"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.solveset" title="Permalink to this definition">#</a></dt>
 <dd><p>Solves a given inequality or equation with set as output</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1215,21 +1200,21 @@ domain leads to a NotImplementedError.</p></li>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.solveset_real">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">solveset_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L2243-L2244"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.solveset_real" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">solveset_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L2244-L2245"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.solveset_real" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.solveset_complex">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">solveset_complex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L2247-L2248"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.solveset_complex" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">solveset_complex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L2248-L2249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.solveset_complex" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.invert_real">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">invert_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L194-L199"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.invert_real" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">invert_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L195-L200"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.invert_real" title="Permalink to this definition">#</a></dt>
 <dd><p>Inverts a real-valued function. Same as <a class="reference internal" href="#sympy.solvers.solveset.invert_complex" title="sympy.solvers.solveset.invert_complex"><code class="xref py py-func docutils literal notranslate"><span class="pre">invert_complex()</span></code></a>, but sets
 the domain to <code class="docutils literal notranslate"><span class="pre">S.Reals</span></code> before inverting.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.invert_complex">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">invert_complex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Complexes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L109-L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.invert_complex" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">invert_complex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Complexes</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L110-L189"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.invert_complex" title="Permalink to this definition">#</a></dt>
 <dd><p>Reduce the complex valued equation <span class="math notranslate nohighlight">\(f(x) = y\)</span> to a set of equations</p>
 <p><div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\left\{g(x) = h_1(y),\  g(x) = h_2(y),\ \dots,\  g(x) = h_n(y) \right\}\]</div></div>
@@ -1282,7 +1267,7 @@ function to use) you should probably set the domain to
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.domain_check">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">domain_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L432-L465"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.domain_check" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">domain_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L433-L466"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.domain_check" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns False if point p is infinite or any subexpression of f
 is infinite or becomes so after replacing symbol with p. If none of
 these conditions is met then True will be returned.</p>
@@ -1317,7 +1302,7 @@ of the equation has not been changed by automatic simplification.</p></li>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.solvify">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">solvify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L2301-L2390"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.solvify" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">solvify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L2302-L2391"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.solvify" title="Permalink to this definition">#</a></dt>
 <dd><p>Solves an equation using solveset and returns the solution in accordance
 with the <span class="math notranslate nohighlight">\(solve\)</span> output API.</p>
 <dl class="field-list">
@@ -1358,10 +1343,10 @@ Union       |</p>
 </dd></dl>
 </section>
 <section id="linear-eq-to-matrix">
-<h2>linear_eq_to_matrix<a class="headerlink" href="#linear-eq-to-matrix" title="Permalink to this headline">¶</a></h2>
+<h2>linear_eq_to_matrix<a class="headerlink" href="#linear-eq-to-matrix" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.linear_eq_to_matrix">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">linear_eq_to_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equations</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L2475-L2590"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.linear_eq_to_matrix" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">linear_eq_to_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equations</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L2475-L2590"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.linear_eq_to_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>Converts a given System of Equations into Matrix form.
 Here <span class="math notranslate nohighlight">\(equations\)</span> must be a linear system of equations in
 <span class="math notranslate nohighlight">\(symbols\)</span>. Element <code class="docutils literal notranslate"><span class="pre">M[i,</span> <span class="pre">j]</span></code> corresponds to the coefficient
@@ -1442,10 +1427,10 @@ be done before calling this routine.</p>
 </dd></dl>
 </section>
 <section id="linsolve">
-<h2>linsolve<a class="headerlink" href="#linsolve" title="Permalink to this headline">¶</a></h2>
+<h2>linsolve<a class="headerlink" href="#linsolve" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.linsolve">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">linsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L2593-L2851"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.linsolve" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">linsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L2593-L2851"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.linsolve" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve system of <span class="math notranslate nohighlight">\(N\)</span> linear equations with <span class="math notranslate nohighlight">\(M\)</span> variables; both
 underdetermined and overdetermined systems are supported.
 The possible number of solutions is zero, one or infinite.
@@ -1625,10 +1610,10 @@ is detected:</p></li>
 </dd></dl>
 </section>
 <section id="nonlinsolve">
-<h2>nonlinsolve<a class="headerlink" href="#nonlinsolve" title="Permalink to this headline">¶</a></h2>
+<h2>nonlinsolve<a class="headerlink" href="#nonlinsolve" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset.nonlinsolve">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">nonlinsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L3485-L3697"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.nonlinsolve" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">nonlinsolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">symbols</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L3485-L3697"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset.nonlinsolve" title="Permalink to this definition">#</a></dt>
 <dd><p>Solve system of <span class="math notranslate nohighlight">\(N\)</span> nonlinear equations with <span class="math notranslate nohighlight">\(M\)</span> variables, which means both
 under and overdetermined systems are supported. Positive dimensional
 system is also supported (A system with infinitely many solutions is said
@@ -1780,10 +1765,10 @@ intersection for that variable is added before returning final solution.</p>
 </dd></dl>
 </section>
 <section id="transolve">
-<h2>transolve<a class="headerlink" href="#transolve" title="Permalink to this headline">¶</a></h2>
+<h2>transolve<a class="headerlink" href="#transolve" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset._transolve">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_transolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L1852-L2064"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._transolve" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_transolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L1853-L2065"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._transolve" title="Permalink to this definition">#</a></dt>
 <dd><p>Function to solve transcendental equations. It is a helper to
 <code class="docutils literal notranslate"><span class="pre">solveset</span></code> and should be used internally. <code class="docutils literal notranslate"><span class="pre">_transolve</span></code>
 currently supports the following class of equations:</p>
@@ -1955,7 +1940,7 @@ The documentation of the helpers should identify:</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset._is_exponential">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_is_exponential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L1564-L1610"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._is_exponential" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_is_exponential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L1565-L1611"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._is_exponential" title="Permalink to this definition">#</a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if one or more terms contain <code class="docutils literal notranslate"><span class="pre">symbol</span></code> only in
 exponents, else <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <dl class="field-list">
@@ -1994,7 +1979,7 @@ of exponential form w.r.t <code class="docutils literal notranslate"><span class
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset._solve_exponential">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_solve_exponential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L1451-L1561"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._solve_exponential" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_solve_exponential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L1452-L1562"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._solve_exponential" title="Permalink to this definition">#</a></dt>
 <dd><p>Helper function for solving (supported) exponential equations.</p>
 <p>Exponential equations are the sum of (currently) at most
 two terms with one or both of them having a power with a
@@ -2063,7 +2048,7 @@ logarithmic identities so that it can easily be handled by <code class="docutils
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset._solve_logarithm">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_solve_logarithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L1613-L1699"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._solve_logarithm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_solve_logarithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L1614-L1700"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._solve_logarithm" title="Permalink to this definition">#</a></dt>
 <dd><p>Helper to solve logarithmic equations which are reducible
 to a single instance of <span class="math notranslate nohighlight">\(\log\)</span>.</p>
 <p>Logarithmic equations are (currently) the equations that contains
@@ -2137,7 +2122,7 @@ to exponents.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.solvers.solveset._is_logarithmic">
-<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_is_logarithmic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/solvers/solveset.py#L1702-L1757"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._is_logarithmic" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.solvers.solveset.</span></span><span class="sig-name descname"><span class="pre">_is_logarithmic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/solvers/solveset.py#L1703-L1758"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.solvers.solveset._is_logarithmic" title="Permalink to this definition">#</a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the equation is in the form
 <span class="math notranslate nohighlight">\(a\log(f(x)) + b\log(g(x)) + ... + c\)</span> else <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <dl class="field-list">
@@ -2179,19 +2164,19 @@ logarithmic w.r.t <code class="docutils literal notranslate"><span class="pre">s
 </dd></dl>
 </section>
 <section id="diophantine-equations-des">
-<h2>Diophantine Equations (DEs)<a class="headerlink" href="#diophantine-equations-des" title="Permalink to this headline">¶</a></h2>
+<h2>Diophantine Equations (DEs)<a class="headerlink" href="#diophantine-equations-des" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="diophantine.html#diophantine-docs"><span class="std std-ref">Diophantine</span></a></p>
 </section>
 <section id="inequalities">
-<h2>Inequalities<a class="headerlink" href="#inequalities" title="Permalink to this headline">¶</a></h2>
+<h2>Inequalities<a class="headerlink" href="#inequalities" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="inequalities.html#inequality-docs"><span class="std std-ref">Inequality Solvers</span></a></p>
 </section>
 <section id="ordinary-differential-equations-odes">
-<h2>Ordinary Differential equations (ODEs)<a class="headerlink" href="#ordinary-differential-equations-odes" title="Permalink to this headline">¶</a></h2>
+<h2>Ordinary Differential equations (ODEs)<a class="headerlink" href="#ordinary-differential-equations-odes" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="ode.html#ode-docs"><span class="std std-ref">ODE</span></a>.</p>
 </section>
 <section id="partial-differential-equations-pdes">
-<h2>Partial Differential Equations (PDEs)<a class="headerlink" href="#partial-differential-equations-pdes" title="Permalink to this headline">¶</a></h2>
+<h2>Partial Differential Equations (PDEs)<a class="headerlink" href="#partial-differential-equations-pdes" title="Permalink to this headline">#</a></h2>
 <p>See <a class="reference internal" href="pde.html#pde-docs"><span class="std std-ref">PDE</span></a>.</p>
 </section>
 </section>
@@ -2222,16 +2207,22 @@ logarithmic w.r.t <code class="docutils literal notranslate"><span class="pre">s
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/modules/solvers/solveset.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -2259,7 +2250,7 @@ logarithmic w.r.t <code class="docutils literal notranslate"><span class="pre">s
 <li><a class="reference internal" href="#how-does-solveset-ensure-that-it-is-not-returning-any-wrong-solution">How does <code class="docutils literal notranslate"><span class="pre">solveset</span></code> ensure that it is not returning any wrong solution?</a></li>
 <li><a class="reference internal" href="#search-based-solver-and-step-by-step-solution">Search based solver and step-by-step solution</a></li>
 <li><a class="reference internal" href="#how-do-we-deal-with-cases-where-only-some-of-the-solutions-are-known">How do we deal with cases where only some of the solutions are known?</a></li>
-<li><a class="reference internal" href="#what-will-you-do-with-the-old-solve">What will you do with the old solve?</a></li>
+<li><a class="reference internal" href="#what-is-the-plan-for-solve-and-solveset">What is the plan for solve and solveset?</a></li>
 <li><a class="reference internal" href="#how-are-symbolic-parameters-handled-in-solveset">How are symbolic parameters handled in solveset?</a></li>
 <li><a class="reference internal" href="#references">References</a></li>
 <li><a class="reference internal" href="#solveset-module-reference">Solveset Module Reference</a></li>
@@ -2287,7 +2278,7 @@ logarithmic w.r.t <code class="docutils literal notranslate"><span class="pre">s
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

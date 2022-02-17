@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Tensor Operators" href="toperators.html" /><link rel="prev" title="Methods" href="index_methods.html" />
 
-    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Tensor - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Tensor - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">Tensor</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="index_methods.html">Methods</a></li>
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,10 +580,10 @@
         </div>
         <article role="main">
           <section id="module-sympy.tensor.tensor">
-<span id="tensor"></span><span id="tensor-tensor"></span><h1>Tensor<a class="headerlink" href="#module-sympy.tensor.tensor" title="Permalink to this headline">¶</a></h1>
+<span id="tensor"></span><span id="tensor-tensor"></span><h1>Tensor<a class="headerlink" href="#module-sympy.tensor.tensor" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorIndexType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorIndexType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dummy_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_symmetry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'metric'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L932-L1203"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorIndexType" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorIndexType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dummy_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_symmetry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'metric'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L953-L1252"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorIndexType" title="Permalink to this definition">#</a></dt>
 <dd><p>A TensorIndexType is characterized by its name and its metric.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -651,7 +653,7 @@ if <code class="docutils literal notranslate"><span class="pre">eps_dim</span></
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorIndex">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor_index_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_up</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1206-L1296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorIndex" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor_index_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_up</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1255-L1345"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorIndex" title="Permalink to this definition">#</a></dt>
 <dd><p>Represents a tensor index</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -705,7 +707,7 @@ of names.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorHead">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1616-L1882"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorHead" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1680-L1948"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorHead" title="Permalink to this definition">#</a></dt>
 <dd><p>Tensor head of the tensor.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -826,14 +828,19 @@ tensor:</p>
 </table></div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorHead.commutes_with">
-<span class="sig-name descname"><span class="pre">commutes_with</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1766-L1773"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorHead.commutes_with" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">commutes_with</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1830-L1837"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorHead.commutes_with" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns <code class="docutils literal notranslate"><span class="pre">0</span></code> if <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> commute, <code class="docutils literal notranslate"><span class="pre">1</span></code> if they anticommute.</p>
 <p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> neither commute nor anticommute.</p>
 </dd></dl>
 </dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.tensor.tensor.tensor_heads">
+<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">tensor_heads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1951-L1963"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.tensor_heads" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a sequence of TensorHeads from a string <span class="math notranslate nohighlight">\(s\)</span></p>
+</dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensExpr">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1904-L2310"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensExpr" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1970-L2376"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensExpr" title="Permalink to this definition">#</a></dt>
 <dd><p>Abstract base class for tensor expressions</p>
 <p class="rubric">Notes</p>
 <p>A tensor expression is an expression formed by tensors;
@@ -848,14 +855,14 @@ slot which the index occupies in that component tensor.</p>
 <p>Contracted indices are therefore nameless in the internal representation.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensExpr.get_matrix">
-<span class="sig-name descname"><span class="pre">get_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L2035-L2060"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensExpr.get_matrix" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L2100-L2126"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensExpr.get_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>DEPRECATED: do not use.</p>
 <p>Returns ndarray components data as a matrix, if components data are
 available and ndarray dimension does not exceed 2.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensExpr.replace_with_arrays">
-<span class="sig-name descname"><span class="pre">replace_with_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replacement_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L2205-L2292"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensExpr.replace_with_arrays" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">replace_with_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replacement_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L2271-L2358"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensExpr.replace_with_arrays" title="Permalink to this definition">#</a></dt>
 <dd><p>Replace the tensorial expressions with arrays. The final array will
 correspond to the N-dimensional array with indices arranged according
 to <code class="docutils literal notranslate"><span class="pre">indices</span></code>.</p>
@@ -928,7 +935,7 @@ in this case is <code class="docutils literal notranslate"><span class="pre">L</
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensAdd">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensAdd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L2313-L2660"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensAdd" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensAdd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L2379-L2730"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensAdd" title="Permalink to this definition">#</a></dt>
 <dd><p>Sum of tensors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -979,13 +986,13 @@ in this case is <code class="docutils literal notranslate"><span class="pre">L</
 </table></div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensAdd.canon_bp">
-<span class="sig-name descname"><span class="pre">canon_bp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L2532-L2540"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensAdd.canon_bp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">canon_bp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L2598-L2606"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensAdd.canon_bp" title="Permalink to this definition">#</a></dt>
 <dd><p>Canonicalize using the Butler-Portugal algorithm for canonicalization
 under monoterm symmetries.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensAdd.contract_metric">
-<span class="sig-name descname"><span class="pre">contract_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L2572-L2591"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensAdd.contract_metric" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">contract_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L2639-L2658"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensAdd.contract_metric" title="Permalink to this definition">#</a></dt>
 <dd><p>Raise or lower indices with the metric <code class="docutils literal notranslate"><span class="pre">g</span></code>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -999,7 +1006,7 @@ under monoterm symmetries.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensMul">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensMul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L3126-L3927"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensMul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L3201-L4005"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul" title="Permalink to this definition">#</a></dt>
 <dd><p>Product of tensors.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1055,7 +1062,7 @@ in the <code class="docutils literal notranslate"><span class="pre">ipos2</span>
 </table></div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensMul.canon_bp">
-<span class="sig-name descname"><span class="pre">canon_bp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L3605-L3638"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.canon_bp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">canon_bp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L3681-L3714"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.canon_bp" title="Permalink to this definition">#</a></dt>
 <dd><p>Canonicalize using the Butler-Portugal algorithm for canonicalization
 under monoterm symmetries.</p>
 <p class="rubric">Examples</p>
@@ -1074,7 +1081,7 @@ under monoterm symmetries.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensMul.contract_metric">
-<span class="sig-name descname"><span class="pre">contract_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L3659-L3821"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.contract_metric" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">contract_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L3735-L3897"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.contract_metric" title="Permalink to this definition">#</a></dt>
 <dd><p>Raise or lower indices with the metric <code class="docutils literal notranslate"><span class="pre">g</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1099,7 +1106,7 @@ under monoterm symmetries.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensMul.get_free_indices">
-<span class="sig-name descname"><span class="pre">get_free_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#sympy.tensor.tensor.TensorIndex" title="sympy.tensor.tensor.TensorIndex"><span class="pre">sympy.tensor.tensor.TensorIndex</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L3463-L3488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.get_free_indices" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_free_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#sympy.tensor.tensor.TensorIndex" title="sympy.tensor.tensor.TensorIndex"><span class="pre">sympy.tensor.tensor.TensorIndex</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L3538-L3563"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.get_free_indices" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the list of free indices of the tensor.</p>
 <p class="rubric">Explanation</p>
 <p>The indices are listed in the order in which they appear in the
@@ -1121,7 +1128,7 @@ component tensors.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensMul.get_indices">
-<span class="sig-name descname"><span class="pre">get_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L3434-L3461"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.get_indices" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L3509-L3536"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.get_indices" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the list of indices of the tensor.</p>
 <p class="rubric">Explanation</p>
 <p>The indices are listed in the order in which they appear in the
@@ -1145,18 +1152,18 @@ the names of the free indices.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensMul.perm2tensor">
-<span class="sig-name descname"><span class="pre">perm2tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_canon_bp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L3597-L3603"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.perm2tensor" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">perm2tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_canon_bp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L3673-L3679"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.perm2tensor" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the tensor corresponding to the permutation <code class="docutils literal notranslate"><span class="pre">g</span></code></p>
 <p>For further details, see the method in <code class="docutils literal notranslate"><span class="pre">TIDS</span></code> with the same name.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensMul.sorted_components">
-<span class="sig-name descname"><span class="pre">sorted_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L3591-L3595"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.sorted_components" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sorted_components</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L3667-L3671"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.sorted_components" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a tensor product with sorted components.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensMul.split">
-<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L3493-L3527"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.split" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L3568-L3602"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensMul.split" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a list of tensors, whose product is <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 <p class="rubric">Explanation</p>
 <p>Dummy indices contracted among different tensor components
@@ -1178,19 +1185,19 @@ represent the dummy indices.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.canon_bp">
-<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">canon_bp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L4020-L4027"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.canon_bp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">canon_bp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L4098-L4105"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.canon_bp" title="Permalink to this definition">#</a></dt>
 <dd><p>Butler-Portugal canonicalization. See <code class="docutils literal notranslate"><span class="pre">tensor_can.py</span></code> from the
 combinatorics module for the details.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.riemann_cyclic_replace">
-<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">riemann_cyclic_replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_r</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L4042-L4055"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.riemann_cyclic_replace" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">riemann_cyclic_replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_r</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L4120-L4133"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.riemann_cyclic_replace" title="Permalink to this definition">#</a></dt>
 <dd><p>replace Riemann tensor with an equivalent expression</p>
 <p><code class="docutils literal notranslate"><span class="pre">R(m,n,p,q)</span> <span class="pre">-&gt;</span> <span class="pre">2/3*R(m,n,p,q)</span> <span class="pre">-</span> <span class="pre">1/3*R(m,q,n,p)</span> <span class="pre">+</span> <span class="pre">1/3*R(m,p,n,q)</span></code></p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.riemann_cyclic">
-<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">riemann_cyclic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L4057-L4087"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.riemann_cyclic" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">riemann_cyclic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L4135-L4165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.riemann_cyclic" title="Permalink to this definition">#</a></dt>
 <dd><p>Replace each Riemann tensor with an equivalent expression
 satisfying the cyclic identity.</p>
 <p>This trick is discussed in the reference guide to Cadabra.</p>
@@ -1207,7 +1214,7 @@ satisfying the cyclic identity.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorSymmetry">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorSymmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1328-L1457"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorSymmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1377-L1506"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry" title="Permalink to this definition">#</a></dt>
 <dd><p>Monoterm symmetry of a tensor (i.e. any symmetric or anti-symmetric
 index permutation). For the relevant terminology see <code class="docutils literal notranslate"><span class="pre">tensor_can.py</span></code>
 section of the combinatorics module.</p>
@@ -1260,7 +1267,7 @@ Simple symmetries can be generated using built-in methods.</p>
 </table></div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorSymmetry.direct_product">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">direct_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1417-L1443"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry.direct_product" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direct_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1466-L1492"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry.direct_product" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a TensorSymmetry object that is being a direct product of
 fully (anti-)symmetric index permutation groups.</p>
 <p class="rubric">Notes</p>
@@ -1273,24 +1280,24 @@ fully (anti-)symmetric index permutation groups.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorSymmetry.fully_symmetric">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">fully_symmetric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1403-L1415"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry.fully_symmetric" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fully_symmetric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1452-L1464"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry.fully_symmetric" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a fully symmetric (antisymmetric if <code class="docutils literal notranslate"><span class="pre">rank``&lt;0)</span>
 <span class="pre">TensorSymmetry</span> <span class="pre">object</span> <span class="pre">for</span> <span class="pre">``abs(rank)</span></code> indices.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorSymmetry.no_symmetry">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">no_symmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1452-L1457"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry.no_symmetry" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">no_symmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1501-L1506"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry.no_symmetry" title="Permalink to this definition">#</a></dt>
 <dd><p>TensorSymmetry object for <code class="docutils literal notranslate"><span class="pre">rank</span></code> indices with no symmetry</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorSymmetry.riemann">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">riemann</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1445-L1450"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry.riemann" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">riemann</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1494-L1499"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorSymmetry.riemann" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a monotorem symmetry of the Riemann tensor</p>
 </dd></dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.tensorsymmetry">
-<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">tensorsymmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1460-L1525"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.tensorsymmetry" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">tensorsymmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1509-L1580"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.tensorsymmetry" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">TensorSymmetry</span></code> object. This method is deprecated, use
 <code class="docutils literal notranslate"><span class="pre">TensorSymmetry.direct_product()</span></code> or <code class="docutils literal notranslate"><span class="pre">.riemann()</span></code> instead.</p>
 <p class="rubric">Explanation</p>
@@ -1318,7 +1325,7 @@ cyclic symmetry.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor.TensorType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetry</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L1528-L1588"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorType" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">TensorType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L1587-L1646"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor.TensorType" title="Permalink to this definition">#</a></dt>
 <dd><p>Class of tensor types. Deprecated, use tensor_heads() instead.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1347,7 +1354,7 @@ cyclic symmetry.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.tensor._TensorManager">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">_TensorManager</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L767-L926"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.tensor.</span></span><span class="sig-name descname"><span class="pre">_TensorManager</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L788-L947"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager" title="Permalink to this definition">#</a></dt>
 <dd><p>Class to manage tensor properties.</p>
 <p class="rubric">Notes</p>
 <p>Tensors belong to tensor commutation groups; each group has a label
@@ -1360,17 +1367,17 @@ groups commute with those with <code class="docutils literal notranslate"><span 
 do not commute with any other group.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor._TensorManager.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L922-L926"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.clear" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L943-L947"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.clear" title="Permalink to this definition">#</a></dt>
 <dd><p>Clear the TensorManager.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor._TensorManager.comm_i2symbol">
-<span class="sig-name descname"><span class="pre">comm_i2symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L824-L828"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.comm_i2symbol" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">comm_i2symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L845-L849"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.comm_i2symbol" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the symbol corresponding to the commutation group number.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor._TensorManager.comm_symbols2i">
-<span class="sig-name descname"><span class="pre">comm_symbols2i</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L805-L822"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.comm_symbols2i" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">comm_symbols2i</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L826-L843"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.comm_symbols2i" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the commutation group number corresponding to <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">i</span></code> can be a symbol or a number or a string.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">i</span></code> is not already defined its commutation group number
@@ -1378,13 +1385,13 @@ is set.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor._TensorManager.get_comm">
-<span class="sig-name descname"><span class="pre">get_comm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L914-L920"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.get_comm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_comm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L935-L941"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.get_comm" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the commutation parameter for commutation group numbers <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">j</span></code></p>
 <p>see <code class="docutils literal notranslate"><span class="pre">_TensorManager.set_comm</span></code></p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor._TensorManager.set_comm">
-<span class="sig-name descname"><span class="pre">set_comm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L830-L900"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.set_comm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_comm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L851-L921"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.set_comm" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the commutation parameter <code class="docutils literal notranslate"><span class="pre">c</span></code> for commutation groups <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">j</span></code>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1425,7 +1432,7 @@ each other; A is commuting.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.tensor.tensor._TensorManager.set_comms">
-<span class="sig-name descname"><span class="pre">set_comms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/tensor.py#L902-L912"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.set_comms" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_comms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/tensor.py#L923-L933"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.tensor._TensorManager.set_comms" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the commutation group numbers <code class="docutils literal notranslate"><span class="pre">c</span></code> for symbols <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">j</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1462,16 +1469,22 @@ each other; A is commuting.</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/modules/tensor/tensor.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -1487,7 +1500,7 @@ each other; A is commuting.</p>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

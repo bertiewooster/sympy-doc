@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Polycyclic Groups" href="pc_groups.html" /><link rel="prev" title="Tensor Canonicalization" href="tensor_can.html" />
 
-    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Finitely Presented Groups - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Finitely Presented Groups - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,9 +580,9 @@
         </div>
         <article role="main">
           <section id="finitely-presented-groups">
-<h1>Finitely Presented Groups<a class="headerlink" href="#finitely-presented-groups" title="Permalink to this headline">¶</a></h1>
+<h1>Finitely Presented Groups<a class="headerlink" href="#finitely-presented-groups" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>This module presents the functionality designed for computing with finitely-
 presented groups (fp-groups for short). The name of the corresponding SymPy
 object is <code class="docutils literal notranslate"><span class="pre">FpGroup</span></code>. The functions or classes described here are studied
@@ -590,7 +592,7 @@ under <strong>computational group theory</strong>. All code examples assume:</p>
 </pre></div>
 </div>
 <section id="overview-of-facilities">
-<h3>Overview of Facilities<a class="headerlink" href="#overview-of-facilities" title="Permalink to this headline">¶</a></h3>
+<h3>Overview of Facilities<a class="headerlink" href="#overview-of-facilities" title="Permalink to this headline">#</a></h3>
 <p>The facilities provided for fp-groups fall into a number of natural groupings</p>
 <ul class="simple">
 <li><p>The construction of fp-groups using a free group and a list of words in
@@ -606,7 +608,7 @@ we often make use of <em>Handbook of Computational Group Theory</em>.</p>
 </section>
 </section>
 <section id="the-construction-of-finitely-presented-groups">
-<h2>The Construction of Finitely Presented Groups<a class="headerlink" href="#the-construction-of-finitely-presented-groups" title="Permalink to this headline">¶</a></h2>
+<h2>The Construction of Finitely Presented Groups<a class="headerlink" href="#the-construction-of-finitely-presented-groups" title="Permalink to this headline">#</a></h2>
 <p>Finitely presented groups are constructed by factoring a free group by a
 set of relators. The set of relators is taken in as a list of words in
 generators of free group in SymPy, using a list provides ordering to the
@@ -632,9 +634,9 @@ list of relators, group in SymPy would be specified as:</p>
 is that in case of equality with non-identity the user has to manually do that.</p>
 </section>
 <section id="free-groups-and-words">
-<h2>Free Groups and Words<a class="headerlink" href="#free-groups-and-words" title="Permalink to this headline">¶</a></h2>
+<h2>Free Groups and Words<a class="headerlink" href="#free-groups-and-words" title="Permalink to this headline">#</a></h2>
 <section id="construction-of-a-free-group">
-<h3>Construction of a Free Group<a class="headerlink" href="#construction-of-a-free-group" title="Permalink to this headline">¶</a></h3>
+<h3>Construction of a Free Group<a class="headerlink" href="#construction-of-a-free-group" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">free_group("gen0,</span> <span class="pre">gen1,</span> <span class="pre">...,</span> <span class="pre">gen_(n-1)")</span></code> constructs a free group <code class="docutils literal notranslate"><span class="pre">F</span></code> on
 <code class="docutils literal notranslate"><span class="pre">n</span></code> generators, where <code class="docutils literal notranslate"><span class="pre">n</span></code> is a positive integer. The <span class="math notranslate nohighlight">\(i\)</span>-th generator of
 <span class="math notranslate nohighlight">\(F\)</span> may be obtained using the method <code class="docutils literal notranslate"><span class="pre">.generators[i]</span></code>, <span class="math notranslate nohighlight">\(i = 0, \ldots n-1\)</span>.</p>
@@ -660,7 +662,7 @@ and inserts <code class="docutils literal notranslate"><span class="pre">x</span
 <p>creates a free groups <code class="docutils literal notranslate"><span class="pre">F[0]</span></code> of rank 2, with tuple of generators <code class="docutils literal notranslate"><span class="pre">F[1]</span></code>.</p>
 </section>
 <section id="construction-of-words">
-<h3>Construction of words<a class="headerlink" href="#construction-of-words" title="Permalink to this headline">¶</a></h3>
+<h3>Construction of words<a class="headerlink" href="#construction-of-words" title="Permalink to this headline">#</a></h3>
 <p>This section is applicable to words of <code class="docutils literal notranslate"><span class="pre">FreeGroup</span></code> as well as <code class="docutils literal notranslate"><span class="pre">FpGroup</span></code>.
 When we say <em>word</em> in SymPy, it actually means a <a class="reference external" href="https://en.wikipedia.org/wiki/Word_(group_theory)#Reduced_words">reduced word</a> , since the
 words are automatically reduced. Given a group <code class="docutils literal notranslate"><span class="pre">G</span></code> defined on <span class="math notranslate nohighlight">\(n\)</span> generators
@@ -672,7 +674,7 @@ may be equivalent.</p>
 </section>
 </section>
 <section id="coset-enumeration-the-todd-coxeter-algorithm">
-<h2>Coset Enumeration: The Todd-Coxeter Algorithm<a class="headerlink" href="#coset-enumeration-the-todd-coxeter-algorithm" title="Permalink to this headline">¶</a></h2>
+<h2>Coset Enumeration: The Todd-Coxeter Algorithm<a class="headerlink" href="#coset-enumeration-the-todd-coxeter-algorithm" title="Permalink to this headline">#</a></h2>
 <p>This section describes the use of coset enumeration techniques in SymPy. The
 algorithm used for coset enumeration procedure is Todd-Coxeter algorithm and
 is developed in SymPy using [Ho05] and [CDHW73]. The reader should consult
@@ -691,7 +693,7 @@ enumeration to be used, possible values are <em>“relator_based”</em> or
 </dd>
 </dl>
 <section id="cosettable">
-<h3>CosetTable<a class="headerlink" href="#cosettable" title="Permalink to this headline">¶</a></h3>
+<h3>CosetTable<a class="headerlink" href="#cosettable" title="Permalink to this headline">#</a></h3>
 <p>Class used to manipulate the information regarding the coset enumeration of
 the finitely presented group <code class="docutils literal notranslate"><span class="pre">G</span></code> on the cosets of the subgroup <code class="docutils literal notranslate"><span class="pre">H</span></code>.</p>
 <p>Basically a <em>coset table</em> <code class="docutils literal notranslate"><span class="pre">CosetTable(G,H)</span></code>, is the permutation representation
@@ -711,7 +713,7 @@ enumeration by changing the values of the variable
 <code class="docutils literal notranslate"><span class="pre">CosetTable.coset_table_max_limit</span></code>.</p>
 </section>
 <section id="attributes-of-cosettable">
-<h3>Attributes of CosetTable<a class="headerlink" href="#attributes-of-cosettable" title="Permalink to this headline">¶</a></h3>
+<h3>Attributes of CosetTable<a class="headerlink" href="#attributes-of-cosettable" title="Permalink to this headline">#</a></h3>
 <p>For <code class="docutils literal notranslate"><span class="pre">CosetTable(G,</span> <span class="pre">H)</span></code> where <code class="docutils literal notranslate"><span class="pre">G</span></code> is the group and <code class="docutils literal notranslate"><span class="pre">H</span></code> is the subgroup.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: A non-negative integer, non-mutable attribute, dependently
@@ -748,7 +750,7 @@ For example:</p>
 </ul>
 </section>
 <section id="compression-and-standardization">
-<h3>Compression and Standardization<a class="headerlink" href="#compression-and-standardization" title="Permalink to this headline">¶</a></h3>
+<h3>Compression and Standardization<a class="headerlink" href="#compression-and-standardization" title="Permalink to this headline">#</a></h3>
 <p>For any two entries <span class="math notranslate nohighlight">\(i, j\)</span> with <span class="math notranslate nohighlight">\(i &lt; j\)</span> in coset table, the first
 occurrence of <span class="math notranslate nohighlight">\(i\)</span> in a coset table precedes the first occurrence of <span class="math notranslate nohighlight">\(j\)</span> with
 respect to the usual row-wise ordering of the table entries. We call such a
@@ -758,12 +760,12 @@ table a standard coset table. To standardize a <code class="docutils literal not
 </section>
 </section>
 <section id="subgroups-of-finite-index">
-<h2>Subgroups of Finite Index<a class="headerlink" href="#subgroups-of-finite-index" title="Permalink to this headline">¶</a></h2>
+<h2>Subgroups of Finite Index<a class="headerlink" href="#subgroups-of-finite-index" title="Permalink to this headline">#</a></h2>
 <p>The functionality in this section are concerned with the construction of
 subgroups of finite index. We describe a method for computing all subgroups
 whose index does not exceed some (modest) integer bound.</p>
 <section id="low-index-subgroups">
-<h3>Low Index Subgroups<a class="headerlink" href="#low-index-subgroups" title="Permalink to this headline">¶</a></h3>
+<h3>Low Index Subgroups<a class="headerlink" href="#low-index-subgroups" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">low_index_subgroups(G,</span> <span class="pre">N)</span></code>: Given a finitely presented group <span class="math notranslate nohighlight">\(G = \left\langle X \mid R \right\rangle\)</span>
 (can be a free group), and <code class="docutils literal notranslate"><span class="pre">N</span></code> a positive integer, determine the conjugacy classes of
 subgroups of <code class="docutils literal notranslate"><span class="pre">G</span></code> whose indices is less than or equal to <code class="docutils literal notranslate"><span class="pre">N</span></code>.</p>
@@ -787,7 +789,7 @@ that index, <span class="math notranslate nohighlight">\(index\)</span>, of subg
 </section>
 </section>
 <section id="constructing-a-presentation-for-a-subgroup">
-<h2>Constructing a presentation for a subgroup<a class="headerlink" href="#constructing-a-presentation-for-a-subgroup" title="Permalink to this headline">¶</a></h2>
+<h2>Constructing a presentation for a subgroup<a class="headerlink" href="#constructing-a-presentation-for-a-subgroup" title="Permalink to this headline">#</a></h2>
 <p>In this section we discuss finding the presentation of a subgroup in a finitely
 presentation group. While the <em>subgroup</em> is currently allowed as input only in
 the form of a list of generators for the subgroup, you can expect the
@@ -797,7 +799,7 @@ future.</p>
 those of <code class="docutils literal notranslate"><span class="pre">G</span></code>. First is on a set of Schreier generators, known generally as
 Reidemeister-Schreier algorithm or on the given list of generators of <code class="docutils literal notranslate"><span class="pre">H</span></code>.</p>
 <section id="reidemeister-schreier-algorithm">
-<h3>Reidemeister Schreier algorithm<a class="headerlink" href="#reidemeister-schreier-algorithm" title="Permalink to this headline">¶</a></h3>
+<h3>Reidemeister Schreier algorithm<a class="headerlink" href="#reidemeister-schreier-algorithm" title="Permalink to this headline">#</a></h3>
 <p>called using <code class="docutils literal notranslate"><span class="pre">reidemeister_presentation(G,</span> <span class="pre">Y)</span></code> where <code class="docutils literal notranslate"><span class="pre">G</span></code> is the group and
 <code class="docutils literal notranslate"><span class="pre">Y</span></code> is a list of generators for subgroup <code class="docutils literal notranslate"><span class="pre">H</span></code> whose presentation we want to
 find.</p>
@@ -813,7 +815,7 @@ find.</p>
 </section>
 </section>
 <section id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h2>
 <dl class="citation">
 <dt class="label" id="cdhw73"><span class="brackets">CDHW73</span></dt>
 <dd><p>John J. Cannon, Lucien A. Dimino, George Havas, and Jane M. Watson.
@@ -860,16 +862,22 @@ In Proceedings of the International Symposium on Symbolic and Algebraic Computat
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/modules/combinatorics/fp_groups.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -928,7 +936,7 @@ In Proceedings of the International Symposium on Symbolic and Algebraic Computat
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

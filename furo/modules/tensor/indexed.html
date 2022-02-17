@@ -3,15 +3,15 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Methods" href="index_methods.html" /><link rel="prev" title="N-dim array" href="array.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Methods" href="index_methods.html" /><link rel="prev" title="N-dim array expressions" href="array_expressions.html" />
 
-    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Indexed Objects - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Indexed Objects - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">Tensor</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,7 +580,7 @@
         </div>
         <article role="main">
           <section id="module-sympy.tensor.indexed">
-<span id="indexed-objects"></span><h1>Indexed Objects<a class="headerlink" href="#module-sympy.tensor.indexed" title="Permalink to this headline">¶</a></h1>
+<span id="indexed-objects"></span><h1>Indexed Objects<a class="headerlink" href="#module-sympy.tensor.indexed" title="Permalink to this headline">#</a></h1>
 <p>Module that defines indexed objects</p>
 <p>The classes <code class="docutils literal notranslate"><span class="pre">IndexedBase</span></code>, <code class="docutils literal notranslate"><span class="pre">Indexed</span></code>, and <code class="docutils literal notranslate"><span class="pre">Idx</span></code> represent a
 matrix element <code class="docutils literal notranslate"><span class="pre">M[i,</span> <span class="pre">j]</span></code> as in the following diagram:</p>
@@ -605,7 +607,7 @@ implicit contraction of repeated indices is supported.</p>
 expressions as indices is limited.  (This should be improved in
 future releases.)</p>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
 <p>To express the above matrix element example you would write:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">IndexedBase</span><span class="p">,</span> <span class="n">Idx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">IndexedBase</span><span class="p">(</span><span class="s1">'M'</span><span class="p">)</span>
@@ -663,7 +665,7 @@ get_indices() and get_contraction_structure():</p>
 <p>See the appropriate docstrings for a detailed explanation of the output.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Idx">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.indexed.</span></span><span class="sig-name descname"><span class="pre">Idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/indexed.py#L578-L752"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.indexed.Idx" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.indexed.</span></span><span class="sig-name descname"><span class="pre">Idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/indexed.py#L584-L758"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.indexed.Idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Represents an integer index as an <code class="docutils literal notranslate"><span class="pre">Integer</span></code> or integer expression.</p>
 <p>There are a number of ways to create an <code class="docutils literal notranslate"><span class="pre">Idx</span></code> object.  The constructor
 takes two arguments:</p>
@@ -717,7 +719,7 @@ and the lower bound defaults to 0:</p>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Idx.label">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#sympy.tensor.indexed.Idx.label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#sympy.tensor.indexed.Idx.label" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the label (Integer or integer expression) of the Idx object.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Idx</span><span class="p">,</span> <span class="n">Symbol</span>
@@ -734,7 +736,7 @@ and the lower bound defaults to 0:</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Idx.lower">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">lower</span></span><a class="headerlink" href="#sympy.tensor.indexed.Idx.lower" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lower</span></span><a class="headerlink" href="#sympy.tensor.indexed.Idx.lower" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the lower bound of the <code class="docutils literal notranslate"><span class="pre">Idx</span></code>.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Idx</span>
@@ -749,7 +751,7 @@ and the lower bound defaults to 0:</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Idx.upper">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">upper</span></span><a class="headerlink" href="#sympy.tensor.indexed.Idx.upper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">upper</span></span><a class="headerlink" href="#sympy.tensor.indexed.Idx.upper" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the upper bound of the <code class="docutils literal notranslate"><span class="pre">Idx</span></code>.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Idx</span>
@@ -765,7 +767,7 @@ and the lower bound defaults to 0:</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Indexed">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.indexed.</span></span><span class="sig-name descname"><span class="pre">Indexed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/indexed.py#L124-L356"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.indexed.Indexed" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.indexed.</span></span><span class="sig-name descname"><span class="pre">Indexed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/indexed.py#L124-L362"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.indexed.Indexed" title="Permalink to this definition">#</a></dt>
 <dd><p>Represents a mathematical object with indices.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Indexed</span><span class="p">,</span> <span class="n">IndexedBase</span><span class="p">,</span> <span class="n">Idx</span><span class="p">,</span> <span class="n">symbols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'i j'</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">Idx</span><span class="p">)</span>
@@ -784,7 +786,7 @@ and the lower bound defaults to 0:</p>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Indexed.base">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.base" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.base" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">IndexedBase</span></code> of the <code class="docutils literal notranslate"><span class="pre">Indexed</span></code> object.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Indexed</span><span class="p">,</span> <span class="n">IndexedBase</span><span class="p">,</span> <span class="n">Idx</span><span class="p">,</span> <span class="n">symbols</span>
@@ -799,7 +801,7 @@ and the lower bound defaults to 0:</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Indexed.indices">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">indices</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.indices" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indices</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.indices" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the indices of the <code class="docutils literal notranslate"><span class="pre">Indexed</span></code> object.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Indexed</span><span class="p">,</span> <span class="n">Idx</span><span class="p">,</span> <span class="n">symbols</span>
@@ -811,7 +813,7 @@ and the lower bound defaults to 0:</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Indexed.ranges">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ranges</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.ranges" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ranges</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.ranges" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a list of tuples with lower and upper range of each index.</p>
 <p>If an index does not define the data members upper and lower, the
 corresponding slot in the list contains <code class="docutils literal notranslate"><span class="pre">None</span></code> instead of a tuple.</p>
@@ -829,7 +831,7 @@ corresponding slot in the list contains <code class="docutils literal notranslat
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Indexed.rank">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">rank</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.rank" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rank</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.rank" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the rank of the <code class="docutils literal notranslate"><span class="pre">Indexed</span></code> object.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Indexed</span><span class="p">,</span> <span class="n">Idx</span><span class="p">,</span> <span class="n">symbols</span>
@@ -846,7 +848,7 @@ corresponding slot in the list contains <code class="docutils literal notranslat
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.Indexed.shape">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.shape" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#sympy.tensor.indexed.Indexed.shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns a list with dimensions of each index.</p>
 <p>Dimensions is a property of the array, not of the indices.  Still, if
 the <code class="docutils literal notranslate"><span class="pre">IndexedBase</span></code> does not define a shape attribute, it is assumed
@@ -867,7 +869,7 @@ that the ranges of the indices correspond to the shape of the array.</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.IndexedBase">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.indexed.</span></span><span class="sig-name descname"><span class="pre">IndexedBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/0a5f673ad65c7c19393e88e01017364256c7302f/sympy/tensor/indexed.py#L359-L575"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.tensor.indexed.</span></span><span class="sig-name descname"><span class="pre">IndexedBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/5b2a0e8a6beed6a2fedd47ac5e52ecc337d523e9/sympy/tensor/indexed.py#L365-L581"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase" title="Permalink to this definition">#</a></dt>
 <dd><p>Represent the base or stem of an indexed object</p>
 <p>The IndexedBase class represent an array that contains elements. The main purpose
 of this class is to allow the convenient creation of objects of the Indexed
@@ -937,7 +939,7 @@ ranges!)</p>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.IndexedBase.label">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase.label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase.label" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the label of the <code class="docutils literal notranslate"><span class="pre">IndexedBase</span></code> object.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">IndexedBase</span>
@@ -949,7 +951,7 @@ ranges!)</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.IndexedBase.offset">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">offset</span></span><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase.offset" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">offset</span></span><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase.offset" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the offset for the <code class="docutils literal notranslate"><span class="pre">IndexedBase</span></code> object.</p>
 <p>This is the value added to the resulting index when the
 2D Indexed object is unrolled to a 1D form. Used in code
@@ -968,7 +970,7 @@ generation.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.IndexedBase.shape">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase.shape" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase.shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the shape of the <code class="docutils literal notranslate"><span class="pre">IndexedBase</span></code> object.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">IndexedBase</span><span class="p">,</span> <span class="n">Idx</span>
@@ -992,7 +994,7 @@ any shape information given by the indices.</p>
 </dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.tensor.indexed.IndexedBase.strides">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">strides</span></span><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase.strides" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strides</span></span><a class="headerlink" href="#sympy.tensor.indexed.IndexedBase.strides" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the strided scheme for the <code class="docutils literal notranslate"><span class="pre">IndexedBase</span></code> object.</p>
 <p>Normally this is a tuple denoting the number of
 steps to take in the respective dimension when traversing
@@ -1020,28 +1022,34 @@ order.</p>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="array.html">
+          <a class="prev-page" href="array_expressions.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">N-dim array</div>
+                <div class="title">N-dim array expressions</div>
                 
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/modules/tensor/indexed.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>

@@ -3,15 +3,15 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Symbolic and fuzzy booleans" href="booleans.html" /><link rel="prev" title="Making a Contribution" href="contributing/make-a-contribution.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Symbolic and fuzzy booleans" href="booleans.html" /><link rel="prev" title="Deprecation Policy" href="contributing/deprecations.html" />
 
-    <link rel="shortcut icon" href="../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Assumptions - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Assumptions - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">SymPy Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">Reference Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../modules/tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../modules/tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../modules/utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../modules/utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,7 +580,7 @@
         </div>
         <article role="main">
           <section id="assumptions">
-<span id="id1"></span><h1>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">#</a></h1>
 <p>This page outlines the core assumptions system in SymPy. It explains what the
 core assumptions system is, how the assumptions system is used and what the
 different assumptions predicates mean.</p>
@@ -648,7 +650,7 @@ number. That <em>assumption</em> can make it possible to simplify expressions or
 might allow other manipulations to work. It is usually a good idea to be as
 precise as possible about the assumptions on a symbol when creating it.</p>
 <section id="the-old-assumptions-system">
-<h2>The (old) assumptions system<a class="headerlink" href="#the-old-assumptions-system" title="Permalink to this headline">¶</a></h2>
+<h2>The (old) assumptions system<a class="headerlink" href="#the-old-assumptions-system" title="Permalink to this headline">#</a></h2>
 <p>There are two sides to the assumptions system. The first side is that we can
 declare assumptions on a symbol when creating the symbol. The other side is
 that we can query the assumptions on any expression using the corresponding
@@ -767,7 +769,7 @@ assumptions system can be used:</p>
 </div>
 </section>
 <section id="gotcha-symbols-with-different-assumptions">
-<h2>Gotcha: symbols with different assumptions<a class="headerlink" href="#gotcha-symbols-with-different-assumptions" title="Permalink to this headline">¶</a></h2>
+<h2>Gotcha: symbols with different assumptions<a class="headerlink" href="#gotcha-symbols-with-different-assumptions" title="Permalink to this headline">#</a></h2>
 <p>In SymPy it is possible to declare two symbols with different names and they
 will implicitly be considered equal under <em>structural equality</em>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x1</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
@@ -825,7 +827,7 @@ useful because otherwise the new expression with the new symbols having the
 </div>
 </section>
 <section id="applying-assumptions-to-string-inputs">
-<h2>Applying assumptions to string inputs<a class="headerlink" href="#applying-assumptions-to-string-inputs" title="Permalink to this headline">¶</a></h2>
+<h2>Applying assumptions to string inputs<a class="headerlink" href="#applying-assumptions-to-string-inputs" title="Permalink to this headline">#</a></h2>
 <p>We have seen how to set assumptions when  <a class="reference internal" href="../modules/core.html#sympy.core.symbol.Symbol" title="sympy.core.symbol.Symbol"><code class="xref py py-class docutils literal notranslate"><span class="pre">Symbol</span></code></a> or
 <a class="reference internal" href="../modules/core.html#sympy.core.symbol.symbols" title="sympy.core.symbol.symbols"><code class="xref py py-func docutils literal notranslate"><span class="pre">symbols()</span></code></a> explicitly. A natural question to ask is in what other
 situations can we assign assumptions to an object?</p>
@@ -867,7 +869,7 @@ explicitly by high-level APIs.</p>
 </div>
 </section>
 <section id="predicates">
-<h2>Predicates<a class="headerlink" href="#predicates" title="Permalink to this headline">¶</a></h2>
+<h2>Predicates<a class="headerlink" href="#predicates" title="Permalink to this headline">#</a></h2>
 <p>There are many different predicates that can be assumed for a symbol or can be
 queried for an expression. It is possible to combine multiple predicates when
 creating a symbol. Predicates are logically combined using <em>and</em> so if a
@@ -920,7 +922,7 @@ infer that is should have <code class="docutils literal notranslate"><span class
 rational number.</p>
 <p>A full table of the possible predicates and their definitions is given below.</p>
 <div class="table-wrapper"><table class="colwidths-given docutils align-default" id="id29">
-<caption><span class="caption-text">Assumptions predicates for the (old) assumptions</span><a class="headerlink" href="#id29" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">Assumptions predicates for the (old) assumptions</span><a class="headerlink" href="#id29" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 20%"/>
 <col style="width: 45%"/>
@@ -1230,7 +1232,7 @@ An <code class="docutils literal notranslate"><span class="pre">extended_nonposi
 </tbody>
 </table></div>
 <section id="references-for-the-above-definitions">
-<h3>References for the above definitions<a class="headerlink" href="#references-for-the-above-definitions" title="Permalink to this headline">¶</a></h3>
+<h3>References for the above definitions<a class="headerlink" href="#references-for-the-above-definitions" title="Permalink to this headline">#</a></h3>
 <dl class="citation">
 <dt class="label" id="commutative"><span class="brackets"><a class="fn-backref" href="#id2">commutative</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Commutative_property">https://en.wikipedia.org/wiki/Commutative_property</a></p>
@@ -1290,7 +1292,7 @@ An <code class="docutils literal notranslate"><span class="pre">extended_nonposi
 </section>
 </section>
 <section id="implications">
-<h2>Implications<a class="headerlink" href="#implications" title="Permalink to this headline">¶</a></h2>
+<h2>Implications<a class="headerlink" href="#implications" title="Permalink to this headline">#</a></h2>
 <p>The assumptions system uses the inference rules to infer new predicates beyond
 those immediately specified when creating a symbol:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">negative</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1351,7 +1353,7 @@ be declared as positive:</p>
 </div>
 </section>
 <section id="interpretation-of-the-predicates">
-<h2>Interpretation of the predicates<a class="headerlink" href="#interpretation-of-the-predicates" title="Permalink to this headline">¶</a></h2>
+<h2>Interpretation of the predicates<a class="headerlink" href="#interpretation-of-the-predicates" title="Permalink to this headline">#</a></h2>
 <p>Although the predicates are defined in the table above it is worth taking some
 time to think about how to interpret them. Firstly many of the concepts
 referred to by the predicate names like “zero”, “prime”, “rational” etc have
@@ -1527,7 +1529,7 @@ We are left with very little that we can say about what such an expression
 <em>does</em> represent.</p>
 </section>
 <section id="other-is-properties">
-<h2>Other is_* properties<a class="headerlink" href="#other-is-properties" title="Permalink to this headline">¶</a></h2>
+<h2>Other is_* properties<a class="headerlink" href="#other-is-properties" title="Permalink to this headline">#</a></h2>
 <p>There are many properties and attributes in SymPy that that have names
 beginning with <code class="docutils literal notranslate"><span class="pre">is_</span></code> that look similar to the properties used in the
 (old) assumptions system but are not in fact part of the assumptions system.
@@ -1632,7 +1634,7 @@ is only those properties that are involved in the <em>mechanism</em> that implem
 the assumptions system which is explained below.</p>
 </section>
 <section id="implementing-assumptions-handlers">
-<h2>Implementing assumptions handlers<a class="headerlink" href="#implementing-assumptions-handlers" title="Permalink to this headline">¶</a></h2>
+<h2>Implementing assumptions handlers<a class="headerlink" href="#implementing-assumptions-handlers" title="Permalink to this headline">#</a></h2>
 <p>We will now work through an example of how to implement a SymPy symbolic
 function so that we can see how the old assumptions are used internally. SymPy
 already has an <code class="docutils literal notranslate"><span class="pre">exp</span></code> function which is defined for all complex numbers but
@@ -1804,7 +1806,7 @@ also that any function will implicitly return <code class="docutils literal notr
 conditionals fail.</p>
 </section>
 <section id="mechanism-of-the-assumptions-system">
-<h2>Mechanism of the assumptions system<a class="headerlink" href="#mechanism-of-the-assumptions-system" title="Permalink to this headline">¶</a></h2>
+<h2>Mechanism of the assumptions system<a class="headerlink" href="#mechanism-of-the-assumptions-system" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section describes internal details that could change in a
@@ -2037,9 +2039,9 @@ different orders when the same program is run multiple times.</p>
 </div>
 </section>
 <section id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">#</a></h2>
 <section id="combining-predicates-with-or">
-<h3>Combining predicates with or<a class="headerlink" href="#combining-predicates-with-or" title="Permalink to this headline">¶</a></h3>
+<h3>Combining predicates with or<a class="headerlink" href="#combining-predicates-with-or" title="Permalink to this headline">#</a></h3>
 <p>In the old assumptions we can easily combine predicates with <em>and</em> when
 creating a Symbol e.g.:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2075,7 +2077,7 @@ otherwise a negative integer then both queries <code class="docutils literal not
 <p>which then also gives <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </section>
 <section id="relations-between-different-symbols">
-<h3>Relations between different symbols<a class="headerlink" href="#relations-between-different-symbols" title="Permalink to this headline">¶</a></h3>
+<h3>Relations between different symbols<a class="headerlink" href="#relations-between-different-symbols" title="Permalink to this headline">#</a></h3>
 <p>A fundamental limitation of the old assumptions system is that all explicit
 assumptions are properties of an individual symbol. There is no way in this
 system to make an assumption about the <em>relationship</em> between two symbols. One
@@ -2087,17 +2089,17 @@ information are not yet implemented and the exact API for specifying
 relational assumptions has not been decided upon.</p>
 </section>
 <section id="dynamic-changing-assumptions">
-<h3>Dynamic changing assumptions<a class="headerlink" href="#dynamic-changing-assumptions" title="Permalink to this headline">¶</a></h3>
+<h3>Dynamic changing assumptions<a class="headerlink" href="#dynamic-changing-assumptions" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="selectively-controlling-evaluation">
-<h3>Selectively controlling evaluation<a class="headerlink" href="#selectively-controlling-evaluation" title="Permalink to this headline">¶</a></h3>
+<h3>Selectively controlling evaluation<a class="headerlink" href="#selectively-controlling-evaluation" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="extensibility">
-<h3>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline">¶</a></h3>
+<h3>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="new-assumptions">
-<h2>New assumptions<a class="headerlink" href="#new-assumptions" title="Permalink to this headline">¶</a></h2>
+<h2>New assumptions<a class="headerlink" href="#new-assumptions" title="Permalink to this headline">#</a></h2>
 <p>ZZZ: Talk about the new assumptions here…</p>
 </section>
 </section>
@@ -2116,28 +2118,34 @@ relational assumptions has not been decided upon.</p>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="contributing/make-a-contribution.html">
+          <a class="prev-page" href="contributing/deprecations.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Making a Contribution</div>
+                <div class="title">Deprecation Policy</div>
                 
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/guides/assumptions.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -2192,7 +2200,7 @@ relational assumptions has not been decided upon.</p>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

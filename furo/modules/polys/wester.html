@@ -5,13 +5,13 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Polynomials Manipulation Module Reference" href="reference.html" /><link rel="prev" title="Basic functionality of the module" href="basics.html" />
 
-    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.1.2, furo 2021.11.23"/>
-        <title>Examples from Wester’s Article - SymPy 1.10.dev documentation</title>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.14.1"/>
+        <title>Examples from Wester’s Article - SymPy 1.11.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=a8f031f701c6af50c9919b48f173a5785af06fac" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
     
 
@@ -43,17 +43,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +58,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +80,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +88,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -125,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SymPy 1.10.dev documentation</div></a>
+      <a href="../../index.html"><div class="brand">SymPy 1.11.dev documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +147,7 @@
     <img class="sidebar-logo" src="../../_static/sympylogo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">SymPy 1.10.dev documentation</span>
+  <span class="sidebar-brand-text">SymPy 1.11.dev documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -174,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../tutorial/manipulation.html">Advanced Expression Manipulation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial/next.html">What’s Next</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../guides/index.html">SymPy Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -183,6 +180,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/contributing/index.html">Contributing to SymPy</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dev-setup.html">Development Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/dependencies.html">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/build-docs.html">Build the Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/debug.html">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/docstring.html">SymPy Docstrings Style Guide</a></li>
@@ -192,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#documentation-using-markdown">Documentation using Markdown</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/documentation-style-guide.html#best-practices-for-writing-documentation">Best Practices for Writing Documentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/make-a-contribution.html">Making a Contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/contributing/deprecations.html">Deprecation Policy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/assumptions.html">Assumptions</a></li>
@@ -205,6 +204,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../explanation/special_topics/classification.html">Classification of SymPy objects</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/active-deprecations.html">List of active deprecations</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../reference/index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -331,6 +331,7 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../tensor/index.html">Tensor</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/array.html">N-dim array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tensor/array_expressions.html">N-dim array expressions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/indexed.html">Indexed Objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/index_methods.html">Methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tensor/tensor.html">Tensor</a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../utilities/codegen.html">Codegen</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/decorator.html">Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/enumerative.html">Enumerative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utilities/exceptions.html">Exceptions and Warnings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/iterables.html">Iterables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/lambdify.html">Lambdify</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../utilities/memoization.html">Memoization</a></li>
@@ -555,6 +557,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -562,8 +565,7 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
-        <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -578,9 +580,9 @@
         </div>
         <article role="main">
           <section id="examples-from-wester-s-article">
-<span id="polys-wester"></span><h1>Examples from Wester’s Article<a class="headerlink" href="#examples-from-wester-s-article" title="Permalink to this headline">¶</a></h1>
+<span id="polys-wester"></span><h1>Examples from Wester’s Article<a class="headerlink" href="#examples-from-wester-s-article" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>In this tutorial we present examples from Wester’s article concerning
 comparison and critique of mathematical abilities of several computer
 algebra systems (see <a class="reference internal" href="#wester1999" id="id1"><span>[Wester1999]</span></a>). All the examples are related to
@@ -588,7 +590,7 @@ polynomial and algebraic computations and SymPy specific remarks were
 added to all of them.</p>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
 <p>All examples in this tutorial are computable, so one can just copy and
 paste them into a Python shell and do something useful with them. All
 computations were done using the following setup:</p>
@@ -601,7 +603,7 @@ computations were done using the following setup:</p>
 </pre></div>
 </div>
 <section id="simple-univariate-polynomial-factorization">
-<h3>Simple univariate polynomial factorization<a class="headerlink" href="#simple-univariate-polynomial-factorization" title="Permalink to this headline">¶</a></h3>
+<h3>Simple univariate polynomial factorization<a class="headerlink" href="#simple-univariate-polynomial-factorization" title="Permalink to this headline">#</a></h3>
 <p>To obtain a factorization of a polynomial use <a class="reference internal" href="reference.html#sympy.polys.polytools.factor" title="sympy.polys.polytools.factor"><code class="xref py py-func docutils literal notranslate"><span class="pre">factor()</span></code></a> function.
 By default <a class="reference internal" href="reference.html#sympy.polys.polytools.factor" title="sympy.polys.polytools.factor"><code class="xref py py-func docutils literal notranslate"><span class="pre">factor()</span></code></a> returns the result in unevaluated form, so the
 content of the input polynomial is left unexpanded, as in the following
@@ -624,7 +626,7 @@ simplify coefficients of a polynomial over a field use <a class="reference inter
 </div>
 </section>
 <section id="univariate-gcd-resultant-and-factorization">
-<h3>Univariate GCD, resultant and factorization<a class="headerlink" href="#univariate-gcd-resultant-and-factorization" title="Permalink to this headline">¶</a></h3>
+<h3>Univariate GCD, resultant and factorization<a class="headerlink" href="#univariate-gcd-resultant-and-factorization" title="Permalink to this headline">#</a></h3>
 <p>Consider univariate polynomials <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code> and <code class="docutils literal notranslate"><span class="pre">h</span></code> over integers:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">64</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">34</span> <span class="o">-</span> <span class="mi">21</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">47</span> <span class="o">-</span> <span class="mi">126</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">8</span> <span class="o">-</span> <span class="mi">46</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">16</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">60</span> <span class="o">-</span> <span class="mi">81</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">72</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">60</span> <span class="o">-</span> <span class="mi">25</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">25</span> <span class="o">-</span> <span class="mi">19</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">23</span> <span class="o">-</span> <span class="mi">22</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">39</span> <span class="o">-</span> <span class="mi">83</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">52</span> <span class="o">+</span> <span class="mi">54</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">81</span>
@@ -657,7 +659,7 @@ integers is also possible:</p>
 </div>
 </section>
 <section id="multivariate-gcd-and-factorization">
-<h3>Multivariate GCD and factorization<a class="headerlink" href="#multivariate-gcd-and-factorization" title="Permalink to this headline">¶</a></h3>
+<h3>Multivariate GCD and factorization<a class="headerlink" href="#multivariate-gcd-and-factorization" title="Permalink to this headline">#</a></h3>
 <p>What can be done in univariate case, can be also done for multivariate
 polynomials. Consider the following polynomials <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code> and <code class="docutils literal notranslate"><span class="pre">h</span></code>
 in <span class="math notranslate nohighlight">\(\mathbb{Z}[x,y,z]\)</span>:</p>
@@ -684,7 +686,7 @@ in <span class="math notranslate nohighlight">\(\mathbb{Z}[x,y,z]\)</span>:</p>
 </div>
 </section>
 <section id="support-for-symbols-in-exponents">
-<h3>Support for symbols in exponents<a class="headerlink" href="#support-for-symbols-in-exponents" title="Permalink to this headline">¶</a></h3>
+<h3>Support for symbols in exponents<a class="headerlink" href="#support-for-symbols-in-exponents" title="Permalink to this headline">#</a></h3>
 <p>Polynomial manipulation functions provided by <a class="reference internal" href="reference.html#module-sympy.polys" title="sympy.polys"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sympy.polys</span></code></a> are mostly
 used with integer exponents. However, it’s perfectly valid to compute with
 symbolic exponents, e.g.:</p>
@@ -695,7 +697,7 @@ symbolic exponents, e.g.:</p>
 </div>
 </section>
 <section id="testing-if-polynomials-have-common-zeros">
-<h3>Testing if polynomials have common zeros<a class="headerlink" href="#testing-if-polynomials-have-common-zeros" title="Permalink to this headline">¶</a></h3>
+<h3>Testing if polynomials have common zeros<a class="headerlink" href="#testing-if-polynomials-have-common-zeros" title="Permalink to this headline">#</a></h3>
 <p>To test if two polynomials have a root in common we can use <a class="reference internal" href="reference.html#sympy.polys.polytools.resultant" title="sympy.polys.polytools.resultant"><code class="xref py py-func docutils literal notranslate"><span class="pre">resultant()</span></code></a>
 function. The theory says that the resultant of two polynomials vanishes if
 there is a common zero of those polynomials. For example:</p>
@@ -717,7 +719,7 @@ there is a common zero of those polynomials. For example:</p>
 root is <span class="math notranslate nohighlight">\(x = -1\)</span>.</p>
 </section>
 <section id="normalizing-simple-rational-functions">
-<h3>Normalizing simple rational functions<a class="headerlink" href="#normalizing-simple-rational-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Normalizing simple rational functions<a class="headerlink" href="#normalizing-simple-rational-functions" title="Permalink to this headline">#</a></h3>
 <p>To remove common factors from the numerator and the denominator of a rational
 function the elegant way, use <a class="reference internal" href="reference.html#sympy.polys.polytools.cancel" title="sympy.polys.polytools.cancel"><code class="xref py py-func docutils literal notranslate"><span class="pre">cancel()</span></code></a> function. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cancel</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span>
@@ -728,7 +730,7 @@ function the elegant way, use <a class="reference internal" href="reference.html
 </div>
 </section>
 <section id="expanding-expressions-and-factoring-back">
-<h3>Expanding expressions and factoring back<a class="headerlink" href="#expanding-expressions-and-factoring-back" title="Permalink to this headline">¶</a></h3>
+<h3>Expanding expressions and factoring back<a class="headerlink" href="#expanding-expressions-and-factoring-back" title="Permalink to this headline">#</a></h3>
 <p>One can work easily we expressions in both expanded and factored forms.
 Consider a polynomial <code class="docutils literal notranslate"><span class="pre">f</span></code> in expanded form. We differentiate it and
 factor the result back:</p>
@@ -749,7 +751,7 @@ factor the result back:</p>
 </div>
 </section>
 <section id="factoring-in-terms-of-cyclotomic-polynomials">
-<h3>Factoring in terms of cyclotomic polynomials<a class="headerlink" href="#factoring-in-terms-of-cyclotomic-polynomials" title="Permalink to this headline">¶</a></h3>
+<h3>Factoring in terms of cyclotomic polynomials<a class="headerlink" href="#factoring-in-terms-of-cyclotomic-polynomials" title="Permalink to this headline">#</a></h3>
 <p>SymPy can very efficiently decompose polynomials of the form <span class="math notranslate nohighlight">\(x^n \pm 1\)</span> in
 terms of cyclotomic polynomials:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
@@ -762,7 +764,7 @@ readability purpose. Note that this is not a big struggle for <a class="referenc
 to decompose polynomials of degree 1000 or greater.</p>
 </section>
 <section id="univariate-factoring-over-gaussian-numbers">
-<h3>Univariate factoring over Gaussian numbers<a class="headerlink" href="#univariate-factoring-over-gaussian-numbers" title="Permalink to this headline">¶</a></h3>
+<h3>Univariate factoring over Gaussian numbers<a class="headerlink" href="#univariate-factoring-over-gaussian-numbers" title="Permalink to this headline">#</a></h3>
 <p>Consider a univariate polynomial <code class="docutils literal notranslate"><span class="pre">f</span></code> with integer coefficients:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">77</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">18</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">153</span>
 </pre></div>
@@ -788,7 +790,7 @@ be computed using more general syntax:</p>
 </div>
 </section>
 <section id="computing-with-automatic-field-extensions">
-<h3>Computing with automatic field extensions<a class="headerlink" href="#computing-with-automatic-field-extensions" title="Permalink to this headline">¶</a></h3>
+<h3>Computing with automatic field extensions<a class="headerlink" href="#computing-with-automatic-field-extensions" title="Permalink to this headline">#</a></h3>
 <p>Consider two univariate polynomials <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
@@ -829,7 +831,7 @@ keyword with an explicit algebraic number:</p>
 </div>
 </section>
 <section id="univariate-factoring-over-various-domains">
-<h3>Univariate factoring over various domains<a class="headerlink" href="#univariate-factoring-over-various-domains" title="Permalink to this headline">¶</a></h3>
+<h3>Univariate factoring over various domains<a class="headerlink" href="#univariate-factoring-over-various-domains" title="Permalink to this headline">#</a></h3>
 <p>Consider a univariate polynomial <code class="docutils literal notranslate"><span class="pre">f</span></code> with integer coefficients:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
@@ -862,7 +864,7 @@ domains, which includes:</p>
 </ul>
 </section>
 <section id="factoring-polynomials-into-linear-factors">
-<h3>Factoring polynomials into linear factors<a class="headerlink" href="#factoring-polynomials-into-linear-factors" title="Permalink to this headline">¶</a></h3>
+<h3>Factoring polynomials into linear factors<a class="headerlink" href="#factoring-polynomials-into-linear-factors" title="Permalink to this headline">#</a></h3>
 <p>Currently SymPy can factor polynomials into irreducibles over various domains,
 which can result in a splitting factorization (into linear factors). However,
 there is currently no systematic way to infer a splitting field (algebraic
@@ -880,7 +882,7 @@ One can simulate the <code class="docutils literal notranslate"><span class="pre
 <a class="reference internal" href="../solvers/solvers.html#sympy.solvers.solvers.solve" title="sympy.solvers.solvers.solve"><code class="xref py py-func docutils literal notranslate"><span class="pre">solve()</span></code></a> function.</p>
 </section>
 <section id="advanced-factoring-over-finite-fields">
-<h3>Advanced factoring over finite fields<a class="headerlink" href="#advanced-factoring-over-finite-fields" title="Permalink to this headline">¶</a></h3>
+<h3>Advanced factoring over finite fields<a class="headerlink" href="#advanced-factoring-over-finite-fields" title="Permalink to this headline">#</a></h3>
 <p>Consider a univariate polynomial <code class="docutils literal notranslate"><span class="pre">f</span></code> with integer coefficients:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">11</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
@@ -915,7 +917,7 @@ truncate coefficients of the expanded polynomial modulo 65537:</p>
 </div>
 </section>
 <section id="working-with-expressions-as-polynomials">
-<h3>Working with expressions as polynomials<a class="headerlink" href="#working-with-expressions-as-polynomials" title="Permalink to this headline">¶</a></h3>
+<h3>Working with expressions as polynomials<a class="headerlink" href="#working-with-expressions-as-polynomials" title="Permalink to this headline">#</a></h3>
 <p>Consider a multivariate polynomial <code class="docutils literal notranslate"><span class="pre">f</span></code> in <span class="math notranslate nohighlight">\(\mathbb{Z}[x,y,z]\)</span>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">expand</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">z</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
@@ -945,7 +947,7 @@ important when computing with expressions like:</p>
 </div>
 </section>
 <section id="computing-reduced-grobner-bases">
-<h3>Computing reduced Gröbner bases<a class="headerlink" href="#computing-reduced-grobner-bases" title="Permalink to this headline">¶</a></h3>
+<h3>Computing reduced Gröbner bases<a class="headerlink" href="#computing-reduced-grobner-bases" title="Permalink to this headline">#</a></h3>
 <p>To compute a reduced Gröbner basis for a set of polynomials use the
 <a class="reference internal" href="reference.html#sympy.polys.polytools.groebner" title="sympy.polys.polytools.groebner"><code class="xref py py-func docutils literal notranslate"><span class="pre">groebner()</span></code></a> function. The function accepts various
 monomial orderings, e.g.: <code class="docutils literal notranslate"><span class="pre">lex</span></code>, <code class="docutils literal notranslate"><span class="pre">grlex</span></code> and <code class="docutils literal notranslate"><span class="pre">grevlex</span></code>, or a user
@@ -977,7 +979,7 @@ way:</p>
 </div>
 </section>
 <section id="multivariate-factoring-over-algebraic-numbers">
-<h3>Multivariate factoring over algebraic numbers<a class="headerlink" href="#multivariate-factoring-over-algebraic-numbers" title="Permalink to this headline">¶</a></h3>
+<h3>Multivariate factoring over algebraic numbers<a class="headerlink" href="#multivariate-factoring-over-algebraic-numbers" title="Permalink to this headline">#</a></h3>
 <p>Computing with multivariate polynomials over various domains is as simple as
 in univariate case. For example consider the following factorization over
 <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{-3})\)</span>:</p>
@@ -993,7 +995,7 @@ in univariate case. For example consider the following factorization over
 </div>
 </section>
 <section id="partial-fraction-decomposition">
-<h3>Partial fraction decomposition<a class="headerlink" href="#partial-fraction-decomposition" title="Permalink to this headline">¶</a></h3>
+<h3>Partial fraction decomposition<a class="headerlink" href="#partial-fraction-decomposition" title="Permalink to this headline">#</a></h3>
 <p>Consider a univariate rational function <code class="docutils literal notranslate"><span class="pre">f</span></code> with integer coefficients:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -1019,7 +1021,7 @@ a composition of <a class="reference internal" href="reference.html#sympy.polys.
 </section>
 </section>
 <section id="literature">
-<h2>Literature<a class="headerlink" href="#literature" title="Permalink to this headline">¶</a></h2>
+<h2>Literature<a class="headerlink" href="#literature" title="Permalink to this headline">#</a></h2>
 <dl class="citation">
 <dt class="label" id="wester1999"><span class="brackets"><a class="fn-backref" href="#id1">Wester1999</a></span></dt>
 <dd><p>Michael J. Wester, A Critique of the Mathematical Abilities of
@@ -1055,16 +1057,22 @@ CA Systems, 1999, <a class="reference external" href="http://www.math.unm.edu/~w
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022 SymPy Development Team |
-            Last updated on Jan 14, 2022. |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/modules/polys/wester.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022 SymPy Development Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Feb 17, 2022</div>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -1120,7 +1128,7 @@ CA Systems, 1999, <a class="reference external" href="http://www.math.unm.edu/~w
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
