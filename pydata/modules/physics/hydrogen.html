@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Hydrogen Wavefunctions &#8212; SymPy 1.10.dev documentation</title>
+    <title>Hydrogen Wavefunctions &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Matrices" href="matrices.html" />
     <link rel="prev" title="Physics" href="../../reference/public/physics/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -578,6 +578,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1253,6 +1258,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../utilities/iterables.html">
        Iterables
       </a>
@@ -1557,7 +1567,7 @@
 <span id="hydrogen-wavefunctions"></span><h1>Hydrogen Wavefunctions<a class="headerlink" href="#module-sympy.physics.hydrogen" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.hydrogen.E_nl">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.hydrogen.</span></span><span class="sig-name descname"><span class="pre">E_nl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/hydrogen.py#L163-L198"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hydrogen.E_nl" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hydrogen.</span></span><span class="sig-name descname"><span class="pre">E_nl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/hydrogen.py#L163-L198"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hydrogen.E_nl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the energy of the state (n, l) in Hartree atomic units.</p>
 <p>The energy doesn’t depend on “l”.</p>
 <dl class="field-list">
@@ -1592,7 +1602,7 @@ an integer with possible values as 1, 2, 3, 4,…</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.hydrogen.E_nl_dirac">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.hydrogen.</span></span><span class="sig-name descname"><span class="pre">E_nl_dirac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin_up</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">137.035999037000</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/hydrogen.py#L201-L265"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hydrogen.E_nl_dirac" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hydrogen.</span></span><span class="sig-name descname"><span class="pre">E_nl_dirac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin_up</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">137.035999037000</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/hydrogen.py#L201-L265"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hydrogen.E_nl_dirac" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the relativistic energy of the state (n, l, spin) in Hartree atomic
 units.</p>
 <p>The energy is calculated from the Dirac equation. The rest mass energy is
@@ -1654,7 +1664,7 @@ taken from <a class="reference external" href="http://arxiv.org/abs/1012.3627">h
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.hydrogen.Psi_nlm">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.hydrogen.</span></span><span class="sig-name descname"><span class="pre">Psi_nlm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/hydrogen.py#L95-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hydrogen.Psi_nlm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hydrogen.</span></span><span class="sig-name descname"><span class="pre">Psi_nlm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/hydrogen.py#L95-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hydrogen.Psi_nlm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Hydrogen wave function psi_{nlm}. It’s the product of
 the radial wavefunction R_{nl} and the spherical harmonic Y_{l}^{m}.</p>
 <dl class="field-list">
@@ -1721,7 +1731,7 @@ over the whole space leads 1.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.hydrogen.R_nl">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.hydrogen.</span></span><span class="sig-name descname"><span class="pre">R_nl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/hydrogen.py#L10-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hydrogen.R_nl" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.hydrogen.</span></span><span class="sig-name descname"><span class="pre">R_nl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/hydrogen.py#L10-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.hydrogen.R_nl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Hydrogen radial wavefunction R_{nl}.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1838,7 +1848,7 @@ values ranging from 0 to <code class="docutils literal notranslate"><span class=
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

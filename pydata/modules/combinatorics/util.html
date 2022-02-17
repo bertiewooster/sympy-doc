@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Utilities &#8212; SymPy 1.10.dev documentation</title>
+    <title>Utilities &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -34,8 +34,8 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
     <link href="https://docs.sympy.org/latest/modules/combinatorics/util.html" rel="canonical" />
     
@@ -44,7 +44,7 @@
     <link rel="next" title="Group constructors" href="group_constructs.html" />
     <link rel="prev" title="Named Groups" href="named_groups.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -580,6 +580,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1255,6 +1260,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../utilities/iterables.html">
        Iterables
       </a>
@@ -1559,7 +1569,7 @@
 <span id="utilities"></span><span id="combinatorics-util"></span><h1>Utilities<a class="headerlink" href="#module-sympy.combinatorics.util" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.combinatorics.util._base_ordering">
-<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_base_ordering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/util.py#L14-L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._base_ordering" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_base_ordering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/combinatorics/util.py#L14-L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._base_ordering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Order <span class="math notranslate nohighlight">\(\{0, 1, \dots, n-1\}\)</span> so that base points come first and in order.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1572,7 +1582,7 @@
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.named_groups</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.util</span> <span class="kn">import</span> <span class="n">_base_ordering</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span><span class="o">.</span><span class="n">schreier_sims</span><span class="p">()</span>
@@ -1590,7 +1600,7 @@ and applied to backtracking algorithms in [1], pp.108-132. The points
 that are not in the base are taken in increasing order.</p>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r81"><span class="brackets"><a class="fn-backref" href="#id1">R81</a></span></dt>
+<dt class="label" id="r52"><span class="brackets"><a class="fn-backref" href="#id1">R52</a></span></dt>
 <dd><p>Holt, D., Eick, B., O’Brien, E.
 “Handbook of computational group theory”</p>
 </dd>
@@ -1599,14 +1609,14 @@ that are not in the base are taken in increasing order.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.combinatorics.util._check_cycles_alt_sym">
-<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_check_cycles_alt_sym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">perm</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/util.py#L70-L115"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._check_cycles_alt_sym" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_check_cycles_alt_sym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">perm</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/combinatorics/util.py#L70-L115"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._check_cycles_alt_sym" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks for cycles of prime length p with n/2 &lt; p &lt; n-2.</p>
 <p class="rubric">Explanation</p>
 <p>Here <span class="math notranslate nohighlight">\(n\)</span> is the degree of the permutation. This is a helper function for
 the function is_alt_sym from sympy.combinatorics.perm_groups.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.util</span> <span class="kn">import</span> <span class="n">_check_cycles_alt_sym</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.permutations</span> <span class="kn">import</span> <span class="n">Permutation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics</span> <span class="kn">import</span> <span class="n">Permutation</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Permutation</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">_check_cycles_alt_sym</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="go">False</span>
@@ -1623,7 +1633,7 @@ the function is_alt_sym from sympy.combinatorics.perm_groups.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.combinatorics.util._distribute_gens_by_base">
-<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_distribute_gens_by_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gens</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/util.py#L118-L181"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._distribute_gens_by_base" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_distribute_gens_by_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gens</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/combinatorics/util.py#L118-L181"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._distribute_gens_by_base" title="Permalink to this definition">¶</a></dt>
 <dd><p>Distribute the group elements <code class="docutils literal notranslate"><span class="pre">gens</span></code> by membership in basic stabilizers.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1665,7 +1675,7 @@ are defined as <span class="math notranslate nohighlight">\(G^{(i)} = G_{b_1, \d
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.combinatorics.util._handle_precomputed_bsgs">
-<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_handle_precomputed_bsgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transversals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basic_orbits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens_distr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/util.py#L184-L247"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._handle_precomputed_bsgs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_handle_precomputed_bsgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transversals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basic_orbits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens_distr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/combinatorics/util.py#L184-L247"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._handle_precomputed_bsgs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate BSGS-related structures from those present.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1705,7 +1715,7 @@ provided, they will be calculated from the base and strong generating set.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.combinatorics.util._orbits_transversals_from_bsgs">
-<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_orbits_transversals_from_bsgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens_distr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transversals_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/util.py#L250-L312"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._orbits_transversals_from_bsgs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_orbits_transversals_from_bsgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens_distr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transversals_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/combinatorics/util.py#L250-L312"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._orbits_transversals_from_bsgs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute basic orbits and transversals from a base and strong generating set.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1731,7 +1741,7 @@ such that their product is the relevant transversal element.</p>
 If the optional argument <code class="docutils literal notranslate"><span class="pre">transversals_only</span></code> is set to True, only the
 transversals are returned.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.named_groups</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.util</span> <span class="kn">import</span> <span class="n">_distribute_gens_by_base</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span><span class="o">.</span><span class="n">schreier_sims</span><span class="p">()</span>
@@ -1748,7 +1758,7 @@ transversals are returned.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.combinatorics.util._remove_gens">
-<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_remove_gens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basic_orbits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens_distr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/util.py#L315-L384"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._remove_gens" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_remove_gens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basic_orbits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strong_gens_distr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/combinatorics/util.py#L315-L384"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._remove_gens" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove redundant generators from a strong generating set.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1764,7 +1774,7 @@ transversals are returned.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.named_groups</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.util</span> <span class="kn">import</span> <span class="n">_remove_gens</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.testutil</span> <span class="kn">import</span> <span class="n">_verify_bsgs</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
@@ -1780,7 +1790,7 @@ transversals are returned.</p>
 <p>This procedure is outlined in [1],p.95.</p>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r82"><span class="brackets"><a class="fn-backref" href="#id2">R82</a></span></dt>
+<dt class="label" id="r53"><span class="brackets"><a class="fn-backref" href="#id2">R53</a></span></dt>
 <dd><p>Holt, D., Eick, B., O’Brien, E.
 “Handbook of computational group theory”</p>
 </dd>
@@ -1789,7 +1799,7 @@ transversals are returned.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.combinatorics.util._strip">
-<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transversals</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/util.py#L387-L461"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._strip" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transversals</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/combinatorics/util.py#L387-L460"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._strip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to decompose a permutation using a (possibly partial) BSGS
 structure.</p>
 <dl class="field-list">
@@ -1815,8 +1825,7 @@ doesn’t end with the identity element.</p>
 <p>The argument <code class="docutils literal notranslate"><span class="pre">transversals</span></code> is a list of dictionaries that provides
 transversal elements for the orbits <code class="docutils literal notranslate"><span class="pre">orbits</span></code>.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.named_groups</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.permutations</span> <span class="kn">import</span> <span class="n">Permutation</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics</span> <span class="kn">import</span> <span class="n">Permutation</span><span class="p">,</span> <span class="n">SymmetricGroup</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.util</span> <span class="kn">import</span> <span class="n">_strip</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span><span class="o">.</span><span class="n">schreier_sims</span><span class="p">()</span>
@@ -1836,7 +1845,7 @@ the randomized version of the Schreier-Sims algorithm.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r83"><span class="brackets"><a class="fn-backref" href="#id3">R83</a></span></dt>
+<dt class="label" id="r54"><span class="brackets"><a class="fn-backref" href="#id3">R54</a></span></dt>
 <dd><p>Holt, D., Eick, B., O’Brien, E.”Handbook of computational group theory”</p>
 </dd>
 </dl>
@@ -1844,7 +1853,7 @@ the randomized version of the Schreier-Sims algorithm.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.combinatorics.util._strong_gens_from_distr">
-<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_strong_gens_from_distr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strong_gens_distr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/util.py#L497-L537"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._strong_gens_from_distr" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.util.</span></span><span class="sig-name descname"><span class="pre">_strong_gens_from_distr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strong_gens_distr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/combinatorics/util.py#L496-L536"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.util._strong_gens_from_distr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve strong generating set from generators of basic stabilizers.</p>
 <p>This is just the union of the generators of the first and second basic
 stabilizers.</p>
@@ -1855,7 +1864,7 @@ stabilizers.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.named_groups</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics</span> <span class="kn">import</span> <span class="n">SymmetricGroup</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.util</span> <span class="kn">import</span> <span class="p">(</span><span class="n">_strong_gens_from_distr</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">_distribute_gens_by_base</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1915,7 +1924,7 @@ stabilizers.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

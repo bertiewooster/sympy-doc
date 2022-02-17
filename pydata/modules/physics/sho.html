@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Quantum Harmonic Oscillator in 3-D &#8212; SymPy 1.10.dev documentation</title>
+    <title>Quantum Harmonic Oscillator in 3-D &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -34,8 +34,8 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
     <link href="https://docs.sympy.org/latest/modules/physics/sho.html" rel="canonical" />
     
@@ -44,7 +44,7 @@
     <link rel="next" title="Second Quantization" href="secondquant.html" />
     <link rel="prev" title="Quantum Harmonic Oscillator in 1-D" href="qho_1d.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -580,6 +580,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1255,6 +1260,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../utilities/iterables.html">
        Iterables
       </a>
@@ -1559,7 +1569,7 @@
 <span id="quantum-harmonic-oscillator-in-3-d"></span><h1>Quantum Harmonic Oscillator in 3-D<a class="headerlink" href="#module-sympy.physics.sho" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.sho.E_nl">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.sho.</span></span><span class="sig-name descname"><span class="pre">E_nl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hw</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/sho.py#L64-L95"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.sho.E_nl" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.sho.</span></span><span class="sig-name descname"><span class="pre">E_nl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hw</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/sho.py#L64-L95"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.sho.E_nl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Energy of an isotropic harmonic oscillator.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1595,7 +1605,7 @@ calculated as:</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.sho.R_nl">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.sho.</span></span><span class="sig-name descname"><span class="pre">R_nl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/sho.py#L5-L61"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.sho.R_nl" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.sho.</span></span><span class="sig-name descname"><span class="pre">R_nl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/sho.py#L5-L61"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.sho.R_nl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the radial wavefunction R_{nl} for a 3d isotropic harmonic
 oscillator.</p>
 <dl class="field-list">
@@ -1691,7 +1701,7 @@ and <span class="math notranslate nohighlight">\(omega\)</span> the frequency of
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

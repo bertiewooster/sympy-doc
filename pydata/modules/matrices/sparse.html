@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Sparse Matrices &#8212; SymPy 1.10.dev documentation</title>
+    <title>Sparse Matrices &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Sparse Tools" href="sparsetools.html" />
     <link rel="prev" title="Dense Matrices" href="dense.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -578,6 +578,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1253,6 +1258,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../utilities/iterables.html">
        Iterables
       </a>
@@ -1574,13 +1584,13 @@
 <h2>SparseMatrix Class Reference<a class="headerlink" href="#sparsematrix-class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sympy.matrices.sparse.SparseMatrix">
-<span class="sig-prename descclassname"><span class="pre">sympy.matrices.sparse.</span></span><span class="sig-name descname"><span class="pre">SparseMatrix</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/matrices/sparse.py#L459-L467"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.sparse.SparseMatrix" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.matrices.sparse.</span></span><span class="sig-name descname"><span class="pre">SparseMatrix</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/matrices/sparse.py#L462-L470"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.sparse.SparseMatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#sympy.matrices.sparse.MutableSparseMatrix" title="sympy.matrices.sparse.MutableSparseMatrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.matrices.sparse.MutableSparseMatrix</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.matrices.sparse.MutableSparseMatrix">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.sparse.</span></span><span class="sig-name descname"><span class="pre">MutableSparseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/matrices/sparse.py#L459-L467"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.sparse.MutableSparseMatrix" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.sparse.</span></span><span class="sig-name descname"><span class="pre">MutableSparseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/matrices/sparse.py#L462-L470"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.sparse.MutableSparseMatrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -1588,11 +1598,10 @@
 <h2>ImmutableSparseMatrix Class Reference<a class="headerlink" href="#immutablesparsematrix-class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.matrices.immutable.ImmutableSparseMatrix">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableSparseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/matrices/immutable.py#L139-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableSparseMatrix" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.matrices.immutable.</span></span><span class="sig-name descname"><span class="pre">ImmutableSparseMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/matrices/immutable.py#L138-L178"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.matrices.immutable.ImmutableSparseMatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an immutable version of a sparse matrix.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">eye</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.matrices.immutable</span> <span class="kn">import</span> <span class="n">ImmutableSparseMatrix</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">eye</span><span class="p">,</span> <span class="n">ImmutableSparseMatrix</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ImmutableSparseMatrix</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{})</span>
 <span class="go">Matrix([[0]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ImmutableSparseMatrix</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
@@ -1653,7 +1662,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

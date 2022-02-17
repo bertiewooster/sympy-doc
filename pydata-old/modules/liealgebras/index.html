@@ -1,0 +1,2655 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lie Algebra &#8212; SymPy 1.10.dev documentation</title>
+    
+    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    
+    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/modules/liealgebras/index.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Polynomial Manipulation" href="../polys/index.html" />
+    <link rel="prev" title="Internal API" href="../holonomic/internal.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/sympylogo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorial/index.html">
+  SymPy Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../guides/index.html">
+  SymPy Guides
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../explanation/index.html">
+  Explanation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../reference/index.html">
+  Reference Documentation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../miscellaneous/index.html">
+  Miscellaneous
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/basics/index.html">
+   Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../assumptions/index.html">
+     Assumptions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../assumptions/ask.html">
+       Ask
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../assumptions/assume.html">
+       Assume
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../assumptions/refine.html">
+       Refine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../assumptions/predicates.html">
+       Predicates
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../calculus/index.html">
+     Calculus
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../combinatorics/index.html">
+     Combinatorics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/partitions.html">
+       Partitions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/permutations.html">
+       Permutations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/perm_groups.html">
+       Permutation Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/polyhedron.html">
+       Polyhedron
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/prufer.html">
+       Prufer Sequences
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/subsets.html">
+       Subsets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/graycode.html">
+       Gray Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/named_groups.html">
+       Named Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/util.html">
+       Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/group_constructs.html">
+       Group constructors
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/testutil.html">
+       Test Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/tensor_can.html">
+       Tensor Canonicalization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/fp_groups.html">
+       Finitely Presented Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/pc_groups.html">
+       Polycyclic Groups
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../functions/index.html">
+     Functions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../functions/elementary.html">
+       Elementary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../functions/combinatorial.html">
+       Combinatorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../functions/special.html">
+       Special
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../integrals/index.html">
+     Integrals
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../integrals/g-functions.html">
+       Computing Integrals using Meijer G-Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../integrals/integrals.html">
+       Integrals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../series/index.html">
+     Series
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/series.html">
+       Series Expansions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/sequences.html">
+       Sequences
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/fourier.html">
+       Fourier Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/formal.html">
+       Formal Power Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/limitseq.html">
+       Limits of Sequences
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../simplify/index.html">
+     Simplify
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../simplify/simplify.html">
+       Simplify
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../simplify/hyperexpand.html">
+       Hypergeometric Expansion
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../simplify/fu.html">
+       Hongguang Fu’s Trigonometric Simplification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../solvers/index.html">
+     Solvers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/diophantine.html">
+       Diophantine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/inequalities.html">
+       Inequality Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/ode.html">
+       ODE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/pde.html">
+       PDE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/solveset.html">
+       Solveset
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../abc.html">
+     abc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../algebras.html">
+     Algebras
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../concrete.html">
+     Concrete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core.html">
+     Core
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrete.html">
+     Discrete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../evalf.html">
+     Numerical Evaluation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../numeric-computation.html">
+     Numeric Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../rewriting.html">
+     Term Rewriting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/codegeneration/index.html">
+   Code Generation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../codegen.html">
+     Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/logic/index.html">
+   Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../logic.html">
+     Logic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sets.html">
+     Sets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/matrices/index.html">
+   Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/matrices.html">
+       Matrices (linear algebra)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/common.html">
+       Common Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/dense.html">
+       Dense Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/sparse.html">
+       Sparse Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/sparsetools.html">
+       Sparse Tools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/immutablematrices.html">
+       Immutable Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/expressions.html">
+       Matrix Expressions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/normalforms.html">
+       Matrix Normal Forms
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../tensor/index.html">
+     Tensor
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array.html">
+       N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/indexed.html">
+       Indexed Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/index_methods.html">
+       Methods
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/tensor.html">
+       Tensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/toperators.html">
+       Tensor Operators
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../vector/index.html">
+     Vector
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/intro.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/basics.html">
+       Basic Implementation details
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/coordsys.html">
+       More about Coordinate Systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/fields.html">
+       Scalar and Vector Field Functionality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/examples.html">
+       General examples of usage
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/vector_integration.html">
+       Applications of Vector Integrals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/classes.html">
+       Essential Classes in sympy.vector (docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/orienterclasses.html">
+       Orienter classes (docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/vectorfunctions.html">
+       Essential Functions in sympy.vector (docstrings)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/numbertheory/index.html">
+   Number Theory
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ntheory.html">
+     Ntheory Class Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/physics/index.html">
+   Physics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/hydrogen.html">
+     Hydrogen Wavefunctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/paulialgebra.html">
+     Pauli Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/qho_1d.html">
+     Quantum Harmonic Oscillator in 1-D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/sho.html">
+     Quantum Harmonic Oscillator in 3-D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/secondquant.html">
+     Second Quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/wigner.html">
+     Wigner Symbols
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/units/index.html">
+     Unit systems
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/philosophy.html">
+       Philosophy behind unit systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/examples.html">
+       Examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/dimensions.html">
+       Dimensions and dimension systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/prefixes.html">
+       Unit prefixes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/unitsystem.html">
+       Units and unit systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/quantities.html">
+       Physical quantities
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/hep/index.html">
+     High energy physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/vector/index.html">
+     The Physics Vector Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/vectors.html">
+       Vector &amp; ReferenceFrame
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/kinematics.html">
+       Vector: Kinematics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/advanced.html">
+       Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/fields.html">
+       Scalar and Vector Field Functionality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/classes.html">
+       Essential Classes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/kinematics.html">
+       Kinematics (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/printing.html">
+       Printing (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/functions.html">
+       Essential Functions (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/fieldfunctions.html">
+       Docstrings for basic field functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/mechanics/index.html">
+     Classical Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/masses.html">
+       Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/kane.html">
+       Kane’s Method in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/lagrange.html">
+       Lagrange’s Method in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/symsystem.html">
+       Symbolic Systems in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/mechanics/linearize.html">
+       Linearization in Physics/Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/lin_pend_nonmin_example.html">
+         Nonminimal Coordinates Pendulum
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/mechanics/examples.html">
+       Examples for Physics/Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/rollingdisc_example.html">
+         A rolling disc
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/bicycle_example.html">
+         A bicycle
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/lin_pend_nonmin_example.html">
+         Nonminimal Coordinates Pendulum
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/multi_degree_freedom_holonomic_system.html">
+         Multi Degree of Freedom Holonomic System
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/advanced.html">
+       Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/reference.html">
+       References for Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/autolev_parser.html">
+       Autolev Parser
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/sympy_mechanics_for_autolev_users.html">
+       SymPy Mechanics for Autolev Users
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/part_bod.html">
+       Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/kane_lagrange.html">
+       Kane’s Method &amp; Lagrange’s Method (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/system.html">
+       SymbolicSystem (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/linearize.html">
+       Linearization (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/expr_manip.html">
+       Expression Manipulation (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/printing.html">
+       Printing (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/body.html">
+       Body (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/joint.html">
+       Joint (Docstrings)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/quantum/index.html">
+     Quantum Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/anticommutator.html">
+       Anticommutator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/cg.html">
+       Clebsch-Gordan Coefficients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/commutator.html">
+       Commutator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/constants.html">
+       Constants
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/dagger.html">
+       Dagger
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/innerproduct.html">
+       Inner Product
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/tensorproduct.html">
+       Tensor Product
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/cartesian.html">
+       Cartesian Operators and States
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/hilbert.html">
+       Hilbert Space
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/operator.html">
+       Operator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/operatorset.html">
+       Operator/State Helper Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/qapply.html">
+       Qapply
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/represent.html">
+       Represent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/spin.html">
+       Spin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/state.html">
+       State
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/circuitplot.html">
+       Circuit Plot
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/gate.html">
+       Gates
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/grover.html">
+       Grover’s Algorithm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/qft.html">
+       QFT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/qubit.html">
+       Qubit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/shor.html">
+       Shor’s Algorithm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/piab.html">
+       Particle in a Box
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/optics/index.html">
+     Optics Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/gaussopt.html">
+       Gaussian Optics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/medium.html">
+       Medium
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/polarization.html">
+       Polarization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/utils.html">
+       Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/waves.html">
+       Waves
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/control/index.html">
+     Control Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/control/control.html">
+       Control
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/control/lti.html">
+       Control API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/control/control_plots.html">
+       Control System Plots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/continuum_mechanics/index.html">
+     Continuum Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/continuum_mechanics/beam.html">
+       Beam (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/continuum_mechanics/beam_problems.html">
+       Solving Beam Bending Problems using Singularity Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/utilities/index.html">
+   Utilities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+  <label for="toctree-checkbox-27">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../testing/index.html">
+     Testing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../testing/pytest.html">
+       pytest
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../testing/randtest.html">
+       Randomised Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../testing/runtests.html">
+       Run Tests
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../utilities/index.html">
+     Utilities
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/autowrap.html">
+       Autowrap Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/codegen.html">
+       Codegen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/decorator.html">
+       Decorator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/enumerative.html">
+       Enumerative
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/iterables.html">
+       Iterables
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/lambdify.html">
+       Lambdify
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/memoization.html">
+       Memoization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/misc.html">
+       Miscellaneous
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/pkgdata.html">
+       PKGDATA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/source.html">
+       Source Code Inspection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/timeutils.html">
+       Timing Utilities
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interactive.html">
+     Interactive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../parsing.html">
+     Parsing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../printing.html">
+     Printing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../reference/public/topics/index.html">
+   Topics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label for="toctree-checkbox-30">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../geometry/index.html">
+     Geometry
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/entities.html">
+       Entities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/utils.html">
+       Utils
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/points.html">
+       Points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/lines.html">
+       Lines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/curves.html">
+       Curves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/ellipses.html">
+       Ellipses
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/polygons.html">
+       Polygons
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/plane.html">
+       Plane
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../holonomic/index.html">
+     Holonomic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/about.html">
+       About Holonomic Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/represent.html">
+       Representation of holonomic functions in SymPy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/operations.html">
+       Operations on holonomic functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/convert.html">
+       Converting other representations to holonomic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/uses.html">
+       Uses and Current limitations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/internal.html">
+       Internal API
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lie Algebra
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../polys/index.html">
+     Polynomial Manipulation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/basics.html">
+       Basic functionality of the module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/wester.html">
+       Examples from Wester’s Article
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/reference.html">
+       Polynomials Manipulation Module Reference
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/agca.html">
+       AGCA - Algebraic Geometry and Commutative Algebra Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/domainsintro.html">
+       Introducing the Domains of the poly module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/domainsref.html">
+       Reference docs for the Poly Domains
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/internals.html">
+       Internals of the Polynomial Manipulation Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/ringseries.html">
+       Series Manipulation using Polynomials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/literature.html">
+       Literature
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/solvers.html">
+       Poly solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/domainmatrix.html">
+       Introducing the domainmatrix of the poly module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../polys/numberfields.html">
+       Number Fields
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../categories.html">
+     Category Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crypto.html">
+     Cryptography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../diffgeom.html">
+     Differential Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats.html">
+     Stats
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-sympy.liealgebras">
+<span id="lie-algebra"></span><h1>Lie Algebra<a class="headerlink" href="#module-sympy.liealgebras" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.root_system.RootSystem">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.root_system.</span></span><span class="sig-name descname"><span class="pre">RootSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cartantype</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/root_system.py#L4-L204"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.root_system.RootSystem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent the root system of a simple Lie algebra</p>
+<p>Every simple Lie algebra has a unique root system.  To find the root
+system, we first consider the Cartan subalgebra of g, which is the maximal
+abelian subalgebra, and consider the adjoint action of g on this
+subalgebra.  There is a root system associated with this action. Now, a
+root system over a vector space V is a set of finite vectors Phi (called
+roots), which satisfy:</p>
+<ol class="arabic simple">
+<li><p>The roots span V</p></li>
+<li><p>The only scalar multiples of x in Phi are x and -x</p></li>
+<li><p>For every x in Phi, the set Phi is closed under reflection
+through the hyperplane perpendicular to x.</p></li>
+<li><p>If x and y are roots in Phi, then the projection of y onto
+the line through x is a half-integral multiple of x.</p></li>
+</ol>
+<p>Now, there is a subset of Phi, which we will call Delta, such that:
+1.  Delta is a basis of V
+2.  Each root x in Phi can be written x = sum k_y y for y in Delta</p>
+<p>The elements of Delta are called the simple roots.
+Therefore, we see that the simple roots span the root space of a given
+simple Lie algebra.</p>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r548"><span class="brackets"><a class="fn-backref" href="#id1">R548</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Root_system">https://en.wikipedia.org/wiki/Root_system</a></p>
+</dd>
+<dt class="label" id="r549"><span class="brackets"><a class="fn-backref" href="#id2">R549</a></span></dt>
+<dd><p>Lie Algebras and Representation Theory - Humphreys</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.root_system.RootSystem.add_as_roots">
+<span class="sig-name descname"><span class="pre">add_as_roots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/root_system.py#L147-L173"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.root_system.RootSystem.add_as_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add two roots together if and only if their sum is also a root</p>
+<p>It takes as input two vectors which should be roots.  It then computes
+their sum and checks if it is in the list of all possible roots.  If it
+is, it returns the sum.  Otherwise it returns a string saying that the
+sum is not a root.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.root_system</span> <span class="kn">import</span> <span class="n">RootSystem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">RootSystem</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">add_as_roots</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="go">[1, 0, 0, -1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">add_as_roots</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="go">&#39;The sum of these two roots is not a root&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.root_system.RootSystem.add_simple_roots">
+<span class="sig-name descname"><span class="pre">add_simple_roots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/root_system.py#L118-L145"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.root_system.RootSystem.add_simple_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add two simple roots together</p>
+<p>The function takes as input two integers, root1 and root2.  It then
+uses these integers as keys in the dictionary of simple roots, and gets
+the corresponding simple roots, and then adds them together.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.root_system</span> <span class="kn">import</span> <span class="n">RootSystem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">RootSystem</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">newroot</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">add_simple_roots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">newroot</span>
+<span class="go">[1, 0, -1, 0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.root_system.RootSystem.all_roots">
+<span class="sig-name descname"><span class="pre">all_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/root_system.py#L77-L95"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.root_system.RootSystem.all_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate all the roots of a given root system</p>
+<p>The result is a dictionary where the keys are integer numbers.  It
+generates the roots by getting the dictionary of all positive roots
+from the bases classes, and then taking each root, and multiplying it
+by -1 and adding it to the dictionary.  In this way all the negative
+roots are generated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.root_system.RootSystem.cartan_matrix">
+<span class="sig-name descname"><span class="pre">cartan_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/root_system.py#L176-L190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.root_system.RootSystem.cartan_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cartan matrix of Lie algebra associated with this root system</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.root_system</span> <span class="kn">import</span> <span class="n">RootSystem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">RootSystem</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartan_matrix</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">    [ 2, -1,  0],</span>
+<span class="go">    [-1,  2, -1],</span>
+<span class="go">    [ 0, -1,  2]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.root_system.RootSystem.dynkin_diagram">
+<span class="sig-name descname"><span class="pre">dynkin_diagram</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/root_system.py#L192-L204"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.root_system.RootSystem.dynkin_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynkin diagram of the Lie algebra associated with this root system</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.root_system</span> <span class="kn">import</span> <span class="n">RootSystem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">RootSystem</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">dynkin_diagram</span><span class="p">())</span>
+<span class="go">0---0---0</span>
+<span class="go">1   2   3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.root_system.RootSystem.root_space">
+<span class="sig-name descname"><span class="pre">root_space</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/root_system.py#L97-L116"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.root_system.RootSystem.root_space" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the span of the simple roots</p>
+<p>The root space is the vector space spanned by the simple roots, i.e. it
+is a vector space with a distinguished basis, the simple roots.  This
+method returns a string that represents the root space as the span of
+the simple roots, alpha[1],…., alpha[n].</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.root_system</span> <span class="kn">import</span> <span class="n">RootSystem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">RootSystem</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">root_space</span><span class="p">()</span>
+<span class="go">&#39;alpha[1] + alpha[2] + alpha[3]&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.root_system.RootSystem.simple_roots">
+<span class="sig-name descname"><span class="pre">simple_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/root_system.py#L51-L74"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.root_system.RootSystem.simple_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the simple roots of the Lie algebra</p>
+<p>The rank of the Lie algebra determines the number of simple roots that
+it has.  This method obtains the rank of the Lie algebra, and then uses
+the simple_root method from the Lie algebra classes to generate all the
+simple roots.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.root_system</span> <span class="kn">import</span> <span class="n">RootSystem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">RootSystem</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roots</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">simple_roots</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">roots</span>
+<span class="go">{1: [1, -1, 0, 0], 2: [0, 1, -1, 0], 3: [0, 0, 1, -1]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.type_a.</span></span><span class="sig-name descname"><span class="pre">TypeA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L5-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class contains the information about
+the A series of simple Lie algebras.
+====</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.basic_root">
+<span class="sig-name descname"><span class="pre">basic_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L32-L44"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.basic_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a method just to generate roots
+with a 1 iin the ith position and a -1
+in the jth position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.basis">
+<span class="sig-name descname"><span class="pre">basis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L148-L153"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of independent generators of A_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.cartan_matrix">
+<span class="sig-name descname"><span class="pre">cartan_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L115-L146"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.cartan_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Cartan matrix for A_n.
+The Cartan matrix matrix for a Lie algebra is
+generated by assigning an ordering to the simple
+roots, (alpha[1], …., alpha[l]).  Then the ijth
+entry of the Cartan matrix is (&lt;alpha[i],alpha[j]&gt;).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s1">&#39;A4&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartan_matrix</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 2, -1,  0,  0],</span>
+<span class="go">[-1,  2, -1,  0],</span>
+<span class="go">[ 0, -1,  2, -1],</span>
+<span class="go">[ 0,  0, -1,  2]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L18-L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimension of the vector space V underlying the Lie algebra</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">dimension</span><span class="p">()</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.highest_root">
+<span class="sig-name descname"><span class="pre">highest_root</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L101-L106"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.highest_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the highest weight root for A_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.lie_algebra">
+<span class="sig-name descname"><span class="pre">lie_algebra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L155-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.lie_algebra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Lie algebra associated with A_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.positive_roots">
+<span class="sig-name descname"><span class="pre">positive_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L75-L99"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.positive_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method generates all the positive roots of
+A_n.  This is half of all of the roots of A_n;
+by multiplying all the positive roots by -1 we
+get the negative roots.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">positive_roots</span><span class="p">()</span>
+<span class="go">{1: [1, -1, 0, 0], 2: [1, 0, -1, 0], 3: [1, 0, 0, -1], 4: [0, 1, -1, 0],</span>
+<span class="go">        5: [0, 1, 0, -1], 6: [0, 0, 1, -1]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.roots">
+<span class="sig-name descname"><span class="pre">roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L108-L113"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of roots for A_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_a.TypeA.simple_root">
+<span class="sig-name descname"><span class="pre">simple_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_a.py#L46-L73"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_a.TypeA.simple_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every lie algebra has a unique root system.
+Given a root system Q, there is a subset of the
+roots such that an element of Q is called a
+simple root if it cannot be written as the sum
+of two elements in Q.  If we let D denote the
+set of simple roots, then it is clear that every
+element of Q can be written as a linear combination
+of elements of D with all coefficients non-negative.</p>
+<p>In A_n the ith simple root is the root which has a 1
+in the ith position, a -1 in the (i+1)th position,
+and zeroes elsewhere.</p>
+<p>This method returns the ith simple root for the A series.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">simple_root</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">[1, -1, 0, 0, 0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.type_b.</span></span><span class="sig-name descname"><span class="pre">TypeB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L4-L172"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB.basic_root">
+<span class="sig-name descname"><span class="pre">basic_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L25-L35"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB.basic_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a method just to generate roots
+with a 1 iin the ith position and a -1
+in the jth position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB.basis">
+<span class="sig-name descname"><span class="pre">basis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L152-L158"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of independent generators of B_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB.cartan_matrix">
+<span class="sig-name descname"><span class="pre">cartan_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L118-L150"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB.cartan_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Cartan matrix for B_n.
+The Cartan matrix matrix for a Lie algebra is
+generated by assigning an ordering to the simple
+roots, (alpha[1], …., alpha[l]).  Then the ijth
+entry of the Cartan matrix is (&lt;alpha[i],alpha[j]&gt;).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartan_matrix</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 2, -1,  0,  0],</span>
+<span class="go">[-1,  2, -1,  0],</span>
+<span class="go">[ 0, -1,  2, -2],</span>
+<span class="go">[ 0,  0, -1,  2]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L11-L23"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimension of the vector space V underlying the Lie algebra</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;B3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">dimension</span><span class="p">()</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB.lie_algebra">
+<span class="sig-name descname"><span class="pre">lie_algebra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L160-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB.lie_algebra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Lie algebra associated with B_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB.positive_roots">
+<span class="sig-name descname"><span class="pre">positive_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L73-L108"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB.positive_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method generates all the positive roots of
+A_n.  This is half of all of the roots of B_n;
+by multiplying all the positive roots by -1 we
+get the negative roots.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">positive_roots</span><span class="p">()</span>
+<span class="go">{1: [1, -1, 0, 0], 2: [1, 0, -1, 0], 3: [1, 0, 0, -1], 4: [0, 1, -1, 0],</span>
+<span class="go">        5: [0, 1, 0, -1], 6: [0, 0, 1, -1]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB.roots">
+<span class="sig-name descname"><span class="pre">roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L110-L116"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of roots for B_n”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_b.TypeB.simple_root">
+<span class="sig-name descname"><span class="pre">simple_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_b.py#L37-L71"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_b.TypeB.simple_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every lie algebra has a unique root system.
+Given a root system Q, there is a subset of the
+roots such that an element of Q is called a
+simple root if it cannot be written as the sum
+of two elements in Q.  If we let D denote the
+set of simple roots, then it is clear that every
+element of Q can be written as a linear combination
+of elements of D with all coefficients non-negative.</p>
+<p>In B_n the first n-1 simple roots are the same as the
+roots in A_(n-1) (a 1 in the ith position, a -1 in
+the (i+1)th position, and zeroes elsewhere).  The n-th
+simple root is the root with a 1 in the nth position
+and zeroes elsewhere.</p>
+<p>This method returns the ith simple root for the B series.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;B3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">simple_root</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[0, 1, -1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.type_c.</span></span><span class="sig-name descname"><span class="pre">TypeC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L4-L171"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC.basic_root">
+<span class="sig-name descname"><span class="pre">basic_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L26-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC.basic_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate roots with 1 in ith position and a -1 in jth position</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC.basis">
+<span class="sig-name descname"><span class="pre">basis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L151-L157"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of independent generators of C_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC.cartan_matrix">
+<span class="sig-name descname"><span class="pre">cartan_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L117-L148"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC.cartan_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Cartan matrix for C_n</p>
+<p>The Cartan matrix matrix for a Lie algebra is
+generated by assigning an ordering to the simple
+roots, (alpha[1], …., alpha[l]).  Then the ijth
+entry of the Cartan matrix is (&lt;alpha[i],alpha[j]&gt;).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s1">&#39;C4&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartan_matrix</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 2, -1,  0,  0],</span>
+<span class="go">[-1,  2, -1,  0],</span>
+<span class="go">[ 0, -1,  2, -1],</span>
+<span class="go">[ 0,  0, -2,  2]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L12-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimension of the vector space V underlying the Lie algebra</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;C3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">dimension</span><span class="p">()</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC.lie_algebra">
+<span class="sig-name descname"><span class="pre">lie_algebra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L159-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC.lie_algebra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Lie algebra associated with C_n”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC.positive_roots">
+<span class="sig-name descname"><span class="pre">positive_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L72-L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC.positive_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates all the positive roots of A_n</p>
+<p>This is half of all of the roots of C_n; by multiplying all the
+positive roots by -1 we get the negative roots.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">positive_roots</span><span class="p">()</span>
+<span class="go">{1: [1, -1, 0, 0], 2: [1, 0, -1, 0], 3: [1, 0, 0, -1], 4: [0, 1, -1, 0],</span>
+<span class="go">        5: [0, 1, 0, -1], 6: [0, 0, 1, -1]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC.roots">
+<span class="sig-name descname"><span class="pre">roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L109-L115"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of roots for C_n”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_c.TypeC.simple_root">
+<span class="sig-name descname"><span class="pre">simple_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_c.py#L35-L69"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_c.TypeC.simple_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ith simple root for the C series</p>
+<p>Every lie algebra has a unique root system.
+Given a root system Q, there is a subset of the
+roots such that an element of Q is called a
+simple root if it cannot be written as the sum
+of two elements in Q.  If we let D denote the
+set of simple roots, then it is clear that every
+element of Q can be written as a linear combination
+of elements of D with all coefficients non-negative.</p>
+<p>In C_n, the first n-1 simple roots are the same as
+the roots in A_(n-1) (a 1 in the ith position, a -1
+in the (i+1)th position, and zeroes elsewhere).  The
+nth simple root is the root in which there is a 2 in
+the nth position and zeroes elsewhere.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;C3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">simple_root</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[0, 1, -1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.type_d.</span></span><span class="sig-name descname"><span class="pre">TypeD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L4-L175"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD.basic_root">
+<span class="sig-name descname"><span class="pre">basic_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L26-L38"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD.basic_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a method just to generate roots
+with a 1 iin the ith position and a -1
+in the jth position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD.basis">
+<span class="sig-name descname"><span class="pre">basis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L152-L157"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of independent generators of D_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD.cartan_matrix">
+<span class="sig-name descname"><span class="pre">cartan_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L117-L150"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD.cartan_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Cartan matrix for D_n.
+The Cartan matrix matrix for a Lie algebra is
+generated by assigning an ordering to the simple
+roots, (alpha[1], …., alpha[l]).  Then the ijth
+entry of the Cartan matrix is (&lt;alpha[i],alpha[j]&gt;).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s1">&#39;D4&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartan_matrix</span><span class="p">()</span>
+<span class="go">    Matrix([</span>
+<span class="go">    [ 2, -1,  0,  0],</span>
+<span class="go">    [-1,  2, -1, -1],</span>
+<span class="go">    [ 0, -1,  2,  0],</span>
+<span class="go">    [ 0, -1,  0,  2]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L12-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dmension of the vector space V underlying the Lie algebra</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;D4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">dimension</span><span class="p">()</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD.lie_algebra">
+<span class="sig-name descname"><span class="pre">lie_algebra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L159-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD.lie_algebra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Lie algebra associated with D_n”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD.positive_roots">
+<span class="sig-name descname"><span class="pre">positive_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L79-L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD.positive_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method generates all the positive roots of
+A_n.  This is half of all of the roots of D_n
+by multiplying all the positive roots by -1 we
+get the negative roots.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">positive_roots</span><span class="p">()</span>
+<span class="go">{1: [1, -1, 0, 0], 2: [1, 0, -1, 0], 3: [1, 0, 0, -1], 4: [0, 1, -1, 0],</span>
+<span class="go">        5: [0, 1, 0, -1], 6: [0, 0, 1, -1]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD.roots">
+<span class="sig-name descname"><span class="pre">roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L109-L115"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of roots for D_n”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_d.TypeD.simple_root">
+<span class="sig-name descname"><span class="pre">simple_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_d.py#L40-L76"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_d.TypeD.simple_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every lie algebra has a unique root system.
+Given a root system Q, there is a subset of the
+roots such that an element of Q is called a
+simple root if it cannot be written as the sum
+of two elements in Q.  If we let D denote the
+set of simple roots, then it is clear that every
+element of Q can be written as a linear combination
+of elements of D with all coefficients non-negative.</p>
+<p>In D_n, the first n-1 simple roots are the same as
+the roots in A_(n-1) (a 1 in the ith position, a -1
+in the (i+1)th position, and zeroes elsewhere).
+The nth simple root is the root in which there 1s in
+the nth and (n-1)th positions, and zeroes elsewhere.</p>
+<p>This method returns the ith simple root for the D series.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;D4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">simple_root</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[0, 1, -1, 0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_e.TypeE">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.type_e.</span></span><span class="sig-name descname"><span class="pre">TypeE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_e.py#L5-L287"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_e.TypeE" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_e.TypeE.basic_root">
+<span class="sig-name descname"><span class="pre">basic_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_e.py#L26-L37"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_e.TypeE.basic_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a method just to generate roots
+with a -1 in the ith position and a 1
+in the jth position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_e.TypeE.basis">
+<span class="sig-name descname"><span class="pre">basis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_e.py#L266-L277"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_e.TypeE.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of independent generators of E_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_e.TypeE.cartan_matrix">
+<span class="sig-name descname"><span class="pre">cartan_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_e.py#L229-L263"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_e.TypeE.cartan_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Cartan matrix for G_2
+The Cartan matrix matrix for a Lie algebra is
+generated by assigning an ordering to the simple
+roots, (alpha[1], …., alpha[l]).  Then the ijth
+entry of the Cartan matrix is (&lt;alpha[i],alpha[j]&gt;).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s1">&#39;A4&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartan_matrix</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 2, -1,  0,  0],</span>
+<span class="go">[-1,  2, -1,  0],</span>
+<span class="go">[ 0, -1,  2, -1],</span>
+<span class="go">[ 0,  0, -1,  2]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_e.TypeE.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_e.py#L12-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_e.TypeE.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimension of the vector space V underlying the Lie algebra</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;E6&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">dimension</span><span class="p">()</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_e.TypeE.positive_roots">
+<span class="sig-name descname"><span class="pre">positive_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_e.py#L79-L211"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_e.TypeE.positive_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method generates all the positive roots of
+A_n.  This is half of all of the roots of E_n;
+by multiplying all the positive roots by -1 we
+get the negative roots.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">positive_roots</span><span class="p">()</span>
+<span class="go">{1: [1, -1, 0, 0], 2: [1, 0, -1, 0], 3: [1, 0, 0, -1], 4: [0, 1, -1, 0],</span>
+<span class="go">        5: [0, 1, 0, -1], 6: [0, 0, 1, -1]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_e.TypeE.roots">
+<span class="sig-name descname"><span class="pre">roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_e.py#L215-L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_e.TypeE.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of roots of E_n</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_e.TypeE.simple_root">
+<span class="sig-name descname"><span class="pre">simple_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_e.py#L39-L77"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_e.TypeE.simple_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every lie algebra has a unique root system.
+Given a root system Q, there is a subset of the
+roots such that an element of Q is called a
+simple root if it cannot be written as the sum
+of two elements in Q.  If we let D denote the
+set of simple roots, then it is clear that every
+element of Q can be written as a linear combination
+of elements of D with all coefficients non-negative.</p>
+<p>This method returns the ith simple root for E_n.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;E6&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">simple_root</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[1, 1, 0, 0, 0, 0, 0, 0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_f.TypeF">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.type_f.</span></span><span class="sig-name descname"><span class="pre">TypeF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_f.py#L5-L162"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_f.TypeF" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_f.TypeF.basic_root">
+<span class="sig-name descname"><span class="pre">basic_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_f.py#L27-L36"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_f.TypeF.basic_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate roots with 1 in ith position and -1 in jth position</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_f.TypeF.basis">
+<span class="sig-name descname"><span class="pre">basis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_f.py#L153-L157"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_f.TypeF.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of independent generators of F_4</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_f.TypeF.cartan_matrix">
+<span class="sig-name descname"><span class="pre">cartan_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_f.py#L128-L151"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_f.TypeF.cartan_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Cartan matrix for F_4</p>
+<p>The Cartan matrix matrix for a Lie algebra is
+generated by assigning an ordering to the simple
+roots, (alpha[1], …., alpha[l]).  Then the ijth
+entry of the Cartan matrix is (&lt;alpha[i],alpha[j]&gt;).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s1">&#39;A4&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartan_matrix</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 2, -1,  0,  0],</span>
+<span class="go">[-1,  2, -1,  0],</span>
+<span class="go">[ 0, -1,  2, -1],</span>
+<span class="go">[ 0,  0, -1,  2]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_f.TypeF.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_f.py#L12-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_f.TypeF.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimension of the vector space V underlying the Lie algebra</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;F4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">dimension</span><span class="p">()</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_f.TypeF.positive_roots">
+<span class="sig-name descname"><span class="pre">positive_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_f.py#L70-L119"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_f.TypeF.positive_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate all the positive roots of A_n</p>
+<p>This is half of all of the roots of F_4; by multiplying all the
+positive roots by -1 we get the negative roots.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">positive_roots</span><span class="p">()</span>
+<span class="go">{1: [1, -1, 0, 0], 2: [1, 0, -1, 0], 3: [1, 0, 0, -1], 4: [0, 1, -1, 0],</span>
+<span class="go">        5: [0, 1, 0, -1], 6: [0, 0, 1, -1]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_f.TypeF.roots">
+<span class="sig-name descname"><span class="pre">roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_f.py#L122-L126"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_f.TypeF.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of roots for F_4</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_f.TypeF.simple_root">
+<span class="sig-name descname"><span class="pre">simple_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_f.py#L38-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_f.TypeF.simple_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ith simple root of F_4</p>
+<p>Every lie algebra has a unique root system.
+Given a root system Q, there is a subset of the
+roots such that an element of Q is called a
+simple root if it cannot be written as the sum
+of two elements in Q.  If we let D denote the
+set of simple roots, then it is clear that every
+element of Q can be written as a linear combination
+of elements of D with all coefficients non-negative.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;F4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">simple_root</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">[0, 0, 0, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_g.TypeG">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.type_g.</span></span><span class="sig-name descname"><span class="pre">TypeG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_g.py#L6-L111"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_g.TypeG" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_g.TypeG.basis">
+<span class="sig-name descname"><span class="pre">basis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_g.py#L103-L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_g.TypeG.basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of independent generators of G_2</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_g.TypeG.cartan_matrix">
+<span class="sig-name descname"><span class="pre">cartan_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_g.py#L80-L101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_g.TypeG.cartan_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Cartan matrix for G_2</p>
+<p>The Cartan matrix matrix for a Lie algebra is
+generated by assigning an ordering to the simple
+roots, (alpha[1], …., alpha[l]).  Then the ijth
+entry of the Cartan matrix is (&lt;alpha[i],alpha[j]&gt;).</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;G2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">cartan_matrix</span><span class="p">()</span>
+<span class="go">Matrix([</span>
+<span class="go">    [ 2, -1],</span>
+<span class="go">    [-3,  2]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_g.TypeG.dimension">
+<span class="sig-name descname"><span class="pre">dimension</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_g.py#L14-L25"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_g.TypeG.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimension of the vector space V underlying the Lie algebra</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;G2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">dimension</span><span class="p">()</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_g.TypeG.positive_roots">
+<span class="sig-name descname"><span class="pre">positive_roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_g.py#L53-L72"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_g.TypeG.positive_roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate all the positive roots of A_n</p>
+<p>This is half of all of the roots of A_n; by multiplying all the
+positive roots by -1 we get the negative roots.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">positive_roots</span><span class="p">()</span>
+<span class="go">{1: [1, -1, 0, 0], 2: [1, 0, -1, 0], 3: [1, 0, 0, -1], 4: [0, 1, -1, 0],</span>
+<span class="go">        5: [0, 1, 0, -1], 6: [0, 0, 1, -1]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_g.TypeG.roots">
+<span class="sig-name descname"><span class="pre">roots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_g.py#L74-L78"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_g.TypeG.roots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of roots of G_2”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.type_g.TypeG.simple_root">
+<span class="sig-name descname"><span class="pre">simple_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/type_g.py#L27-L51"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.type_g.TypeG.simple_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ith simple root of G_2</p>
+<p>Every lie algebra has a unique root system.
+Given a root system Q, there is a subset of the
+roots such that an element of Q is called a
+simple root if it cannot be written as the sum
+of two elements in Q.  If we let D denote the
+set of simple roots, then it is clear that every
+element of Q can be written as a linear combination
+of elements of D with all coefficients non-negative.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_type</span> <span class="kn">import</span> <span class="n">CartanType</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">CartanType</span><span class="p">(</span><span class="s2">&quot;G2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">simple_root</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">[0, 1, -1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.weyl_group.WeylGroup">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.weyl_group.</span></span><span class="sig-name descname"><span class="pre">WeylGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cartantype</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/weyl_group.py#L8-L403"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.weyl_group.WeylGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each semisimple Lie group, we have a Weyl group.  It is a subgroup of
+the isometry group of the root system.  Specifically, it’s the subgroup
+that is generated by reflections through the hyperplanes orthogonal to
+the roots.  Therefore, Weyl groups are reflection groups, and so a Weyl
+group is a finite Coxeter group.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.weyl_group.WeylGroup.coxeter_diagram">
+<span class="sig-name descname"><span class="pre">coxeter_diagram</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/weyl_group.py#L367-L403"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.weyl_group.WeylGroup.coxeter_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns the Coxeter diagram corresponding to a Weyl group.
+The Coxeter diagram can be obtained from a Lie algebra’s Dynkin diagram
+by deleting all arrows; the Coxeter diagram is the undirected graph.
+The vertices of the Coxeter diagram represent the generating reflections
+of the Weyl group, <span class="math notranslate nohighlight">\(s_i\)</span>.  An edge is drawn between <span class="math notranslate nohighlight">\(s_i\)</span> and <span class="math notranslate nohighlight">\(s_j\)</span> if the order
+<span class="math notranslate nohighlight">\(m(i, j)\)</span> of <span class="math notranslate nohighlight">\(s_is_j\)</span> is greater than two.  If there is one edge, the order
+<span class="math notranslate nohighlight">\(m(i, j)\)</span> is 3.  If there are two edges, the order <span class="math notranslate nohighlight">\(m(i, j)\)</span> is 4, and if there
+are three edges, the order <span class="math notranslate nohighlight">\(m(i, j)\)</span> is 6.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.weyl_group</span> <span class="kn">import</span> <span class="n">WeylGroup</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">WeylGroup</span><span class="p">(</span><span class="s2">&quot;B3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">coxeter_diagram</span><span class="p">())</span>
+<span class="go">0---0===0</span>
+<span class="go">1   2   3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.weyl_group.WeylGroup.delete_doubles">
+<span class="sig-name descname"><span class="pre">delete_doubles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reflections</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/weyl_group.py#L199-L215"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.weyl_group.WeylGroup.delete_doubles" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a helper method for determining the order of an element in the
+Weyl group of G2.  It takes a Weyl element and if repeated simple reflections
+in it, it deletes them.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.weyl_group.WeylGroup.element_order">
+<span class="sig-name descname"><span class="pre">element_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weylelt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/weyl_group.py#L116-L197"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.weyl_group.WeylGroup.element_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns the order of a given Weyl group element, which should
+be specified by the user in the form of products of the generating
+reflections, i.e. of the form r1*r2 etc.</p>
+<p>For types A-F, this method current works by taking the matrix form of
+the specified element, and then finding what power of the matrix is the
+identity.  It then returns this power.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.weyl_group</span> <span class="kn">import</span> <span class="n">WeylGroup</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">WeylGroup</span><span class="p">(</span><span class="s2">&quot;B4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">element_order</span><span class="p">(</span><span class="s1">&#39;r1*r4*r2&#39;</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.weyl_group.WeylGroup.generators">
+<span class="sig-name descname"><span class="pre">generators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/weyl_group.py#L24-L44"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.weyl_group.WeylGroup.generators" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method creates the generating reflections of the Weyl group for
+a given Lie algebra.  For a Lie algebra of rank n, there are n
+different generating reflections.  This function returns them as
+a list.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.weyl_group</span> <span class="kn">import</span> <span class="n">WeylGroup</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">WeylGroup</span><span class="p">(</span><span class="s2">&quot;F4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">generators</span><span class="p">()</span>
+<span class="go">[&#39;r1&#39;, &#39;r2&#39;, &#39;r3&#39;, &#39;r4&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.weyl_group.WeylGroup.group_name">
+<span class="sig-name descname"><span class="pre">group_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/weyl_group.py#L84-L114"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.weyl_group.WeylGroup.group_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns some general information about the Weyl group for
+a given Lie algebra.  It returns the name of the group and the elements
+it acts on, if relevant.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.weyl_group.WeylGroup.group_order">
+<span class="sig-name descname"><span class="pre">group_order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/weyl_group.py#L46-L82"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.weyl_group.WeylGroup.group_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method returns the order of the Weyl group.
+For types A, B, C, D, and E the order depends on
+the rank of the Lie algebra.  For types F and G,
+the order is fixed.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.weyl_group</span> <span class="kn">import</span> <span class="n">WeylGroup</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">WeylGroup</span><span class="p">(</span><span class="s2">&quot;D4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">group_order</span><span class="p">()</span>
+<span class="go">192.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.weyl_group.WeylGroup.matrix_form">
+<span class="sig-name descname"><span class="pre">matrix_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weylelt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/weyl_group.py#L218-L363"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.weyl_group.WeylGroup.matrix_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method takes input from the user in the form of products of the
+generating reflections, and returns the matrix corresponding to the
+element of the Weyl group.  Since each element of the Weyl group is
+a reflection of some type, there is a corresponding matrix representation.
+This method uses the standard representation for all the generating
+reflections.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.weyl_group</span> <span class="kn">import</span> <span class="n">WeylGroup</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">WeylGroup</span><span class="p">(</span><span class="s2">&quot;F4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">matrix_form</span><span class="p">(</span><span class="s1">&#39;r2*r3&#39;</span><span class="p">)</span>
+<span class="go">Matrix([</span>
+<span class="go">[1, 0, 0,  0],</span>
+<span class="go">[0, 1, 0,  0],</span>
+<span class="go">[0, 0, 0, -1],</span>
+<span class="go">[0, 0, 1,  0]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.cartan_type.CartanType_generator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.cartan_type.</span></span><span class="sig-name descname"><span class="pre">CartanType_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/cartan_type.py#L4-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.cartan_type.CartanType_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor for actually creating things</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sympy.liealgebras.cartan_type.Standard_Cartan">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.cartan_type.</span></span><span class="sig-name descname"><span class="pre">Standard_Cartan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/cartan_type.py#L52-L73"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.cartan_type.Standard_Cartan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concrete base class for Cartan types such as A4, etc</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.cartan_type.Standard_Cartan.rank">
+<span class="sig-name descname"><span class="pre">rank</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/cartan_type.py#L63-L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.cartan_type.Standard_Cartan.rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rank of the Lie algebra</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sympy.liealgebras.cartan_type.Standard_Cartan.series">
+<span class="sig-name descname"><span class="pre">series</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/cartan_type.py#L69-L73"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.cartan_type.Standard_Cartan.series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the type of the Lie algebra</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.liealgebras.dynkin_diagram.DynkinDiagram">
+<span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.dynkin_diagram.</span></span><span class="sig-name descname"><span class="pre">DynkinDiagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/dynkin_diagram.py#L4-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.dynkin_diagram.DynkinDiagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the Dynkin diagram of a given Lie algebra</p>
+<p>Works by generating the CartanType for the input, t, and then returning the
+Dynkin diagram method from the individual classes.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.dynkin_diagram</span> <span class="kn">import</span> <span class="n">DynkinDiagram</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">DynkinDiagram</span><span class="p">(</span><span class="s2">&quot;A3&quot;</span><span class="p">))</span>
+<span class="go">0---0---0</span>
+<span class="go">1   2   3</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">DynkinDiagram</span><span class="p">(</span><span class="s2">&quot;B4&quot;</span><span class="p">))</span>
+<span class="go">0---0---0=&gt;=0</span>
+<span class="go">1   2   3   4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sympy.liealgebras.cartan_matrix.CartanMatrix">
+<span class="sig-prename descclassname"><span class="pre">sympy.liealgebras.cartan_matrix.</span></span><span class="sig-name descname"><span class="pre">CartanMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ct</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/liealgebras/cartan_matrix.py#L3-L25"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.liealgebras.cartan_matrix.CartanMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Access the Cartan matrix of a specific Lie algebra</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.liealgebras.cartan_matrix</span> <span class="kn">import</span> <span class="n">CartanMatrix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CartanMatrix</span><span class="p">(</span><span class="s2">&quot;A2&quot;</span><span class="p">)</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 2, -1],</span>
+<span class="go">[-1,  2]])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">CartanMatrix</span><span class="p">([</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">Matrix([</span>
+<span class="go">[ 2, -1,  0],</span>
+<span class="go">[-1,  2, -1],</span>
+<span class="go">[ 0, -2,  2]])</span>
+</pre></div>
+</div>
+<p>This method works by returning the Cartan matrix
+which corresponds to Cartan type t.</p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../holonomic/internal.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Internal API</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../polys/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Polynomial Manipulation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022 SymPy Development Team.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

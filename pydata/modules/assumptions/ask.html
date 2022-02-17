@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Ask &#8212; SymPy 1.10.dev documentation</title>
+    <title>Ask &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Assume" href="assume.html" />
     <link rel="prev" title="Assumptions" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -578,6 +578,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1253,6 +1258,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../utilities/iterables.html">
        Iterables
       </a>
@@ -1558,14 +1568,14 @@
 <p>Module for querying SymPy objects about assumptions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.assumptions.ask.AssumptionKeys">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">AssumptionKeys</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/assumptions/ask.py#L19-L303"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.AssumptionKeys" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">AssumptionKeys</span></span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/assumptions/ask.py#L21-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.AssumptionKeys" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class contains all the supported keys by <code class="docutils literal notranslate"><span class="pre">ask</span></code>.
 It should be accessed via the instance <code class="docutils literal notranslate"><span class="pre">sympy.Q</span></code>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.assumptions.ask.ask">
-<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proposition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/assumptions/ask.py#L356-L494"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.ask" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">ask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proposition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assumptions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/assumptions/ask.py#L358-L496"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.ask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to evaluate the proposition with assumptions.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1655,7 +1665,7 @@ will not give a meaningful result.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.assumptions.ask.register_handler">
-<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">register_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/assumptions/ask.py#L580-L601"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.register_handler" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">register_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/assumptions/ask.py#L582-L605"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.register_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register a handler in the ask system. key must be a string and handler a
 class inheriting from AskHandler.</p>
 <div class="deprecated">
@@ -1665,7 +1675,7 @@ class inheriting from AskHandler.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.assumptions.ask.remove_handler">
-<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">remove_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/assumptions/ask.py#L604-L620"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.remove_handler" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.assumptions.ask.</span></span><span class="sig-name descname"><span class="pre">remove_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/assumptions/ask.py#L608-L628"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.assumptions.ask.remove_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a handler from the ask system. Same syntax as register_handler</p>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8.: </span>Use multipledispatch handler instead. See <a class="reference internal" href="assume.html#sympy.assumptions.assume.Predicate" title="sympy.assumptions.assume.Predicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Predicate</span></code></a>.</p>
@@ -1714,7 +1724,7 @@ class inheriting from AskHandler.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

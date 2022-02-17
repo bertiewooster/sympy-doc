@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Memoization &#8212; SymPy 1.10.dev documentation</title>
+    <title>Memoization &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Miscellaneous" href="misc.html" />
     <link rel="prev" title="Lambdify" href="lambdify.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -578,6 +578,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1253,6 +1258,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="iterables.html">
        Iterables
       </a>
@@ -1557,7 +1567,7 @@
 <span id="memoization"></span><h1>Memoization<a class="headerlink" href="#module-sympy.utilities.memoization" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.utilities.memoization.assoc_recurrence_memo">
-<span class="sig-prename descclassname"><span class="pre">sympy.utilities.memoization.</span></span><span class="sig-name descname"><span class="pre">assoc_recurrence_memo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_seq</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/memoization.py#L25-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.memoization.assoc_recurrence_memo" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.memoization.</span></span><span class="sig-name descname"><span class="pre">assoc_recurrence_memo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_seq</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/memoization.py#L25-L59"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.memoization.assoc_recurrence_memo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Memo decorator for associated sequences defined by recurrence starting from base</p>
 <p>base_seq(n) – callable to get base sequence elements</p>
 <p>XXX works only for Pn0 = base_seq(0) cases
@@ -1566,7 +1576,7 @@ XXX works only for m &lt;= n cases</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.utilities.memoization.recurrence_memo">
-<span class="sig-prename descclassname"><span class="pre">sympy.utilities.memoization.</span></span><span class="sig-name descname"><span class="pre">recurrence_memo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/utilities/memoization.py#L4-L22"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.memoization.recurrence_memo" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.utilities.memoization.</span></span><span class="sig-name descname"><span class="pre">recurrence_memo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/utilities/memoization.py#L4-L22"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.utilities.memoization.recurrence_memo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Memo decorator for sequences defined by recurrence</p>
 <p>See usage examples e.g. in the specfun/combinatorial module</p>
 </dd></dl>
@@ -1613,7 +1623,7 @@ XXX works only for m &lt;= n cases</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Prufer Sequences &#8212; SymPy 1.10.dev documentation</title>
+    <title>Prufer Sequences &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Subsets" href="subsets.html" />
     <link rel="prev" title="Polyhedron" href="polyhedron.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -578,6 +578,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1253,6 +1258,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../utilities/iterables.html">
        Iterables
       </a>
@@ -1557,7 +1567,7 @@
 <span id="prufer-sequences"></span><span id="combinatorics-prufer"></span><h1>Prufer Sequences<a class="headerlink" href="#module-sympy.combinatorics.prufer" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.prufer.</span></span><span class="sig-name descname"><span class="pre">Prufer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/prufer.py#L11-L436"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.combinatorics.prufer.</span></span><span class="sig-name descname"><span class="pre">Prufer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/combinatorics/prufer.py#L11-L436"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Prufer correspondence is an algorithm that describes the
 bijection between labeled trees and the Prufer code. A Prufer
 code of a labeled tree is unique up to isomorphism and has
@@ -1572,7 +1582,7 @@ proof of Cayley’s formula.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.edges">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">runs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/prufer.py#L239-L292"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.edges" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">runs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/combinatorics/prufer.py#L239-L292"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of edges and the number of nodes from the given runs
 that connect nodes in an integer-labelled tree.</p>
 <p>All node numbers will be shifted so that the minimum node is 0. It is
@@ -1595,7 +1605,7 @@ must be present.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.next">
-<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/prufer.py#L392-L412"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.next" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/combinatorics/prufer.py#L392-L412"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.next" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the Prufer sequence that is delta beyond the current one.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1615,7 +1625,7 @@ must be present.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.nodes">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nodes</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.nodes" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nodes</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of nodes in the tree.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1629,7 +1639,7 @@ must be present.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.prev">
-<span class="sig-name descname"><span class="pre">prev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/prufer.py#L414-L436"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.prev" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">prev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/combinatorics/prufer.py#L414-L436"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.prev" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the Prufer sequence that is -delta before the current one.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1651,7 +1661,7 @@ must be present.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.prufer_rank">
-<span class="sig-name descname"><span class="pre">prufer_rank</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/prufer.py#L294-L316"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.prufer_rank" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">prufer_rank</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/combinatorics/prufer.py#L294-L316"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.prufer_rank" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the rank of a Prufer sequence.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1668,7 +1678,7 @@ must be present.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.prufer_repr">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">prufer_repr</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.prufer_repr" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prufer_repr</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.prufer_repr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns Prufer sequence for the Prufer object.</p>
 <p>This sequence is found by removing the highest numbered vertex,
 recording the node it was attached to, and continuing until only
@@ -1689,7 +1699,7 @@ two vertices remain. The Prufer sequence is the list of recorded nodes.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.rank">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">rank</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.rank" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rank</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.rank" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the rank of the Prufer sequence.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1710,7 +1720,7 @@ two vertices remain. The Prufer sequence is the list of recorded nodes.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.size">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.size" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of possible trees of this Prufer object.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1726,7 +1736,7 @@ two vertices remain. The Prufer sequence is the list of recorded nodes.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.to_prufer">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">to_prufer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/prufer.py#L143-L192"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.to_prufer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_prufer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/combinatorics/prufer.py#L143-L192"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.to_prufer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Prufer sequence for a tree given as a list of edges where
 <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of nodes in the tree.</p>
 <p class="rubric">Examples</p>
@@ -1749,7 +1759,7 @@ two vertices remain. The Prufer sequence is the list of recorded nodes.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.to_tree">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">to_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prufer</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/prufer.py#L194-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.to_tree" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prufer</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/combinatorics/prufer.py#L194-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.to_tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the tree (as a list of edges) of the given Prufer sequence.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1777,7 +1787,7 @@ two vertices remain. The Prufer sequence is the list of recorded nodes.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.tree_repr">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">tree_repr</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.tree_repr" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tree_repr</span></span><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.tree_repr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the tree representation of the Prufer object.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1795,7 +1805,7 @@ two vertices remain. The Prufer sequence is the list of recorded nodes.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.combinatorics.prufer.Prufer.unrank">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">unrank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/combinatorics/prufer.py#L318-L335"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.unrank" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unrank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/combinatorics/prufer.py#L318-L335"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.combinatorics.prufer.Prufer.unrank" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds the unranked Prufer sequence.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.combinatorics.prufer</span> <span class="kn">import</span> <span class="n">Prufer</span>
@@ -1849,7 +1859,7 @@ two vertices remain. The Prufer sequence is the list of recorded nodes.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Ellipses &#8212; SymPy 1.10.dev documentation</title>
+    <title>Ellipses &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -34,8 +34,8 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
     <link href="https://docs.sympy.org/latest/modules/geometry/ellipses.html" rel="canonical" />
     
@@ -44,7 +44,7 @@
     <link rel="next" title="Polygons" href="polygons.html" />
     <link rel="prev" title="Curves" href="curves.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -580,6 +580,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1255,6 +1260,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../utilities/iterables.html">
        Iterables
       </a>
@@ -1559,7 +1569,7 @@
 <span id="ellipses"></span><h1>Ellipses<a class="headerlink" href="#module-sympy.geometry.ellipse" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.geometry.ellipse.</span></span><span class="sig-name descname"><span class="pre">Ellipse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hradius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vradius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eccentricity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L38-L1488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.geometry.ellipse.</span></span><span class="sig-name descname"><span class="pre">Ellipse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hradius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vradius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eccentricity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L38-L1488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse" title="Permalink to this definition">¶</a></dt>
 <dd><p>An elliptical GeometryEntity.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1650,7 +1660,7 @@ rotation is necessary.</p>
 </table>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.apoapsis">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">apoapsis</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.apoapsis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apoapsis</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.apoapsis" title="Permalink to this definition">¶</a></dt>
 <dd><p>The apoapsis of the ellipse.</p>
 <p>The greatest distance between the focus and the contour.</p>
 <dl class="field-list simple">
@@ -1677,7 +1687,7 @@ rotation is necessary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.arbitrary_point">
-<span class="sig-name descname"><span class="pre">arbitrary_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L214-L253"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.arbitrary_point" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">arbitrary_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L214-L253"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.arbitrary_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>A parameterized point on the ellipse.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1711,7 +1721,7 @@ rotation is necessary.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.area">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.area" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.area" title="Permalink to this definition">¶</a></dt>
 <dd><p>The area of the ellipse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1730,7 +1740,7 @@ rotation is necessary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.auxiliary_circle">
-<span class="sig-name descname"><span class="pre">auxiliary_circle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1018-L1032"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.auxiliary_circle" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">auxiliary_circle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1018-L1032"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.auxiliary_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Circle whose diameter is the major axis of the ellipse.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Ellipse</span><span class="p">,</span> <span class="n">Point</span><span class="p">,</span> <span class="n">symbols</span>
@@ -1746,14 +1756,14 @@ rotation is necessary.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.bounds">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.bounds" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.bounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a tuple (xmin, ymin, xmax, ymax) representing the bounding
 rectangle for the geometric figure.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.center">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">center</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.center" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">center</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.center" title="Permalink to this definition">¶</a></dt>
 <dd><p>The center of the ellipse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1776,7 +1786,7 @@ rectangle for the geometric figure.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.circumference">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">circumference</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.circumference" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">circumference</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.circumference" title="Permalink to this definition">¶</a></dt>
 <dd><p>The circumference of the ellipse.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Ellipse</span>
@@ -1790,7 +1800,7 @@ rectangle for the geometric figure.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.director_circle">
-<span class="sig-name descname"><span class="pre">director_circle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1034-L1062"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.director_circle" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">director_circle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1034-L1062"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.director_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Circle consisting of all points where two perpendicular
 tangent lines to the ellipse cross each other.</p>
 <dl class="field-list">
@@ -1813,7 +1823,7 @@ tangent lines to the ellipse cross each other.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r496"><span class="brackets"><a class="fn-backref" href="#id1">R496</a></span></dt>
+<dt class="label" id="r440"><span class="brackets"><a class="fn-backref" href="#id1">R440</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Director_circle">https://en.wikipedia.org/wiki/Director_circle</a></p>
 </dd>
 </dl>
@@ -1821,7 +1831,7 @@ tangent lines to the ellipse cross each other.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.eccentricity">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">eccentricity</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.eccentricity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eccentricity</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.eccentricity" title="Permalink to this definition">¶</a></dt>
 <dd><p>The eccentricity of the ellipse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1840,7 +1850,7 @@ tangent lines to the ellipse cross each other.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.encloses_point">
-<span class="sig-name descname"><span class="pre">encloses_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L356-L407"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.encloses_point" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">encloses_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L356-L407"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.encloses_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if p is enclosed by (is inside of) self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1872,7 +1882,7 @@ tangent lines to the ellipse cross each other.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.equation">
-<span class="sig-name descname"><span class="pre">equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_slope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L409-L483"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.equation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_slope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L409-L483"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.equation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the equation of an ellipse aligned with the x and y axes;
 when slope is given, the equation returned corresponds to an ellipse
 with a major axis having that slope.</p>
@@ -1926,10 +1936,10 @@ equation, too:</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r497"><span class="brackets"><a class="fn-backref" href="#id2">R497</a></span></dt>
+<dt class="label" id="r441"><span class="brackets"><a class="fn-backref" href="#id2">R441</a></span></dt>
 <dd><p><a class="reference external" href="https://math.stackexchange.com/questions/108270/what-is-the-equation-of-an-ellipse-that-is-not-aligned-with-the-axis">https://math.stackexchange.com/questions/108270/what-is-the-equation-of-an-ellipse-that-is-not-aligned-with-the-axis</a></p>
 </dd>
-<dt class="label" id="r498"><span class="brackets"><a class="fn-backref" href="#id3">R498</a></span></dt>
+<dt class="label" id="r442"><span class="brackets"><a class="fn-backref" href="#id3">R442</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Ellipse#Equation_of_a_shifted_ellipse">https://en.wikipedia.org/wiki/Ellipse#Equation_of_a_shifted_ellipse</a></p>
 </dd>
 </dl>
@@ -1937,7 +1947,7 @@ equation, too:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.evolute">
-<span class="sig-name descname"><span class="pre">evolute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L485-L515"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.evolute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">evolute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L485-L515"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.evolute" title="Permalink to this definition">¶</a></dt>
 <dd><p>The equation of evolute of the ellipse.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1965,7 +1975,7 @@ equation, too:</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.foci">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">foci</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.foci" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foci</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.foci" title="Permalink to this definition">¶</a></dt>
 <dd><p>The foci of the ellipse.</p>
 <dl class="field-list">
 <dt class="field-odd">Raises</dt>
@@ -1997,7 +2007,7 @@ equation, too:</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.focus_distance">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">focus_distance</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.focus_distance" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">focus_distance</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.focus_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>The focal distance of the ellipse.</p>
 <p>The distance between the center and one focus.</p>
 <dl class="field-list simple">
@@ -2021,7 +2031,7 @@ equation, too:</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.hradius">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">hradius</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.hradius" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hradius</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.hradius" title="Permalink to this definition">¶</a></dt>
 <dd><p>The horizontal radius of the ellipse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2044,7 +2054,7 @@ equation, too:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.intersection">
-<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L616-L694"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.intersection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L616-L694"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.intersection" title="Permalink to this definition">¶</a></dt>
 <dd><p>The intersection of this ellipse and another geometrical entity
 <span class="math notranslate nohighlight">\(o\)</span>.</p>
 <dl class="field-list simple">
@@ -2092,7 +2102,7 @@ Circle and Ellipse types.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.is_tangent">
-<span class="sig-name descname"><span class="pre">is_tangent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L696-L775"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.is_tangent" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_tangent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L696-L775"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.is_tangent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is <span class="math notranslate nohighlight">\(o\)</span> tangent to the ellipse?</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2131,7 +2141,7 @@ Circle and Ellipse types.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.major">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">major</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.major" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">major</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.major" title="Permalink to this definition">¶</a></dt>
 <dd><p>Longer axis of the ellipse (if it can be determined) else hradius.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2168,7 +2178,7 @@ Circle and Ellipse types.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.minor">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">minor</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.minor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">minor</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.minor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shorter axis of the ellipse (if it can be determined) else vradius.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2205,7 +2215,7 @@ Circle and Ellipse types.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.normal_lines">
-<span class="sig-name descname"><span class="pre">normal_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L871-L950"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.normal_lines" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">normal_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L871-L950"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.normal_lines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normal lines between <span class="math notranslate nohighlight">\(p\)</span> and the ellipse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2240,7 +2250,7 @@ solution has an operation count of 2020.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.periapsis">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">periapsis</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.periapsis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">periapsis</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.periapsis" title="Permalink to this definition">¶</a></dt>
 <dd><p>The periapsis of the ellipse.</p>
 <p>The shortest distance between the focus and the contour.</p>
 <dl class="field-list simple">
@@ -2267,7 +2277,7 @@ solution has an operation count of 2020.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.plot_interval">
-<span class="sig-name descname"><span class="pre">plot_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1064-L1089"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.plot_interval" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1064-L1089"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.plot_interval" title="Permalink to this definition">¶</a></dt>
 <dd><p>The plot interval for the default geometric plot of the Ellipse.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2294,7 +2304,7 @@ solution has an operation count of 2020.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.polar_second_moment_of_area">
-<span class="sig-name descname"><span class="pre">polar_second_moment_of_area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1394-L1425"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.polar_second_moment_of_area" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">polar_second_moment_of_area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1394-L1425"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.polar_second_moment_of_area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the polar second moment of area of an Ellipse</p>
 <p>It is a constituent of the second moment of area, linked through
 the perpendicular axis theorem. While the planar second moment of
@@ -2317,7 +2327,7 @@ the cross-section)</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r499"><span class="brackets"><a class="fn-backref" href="#id4">R499</a></span></dt>
+<dt class="label" id="r443"><span class="brackets"><a class="fn-backref" href="#id4">R443</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Polar_moment_of_inertia">https://en.wikipedia.org/wiki/Polar_moment_of_inertia</a></p>
 </dd>
 </dl>
@@ -2325,7 +2335,7 @@ the cross-section)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.random_point">
-<span class="sig-name descname"><span class="pre">random_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1091-L1145"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.random_point" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">random_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1091-L1145"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.random_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>A random point on the ellipse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2370,7 +2380,7 @@ may not test as being in the ellipse:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.reflect">
-<span class="sig-name descname"><span class="pre">reflect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1147-L1190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.reflect" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reflect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1147-L1190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.reflect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Override GeometryEntity.reflect since the radius
 is not a GeometryEntity.</p>
 <p class="rubric">Examples</p>
@@ -2395,7 +2405,7 @@ zeros define the rotated ellipse is given.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.rotate">
-<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1192-L1214"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.rotate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1192-L1214"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotate <code class="docutils literal notranslate"><span class="pre">angle</span></code> radians counterclockwise about Point <code class="docutils literal notranslate"><span class="pre">pt</span></code>.</p>
 <p>Note: since the general ellipse is not supported, only rotations that
 are integer multiples of pi/2 are allowed.</p>
@@ -2411,7 +2421,7 @@ are integer multiples of pi/2 are allowed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.scale">
-<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1216-L1235"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.scale" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1216-L1235"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Override GeometryEntity.scale since it is the major and minor
 axes which must be scaled and they are not GeometryEntities.</p>
 <p class="rubric">Examples</p>
@@ -2426,7 +2436,7 @@ axes which must be scaled and they are not GeometryEntities.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.second_moment_of_area">
-<span class="sig-name descname"><span class="pre">second_moment_of_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1345-L1391"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.second_moment_of_area" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">second_moment_of_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1345-L1391"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.second_moment_of_area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the second moment and product moment area of an ellipse.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2455,7 +2465,7 @@ I_xy is product moment of area of an ellipse.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r500"><span class="brackets"><a class="fn-backref" href="#id5">R500</a></span></dt>
+<dt class="label" id="r444"><span class="brackets"><a class="fn-backref" href="#id5">R444</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_second_moments_of_area">https://en.wikipedia.org/wiki/List_of_second_moments_of_area</a></p>
 </dd>
 </dl>
@@ -2463,7 +2473,7 @@ I_xy is product moment of area of an ellipse.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.section_modulus">
-<span class="sig-name descname"><span class="pre">section_modulus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1428-L1488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.section_modulus" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">section_modulus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1428-L1488"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.section_modulus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a tuple with the section modulus of an ellipse</p>
 <p>Section modulus is a geometric property of an ellipse defined as the
 ratio of second moment of area to the distance of the extreme end of
@@ -2502,7 +2512,7 @@ determined for a point below the centroidal axis.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r501"><span class="brackets"><a class="fn-backref" href="#id6">R501</a></span></dt>
+<dt class="label" id="r445"><span class="brackets"><a class="fn-backref" href="#id6">R445</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Section_modulus">https://en.wikipedia.org/wiki/Section_modulus</a></p>
 </dd>
 </dl>
@@ -2510,7 +2520,7 @@ determined for a point below the centroidal axis.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.semilatus_rectum">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">semilatus_rectum</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.semilatus_rectum" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">semilatus_rectum</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.semilatus_rectum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the semi-latus rectum of the Ellipse.</p>
 <p>Semi-latus rectum is defined as one half of the chord through a
 focus parallel to the conic section directrix of a conic section.</p>
@@ -2538,10 +2548,10 @@ focus parallel to the conic section directrix of a conic section.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r502"><span class="brackets"><a class="fn-backref" href="#id7">R502</a></span></dt>
+<dt class="label" id="r446"><span class="brackets"><a class="fn-backref" href="#id7">R446</a></span></dt>
 <dd><p><a class="reference external" href="http://mathworld.wolfram.com/SemilatusRectum.html">http://mathworld.wolfram.com/SemilatusRectum.html</a></p>
 </dd>
-<dt class="label" id="r503"><span class="brackets"><a class="fn-backref" href="#id8">R503</a></span></dt>
+<dt class="label" id="r447"><span class="brackets"><a class="fn-backref" href="#id8">R447</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Ellipse#Semi-latus_rectum">https://en.wikipedia.org/wiki/Ellipse#Semi-latus_rectum</a></p>
 </dd>
 </dl>
@@ -2549,7 +2559,7 @@ focus parallel to the conic section directrix of a conic section.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.tangent_lines">
-<span class="sig-name descname"><span class="pre">tangent_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1237-L1316"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.tangent_lines" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">tangent_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1237-L1316"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.tangent_lines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tangent lines between <span class="math notranslate nohighlight">\(p\)</span> and the ellipse.</p>
 <p>If <span class="math notranslate nohighlight">\(p\)</span> is on the ellipse, returns the tangent line through point <span class="math notranslate nohighlight">\(p\)</span>.
 Otherwise, returns the tangent line(s) from <span class="math notranslate nohighlight">\(p\)</span> to the ellipse, or
@@ -2583,7 +2593,7 @@ None if no tangent line is possible (e.g., <span class="math notranslate nohighl
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Ellipse.vradius">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">vradius</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.vradius" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vradius</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Ellipse.vradius" title="Permalink to this definition">¶</a></dt>
 <dd><p>The vertical radius of the ellipse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2608,7 +2618,7 @@ None if no tangent line is possible (e.g., <span class="math notranslate nohighl
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Circle">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.geometry.ellipse.</span></span><span class="sig-name descname"><span class="pre">Circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1491-L1780"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.geometry.ellipse.</span></span><span class="sig-name descname"><span class="pre">Circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1491-L1779"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>A circle in space.</p>
 <p>Constructed simply from a center and a radius, from three
 non-collinear points, or the equation of a circle.</p>
@@ -2628,8 +2638,7 @@ When trying to construct circle from incorrect parameters.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Eq</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Circle</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Circle</span><span class="p">,</span> <span class="n">Eq</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
 </pre></div>
 </div>
@@ -2681,7 +2690,7 @@ else, their name or symbol can be supplied:</p>
 </table>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Circle.circumference">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">circumference</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Circle.circumference" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">circumference</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Circle.circumference" title="Permalink to this definition">¶</a></dt>
 <dd><p>The circumference of the circle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2699,7 +2708,7 @@ else, their name or symbol can be supplied:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Circle.equation">
-<span class="sig-name descname"><span class="pre">equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1634-L1663"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle.equation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1633-L1662"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle.equation" title="Permalink to this definition">¶</a></dt>
 <dd><p>The equation of the circle.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2727,7 +2736,7 @@ else, their name or symbol can be supplied:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Circle.intersection">
-<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1665-L1695"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle.intersection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1664-L1694"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle.intersection" title="Permalink to this definition">¶</a></dt>
 <dd><p>The intersection of this circle with another geometrical entity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2756,7 +2765,7 @@ else, their name or symbol can be supplied:</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Circle.radius">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">radius</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Circle.radius" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radius</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Circle.radius" title="Permalink to this definition">¶</a></dt>
 <dd><p>The radius of the circle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2778,7 +2787,7 @@ else, their name or symbol can be supplied:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Circle.reflect">
-<span class="sig-name descname"><span class="pre">reflect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1722-L1735"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle.reflect" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reflect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1721-L1734"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle.reflect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Override GeometryEntity.reflect since the radius
 is not a GeometryEntity.</p>
 <p class="rubric">Examples</p>
@@ -2791,7 +2800,7 @@ is not a GeometryEntity.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Circle.scale">
-<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/geometry/ellipse.py#L1737-L1759"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle.scale" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/geometry/ellipse.py#L1736-L1758"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.geometry.ellipse.Circle.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Override GeometryEntity.scale since the radius
 is not a GeometryEntity.</p>
 <p class="rubric">Examples</p>
@@ -2806,7 +2815,7 @@ is not a GeometryEntity.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.geometry.ellipse.Circle.vradius">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">vradius</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Circle.vradius" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vradius</span></span><a class="headerlink" href="#sympy.geometry.ellipse.Circle.vradius" title="Permalink to this definition">¶</a></dt>
 <dd><p>This Ellipse property is an alias for the Circle’s radius.</p>
 <p>Whereas hradius, major and minor can use Ellipse’s conventions,
 the vradius does not exist for a circle. It is always a positive
@@ -2866,7 +2875,7 @@ of the hradius.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

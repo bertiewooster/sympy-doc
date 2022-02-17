@@ -1,0 +1,2270 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Basic functionality of the module &#8212; SymPy 1.10.dev documentation</title>
+    
+    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    
+    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="../../_static/sympy-notailtext-favicon.ico"/>
+    <link href="https://docs.sympy.org/latest/modules/polys/basics.html" rel="canonical" />
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Examples from Wester’s Article" href="wester.html" />
+    <link rel="prev" title="Polynomial Manipulation" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/sympylogo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../tutorial/index.html">
+  SymPy Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../guides/index.html">
+  SymPy Guides
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../explanation/index.html">
+  Explanation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../reference/index.html">
+  Reference Documentation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../miscellaneous/index.html">
+  Miscellaneous
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/basics/index.html">
+   Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../assumptions/index.html">
+     Assumptions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../assumptions/ask.html">
+       Ask
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../assumptions/assume.html">
+       Assume
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../assumptions/refine.html">
+       Refine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../assumptions/predicates.html">
+       Predicates
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../calculus/index.html">
+     Calculus
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../combinatorics/index.html">
+     Combinatorics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/partitions.html">
+       Partitions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/permutations.html">
+       Permutations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/perm_groups.html">
+       Permutation Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/polyhedron.html">
+       Polyhedron
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/prufer.html">
+       Prufer Sequences
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/subsets.html">
+       Subsets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/graycode.html">
+       Gray Code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/named_groups.html">
+       Named Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/util.html">
+       Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/group_constructs.html">
+       Group constructors
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/testutil.html">
+       Test Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/tensor_can.html">
+       Tensor Canonicalization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/fp_groups.html">
+       Finitely Presented Groups
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../combinatorics/pc_groups.html">
+       Polycyclic Groups
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../functions/index.html">
+     Functions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../functions/elementary.html">
+       Elementary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../functions/combinatorial.html">
+       Combinatorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../functions/special.html">
+       Special
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../integrals/index.html">
+     Integrals
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../integrals/g-functions.html">
+       Computing Integrals using Meijer G-Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../integrals/integrals.html">
+       Integrals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../series/index.html">
+     Series
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/series.html">
+       Series Expansions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/sequences.html">
+       Sequences
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/fourier.html">
+       Fourier Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/formal.html">
+       Formal Power Series
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../series/limitseq.html">
+       Limits of Sequences
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../simplify/index.html">
+     Simplify
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../simplify/simplify.html">
+       Simplify
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../simplify/hyperexpand.html">
+       Hypergeometric Expansion
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../simplify/fu.html">
+       Hongguang Fu’s Trigonometric Simplification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../solvers/index.html">
+     Solvers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/diophantine.html">
+       Diophantine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/inequalities.html">
+       Inequality Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/ode.html">
+       ODE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/pde.html">
+       PDE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/solvers.html">
+       Solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../solvers/solveset.html">
+       Solveset
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../abc.html">
+     abc
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../algebras.html">
+     Algebras
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../concrete.html">
+     Concrete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core.html">
+     Core
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../discrete.html">
+     Discrete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../evalf.html">
+     Numerical Evaluation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../numeric-computation.html">
+     Numeric Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../rewriting.html">
+     Term Rewriting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/codegeneration/index.html">
+   Code Generation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../codegen.html">
+     Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/logic/index.html">
+   Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../logic.html">
+     Logic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sets.html">
+     Sets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/matrices/index.html">
+   Matrices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../matrices/index.html">
+     Matrices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/matrices.html">
+       Matrices (linear algebra)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/common.html">
+       Common Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/dense.html">
+       Dense Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/sparse.html">
+       Sparse Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/sparsetools.html">
+       Sparse Tools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/immutablematrices.html">
+       Immutable Matrices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/expressions.html">
+       Matrix Expressions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../matrices/normalforms.html">
+       Matrix Normal Forms
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../tensor/index.html">
+     Tensor
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/array.html">
+       N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/indexed.html">
+       Indexed Objects
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/index_methods.html">
+       Methods
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/tensor.html">
+       Tensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../tensor/toperators.html">
+       Tensor Operators
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../vector/index.html">
+     Vector
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/intro.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/basics.html">
+       Basic Implementation details
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/coordsys.html">
+       More about Coordinate Systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/fields.html">
+       Scalar and Vector Field Functionality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/examples.html">
+       General examples of usage
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/vector_integration.html">
+       Applications of Vector Integrals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/classes.html">
+       Essential Classes in sympy.vector (docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/orienterclasses.html">
+       Orienter classes (docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vector/api/vectorfunctions.html">
+       Essential Functions in sympy.vector (docstrings)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/numbertheory/index.html">
+   Number Theory
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ntheory.html">
+     Ntheory Class Reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/physics/index.html">
+   Physics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/hydrogen.html">
+     Hydrogen Wavefunctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/matrices.html">
+     Matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/paulialgebra.html">
+     Pauli Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/qho_1d.html">
+     Quantum Harmonic Oscillator in 1-D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/sho.html">
+     Quantum Harmonic Oscillator in 3-D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/secondquant.html">
+     Second Quantization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../physics/wigner.html">
+     Wigner Symbols
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/units/index.html">
+     Unit systems
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/philosophy.html">
+       Philosophy behind unit systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/examples.html">
+       Examples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/dimensions.html">
+       Dimensions and dimension systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/prefixes.html">
+       Unit prefixes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/unitsystem.html">
+       Units and unit systems
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/units/quantities.html">
+       Physical quantities
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/hep/index.html">
+     High energy physics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/vector/index.html">
+     The Physics Vector Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/vectors.html">
+       Vector &amp; ReferenceFrame
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/kinematics.html">
+       Vector: Kinematics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/advanced.html">
+       Potential Issues/Advanced Topics/Future Features in Physics/Vector Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/fields.html">
+       Scalar and Vector Field Functionality
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/classes.html">
+       Essential Classes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/kinematics.html">
+       Kinematics (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/printing.html">
+       Printing (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/functions.html">
+       Essential Functions (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/vector/api/fieldfunctions.html">
+       Docstrings for basic field functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/mechanics/index.html">
+     Classical Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/masses.html">
+       Masses, Inertias, Particles and Rigid Bodies in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/kane.html">
+       Kane’s Method in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/lagrange.html">
+       Lagrange’s Method in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/symsystem.html">
+       Symbolic Systems in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/mechanics/linearize.html">
+       Linearization in Physics/Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/lin_pend_nonmin_example.html">
+         Nonminimal Coordinates Pendulum
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../physics/mechanics/examples.html">
+       Examples for Physics/Mechanics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/rollingdisc_example.html">
+         A rolling disc
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/bicycle_example.html">
+         A bicycle
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/lin_pend_nonmin_example.html">
+         Nonminimal Coordinates Pendulum
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../physics/mechanics/examples/multi_degree_freedom_holonomic_system.html">
+         Multi Degree of Freedom Holonomic System
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/advanced.html">
+       Potential Issues/Advanced Topics/Future Features in Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/reference.html">
+       References for Physics/Mechanics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/autolev_parser.html">
+       Autolev Parser
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/sympy_mechanics_for_autolev_users.html">
+       SymPy Mechanics for Autolev Users
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/part_bod.html">
+       Masses, Inertias &amp; Particles, RigidBodys (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/kane_lagrange.html">
+       Kane’s Method &amp; Lagrange’s Method (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/system.html">
+       SymbolicSystem (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/linearize.html">
+       Linearization (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/expr_manip.html">
+       Expression Manipulation (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/printing.html">
+       Printing (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/body.html">
+       Body (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/mechanics/api/joint.html">
+       Joint (Docstrings)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/quantum/index.html">
+     Quantum Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/anticommutator.html">
+       Anticommutator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/cg.html">
+       Clebsch-Gordan Coefficients
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/commutator.html">
+       Commutator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/constants.html">
+       Constants
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/dagger.html">
+       Dagger
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/innerproduct.html">
+       Inner Product
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/tensorproduct.html">
+       Tensor Product
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/cartesian.html">
+       Cartesian Operators and States
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/hilbert.html">
+       Hilbert Space
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/operator.html">
+       Operator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/operatorset.html">
+       Operator/State Helper Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/qapply.html">
+       Qapply
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/represent.html">
+       Represent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/spin.html">
+       Spin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/state.html">
+       State
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/circuitplot.html">
+       Circuit Plot
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/gate.html">
+       Gates
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/grover.html">
+       Grover’s Algorithm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/qft.html">
+       QFT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/qubit.html">
+       Qubit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/shor.html">
+       Shor’s Algorithm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/quantum/piab.html">
+       Particle in a Box
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/optics/index.html">
+     Optics Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/gaussopt.html">
+       Gaussian Optics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/medium.html">
+       Medium
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/polarization.html">
+       Polarization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/utils.html">
+       Utilities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/optics/waves.html">
+       Waves
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/control/index.html">
+     Control Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/control/control.html">
+       Control
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/control/lti.html">
+       Control API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/control/control_plots.html">
+       Control System Plots
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../physics/continuum_mechanics/index.html">
+     Continuum Mechanics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/continuum_mechanics/beam.html">
+       Beam (Docstrings)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../physics/continuum_mechanics/beam_problems.html">
+       Solving Beam Bending Problems using Singularity Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/public/utilities/index.html">
+   Utilities
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+  <label for="toctree-checkbox-27">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../testing/index.html">
+     Testing
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../testing/pytest.html">
+       pytest
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../testing/randtest.html">
+       Randomised Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../testing/runtests.html">
+       Run Tests
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../utilities/index.html">
+     Utilities
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/autowrap.html">
+       Autowrap Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/codegen.html">
+       Codegen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/decorator.html">
+       Decorator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/enumerative.html">
+       Enumerative
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/iterables.html">
+       Iterables
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/lambdify.html">
+       Lambdify
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/memoization.html">
+       Memoization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/misc.html">
+       Miscellaneous
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/pkgdata.html">
+       PKGDATA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/source.html">
+       Source Code Inspection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../utilities/timeutils.html">
+       Timing Utilities
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interactive.html">
+     Interactive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../parsing.html">
+     Parsing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../printing.html">
+     Printing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../reference/public/topics/index.html">
+   Topics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label for="toctree-checkbox-30">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../geometry/index.html">
+     Geometry
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/entities.html">
+       Entities
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/utils.html">
+       Utils
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/points.html">
+       Points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/lines.html">
+       Lines
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/curves.html">
+       Curves
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/ellipses.html">
+       Ellipses
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/polygons.html">
+       Polygons
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geometry/plane.html">
+       Plane
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../holonomic/index.html">
+     Holonomic
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/about.html">
+       About Holonomic Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/represent.html">
+       Representation of holonomic functions in SymPy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/operations.html">
+       Operations on holonomic functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/convert.html">
+       Converting other representations to holonomic
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/uses.html">
+       Uses and Current limitations
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../holonomic/internal.html">
+       Internal API
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../liealgebras/index.html">
+     Lie Algebra
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Polynomial Manipulation
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Basic functionality of the module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="wester.html">
+       Examples from Wester’s Article
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="reference.html">
+       Polynomials Manipulation Module Reference
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="agca.html">
+       AGCA - Algebraic Geometry and Commutative Algebra Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="domainsintro.html">
+       Introducing the Domains of the poly module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="domainsref.html">
+       Reference docs for the Poly Domains
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="internals.html">
+       Internals of the Polynomial Manipulation Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ringseries.html">
+       Series Manipulation using Polynomials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="literature.html">
+       Literature
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="solvers.html">
+       Poly solvers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="domainmatrix.html">
+       Introducing the domainmatrix of the poly module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="numberfields.html">
+       Number Fields
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../categories.html">
+     Category Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../crypto.html">
+     Cryptography
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../diffgeom.html">
+     Differential Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats.html">
+     Stats
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-concepts">
+   Basic concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomials">
+     Polynomials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#divisibility">
+     Divisibility
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#integral-domains">
+       Integral domains
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#factorial-domains">
+       Factorial domains
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#euclidean-domains">
+       Euclidean domains
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#divisibility-of-polynomials">
+       Divisibility of polynomials
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-functionality">
+   Basic functionality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#division">
+     Division
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gcd-and-lcm">
+     GCD and LCM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#square-free-factorization">
+     Square-free factorization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factorization">
+     Factorization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groebner-bases">
+     Groebner bases
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-equations">
+     Solving Equations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="basic-functionality-of-the-module">
+<span id="polys-basics"></span><h1>Basic functionality of the module<a class="headerlink" href="#basic-functionality-of-the-module" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial tries to give an overview of the functionality concerning
+polynomials within SymPy. All code examples assume:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x,y,z&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">wrap_line</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="basic-concepts">
+<h2>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
+<section id="polynomials">
+<h3>Polynomials<a class="headerlink" href="#polynomials" title="Permalink to this headline">¶</a></h3>
+<p>Given a family <span class="math notranslate nohighlight">\((x_i)\)</span> of symbols, or other suitable objects, including
+numbers, expressions derived from them by repeated addition, subtraction
+and multiplication are called <em>polynomial expressions in the
+generators</em> <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
+<p>By the distributive law it is possible to perform
+multiplications before additions and subtractions.
+The products of generators thus obtained are called
+<em>monomials</em>. They are usually written in the form
+<span class="math notranslate nohighlight">\(x_1^{\nu_1}x_2^{\nu_2}\cdots x_n^{\nu_n}\)</span> where the exponents <span class="math notranslate nohighlight">\(\nu_i\)</span>
+are nonnegative integers. It is often convenient to write this briefly
+as <span class="math notranslate nohighlight">\(x^\nu\)</span> where <span class="math notranslate nohighlight">\(x = (x_1, x_2, \ldots, x_n)\)</span> denotes the family of
+generators and <span class="math notranslate nohighlight">\(\nu = (\nu_1, \nu_2, \ldots, \nu_n)\)</span> is the
+family of exponents.</p>
+<p>When all monomials having the same exponents are combined, the polynomial
+expression
+becomes a sum of products <span class="math notranslate nohighlight">\(c_\nu x^\nu\)</span>, called the <em>terms</em> of the polynomial,
+where the <em>coefficients</em> <span class="math notranslate nohighlight">\(c_\nu\)</span> are integers.
+If some of the <span class="math notranslate nohighlight">\(x_i\)</span> are manifest numbers, they are incorporated
+in the coefficients and not regarded as generators. Such coefficients
+are typically rational, real or complex numbers. Some symbolic numbers,
+e.g., <code class="docutils literal notranslate"><span class="pre">pi</span></code>, can be either coefficients or generators.</p>
+<p>A polynomial expression that is a sum of terms with different
+monomials is uniquely determined by its family of coefficients
+<span class="math notranslate nohighlight">\((c_\nu)\)</span>. Such an expression is customarily called a <em>polynomial</em>,
+though, more properly, that name does stand for the coefficient
+family once the generators are given.
+SymPy implements polynomials by default as dictionaries with monomials
+as keys and coefficients as values. Another implementation consists
+of nested lists of coefficients.</p>
+<p>The set of all polynomials with integer coefficients
+in the generators <span class="math notranslate nohighlight">\(x_i\)</span> is a <em>ring</em>, i.e., the sums, differences and
+products of its elements are again polynomials in the same generators.
+This ring is denoted <span class="math notranslate nohighlight">\(\mathbb{Z}[x_1, x_2, \ldots, x_n]\)</span>, or
+<span class="math notranslate nohighlight">\(\mathbb{Z}[(x_i)]\)</span>, and called
+the <em>ring of polynomials in the</em> <span class="math notranslate nohighlight">\(x_i\)</span> <em>with integer coefficients</em>.</p>
+<p>More generally, the coefficients of a polynomial can be elements of
+any commutative ring <span class="math notranslate nohighlight">\(A\)</span>, and the corresponding polynomial ring
+is then denoted <span class="math notranslate nohighlight">\(A[x_1, x_2, \dots, x_n]\)</span>. The ring <span class="math notranslate nohighlight">\(A\)</span> can also
+be a polynomial ring. In SymPy, the coefficient ring is called the
+<code class="docutils literal notranslate"><span class="pre">domain</span></code> of the polynomial ring, and it can be given as a
+keyword parameter. By default, it is determined by the coefficients
+of the polynomial arguments.</p>
+<p>Polynomial expressions can be transformed into polynomials by the
+method <a class="reference internal" href="../core.html#sympy.core.expr.Expr.as_poly" title="sympy.core.expr.Expr.as_poly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.core.expr.Expr.as_poly</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">()</span>
+<span class="go">Poly(x*y - 2*x*z + y**2 - 2*y*z, x, y, z, domain=&#39;ZZ&#39;)</span>
+</pre></div>
+</div>
+<p>If a polynomial expression contains numbers that are not integers,
+they are regarded as coefficients and the coefficient ring is
+extended accordingly. In particular, division by integers
+leads to rational coefficients:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">()</span>
+<span class="go">Poly(3/2*x*z - 3/2*x + y*z - y, x, y, z, domain=&#39;QQ&#39;)</span>
+</pre></div>
+</div>
+<p>Symbolic numbers are considered generators unless they are explicitly
+excluded, in which case they are adjoined to the coefficient ring:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">()</span>
+<span class="go">Poly(x*y + 2*y*pi, x, y, pi, domain=&#39;ZZ&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">Poly(x*y + 2*pi*y, x, y, domain=&#39;ZZ[pi]&#39;)</span>
+</pre></div>
+</div>
+<p>Alternatively, the coefficient domain can be specified by means of
+a keyword argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">ZZ</span><span class="p">[</span><span class="n">pi</span><span class="p">])</span>
+<span class="go">Poly(x*y + 2*pi*y, x, y, domain=&#39;ZZ[pi]&#39;)</span>
+</pre></div>
+</div>
+<p>Note that the ring <span class="math notranslate nohighlight">\(\mathbb{Z}[\pi][x, y]\)</span> of polynomials in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>
+with coefficients in <span class="math notranslate nohighlight">\(\mathbb{Z}[\pi]\)</span> is mathematically equivalent to
+<span class="math notranslate nohighlight">\(\mathbb{Z}[\pi, x, y]\)</span>, only their implementations differ.</p>
+<p>If an expression contains functions of the generators, other
+than their positive integer powers, these are interpreted as new
+generators:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">()</span>
+<span class="go">Poly(x*(sin(y)) - y, x, y, sin(y), domain=&#39;ZZ&#39;)</span>
+</pre></div>
+</div>
+<p>Since <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(\sin(y)\)</span> are algebraically independent they can both
+appear as generators in a polynomial. However, <em>polynomial expressions
+must not contain negative powers of generators</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">()</span>
+<span class="go">Poly(x - (1/x), x, 1/x, domain=&#39;ZZ&#39;)</span>
+</pre></div>
+</div>
+<p>It is important to realize that the generators <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(1/x = x^{-1}\)</span> are
+treated as algebraically independent variables. In particular, their product
+is not equal to 1. Hence <em>generators in denominators should be avoided even
+if they raise no error in the current implementation</em>. This behavior is
+undesirable and may change in the future. Similar problems emerge with
+rational powers of generators. So, for example, <span class="math notranslate nohighlight">\(x\)</span> and
+<span class="math notranslate nohighlight">\(\sqrt x = x^{1/2}\)</span> are not recognized as algebraically dependent.</p>
+<p>If there are algebraic numbers in an expression, it is possible to
+adjoin them to the coefficient ring by setting the keyword <code class="docutils literal notranslate"><span class="pre">extension</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">()</span>
+<span class="go">Poly(x + (sqrt(2)), x, sqrt(2), domain=&#39;ZZ&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e</span><span class="o">.</span><span class="n">as_poly</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">Poly(x + sqrt(2), x, domain=&#39;QQ&lt;sqrt(2)&gt;&#39;)</span>
+</pre></div>
+</div>
+<p>With the default setting <code class="docutils literal notranslate"><span class="pre">extension=False</span></code>, both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\sqrt 2\)</span> are
+incorrectly considered algebraically independent variables. With
+coefficients in the extension field <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt 2)\)</span>
+the square root is treated properly as an algebraic number. Setting
+<code class="docutils literal notranslate"><span class="pre">extension=True</span></code> whenever algebraic numbers are involved is definitely
+recommended even though it is not forced in the current implementation.</p>
+</section>
+<section id="divisibility">
+<h3>Divisibility<a class="headerlink" href="#divisibility" title="Permalink to this headline">¶</a></h3>
+<p>The fourth rational operation, division, or inverted multiplication,
+is not generally possible in rings. If <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are two elements
+of a ring <span class="math notranslate nohighlight">\(A\)</span>, then there may exist a third element <span class="math notranslate nohighlight">\(q\)</span> in <span class="math notranslate nohighlight">\(A\)</span> such
+that <span class="math notranslate nohighlight">\(a = bq\)</span>. In fact, there may exist several such elements.</p>
+<p>If also <span class="math notranslate nohighlight">\(a = bq'\)</span> for some <span class="math notranslate nohighlight">\(q'\)</span> in <span class="math notranslate nohighlight">\(A\)</span>, then <span class="math notranslate nohighlight">\(b(q - q') = 0\)</span>. Hence
+either <span class="math notranslate nohighlight">\(b\)</span> or <span class="math notranslate nohighlight">\(q - q'\)</span> is zero, or they are both <em>zero divisors</em>,
+nonzero elements whose product is zero.</p>
+<section id="integral-domains">
+<h4>Integral domains<a class="headerlink" href="#integral-domains" title="Permalink to this headline">¶</a></h4>
+<p>Commutative rings with no zero divisors are called <em>integral domains</em>.
+Most of the commonly encountered rings, the ring of integers, fields,
+and polynomial rings over integral domains are integral domains.</p>
+<p>Assume now that <span class="math notranslate nohighlight">\(A\)</span> is an integral domain, and consider the set
+<span class="math notranslate nohighlight">\(P\)</span> of its nonzero elements, which is closed under multiplication.
+If <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are in <span class="math notranslate nohighlight">\(P\)</span>, and there exists an element <span class="math notranslate nohighlight">\(q\)</span> in <span class="math notranslate nohighlight">\(P\)</span>
+such that <span class="math notranslate nohighlight">\(a = bq\)</span>, then <span class="math notranslate nohighlight">\(q\)</span> is unique and called the <em>quotient</em>,
+<span class="math notranslate nohighlight">\(a/b\)</span>, of <span class="math notranslate nohighlight">\(a\)</span>  by <span class="math notranslate nohighlight">\(b\)</span>. Moreover, it is said that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> is <em>divisible</em> by <span class="math notranslate nohighlight">\(b\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> is a <em>divisor</em> of <span class="math notranslate nohighlight">\(a\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> is a <em>multiple</em> of <span class="math notranslate nohighlight">\(b\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> is a <em>factor</em> of <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
+</ul>
+<p>An element <span class="math notranslate nohighlight">\(a\)</span> of <span class="math notranslate nohighlight">\(P\)</span> is a divisor of <span class="math notranslate nohighlight">\(1\)</span> if and only if it
+is <em>invertible</em> in <span class="math notranslate nohighlight">\(A\)</span>, with the inverse <span class="math notranslate nohighlight">\(a^{-1} = 1/a\)</span>. Such
+elements are called <em>units</em>. The units of the ring
+of integers are <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(-1\)</span>. The invertible elements
+in a polynomial ring over a field are the nonzero constant polynomials.</p>
+<p>If two elements of <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, are divisible by each other, then
+the quotient <span class="math notranslate nohighlight">\(a/b\)</span> is invertible with inverse <span class="math notranslate nohighlight">\(b/a\)</span>, or equivalently,
+<span class="math notranslate nohighlight">\(b = ua\)</span> where <span class="math notranslate nohighlight">\(u\)</span> is a unit. Such elements are said to be <em>associated</em>
+with, or <em>associates</em> of, each other. The associates of an integer
+<span class="math notranslate nohighlight">\(n\)</span> are <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(-n\)</span>. In a polynomial ring over a field the associates
+of a polynomial are its constant multiples.</p>
+<p>Each element of <span class="math notranslate nohighlight">\(P\)</span> is divisible by its associates and the units. An
+element is <em>irreducible</em> if it has no other divisors and is not a unit.
+The irreducible elements in the ring of integers are the prime numbers
+<span class="math notranslate nohighlight">\(p\)</span> and their opposites <span class="math notranslate nohighlight">\(-p\)</span>. In a field, every nonzero element is
+invertible and there are no irreducible elements.</p>
+</section>
+<section id="factorial-domains">
+<h4>Factorial domains<a class="headerlink" href="#factorial-domains" title="Permalink to this headline">¶</a></h4>
+<p>In the ring of integers, each nonzero element can be represented as
+a product of irreducible elements and optionally a unit <span class="math notranslate nohighlight">\(\pm 1\)</span>. Moreover,
+any two such products have the same number of irreducible factors
+which are associated with each other in a suitable order.
+Integral domains having this property are called <em>factorial</em>,
+or <em>unique factorization domains</em>. In addition to the ring of
+integers, all polynomial rings over a field are factorial, and so are
+more generally polynomial rings over any factorial domain. Fields
+are trivially factorial since there are only units. The irreducible
+elements of a factorial domain are usually called <em>primes</em>.</p>
+<p>A family of integers has only a finite number of common divisors
+and the greatest of them is divisible by all of them. More generally,
+given a family of nonzero elements <span class="math notranslate nohighlight">\((a_i)\)</span> in an integral domain,
+a common divisor <span class="math notranslate nohighlight">\(d\)</span> of the elements is called a <em>greatest common
+divisor</em>, abbreviated <em>gcd</em>, of the family if it is a multiple
+of all common divisors.
+A greatest common divisor, if it exists, is not unique in general;
+all of its associates have the same property. It is denoted by
+<span class="math notranslate nohighlight">\(d = \gcd(a_1,\ldots,a_n)\)</span> if there is no danger of confusion.
+A <em>least common multiple</em>, or <em>lcm</em>, of a family <span class="math notranslate nohighlight">\((a_i)\)</span> is defined
+analogously as a common multiple <span class="math notranslate nohighlight">\(m\)</span> that divides all common multiples.
+It is denoted by <span class="math notranslate nohighlight">\(m = \operatorname{lcm}(a_1,\dots,a_n)\)</span>.</p>
+<p>In a factorial domain, greatest common divisors always exists. They can
+be found, at least in principle, by factoring each element of a family
+into a product of prime powers and an optional unit, and, for each prime,
+taking the least power that appears in the factorizations.
+The product of these prime powers is then a greatest common divisor.
+A least common multiple can be obtained from the same factorizations
+as the product of the greatest powers for each prime.</p>
+</section>
+<section id="euclidean-domains">
+<h4>Euclidean domains<a class="headerlink" href="#euclidean-domains" title="Permalink to this headline">¶</a></h4>
+<p>A practical algorithm for computing a greatest common divisor can
+be implemented in <em>Euclidean domains</em>. They are integral domains that
+can be endowed with a function <span class="math notranslate nohighlight">\(w\)</span> assigning a nonnegative integer to
+each nonzero element of the domain and having the following property:</p>
+<blockquote>
+<div><p>if <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are nonzero, there are <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(r\)</span> that satisfy
+the <em>division identity</em></p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(a = qb + r\)</span></p>
+</div></blockquote>
+<p>such that either <span class="math notranslate nohighlight">\(r = 0\)</span> or <span class="math notranslate nohighlight">\(w(r) &lt; w(b)\)</span>.</p>
+</div></blockquote>
+<p>The ring of integers and all univariate polynomial rings over fields
+are Euclidean domains with <span class="math notranslate nohighlight">\(w(a) = |a|\)</span> resp. <span class="math notranslate nohighlight">\(w(a) = \deg(a)\)</span>.</p>
+<p>The division identity for integers is implemented in Python as the built-in
+function <code class="docutils literal notranslate"><span class="pre">divmod</span></code> that can also be applied to SymPy Integers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">divmod</span><span class="p">(</span><span class="n">Integer</span><span class="p">(</span><span class="mi">53</span><span class="p">),</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+<span class="go">(7, 4)</span>
+</pre></div>
+</div>
+<p>For polynomials the division identity is given in SymPy by the
+function <a class="reference internal" href="reference.html#sympy.polys.polytools.div" title="sympy.polys.polytools.div"><code class="xref py py-func docutils literal notranslate"><span class="pre">div()</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s1">&#39;QQ&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">5*x   5</span>
+<span class="go">--- + -</span>
+<span class="go"> 2    2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
+<span class="go">-2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">g</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="go">   2</span>
+<span class="go">5*x  + 10*x + 3</span>
+</pre></div>
+</div>
+<p>The division identity can be used to determine the divisibility
+of elements in a Euclidean domain.
+If <span class="math notranslate nohighlight">\(r = 0\)</span> in the division identity, then <span class="math notranslate nohighlight">\(a\)</span> is divisible by <span class="math notranslate nohighlight">\(b\)</span>.
+Conversely, if <span class="math notranslate nohighlight">\(a = cb\)</span> for some element <span class="math notranslate nohighlight">\(c\)</span>, then <span class="math notranslate nohighlight">\((c - q)b = r\)</span>.
+It follows that <span class="math notranslate nohighlight">\(c = q\)</span> and <span class="math notranslate nohighlight">\(r = 0\)</span> if <span class="math notranslate nohighlight">\(w\)</span> has the additional property:</p>
+<blockquote>
+<div><p>if <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are nonzero, then <span class="math notranslate nohighlight">\(w(ab) \ge w(b)\)</span>.</p>
+</div></blockquote>
+<p>This is satisfied by the functions given above. (And it is always
+possible to redefine <span class="math notranslate nohighlight">\(w(a)\)</span> by taking the minimum of the values <span class="math notranslate nohighlight">\(w(xa)\)</span>
+for <span class="math notranslate nohighlight">\(x \ne 0\)</span>.)</p>
+<p>The principal application of the division identity is the efficient
+computation of a greatest common divisor by means of the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Euclidean_algorithm">Euclidean algorithm</a>.
+It applies to two elements of a Euclidean domain. A gcd of several
+elements can be obtained by iteration.</p>
+<p>The function for computing the greatest common divisor of integers in
+SymPy is currently <a class="reference internal" href="../core.html#sympy.core.numbers.igcd" title="sympy.core.numbers.igcd"><code class="xref py py-func docutils literal notranslate"><span class="pre">igcd()</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">igcd</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">igcd</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p>For univariate polynomials over a field the function has its common
+name <a class="reference internal" href="reference.html#sympy.polys.polytools.gcd" title="sympy.polys.polytools.gcd"><code class="xref py py-func docutils literal notranslate"><span class="pre">gcd()</span></code></a>, and the returned polynomial is monic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="n">QQ</span><span class="p">)</span>
+<span class="go">x + 1/2</span>
+</pre></div>
+</div>
+</section>
+<section id="divisibility-of-polynomials">
+<h4>Divisibility of polynomials<a class="headerlink" href="#divisibility-of-polynomials" title="Permalink to this headline">¶</a></h4>
+<p>The ring <span class="math notranslate nohighlight">\(A = \mathbb{Z}[x]\)</span> of univariate polynomials over the ring of
+integers is not Euclidean but it is still factorial. To see this,
+consider the divisibility in <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> be two nonzero polynomials in <span class="math notranslate nohighlight">\(A\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> is divisible
+by <span class="math notranslate nohighlight">\(g\)</span> in <span class="math notranslate nohighlight">\(A\)</span>, then it is also divisible in the ring <span class="math notranslate nohighlight">\(B = \mathbb{Q}[x]\)</span>
+of polynomials with rational coefficients. Since <span class="math notranslate nohighlight">\(B\)</span> is Euclidean, this
+can be determined by means of the division identity.</p>
+<p>Assume, conversely, that <span class="math notranslate nohighlight">\(f = gh\)</span> for some polynomial <span class="math notranslate nohighlight">\(h\)</span> in <span class="math notranslate nohighlight">\(B\)</span>.
+Then <span class="math notranslate nohighlight">\(f\)</span> is divisible by <span class="math notranslate nohighlight">\(g\)</span> in <span class="math notranslate nohighlight">\(A\)</span> if and only if the coefficients
+of <span class="math notranslate nohighlight">\(h\)</span> are integers. To find out when this is true it is necessary
+to consider the divisibility of the coefficients.</p>
+<p>For a polynomial <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(A\)</span>, let <span class="math notranslate nohighlight">\(c\)</span> be the greatest common
+divisor of its coefficients. Then <span class="math notranslate nohighlight">\(f\)</span> is divisible by the constant
+polynomial <span class="math notranslate nohighlight">\(c\)</span> in <span class="math notranslate nohighlight">\(A\)</span>, and the quotient <span class="math notranslate nohighlight">\(f/c= p\)</span> is a polynomial
+whose coefficients are integers that have no common divisor apart
+from the units. Such polynomials are called <em>primitive</em>. A polynomial
+with rational coefficients can also be written as <span class="math notranslate nohighlight">\(f = cp\)</span>, where <span class="math notranslate nohighlight">\(c\)</span>
+is a rational number and <span class="math notranslate nohighlight">\(p\)</span> is a primitive polynomial.
+The constant <span class="math notranslate nohighlight">\(c\)</span> is called the <em>content</em> of <span class="math notranslate nohighlight">\(f\)</span>, and <span class="math notranslate nohighlight">\(p\)</span> is
+its <em>primitive part</em>. These components can be found by the method
+<a class="reference internal" href="../core.html#sympy.core.expr.Expr.as_content_primitive" title="sympy.core.expr.Expr.as_content_primitive"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sympy.core.expr.Expr.as_content_primitive</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">as_content_primitive</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="p">,</span> <span class="n">p</span>
+<span class="go">       2</span>
+<span class="go">(3, 2*x  - x + 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">as_content_primitive</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="p">,</span> <span class="n">p</span>
+<span class="go">         2</span>
+<span class="go">(1/6, 2*x  - 3*x + 6)</span>
+</pre></div>
+</div>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(f'\)</span> be polynomials with contents <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(c'\)</span> and primitive
+parts <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(p'\)</span>. Then <span class="math notranslate nohighlight">\(ff' = (cc')(pp')\)</span> where the product <span class="math notranslate nohighlight">\(pp'\)</span> is
+primitive by <a class="reference external" href="https://en.wikipedia.org/wiki/Gauss%27s_lemma_(polynomial)">Gauss’s lemma</a>.
+It follows that</p>
+<blockquote>
+<div><p>the content of a product of polynomials is the product of their
+contents and the primitive part of the product is the product
+of the primitive parts.</p>
+</div></blockquote>
+<p>Returning to the divisibility in the ring <span class="math notranslate nohighlight">\(\mathbb{Z}[x]\)</span>, assume
+that <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are two polynomials with integer coefficients such that
+the division identity in <span class="math notranslate nohighlight">\(\mathbb{Q}[x]\)</span> yields the equality <span class="math notranslate nohighlight">\(f = gh\)</span>
+for some polynomial <span class="math notranslate nohighlight">\(h\)</span> with rational coefficients. Then the content
+of <span class="math notranslate nohighlight">\(f\)</span> is equal to the content of <span class="math notranslate nohighlight">\(g\)</span> multiplied by the content of <span class="math notranslate nohighlight">\(h\)</span>.
+As <span class="math notranslate nohighlight">\(h\)</span> has integer coefficients if and only if its content is an integer,
+we get the following criterion:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(f\)</span> is divisible by <span class="math notranslate nohighlight">\(g\)</span> in the ring <span class="math notranslate nohighlight">\(\mathbb{Z}[x]\)</span> if and only if</p>
+<ol class="lowerroman simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is divisible by <span class="math notranslate nohighlight">\(g\)</span> in <span class="math notranslate nohighlight">\(\mathbb{Q}[x]\)</span>, and</p></li>
+<li><p>the content of <span class="math notranslate nohighlight">\(f\)</span> is divisible by the content of <span class="math notranslate nohighlight">\(g\)</span> in
+<span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<p>If <span class="math notranslate nohighlight">\(f = cp\)</span> is irreducible in <span class="math notranslate nohighlight">\(\mathbb{Z}[x]\)</span>, then either <span class="math notranslate nohighlight">\(c\)</span> or <span class="math notranslate nohighlight">\(p\)</span>
+must be a unit. If <span class="math notranslate nohighlight">\(p\)</span> is not a unit, it must be irreducible also in
+<span class="math notranslate nohighlight">\(\mathbb{Q}[x]\)</span>. For if it is a product of two polynomials, it is also
+the product of their primitive parts, and one of them must be a unit.
+Hence there are two kinds of irreducible elements in <span class="math notranslate nohighlight">\(\mathbb{Z}[x]\)</span>:</p>
+<ol class="lowerroman simple">
+<li><p>prime numbers of <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, and</p></li>
+<li><p>primitive polynomials that are irreducible in <span class="math notranslate nohighlight">\(\mathbb{Q}[x]\)</span>.</p></li>
+</ol>
+<p>It follows that each polynomial in <span class="math notranslate nohighlight">\(\mathbb{Z}[x]\)</span> is a product
+of irreducible elements. It suffices to factor its content and
+primitive part separately. These products are essentially unique;
+hence <span class="math notranslate nohighlight">\(\mathbb{Z}[x]\)</span> is also factorial.</p>
+<p>Another important consequence is that a greatest common divisor
+of two polynomials in <span class="math notranslate nohighlight">\(\mathbb{Z}[x]\)</span> can be found efficiently
+by applying the Euclidean algorithm separately to their contents
+and primitive parts in the Euclidean domains <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and
+<span class="math notranslate nohighlight">\(\mathbb{Q}[x]\)</span>. This is also implemented in SymPy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+<span class="go">2*x + 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcd</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">f</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="go">6*x + 3</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="basic-functionality">
+<h2>Basic functionality<a class="headerlink" href="#basic-functionality" title="Permalink to this headline">¶</a></h2>
+<p>These functions provide different algorithms dealing with polynomials in the
+form of SymPy expression, like symbols, sums etc.</p>
+<section id="division">
+<h3>Division<a class="headerlink" href="#division" title="Permalink to this headline">¶</a></h3>
+<p>The function <a class="reference internal" href="reference.html#sympy.polys.polytools.div" title="sympy.polys.polytools.div"><code class="xref py py-func docutils literal notranslate"><span class="pre">div()</span></code></a> provides division of polynomials with remainder.
+That is, for polynomials <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code>, it computes <code class="docutils literal notranslate"><span class="pre">q</span></code> and <code class="docutils literal notranslate"><span class="pre">r</span></code>, such
+that <span class="math notranslate nohighlight">\(f = g \cdot q + r\)</span> and <span class="math notranslate nohighlight">\(\deg(r) &lt; \deg(q)\)</span>. For polynomials in one variables
+with coefficients in a field, say, the rational numbers, <code class="docutils literal notranslate"><span class="pre">q</span></code> and <code class="docutils literal notranslate"><span class="pre">r</span></code> are
+uniquely defined this way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s1">&#39;QQ&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">5*x   5</span>
+<span class="go">--- + -</span>
+<span class="go"> 2    2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
+<span class="go">-2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">g</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="go">   2</span>
+<span class="go">5*x  + 10*x + 3</span>
+</pre></div>
+</div>
+<p>As you can see, <code class="docutils literal notranslate"><span class="pre">q</span></code> has a non-integer coefficient. If you want to do division
+only in the ring of polynomials with integer coefficients, you can specify an
+additional parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s1">&#39;ZZ&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
+<span class="go">   2</span>
+<span class="go">5*x  + 10*x + 3</span>
+</pre></div>
+</div>
+<p>But be warned, that this ring is no longer Euclidean and that the degree of the
+remainder doesn’t need to be smaller than that of <code class="docutils literal notranslate"><span class="pre">f</span></code>. Since 2 doesn’t divide 5,
+<span class="math notranslate nohighlight">\(2 x\)</span> doesn’t divide <span class="math notranslate nohighlight">\(5 x^2\)</span>, even if the degree is smaller. But:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s1">&#39;ZZ&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
+<span class="go">9*x + 3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">g</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="go">   2</span>
+<span class="go">5*x  + 10*x + 3</span>
+</pre></div>
+</div>
+<p>This also works for polynomials with multiple variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">z</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s1">&#39;QQ&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">y</span>
+<span class="go">-</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>In the last examples, all of the three variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> are
+assumed to be variables of the polynomials. But if you have some unrelated
+constant as coefficient, you can specify the variables explicitly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a,b,c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="s1">&#39;QQ&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">a*x   2*a   b</span>
+<span class="go">--- - --- + -</span>
+<span class="go"> 3     9    3</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
+<span class="go">4*a   2*b</span>
+<span class="go">--- - --- + c</span>
+<span class="go"> 9     3</span>
+</pre></div>
+</div>
+</section>
+<section id="gcd-and-lcm">
+<h3>GCD and LCM<a class="headerlink" href="#gcd-and-lcm" title="Permalink to this headline">¶</a></h3>
+<p>With division, there is also the computation of the greatest common divisor and
+the least common multiple.</p>
+<p>When the polynomials have integer coefficients, the contents’ gcd is also
+considered:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">12</span><span class="p">)</span><span class="o">*</span><span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">16</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+<span class="go">4*x</span>
+</pre></div>
+</div>
+<p>But if the polynomials have rational coefficients, then the returned polynomial is
+monic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">9</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+<span class="go">x</span>
+</pre></div>
+</div>
+<p>It also works with multiple variables. In this case, the variables are ordered
+alphabetically, be default, which has influence on the leading coefficient:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">y</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+<span class="go">x + 2*y</span>
+</pre></div>
+</div>
+<p>The lcm is connected with the gcd and one can be computed using the other:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+<span class="go">x*y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lcm</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+<span class="go"> 3  2    2  3</span>
+<span class="go">x *y  + x *y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="n">g</span><span class="p">)</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="go"> 4  3    3  4</span>
+<span class="go">x *y  + x *y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="n">lcm</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>
+<span class="go"> 4  3    3  4</span>
+<span class="go">x *y  + x *y</span>
+</pre></div>
+</div>
+</section>
+<section id="square-free-factorization">
+<h3>Square-free factorization<a class="headerlink" href="#square-free-factorization" title="Permalink to this headline">¶</a></h3>
+<p>The square-free factorization of a univariate polynomial is the product of all
+factors (not necessarily irreducible) of degree 1, 2 etc.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">5</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqf_list</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">                   2</span>
+<span class="go">(1, [(x + 2, 1), (x  + x, 2)])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqf</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">                2</span>
+<span class="go">        / 2    \</span>
+<span class="go">(x + 2)*\x  + x/</span>
+</pre></div>
+</div>
+</section>
+<section id="factorization">
+<h3>Factorization<a class="headerlink" href="#factorization" title="Permalink to this headline">¶</a></h3>
+<p>This function provides factorization of univariate and multivariate polynomials
+with rational coefficients:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">12</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="go"> 2</span>
+<span class="go">x *(2*x - 1)*(3*x + 4)</span>
+<span class="go">----------------------</span>
+<span class="go">          12</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">         2</span>
+<span class="go">(x + 2*y)</span>
+</pre></div>
+</div>
+</section>
+<section id="groebner-bases">
+<h3>Groebner bases<a class="headerlink" href="#groebner-bases" title="Permalink to this headline">¶</a></h3>
+<p>Buchberger’s algorithm is implemented, supporting various monomial orders:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">groebner</span><span class="p">([</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;lex&#39;</span><span class="p">)</span>
+<span class="go">             /[ 2       4    ]                            \</span>
+<span class="go">GroebnerBasis\[x  + 1, y  - 1], x, y, domain=ZZ, order=lex/</span>
+
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">groebner</span><span class="p">([</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span><span class="o">**</span><span class="mi">3</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;grevlex&#39;</span><span class="p">)</span>
+<span class="go">             /[ 4       3   2    ]                                   \</span>
+<span class="go">GroebnerBasis\[y  - 1, z , x  + 1], x, y, z, domain=ZZ, order=grevlex/</span>
+</pre></div>
+</div>
+</section>
+<section id="solving-equations">
+<h3>Solving Equations<a class="headerlink" href="#solving-equations" title="Permalink to this headline">¶</a></h3>
+<p>We have (incomplete) methods to find the complex or even symbolic roots of
+polynomials and to solve some systems of polynomial equations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">roots</span><span class="p">,</span> <span class="n">solve_poly_system</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">           ____          ____</span>
+<span class="go">     1   \/ 11 *I  1   \/ 11 *I</span>
+<span class="go">[-1, - - --------, - + --------]</span>
+<span class="go">     2      2      2      2</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">p</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">q</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">          __________           __________</span>
+<span class="go">         /  2                 /  2</span>
+<span class="go">   p   \/  p  - 4*q     p   \/  p  - 4*q</span>
+<span class="go">[- - - -------------, - - + -------------]</span>
+<span class="go">   2         2          2         2</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve_poly_system</span><span class="p">([</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">[(5, 5)]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve_poly_system</span><span class="p">([</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">*</span><span class="n">x</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">                                   ___                 ___</span>
+<span class="go">                             1   \/ 3 *I         1   \/ 3 *I</span>
+<span class="go">[(0, -I), (0, I), (1, 0), (- - - -------, 0), (- - + -------, 0)]</span>
+<span class="go">                             2      2            2      2</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Polynomial Manipulation</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="wester.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples from Wester’s Article</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022 SymPy Development Team.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

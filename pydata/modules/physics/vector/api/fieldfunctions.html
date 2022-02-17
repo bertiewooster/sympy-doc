@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Docstrings for basic field functions &#8212; SymPy 1.10.dev documentation</title>
+    <title>Docstrings for basic field functions &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -42,7 +42,7 @@
     <link rel="next" title="Classical Mechanics" href="../../mechanics/index.html" />
     <link rel="prev" title="Essential Functions (Docstrings)" href="functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -578,6 +578,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1253,6 +1258,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../../utilities/iterables.html">
        Iterables
       </a>
@@ -1617,7 +1627,7 @@ in general.</p>
 <h3>curl<a class="headerlink" href="#curl" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.curl">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">curl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/vector/fieldfunctions.py#L14-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.curl" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">curl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/vector/fieldfunctions.py#L14-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.curl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the curl of a vector field computed wrt the coordinate
 symbols of the given frame.</p>
 <dl class="field-list">
@@ -1651,7 +1661,7 @@ symbols of the given frame.</p>
 <h3>divergence<a class="headerlink" href="#divergence" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.divergence">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">divergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/vector/fieldfunctions.py#L58-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.divergence" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">divergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/vector/fieldfunctions.py#L58-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.divergence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the divergence of a vector field computed wrt the coordinate
 symbols of the given frame.</p>
 <dl class="field-list">
@@ -1685,7 +1695,7 @@ symbols of the given frame.</p>
 <h3>gradient<a class="headerlink" href="#gradient" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.gradient">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scalar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/vector/fieldfunctions.py#L101-L135"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.gradient" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scalar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/vector/fieldfunctions.py#L101-L135"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.gradient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the vector gradient of a scalar field computed wrt the
 coordinate symbols of the given frame.</p>
 <dl class="field-list">
@@ -1719,7 +1729,7 @@ coordinate symbols of the given frame.</p>
 <h3>scalar_potential<a class="headerlink" href="#scalar-potential" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.scalar_potential">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">scalar_potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/vector/fieldfunctions.py#L202-L249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.scalar_potential" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">scalar_potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/vector/fieldfunctions.py#L202-L249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.scalar_potential" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the scalar potential function of a field in a given frame
 (without the added integration constant).</p>
 <dl class="field-list">
@@ -1754,7 +1764,7 @@ calculated</p>
 <h3>scalar_potential_difference<a class="headerlink" href="#scalar-potential-difference" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.scalar_potential_difference">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">scalar_potential_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/vector/fieldfunctions.py#L252-L315"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.scalar_potential_difference" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">scalar_potential_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/vector/fieldfunctions.py#L252-L315"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.scalar_potential_difference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the scalar potential difference between two points in a
 certain frame, wrt a given field.</p>
 <p>If a scalar field is provided, its values at the two points are
@@ -1810,7 +1820,7 @@ calculation</p>
 <h3>is_conservative<a class="headerlink" href="#is-conservative" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.is_conservative">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">is_conservative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/vector/fieldfunctions.py#L138-L167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.is_conservative" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">is_conservative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/vector/fieldfunctions.py#L138-L167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.is_conservative" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if a field is conservative.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1837,7 +1847,7 @@ calculation</p>
 <h3>is_solenoidal<a class="headerlink" href="#is-solenoidal" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="sympy.physics.vector.fieldfunctions.is_solenoidal">
-<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">is_solenoidal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/vector/fieldfunctions.py#L170-L199"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.is_solenoidal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sympy.physics.vector.fieldfunctions.</span></span><span class="sig-name descname"><span class="pre">is_solenoidal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/762351832240b28a720b29ff98fdbae971d2f9d0/sympy/physics/vector/fieldfunctions.py#L170-L199"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.vector.fieldfunctions.is_solenoidal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if a field is solenoidal.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1903,7 +1913,7 @@ calculation</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     

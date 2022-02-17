@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Beam (Docstrings) &#8212; SymPy 1.10.dev documentation</title>
+    <title>Beam (Docstrings) &#8212; SymPy 1.11.dev documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -34,8 +34,8 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
     <link href="https://docs.sympy.org/latest/modules/physics/continuum_mechanics/beam.html" rel="canonical" />
     
@@ -44,7 +44,7 @@
     <link rel="next" title="Solving Beam Bending Problems using Singularity Functions" href="beam_problems.html" />
     <link rel="prev" title="Continuum Mechanics" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -580,6 +580,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../tensor/array.html">
        N-dim array
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tensor/array_expressions.html">
+       N-dim array expressions
       </a>
      </li>
      <li class="toctree-l3">
@@ -1255,6 +1260,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="../../utilities/exceptions.html">
+       Exceptions and Warnings
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="../../utilities/iterables.html">
        Iterables
       </a>
@@ -1573,7 +1583,7 @@
 singularity functions in mechanics.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.continuum_mechanics.beam.</span></span><span class="sig-name descname"><span class="pre">Beam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elastic_modulus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second_moment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_char</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'C'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L32-L2303"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.continuum_mechanics.beam.</span></span><span class="sig-name descname"><span class="pre">Beam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elastic_modulus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second_moment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_char</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'C'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L32-L2303"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Beam is a structural element that is capable of withstanding load
 primarily by resisting against bending. Beams are characterized by
 their cross sectional profile(Second moment of area), their length
@@ -1627,7 +1637,7 @@ of the beam. The deflection of the beam at the end is restricted.</p>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.applied_loads">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">applied_loads</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.applied_loads" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">applied_loads</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.applied_loads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of all loads applied on the beam object.
 Each load in the list is a tuple of form (value, start, order, end).</p>
 <p class="rubric">Examples</p>
@@ -1653,7 +1663,7 @@ is applied at same position.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.apply_load">
-<span class="sig-name descname"><span class="pre">apply_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L432-L498"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.apply_load" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apply_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L432-L498"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.apply_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method adds up the loads given to a particular beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1721,7 +1731,7 @@ away from the starting point of the beam.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.apply_support">
-<span class="sig-name descname"><span class="pre">apply_support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L371-L430"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.apply_support" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apply_support</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L371-L430"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.apply_support" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method applies support to a particular beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1770,13 +1780,13 @@ being positive.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.area">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.area" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cross-sectional area of the Beam.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.bending_moment">
-<span class="sig-name descname"><span class="pre">bending_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L937-L969"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.bending_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bending_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L937-L969"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.bending_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Singularity Function expression which represents
 the bending moment curve of the Beam object.</p>
 <p class="rubric">Examples</p>
@@ -1807,7 +1817,7 @@ being positive.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.boundary_conditions">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">boundary_conditions</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.boundary_conditions" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">boundary_conditions</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.boundary_conditions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary of boundary conditions applied on the beam.
 The dictionary has three keywords namely moment, slope and deflection.
 The value of each keyword is a list of tuple, where each tuple
@@ -1833,13 +1843,13 @@ Similarly, the slope of the beam should be <code class="docutils literal notrans
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.cross_section">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">cross_section</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.cross_section" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cross_section</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.cross_section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cross-section of the beam</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.deflection">
-<span class="sig-name descname"><span class="pre">deflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1130-L1259"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.deflection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">deflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1130-L1259"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.deflection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Singularity Function expression which represents
 the elastic curve or deflection of the Beam object.</p>
 <p class="rubric">Examples</p>
@@ -1871,7 +1881,7 @@ being positive.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.draw">
-<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pictorial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2076-L2159"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.draw" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pictorial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2076-L2159"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot object representing the beam diagram of the beam.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1927,31 +1937,31 @@ the exact dimensions on the plot</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.elastic_modulus">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">elastic_modulus</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.elastic_modulus" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elastic_modulus</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.elastic_modulus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Young’s Modulus of the Beam.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.ild_moment">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ild_moment</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.ild_moment" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ild_moment</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.ild_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the I.L.D. moment equation.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.ild_reactions">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ild_reactions</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.ild_reactions" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ild_reactions</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.ild_reactions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the I.L.D. reaction forces in a dictionary.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.ild_shear">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">ild_shear</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.ild_shear" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ild_shear</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.ild_shear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the I.L.D. shear equation.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.join">
-<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L308-L369"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.join" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">via</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L308-L369"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.join" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method joins two beams to make a new composite beam system.
 Passed Beam class instance is attached to the right end of calling
 object. This method can be used to form beams having Discontinuous
@@ -2000,13 +2010,13 @@ A pointload of magnitude 4 N is applied from the top at its free end.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.length">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">length</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.length" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Length of the Beam.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.load">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">load</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.load" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Singularity Function expression which represents
 the load distribution curve of the Beam object.</p>
 <p class="rubric">Examples</p>
@@ -2031,28 +2041,28 @@ starting point of the beam.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.max_bmoment">
-<span class="sig-name descname"><span class="pre">max_bmoment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L971-L1019"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.max_bmoment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">max_bmoment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L971-L1019"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.max_bmoment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns maximum Shear force and its coordinate
 in the Beam object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.max_deflection">
-<span class="sig-name descname"><span class="pre">max_deflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1261-L1281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.max_deflection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">max_deflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1261-L1281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.max_deflection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns point of max deflection and its corresponding deflection value
 in a Beam object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.max_shear_force">
-<span class="sig-name descname"><span class="pre">max_shear_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L887-L935"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.max_shear_force" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">max_shear_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L887-L935"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.max_shear_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns maximum Shear force and its coordinate
 in the Beam object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_bending_moment">
-<span class="sig-name descname"><span class="pre">plot_bending_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1412-L1468"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_bending_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_bending_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1412-L1468"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_bending_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for Bending moment present in the Beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2096,7 +2106,7 @@ Take E = 200 GPa and I = 400*(10**-6) meter**4.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_deflection">
-<span class="sig-name descname"><span class="pre">plot_deflection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1528-L1586"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_deflection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_deflection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1528-L1586"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_deflection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for deflection curve of the Beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2141,7 +2151,7 @@ Take E = 200 GPa and I = 400*(10**-6) meter**4.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_ild_moment">
-<span class="sig-name descname"><span class="pre">plot_ild_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2010-L2074"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_ild_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_ild_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2010-L2074"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_ild_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots the Influence Line Diagram for Moment under the effect
 of a moving load. This function should be called after
 calling solve_for_ild_moment().</p>
@@ -2185,7 +2195,7 @@ of 4 meters under the effect of a moving load of magnitude 1kN.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_ild_reactions">
-<span class="sig-name descname"><span class="pre">plot_ild_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1741-L1815"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_ild_reactions" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_ild_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1741-L1815"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_ild_reactions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots the Influence Line Diagram of Reaction Forces
 under the effect of a moving load. This function
 should be called after calling solve_for_ild_reactions().</p>
@@ -2234,7 +2244,7 @@ of magnitude 1kN.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_ild_shear">
-<span class="sig-name descname"><span class="pre">plot_ild_shear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1880-L1946"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_ild_shear" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_ild_shear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1880-L1946"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_ild_shear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots the Influence Line Diagram for Shear under the effect
 of a moving load. This function should be called after
 calling solve_for_ild_shear().</p>
@@ -2278,7 +2288,7 @@ of 4 meters under the effect of a moving load of magnitude 1kN.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_loading_results">
-<span class="sig-name descname"><span class="pre">plot_loading_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1589-L1654"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_loading_results" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_loading_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1589-L1654"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_loading_results" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a subplot of Shear Force, Bending Moment,
 Slope and Deflection of the Beam object.</p>
 <dl class="field-list">
@@ -2319,7 +2329,7 @@ Take E = 200 GPa and I = 400*(10**-6) meter**4.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_shear_force">
-<span class="sig-name descname"><span class="pre">plot_shear_force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1354-L1410"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_shear_force" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_shear_force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1354-L1410"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_shear_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for Shear force present in the Beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2363,7 +2373,7 @@ Take E = 200 GPa and I = 400*(10**-6) meter**4.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_shear_stress">
-<span class="sig-name descname"><span class="pre">plot_shear_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1290-L1351"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_shear_stress" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_shear_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1290-L1351"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_shear_stress" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot of shear stress present in the beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2408,7 +2418,7 @@ Take E = 200 GPa and I = 400*(10**-6) meter**4.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.plot_slope">
-<span class="sig-name descname"><span class="pre">plot_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1470-L1526"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_slope" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1470-L1526"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.plot_slope" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for slope of deflection curve of the Beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2452,7 +2462,7 @@ Take E = 200 GPa and I = 400*(10**-6) meter**4.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.point_cflexure">
-<span class="sig-name descname"><span class="pre">point_cflexure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1021-L1060"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.point_cflexure" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">point_cflexure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1021-L1060"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.point_cflexure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Set of point(s) with zero bending moment and
 where bending moment curve of the beam object changes
 its sign from negative to positive or vice versa.</p>
@@ -2484,13 +2494,13 @@ being positive.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.reaction_loads">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">reaction_loads</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.reaction_loads" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reaction_loads</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.reaction_loads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the reaction forces in a dictionary.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.remove_load">
-<span class="sig-name descname"><span class="pre">remove_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L500-L562"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.remove_load" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remove_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L500-L562"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.remove_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method removes a particular load present on the beam object.
 Returns a ValueError if the load passed as an argument is not
 present on the beam.</p>
@@ -2547,13 +2557,13 @@ away from the starting point of the beam.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.second_moment">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">second_moment</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.second_moment" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">second_moment</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.second_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Second moment of area of the Beam.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.shear_force">
-<span class="sig-name descname"><span class="pre">shear_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L853-L885"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.shear_force" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">shear_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L853-L885"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.shear_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Singularity Function expression which represents
 the shear force curve of the Beam object.</p>
 <p class="rubric">Examples</p>
@@ -2584,14 +2594,14 @@ being positive.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.shear_stress">
-<span class="sig-name descname"><span class="pre">shear_stress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1283-L1288"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.shear_stress" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">shear_stress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1283-L1288"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.shear_stress" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an expression representing the Shear Stress
 curve of the Beam object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.slope">
-<span class="sig-name descname"><span class="pre">slope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1062-L1128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.slope" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">slope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1062-L1128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.slope" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Singularity Function expression which represents
 the slope the elastic curve of the Beam object.</p>
 <p class="rubric">Examples</p>
@@ -2623,7 +2633,7 @@ being positive.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_moment">
-<span class="sig-name descname"><span class="pre">solve_for_ild_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reactions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1948-L2008"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">solve_for_ild_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reactions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1948-L2008"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines the Influence Line Diagram equations for moment at a
 specified point under the effect of a moving load.</p>
 <dl class="field-list">
@@ -2667,7 +2677,7 @@ of 4 meters under the effect of a moving load of magnitude 1kN.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_reactions">
-<span class="sig-name descname"><span class="pre">solve_for_ild_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reactions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1670-L1739"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_reactions" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">solve_for_ild_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reactions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1670-L1739"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_reactions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines the Influence Line Diagram equations for reaction
 forces under the effect of a moving load.</p>
 <dl class="field-list">
@@ -2705,7 +2715,7 @@ under the effect of a moving load of magnitude 1kN.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_shear">
-<span class="sig-name descname"><span class="pre">solve_for_ild_shear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reactions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L1817-L1878"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_shear" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">solve_for_ild_shear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reactions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L1817-L1878"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.solve_for_ild_shear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines the Influence Line Diagram equations for shear at a
 specified point under the effect of a moving load.</p>
 <dl class="field-list">
@@ -2749,7 +2759,7 @@ of 4 meters under the effect of a moving load of magnitude 1kN.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.solve_for_reaction_loads">
-<span class="sig-name descname"><span class="pre">solve_for_reaction_loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reactions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L786-L851"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.solve_for_reaction_loads" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">solve_for_reaction_loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reactions</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L786-L851"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.solve_for_reaction_loads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solves for the reaction forces.</p>
 <p class="rubric">Examples</p>
 <p>There is a beam of length 30 meters. A moment of magnitude 120 Nm is
@@ -2785,7 +2795,7 @@ being positive.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam.variable">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">variable</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.variable" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">variable</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam.variable" title="Permalink to this definition">¶</a></dt>
 <dd><p>A symbol that can be used as a variable along the length of the beam
 while representing load distribution, shear force curve, bending
 moment, slope curve and the deflection curve. By default, it is set
@@ -2812,7 +2822,7 @@ to <code class="docutils literal notranslate"><span class="pre">Symbol('x')</spa
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sympy.physics.continuum_mechanics.beam.</span></span><span class="sig-name descname"><span class="pre">Beam3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elastic_modulus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shear_modulus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second_moment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2306-L3566"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sympy.physics.continuum_mechanics.beam.</span></span><span class="sig-name descname"><span class="pre">Beam3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elastic_modulus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shear_modulus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second_moment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2306-L3566"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class handles loads applied in any direction of a 3D space along
 with unequal values of Second moment along different axes.</p>
 <div class="admonition note">
@@ -2859,13 +2869,13 @@ is restricted.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r644"><span class="brackets"><a class="fn-backref" href="#id1">R644</a></span></dt>
+<dt class="label" id="r587"><span class="brackets"><a class="fn-backref" href="#id1">R587</a></span></dt>
 <dd><p><a class="reference external" href="http://homes.civil.aau.dk/jc/FemteSemester/Beams3D.pdf">http://homes.civil.aau.dk/jc/FemteSemester/Beams3D.pdf</a></p>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.apply_load">
-<span class="sig-name descname"><span class="pre">apply_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2495-L2531"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.apply_load" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apply_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2495-L2531"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.apply_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method adds up the force load to a particular beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2892,7 +2902,7 @@ is restricted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.apply_moment_load">
-<span class="sig-name descname"><span class="pre">apply_moment_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2533-L2567"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.apply_moment_load" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">apply_moment_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2533-L2567"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.apply_moment_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method adds up the moment loads to a particular beam object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2919,32 +2929,32 @@ is restricted.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.area">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.area" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cross-sectional area of the Beam.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.axial_force">
-<span class="sig-name descname"><span class="pre">axial_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2638-L2642"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.axial_force" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">axial_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2638-L2642"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.axial_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns expression of Axial shear force present inside the Beam object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.axial_stress">
-<span class="sig-name descname"><span class="pre">axial_stress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2651-L2655"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.axial_stress" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">axial_stress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2651-L2655"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.axial_stress" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns expression of Axial stress present inside the Beam object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.bending_moment">
-<span class="sig-name descname"><span class="pre">bending_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2657-L2667"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.bending_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bending_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2657-L2667"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.bending_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of three expressions which represents the bending moment
 curve of the Beam object along all three axes.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.boundary_conditions">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">boundary_conditions</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.boundary_conditions" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">boundary_conditions</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.boundary_conditions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary of boundary conditions applied on the beam.
 The dictionary has two keywords namely slope and deflection.
 The value of each keyword is a list of tuple, where each tuple
@@ -2972,20 +2982,20 @@ along y and z axis at <code class="docutils literal notranslate"><span class="pr
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.deflection">
-<span class="sig-name descname"><span class="pre">deflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2750-L2755"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.deflection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">deflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2750-L2755"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.deflection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a three element list representing deflection curve along all
 the three axes.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.load_vector">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">load_vector</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.load_vector" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_vector</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.load_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a three element list representing the load vector.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.max_bending_moment">
-<span class="sig-name descname"><span class="pre">max_bending_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L3448-L3487"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.max_bending_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">max_bending_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L3448-L3487"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.max_bending_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns point of max bending moment and its corresponding bending moment value
 along all directions in a Beam object as a list.
 solve_for_reaction_loads() must be called before using this function.</p>
@@ -3015,7 +3025,7 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.max_bmoment">
-<span class="sig-name descname"><span class="pre">max_bmoment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L3448-L3487"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.max_bmoment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">max_bmoment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L3448-L3487"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.max_bmoment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns point of max bending moment and its corresponding bending moment value
 along all directions in a Beam object as a list.
 solve_for_reaction_loads() must be called before using this function.</p>
@@ -3045,7 +3055,7 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.max_deflection">
-<span class="sig-name descname"><span class="pre">max_deflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L3525-L3566"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.max_deflection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">max_deflection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L3525-L3566"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.max_deflection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns point of max deflection and its corresponding deflection value
 along all directions in a Beam object as a list.
 solve_for_reaction_loads() and solve_slope_deflection() must be called
@@ -3077,7 +3087,7 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.max_shear_force">
-<span class="sig-name descname"><span class="pre">max_shear_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L3373-L3412"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.max_shear_force" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">max_shear_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L3373-L3412"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.max_shear_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns point of max shear force and its corresponding shear value
 along all directions in a Beam object as a list.
 solve_for_reaction_loads() must be called before using this function.</p>
@@ -3107,13 +3117,13 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.moment_load_vector">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">moment_load_vector</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.moment_load_vector" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">moment_load_vector</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.moment_load_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a three element list representing moment loads on Beam.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.plot_bending_moment">
-<span class="sig-name descname"><span class="pre">plot_bending_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2889-L2959"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_bending_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_bending_moment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2889-L2959"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_bending_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for bending moment along all three directions
 present in the Beam object.</p>
 <dl class="field-list">
@@ -3166,7 +3176,7 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.plot_deflection">
-<span class="sig-name descname"><span class="pre">plot_deflection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L3095-L3167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_deflection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_deflection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L3095-L3167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_deflection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for Deflection along all three directions
 present in the Beam object.</p>
 <dl class="field-list">
@@ -3220,7 +3230,7 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.plot_loading_results">
-<span class="sig-name descname"><span class="pre">plot_loading_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L3169-L3235"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_loading_results" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_loading_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L3169-L3235"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_loading_results" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a subplot of Shear Force, Bending Moment,
 Slope and Deflection of the Beam object along the direction specified.</p>
 <dl class="field-list">
@@ -3277,7 +3287,7 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.plot_shear_force">
-<span class="sig-name descname"><span class="pre">plot_shear_force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2787-L2857"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_shear_force" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_shear_force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2787-L2857"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_shear_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for Shear force along all three directions
 present in the Beam object.</p>
 <dl class="field-list">
@@ -3330,7 +3340,7 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.plot_shear_stress">
-<span class="sig-name descname"><span class="pre">plot_shear_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L3267-L3337"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_shear_stress" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_shear_stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L3267-L3337"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_shear_stress" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for Shear Stress along all three directions
 present in the Beam object.</p>
 <dl class="field-list">
@@ -3383,7 +3393,7 @@ of magnitude 15 N is applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.plot_slope">
-<span class="sig-name descname"><span class="pre">plot_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2992-L3063"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_slope" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2992-L3063"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.plot_slope" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a plot for Slope along all three directions
 present in the Beam object.</p>
 <dl class="field-list">
@@ -3437,7 +3447,7 @@ applied from start till its end along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.polar_moment">
-<span class="sig-name descname"><span class="pre">polar_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2472-L2493"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.polar_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">polar_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2472-L2493"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.polar_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the polar moment of area of the beam
 about the X axis with respect to the centroid.</p>
 <p class="rubric">Examples</p>
@@ -3457,40 +3467,40 @@ about the X axis with respect to the centroid.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.second_moment">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">second_moment</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.second_moment" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">second_moment</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.second_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Second moment of area of the Beam.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.shear_force">
-<span class="sig-name descname"><span class="pre">shear_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2629-L2636"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.shear_force" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">shear_force</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2629-L2636"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.shear_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of three expressions which represents the shear force
 curve of the Beam object along all three axes.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.shear_modulus">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">shear_modulus</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.shear_modulus" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shear_modulus</span></span><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.shear_modulus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Young’s Modulus of the Beam.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.shear_stress">
-<span class="sig-name descname"><span class="pre">shear_stress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2644-L2649"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.shear_stress" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">shear_stress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2644-L2649"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.shear_stress" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of three expressions which represents the shear stress
 curve of the Beam object along all three axes.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.slope">
-<span class="sig-name descname"><span class="pre">slope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2743-L2748"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.slope" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">slope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2743-L2748"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.slope" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a three element list representing slope of deflection curve
 along all the three axes.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.solve_for_reaction_loads">
-<span class="sig-name descname"><span class="pre">solve_for_reaction_loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reaction</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2581-L2627"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.solve_for_reaction_loads" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">solve_for_reaction_loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">reaction</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2581-L2627"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.solve_for_reaction_loads" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solves for the reaction forces.</p>
 <p class="rubric">Examples</p>
 <p>There is a beam of length 30 meters. It it supported by rollers at
@@ -3518,7 +3528,7 @@ slope equal to 9 is applied along z-axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sympy.physics.continuum_mechanics.beam.Beam3D.torsional_moment">
-<span class="sig-name descname"><span class="pre">torsional_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/9f425283552d9fc2ef0c9fdda8367377a370e85e/sympy/physics/continuum_mechanics/beam.py#L2669-L2673"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.torsional_moment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">torsional_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/sympy/sympy/blob/89746933cafeb94deec9de28f9f89a087d6ec99f/sympy/physics/continuum_mechanics/beam.py#L2669-L2673"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sympy.physics.continuum_mechanics.beam.Beam3D.torsional_moment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns expression of Torsional moment present inside the Beam object.</p>
 </dd></dl>
 
@@ -3567,7 +3577,7 @@ slope equal to 9 is applied along z-axis.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
 </p>
     </div>
     
